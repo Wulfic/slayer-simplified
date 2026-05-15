@@ -52,6 +52,7 @@ public class MainPanel extends PluginPanel
     private final Map<Panel, JPanel> panels = new HashMap<>();
     private final JPanel currentPanelContainer = new JPanel(new BorderLayout());
     private final JButton quickNavButton = new JButton("Quick Navigate");
+    private final JButton cancelNavButton = new JButton("Cancel Navigation");
 
     @Inject
     public MainPanel(
@@ -92,6 +93,23 @@ public class MainPanel extends PluginPanel
         quickNavButton.setToolTipText("Navigate based on current slayer task");
         quickNavButton.addActionListener(e -> quickNavigate());
 
+        // Cancel Navigation button styling
+        cancelNavButton.setFont(FontManager.getRunescapeSmallFont());
+        cancelNavButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        cancelNavButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        cancelNavButton.setFocusPainted(false);
+        cancelNavButton.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
+                BorderFactory.createEmptyBorder(5, 0, 5, 0)
+        ));
+        cancelNavButton.setToolTipText("Clear the current navigation waypoint");
+        cancelNavButton.addActionListener(e -> navigationService.clearNavigation());
+
+        JPanel topButtonPanel = new JPanel(new GridLayout(2, 1, 0, 2));
+        topButtonPanel.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        topButtonPanel.add(quickNavButton);
+        topButtonPanel.add(cancelNavButton);
+
         setLayout(new BorderLayout(0, 0));
 
         panels.put(Panel.TASK_SEARCH, taskSearchPanel);
@@ -100,7 +118,7 @@ public class MainPanel extends PluginPanel
         setBackground(ColorScheme.DARK_GRAY_COLOR);
         currentPanelContainer.setBackground(ColorScheme.DARK_GRAY_COLOR);
 
-        add(quickNavButton, BorderLayout.NORTH);
+        add(topButtonPanel, BorderLayout.NORTH);
         add(currentPanelContainer, BorderLayout.CENTER);
         showPanel(Panel.TASK_SEARCH);
 

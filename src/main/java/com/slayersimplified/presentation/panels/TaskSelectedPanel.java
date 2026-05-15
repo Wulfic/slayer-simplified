@@ -34,6 +34,7 @@ public class TaskSelectedPanel extends JPanel
     private final Header header = new Header();
     private final TaskTabs taskTabs;
     private final JButton closeButton = new JButton("Close");
+    private final JButton backButton = new JButton("\u2190 Back");
 
     private final ActionListener onClickListener;
 
@@ -63,11 +64,29 @@ public class TaskSelectedPanel extends JPanel
         closeButton.setFont(FontManager.getRunescapeSmallFont());
         closeButton.setFocusPainted(false);
 
+        backButton.addActionListener(this.onClickListener);
+        backButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        backButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        backButton.setFont(FontManager.getRunescapeSmallFont());
+        backButton.setFocusPainted(false);
+        backButton.setBorderPainted(false);
+        backButton.setContentAreaFilled(false);
+        backButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+        JPanel backRow = new JPanel(new FlowLayout(FlowLayout.LEFT, 4, 2));
+        backRow.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        backRow.add(backButton);
+
+        JPanel northPanel = new JPanel(new BorderLayout());
+        northPanel.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        northPanel.add(backRow, BorderLayout.NORTH);
+        northPanel.add(header, BorderLayout.CENTER);
+
         setLayout(new BorderLayout(0, 10));
         setBackground(ColorScheme.DARK_GRAY_COLOR);
         setBorder(new EmptyBorder(5, 0, 0, 0));
 
-        add(header, BorderLayout.NORTH);
+        add(northPanel, BorderLayout.NORTH);
         add(taskTabs, BorderLayout.CENTER);
         add(closeButton, BorderLayout.SOUTH);
     }
@@ -76,6 +95,7 @@ public class TaskSelectedPanel extends JPanel
     {
         taskTabs.shutDown();
         closeButton.removeActionListener(onClickListener);
+        backButton.removeActionListener(onClickListener);
     }
 
     public void update(Task task)
