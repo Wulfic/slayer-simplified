@@ -55,7 +55,6 @@ public class MainPanel extends PluginPanel
     private final Map<Panel, JPanel> panels = new HashMap<>();
     private final JPanel currentPanelContainer = new JPanel(new BorderLayout());
     private final JButton quickNavButton = new JButton("Quick Navigate");
-    private final JButton cancelNavButton = new JButton("Cancel Navigation");
 
     /** Pinned row showing the active task name with a quick-nav button. */
     private final JPanel currentTaskPanel = new JPanel(new BorderLayout(6, 0));
@@ -103,18 +102,6 @@ public class MainPanel extends PluginPanel
         quickNavButton.setToolTipText("Navigate based on current slayer task");
         quickNavButton.addActionListener(e -> quickNavigate());
 
-        // Cancel Navigation button styling
-        cancelNavButton.setFont(FontManager.getRunescapeSmallFont());
-        cancelNavButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        cancelNavButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        cancelNavButton.setFocusPainted(false);
-        cancelNavButton.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(5, 0, 5, 0)
-        ));
-        cancelNavButton.setToolTipText("Clear the current navigation waypoint");
-        cancelNavButton.addActionListener(e -> navigationService.clearNavigation());
-
         // Gear icon button — opens inline settings
         JButton gearButton = new JButton("\u2699");
         gearButton.setFont(gearButton.getFont().deriveFont(Font.BOLD, 14f));
@@ -129,21 +116,62 @@ public class MainPanel extends PluginPanel
         ));
         gearButton.setToolTipText("Plugin settings");
 
-        JPanel quickNavRow = new JPanel(new BorderLayout(2, 0));
-        quickNavRow.setBackground(ColorScheme.DARK_GRAY_COLOR);
-        quickNavRow.add(quickNavButton, BorderLayout.CENTER);
-        quickNavRow.add(gearButton, BorderLayout.EAST);
+        // Cancel (X) button — red square to the left of gear
+        JButton cancelXButton = new JButton("\u2715");
+        cancelXButton.setFont(cancelXButton.getFont().deriveFont(Font.BOLD, 11f));
+        cancelXButton.setBackground(new Color(160, 50, 50));
+        cancelXButton.setForeground(Color.WHITE);
+        cancelXButton.setFocusPainted(false);
+        cancelXButton.setPreferredSize(new Dimension(28, 0));
+        cancelXButton.setMinimumSize(new Dimension(28, 0));
+        cancelXButton.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
+                BorderFactory.createEmptyBorder(5, 2, 5, 2)
+        ));
+        cancelXButton.setToolTipText("Clear the current navigation waypoint");
+        cancelXButton.addActionListener(e -> navigationService.clearNavigation());
 
-        JPanel topButtonPanel = new JPanel(new GridLayout(2, 1, 0, 2));
+        // Right-side icon buttons: [X][Gear]
+        JPanel iconButtons = new JPanel(new GridLayout(1, 2, 0, 0));
+        iconButtons.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        iconButtons.add(cancelXButton);
+        iconButtons.add(gearButton);
+
+        // Single header row: [History | Quick Navigate | X | Gear]
+        JPanel topButtonPanel = new JPanel(new BorderLayout(2, 0));
         topButtonPanel.setBackground(ColorScheme.DARK_GRAY_COLOR);
-        topButtonPanel.add(quickNavRow);
-        topButtonPanel.add(cancelNavButton);
 
         // Current-task banner: shows the active monster name with a Nav button
         currentTaskLabel.setFont(FontManager.getRunescapeSmallFont());
         currentTaskLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
         currentTaskLabel.setText(config.preferredMaster().getDisplayName());
-        currentTaskLabel.setToolTipText("Your current slayer task");
+        currentTaskLabel.setToolTipText("Click to view task details");
+        currentTaskLabel.setCursor(Cursor.getDefaultCursor());
+        currentTaskLabel.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e)
+            {
+                String name = taskTracker.getCurrentTaskName();
+                if (name == null || name.isEmpty())
+                {
+                    return;
+                }
+                Task t = taskService.get(name);
+                if (t == null)
+                {
+                    Task[] matches = taskService.searchPartialName(name);
+                    if (matches.length > 0)
+                    {
+                        t = matches[0];
+                    }
+                }
+                if (t != null)
+                {
+                    onTaskSelected(t);
+                }
+            }
+        });
 
         currentTaskNavButton.setFont(FontManager.getRunescapeSmallFont());
         currentTaskNavButton.setBackground(ColorScheme.DARKER_GRAY_HOVER_COLOR);
@@ -170,22 +198,25 @@ public class MainPanel extends PluginPanel
         JPanel northWrapper = new JPanel(new GridBagLayout());
         northWrapper.setBackground(ColorScheme.DARK_GRAY_COLOR);
 
-        // History button — top row, full width
-        JButton historyButton = new JButton("Slayer History");
+        // History button — same styling as Quick Navigate, placed to its left
+        JButton historyButton = new JButton("History");
         historyButton.setFont(FontManager.getRunescapeSmallFont());
         historyButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        historyButton.setForeground(new Color(255, 152, 0));
+        historyButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
         historyButton.setFocusPainted(false);
+        historyButton.setPreferredSize(new Dimension(70, 0));
+        historyButton.setMinimumSize(new Dimension(70, 0));
         historyButton.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
                 BorderFactory.createEmptyBorder(5, 0, 5, 0)));
         historyButton.setToolTipText("View your slayer task history");
+        topButtonPanel.add(historyButton, BorderLayout.WEST);
+        topButtonPanel.add(quickNavButton, BorderLayout.CENTER);
+        topButtonPanel.add(iconButtons, BorderLayout.EAST);
 
         gbc.gridy = 0;
-        northWrapper.add(historyButton, gbc);
-        gbc.gridy = 1;
         northWrapper.add(topButtonPanel, gbc);
-        gbc.gridy = 2;
+        gbc.gridy = 1;
         northWrapper.add(currentTaskPanel, gbc);
 
         setLayout(new BorderLayout(0, 0));
@@ -249,6 +280,7 @@ public class MainPanel extends PluginPanel
         {
             currentTaskLabel.setText(taskName);
             currentTaskLabel.setForeground(new Color(255, 152, 0));
+            currentTaskLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             currentTaskNavButton.setToolTipText("Navigate to current slayer task");
         }
         else
@@ -256,6 +288,7 @@ public class MainPanel extends PluginPanel
             String masterName = config.preferredMaster().getDisplayName();
             currentTaskLabel.setText(masterName);
             currentTaskLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+            currentTaskLabel.setCursor(Cursor.getDefaultCursor());
             currentTaskNavButton.setToolTipText("Navigate to " + masterName);
         }
         currentTaskPanel.setVisible(true);

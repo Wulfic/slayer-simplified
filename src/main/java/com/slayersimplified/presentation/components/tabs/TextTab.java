@@ -9,7 +9,6 @@ package com.slayersimplified.presentation.components.tabs;
 import com.slayersimplified.domain.Tab;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
 import javax.swing.text.*;
@@ -57,7 +56,7 @@ public class TextTab extends JTextPane implements Tab<String[]>
         StyledDocument doc = getStyledDocument();
         try
         {
-            doc.insertString(doc.getLength(), StringUtils.capitalize(text) + "\n", null);
+            doc.insertString(doc.getLength(), capitalize(text) + "\n", null);
         }
         catch (BadLocationException e)
         {
@@ -68,6 +67,11 @@ public class TextTab extends JTextPane implements Tab<String[]>
     public void resetParagraphs()
     {
         setText("");
+    }
+
+    private static String capitalize(String s)
+    {
+        return s == null || s.isEmpty() ? s : Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 
     private void setLineSpacing()

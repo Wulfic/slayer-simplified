@@ -18,7 +18,6 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -136,7 +135,7 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 34));
 
         // Location name label — plain font matching the rest of the UI
-        JLabel label = new JLabel(StringUtils.capitalize(locationName));
+        JLabel label = new JLabel(capitalize(locationName));
         label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
         label.setFont(FontManager.getRunescapeSmallFont());
         row.add(label, BorderLayout.CENTER);
@@ -180,7 +179,7 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
             navButton.setMaximumSize(new Dimension(50, 24));
             navButton.setFocusPainted(false);
             navButton.setMargin(new Insets(0, 2, 0, 2));
-            navButton.setToolTipText("Navigate to " + StringUtils.capitalize(locationName));
+            navButton.setToolTipText("Navigate to " + capitalize(locationName));
 
             ActionListener navListener = e -> onNavigateClicked(locationName, coords, row);
             navButton.addActionListener(navListener);
@@ -325,6 +324,11 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
                 comp.setBackground(ColorScheme.DARKER_GRAY_COLOR);
             }
         }
+    }
+
+    private static String capitalize(String s)
+    {
+        return s == null || s.isEmpty() ? s : Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 
     private void clearRows()

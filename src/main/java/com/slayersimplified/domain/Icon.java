@@ -31,6 +31,7 @@ public enum Icon
     ;
 
     private final String file;
+    private volatile BufferedImage cachedImage;
 
     Icon(String file)
     {
@@ -39,7 +40,11 @@ public enum Icon
 
     public BufferedImage getImage()
     {
-        return ImageUtil.loadImageResource(SlayerSimplifiedPlugin.class, file);
+        if (cachedImage == null)
+        {
+            cachedImage = ImageUtil.loadImageResource(SlayerSimplifiedPlugin.class, file);
+        }
+        return cachedImage;
     }
 
     public ImageIcon getIcon()

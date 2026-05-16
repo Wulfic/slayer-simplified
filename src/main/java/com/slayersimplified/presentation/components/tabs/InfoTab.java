@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import okhttp3.OkHttpClient;
-import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -76,7 +75,7 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
         {
             for (String item : data.items)
             {
-                addTextRowTo(itemsBody, StringUtils.capitalize(item));
+                addTextRowTo(itemsBody, capitalize(item));
             }
         }
 
@@ -135,7 +134,7 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
         {
             for (String master : data.masters)
             {
-                addTextRowTo(mastersBody, StringUtils.capitalize(master));
+                addTextRowTo(mastersBody, capitalize(master));
             }
         }
 
@@ -284,6 +283,11 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
         panel.add(label, BorderLayout.WEST);
 
         target.add(panel);
+    }
+
+    private static String capitalize(String s)
+    {
+        return s == null || s.isEmpty() ? s : Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
 
     private void addTextRowTo(JPanel target, String text)

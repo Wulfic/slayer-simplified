@@ -160,7 +160,49 @@ public class SettingsPanel extends JPanel
         cb.setBackground(ColorScheme.DARK_GRAY_COLOR);
         cb.setForeground(Color.WHITE);
         cb.setOpaque(true);
+        cb.setFocusPainted(false);
+        cb.setIcon(buildCheckIcon(false));
+        cb.setSelectedIcon(buildCheckIcon(true));
+        cb.setPressedIcon(buildCheckIcon(false));
         return cb;
+    }
+
+    private static Icon buildCheckIcon(boolean checked)
+    {
+        return new Icon()
+        {
+            @Override
+            public void paintIcon(Component c, Graphics g, int x, int y)
+            {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                int w = getIconWidth(), h = getIconHeight();
+                g2.setColor(ColorScheme.MEDIUM_GRAY_COLOR);
+                g2.fillRoundRect(x, y, w, h, 3, 3);
+                g2.setColor(checked ? new Color(50, 110, 50) : ColorScheme.DARKER_GRAY_COLOR);
+                g2.fillRoundRect(x + 1, y + 1, w - 2, h - 2, 2, 2);
+                if (checked)
+                {
+                    g2.setColor(Color.WHITE);
+                    g2.setStroke(new BasicStroke(2f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+                    g2.drawLine(x + 3, y + 7, x + 6, y + 10);
+                    g2.drawLine(x + 6, y + 10, x + 11, y + 4);
+                }
+                g2.dispose();
+            }
+
+            @Override
+            public int getIconWidth()
+            {
+                return 14;
+            }
+
+            @Override
+            public int getIconHeight()
+            {
+                return 14;
+            }
+        };
     }
 
     private JButton makeColorSwatch(Color color)

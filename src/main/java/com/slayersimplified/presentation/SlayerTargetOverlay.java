@@ -31,8 +31,15 @@ public class SlayerTargetOverlay extends Overlay
     private final TaskService taskService;
     private final ModelOutlineRenderer modelOutlineRenderer;
 
+    /** Names of NPCs that match the current task (lower-cased). */
     private final Set<String> targetNames = new HashSet<>();
-    private String lastTaskName;
+
+    /**
+     * The live set of NPCs to highlight. Populated via onTaskChanged() and
+     * kept up-to-date by onNpcSpawned() / onNpcDespawned() so we never
+     * scan the entire NPC list inside render().
+     */
+    private final Set<NPC> trackedNpcs = new HashSet<>();
 
     @Inject
     public SlayerTargetOverlay(
@@ -53,42 +60,71 @@ public class SlayerTargetOverlay extends Overlay
         setPriority(PRIORITY_MED);
     }
 
+    /**
+     * Called by the plugin whenever the active slayer task may have changed
+     * (task assigned, completed, or on plugin start). Rebuilds targetNames and
+     * re-populates trackedNpcs from the current scene in one pass.
+     * Must be called on the client thread.
+     */
+    public void onTaskChanged()
+    {
+        String currentTask = taskTracker.getCurrentTaskName();
+        targetNames.clear();
+        trackedNpcs.clear();
+
+        if (currentTask == null || currentTask.isEmpty())
+        {
+            return;
+        }
+
+        rebuildTargetNames(currentTask);
+
+        // Scan existing NPCs once so we highlight any already in the scene.
+        for (NPC npc : client.getNpcs())
+        {
+            if (npc.getName() != null && targetNames.contains(npc.getName().toLowerCase()))
+            {
+                trackedNpcs.add(npc);
+            }
+        }
+    }
+
+    /**
+     * Called by the plugin's NpcSpawned subscriber. Adds the NPC to the
+     * tracked set if it matches the current task.
+     */
+    public void onNpcSpawned(NPC npc)
+    {
+        if (npc.getName() != null && targetNames.contains(npc.getName().toLowerCase()))
+        {
+            trackedNpcs.add(npc);
+        }
+    }
+
+    /**
+     * Called by the plugin's NpcDespawned subscriber. Removes the NPC from
+     * the tracked set.
+     */
+    public void onNpcDespawned(NPC npc)
+    {
+        trackedNpcs.remove(npc);
+    }
+
     @Override
     public Dimension render(Graphics2D graphics)
     {
-        if (!config.highlightTarget())
-        {
-            return null;
-        }
-
-        String currentTask = taskTracker.getCurrentTaskName();
-        if (currentTask == null || currentTask.isEmpty())
-        {
-            targetNames.clear();
-            lastTaskName = null;
-            return null;
-        }
-
-        // Rebuild target name set when task changes
-        if (!currentTask.equals(lastTaskName))
-        {
-            lastTaskName = currentTask;
-            rebuildTargetNames(currentTask);
-        }
-
-        if (targetNames.isEmpty())
+        if (!config.highlightTarget() || trackedNpcs.isEmpty())
         {
             return null;
         }
 
         Color color = config.highlightColor();
 
-        for (NPC npc : client.getNpcs())
+        // Copy to avoid ConcurrentModificationException if the set is updated
+        // between ticks while we iterate.
+        for (NPC npc : trackedNpcs.toArray(new NPC[0]))
         {
-            if (npc.getName() != null && targetNames.contains(npc.getName().toLowerCase()))
-            {
-                modelOutlineRenderer.drawOutline(npc, 2, color, 4);
-            }
+            modelOutlineRenderer.drawOutline(npc, 2, color, 4);
         }
 
         return null;

@@ -25,9 +25,12 @@ import com.slayersimplified.services.SlayerTaskTracker;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
+import net.runelite.api.NPC;
 import net.runelite.api.Skill;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.MenuOptionClicked;
+import net.runelite.api.events.NpcDespawned;
+import net.runelite.api.events.NpcSpawned;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -116,12 +119,15 @@ public class SlayerSimplifiedPlugin extends Plugin
         overlayManager.add(targetOverlay);
         overlayManager.add(coordinatesOverlay);
         SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
+        // Populate the NPC highlight set in case the plugin is enabled while already logged in.
+        clientThread.invokeLater(targetOverlay::onTaskChanged);
         log.info("Slayer Simplified started");
     }
 
     @Override
     protected void shutDown()
     {
+        pendingTaskNavigation = false;
         clientToolbar.removeNavigation(navButton);
         overlayManager.remove(targetOverlay);
         overlayManager.remove(coordinatesOverlay);
@@ -180,6 +186,12 @@ public class SlayerSimplifiedPlugin extends Plugin
             {
                 SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
             }
+
+            // Keep NPC highlighting in sync whenever the task state changes.
+            if (result != SlayerTaskTracker.ParseResult.NONE)
+            {
+                targetOverlay.onTaskChanged();
+            }
             return;
         }
 
@@ -230,6 +242,18 @@ public class SlayerSimplifiedPlugin extends Plugin
                 }
             }
         }
+    }
+
+    @Subscribe
+    public void onNpcSpawned(NpcSpawned event)
+    {
+        targetOverlay.onNpcSpawned(event.getNpc());
+    }
+
+    @Subscribe
+    public void onNpcDespawned(NpcDespawned event)
+    {
+        targetOverlay.onNpcDespawned(event.getNpc());
     }
 
     /**
