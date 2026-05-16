@@ -1,0 +1,64 @@
+/*
+ * BSD 2-Clause License
+ * Copyright (c) 2026, Slayer Simplified contributors
+ * See LICENSE for details.
+ */
+package com.slayersimplified;
+
+import com.google.gson.Gson;
+import com.slayersimplified.services.LocationCoordinateService;
+import net.runelite.api.coords.WorldPoint;
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * Unit tests for LocationCoordinateService — verifies that location_coordinates.json
+ * is parsed correctly and specific locations can be looked up.
+ */
+public class LocationCoordinateServiceTest
+{
+    private final LocationCoordinateService service =
+            new LocationCoordinateService(new Gson(), "/data/location_coordinates.json");
+
+    @Test
+    public void testZanarisHasCoordinates()
+    {
+        WorldPoint coords = service.getCoordinates("Zanaris");
+        Assert.assertNotNull("Zanaris should have coordinates mapped", coords);
+    }
+
+    @Test
+    public void testSlayerTowerHasCoordinates()
+    {
+        WorldPoint coords = service.getCoordinates("Slayer Tower");
+        Assert.assertNotNull("Slayer Tower should have coordinates mapped", coords);
+    }
+
+    @Test
+    public void testLumbridgeCowFieldHasCoordinates()
+    {
+        WorldPoint coords = service.getCoordinates("Lumbridge Cow Field");
+        Assert.assertNotNull("Lumbridge Cow Field should have coordinates mapped", coords);
+    }
+
+    @Test
+    public void testCaseSensitivity()
+    {
+        WorldPoint lower = service.getCoordinates("zanaris");
+        WorldPoint mixed = service.getCoordinates("Zanaris");
+        WorldPoint upper = service.getCoordinates("ZANARIS");
+        Assert.assertNotNull("Lowercase lookup should work", lower);
+        Assert.assertNotNull("Mixed-case lookup should work", mixed);
+        Assert.assertNotNull("Uppercase lookup should work", upper);
+    }
+
+    @Test
+    public void testAllLocationCountIsReasonable()
+    {
+        // Should have at least 150 locations loaded
+        Assert.assertTrue(
+                "Should have loaded at least 150 locations, got: " + service.getAll().size(),
+                service.getAll().size() >= 150
+        );
+    }
+}

@@ -4,11 +4,6 @@
     "y": 3534,
     "plane": 0
   },
-  "Slayer tower": {
-    "x": 3428,
-    "y": 3534,
-    "plane": 0
-  },
   "Stronghold Slayer Cave": {
     "x": 2431,
     "y": 3424,
@@ -50,11 +45,6 @@
     "plane": 0
   },
   "Iorwerth Dungeon": {
-    "x": 3222,
-    "y": 6048,
-    "plane": 0
-  },
-  "Iorwerth Dungeon,": {
     "x": 3222,
     "y": 6048,
     "plane": 0
@@ -554,11 +544,6 @@
     "y": 3810,
     "plane": 0
   },
-  "Wilderness volcano": {
-    "x": 3173,
-    "y": 3810,
-    "plane": 0
-  },
   "Frozen Waste Plateau": {
     "x": 2940,
     "y": 3900,
@@ -717,11 +702,6 @@
   "South of Castle Wars": {
     "x": 2439,
     "y": 3080,
-    "plane": 0
-  },
-  "South of Falador": {
-    "x": 2965,
-    "y": 3340,
     "plane": 0
   },
   "South of Falador": {
@@ -967,6 +947,16 @@
   "Stronhold of Security": {
     "x": 3081,
     "y": 3421,
+    "plane": 0
+  },
+  "Lumbridge Cow Field": {
+    "x": 3254,
+    "y": 3268,
+    "plane": 0
+  },
+  "TzHaar City": {
+    "x": 2473,
+    "y": 5174,
     "plane": 0
   }
 }
