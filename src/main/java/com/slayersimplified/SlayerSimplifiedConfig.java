@@ -67,6 +67,17 @@ public interface SlayerSimplifiedConfig extends Config
         return true;
     }
 
+    @ConfigItem(
+            keyName = "debugCoordinates",
+            name = "Debug Coordinates",
+            description = "Show an overlay with your current WorldPoint coordinates. Useful for mapping new locations.",
+            position = 5
+    )
+    default boolean debugCoordinates()
+    {
+        return false;
+    }
+
     // Hidden config keys used to persist internal state across sessions
 
     @ConfigItem(

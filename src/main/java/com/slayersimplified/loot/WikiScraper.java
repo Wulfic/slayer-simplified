@@ -43,7 +43,7 @@ public class WikiScraper
         CompletableFuture<DropTableSection[]> future = new CompletableFuture<>();
         String url = getWikiUrl(monsterName);
 
-        log.info("Looking up drops for monster: '{}' at URL: {}", monsterName, url);
+        log.debug("Looking up drops for monster: '{}' at URL: {}", monsterName, url);
 
         requestAsync(okHttpClient, url).whenCompleteAsync((responseHTML, ex) ->
         {
@@ -63,7 +63,7 @@ public class WikiScraper
                 }
                 else
                 {
-                    log.info("Found {} drop table section(s) for monster '{}'", result.length, monsterName);
+                    log.debug("Found {} drop table section(s) for monster '{}'", result.length, monsterName);
                 }
                 future.complete(result);
             }
@@ -88,14 +88,14 @@ public class WikiScraper
         CombatStats cached = combatStatsCache.get(monsterName);
         if (cached != null)
         {
-            log.info("Combat stats cache hit for '{}'", monsterName);
+            log.debug("Combat stats cache hit for '{}'", monsterName);
             return CompletableFuture.completedFuture(cached);
         }
 
         CompletableFuture<CombatStats> future = new CompletableFuture<>();
         String url = getWikiUrl(monsterName);
 
-        log.info("Looking up combat stats for monster: '{}' at URL: {}", monsterName, url);
+        log.debug("Looking up combat stats for monster: '{}' at URL: {}", monsterName, url);
 
         requestAsync(okHttpClient, url).whenCompleteAsync((responseHTML, ex) ->
         {
@@ -109,7 +109,7 @@ public class WikiScraper
             try
             {
                 CombatStats stats = parseCombatStats(responseHTML);
-                log.info("Parsed combat stats for '{}': CB={} HP={} MaxHit={} Style={}",
+                log.debug("Parsed combat stats for '{}': CB={} HP={} MaxHit={} Style={}",
                         monsterName, stats.getCombatLevel(), stats.getHitpoints(),
                         stats.getMaxHit(), stats.getAttackStyle());
                 combatStatsCache.put(monsterName, stats);

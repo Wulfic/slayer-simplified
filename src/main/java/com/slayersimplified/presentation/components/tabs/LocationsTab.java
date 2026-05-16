@@ -123,6 +123,7 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
     private JPanel createLocationRow(String locationName)
     {
         JPanel row = new JPanel(new BorderLayout(4, 0));
+        row.putClientProperty("locationName", locationName);
         row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         row.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
@@ -256,9 +257,9 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
             return;
         }
 
-        // The label is in CENTER
-        Component center = ((BorderLayout) row.getLayout()).getLayoutComponent(BorderLayout.CENTER);
-        String locationName = (center instanceof JLabel) ? ((JLabel) center).getText() : null;
+        // Read the original location name stored as a client property (avoids label-text casing mismatch)
+        Object locNameProp = row.getClientProperty("locationName");
+        String locationName = (locNameProp instanceof String) ? (String) locNameProp : null;
         if (locationName == null || currentMonsterName == null)
         {
             return;

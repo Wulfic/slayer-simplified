@@ -15,6 +15,7 @@ import com.google.inject.Binder;
 import com.google.inject.Provides;
 import com.slayersimplified.domain.Icon;
 import com.slayersimplified.modules.TaskServiceModule;
+import com.slayersimplified.presentation.CoordinatesOverlay;
 import com.slayersimplified.presentation.panels.MainPanel;
 import com.slayersimplified.presentation.SlayerTargetOverlay;
 import com.slayersimplified.services.SlayerTaskTracker;
@@ -67,6 +68,9 @@ public class SlayerSimplifiedPlugin extends Plugin
     @Inject
     private SlayerTargetOverlay targetOverlay;
 
+    @Inject
+    private CoordinatesOverlay coordinatesOverlay;
+
     private NavigationButton navButton;
 
     /** Set when the player types !task; cleared when the game response triggers navigation. */
@@ -96,6 +100,8 @@ public class SlayerSimplifiedPlugin extends Plugin
 
         clientToolbar.addNavigation(navButton);
         overlayManager.add(targetOverlay);
+        overlayManager.add(coordinatesOverlay);
+        SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
         log.info("Slayer Simplified started");
     }
 
@@ -104,6 +110,7 @@ public class SlayerSimplifiedPlugin extends Plugin
     {
         clientToolbar.removeNavigation(navButton);
         overlayManager.remove(targetOverlay);
+        overlayManager.remove(coordinatesOverlay);
         mainPanel.shutDown();
         log.info("Slayer Simplified stopped");
     }
@@ -124,10 +131,16 @@ public class SlayerSimplifiedPlugin extends Plugin
             if (result == SlayerTaskTracker.ParseResult.NEW_TASK)
             {
                 pendingTaskNavigation = false;
-                if (config.autoNavigate())
+                final String newTask = taskTracker.getCurrentTaskName();
+                SwingUtilities.invokeLater(() ->
                 {
-                    SwingUtilities.invokeLater(() -> mainPanel.quickNavigate());
-                }
+                    mainPanel.refreshCurrentTask();
+                    mainPanel.showTaskReminderIfNeeded(newTask);
+                    if (config.autoNavigate())
+                    {
+                        mainPanel.quickNavigate();
+                    }
+                });
             }
             // When game responds to !task with current task info, navigate now
             else if (result == SlayerTaskTracker.ParseResult.CURRENT_TASK && pendingTaskNavigation)
@@ -137,6 +150,11 @@ public class SlayerSimplifiedPlugin extends Plugin
                 {
                     SwingUtilities.invokeLater(() -> mainPanel.quickNavigate());
                 }
+            }
+            else if (result == SlayerTaskTracker.ParseResult.TASK_COMPLETE
+                    || result == SlayerTaskTracker.ParseResult.NO_TASK)
+            {
+                SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
             }
             return;
         }

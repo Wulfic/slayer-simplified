@@ -23,8 +23,10 @@ import okhttp3.OkHttpClient;
 
 import javax.inject.Inject;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseWheelEvent;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
@@ -45,6 +47,7 @@ public class MainPanel extends PluginPanel
     private final SlayerTaskTracker taskTracker;
     private final FavoriteLocationService favoriteService;
     private final SlayerSimplifiedConfig config;
+    private final MonsterNotesService notesService;
 
     private final TaskSearchPanel taskSearchPanel;
     private final TaskSelectedPanel taskSelectedPanel;
@@ -53,6 +56,11 @@ public class MainPanel extends PluginPanel
     private final JPanel currentPanelContainer = new JPanel(new BorderLayout());
     private final JButton quickNavButton = new JButton("Quick Navigate");
     private final JButton cancelNavButton = new JButton("Cancel Navigation");
+
+    /** Pinned row showing the active task name with a quick-nav button. */
+    private final JPanel currentTaskPanel = new JPanel(new BorderLayout(6, 0));
+    private final JLabel currentTaskLabel = new JLabel();
+    private final JButton currentTaskNavButton = new JButton("Nav");
 
     @Inject
     public MainPanel(
@@ -72,6 +80,7 @@ public class MainPanel extends PluginPanel
         this.taskTracker = taskTracker;
         this.favoriteService = favoriteService;
         this.config = config;
+        this.notesService = notesService;
 
         this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onTaskSelected);
         this.taskSelectedPanel = new TaskSelectedPanel(
@@ -110,6 +119,41 @@ public class MainPanel extends PluginPanel
         topButtonPanel.add(quickNavButton);
         topButtonPanel.add(cancelNavButton);
 
+        // Current-task banner: shows the active monster name with a Nav button
+        currentTaskLabel.setFont(FontManager.getRunescapeSmallFont());
+        currentTaskLabel.setForeground(new Color(255, 152, 0));
+        currentTaskLabel.setToolTipText("Your current slayer task");
+
+        currentTaskNavButton.setFont(FontManager.getRunescapeSmallFont());
+        currentTaskNavButton.setBackground(ColorScheme.DARKER_GRAY_HOVER_COLOR);
+        currentTaskNavButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        currentTaskNavButton.setPreferredSize(new Dimension(50, 24));
+        currentTaskNavButton.setMinimumSize(new Dimension(50, 24));
+        currentTaskNavButton.setMaximumSize(new Dimension(50, 24));
+        currentTaskNavButton.setFocusPainted(false);
+        currentTaskNavButton.setMargin(new Insets(0, 2, 0, 2));
+        currentTaskNavButton.setToolTipText("Navigate to current slayer task");
+        currentTaskNavButton.addActionListener(e -> quickNavigate());
+
+        currentTaskPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        currentTaskPanel.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(1, 0, 0, 0, ColorScheme.DARK_GRAY_COLOR),
+                BorderFactory.createEmptyBorder(4, 8, 4, 4)));
+        currentTaskPanel.add(currentTaskLabel, BorderLayout.CENTER);
+        currentTaskPanel.add(currentTaskNavButton, BorderLayout.EAST);
+        currentTaskPanel.setVisible(false);
+
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.weightx = 1.0;
+        gbc.gridx = 0;
+        JPanel northWrapper = new JPanel(new GridBagLayout());
+        northWrapper.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        gbc.gridy = 0;
+        northWrapper.add(topButtonPanel, gbc);
+        gbc.gridy = 1;
+        northWrapper.add(currentTaskPanel, gbc);
+
         setLayout(new BorderLayout(0, 0));
 
         panels.put(Panel.TASK_SEARCH, taskSearchPanel);
@@ -118,7 +162,7 @@ public class MainPanel extends PluginPanel
         setBackground(ColorScheme.DARK_GRAY_COLOR);
         currentPanelContainer.setBackground(ColorScheme.DARK_GRAY_COLOR);
 
-        add(topButtonPanel, BorderLayout.NORTH);
+        add(northWrapper, BorderLayout.NORTH);
         add(currentPanelContainer, BorderLayout.CENTER);
         showPanel(Panel.TASK_SEARCH);
 
@@ -143,6 +187,145 @@ public class MainPanel extends PluginPanel
     }
 
     /**
+     * Refreshes the current-task banner. Call on the EDT whenever the active
+     * task may have changed (plugin start, new task assigned, task completed).
+     */
+    public void refreshCurrentTask()
+    {
+        String taskName = taskTracker.getCurrentTaskName();
+        boolean hasTask = taskName != null && !taskName.isEmpty();
+        currentTaskLabel.setText(hasTask ? taskName : "");
+        currentTaskPanel.setVisible(hasTask);
+        revalidate();
+        repaint();
+    }
+
+    /**
+     * Shows a non-modal reminder popup for the given task if it has required
+     * items or custom notes saved. Does nothing if neither is present.
+     * Must be called on the EDT.
+     */
+    public void showTaskReminderIfNeeded(String taskName)
+    {
+        if (taskName == null || taskName.isEmpty())
+        {
+            return;
+        }
+
+        Task task = taskService.get(taskName);
+        if (task == null)
+        {
+            Task[] matches = taskService.searchPartialName(taskName);
+            if (matches.length > 0)
+            {
+                task = matches[0];
+            }
+        }
+        if (task == null)
+        {
+            return;
+        }
+
+        boolean hasItems = task.itemsRequired != null
+                && Arrays.stream(task.itemsRequired)
+                         .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
+        String notes = notesService.getNotes(task.name);
+        boolean hasNotes = !notes.isEmpty();
+
+        if (!hasItems && !hasNotes)
+        {
+            return;
+        }
+
+        buildAndShowReminderDialog(task, hasItems, notes, hasNotes);
+    }
+
+    private void buildAndShowReminderDialog(Task task, boolean hasItems, String notes, boolean hasNotes)
+    {
+        JDialog dialog = new JDialog();
+        dialog.setTitle(task.name);
+        dialog.setModal(false);
+        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        dialog.setResizable(false);
+
+        JPanel content = new JPanel();
+        content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
+        content.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        content.setBorder(new EmptyBorder(12, 14, 10, 14));
+
+        if (hasItems)
+        {
+            JLabel header = new JLabel("Required Items");
+            header.setForeground(new Color(255, 152, 0));
+            header.setFont(FontManager.getRunescapeBoldFont());
+            header.setAlignmentX(Component.LEFT_ALIGNMENT);
+            content.add(header);
+            content.add(Box.createVerticalStrut(4));
+
+            for (String item : task.itemsRequired)
+            {
+                if (item != null && !item.trim().isEmpty() && !item.equalsIgnoreCase("none"))
+                {
+                    JLabel itemLabel = new JLabel("\u2022  " + item);
+                    itemLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+                    itemLabel.setFont(FontManager.getRunescapeSmallFont());
+                    itemLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+                    content.add(itemLabel);
+                }
+            }
+        }
+
+        if (hasItems && hasNotes)
+        {
+            content.add(Box.createVerticalStrut(10));
+            JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL);
+            sep.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+            sep.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
+            sep.setAlignmentX(Component.LEFT_ALIGNMENT);
+            content.add(sep);
+            content.add(Box.createVerticalStrut(10));
+        }
+
+        if (hasNotes)
+        {
+            JLabel header = new JLabel("Your Notes");
+            header.setForeground(new Color(255, 152, 0));
+            header.setFont(FontManager.getRunescapeBoldFont());
+            header.setAlignmentX(Component.LEFT_ALIGNMENT);
+            content.add(header);
+            content.add(Box.createVerticalStrut(4));
+
+            JTextArea notesArea = new JTextArea(notes);
+            notesArea.setEditable(false);
+            notesArea.setWrapStyleWord(true);
+            notesArea.setLineWrap(true);
+            notesArea.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+            notesArea.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+            notesArea.setFont(FontManager.getRunescapeSmallFont());
+            notesArea.setBorder(new EmptyBorder(4, 6, 4, 6));
+            notesArea.setAlignmentX(Component.LEFT_ALIGNMENT);
+            notesArea.setPreferredSize(new Dimension(280, 80));
+            notesArea.setMaximumSize(new Dimension(280, Integer.MAX_VALUE));
+            content.add(notesArea);
+        }
+
+        content.add(Box.createVerticalStrut(12));
+
+        JButton okButton = new JButton("OK");
+        okButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        okButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        okButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        okButton.setFocusPainted(false);
+        okButton.addActionListener(e -> dialog.dispose());
+        content.add(okButton);
+
+        dialog.add(content);
+        dialog.pack();
+        dialog.setLocationRelativeTo(null);
+        dialog.setVisible(true);
+    }
+
+    /**
      * Smart navigation based on current slayer task state:
      * 1. No task → navigate to preferred slayer master
      * 2. Has task + favorite set → navigate to favorite location
@@ -153,29 +336,29 @@ public class MainPanel extends PluginPanel
     public void quickNavigate()
     {
         String taskName = taskTracker.getCurrentTaskName();
-        log.info("Quick Nav: currentTaskName='{}'", taskName);
+        log.debug("Quick Nav: currentTaskName='{}'", taskName);
 
         if (taskName == null)
         {
             // No known task — navigate to preferred slayer master
             SlayerMaster master = config.preferredMaster();
             navigationService.navigateTo(master.getWorldPoint());
-            log.info("Quick Nav: no task, navigating to {}", master.getDisplayName());
+            log.debug("Quick Nav: no task, navigating to {}", master.getDisplayName());
             return;
         }
 
         // Find the matching task in our data
         Task task = taskService.get(taskName);
-        log.info("Quick Nav: exact match for '{}' = {}", taskName, task != null ? task.name : "null");
+        log.debug("Quick Nav: exact match for '{}' = {}", taskName, task != null ? task.name : "null");
         if (task == null)
         {
             // Try partial match as fallback
             Task[] matches = taskService.searchPartialName(taskName);
-            log.info("Quick Nav: partial matches for '{}' = {}", taskName, matches.length);
+            log.debug("Quick Nav: partial matches for '{}' = {}", taskName, matches.length);
             if (matches.length > 0)
             {
                 task = matches[0];
-                log.info("Quick Nav: using partial match '{}'", task.name);
+                log.debug("Quick Nav: using partial match '{}'", task.name);
             }
         }
 
@@ -187,15 +370,15 @@ public class MainPanel extends PluginPanel
 
         // Check for a favorite location
         String favLocation = favoriteService.getFavorite(task.name);
-        log.info("Quick Nav: favorite for '{}' = '{}'", task.name, favLocation);
+        log.debug("Quick Nav: favorite for '{}' = '{}'", task.name, favLocation);
         if (favLocation != null)
         {
             WorldPoint coords = locationCoordinateService.getCoordinates(favLocation);
-            log.info("Quick Nav: coords for '{}' = {}", favLocation, coords);
+            log.debug("Quick Nav: coords for '{}' = {}", favLocation, coords);
             if (coords != null)
             {
                 navigationService.navigateTo(coords);
-                log.info("Quick Nav: navigating to favorite '{}' for {}", favLocation, task.name);
+                log.debug("Quick Nav: navigating to favorite '{}' for {}", favLocation, task.name);
                 return;
             }
             else
@@ -208,7 +391,7 @@ public class MainPanel extends PluginPanel
         taskSelectedPanel.update(task);
         showPanel(Panel.TASK_SELECTED);
         SwingUtilities.invokeLater(() -> taskSelectedPanel.selectLocationsTab());
-        log.info("Quick Nav: showing locations for {} (no favorite set)", task.name);
+        log.debug("Quick Nav: showing locations for {} (no favorite set)", task.name);
     }
 
     private void onSearchBarChanged(String searchTerm)
