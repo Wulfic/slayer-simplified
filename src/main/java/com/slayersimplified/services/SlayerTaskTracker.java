@@ -60,12 +60,21 @@ public class SlayerTaskTracker
     private final SlayerSimplifiedConfig config;
     private final ConfigManager configManager;
 
+    /** The kill count from the most recently parsed task assignment. */
+    private int lastAssignedCount = 0;
+
     @Inject
     public SlayerTaskTracker(Client client, SlayerSimplifiedConfig config, ConfigManager configManager)
     {
         this.client = client;
         this.config = config;
         this.configManager = configManager;
+    }
+
+    /** Returns the kill count from the last parsed task assignment message. */
+    public int getLastAssignedCount()
+    {
+        return lastAssignedCount;
     }
 
     /**
@@ -126,7 +135,15 @@ public class SlayerTaskTracker
         {
             String creatureName = normalizeCreatureName(newTask.group(2));
             config.setCurrentTaskName(creatureName);
-            log.debug("Detected new slayer task: {}", creatureName);
+            try
+            {
+                lastAssignedCount = Integer.parseInt(newTask.group(1));
+            }
+            catch (NumberFormatException ignored)
+            {
+                lastAssignedCount = 0;
+            }
+            log.debug("Detected new slayer task: {} x{}", creatureName, lastAssignedCount);
             return ParseResult.NEW_TASK;
         }
 

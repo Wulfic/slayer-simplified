@@ -26,57 +26,92 @@ public interface SlayerSimplifiedConfig extends Config
             keyName = "preferredMaster",
             name = "Preferred Slayer Master",
             description = "The slayer master to navigate to when you have no active task",
-            position = 1
+            position = 1,
+            hidden = true
     )
     default SlayerMaster preferredMaster()
     {
         return SlayerMaster.DURADEL;
     }
 
+    @ConfigItem(keyName = "preferredMaster", name = "", description = "")
+    void setPreferredMaster(SlayerMaster master);
+
     @ConfigItem(
             keyName = "highlightTarget",
             name = "Highlight Target",
             description = "Draw an outline around your current slayer task NPCs",
-            position = 2
+            position = 2,
+            hidden = true
     )
     default boolean highlightTarget()
     {
         return true;
     }
 
+    @ConfigItem(keyName = "highlightTarget", name = "", description = "")
+    void setHighlightTarget(boolean value);
+
     @Alpha
     @ConfigItem(
             keyName = "highlightColor",
             name = "Highlight Color",
             description = "Color of the target NPC outline",
-            position = 3
+            position = 3,
+            hidden = true
     )
     default Color highlightColor()
     {
         return Color.RED;
     }
 
+    @ConfigItem(keyName = "highlightColor", name = "", description = "")
+    void setHighlightColor(Color color);
+
     @ConfigItem(
             keyName = "autoNavigate",
             name = "Auto Navigate (!task)",
             description = "Automatically navigate to your slayer task when typing !task or receiving a new assignment",
-            position = 4
+            position = 4,
+            hidden = true
     )
     default boolean autoNavigate()
     {
         return true;
     }
 
+    @ConfigItem(keyName = "autoNavigate", name = "", description = "")
+    void setAutoNavigate(boolean value);
+
     @ConfigItem(
             keyName = "debugCoordinates",
             name = "Debug Coordinates",
             description = "Show an overlay with your current WorldPoint coordinates. Useful for mapping new locations.",
-            position = 5
+            position = 5,
+            hidden = true
     )
     default boolean debugCoordinates()
     {
         return false;
     }
+
+    @ConfigItem(keyName = "debugCoordinates", name = "", description = "")
+    void setDebugCoordinates(boolean value);
+
+    @ConfigItem(
+            keyName = "remindSlayerCape",
+            name = "Remind: Slayer Cape (99)",
+            description = "Show a reminder to bring your Slayer cape when you get a new task (only when you have 99 Slayer)",
+            position = 6,
+            hidden = true
+    )
+    default boolean remindSlayerCape()
+    {
+        return false;
+    }
+
+    @ConfigItem(keyName = "remindSlayerCape", name = "", description = "")
+    void setRemindSlayerCape(boolean value);
 
     // Hidden config keys used to persist internal state across sessions
 

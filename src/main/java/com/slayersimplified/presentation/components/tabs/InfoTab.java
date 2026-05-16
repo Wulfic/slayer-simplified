@@ -86,8 +86,8 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
         JPanel combatBody = addCollapsibleSection(contentPanel, "Combat");
         if (data.combat != null && data.combat.length == 2)
         {
-            Object[] attackStyles = data.combat[0];
-            Object[] attributes = data.combat[1];
+            Object[] attackStyles = data.combat[0] != null ? data.combat[0] : new Object[0];
+            Object[] attributes = data.combat[1] != null ? data.combat[1] : new Object[0];
 
             if (attackStyles.length > 0)
             {

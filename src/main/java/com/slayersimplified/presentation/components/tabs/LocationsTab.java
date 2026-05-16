@@ -103,6 +103,10 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
 
         for (String location : locations)
         {
+            if (location == null || location.isEmpty())
+            {
+                continue;
+            }
             contentPanel.add(createLocationRow(location));
         }
 

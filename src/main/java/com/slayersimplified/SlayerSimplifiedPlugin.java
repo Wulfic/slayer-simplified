@@ -14,15 +14,20 @@ package com.slayersimplified;
 import com.google.inject.Binder;
 import com.google.inject.Provides;
 import com.slayersimplified.domain.Icon;
+import com.slayersimplified.domain.SlayerMaster;
+import com.slayersimplified.domain.TaskHistoryEntry;
 import com.slayersimplified.modules.TaskServiceModule;
 import com.slayersimplified.presentation.CoordinatesOverlay;
 import com.slayersimplified.presentation.panels.MainPanel;
 import com.slayersimplified.presentation.SlayerTargetOverlay;
+import com.slayersimplified.services.SlayerHistoryService;
 import com.slayersimplified.services.SlayerTaskTracker;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
+import net.runelite.api.Skill;
 import net.runelite.api.events.ChatMessage;
+import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -71,10 +76,19 @@ public class SlayerSimplifiedPlugin extends Plugin
     @Inject
     private CoordinatesOverlay coordinatesOverlay;
 
+    @Inject
+    private SlayerHistoryService historyService;
+
+    @Inject
+    private ConfigManager configManager;
+
     private NavigationButton navButton;
 
     /** Set when the player types !task; cleared when the game response triggers navigation. */
     private volatile boolean pendingTaskNavigation = false;
+
+    /** Name of the most recently interacted slayer master NPC, for history attribution. */
+    private String lastInteractedMasterName = "";
 
     @Override
     public void configure(Binder binder)
@@ -93,7 +107,7 @@ public class SlayerSimplifiedPlugin extends Plugin
     {
         navButton = NavigationButton.builder()
                 .tooltip("Slayer Simplified")
-                .icon(Icon.SLAYER_SKILL.getImage())
+                .icon(Icon.PLUGIN_ICON.getImage())
                 .priority(10)
                 .panel(mainPanel)
                 .build();
@@ -111,6 +125,7 @@ public class SlayerSimplifiedPlugin extends Plugin
         clientToolbar.removeNavigation(navButton);
         overlayManager.remove(targetOverlay);
         overlayManager.remove(coordinatesOverlay);
+        historyService.shutDown();
         mainPanel.shutDown();
         log.info("Slayer Simplified stopped");
     }
@@ -132,10 +147,19 @@ public class SlayerSimplifiedPlugin extends Plugin
             {
                 pendingTaskNavigation = false;
                 final String newTask = taskTracker.getCurrentTaskName();
+                final int count = taskTracker.getLastAssignedCount();
+                final int taskNumber = readTaskStreak();
+                final String master = lastInteractedMasterName;
+                final boolean remindCape = config.remindSlayerCape()
+                        && client.getRealSkillLevel(Skill.SLAYER) == 99;
+
+                historyService.addEntry(new TaskHistoryEntry(
+                        newTask, count, master, System.currentTimeMillis(), taskNumber));
+
                 SwingUtilities.invokeLater(() ->
                 {
                     mainPanel.refreshCurrentTask();
-                    mainPanel.showTaskReminderIfNeeded(newTask);
+                    mainPanel.showTaskReminderIfNeeded(newTask, remindCape);
                     if (config.autoNavigate())
                     {
                         mainPanel.quickNavigate();
@@ -206,5 +230,57 @@ public class SlayerSimplifiedPlugin extends Plugin
                 }
             }
         }
+    }
+
+    /**
+     * Detects when the player clicks on a known slayer master NPC so we can
+     * attribute the next task assignment to the correct master.
+     */
+    @Subscribe
+    public void onMenuOptionClicked(MenuOptionClicked event)
+    {
+        String option = event.getMenuOption();
+        if (!"Talk-to".equalsIgnoreCase(option) && !"Assignment".equalsIgnoreCase(option))
+        {
+            return;
+        }
+        String target = Text.removeTags(event.getMenuTarget());
+        for (SlayerMaster master : SlayerMaster.values())
+        {
+            String displayName = master.getDisplayName();
+            if (displayName.equals("Nieve/Steve"))
+            {
+                if (target.equals("Nieve") || target.equals("Steve"))
+                {
+                    lastInteractedMasterName = displayName;
+                    return;
+                }
+            }
+            else if (target.equalsIgnoreCase(displayName))
+            {
+                lastInteractedMasterName = displayName;
+                return;
+            }
+        }
+    }
+
+    /**
+     * Reads the player's slayer task streak from RuneLite's built-in Slayer
+     * plugin RSProfile config. Returns 0 if unavailable.
+     */
+    private int readTaskStreak()
+    {
+        String streakStr = configManager.getRSProfileConfiguration("slayer", "streak");
+        if (streakStr != null)
+        {
+            try
+            {
+                return Integer.parseInt(streakStr.trim());
+            }
+            catch (NumberFormatException ignored)
+            {
+            }
+        }
+        return 0;
     }
 }

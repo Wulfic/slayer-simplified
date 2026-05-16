@@ -23,6 +23,7 @@ public enum Icon
     COMBAT("/images/combat.png"),
     COMPASS("/images/compass.png"),
     INVENTORY("/images/inventory.png"),
+    PLUGIN_ICON("/images/plugin_icon.png"),
     SLAYER_SKILL("/images/slayer_icon.png"),
     WIKI("/images/wiki.png"),
     LOOT("/images/loot.png"),

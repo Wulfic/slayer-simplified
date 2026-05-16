@@ -12,5 +12,7 @@ package com.slayersimplified.domain;
 public enum Panel
 {
     TASK_SEARCH,
-    TASK_SELECTED
+    TASK_SELECTED,
+    SETTINGS,
+    HISTORY
 }

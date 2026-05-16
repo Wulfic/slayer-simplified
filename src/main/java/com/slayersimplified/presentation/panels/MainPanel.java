@@ -71,7 +71,8 @@ public class MainPanel extends PluginPanel
             FavoriteLocationService favoriteService,
             SlayerSimplifiedConfig config,
             OkHttpClient okHttpClient,
-            MonsterNotesService notesService)
+            MonsterNotesService notesService,
+            SlayerHistoryService historyService)
     {
         super(false);
         this.taskService = taskService;
@@ -114,14 +115,34 @@ public class MainPanel extends PluginPanel
         cancelNavButton.setToolTipText("Clear the current navigation waypoint");
         cancelNavButton.addActionListener(e -> navigationService.clearNavigation());
 
+        // Gear icon button — opens inline settings
+        JButton gearButton = new JButton("\u2699");
+        gearButton.setFont(gearButton.getFont().deriveFont(Font.BOLD, 14f));
+        gearButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        gearButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        gearButton.setFocusPainted(false);
+        gearButton.setPreferredSize(new Dimension(28, 0));
+        gearButton.setMinimumSize(new Dimension(28, 0));
+        gearButton.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
+                BorderFactory.createEmptyBorder(5, 2, 5, 2)
+        ));
+        gearButton.setToolTipText("Plugin settings");
+
+        JPanel quickNavRow = new JPanel(new BorderLayout(2, 0));
+        quickNavRow.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        quickNavRow.add(quickNavButton, BorderLayout.CENTER);
+        quickNavRow.add(gearButton, BorderLayout.EAST);
+
         JPanel topButtonPanel = new JPanel(new GridLayout(2, 1, 0, 2));
         topButtonPanel.setBackground(ColorScheme.DARK_GRAY_COLOR);
-        topButtonPanel.add(quickNavButton);
+        topButtonPanel.add(quickNavRow);
         topButtonPanel.add(cancelNavButton);
 
         // Current-task banner: shows the active monster name with a Nav button
         currentTaskLabel.setFont(FontManager.getRunescapeSmallFont());
-        currentTaskLabel.setForeground(new Color(255, 152, 0));
+        currentTaskLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        currentTaskLabel.setText(config.preferredMaster().getDisplayName());
         currentTaskLabel.setToolTipText("Your current slayer task");
 
         currentTaskNavButton.setFont(FontManager.getRunescapeSmallFont());
@@ -141,7 +162,6 @@ public class MainPanel extends PluginPanel
                 BorderFactory.createEmptyBorder(4, 8, 4, 4)));
         currentTaskPanel.add(currentTaskLabel, BorderLayout.CENTER);
         currentTaskPanel.add(currentTaskNavButton, BorderLayout.EAST);
-        currentTaskPanel.setVisible(false);
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -149,15 +169,46 @@ public class MainPanel extends PluginPanel
         gbc.gridx = 0;
         JPanel northWrapper = new JPanel(new GridBagLayout());
         northWrapper.setBackground(ColorScheme.DARK_GRAY_COLOR);
+
+        // History button — top row, full width
+        JButton historyButton = new JButton("Slayer History");
+        historyButton.setFont(FontManager.getRunescapeSmallFont());
+        historyButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        historyButton.setForeground(new Color(255, 152, 0));
+        historyButton.setFocusPainted(false);
+        historyButton.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
+                BorderFactory.createEmptyBorder(5, 0, 5, 0)));
+        historyButton.setToolTipText("View your slayer task history");
+
         gbc.gridy = 0;
-        northWrapper.add(topButtonPanel, gbc);
+        northWrapper.add(historyButton, gbc);
         gbc.gridy = 1;
+        northWrapper.add(topButtonPanel, gbc);
+        gbc.gridy = 2;
         northWrapper.add(currentTaskPanel, gbc);
 
         setLayout(new BorderLayout(0, 0));
 
+        SettingsPanel settingsPanel = new SettingsPanel(config, () -> showPanel(Panel.TASK_SEARCH));
+        gearButton.addActionListener(e ->
+        {
+            settingsPanel.refresh();
+            showPanel(Panel.SETTINGS);
+        });
+
+        SlayerHistoryPanel historyPanel = new SlayerHistoryPanel(
+                historyService, taskService, () -> showPanel(Panel.TASK_SEARCH));
+        historyButton.addActionListener(e ->
+        {
+            historyPanel.refresh();
+            showPanel(Panel.HISTORY);
+        });
+
         panels.put(Panel.TASK_SEARCH, taskSearchPanel);
         panels.put(Panel.TASK_SELECTED, taskSelectedPanel);
+        panels.put(Panel.SETTINGS, settingsPanel);
+        panels.put(Panel.HISTORY, historyPanel);
 
         setBackground(ColorScheme.DARK_GRAY_COLOR);
         currentPanelContainer.setBackground(ColorScheme.DARK_GRAY_COLOR);
@@ -194,18 +245,30 @@ public class MainPanel extends PluginPanel
     {
         String taskName = taskTracker.getCurrentTaskName();
         boolean hasTask = taskName != null && !taskName.isEmpty();
-        currentTaskLabel.setText(hasTask ? taskName : "");
-        currentTaskPanel.setVisible(hasTask);
+        if (hasTask)
+        {
+            currentTaskLabel.setText(taskName);
+            currentTaskLabel.setForeground(new Color(255, 152, 0));
+            currentTaskNavButton.setToolTipText("Navigate to current slayer task");
+        }
+        else
+        {
+            String masterName = config.preferredMaster().getDisplayName();
+            currentTaskLabel.setText(masterName);
+            currentTaskLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+            currentTaskNavButton.setToolTipText("Navigate to " + masterName);
+        }
+        currentTaskPanel.setVisible(true);
         revalidate();
         repaint();
     }
 
     /**
      * Shows a non-modal reminder popup for the given task if it has required
-     * items or custom notes saved. Does nothing if neither is present.
+     * items, custom notes, or the slayer cape flag is set.
      * Must be called on the EDT.
      */
-    public void showTaskReminderIfNeeded(String taskName)
+    public void showTaskReminderIfNeeded(String taskName, boolean remindCape)
     {
         if (taskName == null || taskName.isEmpty())
         {
@@ -221,29 +284,28 @@ public class MainPanel extends PluginPanel
                 task = matches[0];
             }
         }
-        if (task == null)
-        {
-            return;
-        }
 
-        boolean hasItems = task.itemsRequired != null
+        boolean hasItems = task != null && task.itemsRequired != null
                 && Arrays.stream(task.itemsRequired)
                          .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
-        String notes = notesService.getNotes(task.name);
+        String notes = task != null ? notesService.getNotes(task.name) : "";
         boolean hasNotes = !notes.isEmpty();
 
-        if (!hasItems && !hasNotes)
+        if (!hasItems && !hasNotes && !remindCape)
         {
             return;
         }
 
-        buildAndShowReminderDialog(task, hasItems, notes, hasNotes);
+        buildAndShowReminderDialog(task, taskName, hasItems, notes, hasNotes, remindCape);
     }
 
-    private void buildAndShowReminderDialog(Task task, boolean hasItems, String notes, boolean hasNotes)
+    private void buildAndShowReminderDialog(
+            Task task, String rawTaskName,
+            boolean hasItems, String notes, boolean hasNotes, boolean remindCape)
     {
+        String dialogTitle = task != null ? task.name : rawTaskName;
         JDialog dialog = new JDialog();
-        dialog.setTitle(task.name);
+        dialog.setTitle(dialogTitle);
         dialog.setModal(false);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setResizable(false);
@@ -252,6 +314,34 @@ public class MainPanel extends PluginPanel
         content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
         content.setBackground(ColorScheme.DARK_GRAY_COLOR);
         content.setBorder(new EmptyBorder(12, 14, 10, 14));
+
+        // Slayer cape reminder (shown first when enabled)
+        if (remindCape)
+        {
+            JLabel capeHeader = new JLabel("Slayer Cape");
+            capeHeader.setForeground(new Color(255, 152, 0));
+            capeHeader.setFont(FontManager.getRunescapeBoldFont());
+            capeHeader.setAlignmentX(Component.LEFT_ALIGNMENT);
+            content.add(capeHeader);
+            content.add(Box.createVerticalStrut(4));
+
+            JLabel capeMsg = new JLabel("•  You have 99 Slayer — bring your Slayer cape!");
+            capeMsg.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+            capeMsg.setFont(FontManager.getRunescapeSmallFont());
+            capeMsg.setAlignmentX(Component.LEFT_ALIGNMENT);
+            content.add(capeMsg);
+
+            if (hasItems || hasNotes)
+            {
+                content.add(Box.createVerticalStrut(10));
+                JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL);
+                sep.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+                sep.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
+                sep.setAlignmentX(Component.LEFT_ALIGNMENT);
+                content.add(sep);
+                content.add(Box.createVerticalStrut(10));
+            }
+        }
 
         if (hasItems)
         {
