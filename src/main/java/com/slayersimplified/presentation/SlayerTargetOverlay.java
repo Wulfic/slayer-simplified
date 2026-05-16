@@ -80,7 +80,7 @@ public class SlayerTargetOverlay extends Overlay
         rebuildTargetNames(currentTask);
 
         // Scan existing NPCs once so we highlight any already in the scene.
-        for (NPC npc : client.getNpcs())
+        for (NPC npc : client.getTopLevelWorldView().npcs())
         {
             if (npc.getName() != null && targetNames.contains(npc.getName().toLowerCase()))
             {

@@ -142,7 +142,19 @@ public class TaskServiceImpl implements TaskService
         String normalizedName = name.replace(' ', '_').toLowerCase();
         String path = baseImagesPath + normalizedName + ".png";
 
-        BufferedImage image = ImageUtil.loadImageResource(getClass(), path);
-        return ImageUtil.resizeImage(image, image.getWidth() / 2, image.getHeight() / 2);
+        try
+        {
+            BufferedImage image = ImageUtil.loadImageResource(getClass(), path);
+            if (image == null)
+            {
+                return null;
+            }
+            return ImageUtil.resizeImage(image, image.getWidth() / 2, image.getHeight() / 2);
+        }
+        catch (Exception e)
+        {
+            log.debug("No image resource for task '{}' at {}", name, path);
+            return null;
+        }
     }
 }

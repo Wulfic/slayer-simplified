@@ -1,58 +1,75 @@
 # Slayer Simplified
 
-A RuneLite plugin that combines a slayer task assistant with one-click navigation via the [Shortest Path] plugin. Browse monsters, view drop tables and combat stats from the OSRS Wiki, manage favorite locations, take personal notes, and navigate to any task location — all from a single panel. When you type !task in-game, the plugin automatically detects your current slayer assignment and provides a quick Nav button to your task location. If no task is active, it will navigate to your slayer master instead. 
+A RuneLite plugin that makes slayer less painful. It keeps track of your current task, lets you browse monsters and their drop tables, and hooks into the [Shortest Path](https://github.com/Skretzo/shortest-path) plugin so you can navigate to any location with one click.
+
+> **Shortest Path is required** for the navigation buttons to work. If you don't have it installed, everything else still works fine.
+
+---
+
+## What it does
+
+When you get assigned a task, the plugin picks it up from the chat and shows a small banner at the top of the panel with a **Nav** button. Hit that and Shortest Path will draw a route to the monster's location automatically. If you haven't started a task yet, the same button routes you to your preferred slayer master instead.
+
+Typing `!task` in public chat also triggers the same navigation — handy if you've logged back in and want to get back to your task without clicking through menus.
+
+---
 
 ## Features
 
-### Task Browser & Search
-- Searchable list of 100+ slayer monsters with icons
-- Select a monster to view its locations, loot, combat info, and more
+**Task search**
+Searchable list of 100+ monsters with icons. Click any monster to open its detail view with tabs for locations, loot, info, and notes.
 
-### Target Highlighting
-- Highlights the current task monster for easy identification
-- Customizable highlight color and style in settings
+**Locations tab**
+Every location has a Nav button and a favorite star (★). Your favorite is pinned to the top and remembered between sessions. There are 194 mapped locations — dungeons use the overworld entrance so Shortest Path handles the routing underground.
 
-### Navigation
-- One-click **Nav** buttons on every mapped location to draw a path via Shortest Path's PluginMessage API
-- 194 location-to-coordinate mappings (dungeons use overworld entrance coords so Shortest Path handles routing)
-- Navigate to any of the 8 slayer masters (Turael, Mazchna, Vannaka, Chaeldar, Konar, Nieve, Duradel, Krystilia)
+**Loot tab**
+Pulls the drop table from the OSRS Wiki when you open the tab. Shows item name, quantity, rarity (color-coded), and GE price. Cached per monster so it's not fetching every time you switch back.
 
-### Active Task Tracking
-- Automatically detects your current slayer task from in-game chat messages
-- Recognizes new assignments, ongoing tasks, completions, and "no task" states
-- Quick Navigate to your active task's location
+**Info tab**
+Shows required items, slayer master assignments, and combat stats scraped from the Wiki — combat level, HP, max hit, attack style, elemental weakness, and immunities. Loads async in the background so the tab is instant to open.
 
-### Locations Tab
-- Each location displayed as a row with a favorite toggle (★/☆) and Nav button
-- Favorite locations are persisted and sorted to the top
+**Notes tab**
+Free-text notes per monster. Auto-saved as you type, stored in RuneLite's config so they persist across sessions.
 
-### Loot Tab (OSRS Wiki Scraper)
-- Scrapes drop tables directly from the OSRS Wiki
-- Displays collapsible sections with item name, quantity, rarity (color-coded), and price
-- Results cached per monster to avoid redundant fetches
+**NPC highlighting**
+Draws a colored outline on task NPCs in the scene. Updated from spawn/despawn events so there's no per-frame scan. Color is configurable.
 
-### Info Tab
-- Combined view of items required, combat info (from task data), wiki combat stats, and slayer master assignments
-- Wiki stats loaded asynchronously: combat level, HP, max hit, attack style, elemental weakness, immunities
+**Task history**
+Logs every task you complete — monster name, kill count, which master assigned it, task number in your streak, and the date. Viewable from the History button in the panel.
 
-### Notes Tab
-- Editable per-monster notes saved automatically
-- Persisted via RuneLite's ConfigManager
+**Kill counter**
+Tracks how many kills you've done on the current task. Shown in the task detail header.
 
-## Requirements
-- [Shortest Path](https://github.com/Skretzo/shortest-path) plugin installed in RuneLite
+**Slayer cape reminder**
+Optional setting — shows a reminder when you get a new task if you have 99 Slayer but didn't bring your cape. Off by default.
+
+**Inline settings**
+Gear icon in the panel header opens an inline settings view. No need to go through RuneLite's config panel. Covers master preference, highlight toggle and color, auto-navigate, and the cape reminder.
+
+---
+
+## Navigation masters
+
+All 8 masters are supported: Turael, Mazchna, Vannaka, Chaeldar, Konar, Nieve / Steve, Duradel, and Krystilia.
+
+---
 
 ## Building
+
 ```
 ./gradlew build
 ./gradlew run
 ```
 
+---
+
 ## Credits
-Built on top of these excellent plugins:
-- [Slayer Assistant](https://github.com/LeeOkeefe/slayer-assistant-plugin) by LeeOKeefe — task data and original UI foundation
+
+Built on top of some great existing work:
+- [Slayer Assistant](https://github.com/LeeOkeefe/slayer-assistant-plugin) by LeeOKeefe — original task data and UI foundation
 - [Loot Lookup](https://github.com/donth77/loot-lookup-plugin) by donth77 — OSRS Wiki drop table scraping
-- [Shortest Path](https://github.com/Skretzo/shortest-path) by Skretzo — pathfinding engine and PluginMessage API
+- [Shortest Path](https://github.com/Skretzo/shortest-path) by Skretzo — pathfinding and PluginMessage API
 
 ## License
+
 BSD 2-Clause — see [LICENSE](LICENSE) for details.

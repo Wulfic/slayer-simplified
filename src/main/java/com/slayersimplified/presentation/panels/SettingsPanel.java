@@ -143,11 +143,6 @@ public class SettingsPanel extends JPanel
         add(doneButton);
     }
 
-    private JPanel makeRow(String labelText, JComponent control)
-    {
-        return makeRow(labelText, control, null);
-    }
-
     private JPanel makeRow(String labelText, JComponent control, String tooltip)
     {
         JPanel row = new JPanel(new BorderLayout(8, 0));

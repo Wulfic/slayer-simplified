@@ -13,7 +13,7 @@ import com.slayersimplified.SlayerSimplifiedConfig;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
-import net.runelite.api.VarPlayer;
+import net.runelite.api.gameval.VarPlayerID;
 import net.runelite.client.config.ConfigManager;
 
 import javax.inject.Inject;
@@ -89,7 +89,7 @@ public class SlayerTaskTracker
         {
             return false;
         }
-        return client.getVarpValue(VarPlayer.SLAYER_TASK_SIZE) > 0;
+        return client.getVarpValue(VarPlayerID.SLAYER_COUNT) > 0;
     }
 
     /**

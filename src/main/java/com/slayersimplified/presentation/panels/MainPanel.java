@@ -46,7 +46,6 @@ public class MainPanel extends PluginPanel
     private final SlayerTaskTracker taskTracker;
     private final FavoriteLocationService favoriteService;
     private final SlayerSimplifiedConfig config;
-    private final MonsterNotesService notesService;
 
     private final TaskSearchPanel taskSearchPanel;
     private final TaskSelectedPanel taskSelectedPanel;
@@ -82,7 +81,6 @@ public class MainPanel extends PluginPanel
         this.taskTracker = taskTracker;
         this.favoriteService = favoriteService;
         this.config = config;
-        this.notesService = notesService;
         this.configManager = configManager;
 
         this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onTaskSelected);
