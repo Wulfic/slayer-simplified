@@ -61,6 +61,10 @@ public class MainPanel extends PluginPanel
     private final JLabel currentTaskLabel = new JLabel();
     private final JButton currentTaskNavButton = new JButton("Nav");
 
+    /** Persistent non-modal window showing the current task's notes and required items. */
+    private JDialog reminderWindow;
+    private JPanel reminderContent;
+
     @Inject
     public MainPanel(
             TaskService taskService,
@@ -85,7 +89,7 @@ public class MainPanel extends PluginPanel
         this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onTaskSelected);
         this.taskSelectedPanel = new TaskSelectedPanel(
                 this::onTaskClosed, navigationService, locationCoordinateService, favoriteService,
-                okHttpClient, notesService);
+                okHttpClient, notesService, this::refreshTaskReminder);
 
         Task[] orderedTasks = taskService.getAll(Comparator.comparing(t -> t.name));
         taskSearchPanel.updateTaskList(orderedTasks);
@@ -266,6 +270,12 @@ public class MainPanel extends PluginPanel
         navigationService.clearNavigation();
         taskSearchPanel.shutDown();
         taskSelectedPanel.shutDown();
+        if (reminderWindow != null)
+        {
+            reminderWindow.dispose();
+            reminderWindow = null;
+            reminderContent = null;
+        }
     }
 
     /**
@@ -294,51 +304,24 @@ public class MainPanel extends PluginPanel
         currentTaskPanel.setVisible(true);
         revalidate();
         repaint();
+        refreshTaskReminder();
     }
 
     /**
-     * Shows a non-modal reminder popup for the given task if it has required
-     * items, custom notes, or the slayer cape flag is set.
+     * Shows a one-time popup if the Slayer cape reminder is enabled (99 Slayer).
+     * Notes and required items are displayed in the persistent live window
+     * managed by {@link #refreshTaskReminder()}.
      * Must be called on the EDT.
      */
     public void showTaskReminderIfNeeded(String taskName, boolean remindCape)
     {
-        if (taskName == null || taskName.isEmpty())
+        if (!remindCape)
         {
             return;
         }
 
-        Task task = taskService.get(taskName);
-        if (task == null)
-        {
-            Task[] matches = taskService.searchPartialName(taskName);
-            if (matches.length > 0)
-            {
-                task = matches[0];
-            }
-        }
-
-        boolean hasItems = task != null && task.itemsRequired != null
-                && Arrays.stream(task.itemsRequired)
-                         .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
-        String notes = task != null ? notesService.getNotes(task.name) : "";
-        boolean hasNotes = !notes.isEmpty();
-
-        if (!hasItems && !hasNotes && !remindCape)
-        {
-            return;
-        }
-
-        buildAndShowReminderDialog(task, taskName, hasItems, notes, hasNotes, remindCape);
-    }
-
-    private void buildAndShowReminderDialog(
-            Task task, String rawTaskName,
-            boolean hasItems, String notes, boolean hasNotes, boolean remindCape)
-    {
-        String dialogTitle = task != null ? task.name : rawTaskName;
         JDialog dialog = new JDialog();
-        dialog.setTitle(dialogTitle);
+        dialog.setTitle(taskName + " \u2014 Reminder");
         dialog.setModal(false);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setResizable(false);
@@ -348,90 +331,18 @@ public class MainPanel extends PluginPanel
         content.setBackground(ColorScheme.DARK_GRAY_COLOR);
         content.setBorder(new EmptyBorder(12, 14, 10, 14));
 
-        // Slayer cape reminder (shown first when enabled)
-        if (remindCape)
-        {
-            JLabel capeHeader = new JLabel("Slayer Cape");
-            capeHeader.setForeground(new Color(255, 152, 0));
-            capeHeader.setFont(FontManager.getRunescapeBoldFont());
-            capeHeader.setAlignmentX(Component.LEFT_ALIGNMENT);
-            content.add(capeHeader);
-            content.add(Box.createVerticalStrut(4));
+        JLabel capeHeader = new JLabel("Slayer Cape");
+        capeHeader.setForeground(new Color(255, 152, 0));
+        capeHeader.setFont(FontManager.getRunescapeBoldFont());
+        capeHeader.setAlignmentX(Component.LEFT_ALIGNMENT);
+        content.add(capeHeader);
+        content.add(Box.createVerticalStrut(4));
 
-            JLabel capeMsg = new JLabel("•  You have 99 Slayer — bring your Slayer cape!");
-            capeMsg.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-            capeMsg.setFont(FontManager.getRunescapeSmallFont());
-            capeMsg.setAlignmentX(Component.LEFT_ALIGNMENT);
-            content.add(capeMsg);
-
-            if (hasItems || hasNotes)
-            {
-                content.add(Box.createVerticalStrut(10));
-                JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL);
-                sep.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
-                sep.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
-                sep.setAlignmentX(Component.LEFT_ALIGNMENT);
-                content.add(sep);
-                content.add(Box.createVerticalStrut(10));
-            }
-        }
-
-        if (hasItems)
-        {
-            JLabel header = new JLabel("Required Items");
-            header.setForeground(new Color(255, 152, 0));
-            header.setFont(FontManager.getRunescapeBoldFont());
-            header.setAlignmentX(Component.LEFT_ALIGNMENT);
-            content.add(header);
-            content.add(Box.createVerticalStrut(4));
-
-            for (String item : task.itemsRequired)
-            {
-                if (item != null && !item.trim().isEmpty() && !item.equalsIgnoreCase("none"))
-                {
-                    JLabel itemLabel = new JLabel("\u2022  " + item);
-                    itemLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-                    itemLabel.setFont(FontManager.getRunescapeSmallFont());
-                    itemLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    content.add(itemLabel);
-                }
-            }
-        }
-
-        if (hasItems && hasNotes)
-        {
-            content.add(Box.createVerticalStrut(10));
-            JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL);
-            sep.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
-            sep.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
-            sep.setAlignmentX(Component.LEFT_ALIGNMENT);
-            content.add(sep);
-            content.add(Box.createVerticalStrut(10));
-        }
-
-        if (hasNotes)
-        {
-            JLabel header = new JLabel("Your Notes");
-            header.setForeground(new Color(255, 152, 0));
-            header.setFont(FontManager.getRunescapeBoldFont());
-            header.setAlignmentX(Component.LEFT_ALIGNMENT);
-            content.add(header);
-            content.add(Box.createVerticalStrut(4));
-
-            JTextArea notesArea = new JTextArea(notes);
-            notesArea.setEditable(false);
-            notesArea.setWrapStyleWord(true);
-            notesArea.setLineWrap(true);
-            notesArea.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-            notesArea.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-            notesArea.setFont(FontManager.getRunescapeSmallFont());
-            notesArea.setBorder(new EmptyBorder(4, 6, 4, 6));
-            notesArea.setAlignmentX(Component.LEFT_ALIGNMENT);
-            notesArea.setPreferredSize(new Dimension(280, 80));
-            notesArea.setMaximumSize(new Dimension(280, Integer.MAX_VALUE));
-            content.add(notesArea);
-        }
-
+        JLabel capeMsg = new JLabel("\u2022  You have 99 Slayer \u2014 bring your Slayer cape!");
+        capeMsg.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        capeMsg.setFont(FontManager.getRunescapeSmallFont());
+        capeMsg.setAlignmentX(Component.LEFT_ALIGNMENT);
+        content.add(capeMsg);
         content.add(Box.createVerticalStrut(12));
 
         JButton okButton = new JButton("OK");
@@ -446,6 +357,143 @@ public class MainPanel extends PluginPanel
         dialog.pack();
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
+    }
+
+    /**
+     * Shows or updates a persistent non-modal window displaying the current
+     * task's required items and personal notes.  Auto-appears when content
+     * exists; auto-hides when there is nothing to show.  Safe to call on
+     * every keystroke — only pack()s on first show to respect user moves.
+     * Must be called on the EDT.
+     */
+    public void refreshTaskReminder()
+    {
+        String taskName = taskTracker.getCurrentTaskName();
+        if (taskName == null || taskName.isEmpty())
+        {
+            if (reminderWindow != null)
+            {
+                reminderWindow.setVisible(false);
+            }
+            return;
+        }
+
+        Task task = taskService.get(taskName);
+        if (task == null)
+        {
+            Task[] matches = taskService.searchPartialName(taskName);
+            if (matches.length > 0)
+            {
+                task = matches[0];
+            }
+        }
+
+        final boolean hasItems = task != null
+                && task.itemsRequired != null
+                && Arrays.stream(task.itemsRequired)
+                         .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
+        final String notes = task != null ? notesService.getNotes(task.name) : "";
+        final boolean hasNotes = !notes.isEmpty();
+
+        if (!hasItems && !hasNotes)
+        {
+            if (reminderWindow != null)
+            {
+                reminderWindow.setVisible(false);
+            }
+            return;
+        }
+
+        final String title = task != null ? task.name : taskName;
+        if (reminderWindow == null)
+        {
+            reminderContent = new JPanel();
+            reminderContent.setLayout(new BoxLayout(reminderContent, BoxLayout.Y_AXIS));
+            reminderContent.setBackground(ColorScheme.DARK_GRAY_COLOR);
+            reminderContent.setBorder(new EmptyBorder(12, 14, 10, 14));
+
+            reminderWindow = new JDialog();
+            reminderWindow.setModal(false);
+            reminderWindow.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
+            reminderWindow.setResizable(true);
+            reminderWindow.add(reminderContent);
+        }
+
+        reminderWindow.setTitle(title);
+        buildReminderContent(task, hasItems, notes, hasNotes);
+
+        if (!reminderWindow.isVisible())
+        {
+            reminderWindow.pack();
+            reminderWindow.setLocationRelativeTo(SwingUtilities.getWindowAncestor(this));
+            reminderWindow.setVisible(true);
+        }
+        else
+        {
+            reminderWindow.revalidate();
+            reminderWindow.repaint();
+        }
+    }
+
+    private void buildReminderContent(Task task, boolean hasItems, String notes, boolean hasNotes)
+    {
+        reminderContent.removeAll();
+
+        if (hasItems)
+        {
+            JLabel header = new JLabel("Required Items");
+            header.setForeground(new Color(255, 152, 0));
+            header.setFont(FontManager.getRunescapeBoldFont());
+            header.setAlignmentX(Component.LEFT_ALIGNMENT);
+            reminderContent.add(header);
+            reminderContent.add(Box.createVerticalStrut(4));
+
+            for (String item : task.itemsRequired)
+            {
+                if (item != null && !item.trim().isEmpty() && !item.equalsIgnoreCase("none"))
+                {
+                    JLabel itemLabel = new JLabel("\u2022  " + item);
+                    itemLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+                    itemLabel.setFont(FontManager.getRunescapeSmallFont());
+                    itemLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+                    reminderContent.add(itemLabel);
+                }
+            }
+        }
+
+        if (hasItems && hasNotes)
+        {
+            reminderContent.add(Box.createVerticalStrut(10));
+            JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL);
+            sep.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+            sep.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
+            sep.setAlignmentX(Component.LEFT_ALIGNMENT);
+            reminderContent.add(sep);
+            reminderContent.add(Box.createVerticalStrut(10));
+        }
+
+        if (hasNotes)
+        {
+            JLabel notesHeader = new JLabel("Your Notes");
+            notesHeader.setForeground(new Color(255, 152, 0));
+            notesHeader.setFont(FontManager.getRunescapeBoldFont());
+            notesHeader.setAlignmentX(Component.LEFT_ALIGNMENT);
+            reminderContent.add(notesHeader);
+            reminderContent.add(Box.createVerticalStrut(4));
+
+            JTextArea notesArea = new JTextArea(notes);
+            notesArea.setEditable(false);
+            notesArea.setWrapStyleWord(true);
+            notesArea.setLineWrap(true);
+            notesArea.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+            notesArea.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+            notesArea.setFont(FontManager.getRunescapeSmallFont());
+            notesArea.setBorder(new EmptyBorder(4, 6, 4, 6));
+            notesArea.setAlignmentX(Component.LEFT_ALIGNMENT);
+            notesArea.setPreferredSize(new Dimension(280, 80));
+            notesArea.setMaximumSize(new Dimension(280, Integer.MAX_VALUE));
+            reminderContent.add(notesArea);
+        }
     }
 
     /**

@@ -26,13 +26,15 @@ import java.awt.*;
 public class NotesTab extends JPanel implements Tab<String>
 {
     private final MonsterNotesService notesService;
+    private final Runnable onNotesChanged;
     private final JTextArea textArea;
     private String currentMonster;
     private boolean suppressSave = false;
 
-    public NotesTab(MonsterNotesService notesService)
+    public NotesTab(MonsterNotesService notesService, Runnable onNotesChanged)
     {
         this.notesService = notesService;
+        this.onNotesChanged = onNotesChanged;
 
         setLayout(new BorderLayout());
         setBackground(ColorScheme.DARKER_GRAY_COLOR);
@@ -116,5 +118,9 @@ public class NotesTab extends JPanel implements Tab<String>
             return;
         }
         notesService.setNotes(currentMonster, textArea.getText());
+        if (onNotesChanged != null)
+        {
+            onNotesChanged.run();
+        }
     }
 }

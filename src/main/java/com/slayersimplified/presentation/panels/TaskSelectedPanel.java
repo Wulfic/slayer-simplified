@@ -52,11 +52,12 @@ public class TaskSelectedPanel extends JPanel
             LocationCoordinateService locationCoordinateService,
             FavoriteLocationService favoriteService,
             OkHttpClient okHttpClient,
-            MonsterNotesService notesService)
+            MonsterNotesService notesService,
+            Runnable onNotesChanged)
     {
         // Pass all services down to TaskTabs → tabs
         this.taskTabs = new TaskTabs(navigationService, locationCoordinateService, favoriteService,
-                okHttpClient, notesService);
+                okHttpClient, notesService, onNotesChanged);
         this.onClickListener = e -> onClose.run();
         closeButton.addActionListener(this.onClickListener);
         closeButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);

@@ -57,7 +57,8 @@ public class TaskTabs extends JTabbedPane
             LocationCoordinateService locationCoordinateService,
             FavoriteLocationService favoriteService,
             OkHttpClient okHttpClient,
-            MonsterNotesService notesService)
+            MonsterNotesService notesService,
+            Runnable onNotesChanged)
     {
         setBackground(ColorScheme.DARKER_GRAY_COLOR);
         setTabLayoutPolicy(JTabbedPane.WRAP_TAB_LAYOUT);
@@ -96,7 +97,7 @@ public class TaskTabs extends JTabbedPane
         setTab(locations, Icon.COMPASS.getIcon(), locationsTab, locations.getName());
         setTab(info, Icon.SLAYER_SKILL.getIcon(), infoTab, info.getName());
         setTab(loot, Icon.INVENTORY.getIcon(), lootTab, loot.getName());
-        setTab(notes, Icon.NOTES.getIcon(), new NotesTab(notesService), notes.getName());
+        setTab(notes, Icon.NOTES.getIcon(), new NotesTab(notesService, onNotesChanged), notes.getName());
         setTab(wiki, Icon.WIKI.getIcon(), new WikiTab(), wiki.getName());
     }
 
