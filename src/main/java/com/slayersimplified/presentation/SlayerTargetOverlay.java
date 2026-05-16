@@ -110,6 +110,12 @@ public class SlayerTargetOverlay extends Overlay
         trackedNpcs.remove(npc);
     }
 
+    /** Returns true if the given NPC is currently being tracked for this task. */
+    public boolean isTracked(NPC npc)
+    {
+        return trackedNpcs.contains(npc);
+    }
+
     @Override
     public Dimension render(Graphics2D graphics)
     {

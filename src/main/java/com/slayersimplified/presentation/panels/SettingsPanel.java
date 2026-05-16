@@ -81,13 +81,15 @@ public class SettingsPanel extends JPanel
                 config.setPreferredMaster(selected);
             }
         });
-        add(makeRow("Preferred Master", masterCombo));
+        add(makeRow("Preferred Master", masterCombo,
+                "The Slayer master to navigate to when you have no active task"));
         add(Box.createVerticalStrut(6));
 
         // --- Highlight Target ---
         highlightCheck = makeCheckBox(config.highlightTarget());
         highlightCheck.addActionListener(e -> config.setHighlightTarget(highlightCheck.isSelected()));
-        add(makeRow("Highlight Target", highlightCheck));
+        add(makeRow("Highlight Target", highlightCheck,
+                "Draw a coloured outline around your current task NPCs so they are easy to spot"));
         add(Box.createVerticalStrut(6));
 
         // --- Highlight Color ---
@@ -101,25 +103,29 @@ public class SettingsPanel extends JPanel
                 config.setHighlightColor(chosen);
             }
         });
-        add(makeRow("Highlight Color", colorButton));
+        add(makeRow("Highlight Color", colorButton,
+                "Click the swatch to choose the colour of the NPC outline"));
         add(Box.createVerticalStrut(6));
 
         // --- Auto Navigate ---
         autoNavCheck = makeCheckBox(config.autoNavigate());
         autoNavCheck.addActionListener(e -> config.setAutoNavigate(autoNavCheck.isSelected()));
-        add(makeRow("Auto Navigate", autoNavCheck));
+        add(makeRow("Auto Navigate", autoNavCheck,
+                "Automatically trigger Shortest Path navigation when you receive a new assignment or type !task in chat"));
         add(Box.createVerticalStrut(6));
 
         // --- Debug Coordinates ---
         debugCheck = makeCheckBox(config.debugCoordinates());
         debugCheck.addActionListener(e -> config.setDebugCoordinates(debugCheck.isSelected()));
-        add(makeRow("Debug Coordinates", debugCheck));
+        add(makeRow("Debug Coordinates", debugCheck,
+                "Overlay your current WorldPoint on screen \u2014 useful for mapping new monster spawn locations"));
         add(Box.createVerticalStrut(6));
 
         // --- Slayer Cape Reminder ---
         remindCapeCheck = makeCheckBox(config.remindSlayerCape());
         remindCapeCheck.addActionListener(e -> config.setRemindSlayerCape(remindCapeCheck.isSelected()));
-        add(makeRow("Cape Reminder (99)", remindCapeCheck));
+        add(makeRow("Cape Reminder (99)", remindCapeCheck,
+                "Pop up a reminder to bring your Slayer cape on each new assignment (only triggers when you have 99 Slayer)"));
         add(Box.createVerticalStrut(12));
 
         add(makeSeparator());
@@ -139,6 +145,11 @@ public class SettingsPanel extends JPanel
 
     private JPanel makeRow(String labelText, JComponent control)
     {
+        return makeRow(labelText, control, null);
+    }
+
+    private JPanel makeRow(String labelText, JComponent control, String tooltip)
+    {
         JPanel row = new JPanel(new BorderLayout(8, 0));
         row.setBackground(ColorScheme.DARK_GRAY_COLOR);
         row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
@@ -147,6 +158,11 @@ public class SettingsPanel extends JPanel
         JLabel label = new JLabel(labelText);
         label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
         label.setFont(FontManager.getRunescapeSmallFont());
+        if (tooltip != null)
+        {
+            label.setToolTipText(tooltip);
+            row.setToolTipText(tooltip);
+        }
 
         row.add(label, BorderLayout.CENTER);
         row.add(control, BorderLayout.EAST);

@@ -16,6 +16,7 @@ import com.slayersimplified.domain.Task;
 import com.slayersimplified.services.*;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.coords.WorldPoint;
+import net.runelite.client.config.ConfigManager;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.PluginPanel;
@@ -61,9 +62,10 @@ public class MainPanel extends PluginPanel
     private final JLabel currentTaskLabel = new JLabel();
     private final JButton currentTaskNavButton = new JButton("Nav");
 
-    /** Persistent non-modal window showing the current task's notes and required items. */
-    private JDialog reminderWindow;
-    private JPanel reminderContent;
+    /** Inline pane showing the current task's notes and required items. Hidden when empty. */
+    private final JPanel reminderPane = new JPanel();
+
+    private final ConfigManager configManager;
 
     @Inject
     public MainPanel(
@@ -75,7 +77,8 @@ public class MainPanel extends PluginPanel
             SlayerSimplifiedConfig config,
             OkHttpClient okHttpClient,
             MonsterNotesService notesService,
-            SlayerHistoryService historyService)
+            SlayerHistoryService historyService,
+            ConfigManager configManager)
     {
         super(false);
         this.taskService = taskService;
@@ -85,6 +88,7 @@ public class MainPanel extends PluginPanel
         this.favoriteService = favoriteService;
         this.config = config;
         this.notesService = notesService;
+        this.configManager = configManager;
 
         this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onTaskSelected);
         this.taskSelectedPanel = new TaskSelectedPanel(
@@ -223,6 +227,16 @@ public class MainPanel extends PluginPanel
         gbc.gridy = 1;
         northWrapper.add(currentTaskPanel, gbc);
 
+        // Inline reminder pane — shown below the task banner when there are notes or required items
+        reminderPane.setLayout(new BoxLayout(reminderPane, BoxLayout.Y_AXIS));
+        reminderPane.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        reminderPane.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(1, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
+                new EmptyBorder(6, 8, 6, 8)));
+        reminderPane.setVisible(false);
+        gbc.gridy = 2;
+        northWrapper.add(reminderPane, gbc);
+
         setLayout(new BorderLayout(0, 0));
 
         SettingsPanel settingsPanel = new SettingsPanel(config, () -> showPanel(Panel.TASK_SEARCH));
@@ -270,12 +284,7 @@ public class MainPanel extends PluginPanel
         navigationService.clearNavigation();
         taskSearchPanel.shutDown();
         taskSelectedPanel.shutDown();
-        if (reminderWindow != null)
-        {
-            reminderWindow.dispose();
-            reminderWindow = null;
-            reminderContent = null;
-        }
+        reminderPane.setVisible(false);
     }
 
     /**
@@ -360,10 +369,9 @@ public class MainPanel extends PluginPanel
     }
 
     /**
-     * Shows or updates a persistent non-modal window displaying the current
-     * task's required items and personal notes.  Auto-appears when content
-     * exists; auto-hides when there is nothing to show.  Safe to call on
-     * every keystroke — only pack()s on first show to respect user moves.
+     * Refreshes the inline reminder pane below the task banner, showing the
+     * current task's required items and personal notes.  The pane hides itself
+     * when there is nothing to display.  Safe to call on every keystroke.
      * Must be called on the EDT.
      */
     public void refreshTaskReminder()
@@ -371,10 +379,9 @@ public class MainPanel extends PluginPanel
         String taskName = taskTracker.getCurrentTaskName();
         if (taskName == null || taskName.isEmpty())
         {
-            if (reminderWindow != null)
-            {
-                reminderWindow.setVisible(false);
-            }
+            reminderPane.setVisible(false);
+            revalidate();
+            repaint();
             return;
         }
 
@@ -397,47 +404,21 @@ public class MainPanel extends PluginPanel
 
         if (!hasItems && !hasNotes)
         {
-            if (reminderWindow != null)
-            {
-                reminderWindow.setVisible(false);
-            }
+            reminderPane.setVisible(false);
+            revalidate();
+            repaint();
             return;
         }
 
-        final String title = task != null ? task.name : taskName;
-        if (reminderWindow == null)
-        {
-            reminderContent = new JPanel();
-            reminderContent.setLayout(new BoxLayout(reminderContent, BoxLayout.Y_AXIS));
-            reminderContent.setBackground(ColorScheme.DARK_GRAY_COLOR);
-            reminderContent.setBorder(new EmptyBorder(12, 14, 10, 14));
-
-            reminderWindow = new JDialog();
-            reminderWindow.setModal(false);
-            reminderWindow.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
-            reminderWindow.setResizable(true);
-            reminderWindow.add(reminderContent);
-        }
-
-        reminderWindow.setTitle(title);
         buildReminderContent(task, hasItems, notes, hasNotes);
-
-        if (!reminderWindow.isVisible())
-        {
-            reminderWindow.pack();
-            reminderWindow.setLocationRelativeTo(SwingUtilities.getWindowAncestor(this));
-            reminderWindow.setVisible(true);
-        }
-        else
-        {
-            reminderWindow.revalidate();
-            reminderWindow.repaint();
-        }
+        reminderPane.setVisible(true);
+        revalidate();
+        repaint();
     }
 
     private void buildReminderContent(Task task, boolean hasItems, String notes, boolean hasNotes)
     {
-        reminderContent.removeAll();
+        reminderPane.removeAll();
 
         if (hasItems)
         {
@@ -445,8 +426,8 @@ public class MainPanel extends PluginPanel
             header.setForeground(new Color(255, 152, 0));
             header.setFont(FontManager.getRunescapeBoldFont());
             header.setAlignmentX(Component.LEFT_ALIGNMENT);
-            reminderContent.add(header);
-            reminderContent.add(Box.createVerticalStrut(4));
+            reminderPane.add(header);
+            reminderPane.add(Box.createVerticalStrut(4));
 
             for (String item : task.itemsRequired)
             {
@@ -456,20 +437,20 @@ public class MainPanel extends PluginPanel
                     itemLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
                     itemLabel.setFont(FontManager.getRunescapeSmallFont());
                     itemLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    reminderContent.add(itemLabel);
+                    reminderPane.add(itemLabel);
                 }
             }
         }
 
         if (hasItems && hasNotes)
         {
-            reminderContent.add(Box.createVerticalStrut(10));
+            reminderPane.add(Box.createVerticalStrut(10));
             JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL);
             sep.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
             sep.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
             sep.setAlignmentX(Component.LEFT_ALIGNMENT);
-            reminderContent.add(sep);
-            reminderContent.add(Box.createVerticalStrut(10));
+            reminderPane.add(sep);
+            reminderPane.add(Box.createVerticalStrut(10));
         }
 
         if (hasNotes)
@@ -478,8 +459,8 @@ public class MainPanel extends PluginPanel
             notesHeader.setForeground(new Color(255, 152, 0));
             notesHeader.setFont(FontManager.getRunescapeBoldFont());
             notesHeader.setAlignmentX(Component.LEFT_ALIGNMENT);
-            reminderContent.add(notesHeader);
-            reminderContent.add(Box.createVerticalStrut(4));
+            reminderPane.add(notesHeader);
+            reminderPane.add(Box.createVerticalStrut(4));
 
             JTextArea notesArea = new JTextArea(notes);
             notesArea.setEditable(false);
@@ -490,9 +471,8 @@ public class MainPanel extends PluginPanel
             notesArea.setFont(FontManager.getRunescapeSmallFont());
             notesArea.setBorder(new EmptyBorder(4, 6, 4, 6));
             notesArea.setAlignmentX(Component.LEFT_ALIGNMENT);
-            notesArea.setPreferredSize(new Dimension(280, 80));
-            notesArea.setMaximumSize(new Dimension(280, Integer.MAX_VALUE));
-            reminderContent.add(notesArea);
+            notesArea.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
+            reminderPane.add(notesArea);
         }
     }
 
@@ -559,7 +539,7 @@ public class MainPanel extends PluginPanel
         }
 
         // No favorite — open the monster detail with Locations tab selected
-        taskSelectedPanel.update(task);
+        taskSelectedPanel.update(task, getKillCount(task.name));
         showPanel(Panel.TASK_SELECTED);
         SwingUtilities.invokeLater(() -> taskSelectedPanel.selectLocationsTab());
         log.debug("Quick Nav: showing locations for {} (no favorite set)", task.name);
@@ -576,7 +556,7 @@ public class MainPanel extends PluginPanel
 
     private void onTaskSelected(Task task)
     {
-        taskSelectedPanel.update(task);
+        taskSelectedPanel.update(task, getKillCount(task.name));
         showPanel(Panel.TASK_SELECTED);
     }
 
@@ -584,6 +564,28 @@ public class MainPanel extends PluginPanel
     {
         navigationService.clearNavigation();
         showPanel(Panel.TASK_SEARCH);
+    }
+
+    private int getKillCount(String taskName)
+    {
+        if (taskName == null || taskName.isEmpty())
+        {
+            return 0;
+        }
+        String key = "kc_" + taskName.toLowerCase().replace(" ", "_");
+        String stored = configManager.getConfiguration(SlayerSimplifiedConfig.CONFIG_GROUP, key);
+        if (stored == null)
+        {
+            return 0;
+        }
+        try
+        {
+            return Integer.parseInt(stored);
+        }
+        catch (NumberFormatException ignored)
+        {
+            return 0;
+        }
     }
 
     private void showPanel(Panel panel)

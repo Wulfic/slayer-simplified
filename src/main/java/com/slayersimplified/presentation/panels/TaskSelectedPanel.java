@@ -99,9 +99,9 @@ public class TaskSelectedPanel extends JPanel
         backButton.removeActionListener(onClickListener);
     }
 
-    public void update(Task task)
+    public void update(Task task, int kc)
     {
-        header.update(task.name, new ImageIcon(task.image));
+        header.update(task.name, new ImageIcon(task.image), kc);
         SwingUtilities.invokeLater(() -> taskTabs.update(task));
     }
 

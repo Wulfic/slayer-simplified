@@ -57,6 +57,13 @@ public class SearchBar extends JPanel
 
     private void initialiseStyles()
     {
+        // Give the outer panel a visible frame so the search field stands out
+        // against the plugin panel background.
+        setBackground(ColorScheme.DARK_GRAY_COLOR);
+        setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(ColorScheme.MEDIUM_GRAY_COLOR, 1),
+                BorderFactory.createEmptyBorder(4, 4, 4, 4)));
+
         searchBar.setIcon(IconTextField.Icon.SEARCH);
         searchBar.setFont(FontManager.getRunescapeSmallFont());
         searchBar.setPreferredSize(new Dimension(PluginPanel.PANEL_WIDTH, 30));

@@ -31,6 +31,7 @@ import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.NpcDespawned;
 import net.runelite.api.events.NpcSpawned;
+import net.runelite.client.events.NpcLootReceived;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -254,6 +255,28 @@ public class SlayerSimplifiedPlugin extends Plugin
     public void onNpcDespawned(NpcDespawned event)
     {
         targetOverlay.onNpcDespawned(event.getNpc());
+    }
+
+    @Subscribe
+    public void onNpcLootReceived(NpcLootReceived event)
+    {
+        if (!targetOverlay.isTracked(event.getNpc()))
+        {
+            return;
+        }
+        String taskName = taskTracker.getCurrentTaskName();
+        if (taskName == null || taskName.isEmpty())
+        {
+            return;
+        }
+        String key = "kc_" + taskName.toLowerCase().replace(" ", "_");
+        String stored = configManager.getConfiguration(SlayerSimplifiedConfig.CONFIG_GROUP, key);
+        int current = 0;
+        if (stored != null)
+        {
+            try { current = Integer.parseInt(stored); } catch (NumberFormatException ignored) {}
+        }
+        configManager.setConfiguration(SlayerSimplifiedConfig.CONFIG_GROUP, key, current + 1);
     }
 
     /**
