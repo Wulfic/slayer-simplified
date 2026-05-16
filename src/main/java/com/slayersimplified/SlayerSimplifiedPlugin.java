@@ -18,6 +18,7 @@ import com.slayersimplified.domain.SlayerMaster;
 import com.slayersimplified.domain.TaskHistoryEntry;
 import com.slayersimplified.modules.TaskServiceModule;
 import com.slayersimplified.presentation.CoordinatesOverlay;
+import com.slayersimplified.presentation.TaskReminderOverlay;
 import com.slayersimplified.presentation.panels.MainPanel;
 import com.slayersimplified.presentation.SlayerTargetOverlay;
 import com.slayersimplified.services.SlayerHistoryService;
@@ -81,6 +82,9 @@ public class SlayerSimplifiedPlugin extends Plugin
     private CoordinatesOverlay coordinatesOverlay;
 
     @Inject
+    private TaskReminderOverlay taskReminderOverlay;
+
+    @Inject
     private SlayerHistoryService historyService;
 
     @Inject
@@ -119,6 +123,7 @@ public class SlayerSimplifiedPlugin extends Plugin
         clientToolbar.addNavigation(navButton);
         overlayManager.add(targetOverlay);
         overlayManager.add(coordinatesOverlay);
+        overlayManager.add(taskReminderOverlay);
         SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
         // Populate the NPC highlight set in case the plugin is enabled while already logged in.
         clientThread.invokeLater(targetOverlay::onTaskChanged);
@@ -132,6 +137,7 @@ public class SlayerSimplifiedPlugin extends Plugin
         clientToolbar.removeNavigation(navButton);
         overlayManager.remove(targetOverlay);
         overlayManager.remove(coordinatesOverlay);
+        overlayManager.remove(taskReminderOverlay);
         historyService.shutDown();
         mainPanel.shutDown();
         log.info("Slayer Simplified stopped");

@@ -79,6 +79,8 @@ public class NotesTab extends JPanel implements Tab<String>
         scrollPane.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
         ScrollBarStyling.apply(scrollPane);
+        // Prevent scroll events from propagating to the game canvas (would cause camera zoom).
+        scrollPane.addMouseWheelListener(e -> e.consume());
         add(scrollPane, BorderLayout.CENTER);
     }
 

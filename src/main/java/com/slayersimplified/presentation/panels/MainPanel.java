@@ -24,10 +24,8 @@ import okhttp3.OkHttpClient;
 
 import javax.inject.Inject;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseWheelEvent;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
@@ -61,9 +59,6 @@ public class MainPanel extends PluginPanel
     private final JPanel currentTaskPanel = new JPanel(new BorderLayout(6, 0));
     private final JLabel currentTaskLabel = new JLabel();
     private final JButton currentTaskNavButton = new JButton("Nav");
-
-    /** Inline pane showing the current task's notes and required items. Hidden when empty. */
-    private final JPanel reminderPane = new JPanel();
 
     private final ConfigManager configManager;
 
@@ -227,16 +222,6 @@ public class MainPanel extends PluginPanel
         gbc.gridy = 1;
         northWrapper.add(currentTaskPanel, gbc);
 
-        // Inline reminder pane — shown below the task banner when there are notes or required items
-        reminderPane.setLayout(new BoxLayout(reminderPane, BoxLayout.Y_AXIS));
-        reminderPane.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        reminderPane.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(1, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                new EmptyBorder(6, 8, 6, 8)));
-        reminderPane.setVisible(false);
-        gbc.gridy = 2;
-        northWrapper.add(reminderPane, gbc);
-
         setLayout(new BorderLayout(0, 0));
 
         SettingsPanel settingsPanel = new SettingsPanel(config, () -> showPanel(Panel.TASK_SEARCH));
@@ -284,7 +269,6 @@ public class MainPanel extends PluginPanel
         navigationService.clearNavigation();
         taskSearchPanel.shutDown();
         taskSelectedPanel.shutDown();
-        reminderPane.setVisible(false);
     }
 
     /**
@@ -338,7 +322,7 @@ public class MainPanel extends PluginPanel
         JPanel content = new JPanel();
         content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
         content.setBackground(ColorScheme.DARK_GRAY_COLOR);
-        content.setBorder(new EmptyBorder(12, 14, 10, 14));
+        content.setBorder(BorderFactory.createEmptyBorder(12, 14, 10, 14));
 
         JLabel capeHeader = new JLabel("Slayer Cape");
         capeHeader.setForeground(new Color(255, 152, 0));
@@ -368,112 +352,9 @@ public class MainPanel extends PluginPanel
         dialog.setVisible(true);
     }
 
-    /**
-     * Refreshes the inline reminder pane below the task banner, showing the
-     * current task's required items and personal notes.  The pane hides itself
-     * when there is nothing to display.  Safe to call on every keystroke.
-     * Must be called on the EDT.
-     */
+    /** No-op — reminder content is now rendered by {@link com.slayersimplified.presentation.TaskReminderOverlay}. */
     public void refreshTaskReminder()
     {
-        String taskName = taskTracker.getCurrentTaskName();
-        if (taskName == null || taskName.isEmpty())
-        {
-            reminderPane.setVisible(false);
-            revalidate();
-            repaint();
-            return;
-        }
-
-        Task task = taskService.get(taskName);
-        if (task == null)
-        {
-            Task[] matches = taskService.searchPartialName(taskName);
-            if (matches.length > 0)
-            {
-                task = matches[0];
-            }
-        }
-
-        final boolean hasItems = task != null
-                && task.itemsRequired != null
-                && Arrays.stream(task.itemsRequired)
-                         .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
-        final String notes = task != null ? notesService.getNotes(task.name) : "";
-        final boolean hasNotes = !notes.isEmpty();
-
-        if (!hasItems && !hasNotes)
-        {
-            reminderPane.setVisible(false);
-            revalidate();
-            repaint();
-            return;
-        }
-
-        buildReminderContent(task, hasItems, notes, hasNotes);
-        reminderPane.setVisible(true);
-        revalidate();
-        repaint();
-    }
-
-    private void buildReminderContent(Task task, boolean hasItems, String notes, boolean hasNotes)
-    {
-        reminderPane.removeAll();
-
-        if (hasItems)
-        {
-            JLabel header = new JLabel("Required Items");
-            header.setForeground(new Color(255, 152, 0));
-            header.setFont(FontManager.getRunescapeBoldFont());
-            header.setAlignmentX(Component.LEFT_ALIGNMENT);
-            reminderPane.add(header);
-            reminderPane.add(Box.createVerticalStrut(4));
-
-            for (String item : task.itemsRequired)
-            {
-                if (item != null && !item.trim().isEmpty() && !item.equalsIgnoreCase("none"))
-                {
-                    JLabel itemLabel = new JLabel("\u2022  " + item);
-                    itemLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-                    itemLabel.setFont(FontManager.getRunescapeSmallFont());
-                    itemLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    reminderPane.add(itemLabel);
-                }
-            }
-        }
-
-        if (hasItems && hasNotes)
-        {
-            reminderPane.add(Box.createVerticalStrut(10));
-            JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL);
-            sep.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
-            sep.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
-            sep.setAlignmentX(Component.LEFT_ALIGNMENT);
-            reminderPane.add(sep);
-            reminderPane.add(Box.createVerticalStrut(10));
-        }
-
-        if (hasNotes)
-        {
-            JLabel notesHeader = new JLabel("Your Notes");
-            notesHeader.setForeground(new Color(255, 152, 0));
-            notesHeader.setFont(FontManager.getRunescapeBoldFont());
-            notesHeader.setAlignmentX(Component.LEFT_ALIGNMENT);
-            reminderPane.add(notesHeader);
-            reminderPane.add(Box.createVerticalStrut(4));
-
-            JTextArea notesArea = new JTextArea(notes);
-            notesArea.setEditable(false);
-            notesArea.setWrapStyleWord(true);
-            notesArea.setLineWrap(true);
-            notesArea.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-            notesArea.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-            notesArea.setFont(FontManager.getRunescapeSmallFont());
-            notesArea.setBorder(new EmptyBorder(4, 6, 4, 6));
-            notesArea.setAlignmentX(Component.LEFT_ALIGNMENT);
-            notesArea.setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
-            reminderPane.add(notesArea);
-        }
     }
 
     /**
