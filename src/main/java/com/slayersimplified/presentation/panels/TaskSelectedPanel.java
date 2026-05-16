@@ -34,7 +34,7 @@ public class TaskSelectedPanel extends JPanel
     private final Header header = new Header();
     private final TaskTabs taskTabs;
     private final JButton closeButton = new JButton("Close");
-    private final JButton backButton = new JButton("\u2190 Back");
+    private final JButton backButton = new JButton("\u2190");
 
     private final ActionListener onClickListener;
 

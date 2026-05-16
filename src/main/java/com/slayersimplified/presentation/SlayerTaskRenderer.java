@@ -36,8 +36,8 @@ public class SlayerTaskRenderer extends JLabel implements ListCellRenderer<Task>
             boolean cellHasFocus)
     {
         setOpaque(true);
-        setFont(FontManager.getRunescapeSmallFont());
-        setPreferredSize(new Dimension(PluginPanel.PANEL_WIDTH, 35));
+        setFont(FontManager.getRunescapeSmallFont().deriveFont(FontManager.getRunescapeSmallFont().getSize2D() + 4f));
+        setPreferredSize(new Dimension(PluginPanel.PANEL_WIDTH, 42));
         setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
                 BorderFactory.createEmptyBorder(0, 5, 0, 0)

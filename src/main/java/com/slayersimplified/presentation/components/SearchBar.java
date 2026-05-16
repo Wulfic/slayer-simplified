@@ -16,7 +16,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.util.function.Consumer;
-
 /**
  * Search bar component with a text field and search icon.
  * Fires the onChange callback on every keystroke for live filtering.
@@ -64,5 +63,37 @@ public class SearchBar extends JPanel
         searchBar.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         searchBar.setHoverBackgroundColor(ColorScheme.DARKER_GRAY_HOVER_COLOR);
         searchBar.setMinimumSize(new Dimension(0, 30));
+
+        // Recursively fix text color and clear button styling after the
+        // component tree is fully constructed on the EDT.
+        SwingUtilities.invokeLater(() -> applyTheme(searchBar));
+    }
+
+    /**
+     * Walks the full component tree of the given container and:
+     *   - sets JTextField foreground to white so typed text is readable
+     *   - removes the opaque white background from any JButton (clear / suggest buttons)
+     */
+    private static void applyTheme(Container container)
+    {
+        for (Component c : container.getComponents())
+        {
+            if (c instanceof JTextField)
+            {
+                ((JTextField) c).setForeground(Color.WHITE);
+            }
+            else if (c instanceof AbstractButton)
+            {
+                AbstractButton btn = (AbstractButton) c;
+                btn.setContentAreaFilled(false);
+                btn.setBorderPainted(false);
+                btn.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+            }
+
+            if (c instanceof Container)
+            {
+                applyTheme((Container) c);
+            }
+        }
     }
 }
