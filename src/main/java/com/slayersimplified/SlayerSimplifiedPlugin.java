@@ -323,6 +323,27 @@ public class SlayerSimplifiedPlugin extends Plugin
             return;
         }
         Task task = taskService.get(npcName);
+        // Fallback: the NPC name may be a variant of the current slayer task
+        // (e.g. "Iorwerth Warrior" is a variant of "Elf").
+        if (task == null)
+        {
+            String currentTaskName = taskTracker.getCurrentTaskName();
+            if (currentTaskName != null)
+            {
+                Task currentTask = taskService.get(currentTaskName);
+                if (currentTask != null && currentTask.variants != null)
+                {
+                    for (String variant : currentTask.variants)
+                    {
+                        if (variant.equalsIgnoreCase(npcName))
+                        {
+                            task = currentTask;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
         if (task == null)
         {
             return;
