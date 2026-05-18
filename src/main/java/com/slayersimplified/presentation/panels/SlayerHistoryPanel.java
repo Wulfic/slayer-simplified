@@ -163,10 +163,9 @@ public class SlayerHistoryPanel extends JPanel
     /** Builds a highlighted row for the player's currently active task (not yet in the log). */
     private JPanel buildCurrentTaskRow(String taskName)
     {
-        // Populate as much live data as we can from varbit / RSProfile config
-        int remaining = taskTracker.getRemainingCount();
+        int total = taskTracker.getCurrentTaskTotal(); // volatile read, safe from EDT
         int streak = taskTracker.getTaskStreak();
-        TaskHistoryEntry synthetic = new TaskHistoryEntry(taskName, remaining, null, 0, streak);
+        TaskHistoryEntry synthetic = new TaskHistoryEntry(taskName, total, null, 0, streak);
         JPanel row = buildEntryRow(synthetic, true);
 
         // If the streak is unknown we can't show a task number, so fall back to an "Active" badge

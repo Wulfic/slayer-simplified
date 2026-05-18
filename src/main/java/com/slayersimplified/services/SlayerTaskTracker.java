@@ -63,6 +63,12 @@ public class SlayerTaskTracker
     /** The kill count from the most recently parsed task assignment. */
     private int lastAssignedCount = 0;
 
+    /**
+     * The total kills assigned for the current task. Set on NEW_TASK or via
+     * {@link #setCurrentTaskTotal}. Volatile so it can be safely read from the EDT.
+     */
+    private volatile int currentTaskTotal = 0;
+
     @Inject
     public SlayerTaskTracker(Client client, SlayerSimplifiedConfig config, ConfigManager configManager)
     {
@@ -75,6 +81,24 @@ public class SlayerTaskTracker
     public int getLastAssignedCount()
     {
         return lastAssignedCount;
+    }
+
+    /**
+     * Returns the total kills assigned for the current task.
+     * Safe to call from any thread (volatile read).
+     */
+    public int getCurrentTaskTotal()
+    {
+        return currentTaskTotal;
+    }
+
+    /**
+     * Updates the known total for the current task (e.g. from the !task chatcommand response).
+     * Safe to call from any thread (volatile write).
+     */
+    public void setCurrentTaskTotal(int total)
+    {
+        this.currentTaskTotal = total;
     }
 
     /**
@@ -183,6 +207,7 @@ public class SlayerTaskTracker
             {
                 lastAssignedCount = 0;
             }
+            currentTaskTotal = lastAssignedCount;
             log.debug("Detected new slayer task: {} x{}", creatureName, lastAssignedCount);
             return ParseResult.NEW_TASK;
         }
@@ -201,6 +226,7 @@ public class SlayerTaskTracker
         if (TASK_COMPLETE_PATTERN.matcher(message).find())
         {
             config.setCurrentTaskName("");
+            currentTaskTotal = 0;
             log.debug("Slayer task completed");
             return ParseResult.TASK_COMPLETE;
         }
@@ -209,6 +235,7 @@ public class SlayerTaskTracker
         if (NO_TASK_PATTERN.matcher(message).find())
         {
             config.setCurrentTaskName("");
+            currentTaskTotal = 0;
             log.debug("No slayer task active");
             return ParseResult.NO_TASK;
         }

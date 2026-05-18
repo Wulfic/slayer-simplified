@@ -53,6 +53,8 @@ import javax.inject.Inject;
 import javax.swing.SwingUtilities;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Slf4j
 @PluginDescriptor(
@@ -62,6 +64,13 @@ import java.util.Set;
 )
 public class SlayerSimplifiedPlugin extends Plugin
 {
+    /**
+     * Matches the RuneLite !task chatcommand response format.
+     * Example: "Slayer Task: Elves: 17/30 killed"
+     * Group 1 = kills done, Group 2 = total assigned.
+     */
+    private static final Pattern TASK_RESPONSE_PATTERN =
+            Pattern.compile("Slayer Task: .+?: (\\d+)/(\\d+) killed");
     @Inject
     private Client client;
 
@@ -267,6 +276,22 @@ public class SlayerSimplifiedPlugin extends Plugin
                         chain = () -> clientThread.invokeLater(next);
                     }
                     clientThread.invokeLater(chain);
+                }
+
+                // Parse the !task chatcommand response: "Slayer Task: Elves: 17/30 killed"
+                // This gives us the authoritative total-assigned count for the active task.
+                Matcher taskResp = TASK_RESPONSE_PATTERN.matcher(message);
+                if (taskResp.find())
+                {
+                    try
+                    {
+                        int total = Integer.parseInt(taskResp.group(2));
+                        taskTracker.setCurrentTaskTotal(total);
+                        SwingUtilities.invokeLater(mainPanel::refreshHistory);
+                    }
+                    catch (NumberFormatException ignored)
+                    {
+                    }
                 }
             }
         }
