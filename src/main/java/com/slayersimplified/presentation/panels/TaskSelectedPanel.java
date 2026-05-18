@@ -14,6 +14,7 @@ import com.slayersimplified.presentation.components.Header;
 import com.slayersimplified.presentation.components.TaskTabs;
 import com.slayersimplified.services.FavoriteLocationService;
 import com.slayersimplified.services.LocationCoordinateService;
+import com.slayersimplified.services.LocationRequirementService;
 import com.slayersimplified.services.MonsterNotesService;
 import com.slayersimplified.services.NavigationService;
 import net.runelite.client.ui.ColorScheme;
@@ -53,6 +54,7 @@ public class TaskSelectedPanel extends JPanel
             NavigationService navigationService,
             LocationCoordinateService locationCoordinateService,
             FavoriteLocationService favoriteService,
+            LocationRequirementService requirementService,
             OkHttpClient okHttpClient,
             MonsterNotesService notesService,
             Runnable onNotesChanged,
@@ -60,7 +62,7 @@ public class TaskSelectedPanel extends JPanel
     {
         // Pass all services down to TaskTabs → tabs
         this.taskTabs = new TaskTabs(navigationService, locationCoordinateService, favoriteService,
-                okHttpClient, notesService, onNotesChanged, debugMode);
+                requirementService, okHttpClient, notesService, onNotesChanged, debugMode);
         this.onClickListener = e -> onClose.run();
         closeButton.addActionListener(this.onClickListener);
         closeButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);

@@ -13,6 +13,7 @@ import com.slayersimplified.domain.Tab;
 import com.slayersimplified.presentation.components.ScrollBarStyling;
 import com.slayersimplified.services.FavoriteLocationService;
 import com.slayersimplified.services.LocationCoordinateService;
+import com.slayersimplified.services.LocationRequirementService;
 import com.slayersimplified.services.NavigationService;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.coords.WorldPoint;
@@ -46,6 +47,7 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
     private final NavigationService navigationService;
     private final LocationCoordinateService locationCoordinateService;
     private final FavoriteLocationService favoriteService;
+    private final LocationRequirementService requirementService;
     private final Supplier<Boolean> debugMode;
 
     /** Inner panel holding the location rows — Scrollable so the JScrollPane constrains its width to the viewport. */
@@ -69,11 +71,13 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
             NavigationService navigationService,
             LocationCoordinateService locationCoordinateService,
             FavoriteLocationService favoriteService,
+            LocationRequirementService requirementService,
             Supplier<Boolean> debugMode)
     {
         this.navigationService = navigationService;
         this.locationCoordinateService = locationCoordinateService;
         this.favoriteService = favoriteService;
+        this.requirementService = requirementService;
         this.debugMode = debugMode;
 
         // Debug info panel — shown at top when debug mode is on
@@ -221,6 +225,24 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         // Navigate button (only if coordinates exist)
         WorldPoint coords = locationCoordinateService.getCoordinates(locationName);
 
+        // Requirement check — debug mode bypasses to allow testing every location.
+        boolean debug = debugMode.get();
+        boolean reqMet = debug || requirementService.isAvailable(locationName);
+        String reqDesc = requirementService.getRequirementDescription(locationName);
+        String missing = reqMet ? "" : requirementService.getMissingText(locationName);
+
+        if (!reqMet)
+        {
+            // Gray the label so the row reads as unavailable.
+            label.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+            label.setToolTipText("Requires: " + missing);
+        }
+        else if (!reqDesc.isEmpty())
+        {
+            // Met but informational — surface the requirement on hover.
+            label.setToolTipText("Requires: " + reqDesc);
+        }
+
         if (coords != null)
         {
             JButton navButton = new JButton("Nav");
@@ -234,10 +256,19 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
             navButton.setMargin(new Insets(0, 2, 0, 2));
             navButton.setToolTipText("Navigate to " + capitalize(locationName));
 
-            ActionListener navListener = e -> onNavigateClicked(locationName, coords, row);
-            navButton.addActionListener(navListener);
-            buttons.add(navButton);
-            listeners.add(navListener);
+            if (!reqMet)
+            {
+                navButton.setEnabled(false);
+                navButton.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+                navButton.setToolTipText("Requires: " + missing);
+            }
+            else
+            {
+                ActionListener navListener = e -> onNavigateClicked(locationName, coords, row);
+                navButton.addActionListener(navListener);
+                buttons.add(navButton);
+                listeners.add(navListener);
+            }
             buttonPanel.add(navButton);
         }
         else

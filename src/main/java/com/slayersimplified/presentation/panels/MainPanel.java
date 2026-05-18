@@ -71,6 +71,7 @@ public class MainPanel extends PluginPanel
             TaskService taskService,
             NavigationService navigationService,
             LocationCoordinateService locationCoordinateService,
+            LocationRequirementService requirementService,
             SlayerTaskTracker taskTracker,
             FavoriteLocationService favoriteService,
             SlayerSimplifiedConfig config,
@@ -91,7 +92,7 @@ public class MainPanel extends PluginPanel
         this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onTaskSelected);
         this.taskSelectedPanel = new TaskSelectedPanel(
                 this::onTaskClosed, navigationService, locationCoordinateService, favoriteService,
-                okHttpClient, notesService, this::refreshTaskReminder, config::debugCoordinates);
+                requirementService, okHttpClient, notesService, this::refreshTaskReminder, config::debugCoordinates);
 
         Task[] orderedTasks = taskService.getAll(Comparator.comparing(t -> t.name));
         if (!config.debugCoordinates())

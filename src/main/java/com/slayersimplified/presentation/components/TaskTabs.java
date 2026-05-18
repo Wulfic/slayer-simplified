@@ -20,6 +20,7 @@ import com.slayersimplified.presentation.components.tabs.NotesTab;
 import com.slayersimplified.presentation.components.tabs.WikiTab;
 import com.slayersimplified.services.FavoriteLocationService;
 import com.slayersimplified.services.LocationCoordinateService;
+import com.slayersimplified.services.LocationRequirementService;
 import com.slayersimplified.services.MonsterNotesService;
 import com.slayersimplified.services.NavigationService;
 import lombok.extern.slf4j.Slf4j;
@@ -58,6 +59,7 @@ public class TaskTabs extends JTabbedPane
             NavigationService navigationService,
             LocationCoordinateService locationCoordinateService,
             FavoriteLocationService favoriteService,
+            LocationRequirementService requirementService,
             OkHttpClient okHttpClient,
             MonsterNotesService notesService,
             Runnable onNotesChanged,
@@ -93,7 +95,7 @@ public class TaskTabs extends JTabbedPane
         TabKey loot = TabKey.LOOT;
         TabKey notes = TabKey.NOTES;
 
-        locationsTab = new LocationsTab(navigationService, locationCoordinateService, favoriteService, debugMode);
+        locationsTab = new LocationsTab(navigationService, locationCoordinateService, favoriteService, requirementService, debugMode);
         lootTab = new LootTab(okHttpClient);
         infoTab = new InfoTab(okHttpClient);
 

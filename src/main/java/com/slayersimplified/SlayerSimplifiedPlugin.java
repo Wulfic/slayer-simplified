@@ -23,6 +23,7 @@ import com.slayersimplified.presentation.panels.MainPanel;
 import com.slayersimplified.presentation.SlayerTargetOverlay;
 import com.slayersimplified.services.SlayerHistoryService;
 import com.slayersimplified.services.SlayerTaskTracker;
+import com.slayersimplified.services.LocationRequirementService;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
@@ -32,6 +33,7 @@ import com.slayersimplified.services.TaskService;
 import net.runelite.api.NPC;
 import net.runelite.api.events.ActorDeath;
 import net.runelite.api.events.ChatMessage;
+import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.InteractingChanged;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.NpcDespawned;
@@ -99,6 +101,9 @@ public class SlayerSimplifiedPlugin extends Plugin
     @Inject
     private TaskService taskService;
 
+    @Inject
+    private LocationRequirementService locationRequirementService;
+
     private NavigationButton navButton;
 
     /** Set when the player types !task; cleared when the game response triggers navigation. */
@@ -136,6 +141,8 @@ public class SlayerSimplifiedPlugin extends Plugin
         SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
         // Populate the NPC highlight set in case the plugin is enabled while already logged in.
         clientThread.invokeLater(targetOverlay::onTaskChanged);
+        // Cache quest/skill state so the LocationsTab can gray out inaccessible options.
+        clientThread.invokeLater(locationRequirementService::refresh);
         log.info("Slayer Simplified started");
     }
 
@@ -265,6 +272,17 @@ public class SlayerSimplifiedPlugin extends Plugin
     public void onNpcSpawned(NpcSpawned event)
     {
         targetOverlay.onNpcSpawned(event.getNpc());
+    }
+
+    @Subscribe
+    public void onGameStateChanged(GameStateChanged event)
+    {
+        if (event.getGameState() == net.runelite.api.GameState.LOGGED_IN)
+        {
+            // Quest progress can change between sessions; refresh on login so
+            // the Locations tab reflects the player's current unlocks.
+            clientThread.invokeLater(locationRequirementService::refresh);
+        }
     }
 
     /** NPC indices the local player has attacked since the plugin started. Cleared on NPC despawn or kill. */
