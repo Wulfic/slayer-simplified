@@ -132,4 +132,22 @@ public interface SlayerSimplifiedConfig extends Config
             description = ""
     )
     void setCurrentTaskName(String taskName);
+
+    @ConfigItem(
+            keyName = "currentTaskTotal",
+            name = "",
+            description = "",
+            hidden = true
+    )
+    default int currentTaskTotal()
+    {
+        return 0;
+    }
+
+    @ConfigItem(
+            keyName = "currentTaskTotal",
+            name = "",
+            description = ""
+    )
+    void setCurrentTaskTotal(int total);
 }

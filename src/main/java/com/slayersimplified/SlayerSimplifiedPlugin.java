@@ -34,6 +34,7 @@ import net.runelite.api.NPC;
 import net.runelite.api.events.ActorDeath;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.GameStateChanged;
+import net.runelite.api.events.HitsplatApplied;
 import net.runelite.api.events.InteractingChanged;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.NpcDespawned;
@@ -53,8 +54,6 @@ import javax.inject.Inject;
 import javax.swing.SwingUtilities;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Slf4j
 @PluginDescriptor(
@@ -64,13 +63,6 @@ import java.util.regex.Pattern;
 )
 public class SlayerSimplifiedPlugin extends Plugin
 {
-    /**
-     * Matches the RuneLite !task chatcommand response format.
-     * Example: "Slayer Task: Elves: 17/30 killed"
-     * Group 1 = kills done, Group 2 = total assigned.
-     */
-    private static final Pattern TASK_RESPONSE_PATTERN =
-            Pattern.compile("Slayer Task: .+?: (\\d+)/(\\d+) killed");
     @Inject
     private Client client;
 
@@ -151,7 +143,12 @@ public class SlayerSimplifiedPlugin extends Plugin
         // Locations tab immediately reflects the player's latest quest completion.
         locationRequirementService.addRefreshListener(
                 () -> SwingUtilities.invokeLater(mainPanel::refreshCurrentTask));
-        SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
+        SwingUtilities.invokeLater(() ->
+        {
+            syncCurrentTaskToHistory();
+            mainPanel.refreshCurrentTask();
+            mainPanel.refreshHistory();
+        });
         // Populate the NPC highlight set in case the plugin is enabled while already logged in.
         clientThread.invokeLater(targetOverlay::onTaskChanged);
         // Cache quest/skill state so the LocationsTab can gray out inaccessible options.
@@ -277,22 +274,6 @@ public class SlayerSimplifiedPlugin extends Plugin
                     }
                     clientThread.invokeLater(chain);
                 }
-
-                // Parse the !task chatcommand response: "Slayer Task: Elves: 17/30 killed"
-                // This gives us the authoritative total-assigned count for the active task.
-                Matcher taskResp = TASK_RESPONSE_PATTERN.matcher(message);
-                if (taskResp.find())
-                {
-                    try
-                    {
-                        int total = Integer.parseInt(taskResp.group(2));
-                        taskTracker.setCurrentTaskTotal(total);
-                        SwingUtilities.invokeLater(mainPanel::refreshHistory);
-                    }
-                    catch (NumberFormatException ignored)
-                    {
-                    }
-                }
             }
         }
     }
@@ -330,6 +311,24 @@ public class SlayerSimplifiedPlugin extends Plugin
         }
     }
 
+    /**
+     * Secondary kill-attribution source: any hitsplat the local player deals to an NPC
+     * marks that NPC as a target. This covers auto-retaliate and spells/ranged where
+     * InteractingChanged may not have fired before the kill.
+     */
+    @Subscribe
+    public void onHitsplatApplied(HitsplatApplied event)
+    {
+        if (!(event.getActor() instanceof NPC))
+        {
+            return;
+        }
+        if (event.getHitsplat().isMine())
+        {
+            playerTargetIndices.add(((NPC) event.getActor()).getIndex());
+        }
+    }
+
     @Subscribe
     public void onActorDeath(ActorDeath event)
     {
@@ -348,23 +347,21 @@ public class SlayerSimplifiedPlugin extends Plugin
             return;
         }
         Task task = taskService.get(npcName);
-        // Fallback: the NPC name may be a variant of the current slayer task
-        // (e.g. "Iorwerth Warrior" is a variant of "Elf").
+        // Fallback: the NPC name may be a variant of a known task
+        // (e.g. "Iorwerth Warrior" is a variant of "Elf", "Deviant spectre" of "Aberrant spectre").
+        // Search all tasks so off-assignment kills are counted correctly.
         if (task == null)
         {
-            String currentTaskName = taskTracker.getCurrentTaskName();
-            if (currentTaskName != null)
+            outer:
+            for (Task t : taskService.getAll())
             {
-                Task currentTask = taskService.get(currentTaskName);
-                if (currentTask != null && currentTask.variants != null)
+                if (t.variants == null) continue;
+                for (String variant : t.variants)
                 {
-                    for (String variant : currentTask.variants)
+                    if (variant.equalsIgnoreCase(npcName))
                     {
-                        if (variant.equalsIgnoreCase(npcName))
-                        {
-                            task = currentTask;
-                            break;
-                        }
+                        task = t;
+                        break outer;
                     }
                 }
             }
@@ -390,9 +387,58 @@ public class SlayerSimplifiedPlugin extends Plugin
         playerTargetIndices.remove(event.getNpc().getIndex());
     }
 
+    /**
+     * Ensures the player's currently active slayer task is recorded as the
+     * most recent entry in the history log. Called when a task is discovered
+     * via the RuneLite built-in slayer plugin's RSProfile config (i.e. a task
+     * that was already assigned before our plugin observed any chat messages).
+     * No-op if the task is already at the top of the history.
+     *
+     * <p>Safe to call from the EDT.</p>
+     */
+    private void syncCurrentTaskToHistory()
+    {
+        String taskName = taskTracker.getCurrentTaskName();
+        if (taskName == null || taskName.isEmpty())
+        {
+            return;
+        }
+
+        java.util.List<TaskHistoryEntry> entries = historyService.getHistory();
+        if (!entries.isEmpty() && taskName.equalsIgnoreCase(entries.get(0).taskName))
+        {
+            return;
+        }
+
+        int total = taskTracker.getCurrentTaskTotal();
+        int streak = taskTracker.getTaskStreak();
+        historyService.addEntry(new TaskHistoryEntry(
+                taskName, total, lastInteractedMasterName,
+                System.currentTimeMillis(), streak));
+        log.debug("Synced active task to history: {} x{} (streak {})", taskName, total, streak);
+    }
+
     @Subscribe
     public void onConfigChanged(ConfigChanged event)
     {
+        // React to the RuneLite built-in slayer plugin updating its RSProfile config.
+        // This is what tells us about a task that was assigned before our plugin
+        // observed any chat messages (e.g. plugin started while a task was active).
+        if ("slayer".equals(event.getGroup()))
+        {
+            String key = event.getKey();
+            if ("taskName".equals(key) || "initialAmount".equals(key))
+            {
+                SwingUtilities.invokeLater(() ->
+                {
+                    syncCurrentTaskToHistory();
+                    mainPanel.refreshCurrentTask();
+                    mainPanel.refreshHistory();
+                });
+            }
+            return;
+        }
+
         if (!SlayerSimplifiedConfig.CONFIG_GROUP.equals(event.getGroup()))
         {
             return;

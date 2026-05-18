@@ -45,6 +45,10 @@ public class SlayerTaskTracker
     private static final String RL_SLAYER_GROUP = "slayer";
     /** RuneLite built-in slayer plugin config key for the task creature name. */
     private static final String RL_TASK_NAME_KEY = "taskName";
+    /** RuneLite built-in slayer plugin config key for the original task amount. */
+    private static final String RL_INIT_AMOUNT_KEY = "initialAmount";
+    /** RuneLite built-in slayer plugin config key for the streak counter. */
+    private static final String RL_STREAK_KEY = "streak";
 
     // Common chat message patterns for slayer task assignment
     private static final Pattern NEW_TASK_PATTERN =
@@ -75,6 +79,7 @@ public class SlayerTaskTracker
         this.client = client;
         this.config = config;
         this.configManager = configManager;
+        this.currentTaskTotal = config.currentTaskTotal();
     }
 
     /** Returns the kill count from the last parsed task assignment message. */
@@ -85,20 +90,47 @@ public class SlayerTaskTracker
 
     /**
      * Returns the total kills assigned for the current task.
-     * Safe to call from any thread (volatile read).
+     * Falls back to the RuneLite built-in Slayer plugin's RSProfile config
+     * if our own value is unset, so the count is available even on plugin
+     * restart when the assignment chat message was not observed.
+     * Safe to call from any thread.
      */
     public int getCurrentTaskTotal()
     {
-        return currentTaskTotal;
+        if (currentTaskTotal > 0)
+        {
+            return currentTaskTotal;
+        }
+        String val = configManager.getRSProfileConfiguration(RL_SLAYER_GROUP, RL_INIT_AMOUNT_KEY);
+        if (val == null)
+        {
+            return 0;
+        }
+        try
+        {
+            int parsed = Integer.parseInt(val.trim());
+            if (parsed > 0)
+            {
+                // Cache for next call so we don't keep hitting config
+                currentTaskTotal = parsed;
+                config.setCurrentTaskTotal(parsed);
+            }
+            return parsed;
+        }
+        catch (NumberFormatException ignored)
+        {
+            return 0;
+        }
     }
 
     /**
      * Updates the known total for the current task (e.g. from the !task chatcommand response).
-     * Safe to call from any thread (volatile write).
+     * Safe to call from any thread (volatile write). Also persists to config.
      */
     public void setCurrentTaskTotal(int total)
     {
         this.currentTaskTotal = total;
+        config.setCurrentTaskTotal(total);
     }
 
     /**
@@ -132,7 +164,7 @@ public class SlayerTaskTracker
      */
     public int getTaskStreak()
     {
-        String val = configManager.getRSProfileConfiguration(RL_SLAYER_GROUP, "streak");
+        String val = configManager.getRSProfileConfiguration(RL_SLAYER_GROUP, RL_STREAK_KEY);
         if (val == null)
         {
             return 0;
@@ -208,6 +240,7 @@ public class SlayerTaskTracker
                 lastAssignedCount = 0;
             }
             currentTaskTotal = lastAssignedCount;
+            config.setCurrentTaskTotal(lastAssignedCount);
             log.debug("Detected new slayer task: {} x{}", creatureName, lastAssignedCount);
             return ParseResult.NEW_TASK;
         }
@@ -227,6 +260,7 @@ public class SlayerTaskTracker
         {
             config.setCurrentTaskName("");
             currentTaskTotal = 0;
+            config.setCurrentTaskTotal(0);
             log.debug("Slayer task completed");
             return ParseResult.TASK_COMPLETE;
         }
@@ -236,6 +270,7 @@ public class SlayerTaskTracker
         {
             config.setCurrentTaskName("");
             currentTaskTotal = 0;
+            config.setCurrentTaskTotal(0);
             log.debug("No slayer task active");
             return ParseResult.NO_TASK;
         }

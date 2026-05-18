@@ -38,18 +38,15 @@ Draws a colored outline on task NPCs in the scene. Updated from spawn/despawn ev
 Logs every task you complete — monster name, kill count, which master assigned it, task number in your streak, and the date. Viewable from the History button in the panel.
 
 **Kill counter**
-Tracks how many kills you've done on the current task. Shown in the task detail header.
+Tracks how many kills you've done for a particular monster.
 
 **Slayer cape reminder**
 Optional setting — shows a reminder when you get a new task if you have 99 Slayer but didn't bring your cape. Off by default.
 
-**Inline settings**
-Gear icon in the panel header opens an inline settings view. No need to go through RuneLite's config panel. Covers master preference, highlight toggle and color, auto-navigate, and the cape reminder.
+**Suggested & Required Items**
+Reminders to bring both Required Slayer Items, and Suggested items, that may be needed to access a certain area.
 
----
-
-## Navigation masters
-
+**Navigation masters**
 All 8 masters are supported: Turael, Mazchna, Vannaka, Chaeldar, Konar, Nieve / Steve, Duradel, and Krystilia.
 
 ---
@@ -67,6 +64,10 @@ If you enjoy the plugin, [buy me a Ko-fi](https://ko-fi.com/wulfic) ☕
 ```
 ./gradlew build
 ./gradlew run
+```
+or Live test the plugin on windows
+```
+./dev-run.ps1
 ```
 
 ---
