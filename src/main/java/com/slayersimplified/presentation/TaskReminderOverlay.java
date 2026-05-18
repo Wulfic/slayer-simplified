@@ -40,6 +40,12 @@ public class TaskReminderOverlay extends Overlay
     private final MonsterNotesService notesService;
     private final PanelComponent panelComponent = new PanelComponent();
 
+    // --- Cached panel state. The PanelComponent is only rebuilt when one of
+    // these inputs changes, so the per-frame render() is essentially free.
+    private String cachedTaskName;
+    private String cachedNotes;
+    private boolean cachedHasContent;
+
     @Inject
     public TaskReminderOverlay(
             Client client,
@@ -70,6 +76,7 @@ public class TaskReminderOverlay extends Overlay
             return null;
         }
 
+        // Look up notes (cheap map get) so we can detect changes since the last frame.
         Task task = taskService.get(taskName);
         if (task == null)
         {
@@ -84,18 +91,43 @@ public class TaskReminderOverlay extends Overlay
             return null;
         }
 
-        final boolean hasItems = task.itemsRequired != null
-                && Arrays.stream(task.itemsRequired)
-                         .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
-        final String notes = notesService.getNotes(task.name);
-        final boolean hasNotes = !notes.isEmpty();
+        String notes = notesService.getNotes(task.name);
 
-        if (!hasItems && !hasNotes)
+        // Rebuild the PanelComponent only when one of the inputs changes.
+        if (!task.name.equals(cachedTaskName) || !notes.equals(cachedNotes))
+        {
+            cachedTaskName = task.name;
+            cachedNotes = notes;
+            cachedHasContent = rebuildPanel(task, notes);
+        }
+
+        if (!cachedHasContent)
         {
             return null;
         }
 
+        return panelComponent.render(graphics);
+    }
+
+    /**
+     * Rebuilds the cached PanelComponent for the given task / notes.
+     *
+     * @return true if the panel has any content worth rendering.
+     */
+    private boolean rebuildPanel(Task task, String notes)
+    {
+        final boolean hasItems = task.itemsRequired != null
+                && Arrays.stream(task.itemsRequired)
+                         .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
+        final boolean hasNotes = !notes.isEmpty();
+
         panelComponent.getChildren().clear();
+
+        if (!hasItems && !hasNotes)
+        {
+            return false;
+        }
+
         panelComponent.getChildren().add(TitleComponent.builder()
                 .text(task.name)
                 .build());
@@ -136,7 +168,7 @@ public class TaskReminderOverlay extends Overlay
             }
         }
 
-        return panelComponent.render(graphics);
+        return true;
     }
 
     /** Splits text into lines no longer than {@code maxLen} characters, preserving newlines. */

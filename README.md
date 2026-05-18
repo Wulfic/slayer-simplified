@@ -57,6 +57,8 @@ Found a bug? [Open an issue](https://github.com/Wulfic/slayer-simplified/issues)
 
 If you enjoy the plugin, [buy me a Ko-fi](https://ko-fi.com/wulfic) ☕
 
+On a side note, I have not unlocked every single area yet, as such I cannot verify cords for every location. So please open bug reports with correct cordinates using the debug option in settings!
+
 ---
 
 ## Building

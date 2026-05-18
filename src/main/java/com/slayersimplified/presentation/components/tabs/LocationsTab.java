@@ -151,9 +151,13 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
             contentPanel.add(createLocationRow(location));
         }
 
-        // Auto-favorite when there is exactly one location and none has been set yet
+        // Auto-favorite when there is exactly one location and none has been
+        // set yet — but only if the player actually meets its requirements
+        // (or debug mode is on). Otherwise we'd silently pin an unreachable
+        // location for them.
         if (valid.size() == 1 && currentMonsterName != null
-                && favoriteService.getFavorite(currentMonsterName) == null)
+                && favoriteService.getFavorite(currentMonsterName) == null
+                && (debugMode.get() || requirementService.isAvailable(valid.get(0))))
         {
             favoriteService.setFavorite(currentMonsterName, valid.get(0));
             for (Component comp : contentPanel.getComponents())
@@ -202,26 +206,6 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
         buttonPanel.setOpaque(false);
 
-        // Favorite toggle star
-        boolean isFav = currentMonsterName != null
-                && favoriteService.isFavorite(currentMonsterName, locationName);
-        JButton favButton = new JButton(isFav ? "\u2605" : "\u2606");
-        favButton.setFont(favButton.getFont().deriveFont(Font.PLAIN, 16f));
-        favButton.setPreferredSize(new Dimension(28, 24));
-        favButton.setFocusPainted(false);
-        favButton.setBorderPainted(false);
-        favButton.setContentAreaFilled(false);
-        favButton.setForeground(isFav ? new Color(255, 215, 0) : ColorScheme.LIGHT_GRAY_COLOR);
-        favButton.setToolTipText(isFav ? "Remove favorite" : "Set as favorite location");
-        favButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-
-        ActionListener favListener = e -> onFavoriteClicked(locationName, favButton);
-        favButton.addActionListener(favListener);
-        buttons.add(favButton);
-        listeners.add(favListener);
-        buttonPanel.add(favButton);
-        buttonPanel.add(Box.createHorizontalStrut(2));
-
         // Navigate button (only if coordinates exist)
         WorldPoint coords = locationCoordinateService.getCoordinates(locationName);
 
@@ -230,6 +214,38 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         boolean reqMet = debug || requirementService.isAvailable(locationName);
         String reqDesc = requirementService.getRequirementDescription(locationName);
         String missing = reqMet ? "" : requirementService.getMissingText(locationName);
+
+        // Favorite toggle star — disabled when requirements aren't met so the
+        // player can't pin a location they can't actually reach.
+        boolean isFav = currentMonsterName != null
+                && favoriteService.isFavorite(currentMonsterName, locationName);
+        JButton favButton = new JButton(isFav ? "\u2605" : "\u2606");
+        favButton.setFont(favButton.getFont().deriveFont(Font.PLAIN, 16f));
+        favButton.setPreferredSize(new Dimension(28, 24));
+        favButton.setFocusPainted(false);
+        favButton.setBorderPainted(false);
+        favButton.setContentAreaFilled(false);
+
+        if (!reqMet)
+        {
+            favButton.setEnabled(false);
+            favButton.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+            favButton.setToolTipText("Requires: " + missing);
+            favButton.setCursor(Cursor.getDefaultCursor());
+        }
+        else
+        {
+            favButton.setForeground(isFav ? new Color(255, 215, 0) : ColorScheme.LIGHT_GRAY_COLOR);
+            favButton.setToolTipText(isFav ? "Remove favorite" : "Set as favorite location");
+            favButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+            ActionListener favListener = e -> onFavoriteClicked(locationName, favButton);
+            favButton.addActionListener(favListener);
+            buttons.add(favButton);
+            listeners.add(favListener);
+        }
+        buttonPanel.add(favButton);
+        buttonPanel.add(Box.createHorizontalStrut(2));
 
         if (!reqMet)
         {
