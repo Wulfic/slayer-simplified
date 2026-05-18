@@ -26,6 +26,9 @@ public class TaskHistoryEntry
     /** Player's running task counter at assignment time. 0 if unknown. */
     public int taskNumber;
 
+    /** True if this task was cancelled with slayer points instead of completed. */
+    public boolean skipped;
+
     /** Required by Gson for deserialization. */
     public TaskHistoryEntry()
     {

@@ -39,6 +39,7 @@ public class SlayerHistoryPanel extends JPanel
     private static final int ICON_SIZE = 36;
 
     private static final Color ACTIVE_BORDER_COLOR = new Color(80, 200, 80);
+    private static final Color SKIPPED_COLOR = new Color(220, 90, 90);
 
     private final SlayerHistoryService historyService;
     private final TaskService taskService;
@@ -187,26 +188,48 @@ public class SlayerHistoryPanel extends JPanel
 
     private JPanel buildEntryRow(TaskHistoryEntry entry, boolean isActive)
     {
+        // Render-time fallback: if this row represents the active task but its
+        // stored count/streak haven't been backfilled yet, read live values from
+        // the task tracker (which falls back to the RuneLite Slayer plugin config).
+        int displayCount = entry.count;
+        int displayNumber = entry.taskNumber;
+        if (isActive)
+        {
+            if (displayCount <= 0)
+            {
+                displayCount = taskTracker.getCurrentTaskTotal();
+            }
+            if (displayNumber <= 0)
+            {
+                displayNumber = taskTracker.getTaskStreak();
+            }
+        }
+
         JPanel row = new JPanel(new BorderLayout(4, 0));
         row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        // Outer EmptyBorder = gap between rows; middle = solid box (green when active);
+        // inner EmptyBorder = padding around row content.
         row.setBorder(BorderFactory.createCompoundBorder(
-                isActive
-                        ? BorderFactory.createMatteBorder(0, 3, 1, 0, ACTIVE_BORDER_COLOR)
-                        : BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(5, isActive ? 3 : 6, 5, 6)));
-        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 66));
+                new EmptyBorder(0, 0, 4, 0),
+                BorderFactory.createCompoundBorder(
+                        isActive
+                                ? BorderFactory.createLineBorder(ACTIVE_BORDER_COLOR, 2)
+                                : BorderFactory.createLineBorder(ColorScheme.MEDIUM_GRAY_COLOR, 1),
+                        BorderFactory.createEmptyBorder(8, 6, 8, 6))));
+        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 74));
 
-        // WEST: kill count + monster icon
+        // WEST: kill count + monster icon (icon vertically centered)
         JPanel leftPanel = new JPanel(new BorderLayout(2, 0));
         leftPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         leftPanel.setPreferredSize(new Dimension(58, 0));
 
-        if (entry.count > 0)
+        if (displayCount > 0)
         {
-            JLabel countLabel = new JLabel(String.valueOf(entry.count));
+            JLabel countLabel = new JLabel(String.valueOf(displayCount));
             countLabel.setForeground(COUNT_COLOR);
             countLabel.setFont(FontManager.getRunescapeSmallFont().deriveFont(Font.BOLD));
-            countLabel.setVerticalAlignment(SwingConstants.TOP);
+            countLabel.setVerticalAlignment(SwingConstants.CENTER);
+            countLabel.setHorizontalAlignment(SwingConstants.CENTER);
             countLabel.setPreferredSize(new Dimension(20, 0));
             leftPanel.add(countLabel, BorderLayout.WEST);
         }
@@ -217,29 +240,30 @@ public class SlayerHistoryPanel extends JPanel
             BufferedImage scaled = ImageUtil.resizeImage(task.image, ICON_SIZE, ICON_SIZE);
             JLabel iconLabel = new JLabel(new ImageIcon(scaled));
             iconLabel.setPreferredSize(new Dimension(ICON_SIZE, ICON_SIZE));
+            iconLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            iconLabel.setVerticalAlignment(SwingConstants.CENTER);
             leftPanel.add(iconLabel, BorderLayout.CENTER);
         }
         row.add(leftPanel, BorderLayout.WEST);
 
-        // CENTER: name, master, date stacked vertically
-        JPanel centerPanel = new JPanel();
-        centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
-        centerPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        centerPanel.setBorder(new EmptyBorder(0, 4, 0, 4));
+        // CENTER: name, master, date — vertically centered as a block, horizontally centered
+        JPanel centerContent = new JPanel();
+        centerContent.setLayout(new BoxLayout(centerContent, BoxLayout.Y_AXIS));
+        centerContent.setBackground(ColorScheme.DARKER_GRAY_COLOR);
 
         JLabel nameLabel = new JLabel(entry.taskName != null ? entry.taskName : "");
         nameLabel.setForeground(Color.WHITE);
         nameLabel.setFont(FontManager.getRunescapeFont().deriveFont(Font.BOLD));
-        nameLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        centerPanel.add(nameLabel);
+        nameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        centerContent.add(nameLabel);
 
         if (entry.master != null && !entry.master.isEmpty())
         {
             JLabel masterLabel = new JLabel(entry.master);
             masterLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
             masterLabel.setFont(FontManager.getRunescapeSmallFont());
-            masterLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-            centerPanel.add(masterLabel);
+            masterLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+            centerContent.add(masterLabel);
         }
 
         if (entry.timestamp > 0)
@@ -247,21 +271,45 @@ public class SlayerHistoryPanel extends JPanel
             LocalDateTime dt = LocalDateTime.ofInstant(
                     Instant.ofEpochMilli(entry.timestamp), ZoneId.systemDefault());
             JLabel dateLabel = new JLabel(DATE_FMT.format(dt));
-            dateLabel.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+            dateLabel.setForeground(Color.WHITE);
             dateLabel.setFont(FontManager.getRunescapeSmallFont());
-            dateLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-            centerPanel.add(dateLabel);
+            dateLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+            centerContent.add(dateLabel);
         }
+
+        // Vertically center the block within the row
+        JPanel centerPanel = new JPanel(new GridBagLayout());
+        centerPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        centerPanel.setBorder(new EmptyBorder(0, 4, 0, 4));
+        centerPanel.add(centerContent);
         row.add(centerPanel, BorderLayout.CENTER);
 
-        // EAST: task number (#97)
-        if (entry.taskNumber > 0)
+        // EAST: task number (#31) stacked above a "Skipped" badge when applicable
+        JPanel eastPanel = new JPanel();
+        eastPanel.setLayout(new BoxLayout(eastPanel, BoxLayout.Y_AXIS));
+        eastPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+
+        if (displayNumber > 0)
         {
-            JLabel numLabel = new JLabel("#" + entry.taskNumber);
+            JLabel numLabel = new JLabel("#" + displayNumber);
             numLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
             numLabel.setFont(FontManager.getRunescapeSmallFont());
-            numLabel.setVerticalAlignment(SwingConstants.CENTER);
-            row.add(numLabel, BorderLayout.EAST);
+            numLabel.setAlignmentX(Component.RIGHT_ALIGNMENT);
+            eastPanel.add(numLabel);
+        }
+
+        if (entry.skipped)
+        {
+            JLabel skippedLabel = new JLabel("Skipped");
+            skippedLabel.setForeground(SKIPPED_COLOR);
+            skippedLabel.setFont(FontManager.getRunescapeSmallFont().deriveFont(Font.BOLD));
+            skippedLabel.setAlignmentX(Component.RIGHT_ALIGNMENT);
+            eastPanel.add(skippedLabel);
+        }
+
+        if (eastPanel.getComponentCount() > 0)
+        {
+            row.add(eastPanel, BorderLayout.EAST);
         }
 
         return row;

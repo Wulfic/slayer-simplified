@@ -69,6 +69,79 @@ public class SlayerHistoryService
     }
 
     /**
+     * Backfills the most recent entry's count and task number if they are
+     * still zero (e.g. assigned before the RuneLite Slayer plugin had populated
+     * its RSProfile config). Only updates when the latest entry matches the
+     * provided task name. Safe to call from any thread.
+     *
+     * @return {@code true} if the latest entry was modified.
+     */
+    public boolean updateLatestEntry(String taskName, int count, int taskNumber)
+    {
+        if (taskName == null || taskName.isEmpty())
+        {
+            return false;
+        }
+        boolean changed = false;
+        synchronized (history)
+        {
+            if (history.isEmpty())
+            {
+                return false;
+            }
+            TaskHistoryEntry top = history.get(0);
+            if (top.taskName == null || !top.taskName.equalsIgnoreCase(taskName))
+            {
+                return false;
+            }
+            if (count > 0 && top.count != count)
+            {
+                top.count = count;
+                changed = true;
+            }
+            if (taskNumber > 0 && top.taskNumber != taskNumber)
+            {
+                top.taskNumber = taskNumber;
+                changed = true;
+            }
+        }
+        if (changed)
+        {
+            saveExecutor.submit(this::save);
+        }
+        return changed;
+    }
+
+    /**
+     * Marks the most recent entry as skipped (cancelled via slayer points)
+     * if its task name matches. Safe to call from any thread.
+     *
+     * @return {@code true} if the latest entry was modified.
+     */
+    public boolean markLatestSkipped(String taskName)
+    {
+        if (taskName == null || taskName.isEmpty())
+        {
+            return false;
+        }
+        synchronized (history)
+        {
+            if (history.isEmpty())
+            {
+                return false;
+            }
+            TaskHistoryEntry top = history.get(0);
+            if (top.taskName == null || !top.taskName.equalsIgnoreCase(taskName) || top.skipped)
+            {
+                return false;
+            }
+            top.skipped = true;
+        }
+        saveExecutor.submit(this::save);
+        return true;
+    }
+
+    /**
      * Returns a snapshot of the history list (most recent first).
      * Safe to call from any thread.
      */

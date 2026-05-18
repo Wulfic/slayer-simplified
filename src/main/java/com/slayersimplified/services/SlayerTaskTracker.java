@@ -47,6 +47,8 @@ public class SlayerTaskTracker
     private static final String RL_TASK_NAME_KEY = "taskName";
     /** RuneLite built-in slayer plugin config key for the original task amount. */
     private static final String RL_INIT_AMOUNT_KEY = "initialAmount";
+    /** RuneLite built-in slayer plugin config key for the remaining task amount. */
+    private static final String RL_AMOUNT_KEY = "amount";
     /** RuneLite built-in slayer plugin config key for the streak counter. */
     private static final String RL_STREAK_KEY = "streak";
 
@@ -176,6 +178,30 @@ public class SlayerTaskTracker
         catch (NumberFormatException ignored)
         {
             return 0;
+        }
+    }
+
+    /**
+     * Returns the remaining kills on the current slayer task by reading the
+     * RuneLite built-in Slayer plugin's RSProfile config. Returns -1 if unknown.
+     * A value of 0 indicates the task is completed; a positive value indicates
+     * remaining kills (and, when paired with a {@code taskName} change, that the
+     * task was skipped via slayer points).
+     */
+    public int getRemainingAmount()
+    {
+        String val = configManager.getRSProfileConfiguration(RL_SLAYER_GROUP, RL_AMOUNT_KEY);
+        if (val == null)
+        {
+            return -1;
+        }
+        try
+        {
+            return Integer.parseInt(val.trim());
+        }
+        catch (NumberFormatException ignored)
+        {
+            return -1;
         }
     }
 

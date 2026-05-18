@@ -113,6 +113,19 @@ public class SlayerSimplifiedPlugin extends Plugin
     /** Name of the most recently interacted slayer master NPC, for history attribution. */
     private String lastInteractedMasterName = "";
 
+    /**
+     * Last task name we saw in the RuneLite Slayer plugin's RSProfile config.
+     * Used to detect transitions to a new task.
+     */
+    private volatile String lastSeenSlayerTaskName;
+
+    /**
+     * Last remaining-kills value we saw on the previous task. If this is &gt; 0
+     * when the task name changes, the previous task was cancelled via slayer
+     * points (i.e. skipped).
+     */
+    private volatile int lastSeenSlayerRemaining = -1;
+
     @Override
     public void configure(Binder binder)
     {
@@ -149,6 +162,10 @@ public class SlayerSimplifiedPlugin extends Plugin
             mainPanel.refreshCurrentTask();
             mainPanel.refreshHistory();
         });
+        // Seed last-seen slayer state so we can detect future task changes
+        // (completion vs skip) by comparing against this baseline.
+        lastSeenSlayerTaskName = taskTracker.getCurrentTaskName();
+        lastSeenSlayerRemaining = taskTracker.getRemainingAmount();
         // Populate the NPC highlight set in case the plugin is enabled while already logged in.
         clientThread.invokeLater(targetOverlay::onTaskChanged);
         // Cache quest/skill state so the LocationsTab can gray out inaccessible options.
@@ -404,14 +421,21 @@ public class SlayerSimplifiedPlugin extends Plugin
             return;
         }
 
+        int total = taskTracker.getCurrentTaskTotal();
+        int streak = taskTracker.getTaskStreak();
+
         java.util.List<TaskHistoryEntry> entries = historyService.getHistory();
         if (!entries.isEmpty() && taskName.equalsIgnoreCase(entries.get(0).taskName))
         {
+            // Same task already at the top — backfill any missing count/streak now
+            // that the RuneLite Slayer plugin has populated its RSProfile config.
+            if (historyService.updateLatestEntry(taskName, total, streak))
+            {
+                log.debug("Backfilled active task entry: {} x{} (streak {})", taskName, total, streak);
+            }
             return;
         }
 
-        int total = taskTracker.getCurrentTaskTotal();
-        int streak = taskTracker.getTaskStreak();
         historyService.addEntry(new TaskHistoryEntry(
                 taskName, total, lastInteractedMasterName,
                 System.currentTimeMillis(), streak));
@@ -427,8 +451,38 @@ public class SlayerSimplifiedPlugin extends Plugin
         if ("slayer".equals(event.getGroup()))
         {
             String key = event.getKey();
+            if ("amount".equals(key))
+            {
+                // Keep a running snapshot of the remaining kills so we can tell
+                // whether the next taskName change was a completion or a skip.
+                lastSeenSlayerRemaining = taskTracker.getRemainingAmount();
+                return;
+            }
             if ("taskName".equals(key) || "initialAmount".equals(key))
             {
+                if ("taskName".equals(key))
+                {
+                    String newName = taskTracker.getCurrentTaskName();
+                    String prevName = lastSeenSlayerTaskName;
+                    int prevRemaining = lastSeenSlayerRemaining;
+                    // Task name changed to a different non-empty value AND the
+                    // previous task still had kills remaining -> player paid to skip.
+                    if (prevName != null && !prevName.isEmpty()
+                            && newName != null && !newName.isEmpty()
+                            && !prevName.equalsIgnoreCase(newName)
+                            && prevRemaining > 0)
+                    {
+                        if (historyService.markLatestSkipped(prevName))
+                        {
+                            log.debug("Marked previous task as skipped: {} ({} kills left)",
+                                    prevName, prevRemaining);
+                        }
+                    }
+                    lastSeenSlayerTaskName = newName;
+                    // The amount key may or may not have fired yet for the new
+                    // task; refresh from config so future skip-checks are accurate.
+                    lastSeenSlayerRemaining = taskTracker.getRemainingAmount();
+                }
                 SwingUtilities.invokeLater(() ->
                 {
                     syncCurrentTaskToHistory();
