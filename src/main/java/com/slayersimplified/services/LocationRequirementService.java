@@ -15,11 +15,13 @@ import net.runelite.api.Skill;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -53,6 +55,9 @@ public class LocationRequirementService
     private volatile Set<Quest> completedQuests = Collections.emptySet();
     private volatile Map<Skill, Integer> skillLevels = Collections.emptyMap();
 
+    /** Callbacks invoked (on the client thread) after each successful refresh. */
+    private final List<Runnable> refreshListeners = new ArrayList<>();
+
     @Inject
     public LocationRequirementService(Client client)
     {
@@ -70,6 +75,16 @@ public class LocationRequirementService
         }
         this.trackedQuests = Collections.unmodifiableSet(qs);
         this.trackedSkills = Collections.unmodifiableSet(ss);
+    }
+
+    /**
+     * Registers a callback that will be invoked on the client thread after
+     * every successful {@link #refresh()}. Intended for triggering Swing
+     * redraws via {@code SwingUtilities.invokeLater(…)}.
+     */
+    public void addRefreshListener(Runnable listener)
+    {
+        refreshListeners.add(listener);
     }
 
     /**
@@ -94,7 +109,7 @@ public class LocationRequirementService
             }
             catch (Exception ex)
             {
-                log.debug("Failed to read quest state for {}", q.name(), ex);
+                log.warn("Failed to read quest state for {}", q.name(), ex);
             }
         }
         Map<Skill, Integer> levels = new EnumMap<>(Skill.class);
@@ -104,8 +119,12 @@ public class LocationRequirementService
         }
         this.completedQuests = Collections.unmodifiableSet(completed);
         this.skillLevels = Collections.unmodifiableMap(levels);
-        log.debug("LocationRequirementService refreshed: {} quests done, {} skills tracked",
-                completed.size(), levels.size());
+        log.info("LocationRequirementService refreshed: {} / {} quests completed, {} skills tracked",
+                completed.size(), trackedQuests.size(), levels.size());
+        for (Runnable listener : refreshListeners)
+        {
+            listener.run();
+        }
     }
 
     /**
@@ -197,7 +216,6 @@ public class LocationRequirementService
 
         // === Tirannwn (elf lands) ===
         put(m, "Lletya", q(Quest.MOURNINGS_END_PART_I));
-        put(m, "Iorwerth Camp", q(Quest.MOURNINGS_END_PART_II));
         put(m, "Mourner Tunnels", q(Quest.MOURNINGS_END_PART_II));
         put(m, "Temple of Light", q(Quest.MOURNINGS_END_PART_II));
         put(m, "Prifddinas", q(Quest.SONG_OF_THE_ELVES));

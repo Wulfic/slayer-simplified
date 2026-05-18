@@ -138,6 +138,10 @@ public class SlayerSimplifiedPlugin extends Plugin
         overlayManager.add(targetOverlay);
         overlayManager.add(coordinatesOverlay);
         overlayManager.add(taskReminderOverlay);
+        // After every requirement refresh, rebuild the current task panel so the
+        // Locations tab immediately reflects the player's latest quest completion.
+        locationRequirementService.addRefreshListener(
+                () -> SwingUtilities.invokeLater(mainPanel::refreshCurrentTask));
         SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
         // Populate the NPC highlight set in case the plugin is enabled while already logged in.
         clientThread.invokeLater(targetOverlay::onTaskChanged);
@@ -279,9 +283,9 @@ public class SlayerSimplifiedPlugin extends Plugin
     {
         if (event.getGameState() == net.runelite.api.GameState.LOGGED_IN)
         {
-            // Quest progress can change between sessions; refresh on login so
-            // the Locations tab reflects the player's current unlocks.
-            clientThread.invokeLater(locationRequirementService::refresh);
+            // onGameStateChanged fires on the client thread, so call refresh() directly.
+            // The refresh listener will then schedule a Swing-side panel rebuild.
+            locationRequirementService.refresh();
         }
     }
 
