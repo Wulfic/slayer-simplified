@@ -136,6 +136,63 @@ public class SlayerTaskTracker
     }
 
     /**
+     * Mirrors the RuneLite built-in Slayer plugin's RSProfile config into our
+     * own config. The RL plugin is the authoritative source of truth for the
+     * active task (it tracks varbits/server state directly), so when it
+     * updates we must overwrite any stale value we cached from a previous
+     * task — otherwise navigation and history will keep pointing at the old
+     * monster after a skip or task change.
+     *
+     * <p>Safe to call from any thread.</p>
+     *
+     * @return {@code true} if our cached task name actually changed.
+     */
+    public boolean syncFromRuneLiteConfig()
+    {
+        String rlTaskName = configManager.getRSProfileConfiguration(RL_SLAYER_GROUP, RL_TASK_NAME_KEY);
+        if (rlTaskName == null || rlTaskName.isEmpty())
+        {
+            // RuneLite slayer plugin has no task recorded — don't wipe our own
+            // value (it may have been set from the assignment chat message
+            // before the RL plugin observed the change, or the RL plugin may
+            // be disabled).
+            return false;
+        }
+
+        String normalized = normalizeCreatureName(rlTaskName);
+        String previous = config.currentTaskName();
+        boolean changed = previous == null
+                ? true
+                : !previous.equalsIgnoreCase(normalized);
+
+        // RL is authoritative whenever it has a task — overwrite our cache.
+        config.setCurrentTaskName(normalized);
+
+        // Refresh the total from RL's initialAmount whenever the name changes.
+        if (changed)
+        {
+            int rlTotal = 0;
+            String rlInit = configManager.getRSProfileConfiguration(RL_SLAYER_GROUP, RL_INIT_AMOUNT_KEY);
+            if (rlInit != null)
+            {
+                try
+                {
+                    rlTotal = Integer.parseInt(rlInit.trim());
+                }
+                catch (NumberFormatException ignored)
+                {
+                    rlTotal = 0;
+                }
+            }
+            currentTaskTotal = rlTotal;
+            config.setCurrentTaskTotal(rlTotal);
+            log.debug("Synced task from RuneLite slayer config: '{}' -> '{}' (x{})",
+                    previous, normalized, rlTotal);
+        }
+        return changed;
+    }
+
+    /**
      * Check if the player currently has an active slayer task by reading
      * the task remaining count from game state.
      *

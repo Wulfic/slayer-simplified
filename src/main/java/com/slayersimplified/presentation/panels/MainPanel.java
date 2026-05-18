@@ -242,7 +242,9 @@ public class MainPanel extends PluginPanel
         });
 
         SlayerHistoryPanel historyPanel = new SlayerHistoryPanel(
-                historyService, taskService, taskTracker, () -> showPanel(Panel.TASK_SEARCH));
+                historyService, taskService, taskTracker,
+                () -> showPanel(Panel.TASK_SEARCH),
+                this::showTask);
         this.historyPanel = historyPanel;
         historyButton.addActionListener(e ->
         {
@@ -486,6 +488,12 @@ public class MainPanel extends PluginPanel
         }
 
         taskSearchPanel.updateTaskList(matchedTasks);
+    }
+
+    /** Opens the task detail panel for the given task. Safe to call from the EDT. */
+    public void showTask(Task task)
+    {
+        onTaskSelected(task);
     }
 
     private void onTaskSelected(Task task)

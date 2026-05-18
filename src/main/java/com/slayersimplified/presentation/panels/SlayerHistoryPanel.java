@@ -18,6 +18,8 @@ import net.runelite.client.util.ImageUtil;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -25,6 +27,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Consumer;
 
 /**
  * Panel displaying the player's logged slayer task history.
@@ -45,17 +48,20 @@ public class SlayerHistoryPanel extends JPanel
     private final TaskService taskService;
     private final SlayerTaskTracker taskTracker;
     private final Runnable onClose;
+    private final Consumer<Task> onTaskSelected;
 
     private final JLabel tasksLoggedLabel = new JLabel();
     private final JPanel listPanel = new JPanel();
 
     public SlayerHistoryPanel(SlayerHistoryService historyService, TaskService taskService,
-                               SlayerTaskTracker taskTracker, Runnable onClose)
+                               SlayerTaskTracker taskTracker, Runnable onClose,
+                               Consumer<Task> onTaskSelected)
     {
         this.historyService = historyService;
         this.taskService = taskService;
         this.taskTracker = taskTracker;
         this.onClose = onClose;
+        this.onTaskSelected = onTaskSelected;
 
         setLayout(new BorderLayout());
         setBackground(ColorScheme.DARK_GRAY_COLOR);
@@ -205,6 +211,9 @@ public class SlayerHistoryPanel extends JPanel
             }
         }
 
+        // Look up the Task object for this history entry so we can open the task detail panel.
+        Task clickableTask = taskService.get(entry.taskName);
+
         JPanel row = new JPanel(new BorderLayout(4, 0));
         row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         // Outer EmptyBorder = gap between rows; middle = solid box (green when active);
@@ -217,6 +226,32 @@ public class SlayerHistoryPanel extends JPanel
                                 : BorderFactory.createLineBorder(ColorScheme.MEDIUM_GRAY_COLOR, 1),
                         BorderFactory.createEmptyBorder(8, 6, 8, 6))));
         row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 74));
+
+        if (clickableTask != null)
+        {
+            row.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            row.setToolTipText("View " + entry.taskName + " details");
+            row.addMouseListener(new MouseAdapter()
+            {
+                @Override
+                public void mouseClicked(MouseEvent e)
+                {
+                    onTaskSelected.accept(clickableTask);
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e)
+                {
+                    setBackground(row, ColorScheme.DARK_GRAY_COLOR);
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e)
+                {
+                    setBackground(row, ColorScheme.DARKER_GRAY_COLOR);
+                }
+            });
+        }
 
         // WEST: kill count + monster icon (icon vertically centered)
         JPanel leftPanel = new JPanel(new BorderLayout(2, 0));
@@ -313,5 +348,18 @@ public class SlayerHistoryPanel extends JPanel
         }
 
         return row;
+    }
+
+    /** Recursively sets the background on a component and all its children. */
+    private static void setBackground(Component c, Color color)
+    {
+        c.setBackground(color);
+        if (c instanceof Container)
+        {
+            for (Component child : ((Container) c).getComponents())
+            {
+                setBackground(child, color);
+            }
+        }
     }
 }

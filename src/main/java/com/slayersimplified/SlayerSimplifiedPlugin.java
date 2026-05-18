@@ -126,6 +126,14 @@ public class SlayerSimplifiedPlugin extends Plugin
      */
     private volatile int lastSeenSlayerRemaining = -1;
 
+    /**
+     * Set to {@code true} when we observe the "You have completed your task!"
+     * chat message. Consulted (and cleared) when the task name next changes
+     * so we never flag a legitimately completed task as skipped, even if the
+     * RuneLite Slayer plugin saves its {@code amount} config out of order.
+     */
+    private volatile boolean previousTaskCompleted = false;
+
     @Override
     public void configure(Binder binder)
     {
@@ -158,6 +166,10 @@ public class SlayerSimplifiedPlugin extends Plugin
                 () -> SwingUtilities.invokeLater(mainPanel::refreshCurrentTask));
         SwingUtilities.invokeLater(() ->
         {
+            // Mirror the RuneLite Slayer plugin's authoritative task state into
+            // our own config before reading anything, so we recover from any
+            // stale name left over from a previous session.
+            taskTracker.syncFromRuneLiteConfig();
             syncCurrentTaskToHistory();
             mainPanel.refreshCurrentTask();
             mainPanel.refreshHistory();
@@ -235,6 +247,12 @@ public class SlayerSimplifiedPlugin extends Plugin
             else if (result == SlayerTaskTracker.ParseResult.TASK_COMPLETE
                     || result == SlayerTaskTracker.ParseResult.NO_TASK)
             {
+                if (result == SlayerTaskTracker.ParseResult.TASK_COMPLETE)
+                {
+                    // Remember completion so the upcoming taskName ConfigChanged
+                    // is not misinterpreted as a slayer-point skip.
+                    previousTaskCompleted = true;
+                }
                 SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
             }
 
@@ -462,12 +480,22 @@ public class SlayerSimplifiedPlugin extends Plugin
             {
                 if ("taskName".equals(key))
                 {
+                    // Authoritative source: pull the new name (and refresh our
+                    // own cached config) BEFORE inspecting it, otherwise we'd
+                    // keep reading the stale previous task name.
+                    taskTracker.syncFromRuneLiteConfig();
+
                     String newName = taskTracker.getCurrentTaskName();
                     String prevName = lastSeenSlayerTaskName;
                     int prevRemaining = lastSeenSlayerRemaining;
-                    // Task name changed to a different non-empty value AND the
+                    boolean wasCompleted = previousTaskCompleted;
+                    // Consume the completion flag regardless of what happens below.
+                    previousTaskCompleted = false;
+                    // Task name changed to a different non-empty value AND we did
+                    // NOT observe a "You have completed your task!" chat AND the
                     // previous task still had kills remaining -> player paid to skip.
-                    if (prevName != null && !prevName.isEmpty()
+                    if (!wasCompleted
+                            && prevName != null && !prevName.isEmpty()
                             && newName != null && !newName.isEmpty()
                             && !prevName.equalsIgnoreCase(newName)
                             && prevRemaining > 0)
