@@ -46,6 +46,7 @@ public class TaskTabs extends JTabbedPane
     private final LocationsTab locationsTab;
     private final LootTab lootTab;
     private final InfoTab infoTab;
+    private final LocationRequirementService requirementService;
 
     /**
      * @param navigationService         service for sending path requests to Shortest Path
@@ -98,6 +99,7 @@ public class TaskTabs extends JTabbedPane
         locationsTab = new LocationsTab(navigationService, locationCoordinateService, favoriteService, requirementService, debugMode);
         lootTab = new LootTab(okHttpClient);
         infoTab = new InfoTab(okHttpClient);
+        this.requirementService = requirementService;
 
         setTab(locations, Icon.COMPASS.getIcon(), locationsTab, locations.getName());
         setTab(info, Icon.SLAYER_SKILL.getIcon(), infoTab, info.getName());
@@ -136,7 +138,9 @@ public class TaskTabs extends JTabbedPane
                 task.masters));
         updateTab(TabKey.WIKI, task.wikiLinks);
         updateTab(TabKey.LOOT, task.name);
-        updateTab(TabKey.NOTES, task.name);
+        updateTab(TabKey.NOTES, new NotesTab.NotesData(
+                task.name,
+                requirementService.getSuggestedItemsForLocations(task.locations)));
     }
 
     private <T> void updateTab(TabKey key, T data)

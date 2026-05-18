@@ -46,6 +46,9 @@ public class LocationRequirementService
     /** Lower-cased location name → its requirement. */
     private final Map<String, LocationRequirement> requirements;
 
+    /** Lower-cased location name → items suggested for access (e.g. light sources, climbing boots). */
+    private final Map<String, List<String>> locationSuggestedItems;
+
     /** Quests we need to query (union of every requirement's quests). */
     private final Set<Quest> trackedQuests;
 
@@ -65,6 +68,10 @@ public class LocationRequirementService
         Map<String, LocationRequirement> reqs = new HashMap<>();
         defineRequirements(reqs);
         this.requirements = Collections.unmodifiableMap(reqs);
+
+        Map<String, List<String>> items = new HashMap<>();
+        defineLocationSuggestedItems(items);
+        this.locationSuggestedItems = Collections.unmodifiableMap(items);
 
         Set<Quest> qs = EnumSet.noneOf(Quest.class);
         Set<Skill> ss = EnumSet.noneOf(Skill.class);
@@ -177,6 +184,39 @@ public class LocationRequirementService
         return r == null ? "" : r.getDescription();
     }
 
+    /**
+     * Returns items suggested for accessing the given location (e.g. a light
+     * source for dark caves, climbing boots for mountain paths). Returns an
+     * empty list when no suggestions are recorded for this location.
+     */
+    public List<String> getSuggestedItems(String locationName)
+    {
+        if (locationName == null)
+        {
+            return Collections.emptyList();
+        }
+        List<String> items = locationSuggestedItems.get(locationName.toLowerCase());
+        return items == null ? Collections.emptyList() : items;
+    }
+
+    /**
+     * Aggregates suggested access items across all provided locations,
+     * removing duplicates while preserving insertion order.
+     */
+    public List<String> getSuggestedItemsForLocations(String[] locations)
+    {
+        if (locations == null || locations.length == 0)
+        {
+            return Collections.emptyList();
+        }
+        Set<String> seen = new LinkedHashSet<>();
+        for (String loc : locations)
+        {
+            seen.addAll(getSuggestedItems(loc));
+        }
+        return new ArrayList<>(seen);
+    }
+
     /** Visible for the verification doc — every location name we gate. */
     public Set<String> getGatedLocations()
     {
@@ -280,6 +320,60 @@ public class LocationRequirementService
         // === Skill-only gates ===
         put(m, "Mining Guild", LocationRequirement.builder()
                 .skill(Skill.MINING, 60).build());
+    }
+
+    /**
+     * Populates the location → suggested access items map.
+     * These are items a player should bring to enter the area, independent of
+     * which monster they are assigned (e.g. a light source for dark caves).
+     */
+    private static void defineLocationSuggestedItems(Map<String, List<String>> m)
+    {
+        // ── Dark caves ────────────────────────────────────────────────────────
+        // A light source prevents the periodic fire damage dealt in unlit areas.
+        List<String> lightSource = Collections.singletonList("Light source (e.g. Bullseye lantern)");
+        m.put("lumbridge swamp caves", lightSource);
+        m.put("dorgesh-kaan south dungeon", lightSource);
+        m.put("mos le'harmless cave", lightSource);
+        m.put("haunted mine", lightSource);
+
+        // ── Climbing boots ────────────────────────────────────────────────────
+        // Required to traverse the rocky mountain paths to Trollheim and beyond.
+        List<String> climbingBoots = Collections.singletonList("Climbing boots");
+        m.put("trollheim", climbingBoots);
+        m.put("troll stronghold", climbingBoots);
+        m.put("death plateau (mountain troll)", climbingBoots);
+        m.put("ice path north of trollheim (ice trolls)", climbingBoots);
+
+        // ── Smoke dungeons ────────────────────────────────────────────────────
+        // The smoky atmosphere deals continuous damage without protection.
+        List<String> smokeProt = Collections.singletonList("Facemask or Slayer helmet (smoke damage)");
+        m.put("smoke dungeon", smokeProt);
+        m.put("smoke devil dungeon", smokeProt);
+
+        // ── Brimhaven Dungeon ─────────────────────────────────────────────────
+        // Entry requires a fee to Murcaily or a Dragon axe to chop the vines.
+        m.put("brimhaven dungeon", Collections.singletonList("875 coins (entry fee) or Dragon axe"));
+
+        // ── Evil Chicken's Lair ───────────────────────────────────────────────
+        // The portal in Zanaris only opens when carrying a raw chicken.
+        m.put("evil chicken's lair", Collections.singletonList("Raw chicken (required to enter the lair)"));
+
+        // ── Ape Atoll ─────────────────────────────────────────────────────────
+        // Without a Greegree, every guard on the island is aggressive.
+        List<String> greegree = Collections.singletonList("Greegree (to navigate Ape Atoll without constant attacks)");
+        m.put("ape atoll dungeon", greegree);
+        m.put("ape atoll temple", greegree);
+
+        // ── Waterbirth Island Dungeon ─────────────────────────────────────────
+        // Double doors deeper in the dungeon require two people or a pet rock.
+        m.put("waterbirth island dungeon", Collections.singletonList(
+                "Pet rock + rope (to open double doors solo) or bring a partner"));
+
+        // ── Entrana Dungeon ───────────────────────────────────────────────────
+        // Monks on the docks refuse to ferry players carrying any weapon/armour.
+        m.put("entrana dungeon", Collections.singletonList(
+                "Warning: no weapons or armour allowed on Entrana — pick up gear inside the dungeon"));
     }
 
     private static LocationRequirement q(Quest quest)
