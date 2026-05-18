@@ -29,12 +29,14 @@ import net.runelite.api.Client;
 import net.runelite.api.Skill;
 import com.slayersimplified.domain.Task;
 import com.slayersimplified.services.TaskService;
+import net.runelite.api.NPC;
+import net.runelite.api.events.ActorDeath;
 import net.runelite.api.events.ChatMessage;
+import net.runelite.api.events.InteractingChanged;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.NpcDespawned;
 import net.runelite.api.events.NpcSpawned;
 import net.runelite.client.events.ConfigChanged;
-import net.runelite.client.events.NpcLootReceived;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -47,6 +49,8 @@ import net.runelite.client.util.Text;
 
 import javax.inject.Inject;
 import javax.swing.SwingUtilities;
+import java.util.HashSet;
+import java.util.Set;
 
 @Slf4j
 @PluginDescriptor(
@@ -263,10 +267,59 @@ public class SlayerSimplifiedPlugin extends Plugin
         targetOverlay.onNpcSpawned(event.getNpc());
     }
 
+    /** NPC indices the local player has attacked since the plugin started. Cleared on NPC despawn or kill. */
+    private final Set<Integer> playerTargetIndices = new HashSet<>();
+
+    @Subscribe
+    public void onInteractingChanged(InteractingChanged event)
+    {
+        if (event.getSource() != client.getLocalPlayer())
+        {
+            return;
+        }
+        if (event.getTarget() instanceof NPC)
+        {
+            playerTargetIndices.add(((NPC) event.getTarget()).getIndex());
+        }
+    }
+
+    @Subscribe
+    public void onActorDeath(ActorDeath event)
+    {
+        if (!(event.getActor() instanceof NPC))
+        {
+            return;
+        }
+        NPC npc = (NPC) event.getActor();
+        if (!playerTargetIndices.remove(npc.getIndex()))
+        {
+            return;
+        }
+        String npcName = npc.getName();
+        if (npcName == null)
+        {
+            return;
+        }
+        Task task = taskService.get(npcName);
+        if (task == null)
+        {
+            return;
+        }
+        String key = "kc_" + task.name.toLowerCase().replace(" ", "_");
+        String stored = configManager.getConfiguration(SlayerSimplifiedConfig.CONFIG_GROUP, key);
+        int current = 0;
+        if (stored != null)
+        {
+            try { current = Integer.parseInt(stored); } catch (NumberFormatException ignored) {}
+        }
+        configManager.setConfiguration(SlayerSimplifiedConfig.CONFIG_GROUP, key, current + 1);
+    }
+
     @Subscribe
     public void onNpcDespawned(NpcDespawned event)
     {
         targetOverlay.onNpcDespawned(event.getNpc());
+        playerTargetIndices.remove(event.getNpc().getIndex());
     }
 
     @Subscribe
@@ -285,31 +338,6 @@ public class SlayerSimplifiedPlugin extends Plugin
         {
             SwingUtilities.invokeLater(mainPanel::refreshKc);
         }
-    }
-
-    @Subscribe
-    public void onNpcLootReceived(NpcLootReceived event)
-    {
-        String npcName = event.getNpc().getName();
-        if (npcName == null)
-        {
-            return;
-        }
-        // Track kills for any NPC that corresponds to a slayer task, regardless
-        // of whether the player is currently on that task.
-        Task task = taskService.get(npcName);
-        if (task == null)
-        {
-            return;
-        }
-        String key = "kc_" + task.name.toLowerCase().replace(" ", "_");
-        String stored = configManager.getConfiguration(SlayerSimplifiedConfig.CONFIG_GROUP, key);
-        int current = 0;
-        if (stored != null)
-        {
-            try { current = Integer.parseInt(stored); } catch (NumberFormatException ignored) {}
-        }
-        configManager.setConfiguration(SlayerSimplifiedConfig.CONFIG_GROUP, key, current + 1);
     }
 
     /**
