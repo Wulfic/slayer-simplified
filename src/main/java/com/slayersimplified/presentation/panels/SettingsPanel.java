@@ -9,10 +9,13 @@ import com.slayersimplified.SlayerSimplifiedConfig;
 import com.slayersimplified.domain.SlayerMaster;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
+import net.runelite.client.util.LinkBrowser;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * Inline settings panel displayed within the plugin panel when the gear icon
@@ -117,8 +120,8 @@ public class SettingsPanel extends JPanel
         // --- Debug Coordinates ---
         debugCheck = makeCheckBox(config.debugCoordinates());
         debugCheck.addActionListener(e -> config.setDebugCoordinates(debugCheck.isSelected()));
-        add(makeRow("Debug Coordinates", debugCheck,
-                "Overlay your current WorldPoint on screen \u2014 useful for mapping new monster spawn locations"));
+        add(makeRow("Location Debug", debugCheck,
+                "Show current coordinates and nav target on screen, and enable the AAAAA test monster in the list"));
         add(Box.createVerticalStrut(6));
 
         // --- Slayer Cape Reminder ---
@@ -141,6 +144,53 @@ public class SettingsPanel extends JPanel
         doneButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
         doneButton.addActionListener(e -> onClose.run());
         add(doneButton);
+
+        add(Box.createVerticalStrut(12));
+        add(makeSeparator());
+        add(Box.createVerticalStrut(8));
+
+        // --- Bug report link ---
+        JLabel bugLabel = new JLabel("<html>Found a <font color='#4fc3f7'><u>bug</u></font>?</html>");
+        bugLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        bugLabel.setFont(FontManager.getRunescapeSmallFont());
+        bugLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        bugLabel.setToolTipText("https://github.com/Wulfic/slayer-simplified/issues");
+        bugLabel.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e)
+            {
+                LinkBrowser.browse("https://github.com/Wulfic/slayer-simplified/issues");
+            }
+        });
+        JPanel bugRow = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        bugRow.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        bugRow.setAlignmentX(Component.LEFT_ALIGNMENT);
+        bugRow.setMaximumSize(new Dimension(Integer.MAX_VALUE, 18));
+        bugRow.add(bugLabel);
+        add(bugRow);
+        add(Box.createVerticalStrut(4));
+
+        // --- Ko-fi support link ---
+        JLabel kofiLabel = new JLabel("<html><font color='#4fc3f7'><u>Buy me a Ko-fi</u></font></html>");
+        kofiLabel.setFont(FontManager.getRunescapeSmallFont());
+        kofiLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        kofiLabel.setToolTipText("https://ko-fi.com/wulfic");
+        kofiLabel.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e)
+            {
+                LinkBrowser.browse("https://ko-fi.com/wulfic");
+            }
+        });
+        JPanel kofiRow = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        kofiRow.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        kofiRow.setAlignmentX(Component.LEFT_ALIGNMENT);
+        kofiRow.setMaximumSize(new Dimension(Integer.MAX_VALUE, 18));
+        kofiRow.add(kofiLabel);
+        add(kofiRow);
+        add(Box.createVerticalStrut(8));
     }
 
     private JPanel makeRow(String labelText, JComponent control, String tooltip)

@@ -149,7 +149,18 @@ public class TaskServiceImpl implements TaskService
             {
                 return null;
             }
-            return ImageUtil.resizeImage(image, image.getWidth() / 2, image.getHeight() / 2);
+            // First halve the source resolution, then cap at 160px to prevent
+            // large downloaded images from overflowing the panel and hiding the tabs.
+            int w = image.getWidth() / 2;
+            int h = image.getHeight() / 2;
+            final int MAX_DIM = 160;
+            if (w > MAX_DIM || h > MAX_DIM)
+            {
+                double scale = Math.min((double) MAX_DIM / w, (double) MAX_DIM / h);
+                w = Math.max(1, (int) (w * scale));
+                h = Math.max(1, (int) (h * scale));
+            }
+            return ImageUtil.resizeImage(image, w, h);
         }
         catch (Exception e)
         {

@@ -26,6 +26,7 @@ import javax.inject.Inject;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseWheelEvent;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,6 +50,10 @@ public class MainPanel extends PluginPanel
 
     private final TaskSearchPanel taskSearchPanel;
     private final TaskSelectedPanel taskSelectedPanel;
+    private SlayerHistoryPanel historyPanel;
+
+    /** The task currently displayed in TaskSelectedPanel, or null if not showing. */
+    private Task currentlySelectedTask;
 
     private final Map<Panel, JPanel> panels = new HashMap<>();
     private final JPanel currentPanelContainer = new JPanel(new BorderLayout());
@@ -86,9 +91,15 @@ public class MainPanel extends PluginPanel
         this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onTaskSelected);
         this.taskSelectedPanel = new TaskSelectedPanel(
                 this::onTaskClosed, navigationService, locationCoordinateService, favoriteService,
-                okHttpClient, notesService, this::refreshTaskReminder);
+                okHttpClient, notesService, this::refreshTaskReminder, config::debugCoordinates);
 
         Task[] orderedTasks = taskService.getAll(Comparator.comparing(t -> t.name));
+        if (!config.debugCoordinates())
+        {
+            orderedTasks = Arrays.stream(orderedTasks)
+                    .filter(t -> !"AAAAA".equals(t.name))
+                    .toArray(Task[]::new);
+        }
         taskSearchPanel.updateTaskList(orderedTasks);
 
         // Quick Navigate button styling — match RuneLite panel aesthetic
@@ -230,7 +241,8 @@ public class MainPanel extends PluginPanel
         });
 
         SlayerHistoryPanel historyPanel = new SlayerHistoryPanel(
-                historyService, taskService, () -> showPanel(Panel.TASK_SEARCH));
+                historyService, taskService, taskTracker, () -> showPanel(Panel.TASK_SEARCH));
+        this.historyPanel = historyPanel;
         historyButton.addActionListener(e ->
         {
             historyPanel.refresh();
@@ -267,6 +279,24 @@ public class MainPanel extends PluginPanel
         navigationService.clearNavigation();
         taskSearchPanel.shutDown();
         taskSelectedPanel.shutDown();
+    }
+
+    /** Refreshes the KC badge in the task detail header if a task is currently displayed. */
+    public void refreshKc()
+    {
+        if (currentlySelectedTask != null)
+        {
+            taskSelectedPanel.update(currentlySelectedTask, getKillCount(currentlySelectedTask.name));
+        }
+    }
+
+    /** Refreshes the history panel. Safe to call from any Swing thread. */
+    public void refreshHistory()
+    {
+        if (historyPanel != null)
+        {
+            historyPanel.refresh();
+        }
     }
 
     /**
@@ -418,10 +448,27 @@ public class MainPanel extends PluginPanel
         }
 
         // No favorite — open the monster detail with Locations tab selected
+        currentlySelectedTask = task;
         taskSelectedPanel.update(task, getKillCount(task.name));
         showPanel(Panel.TASK_SELECTED);
         SwingUtilities.invokeLater(() -> taskSelectedPanel.selectLocationsTab());
         log.debug("Quick Nav: showing locations for {} (no favorite set)", task.name);
+    }
+
+    /** Rebuilds the task search list, applying the current locationDebug filter. Safe to call from any thread. */
+    public void refreshTaskList()
+    {
+        SwingUtilities.invokeLater(() ->
+        {
+            Task[] tasks = taskService.getAll(Comparator.comparing(t -> t.name));
+            if (!config.debugCoordinates())
+            {
+                tasks = Arrays.stream(tasks)
+                        .filter(t -> !"AAAAA".equals(t.name))
+                        .toArray(Task[]::new);
+            }
+            taskSearchPanel.updateTaskList(tasks);
+        });
     }
 
     private void onSearchBarChanged(String searchTerm)
@@ -430,17 +477,26 @@ public class MainPanel extends PluginPanel
                 ? taskService.getAll(Comparator.comparing(t -> t.name))
                 : taskService.searchPartialName(searchTerm.trim());
 
+        if (!config.debugCoordinates())
+        {
+            matchedTasks = Arrays.stream(matchedTasks)
+                    .filter(t -> !"AAAAA".equals(t.name))
+                    .toArray(Task[]::new);
+        }
+
         taskSearchPanel.updateTaskList(matchedTasks);
     }
 
     private void onTaskSelected(Task task)
     {
+        currentlySelectedTask = task;
         taskSelectedPanel.update(task, getKillCount(task.name));
         showPanel(Panel.TASK_SELECTED);
     }
 
     private void onTaskClosed()
     {
+        currentlySelectedTask = null;
         navigationService.clearNavigation();
         showPanel(Panel.TASK_SEARCH);
     }

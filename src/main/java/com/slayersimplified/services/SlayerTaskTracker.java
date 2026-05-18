@@ -50,7 +50,7 @@ public class SlayerTaskTracker
     private static final Pattern NEW_TASK_PATTERN =
             Pattern.compile("(?:Your new task is to kill|You are to bring balance to) (\\d+) (.+)\\.");
     private static final Pattern CURRENT_TASK_PATTERN =
-            Pattern.compile("You're (?:still hunting|assigned to kill) (.+?); (?:you have|only) (\\d+)(?: more)? to go\\.");
+            Pattern.compile("You're (?:still hunting|(?:currently )?assigned to kill) (.+?); (?:you have|only) (\\d+)(?: more)? to go\\.");
     private static final Pattern TASK_COMPLETE_PATTERN =
             Pattern.compile("You have completed your task!");
     private static final Pattern NO_TASK_PATTERN =
@@ -92,6 +92,37 @@ public class SlayerTaskTracker
         return client.getVarpValue(VarPlayerID.SLAYER_COUNT) > 0;
     }
 
+    /** Returns the number of kills remaining on the current slayer task, or 0 if not logged in. */
+    public int getRemainingCount()
+    {
+        if (client.getGameState() != GameState.LOGGED_IN)
+        {
+            return 0;
+        }
+        return client.getVarpValue(VarPlayerID.SLAYER_COUNT);
+    }
+
+    /**
+     * Returns the player's slayer task streak (assignment number) by reading
+     * RuneLite's built-in Slayer plugin RSProfile config. Returns 0 if unknown.
+     */
+    public int getTaskStreak()
+    {
+        String val = configManager.getRSProfileConfiguration(RL_SLAYER_GROUP, "streak");
+        if (val == null)
+        {
+            return 0;
+        }
+        try
+        {
+            return Integer.parseInt(val.trim());
+        }
+        catch (NumberFormatException ignored)
+        {
+            return 0;
+        }
+    }
+
     /**
      * Get the current task creature name. Checks our own config first,
      * then falls back to reading RuneLite's built-in Slayer plugin
@@ -103,6 +134,15 @@ public class SlayerTaskTracker
         String name = config.currentTaskName();
         if (name != null && !name.isEmpty())
         {
+            // Re-normalize to repair any values stored by a previous broken normalization
+            // (e.g. "Elve" stored before the irregular-plural fix was applied).
+            String repaired = normalizeCreatureName(name);
+            if (!repaired.equals(name))
+            {
+                log.debug("Repaired stale task name in config: '{}' -> '{}'", name, repaired);
+                config.setCurrentTaskName(repaired);
+                name = repaired;
+            }
             return name;
         }
 
@@ -176,6 +216,16 @@ public class SlayerTaskTracker
         return ParseResult.NONE;
     }
 
+    /** Irregular plural forms that cannot be resolved by simply stripping a trailing 's'. */
+    private static final java.util.Map<String, String> IRREGULAR_PLURALS;
+    static
+    {
+        IRREGULAR_PLURALS = new java.util.HashMap<>();
+        IRREGULAR_PLURALS.put("elves", "Elf");
+        // Alias for values that were incorrectly stored before the irregular-plural fix
+        IRREGULAR_PLURALS.put("elve", "Elf");
+    }
+
     /**
      * Normalize a creature name from a chat message to match our tasks.json keys.
      * Chat messages use lowercase plural names like "abyssal demons".
@@ -184,6 +234,13 @@ public class SlayerTaskTracker
     private String normalizeCreatureName(String raw)
     {
         String name = raw.trim();
+
+        // Check irregular plurals first (e.g. "elves" -> "Elf")
+        String irregular = IRREGULAR_PLURALS.get(name.toLowerCase());
+        if (irregular != null)
+        {
+            return irregular;
+        }
 
         // Remove trailing 's' for simple plurals (but not "ss" like "boss")
         if (name.endsWith("s") && !name.endsWith("ss") && !name.endsWith("us"))

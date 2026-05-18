@@ -49,6 +49,7 @@ public class LootTab extends JScrollPane implements Tab<String>
         contentPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
 
         setViewportView(contentPanel);
+        getViewport().setBackground(ColorScheme.DARKER_GRAY_COLOR);
         setBackground(ColorScheme.DARKER_GRAY_COLOR);
         setBorder(null);
         getVerticalScrollBar().setUnitIncrement(16);

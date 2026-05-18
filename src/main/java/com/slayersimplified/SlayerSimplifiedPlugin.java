@@ -27,10 +27,13 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
 import net.runelite.api.Skill;
+import com.slayersimplified.domain.Task;
+import com.slayersimplified.services.TaskService;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.NpcDespawned;
 import net.runelite.api.events.NpcSpawned;
+import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.events.NpcLootReceived;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
@@ -88,6 +91,9 @@ public class SlayerSimplifiedPlugin extends Plugin
 
     @Inject
     private ConfigManager configManager;
+
+    @Inject
+    private TaskService taskService;
 
     private NavigationButton navButton;
 
@@ -171,6 +177,7 @@ public class SlayerSimplifiedPlugin extends Plugin
                 SwingUtilities.invokeLater(() ->
                 {
                     mainPanel.refreshCurrentTask();
+                    mainPanel.refreshHistory();
                     mainPanel.showTaskReminderIfNeeded(newTask, remindCape);
                     if (config.autoNavigate())
                     {
@@ -263,18 +270,39 @@ public class SlayerSimplifiedPlugin extends Plugin
     }
 
     @Subscribe
+    public void onConfigChanged(ConfigChanged event)
+    {
+        if (!SlayerSimplifiedConfig.CONFIG_GROUP.equals(event.getGroup()))
+        {
+            return;
+        }
+        if ("debugCoordinates".equals(event.getKey()))
+        {
+            mainPanel.refreshTaskList();
+            return;
+        }
+        if (event.getKey().startsWith("kc_"))
+        {
+            SwingUtilities.invokeLater(mainPanel::refreshKc);
+        }
+    }
+
+    @Subscribe
     public void onNpcLootReceived(NpcLootReceived event)
     {
-        if (!targetOverlay.isTracked(event.getNpc()))
+        String npcName = event.getNpc().getName();
+        if (npcName == null)
         {
             return;
         }
-        String taskName = taskTracker.getCurrentTaskName();
-        if (taskName == null || taskName.isEmpty())
+        // Track kills for any NPC that corresponds to a slayer task, regardless
+        // of whether the player is currently on that task.
+        Task task = taskService.get(npcName);
+        if (task == null)
         {
             return;
         }
-        String key = "kc_" + taskName.toLowerCase().replace(" ", "_");
+        String key = "kc_" + task.name.toLowerCase().replace(" ", "_");
         String stored = configManager.getConfiguration(SlayerSimplifiedConfig.CONFIG_GROUP, key);
         int current = 0;
         if (stored != null)

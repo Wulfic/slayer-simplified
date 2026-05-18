@@ -45,11 +45,20 @@ public class NavigationService
     private final EventBus eventBus;
     private final ClientThread clientThread;
 
+    /** The last WorldPoint sent to Shortest Path, or null if no navigation has been requested. */
+    private volatile WorldPoint lastTarget;
+
     @Inject
     public NavigationService(EventBus eventBus, ClientThread clientThread)
     {
         this.eventBus = eventBus;
         this.clientThread = clientThread;
+    }
+
+    /** Returns the last navigation target sent to Shortest Path, or null if none. */
+    public WorldPoint getLastTarget()
+    {
+        return lastTarget;
     }
 
     /**
@@ -65,6 +74,8 @@ public class NavigationService
             log.warn("Cannot navigate to null target");
             return;
         }
+
+        this.lastTarget = target;
 
         Map<String, Object> data = new HashMap<>();
         // Omitting "start" — Shortest Path defaults to the player's current location

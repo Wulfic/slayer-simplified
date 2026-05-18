@@ -312,32 +312,23 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
             return;
         }
 
-        // Name row
-        JPanel nameRow = new JPanel(new BorderLayout());
-        nameRow.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        nameRow.setMaximumSize(new Dimension(Integer.MAX_VALUE, 16));
-        nameRow.setBorder(new EmptyBorder(2, 16, 0, 8));
+        // Single row: label (left, gray) — value (right, white)
+        JPanel row = new JPanel(new BorderLayout(4, 0));
+        row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 18));
+        row.setBorder(new EmptyBorder(2, 16, 2, 8));
 
         JLabel nameLabel = new JLabel(label);
         nameLabel.setFont(BODY_FONT);
         nameLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        nameRow.add(nameLabel, BorderLayout.WEST);
-        target.add(nameRow);
+        row.add(nameLabel, BorderLayout.WEST);
 
-        // Value row — split multi-entry values (e.g. "29 (Melee) 20 (Ranged)") onto separate lines
-        JPanel valueRow = new JPanel(new BorderLayout());
-        valueRow.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        valueRow.setBorder(new EmptyBorder(0, 24, 2, 8));
-
-        String displayValue = value.contains(") ")
-                ? "<html>" + value.replace(") ", ")<br>") + "</html>"
-                : value;
-
-        JLabel valueLabel = new JLabel(displayValue);
-        valueLabel.setFont(SECTION_FONT);
+        JLabel valueLabel = new JLabel(value);
+        valueLabel.setFont(BODY_FONT);
         valueLabel.setForeground(STAT_VALUE_COLOR);
-        valueRow.add(valueLabel, BorderLayout.WEST);
-        target.add(valueRow);
+        row.add(valueLabel, BorderLayout.EAST);
+
+        target.add(row);
     }
 
     private void addImmunityRow(JPanel target, String label, String value)

@@ -26,6 +26,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
+import javax.swing.Scrollable;
 
 /**
  * Scrollable tab that displays Slayer monster locations with favorite
@@ -44,9 +46,14 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
     private final NavigationService navigationService;
     private final LocationCoordinateService locationCoordinateService;
     private final FavoriteLocationService favoriteService;
+    private final Supplier<Boolean> debugMode;
 
-    /** Inner panel holding the location rows. */
-    private final JPanel contentPanel = new JPanel();
+    /** Inner panel holding the location rows — Scrollable so the JScrollPane constrains its width to the viewport. */
+    private final JPanel contentPanel = new ViewportWidthPanel();
+
+    /** Debug panel shown at the top of the locations list when debug mode is enabled. */
+    private final JPanel debugPanel = new JPanel(new BorderLayout());
+    private final JLabel debugNavLabel = new JLabel("No nav yet");
 
     /** Track buttons and listeners for cleanup on shutdown. */
     private final List<JButton> buttons = new ArrayList<>();
@@ -61,14 +68,28 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
     public LocationsTab(
             NavigationService navigationService,
             LocationCoordinateService locationCoordinateService,
-            FavoriteLocationService favoriteService)
+            FavoriteLocationService favoriteService,
+            Supplier<Boolean> debugMode)
     {
         this.navigationService = navigationService;
         this.locationCoordinateService = locationCoordinateService;
         this.favoriteService = favoriteService;
+        this.debugMode = debugMode;
+
+        // Debug info panel — shown at top when debug mode is on
+        debugNavLabel.setForeground(new Color(100, 220, 255));
+        debugNavLabel.setFont(FontManager.getRunescapeSmallFont());
+        debugPanel.setBackground(new Color(30, 30, 50));
+        debugPanel.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(60, 60, 90)),
+                BorderFactory.createEmptyBorder(3, 8, 3, 4)
+        ));
+        debugPanel.add(debugNavLabel, BorderLayout.CENTER);
+        debugPanel.setVisible(false);
 
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
         contentPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        contentPanel.add(debugPanel);
 
         setViewportView(contentPanel);
         setBackground(ColorScheme.DARKER_GRAY_COLOR);
@@ -94,19 +115,50 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         clearRows();
         activeLocation = null;
 
+        // Show/hide debug panel based on current debug mode setting
+        debugPanel.setVisible(debugMode.get());
+        if (debugMode.get())
+        {
+            WorldPoint last = navigationService.getLastTarget();
+            if (last != null)
+            {
+                debugNavLabel.setText("Last Nav → x:" + last.getX() + "  y:" + last.getY() + "  plane:" + last.getPlane());
+            }
+            else
+            {
+                debugNavLabel.setText("No nav yet");
+            }
+        }
+
         if (locations == null || locations.length == 0)
         {
             addPlaceholderRow("None");
             return;
         }
 
+        List<String> valid = new ArrayList<>();
         for (String location : locations)
         {
             if (location == null || location.isEmpty())
             {
                 continue;
             }
+            valid.add(location);
             contentPanel.add(createLocationRow(location));
+        }
+
+        // Auto-favorite when there is exactly one location and none has been set yet
+        if (valid.size() == 1 && currentMonsterName != null
+                && favoriteService.getFavorite(currentMonsterName) == null)
+        {
+            favoriteService.setFavorite(currentMonsterName, valid.get(0));
+            for (Component comp : contentPanel.getComponents())
+            {
+                if (comp instanceof JPanel)
+                {
+                    updateStarsInRow((JPanel) comp);
+                }
+            }
         }
 
         contentPanel.revalidate();
@@ -132,10 +184,11 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
                 BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
                 BorderFactory.createEmptyBorder(4, 8, 4, 4)
         ));
-        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 34));
+        // Allow up to two lines so long names wrap rather than push buttons off-screen
+        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 52));
 
-        // Location name label — plain font matching the rest of the UI
-        JLabel label = new JLabel(capitalize(locationName));
+        // HTML label wraps text — safe now that contentPanel tracks viewport width
+        JLabel label = new JLabel("<html>" + capitalize(locationName) + "</html>");
         label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
         label.setFont(FontManager.getRunescapeSmallFont());
         row.add(label, BorderLayout.CENTER);
@@ -299,6 +352,11 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         navigationService.navigateTo(coords);
         activeLocation = locationName;
 
+        if (debugMode.get())
+        {
+            debugNavLabel.setText("Last Nav → x:" + coords.getX() + "  y:" + coords.getY() + "  plane:" + coords.getPlane());
+        }
+
         resetAllRowColors();
         row.setBackground(new Color(50, 70, 50));
 
@@ -340,5 +398,45 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         buttons.clear();
         listeners.clear();
         contentPanel.removeAll();
+        // Debug panel is always the first child — re-add it after clearing
+        contentPanel.add(debugPanel, 0);
+    }
+
+    /**
+     * A JPanel that implements Scrollable so the enclosing JScrollPane always
+     * sizes it to match the viewport width. This ensures BoxLayout rows are
+     * constrained to the visible area and right-side buttons stay on screen.
+     */
+    private static class ViewportWidthPanel extends JPanel implements Scrollable
+    {
+        @Override
+        public Dimension getPreferredScrollableViewportSize()
+        {
+            return getPreferredSize();
+        }
+
+        @Override
+        public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction)
+        {
+            return 16;
+        }
+
+        @Override
+        public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction)
+        {
+            return 128;
+        }
+
+        @Override
+        public boolean getScrollableTracksViewportWidth()
+        {
+            return true;
+        }
+
+        @Override
+        public boolean getScrollableTracksViewportHeight()
+        {
+            return false;
+        }
     }
 }

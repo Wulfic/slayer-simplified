@@ -15,13 +15,8 @@
     "plane": 0
   },
   "Catacombs of Kourend": {
-    "x": 1664,
-    "y": 3529,
-    "plane": 0
-  },
-  "Catacombs of Kourend (brutal variant)": {
-    "x": 1664,
-    "y": 3529,
+    "x": 1639,
+    "y": 3673,
     "plane": 0
   },
   "Karuulm Slayer Dungeon": {
@@ -50,8 +45,8 @@
     "plane": 0
   },
   "Wyvern Cave": {
-    "x": 3609,
-    "y": 3812,
+    "x": 3319,
+    "y": 3402,
     "plane": 0
   },
   "Taverley Dungeon": {
@@ -60,8 +55,8 @@
     "plane": 0
   },
   "Brimhaven Dungeon": {
-    "x": 2713,
-    "y": 3153,
+    "x": 2745,
+    "y": 3152,
     "plane": 0
   },
   "Edgeville Dungeon": {
@@ -70,13 +65,8 @@
     "plane": 0
   },
   "God Wars Dungeon": {
-    "x": 2917,
-    "y": 3746,
-    "plane": 0
-  },
-  "God Wars Dungeon (Bandos God Wars minions)": {
-    "x": 2917,
-    "y": 3746,
+    "x": 2910,
+    "y": 3763,
     "plane": 0
   },
   "Wilderness God Wars Dungeon": {
@@ -90,8 +80,8 @@
     "plane": 0
   },
   "Waterfall Dungeon": {
-    "x": 2575,
-    "y": 3462,
+    "x": 2510,
+    "y": 3494,
     "plane": 0
   },
   "Deep Wilderness Dungeon": {
@@ -104,20 +94,15 @@
     "y": 3421,
     "plane": 0
   },
-  "Stronghold of Security (level 2)": {
-    "x": 3081,
-    "y": 3421,
-    "plane": 0
-  },
   "Lumbridge Swamp Caves": {
     "x": 3168,
     "y": 3172,
     "plane": 0
   },
   "Dorgesh-Kaan South Dungeon": {
-    "x": 3209,
-    "y": 3216,
-    "plane": 0
+    "x": 2721,
+    "y": 5241,
+    "plane": 3
   },
   "Revenant Caves": {
     "x": 3075,
@@ -125,11 +110,6 @@
     "plane": 0
   },
   "Asgarnian Ice Dungeon": {
-    "x": 3008,
-    "y": 3150,
-    "plane": 0
-  },
-  "Asgarnian Ice Caves": {
     "x": 3008,
     "y": 3150,
     "plane": 0
@@ -155,13 +135,8 @@
     "plane": 0
   },
   "Corsair Cove Dungeon": {
-    "x": 2012,
-    "y": 3058,
-    "plane": 0
-  },
-  "Corsair Cove Dungeon (Requires completion of Dragon Slayer II)": {
-    "x": 2012,
-    "y": 3058,
+    "x": 2523,
+    "y": 2860,
     "plane": 0
   },
   "Entrana Dungeon": {
@@ -189,19 +164,14 @@
     "y": 3283,
     "plane": 0
   },
-  "Witchaven Shrine Dungeon": {
-    "x": 2698,
-    "y": 3283,
-    "plane": 0
-  },
   "Underground Pass": {
     "x": 2435,
     "y": 3315,
     "plane": 0
   },
   "Temple of Ikov": {
-    "x": 2646,
-    "y": 3328,
+    "x": 2677,
+    "y": 3404,
     "plane": 0
   },
   "Lair of Tarn Razorlor": {
@@ -225,13 +195,13 @@
     "plane": 0
   },
   "Lithkren Vault": {
-    "x": 3547,
-    "y": 3995,
+    "x": 3319,
+    "y": 3402,
     "plane": 0
   },
   "Grimstone Dungeon": {
-    "x": 3547,
-    "y": 3995,
+    "x": 2884,
+    "y": 3397,
     "plane": 0
   },
   "Shade Catacombs": {
@@ -305,8 +275,8 @@
     "plane": 0
   },
   "Melzar's Maze": {
-    "x": 2931,
-    "y": 3246,
+    "x": 2929,
+    "y": 3244,
     "plane": 0
   },
   "Canifis": {
@@ -415,8 +385,8 @@
     "plane": 0
   },
   "Fossil Island": {
-    "x": 3741,
-    "y": 3793,
+    "x": 3319,
+    "y": 3402,
     "plane": 0
   },
   "Lava Maze": {
@@ -485,7 +455,7 @@
     "plane": 0
   },
   "Haunted Mine": {
-    "x": 3437,
+    "x": 3440,
     "y": 3232,
     "plane": 0
   },
@@ -825,8 +795,8 @@
     "plane": 0
   },
   "Death altar": {
-    "x": 2204,
-    "y": 4836,
+    "x": 2210,
+    "y": 3718,
     "plane": 0
   },
   "Forgotten Cemetery": {
@@ -835,8 +805,8 @@
     "plane": 0
   },
   "West of Canifis": {
-    "x": 3460,
-    "y": 3480,
+    "x": 3435,
+    "y": 3461,
     "plane": 0
   },
   "West Ardougne (graveyard)": {
@@ -845,8 +815,8 @@
     "plane": 0
   },
   "Abyssal Area": {
-    "x": 3029,
-    "y": 4848,
+    "x": 3108,
+    "y": 3557,
     "plane": 0
   },
   "Pirates' Cove": {
@@ -875,9 +845,9 @@
     "plane": 0
   },
   "Braindeath Island (brewery basement)": {
-    "x": 2136,
-    "y": 5103,
-    "plane": 0
+    "x": 2139,
+    "y": 5105,
+    "plane": 1
   },
   "Ape Atoll temple": {
     "x": 2767,
@@ -920,8 +890,8 @@
     "plane": 0
   },
   "Jormungand's Prison": {
-    "x": 2400,
-    "y": 10440,
+    "x": 2399,
+    "y": 3786,
     "plane": 0
   },
   "Temple Trekking": {
@@ -955,8 +925,63 @@
     "plane": 0
   },
   "TzHaar City": {
-    "x": 2473,
-    "y": 5174,
+    "x": 2856,
+    "y": 3166,
+    "plane": 0
+  },
+  "Morytania Spider Cave": {
+    "x": 3562,
+    "y": 3288,
+    "plane": 0
+  },
+  "Mor Ul Rek": {
+    "x": 2856,
+    "y": 3166,
+    "plane": 0
+  },
+  "Crabclaw Isle": {
+    "x": 1773,
+    "y": 3461,
+    "plane": 0
+  },
+  "Isle of Souls": {
+    "x": 2193,
+    "y": 2773,
+    "plane": 0
+  },
+  "Ruins of Tapoyauik": {
+    "x": 1374,
+    "y": 3821,
+    "plane": 0
+  },
+  "West of Mount Quidamortem": {
+    "x": 1215,
+    "y": 3819,
+    "plane": 0
+  },
+  "Stalker Den": {
+    "x": 1627,
+    "y": 2891,
+    "plane": 0
+  },
+  "Neypotzli": {
+    "x": 1767,
+    "y": 3043,
+    "plane": 0
+  },
+  "Tonali Cavern": {
+    "x": 1697,
+    "y": 2957,
+    "plane": 0
+  },
+  "Poison Waste Dungeon": {
+    "x": 2319,
+    "y": 3167,
+    "plane": 0
+  },
+  "Wilderness volcano": {
+    "x": 3173,
+    "y": 3810,
     "plane": 0
   }
 }

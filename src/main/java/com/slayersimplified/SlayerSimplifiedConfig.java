@@ -85,8 +85,8 @@ public interface SlayerSimplifiedConfig extends Config
 
     @ConfigItem(
             keyName = "debugCoordinates",
-            name = "Debug Coordinates",
-            description = "Show an overlay with your current WorldPoint coordinates. Useful for mapping new locations.",
+            name = "Location Debug",
+            description = "Show an overlay with your current coordinates and nav target. Also enables the AAAAA test monster and debug nav info in the Locations tab.",
             position = 5,
             hidden = true
     )

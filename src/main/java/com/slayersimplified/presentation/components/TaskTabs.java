@@ -31,6 +31,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  * Tabbed pane containing the task detail tabs.
@@ -51,6 +52,7 @@ public class TaskTabs extends JTabbedPane
      * @param favoriteService           service for persisting favorite locations
      * @param okHttpClient              HTTP client for wiki lookups
      * @param notesService              service for persisting monster notes
+     * @param debugMode                 supplier that returns true when location debug mode is enabled
      */
     public TaskTabs(
             NavigationService navigationService,
@@ -58,7 +60,8 @@ public class TaskTabs extends JTabbedPane
             FavoriteLocationService favoriteService,
             OkHttpClient okHttpClient,
             MonsterNotesService notesService,
-            Runnable onNotesChanged)
+            Runnable onNotesChanged,
+            Supplier<Boolean> debugMode)
     {
         setBackground(ColorScheme.DARKER_GRAY_COLOR);
         setTabLayoutPolicy(JTabbedPane.WRAP_TAB_LAYOUT);
@@ -90,7 +93,7 @@ public class TaskTabs extends JTabbedPane
         TabKey loot = TabKey.LOOT;
         TabKey notes = TabKey.NOTES;
 
-        locationsTab = new LocationsTab(navigationService, locationCoordinateService, favoriteService);
+        locationsTab = new LocationsTab(navigationService, locationCoordinateService, favoriteService, debugMode);
         lootTab = new LootTab(okHttpClient);
         infoTab = new InfoTab(okHttpClient);
 

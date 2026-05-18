@@ -9,6 +9,7 @@ import com.slayersimplified.domain.Task;
 import com.slayersimplified.domain.TaskHistoryEntry;
 import com.slayersimplified.presentation.components.ScrollBarStyling;
 import com.slayersimplified.services.SlayerHistoryService;
+import com.slayersimplified.services.SlayerTaskTracker;
 import com.slayersimplified.services.TaskService;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
@@ -37,17 +38,22 @@ public class SlayerHistoryPanel extends JPanel
     private static final Color COUNT_COLOR = new Color(255, 200, 0);
     private static final int ICON_SIZE = 36;
 
+    private static final Color ACTIVE_BORDER_COLOR = new Color(80, 200, 80);
+
     private final SlayerHistoryService historyService;
     private final TaskService taskService;
+    private final SlayerTaskTracker taskTracker;
     private final Runnable onClose;
 
     private final JLabel tasksLoggedLabel = new JLabel();
     private final JPanel listPanel = new JPanel();
 
-    public SlayerHistoryPanel(SlayerHistoryService historyService, TaskService taskService, Runnable onClose)
+    public SlayerHistoryPanel(SlayerHistoryService historyService, TaskService taskService,
+                               SlayerTaskTracker taskTracker, Runnable onClose)
     {
         this.historyService = historyService;
         this.taskService = taskService;
+        this.taskTracker = taskTracker;
         this.onClose = onClose;
 
         setLayout(new BorderLayout());
@@ -75,8 +81,17 @@ public class SlayerHistoryPanel extends JPanel
         List<TaskHistoryEntry> entries = historyService.getHistory();
         tasksLoggedLabel.setText("Tasks logged: " + entries.size());
 
+        // Safe to call from EDT — reads only from config, not client varpValue
+        String currentName = taskTracker.getCurrentTaskName();
+        boolean hasCurrentTask = currentName != null && !currentName.isEmpty();
+
+        // Is the current active task already at the top of the logged history?
+        boolean currentTaskIsFirstEntry = hasCurrentTask && !entries.isEmpty()
+                && currentName.equalsIgnoreCase(entries.get(0).taskName);
+
         listPanel.removeAll();
-        if (entries.isEmpty())
+
+        if (!hasCurrentTask && entries.isEmpty())
         {
             JLabel empty = new JLabel("No tasks logged yet.");
             empty.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
@@ -87,9 +102,17 @@ public class SlayerHistoryPanel extends JPanel
         }
         else
         {
-            for (TaskHistoryEntry entry : entries)
+            // If the current task was not captured in the log (e.g. assigned before
+            // the plugin was running), prepend a live "Current Task" row.
+            if (hasCurrentTask && !currentTaskIsFirstEntry)
             {
-                listPanel.add(buildEntryRow(entry));
+                listPanel.add(buildCurrentTaskRow(currentName));
+            }
+
+            for (int i = 0; i < entries.size(); i++)
+            {
+                boolean isActive = i == 0 && currentTaskIsFirstEntry;
+                listPanel.add(buildEntryRow(entries.get(i), isActive));
             }
         }
         listPanel.revalidate();
@@ -137,13 +160,41 @@ public class SlayerHistoryPanel extends JPanel
         return header;
     }
 
+    /** Builds a highlighted row for the player's currently active task (not yet in the log). */
+    private JPanel buildCurrentTaskRow(String taskName)
+    {
+        // Populate as much live data as we can from varbit / RSProfile config
+        int remaining = taskTracker.getRemainingCount();
+        int streak = taskTracker.getTaskStreak();
+        TaskHistoryEntry synthetic = new TaskHistoryEntry(taskName, remaining, null, 0, streak);
+        JPanel row = buildEntryRow(synthetic, true);
+
+        // If the streak is unknown we can't show a task number, so fall back to an "Active" badge
+        if (streak <= 0)
+        {
+            JLabel badge = new JLabel("Active");
+            badge.setForeground(ACTIVE_BORDER_COLOR);
+            badge.setFont(FontManager.getRunescapeSmallFont().deriveFont(Font.BOLD));
+            badge.setBorder(new EmptyBorder(0, 4, 0, 0));
+            row.add(badge, BorderLayout.EAST);
+        }
+        return row;
+    }
+
     private JPanel buildEntryRow(TaskHistoryEntry entry)
+    {
+        return buildEntryRow(entry, false);
+    }
+
+    private JPanel buildEntryRow(TaskHistoryEntry entry, boolean isActive)
     {
         JPanel row = new JPanel(new BorderLayout(4, 0));
         row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         row.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(5, 6, 5, 6)));
+                isActive
+                        ? BorderFactory.createMatteBorder(0, 3, 1, 0, ACTIVE_BORDER_COLOR)
+                        : BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
+                BorderFactory.createEmptyBorder(5, isActive ? 3 : 6, 5, 6)));
         row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 66));
 
         // WEST: kill count + monster icon

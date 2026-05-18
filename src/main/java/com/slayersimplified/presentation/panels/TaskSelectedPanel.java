@@ -24,6 +24,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.function.Supplier;
 
 /**
  * Panel showing the selected task's details with a header (name + image),
@@ -45,6 +46,7 @@ public class TaskSelectedPanel extends JPanel
      * @param favoriteService           favorite location persistence service
      * @param okHttpClient              HTTP client for wiki loot lookups
      * @param notesService              monster notes persistence service
+     * @param debugMode                 supplier that returns true when location debug mode is enabled
      */
     public TaskSelectedPanel(
             Runnable onClose,
@@ -53,11 +55,12 @@ public class TaskSelectedPanel extends JPanel
             FavoriteLocationService favoriteService,
             OkHttpClient okHttpClient,
             MonsterNotesService notesService,
-            Runnable onNotesChanged)
+            Runnable onNotesChanged,
+            Supplier<Boolean> debugMode)
     {
         // Pass all services down to TaskTabs → tabs
         this.taskTabs = new TaskTabs(navigationService, locationCoordinateService, favoriteService,
-                okHttpClient, notesService, onNotesChanged);
+                okHttpClient, notesService, onNotesChanged, debugMode);
         this.onClickListener = e -> onClose.run();
         closeButton.addActionListener(this.onClickListener);
         closeButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);

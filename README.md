@@ -54,6 +54,14 @@ All 8 masters are supported: Turael, Mazchna, Vannaka, Chaeldar, Konar, Nieve / 
 
 ---
 
+## Bug reports & support
+
+Found a bug? [Open an issue](https://github.com/Wulfic/slayer-simplified/issues) on GitHub.
+
+If you enjoy the plugin, [buy me a Ko-fi](https://ko-fi.com/wulfic) ☕
+
+---
+
 ## Building
 
 ```
