@@ -1,0 +1,36 @@
+{
+    "name":  "Green dragon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+                          "Anti-dragon shield",
+                          "Dragonfire shield",
+                          "Antifire potion(4)"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "West of the Dark Warriors\u0027 Fortress",
+                      "North of the Graveyard of Shadows",
+                      "South of the Lava Maze",
+                      "South of Venenatis",
+                      "Corsair Cove Dungeon"
+                  ],
+    "attributes":  [
+                       "Draconic",
+                       "Fiery"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Dragonfire"
+                     ],
+    "variants":  [
+                     "Baby green dragon",
+                     "Brutal green dragon",
+                     "Elvarg"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Vannaka"
+                ]
+}

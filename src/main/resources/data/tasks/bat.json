@@ -1,0 +1,30 @@
+{
+    "name":  "Bat",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Paterdomus",
+                      "Morytania",
+                      "Coal Trucks"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Giant bat",
+                     "Albino bat",
+                     "Deathwing"
+                 ],
+    "masters":  [
+                    "Turael",
+                    "Mazchna"
+                ]
+}

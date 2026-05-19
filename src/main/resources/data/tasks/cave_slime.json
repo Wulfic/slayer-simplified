@@ -1,0 +1,30 @@
+{
+    "name":  "Cave slime",
+    "levelRequired":  17,
+    "itemsRequired":  [
+                          "Bullseye lantern (lit)"
+                      ],
+    "itemsSuggested":  [
+                           "Antipoison"
+                       ],
+    "locations":  [
+                      "Lumbridge Swamp Caves",
+                      "Dorgesh-Kaan South Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Poison"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Turael",
+                    "Mazchna",
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

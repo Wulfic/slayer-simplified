@@ -1,0 +1,26 @@
+{
+    "name":  "Shadow warrior",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Legends\u0027 Guild basement"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

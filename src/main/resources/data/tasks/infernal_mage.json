@@ -1,0 +1,26 @@
+{
+    "name":  "Infernal Mage",
+    "levelRequired":  45,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Slayer tower"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Magic"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

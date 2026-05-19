@@ -24,11 +24,15 @@ public class TaskServiceModule extends AbstractModule
         bind(TaskService.class).to(TaskServiceImpl.class);
     }
 
+    /**
+     * Classpath path to the directory holding the per-task JSON files
+     * and the {@code _index.json} manifest that lists them.
+     */
     @Provides
     @Named("dataPath")
     String provideJsonDataPath()
     {
-        return "/data/tasks.json";
+        return "/data/tasks";
     }
 
     @Provides

@@ -1,0 +1,29 @@
+{
+    "name":  "Ice warrior",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "White Wolf Mountain",
+                      "Frozen Waste Plateau",
+                      "Asgarnian Ice Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Icelord"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Mazchna",
+                    "Vannaka"
+                ]
+}

@@ -1,0 +1,42 @@
+{
+    "name":  "Troll",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+                           "Climbing boots"
+                       ],
+    "locations":  [
+                      "Trollheim",
+                      "Tunnel outside of Keldagrim",
+                      "Death Plateau (Mountain troll)",
+                      "Icy islands north of Neitiznot and Jatizso",
+                      "Ice Path north of Trollheim (Ice trolls)"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Ranged"
+                     ],
+    "variants":  [
+                     "Mountain troll",
+                     "Thrower Troll",
+                     "Ice troll",
+                     "Ice troll runt",
+                     "Ice troll male",
+                     "Ice troll female",
+                     "Ice troll grunt",
+                     "River troll",
+                     "Troll general"
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

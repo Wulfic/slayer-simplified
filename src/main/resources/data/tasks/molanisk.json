@@ -1,0 +1,25 @@
+{
+    "name":  "Molanisk",
+    "levelRequired":  39,
+    "itemsRequired":  [
+                          "Slayer bell"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Dorgesh-Kaan South Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka"
+                ]
+}

@@ -1,0 +1,40 @@
+{
+    "name":  "Goblin",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Lumbridge Caves",
+                      "Goblin Village",
+                      "Port Sarim",
+                      "Around the Digsite",
+                      "Stronghold of Security",
+                      "Underground Pass",
+                      "Goblin Cave",
+                      "Coal Trucks",
+                      "Holes in Myreque Hideout in Mort Myre",
+                      "God Wars Dungeon (Bandos God Wars minions)",
+                      "Cave near Observatory",
+                      "Dwarven coal mine",
+                      "East of Barbarian Village"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Goblin Champion",
+                     "Sergeant Strongstack",
+                     "Sergeant Grimspike",
+                     "Sergeant Steelwill"
+                 ],
+    "masters":  [
+                    "Turael"
+                ]
+}

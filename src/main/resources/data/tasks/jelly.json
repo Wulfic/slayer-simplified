@@ -1,0 +1,28 @@
+{
+    "name":  "Jelly",
+    "levelRequired":  52,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Fremennik Slayer Dungeon",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Magical melee"
+                     ],
+    "variants":  [
+                     "Warped Jelly"
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten"
+                ]
+}

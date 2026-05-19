@@ -1,0 +1,27 @@
+{
+    "name":  "Killerwatt",
+    "levelRequired":  37,
+    "itemsRequired":  [
+                          "Insulated boots"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Killerwatt plane"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Magical melee",
+                         "ranged"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Mazchna",
+                    "Vannaka"
+                ]
+}

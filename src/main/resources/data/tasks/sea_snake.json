@@ -1,0 +1,28 @@
+{
+    "name":  "Sea snake",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+                           "Antivenom"
+                       ],
+    "locations":  [
+                      "Miscellania \u0026 Etceteria Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee (and Ranged for Giant Sea Snake)",
+                         "Venom"
+                     ],
+    "variants":  [
+                     "Sea Snake Hatchling",
+                     "Sea Snake Young",
+                     "Giant Sea Snake"
+                 ],
+    "masters":  [
+                    "Vannaka"
+                ]
+}

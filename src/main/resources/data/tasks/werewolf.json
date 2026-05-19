@@ -1,0 +1,27 @@
+{
+    "name":  "Werewolf",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Canifis",
+                      "God Wars Dungeon",
+                      "Wilderness God Wars Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka"
+                ]
+}

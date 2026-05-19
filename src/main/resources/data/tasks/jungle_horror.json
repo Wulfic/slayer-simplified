@@ -1,0 +1,26 @@
+{
+    "name":  "Jungle horror",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Mos Le\u0027Harmless"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

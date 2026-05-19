@@ -1,0 +1,29 @@
+{
+    "name":  "Icefiend",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Ice Mountain",
+                      "God Wars Dungeon",
+                      "Wilderness God Wars Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Magic",
+                         "Ranged"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Turael"
+                ]
+}

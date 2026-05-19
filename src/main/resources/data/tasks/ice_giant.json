@@ -1,0 +1,28 @@
+{
+    "name":  "Ice giant",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Asgarnian Ice Dungeon",
+                      "Frozen Waste Plateau",
+                      "White Wolf Mountain"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Vannaka"
+                ]
+}

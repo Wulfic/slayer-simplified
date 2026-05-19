@@ -1,0 +1,33 @@
+{
+    "name":  "Lesser demon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Wizards\u0027 Tower",
+                      "Karamja Dungeon",
+                      "Crandor",
+                      "Melzar\u0027s Maze",
+                      "Demonic Ruins",
+                      "Lava Maze",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Demon"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Zakl\u0027n Gritch"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

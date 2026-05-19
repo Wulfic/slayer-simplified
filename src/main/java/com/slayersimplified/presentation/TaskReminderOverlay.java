@@ -9,6 +9,7 @@
  */
 package com.slayersimplified.presentation;
 
+import com.slayersimplified.SlayerSimplifiedConfig;
 import com.slayersimplified.domain.Task;
 import com.slayersimplified.services.MonsterNotesService;
 import com.slayersimplified.services.SlayerTaskTracker;
@@ -32,12 +33,18 @@ import java.util.List;
 @Singleton
 public class TaskReminderOverlay extends Overlay
 {
-    private static final int WRAP_CHARS = 30;
+    /**
+     * Maximum characters per wrapped line. At ~9 px/char for the RuneScape
+     * small font (worst-case mixed-case), 16 chars ≈ 144 px — a comfortable
+     * overlay width that stays well on-screen.
+     */
+    private static final int WRAP_CHARS = 16;
 
     private final Client client;
     private final SlayerTaskTracker taskTracker;
     private final TaskService taskService;
     private final MonsterNotesService notesService;
+    private final SlayerSimplifiedConfig config;
     private final PanelComponent panelComponent = new PanelComponent();
 
     // --- Cached panel state. The PanelComponent is only rebuilt when one of
@@ -51,12 +58,14 @@ public class TaskReminderOverlay extends Overlay
             Client client,
             SlayerTaskTracker taskTracker,
             TaskService taskService,
-            MonsterNotesService notesService)
+            MonsterNotesService notesService,
+            SlayerSimplifiedConfig config)
     {
         this.client = client;
         this.taskTracker = taskTracker;
         this.taskService = taskService;
         this.notesService = notesService;
+        this.config = config;
         setPosition(OverlayPosition.TOP_LEFT);
         setLayer(OverlayLayer.ABOVE_SCENE);
         setPriority(PRIORITY_LOW);
@@ -65,6 +74,11 @@ public class TaskReminderOverlay extends Overlay
     @Override
     public Dimension render(Graphics2D graphics)
     {
+        if (!config.showReminderOverlay())
+        {
+            return null;
+        }
+
         if (client.getGameState() != GameState.LOGGED_IN)
         {
             return null;
@@ -116,14 +130,17 @@ public class TaskReminderOverlay extends Overlay
      */
     private boolean rebuildPanel(Task task, String notes)
     {
-        final boolean hasItems = task.itemsRequired != null
+        final boolean hasRequired = task.itemsRequired != null
                 && Arrays.stream(task.itemsRequired)
+                         .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
+        final boolean hasSuggested = task.itemsSuggested != null
+                && Arrays.stream(task.itemsSuggested)
                          .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
         final boolean hasNotes = !notes.isEmpty();
 
         panelComponent.getChildren().clear();
 
-        if (!hasItems && !hasNotes)
+        if (!hasRequired && !hasSuggested && !hasNotes)
         {
             return false;
         }
@@ -132,7 +149,7 @@ public class TaskReminderOverlay extends Overlay
                 .text(task.name)
                 .build());
 
-        if (hasItems)
+        if (hasRequired)
         {
             panelComponent.getChildren().add(LineComponent.builder()
                     .left("Required Items")
@@ -149,7 +166,28 @@ public class TaskReminderOverlay extends Overlay
             }
         }
 
-        if (hasItems && hasNotes)
+        if (hasSuggested)
+        {
+            if (hasRequired)
+            {
+                panelComponent.getChildren().add(LineComponent.builder().left("").build());
+            }
+            panelComponent.getChildren().add(LineComponent.builder()
+                    .left("Suggested Items")
+                    .leftColor(Color.YELLOW)
+                    .build());
+            for (String item : task.itemsSuggested)
+            {
+                if (item != null && !item.trim().isEmpty() && !item.equalsIgnoreCase("none"))
+                {
+                    panelComponent.getChildren().add(LineComponent.builder()
+                            .left("\u2022 " + item)
+                            .build());
+                }
+            }
+        }
+
+        if ((hasRequired || hasSuggested) && hasNotes)
         {
             panelComponent.getChildren().add(LineComponent.builder().left("").build());
         }
@@ -171,7 +209,10 @@ public class TaskReminderOverlay extends Overlay
         return true;
     }
 
-    /** Splits text into lines no longer than {@code maxLen} characters, preserving newlines. */
+    /**
+     * Splits {@code text} into lines no longer than {@code maxLen} characters,
+     * preserving explicit newlines and preferring word boundaries.
+     */
     private static List<String> wrapText(String text, int maxLen)
     {
         List<String> result = new ArrayList<>();

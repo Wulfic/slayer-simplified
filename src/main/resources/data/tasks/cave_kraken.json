@@ -1,0 +1,28 @@
+{
+    "name":  "Cave kraken",
+    "levelRequired":  87,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Kraken Cove"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Magic"
+                     ],
+    "variants":  [
+                     "Kraken"
+                 ],
+    "masters":  [
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

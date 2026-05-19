@@ -1,0 +1,30 @@
+{
+    "name":  "Pyrefiend",
+    "levelRequired":  30,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Fremennik Slayer Dungeon",
+                      "Smoke Dungeon",
+                      "God Wars Dungeon",
+                      "Wilderness God Wars Dungeon",
+                      "Iorwerth Dungeon"
+                  ],
+    "attributes":  [
+                       "Fiery"
+                   ],
+    "attackStyles":  [
+                         "Magical melee"
+                     ],
+    "variants":  [
+                     "Pyrelord"
+                 ],
+    "masters":  [
+                    "Mazchna",
+                    "Vannaka"
+                ]
+}

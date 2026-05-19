@@ -98,7 +98,7 @@ public class MainPanel extends PluginPanel
         if (!config.debugCoordinates())
         {
             orderedTasks = Arrays.stream(orderedTasks)
-                    .filter(t -> !"AAAAA".equals(t.name))
+                    .filter(t -> !"A DEBUG TASK".equals(t.name))
                     .toArray(Task[]::new);
         }
         taskSearchPanel.setAllTasks(orderedTasks);

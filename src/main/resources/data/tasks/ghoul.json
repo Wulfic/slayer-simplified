@@ -1,0 +1,26 @@
+{
+    "name":  "Ghoul",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "West of Canifis"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Ghoul Champion"
+                 ],
+    "masters":  [
+                    "Mazchna",
+                    "Vannaka"
+                ]
+}

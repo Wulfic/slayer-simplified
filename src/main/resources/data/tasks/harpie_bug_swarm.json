@@ -1,0 +1,26 @@
+{
+    "name":  "Harpie bug swarm",
+    "levelRequired":  33,
+    "itemsRequired":  [
+                          "Lit bug lantern"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Karamja"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

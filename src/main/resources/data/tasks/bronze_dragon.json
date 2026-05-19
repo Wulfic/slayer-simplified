@@ -1,0 +1,33 @@
+{
+    "name":  "Bronze dragon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+                          "Anti-dragon shield",
+                          "Dragonfire shield",
+                          "Antifire potion(4)"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Brimhaven Dungeon",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Draconic",
+                       "Fiery"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Dragonfire",
+                         "Ranged Dragonfire"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten"
+                ]
+}

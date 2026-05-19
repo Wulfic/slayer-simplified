@@ -1,0 +1,37 @@
+{
+    "name":  "Hellhound",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Taverley Dungeon",
+                      "East of the Deserted Keep",
+                      "Karuulm Slayer Dungeon",
+                      "Witchaven Dungeon",
+                      "God Wars Dungeon",
+                      "Wilderness Volcano",
+                      "Stronghold Slayer Cave",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Cerberus"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

@@ -1,0 +1,30 @@
+{
+    "name":  "Scabarite",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+                           "Antipoison"
+                       ],
+    "locations":  [
+                      "Dungeon under Sophanem",
+                      "Dungeon east of the Agility Pyramid"
+                  ],
+    "attributes":  [
+                       "Kalphite"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Magic",
+                         "Ranged"
+                     ],
+    "variants":  [
+                     "Locust rider",
+                     "Scarab mage",
+                     "Scarab swarm"
+                 ],
+    "masters":  [
+                    "Nieve"
+                ]
+}

@@ -1,0 +1,33 @@
+{
+    "name":  "Bear",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "East Ardougne",
+                      "South of Varrock",
+                      "South-east of Rellekka house portal"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Black bear",
+                     "Grizzly bear",
+                     "Grizzly bear cub",
+                     "Callisto",
+                     "Artio"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Turael",
+                    "Mazchna"
+                ]
+}

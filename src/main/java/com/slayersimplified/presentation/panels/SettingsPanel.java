@@ -33,6 +33,7 @@ public class SettingsPanel extends JPanel
     private JCheckBox autoNavCheck;
     private JCheckBox debugCheck;
     private JCheckBox remindCapeCheck;
+    private JCheckBox showReminderOverlayCheck;
 
     public SettingsPanel(SlayerSimplifiedConfig config, Runnable onClose)
     {
@@ -55,6 +56,7 @@ public class SettingsPanel extends JPanel
         autoNavCheck.setSelected(config.autoNavigate());
         debugCheck.setSelected(config.debugCoordinates());
         remindCapeCheck.setSelected(config.remindSlayerCape());
+        showReminderOverlayCheck.setSelected(config.showReminderOverlay());
     }
 
     private void buildUI()
@@ -129,6 +131,13 @@ public class SettingsPanel extends JPanel
         remindCapeCheck.addActionListener(e -> config.setRemindSlayerCape(remindCapeCheck.isSelected()));
         add(makeRow("Cape Reminder (99)", remindCapeCheck,
                 "Pop up a reminder to bring your Slayer cape on each new assignment (only triggers when you have 99 Slayer)"));
+        add(Box.createVerticalStrut(6));
+
+        // --- Show Task Reminder Overlay ---
+        showReminderOverlayCheck = makeCheckBox(config.showReminderOverlay());
+        showReminderOverlayCheck.addActionListener(e -> config.setShowReminderOverlay(showReminderOverlayCheck.isSelected()));
+        add(makeRow("Task Reminder Overlay", showReminderOverlayCheck,
+                "Show the on-screen overlay with required items, suggested items, and your notes while on a slayer task"));
         add(Box.createVerticalStrut(12));
 
         add(makeSeparator());

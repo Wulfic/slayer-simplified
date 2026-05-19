@@ -1,0 +1,26 @@
+{
+    "name":  "Mogre",
+    "levelRequired":  32,
+    "itemsRequired":  [
+                          "Fishing explosive"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Mudskipper Point"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Mazchna",
+                    "Vannaka"
+                ]
+}

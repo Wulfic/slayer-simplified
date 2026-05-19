@@ -1,0 +1,31 @@
+{
+    "name":  "Lizard",
+    "levelRequired":  22,
+    "itemsRequired":  [
+                          "Ice cooler"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Kharidian Desert"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Desert Lizard",
+                     "Lizard",
+                     "Small Lizard",
+                     "Sulphur Lizard"
+                 ],
+    "masters":  [
+                    "Turael",
+                    "Mazchna",
+                    "Chaeldar",
+                    "Vannaka"
+                ]
+}

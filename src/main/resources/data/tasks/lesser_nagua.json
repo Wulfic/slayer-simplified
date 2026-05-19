@@ -1,0 +1,29 @@
+{
+    "name":  "Lesser Nagua",
+    "levelRequired":  48,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Neypotzli",
+                      "Ruins of Tapoyauik",
+                      "Tonali Cavern"
+                  ],
+    "attributes":  [
+                       "Spectral"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Magic"
+                     ],
+    "variants":  [
+                     "Amoxliatl"
+                 ],
+    "masters":  [
+                    "Chaeldar",
+                    "Konar quo Maten"
+                ]
+}

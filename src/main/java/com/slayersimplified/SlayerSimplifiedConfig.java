@@ -86,7 +86,7 @@ public interface SlayerSimplifiedConfig extends Config
     @ConfigItem(
             keyName = "debugCoordinates",
             name = "Location Debug",
-            description = "Show an overlay with your current coordinates and nav target. Also enables the AAAAA test monster and debug nav info in the Locations tab.",
+            description = "Show an overlay with your current coordinates and nav target. Also enables the A DEBUG TASK test monster and debug nav info in the Locations tab.",
             position = 5,
             hidden = true
     )
@@ -112,6 +112,21 @@ public interface SlayerSimplifiedConfig extends Config
 
     @ConfigItem(keyName = "remindSlayerCape", name = "", description = "")
     void setRemindSlayerCape(boolean value);
+
+    @ConfigItem(
+            keyName = "showReminderOverlay",
+            name = "Show Task Reminder Overlay",
+            description = "Show the on-screen overlay with required items, suggested items, and your notes while on a slayer task",
+            position = 7,
+            hidden = true
+    )
+    default boolean showReminderOverlay()
+    {
+        return true;
+    }
+
+    @ConfigItem(keyName = "showReminderOverlay", name = "", description = "")
+    void setShowReminderOverlay(boolean value);
 
     // Hidden config keys used to persist internal state across sessions
 

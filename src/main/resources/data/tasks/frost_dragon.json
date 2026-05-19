@@ -1,0 +1,29 @@
+{
+    "name":  "Frost dragon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+                          "Anti-dragon shield",
+                          "Dragonfire shield",
+                          "Antifire potion(4)"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Grimstone Dungeon"
+                  ],
+    "attributes":  [
+                       "Draconic"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Icy Dragonfire"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Nieve",
+                    "Duradel"
+                ]
+}

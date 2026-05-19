@@ -1,0 +1,34 @@
+{
+    "name":  "Bloodveld",
+    "levelRequired":  50,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Slayer Tower",
+                      "God Wars Dungeon",
+                      "Meiyerditch Dungeon",
+                      "Stronghold Slayer Cave",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Magical melee"
+                     ],
+    "variants":  [
+                     "Mutated Bloodveld"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

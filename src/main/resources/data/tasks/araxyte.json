@@ -1,0 +1,27 @@
+{
+    "name":  "Araxyte",
+    "levelRequired":  92,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Morytania Spider Cave"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Araxxor",
+                     "Dreadborn Araxyte"
+                 ],
+    "masters":  [
+                    "Nieve",
+                    "Duradel"
+                ]
+}

@@ -1,0 +1,35 @@
+{
+    "name":  "Fire giant",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Brimhaven Dungeon",
+                      "Deep Wilderness Dungeon",
+                      "Smoke Dungeon",
+                      "Waterfall Dungeon",
+                      "Stronghold Slayer Cave",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Fiery"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Branda the Fire Queen"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

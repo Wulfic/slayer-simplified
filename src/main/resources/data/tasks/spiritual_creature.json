@@ -1,0 +1,32 @@
+{
+    "name":  "Spiritual creature",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "God Wars Dungeon",
+                      "Wilderness God Wars Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Varies with target"
+                     ],
+    "variants":  [
+                     "Spiritual warrior",
+                     "Spiritual ranger",
+                     "Spiritual mage"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Vannaka",
+                    "Chaeldar",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

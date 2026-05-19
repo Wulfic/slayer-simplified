@@ -1,0 +1,32 @@
+{
+    "name":  "Kurask",
+    "levelRequired":  70,
+    "itemsRequired":  [
+                          "Leaf-bladed spear",
+                          "Magic Dart",
+                          "Broad arrows",
+                          "Broad bolts"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Fremennik Slayer Dungeon",
+                      "Iorwerth Dungeon"
+                  ],
+    "attributes":  [
+                       "Leafy"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Duradel"
+                ]
+}

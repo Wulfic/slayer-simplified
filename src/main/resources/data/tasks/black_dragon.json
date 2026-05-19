@@ -1,0 +1,36 @@
+{
+    "name":  "Black dragon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+                          "Anti-dragon shield",
+                          "Dragonfire shield",
+                          "Antifire potion(4)"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Taverley Dungeon",
+                      "Lava Maze",
+                      "Evil Chicken\u0027s Lair"
+                  ],
+    "attributes":  [
+                       "Draconic",
+                       "Fiery"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Dragonfire"
+                     ],
+    "variants":  [
+                     "Baby black dragon",
+                     "King Black Dragon",
+                     "Brutal black dragon"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

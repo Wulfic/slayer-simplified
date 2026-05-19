@@ -1,0 +1,32 @@
+{
+    "name":  "Wolf",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Stronghold of Security",
+                      "White Wolf Mountain",
+                      "Feldip Hills"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Big Wolf",
+                     "Dire wolf",
+                     "Jungle wolf",
+                     "Desert Wolf",
+                     "Ice Wolf"
+                 ],
+    "masters":  [
+                    "Turael",
+                    "Mazchna"
+                ]
+}

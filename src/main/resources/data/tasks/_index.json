@@ -1,0 +1,486 @@
+[
+  {
+    "key": "A DEBUG TASK",
+    "file": "a_debug_task.json"
+  },
+  {
+    "key": "Frost dragon",
+    "file": "frost_dragon.json"
+  },
+  {
+    "key": "Aquanite",
+    "file": "aquanite.json"
+  },
+  {
+    "key": "Gryphon",
+    "file": "gryphon.json"
+  },
+  {
+    "key": "Aberrant spectre",
+    "file": "aberrant_spectre.json"
+  },
+  {
+    "key": "Abyssal demon",
+    "file": "abyssal_demon.json"
+  },
+  {
+    "key": "Adamant dragon",
+    "file": "adamant_dragon.json"
+  },
+  {
+    "key": "Ankou",
+    "file": "ankou.json"
+  },
+  {
+    "key": "Aviansie",
+    "file": "aviansie.json"
+  },
+  {
+    "key": "Bandit",
+    "file": "bandit.json"
+  },
+  {
+    "key": "Banshee",
+    "file": "banshee.json"
+  },
+  {
+    "key": "Basilisk",
+    "file": "basilisk.json"
+  },
+  {
+    "key": "Bat",
+    "file": "bat.json"
+  },
+  {
+    "key": "Bear",
+    "file": "bear.json"
+  },
+  {
+    "key": "Bird",
+    "file": "bird.json"
+  },
+  {
+    "key": "Black demon",
+    "file": "black_demon.json"
+  },
+  {
+    "key": "Black dragon",
+    "file": "black_dragon.json"
+  },
+  {
+    "key": "Black Knight",
+    "file": "black_knight.json"
+  },
+  {
+    "key": "Bloodveld",
+    "file": "bloodveld.json"
+  },
+  {
+    "key": "Blue dragon",
+    "file": "blue_dragon.json"
+  },
+  {
+    "key": "Brine rat",
+    "file": "brine_rat.json"
+  },
+  {
+    "key": "Bronze dragon",
+    "file": "bronze_dragon.json"
+  },
+  {
+    "key": "Catablepon",
+    "file": "catablepon.json"
+  },
+  {
+    "key": "Cave bug",
+    "file": "cave_bug.json"
+  },
+  {
+    "key": "Cave crawler",
+    "file": "cave_crawler.json"
+  },
+  {
+    "key": "Cave horror",
+    "file": "cave_horror.json"
+  },
+  {
+    "key": "Cave slime",
+    "file": "cave_slime.json"
+  },
+  {
+    "key": "Cave kraken",
+    "file": "cave_kraken.json"
+  },
+  {
+    "key": "Chaos druid",
+    "file": "chaos_druid.json"
+  },
+  {
+    "key": "Cockatrice",
+    "file": "cockatrice.json"
+  },
+  {
+    "key": "Cow",
+    "file": "cow.json"
+  },
+  {
+    "key": "Crawling Hand",
+    "file": "crawling_hand.json"
+  },
+  {
+    "key": "Crocodile",
+    "file": "crocodile.json"
+  },
+  {
+    "key": "Dagannoth",
+    "file": "dagannoth.json"
+  },
+  {
+    "key": "Dark beast",
+    "file": "dark_beast.json"
+  },
+  {
+    "key": "Dark warrior",
+    "file": "dark_warrior.json"
+  },
+  {
+    "key": "Dog",
+    "file": "dog.json"
+  },
+  {
+    "key": "Drake",
+    "file": "drake.json"
+  },
+  {
+    "key": "Dust devil",
+    "file": "dust_devil.json"
+  },
+  {
+    "key": "Dwarf",
+    "file": "dwarf.json"
+  },
+  {
+    "key": "Earth Warrior",
+    "file": "earth_warrior.json"
+  },
+  {
+    "key": "Elf",
+    "file": "elf.json"
+  },
+  {
+    "key": "Ent",
+    "file": "ent.json"
+  },
+  {
+    "key": "Fever spider",
+    "file": "fever_spider.json"
+  },
+  {
+    "key": "Fire giant",
+    "file": "fire_giant.json"
+  },
+  {
+    "key": "Flesh Crawler",
+    "file": "flesh_crawler.json"
+  },
+  {
+    "key": "Fossil Island Wyvern",
+    "file": "fossil_island_wyvern.json"
+  },
+  {
+    "key": "Gargoyle",
+    "file": "gargoyle.json"
+  },
+  {
+    "key": "Ghost",
+    "file": "ghost.json"
+  },
+  {
+    "key": "Ghoul",
+    "file": "ghoul.json"
+  },
+  {
+    "key": "Goblin",
+    "file": "goblin.json"
+  },
+  {
+    "key": "Greater demon",
+    "file": "greater_demon.json"
+  },
+  {
+    "key": "Green dragon",
+    "file": "green_dragon.json"
+  },
+  {
+    "key": "Harpie bug swarm",
+    "file": "harpie_bug_swarm.json"
+  },
+  {
+    "key": "Hellhound",
+    "file": "hellhound.json"
+  },
+  {
+    "key": "Hill Giant",
+    "file": "hill_giant.json"
+  },
+  {
+    "key": "Hobgoblin",
+    "file": "hobgoblin.json"
+  },
+  {
+    "key": "Hydra",
+    "file": "hydra.json"
+  },
+  {
+    "key": "Icefiend",
+    "file": "icefiend.json"
+  },
+  {
+    "key": "Ice giant",
+    "file": "ice_giant.json"
+  },
+  {
+    "key": "Ice warrior",
+    "file": "ice_warrior.json"
+  },
+  {
+    "key": "Infernal Mage",
+    "file": "infernal_mage.json"
+  },
+  {
+    "key": "Iron dragon",
+    "file": "iron_dragon.json"
+  },
+  {
+    "key": "Jelly",
+    "file": "jelly.json"
+  },
+  {
+    "key": "Jungle horror",
+    "file": "jungle_horror.json"
+  },
+  {
+    "key": "Kalphite",
+    "file": "kalphite.json"
+  },
+  {
+    "key": "Killerwatt",
+    "file": "killerwatt.json"
+  },
+  {
+    "key": "Kurask",
+    "file": "kurask.json"
+  },
+  {
+    "key": "Lava dragon",
+    "file": "lava_dragon.json"
+  },
+  {
+    "key": "Lesser demon",
+    "file": "lesser_demon.json"
+  },
+  {
+    "key": "Lizardman",
+    "file": "lizardman.json"
+  },
+  {
+    "key": "Lizard",
+    "file": "lizard.json"
+  },
+  {
+    "key": "Magic axe",
+    "file": "magic_axe.json"
+  },
+  {
+    "key": "Mammoth",
+    "file": "mammoth.json"
+  },
+  {
+    "key": "Mithril dragon",
+    "file": "mithril_dragon.json"
+  },
+  {
+    "key": "Minotaur",
+    "file": "minotaur.json"
+  },
+  {
+    "key": "Mogre",
+    "file": "mogre.json"
+  },
+  {
+    "key": "Molanisk",
+    "file": "molanisk.json"
+  },
+  {
+    "key": "Monkey",
+    "file": "monkey.json"
+  },
+  {
+    "key": "Moss giant",
+    "file": "moss_giant.json"
+  },
+  {
+    "key": "Nechryael",
+    "file": "nechryael.json"
+  },
+  {
+    "key": "Ogre",
+    "file": "ogre.json"
+  },
+  {
+    "key": "Otherworldly being",
+    "file": "otherworldly_being.json"
+  },
+  {
+    "key": "Pirate",
+    "file": "pirate.json"
+  },
+  {
+    "key": "Pyrefiend",
+    "file": "pyrefiend.json"
+  },
+  {
+    "key": "Rat",
+    "file": "rat.json"
+  },
+  {
+    "key": "Red dragon",
+    "file": "red_dragon.json"
+  },
+  {
+    "key": "Revenant",
+    "file": "revenant.json"
+  },
+  {
+    "key": "Rockslug",
+    "file": "rockslug.json"
+  },
+  {
+    "key": "Rogue",
+    "file": "rogue.json"
+  },
+  {
+    "key": "Rune Dragon",
+    "file": "rune_dragon.json"
+  },
+  {
+    "key": "Scabarite",
+    "file": "scabarite.json"
+  },
+  {
+    "key": "Scorpion",
+    "file": "scorpion.json"
+  },
+  {
+    "key": "Sea snake",
+    "file": "sea_snake.json"
+  },
+  {
+    "key": "Shade",
+    "file": "shade.json"
+  },
+  {
+    "key": "Shadow warrior",
+    "file": "shadow_warrior.json"
+  },
+  {
+    "key": "Skeletal Wyvern",
+    "file": "skeletal_wyvern.json"
+  },
+  {
+    "key": "Skeleton",
+    "file": "skeleton.json"
+  },
+  {
+    "key": "Smoke devil",
+    "file": "smoke_devil.json"
+  },
+  {
+    "key": "Sourhog",
+    "file": "sourhog.json"
+  },
+  {
+    "key": "Spider",
+    "file": "spider.json"
+  },
+  {
+    "key": "Spiritual creature",
+    "file": "spiritual_creature.json"
+  },
+  {
+    "key": "Steel dragon",
+    "file": "steel_dragon.json"
+  },
+  {
+    "key": "Suqah",
+    "file": "suqah.json"
+  },
+  {
+    "key": "Terror dog",
+    "file": "terror_dog.json"
+  },
+  {
+    "key": "Troll",
+    "file": "troll.json"
+  },
+  {
+    "key": "Turoth",
+    "file": "turoth.json"
+  },
+  {
+    "key": "Vampyre",
+    "file": "vampyre.json"
+  },
+  {
+    "key": "Wall beast",
+    "file": "wall_beast.json"
+  },
+  {
+    "key": "Waterfiend",
+    "file": "waterfiend.json"
+  },
+  {
+    "key": "Werewolf",
+    "file": "werewolf.json"
+  },
+  {
+    "key": "Wolf",
+    "file": "wolf.json"
+  },
+  {
+    "key": "Wyrm",
+    "file": "wyrm.json"
+  },
+  {
+    "key": "Zombie",
+    "file": "zombie.json"
+  },
+  {
+    "key": "Zygomite",
+    "file": "zygomite.json"
+  },
+  {
+    "key": "Crab",
+    "file": "crab.json"
+  },
+  {
+    "key": "TzHaar",
+    "file": "tzhaar.json"
+  },
+  {
+    "key": "Araxyte",
+    "file": "araxyte.json"
+  },
+  {
+    "key": "Custodian stalker",
+    "file": "custodian_stalker.json"
+  },
+  {
+    "key": "Lesser Nagua",
+    "file": "lesser_nagua.json"
+  },
+  {
+    "key": "Warped creature",
+    "file": "warped_creature.json"
+  }
+]

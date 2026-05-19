@@ -1,0 +1,31 @@
+{
+    "name":  "Dust devil",
+    "levelRequired":  65,
+    "itemsRequired":  [
+                          "Facemask",
+                          "Slayer helmet"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Smoke Dungeon",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

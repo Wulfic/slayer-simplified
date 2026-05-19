@@ -1,0 +1,29 @@
+{
+    "name":  "Dark beast",
+    "levelRequired":  90,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Path to Temple of Light (Mourner tunnels)",
+                      "Iorwerth Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Ranged"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

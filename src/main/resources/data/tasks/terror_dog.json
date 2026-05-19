@@ -1,0 +1,25 @@
+{
+    "name":  "Terror dog",
+    "levelRequired":  40,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Tarn\u0027s Lair"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka"
+                ]
+}

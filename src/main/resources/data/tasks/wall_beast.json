@@ -1,0 +1,28 @@
+{
+    "name":  "Wall beast",
+    "levelRequired":  35,
+    "itemsRequired":  [
+                          "Spiny helmet",
+                          "Slayer helmet"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Lumbridge Swamp Caves"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Mazchna",
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

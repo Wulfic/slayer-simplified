@@ -1,0 +1,29 @@
+{
+    "name":  "Drake",
+    "levelRequired":  84,
+    "itemsRequired":  [
+                          "Boots of stone",
+                          "Boots of brimstone",
+                          "Granite boots"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Karuulm Slayer Dungeon"
+                  ],
+    "attributes":  [
+                       "Draconic"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

@@ -24,17 +24,28 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 /**
- * Loads all Slayer tasks from the bundled tasks.json and provides
- * lookup/search capabilities. Task images and wiki links are
- * generated at load time from the resource data.
+ * Loads all Slayer tasks from the bundled per-task JSON files under
+ * {@code /data/tasks/} (enumerated by {@code _index.json}) and provides
+ * lookup/search capabilities. Task images and wiki links are generated
+ * at load time from the resource data.
  */
 @Slf4j
 @Singleton
 public class TaskServiceImpl implements TaskService
 {
+    /** Name of the manifest file inside the tasks directory. */
+    private static final String INDEX_FILE = "_index.json";
+
     private final Map<String, Task> tasks = new HashMap<>();
     private final String baseWikiUrl;
     private final String baseImagesPath;
+
+    /** Shape of a single entry in {@code _index.json}. */
+    private static final class IndexEntry
+    {
+        String key;
+        String file;
+    }
 
     @Inject
     public TaskServiceImpl(
@@ -46,32 +57,72 @@ public class TaskServiceImpl implements TaskService
         this.baseWikiUrl = baseWikiUrl;
         this.baseImagesPath = baseImagesPath;
 
-        InputStream inputStream = this.getClass().getResourceAsStream(dataPath);
+        String indexPath = dataPath + "/" + INDEX_FILE;
+        InputStream indexStream = this.getClass().getResourceAsStream(indexPath);
 
-        if (inputStream == null)
+        if (indexStream == null)
         {
-            throw new RuntimeException("Could not find JSON at path " + dataPath);
+            throw new RuntimeException("Could not find task index at " + indexPath);
         }
 
-        try (Reader reader = new InputStreamReader(inputStream))
+        List<IndexEntry> entries;
+        try (Reader reader = new InputStreamReader(indexStream))
         {
-            Type type = new TypeToken<Map<String, Task>>() {}.getType();
-            Map<String, Task> data = gson.fromJson(reader, type);
-
-            data.forEach((key, value) ->
-            {
-                value.wikiLinks = createWikiLinks(value);
-                value.image = getImage(value.name);
-                tasks.put(key.toLowerCase(), value);
-            });
+            Type type = new TypeToken<List<IndexEntry>>() {}.getType();
+            entries = gson.fromJson(reader, type);
         }
         catch (JsonSyntaxException e)
         {
-            log.error("JSON syntax error in file {}", dataPath, e);
+            log.error("JSON syntax error in task index {}", indexPath, e);
+            return;
         }
         catch (IOException e)
         {
-            log.error("Could not read JSON from file {}", dataPath, e);
+            log.error("Could not read task index {}", indexPath, e);
+            return;
+        }
+
+        if (entries == null)
+        {
+            log.error("Task index at {} was empty", indexPath);
+            return;
+        }
+
+        for (IndexEntry entry : entries)
+        {
+            loadTask(gson, dataPath, entry);
+        }
+    }
+
+    private void loadTask(Gson gson, String dataPath, IndexEntry entry)
+    {
+        String taskPath = dataPath + "/" + entry.file;
+        InputStream taskStream = this.getClass().getResourceAsStream(taskPath);
+        if (taskStream == null)
+        {
+            log.error("Could not find task JSON for key '{}' at {}", entry.key, taskPath);
+            return;
+        }
+
+        try (Reader reader = new InputStreamReader(taskStream))
+        {
+            Task value = gson.fromJson(reader, Task.class);
+            if (value == null)
+            {
+                log.error("Task JSON {} parsed to null", taskPath);
+                return;
+            }
+            value.wikiLinks = createWikiLinks(value);
+            value.image = getImage(value.name);
+            tasks.put(entry.key.toLowerCase(), value);
+        }
+        catch (JsonSyntaxException e)
+        {
+            log.error("JSON syntax error in {}", taskPath, e);
+        }
+        catch (IOException e)
+        {
+            log.error("Could not read {}", taskPath, e);
         }
     }
 

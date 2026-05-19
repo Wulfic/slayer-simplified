@@ -1,0 +1,30 @@
+{
+    "name":  "Banshee",
+    "levelRequired":  15,
+    "itemsRequired":  [
+                          "Earmuffs",
+                          "Slayer helmet"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Slayer Tower",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Undead"
+                   ],
+    "attackStyles":  [
+                         "Magical melee"
+                     ],
+    "variants":  [
+                     "Twisted Banshee"
+                 ],
+    "masters":  [
+                    "Turael",
+                    "Mazchna",
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

@@ -1,0 +1,25 @@
+{
+    "name":  "Magic axe",
+    "levelRequired":  1,
+    "itemsRequired":  [
+                          "Lockpick"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Magic Axe Hut"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Krystilia"
+                ]
+}

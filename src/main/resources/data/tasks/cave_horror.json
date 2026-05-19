@@ -1,0 +1,29 @@
+{
+    "name":  "Cave horror",
+    "levelRequired":  58,
+    "itemsRequired":  [
+                          "Witchwood icon",
+                          "Bullseye lantern (lit)"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Mos Le\u0027Harmless Cave"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Magical melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Chaeldar",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

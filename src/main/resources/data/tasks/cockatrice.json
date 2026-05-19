@@ -1,0 +1,27 @@
+{
+    "name":  "Cockatrice",
+    "levelRequired":  25,
+    "itemsRequired":  [
+                          "Mirror shield",
+                          "V\u0027s shield"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Fremennik Slayer Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Mazchna",
+                    "Vannaka"
+                ]
+}

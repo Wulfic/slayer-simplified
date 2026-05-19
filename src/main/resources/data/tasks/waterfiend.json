@@ -1,0 +1,28 @@
+{
+    "name":  "Waterfiend",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Ancient Cavern",
+                      "Kraken Cove"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Magic",
+                         "Magical ranged"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Konar quo Maten",
+                    "Duradel"
+                ]
+}

@@ -1,0 +1,32 @@
+{
+    "name":  "Aberrant spectre",
+    "levelRequired":  60,
+    "itemsRequired":  [
+                          "Nose peg",
+                          "Slayer helmet"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Slayer Tower",
+                      "Stronghold Slayer Cave",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Undead"
+                   ],
+    "attackStyles":  [
+                         "Magic"
+                     ],
+    "variants":  [
+                     "Deviant spectre"
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

@@ -1,0 +1,35 @@
+{
+    "name":  "Bird",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Across west Lumbridge bridge",
+                      "Port Sarim pier",
+                      "South of Falador"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Bird",
+                     "Chicken",
+                     "Mounted terrorbird gnome",
+                     "Rooster",
+                     "Seagull",
+                     "Terrorbird",
+                     "Vulture",
+                     "Undead chicken",
+                     "Chompy bird"
+                 ],
+    "masters":  [
+                    "Turael"
+                ]
+}

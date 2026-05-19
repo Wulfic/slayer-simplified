@@ -1,0 +1,29 @@
+{
+    "name":  "Nechryael",
+    "levelRequired":  80,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Slayer Tower",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Demon"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

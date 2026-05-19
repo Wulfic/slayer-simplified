@@ -1,0 +1,42 @@
+{
+    "name":  "Zombie",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Tree Gnome Village dungeon",
+                      "Entrana Dungeon",
+                      "Edgeville Dungeon",
+                      "Graveyard of Shadows",
+                      "Stronghold of Security",
+                      "Varrock Sewers",
+                      "Wizards\u0027 Guild basement",
+                      "Draynor Sewers",
+                      "Lair of Tarn Razorlor"
+                  ],
+    "attributes":  [
+                       "Undead"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Zombie pirate",
+                     "Zombie rat",
+                     "Zombie swab",
+                     "Armoured zombie",
+                     "Undead Druid",
+                     "Undead one",
+                     "Undead Zealot",
+                     "Vorkath"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Turael",
+                    "Mazchna"
+                ]
+}

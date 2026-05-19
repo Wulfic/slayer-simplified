@@ -1,0 +1,26 @@
+{
+    "name":  "Fever spider",
+    "levelRequired":  42,
+    "itemsRequired":  [
+                          "Slayer gloves"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Braindeath Island (brewery basement)"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

@@ -1,0 +1,27 @@
+{
+    "name":  "Crawling Hand",
+    "levelRequired":  5,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Slayer Tower"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Crush"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Turael",
+                    "Mazchna",
+                    "Vannaka"
+                ]
+}

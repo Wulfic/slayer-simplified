@@ -1,0 +1,38 @@
+{
+    "name":  "Greater demon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Entrana Dungeon",
+                      "Brimhaven Dungeon",
+                      "Ogre Enclave",
+                      "Demonic Ruins",
+                      "Wilderness Volcano",
+                      "Lava Maze Dungeon",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Demon"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "K\u0027ril Tsutsaroth",
+                     "Tstanon Karlak",
+                     "Skotizo",
+                     "Tormented Demon"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

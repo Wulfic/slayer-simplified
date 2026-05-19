@@ -1,0 +1,36 @@
+{
+    "name":  "Dagannoth",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Lighthouse",
+                      "Waterbirth Island Dungeon",
+                      "Catacombs of Kourend",
+                      "Jormungand\u0027s Prison"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Ranged or Melee"
+                     ],
+    "variants":  [
+                     "Dagannoth fledgeling",
+                     "Dagannoth spawn",
+                     "Dagannoth Prime",
+                     "Dagannoth Rex",
+                     "Dagannoth Supreme"
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

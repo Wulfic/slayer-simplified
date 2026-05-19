@@ -1,0 +1,34 @@
+{
+    "name":  "TzHaar",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Mor Ul Rek"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Ranged",
+                         "Magic"
+                     ],
+    "variants":  [
+                     "TzHaar-Hur",
+                     "TzHaar-Mej",
+                     "TzHaar-Xil",
+                     "TzHaar-Ket",
+                     "TzTok-Jad",
+                     "TzKal-Zuk"
+                 ],
+    "masters":  [
+                    "Chaeldar",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

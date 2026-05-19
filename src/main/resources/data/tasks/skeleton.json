@@ -1,0 +1,42 @@
+{
+    "name":  "Skeleton",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Edgeville Dungeon",
+                      "Draynor Sewers",
+                      "Karamja Volcano",
+                      "Ogre Enclave",
+                      "Stronghold of Security",
+                      "Taverley Dungeon",
+                      "Temple of Ikov",
+                      "Varrock Sewers",
+                      "Waterfall Dungeon",
+                      "Wilderness Agility Course",
+                      "Barrows",
+                      "Melzar\u0027s Maze",
+                      "Wilderness Volcano",
+                      "Ape Atoll Dungeon",
+                      "Underground Pass"
+                  ],
+    "attributes":  [
+                       "Undead"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Skeleton Champion",
+                     "Vet\u0027ion"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Turael",
+                    "Mazchna"
+                ]
+}

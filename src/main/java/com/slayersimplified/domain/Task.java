@@ -17,6 +17,7 @@ public class Task
     public String name;
     public int levelRequired;
     public String[] itemsRequired;
+    public String[] itemsSuggested;
     public String[] locations;
     public String[] attributes;
     public String[] attackStyles;
@@ -33,6 +34,7 @@ public class Task
             String name,
             int levelRequired,
             String[] itemsRequired,
+            String[] itemsSuggested,
             String[] locations,
             String[] attributes,
             String[] attackStyles,
@@ -44,6 +46,7 @@ public class Task
         this.name = name;
         this.levelRequired = levelRequired;
         this.itemsRequired = itemsRequired;
+        this.itemsSuggested = itemsSuggested;
         this.locations = locations;
         this.attributes = attributes;
         this.attackStyles = attackStyles;

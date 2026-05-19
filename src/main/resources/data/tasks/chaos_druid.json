@@ -1,0 +1,26 @@
+{
+    "name":  "Chaos druid",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+                           "Antipoison"
+                       ],
+    "locations":  [
+                      "Edgeville Dungeon",
+                      "Chaos Temple"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Elder Chaos druid"
+                 ],
+    "masters":  [
+                    "Krystilia"
+                ]
+}

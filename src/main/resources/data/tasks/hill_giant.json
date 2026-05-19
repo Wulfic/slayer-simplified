@@ -1,0 +1,36 @@
+{
+    "name":  "Hill Giant",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Deep Wilderness Dungeon",
+                      "Edgeville Dungeon",
+                      "Gnome Stronghold",
+                      "Lava Maze",
+                      "North of Observatory",
+                      "Taverley Dungeon",
+                      "Tree Gnome Village",
+                      "Wilderness",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Cyclops",
+                     "Obor"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Mazchna",
+                    "Vannaka"
+                ]
+}

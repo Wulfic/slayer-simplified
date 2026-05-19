@@ -1,0 +1,35 @@
+{
+    "name":  "Black demon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Taverley Dungeon",
+                      "Edgeville Dungeon",
+                      "Brimhaven Dungeon",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Demon"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Demonic gorilla",
+                     "Balfrug Kreeyath",
+                     "Skotizo",
+                     "Porazdir"
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

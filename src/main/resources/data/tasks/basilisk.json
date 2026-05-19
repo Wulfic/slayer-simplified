@@ -1,0 +1,31 @@
+{
+    "name":  "Basilisk",
+    "levelRequired":  40,
+    "itemsRequired":  [
+                          "Mirror shield",
+                          "V\u0027s shield"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Fremennik Slayer Dungeon",
+                      "Jormungand\u0027s Prison"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Basilisk Knights"
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

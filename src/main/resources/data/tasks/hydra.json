@@ -1,0 +1,29 @@
+{
+    "name":  "Hydra",
+    "levelRequired":  95,
+    "itemsRequired":  [
+                          "Boots of stone",
+                          "Boots of brimstone",
+                          "Granite boots"
+                      ],
+    "itemsSuggested":  [
+                           "Antivenom+"
+                       ],
+    "locations":  [
+                      "Karuulm Slayer Dungeon"
+                  ],
+    "attributes":  [
+                       "Draconic"
+                   ],
+    "attackStyles":  [
+                         "Magic",
+                         "Ranged",
+                         "Poison"
+                     ],
+    "variants":  [
+                     "Alchemical Hydra"
+                 ],
+    "masters":  [
+                    "Konar quo Maten"
+                ]
+}

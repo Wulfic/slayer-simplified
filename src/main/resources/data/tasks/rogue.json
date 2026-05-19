@@ -1,0 +1,26 @@
+{
+    "name":  "Rogue",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Rogues\u0027 Castle",
+                      "Southwest of Mage Arena"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Krystilia"
+                ]
+}

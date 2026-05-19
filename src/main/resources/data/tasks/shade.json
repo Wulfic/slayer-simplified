@@ -1,0 +1,35 @@
+{
+    "name":  "Shade",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Mort\u0027ton",
+                      "Shade Catacombs",
+                      "Temple Trekking",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Shade",
+                       "Undead"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Loar Shade",
+                     "Phrin Shade",
+                     "Riyl Shade",
+                     "Asyn Shade",
+                     "Fiyr Shade",
+                     "Urium Shade"
+                 ],
+    "masters":  [
+                    "Mazchna",
+                    "Vannaka"
+                ]
+}

@@ -1,0 +1,31 @@
+{
+    "name":  "Cave crawler",
+    "levelRequired":  10,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+                           "Antipoison"
+                       ],
+    "locations":  [
+                      "Fremennik Slayer Dungeon",
+                      "Lumbridge Swamp Caves",
+                      "Dorgesh-Kaan South Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Poison"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Turael",
+                    "Mazchna",
+                    "Vannaka",
+                    "Chaeldar"
+                ]
+}

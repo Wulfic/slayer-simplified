@@ -1,0 +1,35 @@
+{
+    "name":  "Kalphite",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+                           "Antipoison"
+                       ],
+    "locations":  [
+                      "Kalphite Lair",
+                      "Kalphite Cave"
+                  ],
+    "attributes":  [
+                       "Kalphite"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Kalphite Queen",
+                     "Kalphite Worker",
+                     "Kalphite Soldier",
+                     "Kalphite Guardian"
+                 ],
+    "masters":  [
+                    "Turael",
+                    "Mazchna",
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

@@ -1,0 +1,27 @@
+{
+    "name":  "Sourhog",
+    "levelRequired":  1,
+    "itemsRequired":  [
+                          "Reinforced goggles",
+                          "Slayer helmet"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Sourhog Cave"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Ranged"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Turael"
+                ]
+}

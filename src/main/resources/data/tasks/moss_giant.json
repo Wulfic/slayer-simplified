@@ -1,0 +1,34 @@
+{
+    "name":  "Moss giant",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Brimhaven Dungeon",
+                      "Crandor",
+                      "West of Fishing Guild",
+                      "Moss Giant Island",
+                      "Wilderness",
+                      "Varrock Sewers",
+                      "Pirates\u0027 Cove",
+                      "Glarial\u0027s Tomb",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Vannaka"
+                ]
+}

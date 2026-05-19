@@ -1,0 +1,36 @@
+{
+    "name":  "Fossil Island Wyvern",
+    "levelRequired":  66,
+    "itemsRequired":  [
+                          "Elemental shield",
+                          "Mind shield",
+                          "Dragonfire shield",
+                          "Ancient wyvern shield"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Wyvern Cave"
+                  ],
+    "attributes":  [
+                       "Draconic"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Ranged",
+                         "Icy breath"
+                     ],
+    "variants":  [
+                     "Ancient wyvern",
+                     "Spitting wyvern",
+                     "Taloned wyvern",
+                     "Long-tailed wyvern"
+                 ],
+    "masters":  [
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

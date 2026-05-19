@@ -1,0 +1,32 @@
+{
+    "name":  "Dog",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Ardougne",
+                      "McGrubor\u0027s Wood",
+                      "Black Arm Gang hideout in Brimhaven",
+                      "Brimhaven Dungeon"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Guard dog",
+                     "Wild dog",
+                     "Jackal",
+                     "Temple Guardian"
+                 ],
+    "masters":  [
+                    "Turael",
+                    "Mazchna"
+                ]
+}

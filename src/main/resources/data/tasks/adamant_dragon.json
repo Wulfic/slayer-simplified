@@ -1,0 +1,33 @@
+{
+    "name":  "Adamant dragon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+                          "Anti-dragon shield",
+                          "Dragonfire shield",
+                          "Super antifire potion(4)"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Lithkren Vault"
+                  ],
+    "attributes":  [
+                       "Draconic",
+                       "Fiery"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Ranged",
+                         "Magic",
+                         "Dragonfire"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

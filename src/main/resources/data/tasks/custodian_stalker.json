@@ -1,0 +1,27 @@
+{
+    "name":  "Custodian stalker",
+    "levelRequired":  54,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Stalker Den"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Crush",
+                         "Bleed"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Chaeldar",
+                    "Nieve"
+                ]
+}

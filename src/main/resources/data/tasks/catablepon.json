@@ -1,0 +1,26 @@
+{
+    "name":  "Catablepon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Stronghold of Security"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Magic"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Mazchna"
+                ]
+}

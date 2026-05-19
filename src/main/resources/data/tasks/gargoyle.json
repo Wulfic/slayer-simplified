@@ -1,0 +1,31 @@
+{
+    "name":  "Gargoyle",
+    "levelRequired":  75,
+    "itemsRequired":  [
+                          "Rock hammer",
+                          "Rock thrownhammer",
+                          "Granite hammer"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Slayer Tower"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+                     "Grotesque Guardians"
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

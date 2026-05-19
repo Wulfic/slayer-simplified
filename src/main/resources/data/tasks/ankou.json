@@ -1,0 +1,32 @@
+{
+    "name":  "Ankou",
+    "levelRequired":  1,
+    "itemsRequired":  [
+
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Stronghold of Security",
+                      "Wilderness volcano",
+                      "Stronghold Slayer Cave",
+                      "Catacombs of Kourend"
+                  ],
+    "attributes":  [
+                       "Undead"
+                   ],
+    "attackStyles":  [
+                         "Melee"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Krystilia",
+                    "Vannaka",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

@@ -1,0 +1,38 @@
+{
+    "name":  "Blue dragon",
+    "levelRequired":  1,
+    "itemsRequired":  [
+                          "Anti-dragon shield",
+                          "Dragonfire shield",
+                          "Antifire potion(4)"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Taverley Dungeon",
+                      "Ogre Enclave",
+                      "Heroes\u0027 Guild",
+                      "Corsair Cove Dungeon"
+                  ],
+    "attributes":  [
+                       "Draconic",
+                       "Fiery"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Dragonfire"
+                     ],
+    "variants":  [
+                     "Baby blue dragon",
+                     "Brutal blue dragon",
+                     "Vorkath"
+                 ],
+    "masters":  [
+                    "Vannaka",
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

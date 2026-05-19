@@ -1,0 +1,32 @@
+{
+    "name":  "Zygomite",
+    "levelRequired":  57,
+    "itemsRequired":  [
+                          "Fungicide spray",
+                          "Fungicide"
+                      ],
+    "itemsSuggested":  [
+                           "Dramen staff",
+                           "Lunar staff"
+                       ],
+    "locations":  [
+                      "Fossil Island",
+                      "Zanaris"
+                  ],
+    "attributes":  [
+                       "None"
+                   ],
+    "attackStyles":  [
+                         "Magical melee",
+                         "Magical ranged"
+                     ],
+    "variants":  [
+                     "Ancient Zygomite"
+                 ],
+    "masters":  [
+                    "Chaeldar",
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}

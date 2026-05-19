@@ -1,0 +1,32 @@
+{
+    "name":  "Skeletal Wyvern",
+    "levelRequired":  72,
+    "itemsRequired":  [
+                          "Elemental shield",
+                          "Mind shield",
+                          "Dragonfire shield",
+                          "Ancient wyvern shield"
+                      ],
+    "itemsSuggested":  [
+
+                       ],
+    "locations":  [
+                      "Asgarnian Ice Dungeon"
+                  ],
+    "attributes":  [
+                       "Draconic"
+                   ],
+    "attackStyles":  [
+                         "Melee",
+                         "Ranged",
+                         "Icy breath"
+                     ],
+    "variants":  [
+
+                 ],
+    "masters":  [
+                    "Konar quo Maten",
+                    "Nieve",
+                    "Duradel"
+                ]
+}
