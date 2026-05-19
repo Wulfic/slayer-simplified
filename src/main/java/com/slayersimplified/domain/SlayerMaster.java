@@ -34,4 +34,23 @@ public enum SlayerMaster
     {
         return displayName;
     }
+
+    /**
+     * Finds the SlayerMaster whose display name starts with the given task master name string.
+     * Handles mismatches like "Nieve" in task data vs "Nieve / Steve" as display name.
+     *
+     * @param name the master name string as it appears in tasks.json
+     * @return the matching SlayerMaster, or null if not found
+     */
+    public static SlayerMaster fromTaskMasterName(String name)
+    {
+        for (SlayerMaster m : values())
+        {
+            if (m.displayName.startsWith(name))
+            {
+                return m;
+            }
+        }
+        return null;
+    }
 }

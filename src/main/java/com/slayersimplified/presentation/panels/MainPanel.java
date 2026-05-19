@@ -101,7 +101,7 @@ public class MainPanel extends PluginPanel
                     .filter(t -> !"AAAAA".equals(t.name))
                     .toArray(Task[]::new);
         }
-        taskSearchPanel.updateTaskList(orderedTasks);
+        taskSearchPanel.setAllTasks(orderedTasks);
 
         // Quick Navigate button styling — match RuneLite panel aesthetic
         quickNavButton.setFont(FontManager.getRunescapeSmallFont());
@@ -470,24 +470,26 @@ public class MainPanel extends PluginPanel
                         .filter(t -> !"AAAAA".equals(t.name))
                         .toArray(Task[]::new);
             }
-            taskSearchPanel.updateTaskList(tasks);
+            taskSearchPanel.setAllTasks(tasks);
         });
     }
 
     private void onSearchBarChanged(String searchTerm)
     {
-        Task[] matchedTasks = searchTerm.isBlank()
-                ? taskService.getAll(Comparator.comparing(t -> t.name))
-                : taskService.searchPartialName(searchTerm.trim());
+        if (searchTerm.isBlank())
+        {
+            taskSearchPanel.showGroupedView();
+            return;
+        }
 
+        Task[] matchedTasks = taskService.searchPartialName(searchTerm.trim());
         if (!config.debugCoordinates())
         {
             matchedTasks = Arrays.stream(matchedTasks)
                     .filter(t -> !"AAAAA".equals(t.name))
                     .toArray(Task[]::new);
         }
-
-        taskSearchPanel.updateTaskList(matchedTasks);
+        taskSearchPanel.showSearchResults(matchedTasks);
     }
 
     /** Opens the task detail panel for the given task. Safe to call from the EDT. */

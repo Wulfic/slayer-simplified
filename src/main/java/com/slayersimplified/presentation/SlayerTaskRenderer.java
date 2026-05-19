@@ -92,7 +92,7 @@ public class SlayerTaskRenderer extends JPanel implements ListCellRenderer<Task>
         return this;
     }
 
-    private static Icon getMonsterIcon(String taskName)
+    public static Icon getMonsterIcon(String taskName)
     {
         final String key = taskName.toLowerCase().replace(" ", "_");
         return imageCache.computeIfAbsent(key, k ->
