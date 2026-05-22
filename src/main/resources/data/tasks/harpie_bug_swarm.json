@@ -1,25 +1,28 @@
 {
-    "name":  "Harpie bug swarm",
-    "levelRequired":  33,
-    "itemsRequired":  [
-                          "Lit bug lantern"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "NE of Tai Bwo Wannai",
-                      "East of Colossal Wyrm Remains"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Vannaka"                ]
+    "name": "Harpie bug swarm",
+    "levelRequired": 33,
+    "itemsRequired": [
+        "Lit bug lantern"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Harpie bug swarm": [
+            "NE of Tai Bwo Wannai",
+            "East of Colossal Wyrm Remains"
+        ]
+    }
 }

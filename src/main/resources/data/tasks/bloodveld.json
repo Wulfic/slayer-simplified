@@ -1,39 +1,41 @@
 {
-    "name":  "Bloodveld",
-    "levelRequired":  50,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                            "Ash Sanctifier"
-                       ],
-    "locations":  [
-                      "Slayer Tower",
-                      "God Wars Dungeon",
-                      "Meiyerditch Dungeon",
-                      "Stronghold Slayer Cave",
-                      "Catacombs of Kourend",
-                      "Buccaneer's Laboratory",
-                      "Ioewerth Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Magical melee"
-                     ],
-    "variants":  [
-                     "Mutated Bloodveld",
-                     "Insatiable Bloodveld",
-                     "Insatiable Mutated Bloodveld",
-                     "Reanimated Bloodveld"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Bloodveld",
+    "levelRequired": 50,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Ash Sanctifier"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Magical melee"
+    ],
+    "variants": [
+        "Mutated Bloodveld",
+        "Insatiable Bloodveld",
+        "Insatiable Mutated Bloodveld",
+        "Reanimated Bloodveld"
+    ],
+    "masters": [
+        "Krystilia",
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Bloodveld": [
+            "Slayer Tower",
+            "God Wars Dungeon",
+            "Meiyerditch Dungeon",
+            "Stronghold Slayer Cave",
+            "Catacombs of Kourend",
+            "Buccaneer's Laboratory",
+            "Ioewerth Dungeon"
+        ]
+    }
 }

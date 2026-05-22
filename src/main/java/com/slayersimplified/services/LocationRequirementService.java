@@ -6,6 +6,7 @@
 package com.slayersimplified.services;
 
 import com.slayersimplified.domain.LocationRequirement;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
@@ -15,6 +16,10 @@ import net.runelite.api.Skill;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -65,13 +70,14 @@ public class LocationRequirementService
     private final List<Runnable> refreshListeners = new ArrayList<>();
 
     @Inject
-    public LocationRequirementService(Client client, LocationCoordinateService locationCoordinateService)
+    public LocationRequirementService(Client client, LocationCoordinateService locationCoordinateService, Gson gson)
     {
         this.client = client;
         this.locationCoordinateService = locationCoordinateService;
 
         Map<String, LocationRequirement> reqs = new HashMap<>();
-        buildRequirementsFromJson(reqs);
+        buildRequirementsFromJson(reqs);      // from location_coordinates.json via LocationCoordinateService
+        loadFromRequirementsFile(gson, reqs); // from requirements.json (overrides / adds)
         this.requirements = Collections.unmodifiableMap(reqs);
 
         Set<Quest> qs = EnumSet.noneOf(Quest.class);
@@ -226,6 +232,84 @@ public class LocationRequirementService
     public Set<String> getGatedLocations()
     {
         return Collections.unmodifiableSet(new LinkedHashSet<>(requirements.keySet()));
+    }
+
+    /**
+     * Loads location requirements from the dedicated {@code /data/requirements.json}
+     * file. Entries in this file override any requirements already in {@code m} that
+     * were populated from {@code location_coordinates.json}.
+     *
+     * <p>The file format is:
+     * <pre>{ "locations": { "Name": { "quests": [...], "skills": { "SKILL": level } } } }</pre>
+     */
+    private void loadFromRequirementsFile(Gson gson, Map<String, LocationRequirement> m)
+    {
+        InputStream stream = getClass().getResourceAsStream("/data/requirements.json");
+        if (stream == null)
+        {
+            log.warn("requirements.json not found — skipping dedicated requirements load");
+            return;
+        }
+        try (Reader reader = new InputStreamReader(stream))
+        {
+            RequirementsFile reqFile = gson.fromJson(reader, RequirementsFile.class);
+            if (reqFile == null || reqFile.locations == null)
+            {
+                return;
+            }
+            int loaded = 0;
+            for (Map.Entry<String, LocationEntry> entry : reqFile.locations.entrySet())
+            {
+                String canonical = locationCoordinateService.resolveCanonical(entry.getKey());
+                if (canonical == null) continue;
+
+                LocationEntry locEntry = entry.getValue();
+                LocationRequirement.Builder builder = LocationRequirement.builder();
+
+                if (locEntry.quests != null)
+                {
+                    for (String questName : locEntry.quests)
+                    {
+                        try { builder.quest(Quest.valueOf(questName)); }
+                        catch (IllegalArgumentException e)
+                        {
+                            log.warn("Unknown Quest '{}' for '{}' in requirements.json", questName, entry.getKey());
+                        }
+                    }
+                }
+                if (locEntry.skills != null)
+                {
+                    for (Map.Entry<String, Integer> sk : locEntry.skills.entrySet())
+                    {
+                        try { builder.skill(Skill.valueOf(sk.getKey()), sk.getValue()); }
+                        catch (IllegalArgumentException e)
+                        {
+                            log.warn("Unknown Skill '{}' for '{}' in requirements.json", sk.getKey(), entry.getKey());
+                        }
+                    }
+                }
+                m.put(canonical, builder.build());
+                loaded++;
+            }
+            log.debug("Loaded {} location requirements from requirements.json", loaded);
+        }
+        catch (IOException e)
+        {
+            log.error("Failed to read requirements.json", e);
+        }
+    }
+
+    /** Shape of the top-level requirements.json object. */
+    private static final class RequirementsFile
+    {
+        Map<String, LocationEntry> locations;
+    }
+
+    /** One location entry in requirements.json. */
+    private static final class LocationEntry
+    {
+        String[] quests;
+        Map<String, Integer> skills;
     }
 
     /**

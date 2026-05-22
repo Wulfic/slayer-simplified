@@ -1,31 +1,33 @@
 {
-    "name":  "Turoth",
-    "levelRequired":  55,
-    "itemsRequired":  [
-                          "Leaf-bladed spear",
-                          "Magic Dart",
-                          "Broad arrows",
-                          "Broad bolts"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Fremennik Slayer Dungeon"
-                  ],
-    "attributes":  [
-                       "Leafy"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve"
-                ]
+    "name": "Turoth",
+    "levelRequired": 55,
+    "itemsRequired": [
+        "Leaf-bladed spear",
+        "Magic Dart",
+        "Broad arrows",
+        "Broad bolts"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Leafy"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve"
+    ],
+    "variantLocations": {
+        "Turoth": [
+            "Fremennik Slayer Dungeon"
+        ]
+    }
 }

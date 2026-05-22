@@ -1,33 +1,35 @@
 {
-    "name":  "Red dragon",
-    "levelRequired":  1,
-    "itemsRequired":  [
-                          "Anti-dragon shield",
-                          "Dragonfire shield",
-                          "Antifire potion(4)"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Brimhaven Dungeon",
-                      "Catacombs of Kourend"
-                  ],
-    "attributes":  [
-                       "Draconic",
-                       "Fiery"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Dragonfire"
-                     ],
-    "variants":  [
-                     "Baby red dragons",
-                     "Brutal red dragons"
-                 ],
-    "masters":  [
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Red dragon",
+    "levelRequired": 1,
+    "itemsRequired": [
+        "Anti-dragon shield",
+        "Dragonfire shield",
+        "Antifire potion(4)"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Draconic",
+        "Fiery"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Dragonfire"
+    ],
+    "variants": [
+        "Baby red dragons",
+        "Brutal red dragons"
+    ],
+    "masters": [
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Red dragon": [
+            "Brimhaven Dungeon",
+            "Catacombs of Kourend"
+        ]
+    }
 }

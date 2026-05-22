@@ -1,32 +1,34 @@
 {
-    "name":  "Ice giant",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Asgarnian Ice Dungeon",
-                      "Frozen Waste Plateau",
-                      "White Wolf Mountain",
-                      "Wilderness Slayer Cave",
-                      "Settlement Ruins",
-                      "Ice Queen's Lair",
-                      "Ruins of Tapoyauik"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                    "Eldric the Ice King"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Vannaka"
-                ]
+    "name": "Ice giant",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Eldric the Ice King"
+    ],
+    "masters": [
+        "Krystilia",
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Ice giant": [
+            "Asgarnian Ice Dungeon",
+            "Frozen Waste Plateau",
+            "White Wolf Mountain",
+            "Wilderness Slayer Cave",
+            "Settlement Ruins",
+            "Ice Queen's Lair",
+            "Ruins of Tapoyauik"
+        ]
+    }
 }

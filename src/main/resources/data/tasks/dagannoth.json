@@ -1,38 +1,40 @@
 {
-    "name":  "Dagannoth",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                        "Seed box"
-                       ],
-    "locations":  [
-                      "Lighthouse",
-                      "Waterbirth Island Dungeon",
-                      "Catacombs of Kourend",
-                      "Jormungand's Prison"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Ranged or Melee"
-                     ],
-    "variants":  [
-                     "Dagannoth fledgeling",
-                     "Dagannoth spawn",
-                     "Dagannoth Prime",
-                     "Dagannoth Rex",
-                     "Dagannoth Supreme",
-                     "Reanimated Dagannoth",
-                     "Daaggannoth mother"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Dagannoth",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Seed box"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Ranged or Melee"
+    ],
+    "variants": [
+        "Dagannoth fledgeling",
+        "Dagannoth spawn",
+        "Dagannoth Prime",
+        "Dagannoth Rex",
+        "Dagannoth Supreme",
+        "Reanimated Dagannoth",
+        "Daaggannoth mother"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Dagannoth": [
+            "Lighthouse",
+            "Waterbirth Island Dungeon",
+            "Catacombs of Kourend",
+            "Jormungand's Prison"
+        ]
+    }
 }

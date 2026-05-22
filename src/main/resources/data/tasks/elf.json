@@ -1,35 +1,37 @@
 {
-    "name":  "Elf",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Lletya",
-                      "Iorwerth Camp",
-                      "Prifddinas"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee or ranged"
-                     ],
-    "variants":  [
-                     "Elf Warrior",
-                     "Elf Archer",
-                     "Iorwerth Warrior",
-                     "Iorwerth Archer",
-                     "Mourner",
-                     "Reanimated elf"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Elf",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee or ranged"
+    ],
+    "variants": [
+        "Elf Warrior",
+        "Elf Archer",
+        "Iorwerth Warrior",
+        "Iorwerth Archer",
+        "Mourner",
+        "Reanimated elf"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Elf": [
+            "Lletya",
+            "Iorwerth Camp",
+            "Prifddinas"
+        ]
+    }
 }

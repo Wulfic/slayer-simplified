@@ -1,33 +1,35 @@
 {
-    "name":  "Rune Dragon",
-    "levelRequired":  1,
-    "itemsRequired":  [
-                          "Anti-dragon shield",
-                          "Dragonfire shield",
-                          "Super antifire potion(4)"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Lithkren"
-                  ],
-    "attributes":  [
-                       "Draconic",
-                       "Fiery"
-                   ],
-    "attackStyles":  [
-                         "Slash",
-                         "Ranged",
-                         "Magic",
-                         "Dragonfire"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Rune Dragon",
+    "levelRequired": 1,
+    "itemsRequired": [
+        "Anti-dragon shield",
+        "Dragonfire shield",
+        "Super antifire potion(4)"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Draconic",
+        "Fiery"
+    ],
+    "attackStyles": [
+        "Slash",
+        "Ranged",
+        "Magic",
+        "Dragonfire"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Rune Dragon": [
+            "Lithkren"
+        ]
+    }
 }

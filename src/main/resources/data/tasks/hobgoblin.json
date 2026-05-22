@@ -1,34 +1,36 @@
 {
-    "name":  "Hobgoblin",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Asgarnian Ice Dungeon",
-                      "Hobgoblin Peninsula near Crafting Guild",
-                      "Edgeville Dungeon",
-                      "God Wars Dungeon",
-                      "Near Karamja Hunter area",
-                      "North of Outpost",
-                      "North of Rellekka",
-                      "Tree Gnome Village dungeon",
-                      "Witchaven Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Hobgoblin Champion"
-                 ],
-    "masters":  [
-                    "Mazchna",
-                    "Vannaka"
-                ]
+    "name": "Hobgoblin",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Hobgoblin Champion"
+    ],
+    "masters": [
+        "Mazchna",
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Hobgoblin": [
+            "Asgarnian Ice Dungeon",
+            "Hobgoblin Peninsula near Crafting Guild",
+            "Edgeville Dungeon",
+            "God Wars Dungeon",
+            "Near Karamja Hunter area",
+            "North of Outpost",
+            "North of Rellekka",
+            "Tree Gnome Village dungeon",
+            "Witchaven Dungeon"
+        ]
+    }
 }

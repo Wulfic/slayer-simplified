@@ -1,33 +1,35 @@
 {
-    "name":  "Dust devil",
-    "levelRequired":  65,
-    "itemsRequired":  [
-                          "Facemask",
-                          "Slayer helmet"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Smoke Dungeon",
-                      "Catacombs of Kourend",
-                      "Wilderness Slayer Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                    "Choke devil"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel",
-                    "Krystilia"
-                ]
+    "name": "Dust devil",
+    "levelRequired": 65,
+    "itemsRequired": [
+        "Facemask",
+        "Slayer helmet"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Choke devil"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel",
+        "Krystilia"
+    ],
+    "variantLocations": {
+        "Dust devil": [
+            "Smoke Dungeon",
+            "Catacombs of Kourend",
+            "Wilderness Slayer Dungeon"
+        ]
+    }
 }

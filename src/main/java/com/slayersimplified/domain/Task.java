@@ -19,16 +19,14 @@ public class Task
     public int levelRequired;
     public String[] itemsRequired;
     public String[] itemsSuggested;
-    /** Top-level locations for the base monster (used when no variantLocations entry exists). */
-    public String[] locations;
     public String[] attributes;
     public String[] attackStyles;
     public String[] variants;
     public String[] masters;
     /**
-     * Optional per-variant location overrides. Maps variant display name (matching an entry in
-     * {@code variants}) to an array of location strings. When absent for a variant, the base
-     * {@code locations} array is shown as a fallback.
+     * Per-variant location map. Maps variant display name (including the base monster
+     * name itself) to an array of location strings. Always present after migration;
+     * the base monster entry uses {@code name} as the key.
      */
     public Map<String, String[]> variantLocations;
 
@@ -43,7 +41,6 @@ public class Task
             int levelRequired,
             String[] itemsRequired,
             String[] itemsSuggested,
-            String[] locations,
             String[] attributes,
             String[] attackStyles,
             String[] variants,
@@ -55,7 +52,6 @@ public class Task
         this.levelRequired = levelRequired;
         this.itemsRequired = itemsRequired;
         this.itemsSuggested = itemsSuggested;
-        this.locations = locations;
         this.attributes = attributes;
         this.attackStyles = attackStyles;
         this.variants = variants;

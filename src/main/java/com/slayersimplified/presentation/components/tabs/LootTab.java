@@ -30,6 +30,8 @@ public class LootTab extends JScrollPane implements Tab<String>
     private final OkHttpClient okHttpClient;
     private final JPanel contentPanel = new ScrollablePanel();
     private String currentMonster;
+    /** Incremented on every new fetch; lets async callbacks discard stale responses. */
+    private int requestId = 0;
 
     private static final Color SECTION_HEADER_BG = ColorScheme.DARKER_GRAY_COLOR.darker();
     private static final Color ITEM_BG = ColorScheme.DARKER_GRAY_COLOR;
@@ -66,12 +68,13 @@ public class LootTab extends JScrollPane implements Tab<String>
             return;
         }
 
-        // Don't re-fetch if same monster
+        // Don't re-fetch if we already have data for this monster
         if (monsterName.equals(currentMonster))
         {
             return;
         }
         currentMonster = monsterName;
+        final int thisRequest = ++requestId;
 
         contentPanel.removeAll();
         showLoadingState();
@@ -81,10 +84,18 @@ public class LootTab extends JScrollPane implements Tab<String>
                 {
                     SwingUtilities.invokeLater(() ->
                     {
+                        // Discard if the user has already moved to a different task
+                        if (thisRequest != requestId)
+                        {
+                            return;
+                        }
+
                         contentPanel.removeAll();
 
                         if (ex != null || dropTableSections == null || dropTableSections.length == 0)
                         {
+                            // Clear so re-selecting this task retries the fetch
+                            currentMonster = null;
                             showEmptyState();
                             return;
                         }

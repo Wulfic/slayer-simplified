@@ -1,34 +1,36 @@
 {
-    "name":  "Dwarf",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Ice Mountain",
-                      "Mining Guild",
-                      "Keldagrim",
-                      "Dwarven Mine",
-                      "Beneath White Wolf Mountain",
-                      "South of Yanille"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Black Guard",
-                     "Chaos dwarf",
-                     "Dwarf gang member",
-                     "Black Guard Berserker"
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Spria"
-                ]
+    "name": "Dwarf",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Black Guard",
+        "Chaos dwarf",
+        "Dwarf gang member",
+        "Black Guard Berserker"
+    ],
+    "masters": [
+        "Turael",
+        "Spria"
+    ],
+    "variantLocations": {
+        "Dwarf": [
+            "Ice Mountain",
+            "Mining Guild",
+            "Keldagrim",
+            "Dwarven Mine",
+            "Beneath White Wolf Mountain",
+            "South of Yanille"
+        ]
+    }
 }

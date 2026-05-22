@@ -1,32 +1,34 @@
 {
-    "name":  "Monkey",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Karamja",
-                      "Mos Le'Harmless",
-                      "Ardougne Zoo"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Monkey Guard",
-                     "Monkey Archer",
-                     "Monkey Zombie",
-                     "Maniacal monkey",
-                     "Tortured gorilla",
-                     "Demonic gorilla"
-                 ],
-    "masters":  [
-                    "Turael"
-                ]
+    "name": "Monkey",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Monkey Guard",
+        "Monkey Archer",
+        "Monkey Zombie",
+        "Maniacal monkey",
+        "Tortured gorilla",
+        "Demonic gorilla"
+    ],
+    "masters": [
+        "Turael"
+    ],
+    "variantLocations": {
+        "Monkey": [
+            "Karamja",
+            "Mos Le'Harmless",
+            "Ardougne Zoo"
+        ]
+    }
 }

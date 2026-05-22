@@ -1,31 +1,33 @@
 {
-    "name":  "Cave crawler",
-    "levelRequired":  10,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                           "Antipoison"
-                       ],
-    "locations":  [
-                      "Fremennik Slayer Dungeon",
-                      "Lumbridge Swamp Caves",
-                      "Dorgesh-Kaan South Dungeon",
-                      "Ruins of Tapouik"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Poison"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Mazchna",
-                    "Spria"
-                ]
+    "name": "Cave crawler",
+    "levelRequired": 10,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Antipoison"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Poison"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Turael",
+        "Mazchna",
+        "Spria"
+    ],
+    "variantLocations": {
+        "Cave crawler": [
+            "Fremennik Slayer Dungeon",
+            "Lumbridge Swamp Caves",
+            "Dorgesh-Kaan South Dungeon",
+            "Ruins of Tapouik"
+        ]
+    }
 }

@@ -1,26 +1,28 @@
 {
-    "name":  "Crocodile",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                        "Waterskin(4)"
-                       ],
-    "locations":  [
-                      "Near Elid",
-                      "Southern shore of Kharidian Desert"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Vannaka"
-                ]
+    "name": "Crocodile",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Waterskin(4)"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Crocodile": [
+            "Near Elid",
+            "Southern shore of Kharidian Desert"
+        ]
+    }
 }

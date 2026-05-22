@@ -1,33 +1,35 @@
 {
-    "name":  "Aberrant spectre",
-    "levelRequired":  60,
-    "itemsRequired":  [
-                          "Nose peg",
-                          "Slayer helmet"
-                      ],
-    "itemsSuggested":  [
-                            "Salve amulet (ei)",
-                            "Ectoplasmator"
-                       ],
-    "locations":  [
-                      "Slayer Tower",
-                      "Stronghold Slayer Cave",
-                      "Catacombs of Kourend"
-                  ],
-    "attributes":  [
-                       "Undead"
-                   ],
-    "attackStyles":  [
-                         "Magic"
-                     ],
-    "variants":  [
-                     "Deviant spectre"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Aberrant spectre",
+    "levelRequired": 60,
+    "itemsRequired": [
+        "Nose peg",
+        "Slayer helmet"
+    ],
+    "itemsSuggested": [
+        "Salve amulet (ei)",
+        "Ectoplasmator"
+    ],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Magic"
+    ],
+    "variants": [
+        "Deviant spectre"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Aberrant spectre": [
+            "Slayer Tower",
+            "Stronghold Slayer Cave",
+            "Catacombs of Kourend"
+        ]
+    }
 }

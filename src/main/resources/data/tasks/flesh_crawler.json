@@ -1,25 +1,27 @@
 {
-    "name":  "Flesh Crawler",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                          "Herb sack"
-                       ],
-    "locations":  [
-                      "Stronghold of Security (level 2)"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Mazchna"
-                ]
+    "name": "Flesh Crawler",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Herb sack"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Mazchna"
+    ],
+    "variantLocations": {
+        "Flesh Crawler": [
+            "Stronghold of Security (level 2)"
+        ]
+    }
 }

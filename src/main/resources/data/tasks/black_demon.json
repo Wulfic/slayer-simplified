@@ -1,37 +1,40 @@
 {
-    "name":  "Black demon",
-    "levelRequired":  80,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Taverley Dungeon",
-                      "Edgeville Dungeon",
-                      "Brimhaven Dungeon",
-                      "Catacombs of Kourend",
-                      "Charred Dungeon",
-                      "Chasm of Fire",
-                      "Crash Site Cavern",
-                      "Wilderness Slayer Cave"
-                  ],
-    "attributes":  [
-                       "Demon"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Demonic gorilla",
-                     "Balfrug Kreeyath",
-                     "Skotizo"                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Black demon",
+    "levelRequired": 80,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Demonic gorilla",
+        "Balfrug Kreeyath",
+        "Skotizo"
+    ],
+    "masters": [
+        "Krystilia",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Black demon": [
+            "Taverley Dungeon",
+            "Edgeville Dungeon",
+            "Brimhaven Dungeon",
+            "Catacombs of Kourend",
+            "Charred Dungeon",
+            "Chasm of Fire",
+            "Crash Site Cavern",
+            "Wilderness Slayer Cave"
+        ]
+    }
 }

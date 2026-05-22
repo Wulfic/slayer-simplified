@@ -1,26 +1,28 @@
 {
-    "name":  "Otherworldly being",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                           "Dramen staff",
-                           "Lunar staff"
-                       ],
-    "locations":  [
-                      "Zanaris"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Vannaka"
-                ]
+    "name": "Otherworldly being",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Dramen staff",
+        "Lunar staff"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Otherworldly being": [
+            "Zanaris"
+        ]
+    }
 }

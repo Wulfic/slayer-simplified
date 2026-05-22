@@ -1,29 +1,31 @@
 {
-    "name":  "Araxyte",
-    "levelRequired":  92,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                        "Antipoison"
-                       ],
-    "locations":  [
-                      "Morytania Spider Cave"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Araxxor",
-                     "Dreadborn Araxyte"
-                 ],
-    "masters":  [
-                    "Nieve",
-                    "Duradel",
-                    "Spria",
-                    "Turael"
-                ]
+    "name": "Araxyte",
+    "levelRequired": 92,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Antipoison"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Araxxor",
+        "Dreadborn Araxyte"
+    ],
+    "masters": [
+        "Nieve",
+        "Duradel",
+        "Spria",
+        "Turael"
+    ],
+    "variantLocations": {
+        "Araxyte": [
+            "Morytania Spider Cave"
+        ]
+    }
 }

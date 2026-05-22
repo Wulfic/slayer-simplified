@@ -1,34 +1,36 @@
 {
-    "name":  "Gargoyle",
-    "levelRequired":  75,
-    "itemsRequired":  [
-                          "Rock hammer",
-                          "Rock thrownhammer",
-                          "Granite hammer"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Slayer Tower"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Grotesque Guardians",
-                     "Marble Gargoyle",
-                     "Dawn",
-                     "Dusk"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Gargoyle",
+    "levelRequired": 75,
+    "itemsRequired": [
+        "Rock hammer",
+        "Rock thrownhammer",
+        "Granite hammer"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Grotesque Guardians",
+        "Marble Gargoyle",
+        "Dawn",
+        "Dusk"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Gargoyle": [
+            "Slayer Tower"
+        ]
+    }
 }

@@ -1,42 +1,44 @@
 {
-    "name":  "Skeleton",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Edgeville Dungeon",
-                      "Draynor Sewers",
-                      "Karamja Volcano",
-                      "Ogre Enclave",
-                      "Stronghold of Security",
-                      "Taverley Dungeon",
-                      "Temple of Ikov",
-                      "Varrock Sewers",
-                      "Waterfall Dungeon",
-                      "Wilderness Agility Course",
-                      "Barrows",
-                      "Melzar's Maze",
-                      "Wilderness Volcano",
-                      "Ape Atoll Dungeon",
-                      "Underground Pass"
-                  ],
-    "attributes":  [
-                       "Undead"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Skeleton Champion",
-                     "Vet'ion"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Turael",
-                    "Mazchna"
-                ]
+    "name": "Skeleton",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Skeleton Champion",
+        "Vet'ion"
+    ],
+    "masters": [
+        "Krystilia",
+        "Turael",
+        "Mazchna"
+    ],
+    "variantLocations": {
+        "Skeleton": [
+            "Edgeville Dungeon",
+            "Draynor Sewers",
+            "Karamja Volcano",
+            "Ogre Enclave",
+            "Stronghold of Security",
+            "Taverley Dungeon",
+            "Temple of Ikov",
+            "Varrock Sewers",
+            "Waterfall Dungeon",
+            "Wilderness Agility Course",
+            "Barrows",
+            "Melzar's Maze",
+            "Wilderness Volcano",
+            "Ape Atoll Dungeon",
+            "Underground Pass"
+        ]
+    }
 }

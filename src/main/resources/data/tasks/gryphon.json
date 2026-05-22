@@ -1,29 +1,31 @@
 {
-    "name":  "Gryphon",
-    "levelRequired":  51,
-    "itemsRequired":  [
-                          "Tortugan shield"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "The Great Conch"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                    "Shellbane Gryphon",
-                    "Dire Gryphon"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Gryphon",
+    "levelRequired": 51,
+    "itemsRequired": [
+        "Tortugan shield"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Shellbane Gryphon",
+        "Dire Gryphon"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Gryphon": [
+            "The Great Conch"
+        ]
+    }
 }

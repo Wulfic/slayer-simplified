@@ -1,32 +1,34 @@
 {
-    "name":  "Banshee",
-    "levelRequired":  15,
-    "itemsRequired":  [
-                          "Earmuffs",
-                          "Slayer helmet"
-                      ],
-    "itemsSuggested":  [
-                            "Salve amulet"
-                       ],
-    "locations":  [
-                      "Slayer Tower",
-                      "Catacombs of Kourend"
-                  ],
-    "attributes":  [
-                       "Undead"
-                   ],
-    "attackStyles":  [
-                         "Magical melee"
-                     ],
-    "variants":  [
-                     "Twisted Banshee",
-                     "Screaming Banshee",
-                     "Screaming twisted Banshee"
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Mazchna",
-                    "Vannaka",
-                    "Chaeldar"
-                ]
+    "name": "Banshee",
+    "levelRequired": 15,
+    "itemsRequired": [
+        "Earmuffs",
+        "Slayer helmet"
+    ],
+    "itemsSuggested": [
+        "Salve amulet"
+    ],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Magical melee"
+    ],
+    "variants": [
+        "Twisted Banshee",
+        "Screaming Banshee",
+        "Screaming twisted Banshee"
+    ],
+    "masters": [
+        "Turael",
+        "Mazchna",
+        "Vannaka",
+        "Chaeldar"
+    ],
+    "variantLocations": {
+        "Banshee": [
+            "Slayer Tower",
+            "Catacombs of Kourend"
+        ]
+    }
 }

@@ -1,29 +1,31 @@
 {
-    "name":  "Smoke devil",
-    "levelRequired":  93,
-    "itemsRequired":  [
-                          "Facemask",
-                          "Slayer helmet"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Smoke Devil Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Magical ranged"
-                     ],
-    "variants":  [
-                     "Thermonuclear smoke devil",
-                     "Nuclear smoke devil"
-                 ],
-    "masters":  [
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Smoke devil",
+    "levelRequired": 93,
+    "itemsRequired": [
+        "Facemask",
+        "Slayer helmet"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Magical ranged"
+    ],
+    "variants": [
+        "Thermonuclear smoke devil",
+        "Nuclear smoke devil"
+    ],
+    "masters": [
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Smoke devil": [
+            "Smoke Devil Dungeon"
+        ]
+    }
 }

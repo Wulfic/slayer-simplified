@@ -1,32 +1,34 @@
 {
-    "name":  "Aviansie",
-    "levelRequired":  1,
-    "itemsRequired":  [
-                          "Ranged or Magic weapon"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "God Wars Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Ranged"
-                     ],
-    "variants":  [
-                     "Kree'arra",
-                     "Flight Kilisa",
-                     "Flockleader Geerin",
-                     "Wingman Skree"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Aviansie",
+    "levelRequired": 1,
+    "itemsRequired": [
+        "Ranged or Magic weapon"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Ranged"
+    ],
+    "variants": [
+        "Kree'arra",
+        "Flight Kilisa",
+        "Flockleader Geerin",
+        "Wingman Skree"
+    ],
+    "masters": [
+        "Krystilia",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Aviansie": [
+            "God Wars Dungeon"
+        ]
+    }
 }

@@ -1,40 +1,42 @@
 {
-    "name":  "Hellhound",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Taverley Dungeon",
-                      "Karuulm Slayer Dungeon",
-                      "Witchaven Dungeon",
-                      "God Wars Dungeon",
-                      "Wilderness Slayer Cave",
-                      "Stronghold Slayer Cave",
-                      "Catacombs of Kourend",
-                      "Buccaneer's Laboratory",
-                      "Charred Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Cerberus",
-                     "Skeleton Hellhound",
-                     "Greater Skeleton Hellhound"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Hellhound",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Cerberus",
+        "Skeleton Hellhound",
+        "Greater Skeleton Hellhound"
+    ],
+    "masters": [
+        "Krystilia",
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Hellhound": [
+            "Taverley Dungeon",
+            "Karuulm Slayer Dungeon",
+            "Witchaven Dungeon",
+            "God Wars Dungeon",
+            "Wilderness Slayer Cave",
+            "Stronghold Slayer Cave",
+            "Catacombs of Kourend",
+            "Buccaneer's Laboratory",
+            "Charred Dungeon"
+        ]
+    }
 }

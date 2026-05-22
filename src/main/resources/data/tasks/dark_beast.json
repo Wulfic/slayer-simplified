@@ -1,31 +1,33 @@
 {
-    "name":  "Dark beast",
-    "levelRequired":  90,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                        "Herb sack",
-                        "Gem bag",
-                        "Seed box"
-                       ],
-    "locations":  [
-                      "Path to Temple of Light (Mourner tunnels)",
-                      "Iorwerth Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Ranged"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Dark beast",
+    "levelRequired": 90,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Herb sack",
+        "Gem bag",
+        "Seed box"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Dark beast": [
+            "Path to Temple of Light (Mourner tunnels)",
+            "Iorwerth Dungeon"
+        ]
+    }
 }

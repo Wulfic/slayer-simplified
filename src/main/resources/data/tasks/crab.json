@@ -1,39 +1,41 @@
 {
-    "name":  "Crab",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Fossil Island",
-                      "Crabclaw Isle",
-                      "Isle of Souls",
-                      "North of Rellekka",
-                      "Ruins of Tapoyauik",
-                      "Waterbirth Island",
-                      "West of Mount Quidamortem"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Ammonite Crab",
-                     "Frost Crab",
-                     "King Sand Crab",
-                     "Rock Crab",
-                     "Giant Rock Crab",
-                     "Sand Crab",
-                     "Swamp Crab"
-                 ],
-    "masters":  [
-                    "Mazchna",
-                    "Vannaka",
-                    "Chaeldar"
-                ]
+    "name": "Crab",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Ammonite Crab",
+        "Frost Crab",
+        "King Sand Crab",
+        "Rock Crab",
+        "Giant Rock Crab",
+        "Sand Crab",
+        "Swamp Crab"
+    ],
+    "masters": [
+        "Mazchna",
+        "Vannaka",
+        "Chaeldar"
+    ],
+    "variantLocations": {
+        "Crab": [
+            "Fossil Island",
+            "Crabclaw Isle",
+            "Isle of Souls",
+            "North of Rellekka",
+            "Ruins of Tapoyauik",
+            "Waterbirth Island",
+            "West of Mount Quidamortem"
+        ]
+    }
 }

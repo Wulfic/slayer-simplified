@@ -1,31 +1,33 @@
 {
-    "name":  "Ice warrior",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "White Wolf Mountain",
-                      "Frozen Waste Plateau",
-                      "Asgarnian Ice Dungeon",
-                      "Ice Queen's Lair",
-                      "Ruins of Tapoyauik"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Icelord"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Mazchna",
-                    "Vannaka"
-                ]
+    "name": "Ice warrior",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Icelord"
+    ],
+    "masters": [
+        "Krystilia",
+        "Mazchna",
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Ice warrior": [
+            "White Wolf Mountain",
+            "Frozen Waste Plateau",
+            "Asgarnian Ice Dungeon",
+            "Ice Queen's Lair",
+            "Ruins of Tapoyauik"
+        ]
+    }
 }

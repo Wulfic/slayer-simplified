@@ -1,28 +1,30 @@
 {
-    "name":  "Chaos druid",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                           "Antipoison"
-                       ],
-    "locations":  [
-                      "Edgeville Dungeon",
-                      "Chaos Druid Tower",
-                      "Taverley Dungeon",
-                      "Yanille Agility Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Elder Chaos druid"
-                 ],
-    "masters":  [
-                    "Krystilia"
-                ]
+    "name": "Chaos druid",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Antipoison"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Elder Chaos druid"
+    ],
+    "masters": [
+        "Krystilia"
+    ],
+    "variantLocations": {
+        "Chaos druid": [
+            "Edgeville Dungeon",
+            "Chaos Druid Tower",
+            "Taverley Dungeon",
+            "Yanille Agility Dungeon"
+        ]
+    }
 }

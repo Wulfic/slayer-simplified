@@ -1,44 +1,46 @@
 {
-    "name":  "Goblin",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                          "Slayer Helmet",
-                          "Black Mask"
-                       ],
-    "locations":  [
-                      "Lumbridge Caves",
-                      "Goblin Village",
-                      "Port Sarim",
-                      "Around the Digsite",
-                      "Stronghold of Security",
-                      "Underground Pass",
-                      "Goblin Cave",
-                      "Coal Trucks",
-                      "Holes in Myreque Hideout in Mort Myre",
-                      "God Wars Dungeon (Bandos God Wars minions)",
-                      "Cave near Observatory",
-                      "Dwarven coal mine",
-                      "East of Barbarian Village"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Sergeant Strongstack",
-                     "Sergeant Grimspike",
-                     "Sergeant Steelwill",
-                     "Cave goblin",
-                     "Cave goblin Guard",
-                     "Cave goblin miner"
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Spria"
-                ]
+    "name": "Goblin",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Slayer Helmet",
+        "Black Mask"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Sergeant Strongstack",
+        "Sergeant Grimspike",
+        "Sergeant Steelwill",
+        "Cave goblin",
+        "Cave goblin Guard",
+        "Cave goblin miner"
+    ],
+    "masters": [
+        "Turael",
+        "Spria"
+    ],
+    "variantLocations": {
+        "Goblin": [
+            "Lumbridge Caves",
+            "Goblin Village",
+            "Port Sarim",
+            "Around the Digsite",
+            "Stronghold of Security",
+            "Underground Pass",
+            "Goblin Cave",
+            "Coal Trucks",
+            "Holes in Myreque Hideout in Mort Myre",
+            "God Wars Dungeon (Bandos God Wars minions)",
+            "Cave near Observatory",
+            "Dwarven coal mine",
+            "East of Barbarian Village"
+        ]
+    }
 }

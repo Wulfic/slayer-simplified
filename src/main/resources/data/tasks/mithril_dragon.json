@@ -1,33 +1,35 @@
 {
-    "name":  "Mithril dragon",
-    "levelRequired":  1,
-    "itemsRequired":  [
-                          "Anti-dragon shield",
-                          "Dragonfire shield",
-                          "Antifire potion(4)"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Ancient Cavern"
-                  ],
-    "attributes":  [
-                       "Draconic",
-                       "Fiery"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Magic",
-                         "Ranged",
-                         "Dragonfire"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Mithril dragon",
+    "levelRequired": 1,
+    "itemsRequired": [
+        "Anti-dragon shield",
+        "Dragonfire shield",
+        "Antifire potion(4)"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Draconic",
+        "Fiery"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic",
+        "Ranged",
+        "Dragonfire"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Mithril dragon": [
+            "Ancient Cavern"
+        ]
+    }
 }

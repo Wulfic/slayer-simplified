@@ -1,35 +1,37 @@
 {
-    "name":  "Shade",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Mort'ton",
-                      "Shade Catacombs",
-                      "Temple Trekking",
-                      "Catacombs of Kourend"
-                  ],
-    "attributes":  [
-                       "Shade",
-                       "Undead"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Loar Shade",
-                     "Phrin Shade",
-                     "Riyl Shade",
-                     "Asyn Shade",
-                     "Fiyr Shade",
-                     "Urium Shade"
-                 ],
-    "masters":  [
-                    "Mazchna",
-                    "Vannaka"
-                ]
+    "name": "Shade",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Shade",
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Loar Shade",
+        "Phrin Shade",
+        "Riyl Shade",
+        "Asyn Shade",
+        "Fiyr Shade",
+        "Urium Shade"
+    ],
+    "masters": [
+        "Mazchna",
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Shade": [
+            "Mort'ton",
+            "Shade Catacombs",
+            "Temple Trekking",
+            "Catacombs of Kourend"
+        ]
+    }
 }

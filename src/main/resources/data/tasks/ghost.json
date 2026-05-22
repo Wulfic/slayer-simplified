@@ -1,42 +1,44 @@
 {
-    "name":  "Ghost",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Varrock Sewers",
-                      "Draynor Manor",
-                      "Melzar's Maze",
-                      "Stronghold of Security",
-                      "Taverley Dungeon",
-                      "West Ardougne (graveyard)",
-                      "Scorpius Shrine",
-                      "Lair of Tarn Razorlor",
-                      "Death altar",
-                      "Haunted Mine",
-                      "Near Clan Wars",
-                      "Forgotten Cemetery",
-                      "Catacombs of Kourend"
-                  ],
-    "attributes":  [
-                       "Undead"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Tortured soul",
-                     "Revenant",
-                     "Forgotten soul",
-                     "Death Wing"
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Mazchna",
-                    "Spria"
-                ]
+    "name": "Ghost",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Tortured soul",
+        "Revenant",
+        "Forgotten soul",
+        "Death Wing"
+    ],
+    "masters": [
+        "Turael",
+        "Mazchna",
+        "Spria"
+    ],
+    "variantLocations": {
+        "Ghost": [
+            "Varrock Sewers",
+            "Draynor Manor",
+            "Melzar's Maze",
+            "Stronghold of Security",
+            "Taverley Dungeon",
+            "West Ardougne (graveyard)",
+            "Scorpius Shrine",
+            "Lair of Tarn Razorlor",
+            "Death altar",
+            "Haunted Mine",
+            "Near Clan Wars",
+            "Forgotten Cemetery",
+            "Catacombs of Kourend"
+        ]
+    }
 }

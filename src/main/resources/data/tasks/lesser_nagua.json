@@ -1,32 +1,34 @@
 {
-    "name":  "Lesser Nagua",
-    "levelRequired":  48,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Neypotzli",
-                      "Ruins of Tapoyauik",
-                      "Crypt of Tonali"
-                  ],
-    "attributes":  [
-                       "Spectral"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Magic"
-                     ],
-    "variants":  [
-                     "Amoxliatl",
-                     "Suplur Nagua",
-                     "Frost Nagua",
-                     "Earthen Nagua"
-                 ],
-    "masters":  [
-                    "Chaeldar",
-                    "Konar quo Maten"
-                ]
+    "name": "Lesser Nagua",
+    "levelRequired": 48,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Spectral"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Amoxliatl",
+        "Suplur Nagua",
+        "Frost Nagua",
+        "Earthen Nagua"
+    ],
+    "masters": [
+        "Chaeldar",
+        "Konar quo Maten"
+    ],
+    "variantLocations": {
+        "Lesser Nagua": [
+            "Neypotzli",
+            "Ruins of Tapoyauik",
+            "Crypt of Tonali"
+        ]
+    }
 }

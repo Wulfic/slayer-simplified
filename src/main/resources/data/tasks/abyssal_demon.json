@@ -1,31 +1,33 @@
 {
-    "name":  "Abyssal demon",
-    "levelRequired":  85,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Slayer Tower",
-                      "Abyssal Area",
-                      "Catacombs of Kourend"
-                  ],
-    "attributes":  [
-                       "Demon"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Abyssal Sire",
-                     "Greater abyssal demon"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Abyssal demon",
+    "levelRequired": 85,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Abyssal Sire",
+        "Greater abyssal demon"
+    ],
+    "masters": [
+        "Vannaka",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Abyssal demon": [
+            "Slayer Tower",
+            "Abyssal Area",
+            "Catacombs of Kourend"
+        ]
+    }
 }

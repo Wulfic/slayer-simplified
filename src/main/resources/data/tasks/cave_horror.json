@@ -1,29 +1,31 @@
 {
-    "name":  "Cave horror",
-    "levelRequired":  58,
-    "itemsRequired":  [
-                          "Witchwood icon",
-                          "Bullseye lantern (lit)"
-                      ],
-    "itemsSuggested":  [
-                          "A light source"
-                       ],
-    "locations":  [
-                      "Mos Le'Harmless Cave"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Magical melee"
-                     ],
-    "variants":  [
-                    "Cave abomination"
-                 ],
-    "masters":  [
-                    "Chaeldar",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Cave horror",
+    "levelRequired": 58,
+    "itemsRequired": [
+        "Witchwood icon",
+        "Bullseye lantern (lit)"
+    ],
+    "itemsSuggested": [
+        "A light source"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magical melee"
+    ],
+    "variants": [
+        "Cave abomination"
+    ],
+    "masters": [
+        "Chaeldar",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Cave horror": [
+            "Mos Le'Harmless Cave"
+        ]
+    }
 }

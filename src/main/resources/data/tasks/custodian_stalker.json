@@ -1,29 +1,31 @@
 {
-    "name":  "Custodian stalker",
-    "levelRequired":  54,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Stalker Den"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Crush",
-                         "Bleed"
-                     ],
-    "variants":  [
-                    "Juvenile custodian stalker",
-                    "Mature custodian stalker",
-                    "Elder custodian stalker"
-                 ],
-    "masters":  [
-                    "Chaeldar",
-                    "Nieve"
-                ]
+    "name": "Custodian stalker",
+    "levelRequired": 54,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Crush",
+        "Bleed"
+    ],
+    "variants": [
+        "Juvenile custodian stalker",
+        "Mature custodian stalker",
+        "Elder custodian stalker"
+    ],
+    "masters": [
+        "Chaeldar",
+        "Nieve"
+    ],
+    "variantLocations": {
+        "Custodian stalker": [
+            "Stalker Den"
+        ]
+    }
 }

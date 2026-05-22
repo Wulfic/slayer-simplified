@@ -173,9 +173,12 @@ public class TaskServiceImpl implements TaskService
 
         links.add(createWikiLink(task.name));
 
-        for (String variant : task.variants)
+        if (task.variants != null)
         {
-            links.add(createWikiLink(variant));
+            for (String variant : task.variants)
+            {
+                links.add(createWikiLink(variant));
+            }
         }
 
         return links.toArray(new WikiLink[0]);

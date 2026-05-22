@@ -1,32 +1,34 @@
 {
-    "name":  "Bat",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Paterdomus",
-                      "Morytania",
-                      "Coal Trucks",
-                      "Slayer Tower",
-                      "Taverley Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Giant bat",
-                     "Albino bat",
-                     "Deathwing"
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Mazchna"
-                ]
+    "name": "Bat",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Giant bat",
+        "Albino bat",
+        "Deathwing"
+    ],
+    "masters": [
+        "Turael",
+        "Mazchna"
+    ],
+    "variantLocations": {
+        "Bat": [
+            "Paterdomus",
+            "Morytania",
+            "Coal Trucks",
+            "Slayer Tower",
+            "Taverley Dungeon"
+        ]
+    }
 }

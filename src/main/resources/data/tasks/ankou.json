@@ -1,34 +1,36 @@
 {
-    "name":  "Ankou",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                        "Salve amulet/Black Mask/Slayer Helm - These do NOT stack!",
-                        "Ectoplasmator"
-                       ],
-    "locations":  [
-                      "Stronghold of Security",
-                      "Wilderness volcano",
-                      "Stronghold Slayer Cave",
-                      "Catacombs of Kourend",
-                      "Forgotten Cemetery"
-                  ],
-    "attributes":  [
-                       "Undead"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                    "Dark Ankou"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Vannaka",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Ankou",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Salve amulet/Black Mask/Slayer Helm - These do NOT stack!",
+        "Ectoplasmator"
+    ],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Dark Ankou"
+    ],
+    "masters": [
+        "Krystilia",
+        "Vannaka",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Ankou": [
+            "Stronghold of Security",
+            "Wilderness volcano",
+            "Stronghold Slayer Cave",
+            "Catacombs of Kourend",
+            "Forgotten Cemetery"
+        ]
+    }
 }

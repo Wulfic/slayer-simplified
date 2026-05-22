@@ -1,34 +1,36 @@
 {
-    "name":  "Basilisk",
-    "levelRequired":  40,
-    "itemsRequired":  [
-                          "Mirror shield",
-                          "V's shield"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Fremennik Slayer Dungeon",
-                      "Jormungand's Prison"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Basilisk Knight",
-                     "Monstrous Basilisks",
-                     "Basilisk Sentinel",
-                     "The Jormungand"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Basilisk",
+    "levelRequired": 40,
+    "itemsRequired": [
+        "Mirror shield",
+        "V's shield"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Basilisk Knight",
+        "Monstrous Basilisks",
+        "Basilisk Sentinel",
+        "The Jormungand"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Basilisk": [
+            "Fremennik Slayer Dungeon",
+            "Jormungand's Prison"
+        ]
+    }
 }

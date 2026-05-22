@@ -1,40 +1,42 @@
 {
-    "name":  "Greater demon",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Entrana Dungeon",
-                      "Brimhaven Dungeon",
-                      "Ogre Enclave",
-                      "Demonic Ruins",
-                      "Lava Maze Dungeon",
-                      "Catacombs of Kourend",
-                      "Chasm of Fire Dungeon",
-                      "Isle of Souls Dungeon",
-                      "Karuulm Dungeon"
-                  ],
-    "attributes":  [
-                       "Demon"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "K'ril Tsutsaroth",
-                     "Tstanon Karlak",
-                     "Skotizo",
-                     "Tormented Demon"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Greater demon",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "K'ril Tsutsaroth",
+        "Tstanon Karlak",
+        "Skotizo",
+        "Tormented Demon"
+    ],
+    "masters": [
+        "Krystilia",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Greater demon": [
+            "Entrana Dungeon",
+            "Brimhaven Dungeon",
+            "Ogre Enclave",
+            "Demonic Ruins",
+            "Lava Maze Dungeon",
+            "Catacombs of Kourend",
+            "Chasm of Fire Dungeon",
+            "Isle of Souls Dungeon",
+            "Karuulm Dungeon"
+        ]
+    }
 }

@@ -1,28 +1,30 @@
 {
-    "name":  "Wall beast",
-    "levelRequired":  35,
-    "itemsRequired":  [
-                          "Spiny helmet",
-                          "Slayer helmet"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Lumbridge Swamp Caves"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Mazchna",
-                    "Vannaka",
-                    "Chaeldar"
-                ]
+    "name": "Wall beast",
+    "levelRequired": 35,
+    "itemsRequired": [
+        "Spiny helmet",
+        "Slayer helmet"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Mazchna",
+        "Vannaka",
+        "Chaeldar"
+    ],
+    "variantLocations": {
+        "Wall beast": [
+            "Lumbridge Swamp Caves"
+        ]
+    }
 }

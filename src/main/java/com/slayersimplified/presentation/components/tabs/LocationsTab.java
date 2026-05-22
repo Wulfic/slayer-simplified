@@ -178,11 +178,20 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
 
         currentMonsterName = data.monsterName;
 
-        boolean firstSection = true;
-        for (LocationsData.VariantEntry variant : data.variants)
+        if (data.variants.size() == 1)
         {
-            contentPanel.add(buildVariantSection(variant, firstSection));
-            firstSection = false;
+            // Only one section: render locations flat without an accordion header
+            buildFlatLocations(data.variants.get(0));
+        }
+        else
+        {
+            // Multiple variants: full accordion layout
+            boolean firstSection = true;
+            for (LocationsData.VariantEntry variant : data.variants)
+            {
+                contentPanel.add(buildVariantSection(variant, firstSection));
+                firstSection = false;
+            }
         }
 
         contentPanel.revalidate();
@@ -194,6 +203,42 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
     {
         navigationService.clearNavigation();
         clearRows();
+    }
+
+    // ── Flat layout (single variant) ──────────────────────────────────────────────────────────────────
+
+    private void buildFlatLocations(LocationsData.VariantEntry variant)
+    {
+        if (variant.locations == null || variant.locations.length == 0)
+        {
+            addPlaceholderRow("None");
+            return;
+        }
+
+        List<String> valid = new ArrayList<>();
+        for (String loc : variant.locations)
+        {
+            if (loc == null || loc.isEmpty()) continue;
+            valid.add(loc);
+            JPanel row = createLocationRow(loc, variant.name);
+            contentPanel.add(row);
+            allLocationRows.add(row);
+        }
+
+        // Auto-favourite when exactly one accessible location and none set yet
+        if (valid.size() == 1 && currentMonsterName != null
+                && favoriteService.getFavoriteForVariant(currentMonsterName, variant.name) == null
+                && (debugMode.get() || requirementService.isAvailable(valid.get(0))))
+        {
+            favoriteService.setFavoriteForVariant(currentMonsterName, variant.name, valid.get(0));
+            for (Component comp : contentPanel.getComponents())
+            {
+                if (comp instanceof JPanel && comp != debugPanel)
+                {
+                    updateStarsInRow((JPanel) comp, variant.name);
+                }
+            }
+        }
     }
 
     // â”€â”€ Accordion section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€

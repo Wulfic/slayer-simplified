@@ -1,26 +1,28 @@
 {
-    "name":  "Ghoul",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                          "Salve amulet"
-                       ],
-    "locations":  [
-                      "West of Canifis"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Ghoul Champion"
-                 ],
-    "masters":  [
-                    "Mazchna",
-                    "Vannaka"
-                ]
+    "name": "Ghoul",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Salve amulet"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Ghoul Champion"
+    ],
+    "masters": [
+        "Mazchna",
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Ghoul": [
+            "West of Canifis"
+        ]
+    }
 }

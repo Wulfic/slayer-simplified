@@ -1,37 +1,39 @@
 {
-    "name":  "Scorpion",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                           "Antipoison"
-                       ],
-    "locations":  [
-                      "Al-Kharid Mine",
-                      "Dwarven mines",
-                      "Ardougne Zoo Scorpion Pit",
-                      "Stronghold of Security",
-                      "Varrock Sewers",
-                      "Wilderness",
-                      "Above Karamja Volcano"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "King Scorpion",
-                     "Poison Scorpion",
-                     "Pit Scorpion",
-                     "Scorpia",
-                     "Lobstrosity"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Turael",
-                    "Mazchna"
-                ]
+    "name": "Scorpion",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Antipoison"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "King Scorpion",
+        "Poison Scorpion",
+        "Pit Scorpion",
+        "Scorpia",
+        "Lobstrosity"
+    ],
+    "masters": [
+        "Krystilia",
+        "Turael",
+        "Mazchna"
+    ],
+    "variantLocations": {
+        "Scorpion": [
+            "Al-Kharid Mine",
+            "Dwarven mines",
+            "Ardougne Zoo Scorpion Pit",
+            "Stronghold of Security",
+            "Varrock Sewers",
+            "Wilderness",
+            "Above Karamja Volcano"
+        ]
+    }
 }

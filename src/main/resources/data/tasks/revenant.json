@@ -1,37 +1,39 @@
 {
-    "name":  "Revenant",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Revenant Caves"
-                  ],
-    "attributes":  [
-                       "Undead"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Ranged",
-                         "Magic"
-                     ],
-    "variants":  [
-                     "Revenant imp",
-                     "Revenant goblin",
-                     "Revenant pyrefiend",
-                     "Revenant hobgoblin",
-                     "Revenant cyclops",
-                     "Revenant hellhound",
-                     "Revenant demon",
-                     "Revenant ork",
-                     "Revenant dark beast",
-                     "Revenant knight",
-                     "Revenant dragon"
-                 ],
-    "masters":  [
-                    "Krystilia"
-                ]
+    "name": "Revenant",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Revenant imp",
+        "Revenant goblin",
+        "Revenant pyrefiend",
+        "Revenant hobgoblin",
+        "Revenant cyclops",
+        "Revenant hellhound",
+        "Revenant demon",
+        "Revenant ork",
+        "Revenant dark beast",
+        "Revenant knight",
+        "Revenant dragon"
+    ],
+    "masters": [
+        "Krystilia"
+    ],
+    "variantLocations": {
+        "Revenant": [
+            "Revenant Caves"
+        ]
+    }
 }

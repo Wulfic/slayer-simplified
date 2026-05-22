@@ -1,31 +1,34 @@
 {
-    "name":  "Icefiend",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Ice Mountain",
-                      "God Wars Dungeon",
-                      "Wilderness God Wars Dungeon",
-                      "Ralos' Rise",
-                      "Mos Gratia",
-                      "Ruins of Tapoyauik"
-                  ],
-    "attributes":  [
-                       "Demon"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Magic"                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Spria"
-                ]
+    "name": "Icefiend",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Turael",
+        "Spria"
+    ],
+    "variantLocations": {
+        "Icefiend": [
+            "Ice Mountain",
+            "God Wars Dungeon",
+            "Wilderness God Wars Dungeon",
+            "Ralos' Rise",
+            "Mos Gratia",
+            "Ruins of Tapoyauik"
+        ]
+    }
 }

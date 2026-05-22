@@ -1,31 +1,33 @@
 {
-    "name":  "Cow",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "South of Falador",
-                      "North of Al-Kharid gate",
-                      "Lumbridge Cow Field"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Cow calf",
-                     "Undead cow",
-                     "Buffalo",
-                     "Brutus"
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Spria"
-                ]
+    "name": "Cow",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Cow calf",
+        "Undead cow",
+        "Buffalo",
+        "Brutus"
+    ],
+    "masters": [
+        "Turael",
+        "Spria"
+    ],
+    "variantLocations": {
+        "Cow": [
+            "South of Falador",
+            "North of Al-Kharid gate",
+            "Lumbridge Cow Field"
+        ]
+    }
 }

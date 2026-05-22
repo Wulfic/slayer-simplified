@@ -1,35 +1,37 @@
 {
-    "name":  "Jelly",
-    "levelRequired":  52,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Fremennik Slayer Dungeon",
-                      "Catacombs of Kourend",
-                      "Ruins of Tapoyauik",
-                      "Wilderness Slayer Cave"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Magical melee"
-                     ],
-    "variants":  [
-                     "Warped Jelly",
-                     "Virteous Jelly",
-                     "Virteous Warped Jelly",
-                     "Chilled Jelly",
-                     "Virteous Chilled Jelly"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Krystilia"
-                ]
+    "name": "Jelly",
+    "levelRequired": 52,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Magical melee"
+    ],
+    "variants": [
+        "Warped Jelly",
+        "Virteous Jelly",
+        "Virteous Warped Jelly",
+        "Chilled Jelly",
+        "Virteous Chilled Jelly"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Krystilia"
+    ],
+    "variantLocations": {
+        "Jelly": [
+            "Fremennik Slayer Dungeon",
+            "Catacombs of Kourend",
+            "Ruins of Tapoyauik",
+            "Wilderness Slayer Cave"
+        ]
+    }
 }

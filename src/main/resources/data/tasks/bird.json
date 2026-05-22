@@ -1,41 +1,43 @@
 {
-    "name":  "Bird",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Across west Lumbridge bridge",
-                      "Port Sarim pier",
-                      "South of Falador"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Bird",
-                     "Baby Roc",
-                     "Chicken",
-                     "Duck",
-                     "Entrana firebird",
-                     "Mounted terrorbird gnome",
-                     "Oomlie bird",
-                     "Penguin",
-                     "Rooster",
-                     "Seagull",
-                     "Terrorbird",
-                     "Vulture",
-                     "Undead chicken",
-                     "Chompy bird"
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Spria"
-                ]
+    "name": "Bird",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Bird",
+        "Baby Roc",
+        "Chicken",
+        "Duck",
+        "Entrana firebird",
+        "Mounted terrorbird gnome",
+        "Oomlie bird",
+        "Penguin",
+        "Rooster",
+        "Seagull",
+        "Terrorbird",
+        "Vulture",
+        "Undead chicken",
+        "Chompy bird"
+    ],
+    "masters": [
+        "Turael",
+        "Spria"
+    ],
+    "variantLocations": {
+        "Bird": [
+            "Across west Lumbridge bridge",
+            "Port Sarim pier",
+            "South of Falador"
+        ]
+    }
 }

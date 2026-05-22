@@ -1,32 +1,34 @@
 {
-    "name":  "Wyrm",
-    "levelRequired":  62,
-    "itemsRequired":  [
-                          "Boots of stone",
-                          "Boots of brimstone",
-                          "Granite boots"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Karuulm Slayer Dungeon"
-                  ],
-    "attributes":  [
-                       "Draconic"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Magical ranged"
-                     ],
-    "variants":  [
-                     "Wyrmling",
-                     "Lava Strykewyrm"
-                 ],
-    "masters":  [
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Wyrm",
+    "levelRequired": 62,
+    "itemsRequired": [
+        "Boots of stone",
+        "Boots of brimstone",
+        "Granite boots"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Draconic"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magical ranged"
+    ],
+    "variants": [
+        "Wyrmling",
+        "Lava Strykewyrm"
+    ],
+    "masters": [
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Wyrm": [
+            "Karuulm Slayer Dungeon"
+        ]
+    }
 }

@@ -1,28 +1,30 @@
 {
-    "name":  "Lava dragon",
-    "levelRequired":  1,
-    "itemsRequired":  [
-                          "Anti-dragon shield",
-                          "Dragonfire shield"
-                      ],
-    "itemsSuggested":  [
-                          "Super Antifire potion(4)"
-                       ],
-    "locations":  [
-                      "Lava Dragon Isle"
-                  ],
-    "attributes":  [
-                       "Draconic",
-                       "Fiery"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Dragonfire"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Krystilia"
-                ]
+    "name": "Lava dragon",
+    "levelRequired": 1,
+    "itemsRequired": [
+        "Anti-dragon shield",
+        "Dragonfire shield"
+    ],
+    "itemsSuggested": [
+        "Super Antifire potion(4)"
+    ],
+    "attributes": [
+        "Draconic",
+        "Fiery"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Dragonfire"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Krystilia"
+    ],
+    "variantLocations": {
+        "Lava dragon": [
+            "Lava Dragon Isle"
+        ]
+    }
 }

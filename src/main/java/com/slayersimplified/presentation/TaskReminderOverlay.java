@@ -160,7 +160,7 @@ public class TaskReminderOverlay extends Overlay
                 if (item != null && !item.trim().isEmpty() && !item.equalsIgnoreCase("none"))
                 {
                     panelComponent.getChildren().add(LineComponent.builder()
-                            .left("\u2022 " + item)
+                            .left("\u2022 " + stripItemTag(item))
                             .build());
                 }
             }
@@ -181,7 +181,7 @@ public class TaskReminderOverlay extends Overlay
                 if (item != null && !item.trim().isEmpty() && !item.equalsIgnoreCase("none"))
                 {
                     panelComponent.getChildren().add(LineComponent.builder()
-                            .left("\u2022 " + item)
+                            .left("\u2022 " + stripItemTag(item))
                             .build());
                 }
             }
@@ -207,6 +207,16 @@ public class TaskReminderOverlay extends Overlay
         }
 
         return true;
+    }
+
+    /**
+     * Strips the trailing {@code --VariantName} tag from an item string, if present.
+     * E.g. {@code "Darklight --Shadow hound"} → {@code "Darklight"}.
+     */
+    private static String stripItemTag(String item)
+    {
+        int idx = item.lastIndexOf(" --");
+        return idx >= 0 ? item.substring(0, idx).trim() : item;
     }
 
     /**

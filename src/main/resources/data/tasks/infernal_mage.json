@@ -1,27 +1,29 @@
 {
-    "name":  "Infernal Mage",
-    "levelRequired":  45,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                          "Slayer helmet",
-                          "Nose peg"
-                       ],
-    "locations":  [
-                      "Slayer tower"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Magic"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar"
-                ]
+    "name": "Infernal Mage",
+    "levelRequired": 45,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Slayer helmet",
+        "Nose peg"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Magic"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar"
+    ],
+    "variantLocations": {
+        "Infernal Mage": [
+            "Slayer tower"
+        ]
+    }
 }

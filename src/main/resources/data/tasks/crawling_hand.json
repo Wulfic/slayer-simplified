@@ -1,28 +1,30 @@
 {
-    "name":  "Crawling Hand",
-    "levelRequired":  5,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                        "Salve amulet"
-                       ],
-    "locations":  [
-                      "Slayer Tower",
-                      "Meiyerditch Labratories"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Crush"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Mazchna",
-                    "Spria"
-                ]
+    "name": "Crawling Hand",
+    "levelRequired": 5,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Salve amulet"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Crush"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Turael",
+        "Mazchna",
+        "Spria"
+    ],
+    "variantLocations": {
+        "Crawling Hand": [
+            "Slayer Tower",
+            "Meiyerditch Labratories"
+        ]
+    }
 }

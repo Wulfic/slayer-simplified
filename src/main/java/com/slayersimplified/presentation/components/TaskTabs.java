@@ -31,6 +31,7 @@ import okhttp3.OkHttpClient;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -130,9 +131,13 @@ public class TaskTabs extends JTabbedPane
     public void update(Task task)
     {
         // Build the variant accordion data for the Locations tab.
-        // First entry is always the base monster; subsequent entries are its variants.
+        // First entry is always the base monster (task.name); subsequent entries are its named variants.
         List<LocationsTab.LocationsData.VariantEntry> variantEntries = new ArrayList<>();
-        variantEntries.add(new LocationsTab.LocationsData.VariantEntry(task.name, task.locations));
+
+        String[] baseLocs = (task.variantLocations != null) ? task.variantLocations.get(task.name) : null;
+        variantEntries.add(new LocationsTab.LocationsData.VariantEntry(
+                task.name, baseLocs != null ? baseLocs : new String[0]));
+
         if (task.variants != null)
         {
             for (String variantName : task.variants)
@@ -140,11 +145,8 @@ public class TaskTabs extends JTabbedPane
                 String[] variantLocs = (task.variantLocations != null)
                         ? task.variantLocations.get(variantName)
                         : null;
-                if (variantLocs == null)
-                {
-                    variantLocs = task.locations; // fall back to base locations
-                }
-                variantEntries.add(new LocationsTab.LocationsData.VariantEntry(variantName, variantLocs));
+                variantEntries.add(new LocationsTab.LocationsData.VariantEntry(
+                        variantName, variantLocs != null ? variantLocs : new String[0]));
             }
         }
         updateTab(TabKey.LOCATIONS, new LocationsTab.LocationsData(task.name, variantEntries));
@@ -156,11 +158,21 @@ public class TaskTabs extends JTabbedPane
                 task.masters));
         updateTab(TabKey.WIKI, task.wikiLinks);
         updateTab(TabKey.LOOT, task.name);
+
+        // Aggregate all locations across all variants for location-based suggested items
+        List<String> allLocs = new ArrayList<>();
+        if (task.variantLocations != null)
+        {
+            for (String[] locs : task.variantLocations.values())
+            {
+                if (locs != null) Collections.addAll(allLocs, locs);
+            }
+        }
         updateTab(TabKey.NOTES, new NotesTab.NotesData(
                 task.name,
                 task.itemsRequired,
                 task.itemsSuggested,
-                requirementService.getSuggestedItemsForLocations(task.locations)));
+                requirementService.getSuggestedItemsForLocations(allLocs.toArray(new String[0]))));
     }
 
     private <T> void updateTab(TabKey key, T data)

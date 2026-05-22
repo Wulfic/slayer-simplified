@@ -1,37 +1,39 @@
 {
-    "name":  "Hill Giant",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Deep Wilderness Dungeon",
-                      "Edgeville Dungeon",
-                      "Gnome Stronghold",
-                      "Lava Maze",
-                      "North of Observatory",
-                      "Taverley Dungeon",
-                      "Tree Gnome Village",
-                      "Wilderness",
-                      "Catacombs of Kourend"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Cyclops",
-                     "Obor",
-                     "Reanimated giant"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Mazchna",
-                    "Vannaka"
-                ]
+    "name": "Hill Giant",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Cyclops",
+        "Obor",
+        "Reanimated giant"
+    ],
+    "masters": [
+        "Krystilia",
+        "Mazchna",
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Hill Giant": [
+            "Deep Wilderness Dungeon",
+            "Edgeville Dungeon",
+            "Gnome Stronghold",
+            "Lava Maze",
+            "North of Observatory",
+            "Taverley Dungeon",
+            "Tree Gnome Village",
+            "Wilderness",
+            "Catacombs of Kourend"
+        ]
+    }
 }

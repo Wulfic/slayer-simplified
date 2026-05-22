@@ -1,33 +1,36 @@
 {
-    "name":  "Lizard",
-    "levelRequired":  22,
-    "itemsRequired":  [
-                          "Ice cooler"
-                      ],
-    "itemsSuggested":  [
-                          "Waterskin(4)",
-                          "Granite Boots/Boots of stone/brimstone",
-                          "Anti-poison(4)"
-                       ],
-    "locations":  [
-                      "Kharidian Desert",
-                      "Karuulm Slayer Dungeon",
-                      "Neypotzli"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Desert Lizard",
-                     "Small Lizard",
-                     "Sulphur Lizard",
-                     "Grimy Lizard"
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Mazchna",
-                    "Spira"               ]
+    "name": "Lizard",
+    "levelRequired": 22,
+    "itemsRequired": [
+        "Ice cooler"
+    ],
+    "itemsSuggested": [
+        "Waterskin(4)",
+        "Granite Boots/Boots of stone/brimstone",
+        "Anti-poison(4)"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Desert Lizard",
+        "Small Lizard",
+        "Sulphur Lizard",
+        "Grimy Lizard"
+    ],
+    "masters": [
+        "Turael",
+        "Mazchna",
+        "Spira"
+    ],
+    "variantLocations": {
+        "Lizard": [
+            "Kharidian Desert",
+            "Karuulm Slayer Dungeon",
+            "Neypotzli"
+        ]
+    }
 }

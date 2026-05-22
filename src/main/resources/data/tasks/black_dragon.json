@@ -1,42 +1,44 @@
 {
-    "name":  "Black dragon",
-    "levelRequired":  80,
-    "itemsRequired":  [
-                          "Anti-dragon shield",
-                          "Dragonfire shield",
-                          "Super antifire potion(4)"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Taverley Dungeon",
-                      "Lava Maze Dungeon",
-                      "Evil Chicken's Lair",
-                      "Mynydd",
-                      "Charred Dungeon",
-                      "Wilderness Slayer Cave",
-                      "Corsair Cove Dungeon",
-                      "King Black Dragon Lair",
-                      "Catacombs of Kourend"
-                  ],
-    "attributes":  [
-                       "Draconic",
-                       "Fiery"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Dragonfire"
-                     ],
-    "variants":  [
-                     "Baby black dragon",
-                     "King Black Dragon",
-                     "Brutal black dragon"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Black dragon",
+    "levelRequired": 80,
+    "itemsRequired": [
+        "Anti-dragon shield",
+        "Dragonfire shield",
+        "Super antifire potion(4)"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Draconic",
+        "Fiery"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Dragonfire"
+    ],
+    "variants": [
+        "Baby black dragon",
+        "King Black Dragon",
+        "Brutal black dragon"
+    ],
+    "masters": [
+        "Krystilia",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Black dragon": [
+            "Taverley Dungeon",
+            "Lava Maze Dungeon",
+            "Evil Chicken's Lair",
+            "Mynydd",
+            "Charred Dungeon",
+            "Wilderness Slayer Cave",
+            "Corsair Cove Dungeon",
+            "King Black Dragon Lair",
+            "Catacombs of Kourend"
+        ]
+    }
 }

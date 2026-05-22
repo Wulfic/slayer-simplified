@@ -1,33 +1,35 @@
 {
-    "name":  "Kurask",
-    "levelRequired":  70,
-    "itemsRequired":  [
-                          "Leaf-bladed spear/sword/battleaxe",
-                          "Magic Dart",
-                          "Broad arrows/bolts"
-                      ],
-    "itemsSuggested":  [
-                          "Herb sack"
-                       ],
-    "locations":  [
-                      "Fremennik Slayer Dungeon",
-                      "Iorwerth Dungeon",
-                      "Kurask Lair"
-                  ],
-    "attributes":  [
-                       "Leafy"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                    "King kurask"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Duradel",
-                    "Neive"
-                ]
+    "name": "Kurask",
+    "levelRequired": 70,
+    "itemsRequired": [
+        "Leaf-bladed spear/sword/battleaxe",
+        "Magic Dart",
+        "Broad arrows/bolts"
+    ],
+    "itemsSuggested": [
+        "Herb sack"
+    ],
+    "attributes": [
+        "Leafy"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "King kurask"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Duradel",
+        "Neive"
+    ],
+    "variantLocations": {
+        "Kurask": [
+            "Fremennik Slayer Dungeon",
+            "Iorwerth Dungeon",
+            "Kurask Lair"
+        ]
+    }
 }

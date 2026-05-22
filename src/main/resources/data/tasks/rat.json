@@ -1,32 +1,34 @@
 {
-    "name":  "Rat",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Varrock Sewers",
-                      "Lumbridge Castle basement",
-                      "Port Sarim",
-                      "Canifis"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Giant rat",
-                     "Dungeon rat",
-                     "Crypt rat",
-                     "Brine rat",
-                     "Hell-Rat Behemoth"
-                 ],
-    "masters":  [
-                    "Turael"
-                ]
+    "name": "Rat",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Giant rat",
+        "Dungeon rat",
+        "Crypt rat",
+        "Brine rat",
+        "Hell-Rat Behemoth"
+    ],
+    "masters": [
+        "Turael"
+    ],
+    "variantLocations": {
+        "Rat": [
+            "Varrock Sewers",
+            "Lumbridge Castle basement",
+            "Port Sarim",
+            "Canifis"
+        ]
+    }
 }

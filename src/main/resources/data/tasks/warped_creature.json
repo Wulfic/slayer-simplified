@@ -1,32 +1,34 @@
 {
-    "name":  "Warped creature",
-    "levelRequired":  56,
-    "itemsRequired":  [
-                          "Crystal chime",
-                          "Earmuffs",
-                          "Slayer helmet"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Poison Waste Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Ranged"
-                     ],
-    "variants":  [
-                     "Mutated Terrorbird",
-                     "Mutated Tortoise"
-                 ],
-    "masters":  [
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Warped creature",
+    "levelRequired": 56,
+    "itemsRequired": [
+        "Crystal chime",
+        "Earmuffs",
+        "Slayer helmet"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged"
+    ],
+    "variants": [
+        "Mutated Terrorbird",
+        "Mutated Tortoise"
+    ],
+    "masters": [
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Warped creature": [
+            "Poison Waste Dungeon"
+        ]
+    }
 }

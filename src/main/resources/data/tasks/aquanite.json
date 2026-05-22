@@ -1,26 +1,28 @@
 {
-    "name":  "Aquanite",
-    "levelRequired":  78,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Ynysdail Cavern"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Magic"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Aquanite",
+    "levelRequired": 78,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Magic"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Aquanite": [
+            "Ynysdail Cavern"
+        ]
+    }
 }

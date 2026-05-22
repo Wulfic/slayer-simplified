@@ -1,34 +1,36 @@
 {
-    "name":  "Lesser demon",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Wizards' Tower",
-                      "Karamja Dungeon",
-                      "Crandor",
-                      "Melzar's Maze",
-                      "Demonic Ruins",
-                      "Lava Maze",
-                      "Catacombs of Kourend",
-                      "Wilderness Slayer Cave"
-                  ],
-    "attributes":  [
-                       "Demon"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Zakl'n Gritch"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Vannaka",
-                    "Chaeldar"
-                ]
+    "name": "Lesser demon",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Zakl'n Gritch"
+    ],
+    "masters": [
+        "Krystilia",
+        "Vannaka",
+        "Chaeldar"
+    ],
+    "variantLocations": {
+        "Lesser demon": [
+            "Wizards' Tower",
+            "Karamja Dungeon",
+            "Crandor",
+            "Melzar's Maze",
+            "Demonic Ruins",
+            "Lava Maze",
+            "Catacombs of Kourend",
+            "Wilderness Slayer Cave"
+        ]
+    }
 }

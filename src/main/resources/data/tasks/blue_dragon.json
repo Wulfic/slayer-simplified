@@ -1,44 +1,46 @@
 {
-    "name":  "Blue dragon",
-    "levelRequired":  65,
-    "itemsRequired":  [
-                          "Anti-dragon shield",
-                          "Dragonfire shield",
-                          "Super antifire potion(4)"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Taverley Dungeon",
-                      "Ogre Enclave",
-                      "Heroes' Guild",
-                      "Corsair Cove Dungeon",
-                      "Catacombs of Kourend",
-                      "Dragon Nest",
-                      "Isle of Souls Dungeon",
-                      "Taverley Dungeon",
-                      "Tapoyauik",
-                      "Ungael"
-                  ],
-    "attributes":  [
-                       "Draconic",
-                       "Fiery"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Dragonfire"
-                     ],
-    "variants":  [
-                     "Baby blue dragon",
-                     "Brutal blue dragon",
-                     "Vorkath"
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Blue dragon",
+    "levelRequired": 65,
+    "itemsRequired": [
+        "Anti-dragon shield",
+        "Dragonfire shield",
+        "Super antifire potion(4)"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Draconic",
+        "Fiery"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Dragonfire"
+    ],
+    "variants": [
+        "Baby blue dragon",
+        "Brutal blue dragon",
+        "Vorkath"
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Blue dragon": [
+            "Taverley Dungeon",
+            "Ogre Enclave",
+            "Heroes' Guild",
+            "Corsair Cove Dungeon",
+            "Catacombs of Kourend",
+            "Dragon Nest",
+            "Isle of Souls Dungeon",
+            "Taverley Dungeon",
+            "Tapoyauik",
+            "Ungael"
+        ]
+    }
 }

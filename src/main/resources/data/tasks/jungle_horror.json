@@ -1,26 +1,28 @@
 {
-    "name":  "Jungle horror",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Mos Le'Harmless"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Vannaka",
-                    "Chaeldar"
-                ]
+    "name": "Jungle horror",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Vannaka",
+        "Chaeldar"
+    ],
+    "variantLocations": {
+        "Jungle horror": [
+            "Mos Le'Harmless"
+        ]
+    }
 }

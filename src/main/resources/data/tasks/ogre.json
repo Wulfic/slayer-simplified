@@ -1,38 +1,40 @@
 {
-    "name":  "Ogre",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Gu'Tanoth",
-                      "West of Yanille",
-                      "South of Castle Wars",
-                      "south of Gu'Tanoth",
-                      "Toban 's Island",
-                      "Chaos Druid Tower dungeon",
-                      "Clock Tower Dungeon",
-                      "Witchaven Dungeon",
-                      "Underground Pass",
-                      "Combat Training Camp",
-                      "God Wars Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Ogre chieftain",
-                     "Enclave guard",
-                     "Ogress Shaman",
-                     "Ogress Warrior"
-                 ],
-    "masters":  [
-                    "Vannaka"
-                ]
+    "name": "Ogre",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Ogre chieftain",
+        "Enclave guard",
+        "Ogress Shaman",
+        "Ogress Warrior"
+    ],
+    "masters": [
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Ogre": [
+            "Gu'Tanoth",
+            "West of Yanille",
+            "South of Castle Wars",
+            "south of Gu'Tanoth",
+            "Toban 's Island",
+            "Chaos Druid Tower dungeon",
+            "Clock Tower Dungeon",
+            "Witchaven Dungeon",
+            "Underground Pass",
+            "Combat Training Camp",
+            "God Wars Dungeon"
+        ]
+    }
 }

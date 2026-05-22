@@ -1,36 +1,38 @@
 {
-    "name":  "Vampyre",
-    "levelRequired":  1,
-    "itemsRequired":  [
-                          "Silver weaponry",
-                          "Efaritay's aid",
-                          "Ivandis flail",
-                          "Blisterwood flail"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "God Wars Dungeon",
-                      "Wilderness God Wars Dungeon",
-                      "Haunted Woods",
-                      "Near Abandoned Mine"
-                  ],
-    "attributes":  [
-                       "Vampyre"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Feral Vampyre",
-                     "Vampyre Juvinate",
-                     "Vampyre Juvenile",
-                     "Vyrewatch",
-                     "Vyrewatch Sentinel"
-                 ],
-    "masters":  [
-                    "Mazchna",
-                    "Vannaka"
-                ]
+    "name": "Vampyre",
+    "levelRequired": 1,
+    "itemsRequired": [
+        "Silver weaponry",
+        "Efaritay's aid",
+        "Ivandis flail",
+        "Blisterwood flail"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "Vampyre"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Feral Vampyre",
+        "Vampyre Juvinate",
+        "Vampyre Juvenile",
+        "Vyrewatch",
+        "Vyrewatch Sentinel"
+    ],
+    "masters": [
+        "Mazchna",
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Vampyre": [
+            "God Wars Dungeon",
+            "Wilderness God Wars Dungeon",
+            "Haunted Woods",
+            "Near Abandoned Mine"
+        ]
+    }
 }

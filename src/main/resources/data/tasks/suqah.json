@@ -1,27 +1,29 @@
 {
-    "name":  "Suqah",
-    "levelRequired":  1,
-    "itemsRequired":  [
-                          "Seal of passage"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Lunar Isle"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Magic"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Suqah",
+    "levelRequired": 1,
+    "itemsRequired": [
+        "Seal of passage"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Suqah": [
+            "Lunar Isle"
+        ]
+    }
 }

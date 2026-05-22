@@ -1,31 +1,33 @@
 {
-    "name":  "Lizardman",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                           "Antipoison"
-                       ],
-    "locations":  [
-                      "Lizardmen Settlement",
-                      "Lizardman canyon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Ranged"
-                     ],
-    "variants":  [
-                     "Lizardman brute",
-                     "Lizardman shaman"
-                 ],
-    "masters":  [
-                    "Chaeldar",
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Lizardman",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Antipoison"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged"
+    ],
+    "variants": [
+        "Lizardman brute",
+        "Lizardman shaman"
+    ],
+    "masters": [
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Lizardman": [
+            "Lizardmen Settlement",
+            "Lizardman canyon"
+        ]
+    }
 }

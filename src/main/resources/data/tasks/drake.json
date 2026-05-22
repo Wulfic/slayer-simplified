@@ -1,30 +1,32 @@
 {
-    "name":  "Drake",
-    "levelRequired":  84,
-    "itemsRequired":  [
-                          "Boots of stone",
-                          "Boots of brimstone",
-                          "Granite boots"
-                      ],
-    "itemsSuggested":  [
-                          "Super Anti-fire potion (4)",
-                          "Herb sack"
-                       ],
-    "locations":  [
-                      "Karuulm Slayer Dungeon"
-                  ],
-    "attributes":  [
-                       "Draconic"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Konar quo Maten",
-                    "Nieve",
-                    "Duradel"
-                ]
+    "name": "Drake",
+    "levelRequired": 84,
+    "itemsRequired": [
+        "Boots of stone",
+        "Boots of brimstone",
+        "Granite boots"
+    ],
+    "itemsSuggested": [
+        "Super Anti-fire potion (4)",
+        "Herb sack"
+    ],
+    "attributes": [
+        "Draconic"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
+    ],
+    "variantLocations": {
+        "Drake": [
+            "Karuulm Slayer Dungeon"
+        ]
+    }
 }

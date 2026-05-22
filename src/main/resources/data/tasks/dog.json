@@ -1,48 +1,46 @@
 {
-    "name":  "Dog",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                           "--Shadow hound Darklight"
-                       ],
-    "locations":  [
-                      "Ardougne",
-                      "McGrubor's Wood",
-                      "Black Arm Gang hideout in Brimhaven",
-                      "Brimhaven Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Guard dog",
-                     "Wild dog",
-                     "Jackal",
-                     "Temple Guardian",
-                     "Shadow hound",
-                     "Reanimated dog"
-                 ],
-    "variantLocations":  {
-                             "Guard dog":  [
-                                               "Ardougne",
-                                               "Black Arm Gang hideout in Brimhaven"
-                                           ],
-                             "Wild dog":  [
-                                              "Brimhaven Dungeon",
-                                              "McGrubor's Wood"
-                                          ],
-                             "Shadow hound":  [
-                                                  "Darkmeyer",
-                                                  "Hallowed Sepulchre"
-                                              ]
-                         },
-    "masters":  [
-                    "Turael",
-                    "Mazchna"
-                ]
+    "name": "Dog",
+    "levelRequired": 1,
+    "itemsRequired": [
+    ],
+    "itemsSuggested": [
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Guard dog",
+        "Wild dog",
+        "Jackal",
+        "Temple Guardian",
+        "Shadow hound",
+        "Reanimated dog"
+    ],
+    "variantLocations": {
+        "Dog": [
+            "Ardougne",
+            "McGrubor's Wood",
+            "Black Arm Gang hideout in Brimhaven",
+            "Brimhaven Dungeon"
+        ],
+        "Guard dog": [
+            "Ardougne",
+            "Black Arm Gang hideout in Brimhaven"
+        ],
+        "Wild dog": [
+            "Brimhaven Dungeon",
+            "McGrubor's Wood"
+        ],
+        "Shadow hound": [
+            "Darkmeyer",
+            "Hallowed Sepulchre"
+        ]
+    },
+    "masters": [
+        "Turael",
+        "Mazchna"
+    ]
 }

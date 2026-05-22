@@ -1,45 +1,47 @@
 {
-    "name":  "Spider",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                           "Antipoison"
-                       ],
-    "locations":  [
-                      "Melzar's Maze",
-                      "Sorceress 's house",
-                      "Lumbridge Castle basement",
-                      "Behind Lumbridge Castle",
-                      "Stronghold of Security",
-                      "Ape Atoll temple",
-                      "Ogre Enclave",
-                      "Wilderness",
-                      "Karamja",
-                      "Underground Pass"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                     "Giant spider",
-                     "Shadow spider",
-                     "Jungle spider",
-                     "Deadly red spider",
-                     "Poison spider",
-                     "Blessed spider",
-                     "Kalrag",
-                     "Crypt spider",
-                     "Temple Spider",
-                     "Sarachnis",
-                     "Venenatis"
-                 ],
-    "masters":  [
-                    "Krystilia",
-                    "Turael"
-                ]
+    "name": "Spider",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Antipoison"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Giant spider",
+        "Shadow spider",
+        "Jungle spider",
+        "Deadly red spider",
+        "Poison spider",
+        "Blessed spider",
+        "Kalrag",
+        "Crypt spider",
+        "Temple Spider",
+        "Sarachnis",
+        "Venenatis"
+    ],
+    "masters": [
+        "Krystilia",
+        "Turael"
+    ],
+    "variantLocations": {
+        "Spider": [
+            "Melzar's Maze",
+            "Sorceress 's house",
+            "Lumbridge Castle basement",
+            "Behind Lumbridge Castle",
+            "Stronghold of Security",
+            "Ape Atoll temple",
+            "Ogre Enclave",
+            "Wilderness",
+            "Karamja",
+            "Underground Pass"
+        ]
+    }
 }

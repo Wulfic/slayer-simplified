@@ -1,29 +1,31 @@
 {
-    "name":  "Cave bug",
-    "levelRequired":  7,
-    "itemsRequired":  [
- 
-                      ],
-    "itemsSuggested":  [
-                            "A Light Source",
-                            "Rope"
-                       ],
-    "locations":  [
-                      "Lumbridge Swamp Caves",
-                      "Dorgesh-Kaan South Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Mazchna",
-                    "Vannaka"
-                ]
+    "name": "Cave bug",
+    "levelRequired": 7,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "A Light Source",
+        "Rope"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Turael",
+        "Mazchna",
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Cave bug": [
+            "Lumbridge Swamp Caves",
+            "Dorgesh-Kaan South Dungeon"
+        ]
+    }
 }

@@ -1,31 +1,33 @@
 {
-    "name":  "Cave slime",
-    "levelRequired":  17,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-                           "Antipoison",
-                           "A light source",
-                           "Slayer helmet/Spiny helmet"
-                       ],
-    "locations":  [
-                      "Lumbridge Swamp Caves",
-                      "Dorgesh-Kaan South Dungeon"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee",
-                         "Poison"
-                     ],
-    "variants":  [
-
-                 ],
-    "masters":  [
-                    "Turael",
-                    "Mazchna",
-                    "Spiria"
-                ]
+    "name": "Cave slime",
+    "levelRequired": 17,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        "Antipoison",
+        "A light source",
+        "Slayer helmet/Spiny helmet"
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Poison"
+    ],
+    "variants": [
+        
+    ],
+    "masters": [
+        "Turael",
+        "Mazchna",
+        "Spiria"
+    ],
+    "variantLocations": {
+        "Cave slime": [
+            "Lumbridge Swamp Caves",
+            "Dorgesh-Kaan South Dungeon"
+        ]
+    }
 }

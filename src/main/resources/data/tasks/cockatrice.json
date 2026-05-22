@@ -1,29 +1,31 @@
 {
-    "name":  "Cockatrice",
-    "levelRequired":  25,
-    "itemsRequired":  [
-                          "Mirror shield",
-                          "V's shield"
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Fremennik Slayer Dungeon",
-                      "Earthbound Cavern"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                    "Moonlight cockatrice",
-                    "Cockathrice"
-                 ],
-    "masters":  [
-                    "Mazchna",
-                    "Vannaka"
-                ]
+    "name": "Cockatrice",
+    "levelRequired": 25,
+    "itemsRequired": [
+        "Mirror shield",
+        "V's shield"
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Moonlight cockatrice",
+        "Cockathrice"
+    ],
+    "masters": [
+        "Mazchna",
+        "Vannaka"
+    ],
+    "variantLocations": {
+        "Cockatrice": [
+            "Fremennik Slayer Dungeon",
+            "Earthbound Cavern"
+        ]
+    }
 }

@@ -1,29 +1,31 @@
 {
-    "name":  "Bandit",
-    "levelRequired":  1,
-    "itemsRequired":  [
-
-                      ],
-    "itemsSuggested":  [
-
-                       ],
-    "locations":  [
-                      "Bandit Camp",
-                      "Wilderness Slayer Cave"
-                  ],
-    "attributes":  [
-                       "None"
-                   ],
-    "attackStyles":  [
-                         "Melee"
-                     ],
-    "variants":  [
-                    "Guard Bandit",
-                    "Speedy Keith",
-                    "Donny the lad",
-                    "Black Heather"
-                 ],
-    "masters":  [
-                    "Krystilia"
-                ]
+    "name": "Bandit",
+    "levelRequired": 1,
+    "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
+        
+    ],
+    "attributes": [
+        "None"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Guard Bandit",
+        "Speedy Keith",
+        "Donny the lad",
+        "Black Heather"
+    ],
+    "masters": [
+        "Krystilia"
+    ],
+    "variantLocations": {
+        "Bandit": [
+            "Bandit Camp",
+            "Wilderness Slayer Cave"
+        ]
+    }
 }

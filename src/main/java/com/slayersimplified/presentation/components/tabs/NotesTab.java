@@ -34,16 +34,16 @@ public class NotesTab extends JPanel implements Tab<NotesTab.NotesData>
     /**
      * Data passed to {@link #update} on each task selection.
      *
-     * <p>Items in {@code requiredItems} and {@code taskSuggestedItems} may optionally begin with
-     * a variant tag of the form {@code --VariantName} (e.g. {@code "--Hellhound Light source"}).
+     * <p>Items in {@code requiredItems} and {@code taskSuggestedItems} may optionally end with
+     * a variant tag of the form {@code --VariantName} (e.g. {@code "Darklight --Shadow hound"}).
      * Untagged items apply to all variants; tagged items are labelled accordingly in the display.
      */
     public static class NotesData
     {
         public final String monsterName;
-        /** Raw task.itemsRequired — may contain {@code --VariantName} prefixes. */
+        /** Raw task.itemsRequired — may contain trailing {@code --VariantName} tags. */
         public final String[] requiredItems;
-        /** Raw task.itemsSuggested — may contain {@code --VariantName} prefixes. */
+        /** Raw task.itemsSuggested — may contain trailing {@code --VariantName} tags. */
         public final String[] taskSuggestedItems;
         /** Suggested items derived from location requirements (no variant tags). */
         public final List<String> locationSuggestedItems;
@@ -63,33 +63,31 @@ public class NotesTab extends JPanel implements Tab<NotesTab.NotesData>
 
     // ── Tag parsing ───────────────────────────────────────────────────────────
 
-    private static final String TAG_PREFIX = "--";
+    /** Separator between an item name and its optional variant tag: {@code " --"}. */
+    private static final String TAG_SEPARATOR = " --";
 
     /**
-     * If {@code raw} starts with {@code --VariantName }, returns the variant name;
-     * otherwise returns {@code null} (item applies to all variants).
+     * Returns the variant name embedded in {@code raw} as a trailing {@code --VariantName} tag
+     * (e.g. {@code "Darklight --Shadow hound"} → {@code "Shadow hound"}), or {@code null} when
+     * there is no tag (item applies to all variants).
      */
     private static String parseTag(String raw)
     {
-        if (raw == null || !raw.startsWith(TAG_PREFIX))
-        {
-            return null;
-        }
-        int space = raw.indexOf(' ', TAG_PREFIX.length());
-        return space > TAG_PREFIX.length() ? raw.substring(TAG_PREFIX.length(), space) : null;
+        if (raw == null) return null;
+        int idx = raw.lastIndexOf(TAG_SEPARATOR);
+        if (idx < 0) return null;
+        String tag = raw.substring(idx + TAG_SEPARATOR.length()).trim();
+        return tag.isEmpty() ? null : tag;
     }
 
     /**
-     * Returns the display text for an item, stripping any {@code --VariantName } prefix.
+     * Returns the display text for an item, stripping any trailing {@code --VariantName} suffix.
      */
     private static String stripTag(String raw)
     {
-        if (raw == null || !raw.startsWith(TAG_PREFIX))
-        {
-            return raw;
-        }
-        int space = raw.indexOf(' ', TAG_PREFIX.length());
-        return space >= 0 ? raw.substring(space + 1) : raw;
+        if (raw == null) return null;
+        int idx = raw.lastIndexOf(TAG_SEPARATOR);
+        return idx >= 0 ? raw.substring(0, idx).trim() : raw;
     }
 
     private final MonsterNotesService notesService;
