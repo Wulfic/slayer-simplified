@@ -18,7 +18,9 @@
                          "Bleed"
                      ],
     "variants":  [
-
+                    "Juvenile custodian stalker",
+                    "Mature custodian stalker",
+                    "Elder custodian stalker"
                  ],
     "masters":  [
                     "Chaeldar",

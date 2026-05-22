@@ -10,7 +10,7 @@
     "locations":  [
                       "Neypotzli",
                       "Ruins of Tapoyauik",
-                      "Tonali Cavern"
+                      "Crypt of Tonali"
                   ],
     "attributes":  [
                        "Spectral"
@@ -20,7 +20,10 @@
                          "Magic"
                      ],
     "variants":  [
-                     "Amoxliatl"
+                     "Amoxliatl",
+                     "Suplur Nagua",
+                     "Frost Nagua",
+                     "Earthen Nagua"
                  ],
     "masters":  [
                     "Chaeldar",

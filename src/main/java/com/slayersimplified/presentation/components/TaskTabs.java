@@ -30,7 +30,9 @@ import okhttp3.OkHttpClient;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -127,10 +129,26 @@ public class TaskTabs extends JTabbedPane
 
     public void update(Task task)
     {
-        // Set the current monster name on LocationsTab before updating
-        locationsTab.setCurrentMonster(task.name);
+        // Build the variant accordion data for the Locations tab.
+        // First entry is always the base monster; subsequent entries are its variants.
+        List<LocationsTab.LocationsData.VariantEntry> variantEntries = new ArrayList<>();
+        variantEntries.add(new LocationsTab.LocationsData.VariantEntry(task.name, task.locations));
+        if (task.variants != null)
+        {
+            for (String variantName : task.variants)
+            {
+                String[] variantLocs = (task.variantLocations != null)
+                        ? task.variantLocations.get(variantName)
+                        : null;
+                if (variantLocs == null)
+                {
+                    variantLocs = task.locations; // fall back to base locations
+                }
+                variantEntries.add(new LocationsTab.LocationsData.VariantEntry(variantName, variantLocs));
+            }
+        }
+        updateTab(TabKey.LOCATIONS, new LocationsTab.LocationsData(task.name, variantEntries));
 
-        updateTab(TabKey.LOCATIONS, task.locations);
         updateTab(TabKey.INFO, new InfoTab.InfoData(
                 task.name,
                 task.itemsRequired,
@@ -140,6 +158,8 @@ public class TaskTabs extends JTabbedPane
         updateTab(TabKey.LOOT, task.name);
         updateTab(TabKey.NOTES, new NotesTab.NotesData(
                 task.name,
+                task.itemsRequired,
+                task.itemsSuggested,
                 requirementService.getSuggestedItemsForLocations(task.locations)));
     }
 

@@ -1,6 +1,6 @@
 {
     "name":  "Black demon",
-    "levelRequired":  1,
+    "levelRequired":  80,
     "itemsRequired":  [
 
                       ],
@@ -11,7 +11,11 @@
                       "Taverley Dungeon",
                       "Edgeville Dungeon",
                       "Brimhaven Dungeon",
-                      "Catacombs of Kourend"
+                      "Catacombs of Kourend",
+                      "Charred Dungeon",
+                      "Chasm of Fire",
+                      "Crash Site Cavern",
+                      "Wilderness Slayer Cave"
                   ],
     "attributes":  [
                        "Demon"
@@ -22,9 +26,7 @@
     "variants":  [
                      "Demonic gorilla",
                      "Balfrug Kreeyath",
-                     "Skotizo",
-                     "Porazdir"
-                 ],
+                     "Skotizo"                 ],
     "masters":  [
                     "Krystilia",
                     "Chaeldar",

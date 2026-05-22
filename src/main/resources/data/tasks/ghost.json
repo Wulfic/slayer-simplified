@@ -10,7 +10,7 @@
     "locations":  [
                       "Varrock Sewers",
                       "Draynor Manor",
-                      "Melzar\u0027s Maze",
+                      "Melzar's Maze",
                       "Stronghold of Security",
                       "Taverley Dungeon",
                       "West Ardougne (graveyard)",
@@ -29,10 +29,14 @@
                          "Melee"
                      ],
     "variants":  [
-                     "Tortured soul"
+                     "Tortured soul",
+                     "Revenant",
+                     "Forgotten soul",
+                     "Death Wing"
                  ],
     "masters":  [
                     "Turael",
-                    "Mazchna"
+                    "Mazchna",
+                    "Spria"
                 ]
 }

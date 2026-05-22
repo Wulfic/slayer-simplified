@@ -8,7 +8,8 @@
 
                        ],
     "locations":  [
-                      "Bandit Camp"
+                      "Bandit Camp",
+                      "Wilderness Slayer Cave"
                   ],
     "attributes":  [
                        "None"
@@ -17,7 +18,10 @@
                          "Melee"
                      ],
     "variants":  [
-
+                    "Guard Bandit",
+                    "Speedy Keith",
+                    "Donny the lad",
+                    "Black Heather"
                  ],
     "masters":  [
                     "Krystilia"

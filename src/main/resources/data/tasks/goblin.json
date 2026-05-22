@@ -5,7 +5,8 @@
 
                       ],
     "itemsSuggested":  [
-
+                          "Slayer Helmet",
+                          "Black Mask"
                        ],
     "locations":  [
                       "Lumbridge Caves",
@@ -29,12 +30,15 @@
                          "Melee"
                      ],
     "variants":  [
-                     "Goblin Champion",
                      "Sergeant Strongstack",
                      "Sergeant Grimspike",
-                     "Sergeant Steelwill"
+                     "Sergeant Steelwill",
+                     "Cave goblin",
+                     "Cave goblin Guard",
+                     "Cave goblin miner"
                  ],
     "masters":  [
-                    "Turael"
+                    "Turael",
+                    "Spria"
                 ]
 }

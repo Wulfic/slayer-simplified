@@ -6,7 +6,7 @@
                           "Slayer helmet"
                       ],
     "itemsSuggested":  [
-
+                            "Salve amulet"
                        ],
     "locations":  [
                       "Slayer Tower",
@@ -19,7 +19,9 @@
                          "Magical melee"
                      ],
     "variants":  [
-                     "Twisted Banshee"
+                     "Twisted Banshee",
+                     "Screaming Banshee",
+                     "Screaming twisted Banshee"
                  ],
     "masters":  [
                     "Turael",

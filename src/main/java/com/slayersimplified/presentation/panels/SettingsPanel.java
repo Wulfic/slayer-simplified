@@ -34,6 +34,7 @@ public class SettingsPanel extends JPanel
     private JCheckBox debugCheck;
     private JCheckBox remindCapeCheck;
     private JCheckBox showReminderOverlayCheck;
+    private JCheckBox streakOptimizerCheck;
 
     public SettingsPanel(SlayerSimplifiedConfig config, Runnable onClose)
     {
@@ -50,7 +51,10 @@ public class SettingsPanel extends JPanel
     /** Re-reads all current config values and updates every control. */
     public void refresh()
     {
+        boolean optimizerOn = config.streakOptimizerEnabled();
+        streakOptimizerCheck.setSelected(optimizerOn);
         masterCombo.setSelectedItem(config.preferredMaster());
+        masterCombo.setEnabled(!optimizerOn);
         highlightCheck.setSelected(config.highlightTarget());
         colorButton.setBackground(config.highlightColor());
         autoNavCheck.setSelected(config.autoNavigate());
@@ -70,9 +74,24 @@ public class SettingsPanel extends JPanel
         add(makeSeparator());
         add(Box.createVerticalStrut(10));
 
+        // --- Streak Point Optimizer ---
+        streakOptimizerCheck = makeCheckBox(config.streakOptimizerEnabled());
+        streakOptimizerCheck.addActionListener(e ->
+        {
+            boolean on = streakOptimizerCheck.isSelected();
+            config.setStreakOptimizerEnabled(on);
+            masterCombo.setEnabled(!on);
+        });
+        add(makeRow("Streak Optimizer", streakOptimizerCheck,
+                "<html>Recommend the best master each task to maximise Slayer reward points<br>"
+                        + "(Turael boosting: Turael for fillers, Konar/Chaeldar for milestones).<br>"
+                        + "<b>Overrides the Preferred Master setting below.</b></html>"));
+        add(Box.createVerticalStrut(6));
+
         // --- Preferred Master ---
         masterCombo = new JComboBox<>(SlayerMaster.values());
         masterCombo.setSelectedItem(config.preferredMaster());
+        masterCombo.setEnabled(!config.streakOptimizerEnabled());
         masterCombo.setFont(FontManager.getRunescapeSmallFont());
         masterCombo.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         masterCombo.setForeground(ColorScheme.LIGHT_GRAY_COLOR);

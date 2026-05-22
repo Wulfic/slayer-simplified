@@ -10,7 +10,11 @@
     "locations":  [
                       "Asgarnian Ice Dungeon",
                       "Frozen Waste Plateau",
-                      "White Wolf Mountain"
+                      "White Wolf Mountain",
+                      "Wilderness Slayer Cave",
+                      "Settlement Ruins",
+                      "Ice Queen's Lair",
+                      "Ruins of Tapoyauik"
                   ],
     "attributes":  [
                        "None"
@@ -19,7 +23,7 @@
                          "Melee"
                      ],
     "variants":  [
-
+                    "Eldric the Ice King"
                  ],
     "masters":  [
                     "Krystilia",

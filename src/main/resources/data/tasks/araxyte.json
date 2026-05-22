@@ -5,7 +5,7 @@
 
                       ],
     "itemsSuggested":  [
-
+                        "Antipoison"
                        ],
     "locations":  [
                       "Morytania Spider Cave"
@@ -22,6 +22,8 @@
                  ],
     "masters":  [
                     "Nieve",
-                    "Duradel"
+                    "Duradel",
+                    "Spria",
+                    "Turael"
                 ]
 }

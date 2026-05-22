@@ -6,10 +6,10 @@
                           "Bullseye lantern (lit)"
                       ],
     "itemsSuggested":  [
-
+                          "A light source"
                        ],
     "locations":  [
-                      "Mos Le\u0027Harmless Cave"
+                      "Mos Le'Harmless Cave"
                   ],
     "attributes":  [
                        "None"
@@ -19,7 +19,7 @@
                          "Magical melee"
                      ],
     "variants":  [
-
+                    "Cave abomination"
                  ],
     "masters":  [
                     "Chaeldar",

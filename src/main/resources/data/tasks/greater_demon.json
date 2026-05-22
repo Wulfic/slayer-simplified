@@ -12,9 +12,11 @@
                       "Brimhaven Dungeon",
                       "Ogre Enclave",
                       "Demonic Ruins",
-                      "Wilderness Volcano",
                       "Lava Maze Dungeon",
-                      "Catacombs of Kourend"
+                      "Catacombs of Kourend",
+                      "Chasm of Fire Dungeon",
+                      "Isle of Souls Dungeon",
+                      "Karuulm Dungeon"
                   ],
     "attributes":  [
                        "Demon"
@@ -23,7 +25,7 @@
                          "Melee"
                      ],
     "variants":  [
-                     "K\u0027ril Tsutsaroth",
+                     "K'ril Tsutsaroth",
                      "Tstanon Karlak",
                      "Skotizo",
                      "Tormented Demon"

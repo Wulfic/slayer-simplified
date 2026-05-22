@@ -10,7 +10,8 @@
                        ],
     "locations":  [
                       "Smoke Dungeon",
-                      "Catacombs of Kourend"
+                      "Catacombs of Kourend",
+                      "Wilderness Slayer Dungeon"
                   ],
     "attributes":  [
                        "None"
@@ -19,13 +20,14 @@
                          "Melee"
                      ],
     "variants":  [
-
+                    "Choke devil"
                  ],
     "masters":  [
                     "Vannaka",
                     "Chaeldar",
                     "Konar quo Maten",
                     "Nieve",
-                    "Duradel"
+                    "Duradel",
+                    "Krystilia"
                 ]
 }

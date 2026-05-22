@@ -3,11 +3,10 @@
     "levelRequired":  1,
     "itemsRequired":  [
                           "Anti-dragon shield",
-                          "Dragonfire shield",
-                          "Antifire potion(4)"
+                          "Dragonfire shield"
                       ],
     "itemsSuggested":  [
-
+                          "Super Antifire potion(4)"
                        ],
     "locations":  [
                       "Brimhaven Dungeon",

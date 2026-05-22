@@ -1,10 +1,10 @@
 {
     "name":  "Blue dragon",
-    "levelRequired":  1,
+    "levelRequired":  65,
     "itemsRequired":  [
                           "Anti-dragon shield",
                           "Dragonfire shield",
-                          "Antifire potion(4)"
+                          "Super antifire potion(4)"
                       ],
     "itemsSuggested":  [
 
@@ -12,8 +12,14 @@
     "locations":  [
                       "Taverley Dungeon",
                       "Ogre Enclave",
-                      "Heroes\u0027 Guild",
-                      "Corsair Cove Dungeon"
+                      "Heroes' Guild",
+                      "Corsair Cove Dungeon",
+                      "Catacombs of Kourend",
+                      "Dragon Nest",
+                      "Isle of Souls Dungeon",
+                      "Taverley Dungeon",
+                      "Tapoyauik",
+                      "Ungael"
                   ],
     "attributes":  [
                        "Draconic",

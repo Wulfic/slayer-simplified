@@ -8,13 +8,14 @@
 
                        ],
     "locations":  [
-                      "Wizards\u0027 Tower",
+                      "Wizards' Tower",
                       "Karamja Dungeon",
                       "Crandor",
-                      "Melzar\u0027s Maze",
+                      "Melzar's Maze",
                       "Demonic Ruins",
                       "Lava Maze",
-                      "Catacombs of Kourend"
+                      "Catacombs of Kourend",
+                      "Wilderness Slayer Cave"
                   ],
     "attributes":  [
                        "Demon"
@@ -23,7 +24,7 @@
                          "Melee"
                      ],
     "variants":  [
-                     "Zakl\u0027n Gritch"
+                     "Zakl'n Gritch"
                  ],
     "masters":  [
                     "Krystilia",

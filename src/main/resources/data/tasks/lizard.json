@@ -5,10 +5,14 @@
                           "Ice cooler"
                       ],
     "itemsSuggested":  [
-
+                          "Waterskin(4)",
+                          "Granite Boots/Boots of stone/brimstone",
+                          "Anti-poison(4)"
                        ],
     "locations":  [
-                      "Kharidian Desert"
+                      "Kharidian Desert",
+                      "Karuulm Slayer Dungeon",
+                      "Neypotzli"
                   ],
     "attributes":  [
                        "None"
@@ -18,14 +22,12 @@
                      ],
     "variants":  [
                      "Desert Lizard",
-                     "Lizard",
                      "Small Lizard",
-                     "Sulphur Lizard"
+                     "Sulphur Lizard",
+                     "Grimy Lizard"
                  ],
     "masters":  [
                     "Turael",
                     "Mazchna",
-                    "Chaeldar",
-                    "Vannaka"
-                ]
+                    "Spira"               ]
 }

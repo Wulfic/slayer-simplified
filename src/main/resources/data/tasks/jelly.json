@@ -9,7 +9,9 @@
                        ],
     "locations":  [
                       "Fremennik Slayer Dungeon",
-                      "Catacombs of Kourend"
+                      "Catacombs of Kourend",
+                      "Ruins of Tapoyauik",
+                      "Wilderness Slayer Cave"
                   ],
     "attributes":  [
                        "None"
@@ -18,11 +20,16 @@
                          "Magical melee"
                      ],
     "variants":  [
-                     "Warped Jelly"
+                     "Warped Jelly",
+                     "Virteous Jelly",
+                     "Virteous Warped Jelly",
+                     "Chilled Jelly",
+                     "Virteous Chilled Jelly"
                  ],
     "masters":  [
                     "Vannaka",
                     "Chaeldar",
-                    "Konar quo Maten"
+                    "Konar quo Maten",
+                    "Krystilia"
                 ]
 }

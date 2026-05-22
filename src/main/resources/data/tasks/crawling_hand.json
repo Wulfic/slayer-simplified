@@ -5,10 +5,11 @@
 
                       ],
     "itemsSuggested":  [
-
+                        "Salve amulet"
                        ],
     "locations":  [
-                      "Slayer Tower"
+                      "Slayer Tower",
+                      "Meiyerditch Labratories"
                   ],
     "attributes":  [
                        "None"
@@ -22,6 +23,6 @@
     "masters":  [
                     "Turael",
                     "Mazchna",
-                    "Vannaka"
+                    "Spria"
                 ]
 }

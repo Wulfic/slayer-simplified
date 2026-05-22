@@ -23,9 +23,12 @@
                      ],
     "variants":  [
                      "Black Guard",
-                     "Chaos dwarf"
+                     "Chaos dwarf",
+                     "Dwarf gang member",
+                     "Black Guard Berserker"
                  ],
     "masters":  [
-                    "Turael"
+                    "Turael",
+                    "Spria"
                 ]
 }

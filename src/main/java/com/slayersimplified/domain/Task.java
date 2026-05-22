@@ -7,6 +7,7 @@
 package com.slayersimplified.domain;
 
 import java.awt.image.BufferedImage;
+import java.util.Map;
 
 /**
  * Represents a Slayer task/monster with all associated metadata.
@@ -18,11 +19,18 @@ public class Task
     public int levelRequired;
     public String[] itemsRequired;
     public String[] itemsSuggested;
+    /** Top-level locations for the base monster (used when no variantLocations entry exists). */
     public String[] locations;
     public String[] attributes;
     public String[] attackStyles;
     public String[] variants;
     public String[] masters;
+    /**
+     * Optional per-variant location overrides. Maps variant display name (matching an entry in
+     * {@code variants}) to an array of location strings. When absent for a variant, the base
+     * {@code locations} array is shown as a fallback.
+     */
+    public Map<String, String[]> variantLocations;
 
     /** Monster image — populated at load time, not serialized. */
     public transient BufferedImage image;

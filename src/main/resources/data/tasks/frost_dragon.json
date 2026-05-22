@@ -7,13 +7,14 @@
                           "Antifire potion(4)"
                       ],
     "itemsSuggested":  [
-
+                          "Super antifire potion(4)"
                        ],
     "locations":  [
                       "Grimstone Dungeon"
                   ],
     "attributes":  [
-                       "Draconic"
+                       "Draconic",
+                       "Fiery"
                    ],
     "attackStyles":  [
                          "Melee",

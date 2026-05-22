@@ -19,7 +19,10 @@
                          "Melee"
                      ],
     "variants":  [
-                     "Grotesque Guardians"
+                     "Grotesque Guardians",
+                     "Marble Gargoyle",
+                     "Dawn",
+                     "Dusk"
                  ],
     "masters":  [
                     "Vannaka",

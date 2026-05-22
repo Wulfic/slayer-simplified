@@ -5,13 +5,13 @@
 
                       ],
     "itemsSuggested":  [
-
+                        "Seed box"
                        ],
     "locations":  [
                       "Lighthouse",
                       "Waterbirth Island Dungeon",
                       "Catacombs of Kourend",
-                      "Jormungand\u0027s Prison"
+                      "Jormungand's Prison"
                   ],
     "attributes":  [
                        "None"
@@ -24,7 +24,9 @@
                      "Dagannoth spawn",
                      "Dagannoth Prime",
                      "Dagannoth Rex",
-                     "Dagannoth Supreme"
+                     "Dagannoth Supreme",
+                     "Reanimated Dagannoth",
+                     "Daaggannoth mother"
                  ],
     "masters":  [
                     "Vannaka",

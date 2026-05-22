@@ -10,20 +10,22 @@
     "locations":  [
                       "Ice Mountain",
                       "God Wars Dungeon",
-                      "Wilderness God Wars Dungeon"
+                      "Wilderness God Wars Dungeon",
+                      "Ralos' Rise",
+                      "Mos Gratia",
+                      "Ruins of Tapoyauik"
                   ],
     "attributes":  [
-                       "None"
+                       "Demon"
                    ],
     "attackStyles":  [
                          "Melee",
-                         "Magic",
-                         "Ranged"
-                     ],
+                         "Magic"                     ],
     "variants":  [
 
                  ],
     "masters":  [
-                    "Turael"
+                    "Turael",
+                    "Spria"
                 ]
 }

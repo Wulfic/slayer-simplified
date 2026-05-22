@@ -1,6 +1,6 @@
 {
     "name":  "Black Knight",
-    "levelRequired":  1,
+    "levelRequired":  33,
     "itemsRequired":  [
 
                       ],
@@ -9,7 +9,8 @@
                        ],
     "locations":  [
                       "Lava Maze",
-                      "North of Venenatis"
+                      "North of Venenatis",
+                      "Taverley Dungeon"
                   ],
     "attributes":  [
                        "None"

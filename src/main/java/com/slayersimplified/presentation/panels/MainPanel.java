@@ -47,6 +47,7 @@ public class MainPanel extends PluginPanel
     private final SlayerTaskTracker taskTracker;
     private final FavoriteLocationService favoriteService;
     private final SlayerSimplifiedConfig config;
+    private final SlayerStreakOptimizerService optimizerService;
 
     private final TaskSearchPanel taskSearchPanel;
     private final TaskSelectedPanel taskSelectedPanel;
@@ -78,6 +79,7 @@ public class MainPanel extends PluginPanel
             OkHttpClient okHttpClient,
             MonsterNotesService notesService,
             SlayerHistoryService historyService,
+            SlayerStreakOptimizerService optimizerService,
             ConfigManager configManager)
     {
         super(false);
@@ -87,6 +89,7 @@ public class MainPanel extends PluginPanel
         this.taskTracker = taskTracker;
         this.favoriteService = favoriteService;
         this.config = config;
+        this.optimizerService = optimizerService;
         this.configManager = configManager;
 
         this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onTaskSelected);
@@ -319,11 +322,23 @@ public class MainPanel extends PluginPanel
         }
         else
         {
-            String masterName = config.preferredMaster().getDisplayName();
+            SlayerMaster effectiveMaster = getEffectiveMaster();
+            String masterName = effectiveMaster.getDisplayName();
             currentTaskLabel.setText(masterName);
-            currentTaskLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+            if (config.streakOptimizerEnabled())
+            {
+                currentTaskLabel.setForeground(new Color(100, 180, 255));
+                currentTaskLabel.setToolTipText(optimizerService.getRecommendationReason());
+                currentTaskNavButton.setToolTipText(
+                        "Navigate to " + masterName + " (Streak Optimizer)");
+            }
+            else
+            {
+                currentTaskLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+                currentTaskLabel.setToolTipText(null);
+                currentTaskNavButton.setToolTipText("Navigate to " + masterName);
+            }
             currentTaskLabel.setCursor(Cursor.getDefaultCursor());
-            currentTaskNavButton.setToolTipText("Navigate to " + masterName);
         }
         currentTaskPanel.setVisible(true);
         revalidate();
@@ -403,10 +418,11 @@ public class MainPanel extends PluginPanel
 
         if (taskName == null)
         {
-            // No known task — navigate to preferred slayer master
-            SlayerMaster master = config.preferredMaster();
+            // No known task — navigate to the effective master
+            SlayerMaster master = getEffectiveMaster();
             navigationService.navigateTo(master.getWorldPoint());
-            log.debug("Quick Nav: no task, navigating to {}", master.getDisplayName());
+            log.debug("Quick Nav: no task, navigating to {} (optimizer={})",
+                    master.getDisplayName(), config.streakOptimizerEnabled());
             return;
         }
 
@@ -456,6 +472,20 @@ public class MainPanel extends PluginPanel
         showPanel(Panel.TASK_SELECTED);
         SwingUtilities.invokeLater(() -> taskSelectedPanel.selectLocationsTab());
         log.debug("Quick Nav: showing locations for {} (no favorite set)", task.name);
+    }
+
+    /**
+     * Returns the Slayer master to navigate to when the player has no active task.
+     * If the Streak Point Optimizer is enabled, the optimizer's recommendation is
+     * returned; otherwise falls back to {@link SlayerSimplifiedConfig#preferredMaster()}.
+     */
+    private SlayerMaster getEffectiveMaster()
+    {
+        if (config.streakOptimizerEnabled())
+        {
+            return optimizerService.getRecommendedMaster();
+        }
+        return config.preferredMaster();
     }
 
     /** Rebuilds the task search list, applying the current locationDebug filter. Safe to call from any thread. */

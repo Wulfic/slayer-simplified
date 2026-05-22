@@ -10,7 +10,8 @@
     "locations":  [
                       "Fremennik Slayer Dungeon",
                       "Lumbridge Swamp Caves",
-                      "Dorgesh-Kaan South Dungeon"
+                      "Dorgesh-Kaan South Dungeon",
+                      "Ruins of Tapouik"
                   ],
     "attributes":  [
                        "None"
@@ -25,7 +26,6 @@
     "masters":  [
                     "Turael",
                     "Mazchna",
-                    "Vannaka",
-                    "Chaeldar"
+                    "Spria"
                 ]
 }

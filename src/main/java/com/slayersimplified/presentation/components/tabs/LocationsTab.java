@@ -3,9 +3,15 @@
  * Copyright (c) 2026, Slayer Simplified contributors
  * See LICENSE for details.
  *
- * NEW component — replaces the plain TextTab for the Locations tab.
- * Renders each location as a row with a favorite star toggle and a
- * "Nav" button that sends a path request to the Shortest Path plugin.
+ * Refactored: displays each variant (plus the base monster itself) as a
+ * collapsible accordion section, each with its own location rows,
+ * favourite-star toggles, and Nav buttons.
+ *
+ * Section layout:
+ *   [â–¼ Guard dog]              â† clickable header
+ *     [Ardougne          â˜…  Nav]
+ *     [Brimhaven         â˜…  Nav]
+ *   [â–¶ Wild dog]               â† collapsed
  */
 package com.slayersimplified.presentation.components.tabs;
 
@@ -21,6 +27,7 @@ import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -28,44 +35,85 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
-import javax.swing.Scrollable;
 
 /**
- * Scrollable tab that displays Slayer monster locations with favorite
- * toggles and navigate buttons. Extends JScrollPane so the location
- * list scrolls when it overflows the tab area.
+ * Locations tab that groups each variant's locations under a collapsible
+ * accordion header. The base monster entry is listed first and starts
+ * expanded; all other variants start collapsed.
  *
- * Each row layout:  [Location Name    ★  Nav]
- *   ★  = favorite toggle (filled when this is the preferred location)
- *   Nav = sends a path request to Shortest Path via NavigationService
- *
- * Locations without mapped coordinates show a "—" instead of Nav.
+ * Section layout:
+ *   [â–¼ Guard dog]              â† clickable header
+ *     [Ardougne          â˜…  Nav]
+ *     [Brimhaven         â˜…  Nav]
+ *   [â–¶ Wild dog]               â† collapsed
  */
 @Slf4j
-public class LocationsTab extends JScrollPane implements Tab<String[]>
+public class LocationsTab extends JScrollPane implements Tab<LocationsTab.LocationsData>
 {
+    // â”€â”€ Data model â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    /**
+     * Data passed to {@link #update(LocationsData)}.
+     * The base monster is always the first variant entry.
+     */
+    public static class LocationsData
+    {
+        public final String monsterName;
+        public final java.util.List<VariantEntry> variants;
+
+        public LocationsData(String monsterName, java.util.List<VariantEntry> variants)
+        {
+            this.monsterName = monsterName;
+            this.variants = variants;
+        }
+
+        /** One accordion section: a named variant and its specific locations. */
+        public static class VariantEntry
+        {
+            public final String name;
+            public final String[] locations;
+
+            public VariantEntry(String name, String[] locations)
+            {
+                this.name = name;
+                this.locations = locations;
+            }
+        }
+    }
+
+    // â”€â”€ Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
     private final NavigationService navigationService;
     private final LocationCoordinateService locationCoordinateService;
     private final FavoriteLocationService favoriteService;
     private final LocationRequirementService requirementService;
     private final Supplier<Boolean> debugMode;
 
-    /** Inner panel holding the location rows — Scrollable so the JScrollPane constrains its width to the viewport. */
+    // â”€â”€ Layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    /** Root scrollable panel â€” sections are added here. */
     private final JPanel contentPanel = new ViewportWidthPanel();
 
-    /** Debug panel shown at the top of the locations list when debug mode is enabled. */
+    /** Debug info row shown at top when debug mode is on. */
     private final JPanel debugPanel = new JPanel(new BorderLayout());
     private final JLabel debugNavLabel = new JLabel("No nav yet");
 
-    /** Track buttons and listeners for cleanup on shutdown. */
+    // â”€â”€ State â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    /** Tracked so listeners can be removed on rebuild. */
     private final List<JButton> buttons = new ArrayList<>();
     private final List<ActionListener> listeners = new ArrayList<>();
 
-    /** Currently active navigation target, if any. */
+    /** All location row panels across every section, for bulk colour resets. */
+    private final List<JPanel> allLocationRows = new ArrayList<>();
+
+    /** Location currently being navigated to, or null. */
     private String activeLocation = null;
 
-    /** The monster whose locations are currently displayed. */
+    /** Monster name from the most recent {@link #update} call. */
     private String currentMonsterName = null;
+
+    // â”€â”€ Constructor â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     public LocationsTab(
             NavigationService navigationService,
@@ -80,7 +128,6 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         this.requirementService = requirementService;
         this.debugMode = debugMode;
 
-        // Debug info panel — shown at top when debug mode is on
         debugNavLabel.setForeground(new Color(100, 220, 255));
         debugNavLabel.setFont(FontManager.getRunescapeSmallFont());
         debugPanel.setBackground(new Color(30, 30, 50));
@@ -104,69 +151,38 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         ScrollBarStyling.apply(this);
     }
 
-    /**
-     * Set the current monster name before calling update().
-     * Needed so favorites can be stored per-monster.
-     */
-    public void setCurrentMonster(String monsterName)
-    {
-        this.currentMonsterName = monsterName;
-    }
+    // â”€â”€ Tab interface â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     @Override
-    public void update(String[] locations)
+    public void update(LocationsData data)
     {
         clearRows();
         activeLocation = null;
 
-        // Show/hide debug panel based on current debug mode setting
         debugPanel.setVisible(debugMode.get());
         if (debugMode.get())
         {
             WorldPoint last = navigationService.getLastTarget();
-            if (last != null)
-            {
-                debugNavLabel.setText("Last Nav → x:" + last.getX() + "  y:" + last.getY() + "  plane:" + last.getPlane());
-            }
-            else
-            {
-                debugNavLabel.setText("No nav yet");
-            }
+            debugNavLabel.setText(last != null
+                    ? "Last Nav â†’ x:" + last.getX() + "  y:" + last.getY() + "  plane:" + last.getPlane()
+                    : "No nav yet");
         }
 
-        if (locations == null || locations.length == 0)
+        if (data == null || data.variants == null || data.variants.isEmpty())
         {
             addPlaceholderRow("None");
+            contentPanel.revalidate();
+            contentPanel.repaint();
             return;
         }
 
-        List<String> valid = new ArrayList<>();
-        for (String location : locations)
-        {
-            if (location == null || location.isEmpty())
-            {
-                continue;
-            }
-            valid.add(location);
-            contentPanel.add(createLocationRow(location));
-        }
+        currentMonsterName = data.monsterName;
 
-        // Auto-favorite when there is exactly one location and none has been
-        // set yet — but only if the player actually meets its requirements
-        // (or debug mode is on). Otherwise we'd silently pin an unreachable
-        // location for them.
-        if (valid.size() == 1 && currentMonsterName != null
-                && favoriteService.getFavorite(currentMonsterName) == null
-                && (debugMode.get() || requirementService.isAvailable(valid.get(0))))
+        boolean firstSection = true;
+        for (LocationsData.VariantEntry variant : data.variants)
         {
-            favoriteService.setFavorite(currentMonsterName, valid.get(0));
-            for (Component comp : contentPanel.getComponents())
-            {
-                if (comp instanceof JPanel)
-                {
-                    updateStarsInRow((JPanel) comp);
-                }
-            }
+            contentPanel.add(buildVariantSection(variant, firstSection));
+            firstSection = false;
         }
 
         contentPanel.revalidate();
@@ -180,45 +196,154 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         clearRows();
     }
 
-    /**
-     * Builds a single location row:  [label    ★  Nav]
-     */
-    private JPanel createLocationRow(String locationName)
+    // â”€â”€ Accordion section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    private JPanel buildVariantSection(LocationsData.VariantEntry variant, boolean startExpanded)
+    {
+        JPanel section = new JPanel()
+        {
+            @Override
+            public Dimension getMaximumSize()
+            {
+                return new Dimension(Integer.MAX_VALUE, getPreferredSize().height);
+            }
+        };
+        section.setLayout(new BoxLayout(section, BoxLayout.Y_AXIS));
+        section.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        section.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        // â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        JPanel header = new JPanel(new BorderLayout(6, 0));
+        header.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        header.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.MEDIUM_GRAY_COLOR),
+                new EmptyBorder(5, 8, 5, 8)
+        ));
+        header.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        header.setAlignmentX(Component.LEFT_ALIGNMENT);
+        header.setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
+
+        JLabel arrowLabel = new JLabel(startExpanded ? "\u25BC" : "\u25BA");
+        arrowLabel.setFont(FontManager.getRunescapeSmallFont());
+        arrowLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+
+        JLabel nameLabel = new JLabel(variant.name);
+        nameLabel.setFont(FontManager.getRunescapeSmallFont().deriveFont(
+                Font.BOLD, FontManager.getRunescapeSmallFont().getSize2D() + 1f));
+        nameLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+
+        header.add(arrowLabel, BorderLayout.WEST);
+        header.add(nameLabel, BorderLayout.CENTER);
+
+        // â”€â”€ Locations list â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+        JPanel locPanel = new JPanel();
+        locPanel.setLayout(new BoxLayout(locPanel, BoxLayout.Y_AXIS));
+        locPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        locPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        locPanel.setVisible(startExpanded);
+
+        boolean hasLocations = variant.locations != null && variant.locations.length > 0;
+
+        if (!hasLocations)
+        {
+            JLabel noLocs = new JLabel("No locations mapped");
+            noLocs.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
+            noLocs.setFont(FontManager.getRunescapeSmallFont());
+            noLocs.setBorder(BorderFactory.createEmptyBorder(8, 16, 8, 8));
+            locPanel.add(noLocs);
+        }
+        else
+        {
+            List<String> valid = new ArrayList<>();
+            for (String loc : variant.locations)
+            {
+                if (loc == null || loc.isEmpty())
+                {
+                    continue;
+                }
+                valid.add(loc);
+                JPanel row = createLocationRow(loc, variant.name);
+                locPanel.add(row);
+                allLocationRows.add(row);
+            }
+
+            // Auto-favourite when there is exactly one accessible location and none set yet
+            if (valid.size() == 1 && currentMonsterName != null
+                    && favoriteService.getFavoriteForVariant(currentMonsterName, variant.name) == null
+                    && (debugMode.get() || requirementService.isAvailable(valid.get(0))))
+            {
+                favoriteService.setFavoriteForVariant(currentMonsterName, variant.name, valid.get(0));
+                for (Component comp : locPanel.getComponents())
+                {
+                    if (comp instanceof JPanel)
+                    {
+                        updateStarsInRow((JPanel) comp, variant.name);
+                    }
+                }
+            }
+        }
+
+        header.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e)
+            {
+                boolean nowExpanded = !locPanel.isVisible();
+                locPanel.setVisible(nowExpanded);
+                arrowLabel.setText(nowExpanded ? "\u25BC" : "\u25BA");
+                revalidate();
+                repaint();
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e)
+            {
+                header.setBackground(ColorScheme.DARKER_GRAY_HOVER_COLOR);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e)
+            {
+                header.setBackground(ColorScheme.DARK_GRAY_COLOR);
+            }
+        });
+
+        section.add(header);
+        section.add(locPanel);
+        return section;
+    }
+
+    // â”€â”€ Location row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    private JPanel createLocationRow(String locationName, String variantName)
     {
         JPanel row = new JPanel(new BorderLayout(4, 0));
         row.putClientProperty("locationName", locationName);
+        row.putClientProperty("variantName", variantName);
         row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         row.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(4, 8, 4, 4)
+                BorderFactory.createEmptyBorder(4, 16, 4, 4)
         ));
-        // Allow up to two lines so long names wrap rather than push buttons off-screen
         row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 52));
 
-        // HTML label wraps text — safe now that contentPanel tracks viewport width
         JLabel label = new JLabel("<html>" + capitalize(locationName) + "</html>");
         label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
         label.setFont(FontManager.getRunescapeSmallFont());
         row.add(label, BorderLayout.CENTER);
 
-        // Button panel on the right (favorite + nav)
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
         buttonPanel.setOpaque(false);
 
-        // Navigate button (only if coordinates exist)
         WorldPoint coords = locationCoordinateService.getCoordinates(locationName);
-
-        // Requirement check — debug mode bypasses to allow testing every location.
         boolean debug = debugMode.get();
         boolean reqMet = debug || requirementService.isAvailable(locationName);
         String reqDesc = requirementService.getRequirementDescription(locationName);
         String missing = reqMet ? "" : requirementService.getMissingText(locationName);
 
-        // Favorite toggle star — disabled when requirements aren't met so the
-        // player can't pin a location they can't actually reach.
         boolean isFav = currentMonsterName != null
-                && favoriteService.isFavorite(currentMonsterName, locationName);
+                && favoriteService.isFavoriteForVariant(currentMonsterName, variantName, locationName);
         JButton favButton = new JButton(isFav ? "\u2605" : "\u2606");
         favButton.setFont(favButton.getFont().deriveFont(Font.PLAIN, 16f));
         favButton.setPreferredSize(new Dimension(28, 24));
@@ -236,10 +361,10 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         else
         {
             favButton.setForeground(isFav ? new Color(255, 215, 0) : ColorScheme.LIGHT_GRAY_COLOR);
-            favButton.setToolTipText(isFav ? "Remove favorite" : "Set as favorite location");
+            favButton.setToolTipText(isFav ? "Remove favourite" : "Set as favourite location");
             favButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-            ActionListener favListener = e -> onFavoriteClicked(locationName, favButton);
+            ActionListener favListener = e -> onFavouriteClicked(locationName, variantName, row);
             favButton.addActionListener(favListener);
             buttons.add(favButton);
             listeners.add(favListener);
@@ -249,13 +374,11 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
 
         if (!reqMet)
         {
-            // Gray the label so the row reads as unavailable.
             label.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
             label.setToolTipText("Requires: " + missing);
         }
         else if (!reqDesc.isEmpty())
         {
-            // Met but informational — surface the requirement on hover.
             label.setToolTipText("Requires: " + reqDesc);
         }
 
@@ -297,7 +420,6 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
 
         row.add(buttonPanel, BorderLayout.EAST);
 
-        // Hover effect
         row.addMouseListener(new MouseAdapter()
         {
             @Override
@@ -309,58 +431,51 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
             @Override
             public void mouseExited(MouseEvent e)
             {
-                if (locationName.equals(activeLocation))
-                {
-                    row.setBackground(new Color(50, 70, 50));
-                }
-                else
-                {
-                    row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-                }
+                row.setBackground(locationName.equals(activeLocation)
+                        ? new Color(50, 70, 50)
+                        : ColorScheme.DARKER_GRAY_COLOR);
             }
         });
 
         return row;
     }
 
-    /**
-     * Toggle favorite and update all star icons so only one is filled.
-     */
-    private void onFavoriteClicked(String locationName, JButton clickedStar)
+    // â”€â”€ Favourite / nav interactions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    private void onFavouriteClicked(String locationName, String variantName, JPanel clickedRow)
     {
         if (currentMonsterName == null)
         {
             return;
         }
 
-        boolean nowFavorite = favoriteService.toggleFavorite(currentMonsterName, locationName);
+        boolean nowFavourite = favoriteService.toggleFavoriteForVariant(currentMonsterName, variantName, locationName);
 
-        // Refresh all star buttons in the current view
-        for (Component comp : contentPanel.getComponents())
+        // Refresh stars for all rows in the same variant's locPanel
+        Container locPanel = clickedRow.getParent();
+        if (locPanel != null)
         {
-            if (comp instanceof JPanel)
+            for (Component comp : locPanel.getComponents())
             {
-                updateStarsInRow((JPanel) comp);
+                if (comp instanceof JPanel)
+                {
+                    updateStarsInRow((JPanel) comp, variantName);
+                }
             }
         }
 
-        log.debug("{} {} as favorite for {}",
-                nowFavorite ? "Set" : "Cleared", locationName, currentMonsterName);
+        log.debug("{} {} as favourite for {} / variant {}",
+                nowFavourite ? "Set" : "Cleared", locationName, currentMonsterName, variantName);
     }
 
-    /**
-     * Finds the star button in a row and updates its state.
-     */
-    private void updateStarsInRow(JPanel row)
+    private void updateStarsInRow(JPanel row, String variantName)
     {
-        // The EAST component is the buttonPanel
         Component east = ((BorderLayout) row.getLayout()).getLayoutComponent(BorderLayout.EAST);
         if (!(east instanceof JPanel))
         {
             return;
         }
 
-        // Read the original location name stored as a client property (avoids label-text casing mismatch)
         Object locNameProp = row.getClientProperty("locationName");
         String locationName = (locNameProp instanceof String) ? (String) locNameProp : null;
         if (locationName == null || currentMonsterName == null)
@@ -368,7 +483,7 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
             return;
         }
 
-        boolean isFav = favoriteService.isFavorite(currentMonsterName, locationName);
+        boolean isFav = favoriteService.isFavoriteForVariant(currentMonsterName, variantName, locationName);
 
         for (Component btn : ((JPanel) east).getComponents())
         {
@@ -379,7 +494,7 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
                 {
                     ((JButton) btn).setText(isFav ? "\u2605" : "\u2606");
                     btn.setForeground(isFav ? new Color(255, 215, 0) : ColorScheme.LIGHT_GRAY_COLOR);
-                    ((JButton) btn).setToolTipText(isFav ? "Remove favorite" : "Set as favorite location");
+                    ((JButton) btn).setToolTipText(isFav ? "Remove favourite" : "Set as favourite location");
                 }
             }
         }
@@ -401,14 +516,15 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
 
         if (debugMode.get())
         {
-            debugNavLabel.setText("Last Nav → x:" + coords.getX() + "  y:" + coords.getY() + "  plane:" + coords.getPlane());
+            debugNavLabel.setText("Last Nav â†’ x:" + coords.getX() + "  y:" + coords.getY() + "  plane:" + coords.getPlane());
         }
 
         resetAllRowColors();
         row.setBackground(new Color(50, 70, 50));
-
         log.debug("Navigating to {} at {}", locationName, coords);
     }
+
+    // â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     private void addPlaceholderRow(String text)
     {
@@ -422,11 +538,12 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
 
     private void resetAllRowColors()
     {
-        for (Component comp : contentPanel.getComponents())
+        for (JPanel row : allLocationRows)
         {
-            if (comp instanceof JPanel)
+            Object loc = row.getClientProperty("locationName");
+            if (loc instanceof String && !loc.equals(activeLocation))
             {
-                comp.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+                row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
             }
         }
     }
@@ -444,16 +561,13 @@ public class LocationsTab extends JScrollPane implements Tab<String[]>
         }
         buttons.clear();
         listeners.clear();
+        allLocationRows.clear();
         contentPanel.removeAll();
-        // Debug panel is always the first child — re-add it after clearing
         contentPanel.add(debugPanel, 0);
     }
 
-    /**
-     * A JPanel that implements Scrollable so the enclosing JScrollPane always
-     * sizes it to match the viewport width. This ensures BoxLayout rows are
-     * constrained to the visible area and right-side buttons stay on screen.
-     */
+    // â”€â”€ ViewportWidthPanel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
     private static class ViewportWidthPanel extends JPanel implements Scrollable
     {
         @Override

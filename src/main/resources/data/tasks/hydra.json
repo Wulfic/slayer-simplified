@@ -7,7 +7,7 @@
                           "Granite boots"
                       ],
     "itemsSuggested":  [
-                           "Antivenom+"
+                           "Super antipoison"
                        ],
     "locations":  [
                       "Karuulm Slayer Dungeon"
@@ -21,7 +21,8 @@
                          "Poison"
                      ],
     "variants":  [
-                     "Alchemical Hydra"
+                     "Alchemical Hydra",
+                     "Colossal Hydra"
                  ],
     "masters":  [
                     "Konar quo Maten"

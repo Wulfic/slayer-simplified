@@ -3,18 +3,17 @@
     "levelRequired":  1,
     "itemsRequired":  [
                           "Anti-dragon shield",
-                          "Dragonfire shield",
-                          "Antifire potion(4)"
-                      ],
+                          "Dragonfire shield"                      ],
     "itemsSuggested":  [
-
+                          "Super anti-fire potion(4)"
                        ],
     "locations":  [
-                      "West of the Dark Warriors\u0027 Fortress",
+                      "West of the Dark Warriors' Fortress",
                       "North of the Graveyard of Shadows",
                       "South of the Lava Maze",
                       "South of Venenatis",
-                      "Corsair Cove Dungeon"
+                      "Corsair Cove Dungeon",
+                      "Wildness Slayer Cave"
                   ],
     "attributes":  [
                        "Draconic",
@@ -30,7 +29,5 @@
                      "Elvarg"
                  ],
     "masters":  [
-                    "Krystilia",
-                    "Vannaka"
-                ]
+                    "Krystilia"                ]
 }

@@ -9,13 +9,14 @@
                        ],
     "locations":  [
                       "Taverley Dungeon",
-                      "East of the Deserted Keep",
                       "Karuulm Slayer Dungeon",
                       "Witchaven Dungeon",
                       "God Wars Dungeon",
-                      "Wilderness Volcano",
+                      "Wilderness Slayer Cave",
                       "Stronghold Slayer Cave",
-                      "Catacombs of Kourend"
+                      "Catacombs of Kourend",
+                      "Buccaneer's Laboratory",
+                      "Charred Dungeon"
                   ],
     "attributes":  [
                        "None"
@@ -24,7 +25,9 @@
                          "Melee"
                      ],
     "variants":  [
-                     "Cerberus"
+                     "Cerberus",
+                     "Skeleton Hellhound",
+                     "Greater Skeleton Hellhound"
                  ],
     "masters":  [
                     "Krystilia",

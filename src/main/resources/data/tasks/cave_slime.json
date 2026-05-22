@@ -2,10 +2,12 @@
     "name":  "Cave slime",
     "levelRequired":  17,
     "itemsRequired":  [
-                          "Bullseye lantern (lit)"
+
                       ],
     "itemsSuggested":  [
-                           "Antipoison"
+                           "Antipoison",
+                           "A light source",
+                           "Slayer helmet/Spiny helmet"
                        ],
     "locations":  [
                       "Lumbridge Swamp Caves",
@@ -24,7 +26,6 @@
     "masters":  [
                     "Turael",
                     "Mazchna",
-                    "Vannaka",
-                    "Chaeldar"
+                    "Spiria"
                 ]
 }

@@ -5,14 +5,16 @@
 
                       ],
     "itemsSuggested":  [
-
+                            "Ash Sanctifier"
                        ],
     "locations":  [
                       "Slayer Tower",
                       "God Wars Dungeon",
                       "Meiyerditch Dungeon",
                       "Stronghold Slayer Cave",
-                      "Catacombs of Kourend"
+                      "Catacombs of Kourend",
+                      "Buccaneer's Laboratory",
+                      "Ioewerth Dungeon"
                   ],
     "attributes":  [
                        "None"
@@ -21,7 +23,10 @@
                          "Magical melee"
                      ],
     "variants":  [
-                     "Mutated Bloodveld"
+                     "Mutated Bloodveld",
+                     "Insatiable Bloodveld",
+                     "Insatiable Mutated Bloodveld",
+                     "Reanimated Bloodveld"
                  ],
     "masters":  [
                     "Krystilia",

@@ -2,10 +2,11 @@
     "name":  "Cave bug",
     "levelRequired":  7,
     "itemsRequired":  [
-                          "Bullseye lantern (lit)"
+ 
                       ],
     "itemsSuggested":  [
-
+                            "A Light Source",
+                            "Rope"
                        ],
     "locations":  [
                       "Lumbridge Swamp Caves",

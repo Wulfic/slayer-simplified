@@ -20,8 +20,13 @@
                      ],
     "variants":  [
                      "Bird",
+                     "Baby Roc",
                      "Chicken",
+                     "Duck",
+                     "Entrana firebird",
                      "Mounted terrorbird gnome",
+                     "Oomlie bird",
+                     "Penguin",
                      "Rooster",
                      "Seagull",
                      "Terrorbird",
@@ -30,6 +35,7 @@
                      "Chompy bird"
                  ],
     "masters":  [
-                    "Turael"
+                    "Turael",
+                    "Spria"
                 ]
 }

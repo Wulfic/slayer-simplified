@@ -5,11 +5,11 @@
 
                       ],
     "itemsSuggested":  [
-
+                           "--Shadow hound Darklight"
                        ],
     "locations":  [
                       "Ardougne",
-                      "McGrubor\u0027s Wood",
+                      "McGrubor's Wood",
                       "Black Arm Gang hideout in Brimhaven",
                       "Brimhaven Dungeon"
                   ],
@@ -23,8 +23,24 @@
                      "Guard dog",
                      "Wild dog",
                      "Jackal",
-                     "Temple Guardian"
+                     "Temple Guardian",
+                     "Shadow hound",
+                     "Reanimated dog"
                  ],
+    "variantLocations":  {
+                             "Guard dog":  [
+                                               "Ardougne",
+                                               "Black Arm Gang hideout in Brimhaven"
+                                           ],
+                             "Wild dog":  [
+                                              "Brimhaven Dungeon",
+                                              "McGrubor's Wood"
+                                          ],
+                             "Shadow hound":  [
+                                                  "Darkmeyer",
+                                                  "Hallowed Sepulchre"
+                                              ]
+                         },
     "masters":  [
                     "Turael",
                     "Mazchna"

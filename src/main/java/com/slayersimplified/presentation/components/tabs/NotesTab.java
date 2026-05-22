@@ -33,17 +33,63 @@ public class NotesTab extends JPanel implements Tab<NotesTab.NotesData>
 {
     /**
      * Data passed to {@link #update} on each task selection.
+     *
+     * <p>Items in {@code requiredItems} and {@code taskSuggestedItems} may optionally begin with
+     * a variant tag of the form {@code --VariantName} (e.g. {@code "--Hellhound Light source"}).
+     * Untagged items apply to all variants; tagged items are labelled accordingly in the display.
      */
     public static class NotesData
     {
         public final String monsterName;
-        public final List<String> suggestedItems;
+        /** Raw task.itemsRequired — may contain {@code --VariantName} prefixes. */
+        public final String[] requiredItems;
+        /** Raw task.itemsSuggested — may contain {@code --VariantName} prefixes. */
+        public final String[] taskSuggestedItems;
+        /** Suggested items derived from location requirements (no variant tags). */
+        public final List<String> locationSuggestedItems;
 
-        public NotesData(String monsterName, List<String> suggestedItems)
+        public NotesData(String monsterName,
+                         String[] requiredItems,
+                         String[] taskSuggestedItems,
+                         List<String> locationSuggestedItems)
         {
             this.monsterName = monsterName;
-            this.suggestedItems = suggestedItems == null ? Collections.emptyList() : suggestedItems;
+            this.requiredItems = requiredItems != null ? requiredItems : new String[0];
+            this.taskSuggestedItems = taskSuggestedItems != null ? taskSuggestedItems : new String[0];
+            this.locationSuggestedItems = locationSuggestedItems != null
+                    ? locationSuggestedItems : Collections.emptyList();
         }
+    }
+
+    // ── Tag parsing ───────────────────────────────────────────────────────────
+
+    private static final String TAG_PREFIX = "--";
+
+    /**
+     * If {@code raw} starts with {@code --VariantName }, returns the variant name;
+     * otherwise returns {@code null} (item applies to all variants).
+     */
+    private static String parseTag(String raw)
+    {
+        if (raw == null || !raw.startsWith(TAG_PREFIX))
+        {
+            return null;
+        }
+        int space = raw.indexOf(' ', TAG_PREFIX.length());
+        return space > TAG_PREFIX.length() ? raw.substring(TAG_PREFIX.length(), space) : null;
+    }
+
+    /**
+     * Returns the display text for an item, stripping any {@code --VariantName } prefix.
+     */
+    private static String stripTag(String raw)
+    {
+        if (raw == null || !raw.startsWith(TAG_PREFIX))
+        {
+            return raw;
+        }
+        int space = raw.indexOf(' ', TAG_PREFIX.length());
+        return space >= 0 ? raw.substring(space + 1) : raw;
     }
 
     private final MonsterNotesService notesService;
@@ -119,54 +165,140 @@ public class NotesTab extends JPanel implements Tab<NotesTab.NotesData>
             return;
         }
 
-        // Rebuild the north wrapper: suggested items (if any) + player notes header.
-        // We keep the last child (the Player Notes header) and replace everything before it.
+        // Rebuild the north wrapper, keeping only the "Player Notes" header at the end.
         while (northWrapper.getComponentCount() > 1)
         {
             northWrapper.remove(0);
         }
 
-        if (!data.suggestedItems.isEmpty())
+        int insertIdx = 0;
+
+        // ── Required Items ────────────────────────────────────────────────
+        if (data.requiredItems.length > 0)
         {
-            JPanel suggestedSection = new JPanel();
-            suggestedSection.setLayout(new BoxLayout(suggestedSection, BoxLayout.Y_AXIS));
-            suggestedSection.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-            suggestedSection.setBorder(BorderFactory.createCompoundBorder(
+            JPanel section = buildItemSection("Required Items", data.requiredItems);
+            if (section != null)
+            {
+                northWrapper.add(section, insertIdx++);
+            }
+        }
+
+        // ── Suggested Items (task-level + location-level) ─────────────────
+        // Merge: location-derived items have no tag and go last.
+        boolean hasSuggested = data.taskSuggestedItems.length > 0
+                || !data.locationSuggestedItems.isEmpty();
+        if (hasSuggested)
+        {
+            JPanel section = new JPanel();
+            section.setLayout(new BoxLayout(section, BoxLayout.Y_AXIS));
+            section.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+            section.setBorder(BorderFactory.createCompoundBorder(
                     BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
                     new EmptyBorder(5, 8, 5, 8)));
-            suggestedSection.setAlignmentX(Component.LEFT_ALIGNMENT);
+            section.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-            JLabel sectionLabel = new JLabel("Suggested Items");
-            sectionLabel.setFont(FontManager.getRunescapeBoldFont());
-            sectionLabel.setForeground(ColorScheme.BRAND_ORANGE);
-            sectionLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-            suggestedSection.add(sectionLabel);
-            suggestedSection.add(Box.createVerticalStrut(3));
+            JLabel header = new JLabel("Suggested Items");
+            header.setFont(FontManager.getRunescapeBoldFont());
+            header.setForeground(ColorScheme.BRAND_ORANGE);
+            header.setAlignmentX(Component.LEFT_ALIGNMENT);
+            section.add(header);
+            section.add(Box.createVerticalStrut(3));
 
-            for (String item : data.suggestedItems)
+            // Task-level suggested items (may have --VariantName tags)
+            for (String raw : data.taskSuggestedItems)
             {
-                JLabel itemLabel = new JLabel("\u2022 " + item);
-                itemLabel.setFont(FontManager.getRunescapeSmallFont());
-                itemLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-                itemLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                suggestedSection.add(itemLabel);
+                section.add(buildItemLabel(raw));
+            }
+            // Location-derived suggested items (no tags)
+            for (String item : data.locationSuggestedItems)
+            {
+                section.add(buildUntaggedItemLabel(item));
             }
 
-            northWrapper.add(suggestedSection, 0);
+            northWrapper.add(section, insertIdx);
         }
 
         northWrapper.revalidate();
         northWrapper.repaint();
 
-        // Save any pending notes for previous monster before switching
         currentMonster = data.monsterName;
-
-        // Load notes for the new monster without triggering save
         suppressSave = true;
         String notes = notesService.getNotes(data.monsterName);
         textArea.setText(notes);
         textArea.setCaretPosition(0);
         suppressSave = false;
+    }
+
+    // ── Private helpers ───────────────────────────────────────────────────────
+
+    /**
+     * Builds a section panel for an items array (required or suggested).
+     * Returns {@code null} if all items would produce empty labels.
+     */
+    private JPanel buildItemSection(String title, String[] rawItems)
+    {
+        if (rawItems == null || rawItems.length == 0)
+        {
+            return null;
+        }
+
+        JPanel section = new JPanel();
+        section.setLayout(new BoxLayout(section, BoxLayout.Y_AXIS));
+        section.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        section.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
+                new EmptyBorder(5, 8, 5, 8)));
+        section.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+        JLabel header = new JLabel(title);
+        header.setFont(FontManager.getRunescapeBoldFont());
+        header.setForeground(ColorScheme.BRAND_ORANGE);
+        header.setAlignmentX(Component.LEFT_ALIGNMENT);
+        section.add(header);
+        section.add(Box.createVerticalStrut(3));
+
+        for (String raw : rawItems)
+        {
+            section.add(buildItemLabel(raw));
+        }
+        return section;
+    }
+
+    /**
+     * Builds a label for a potentially-tagged item.
+     * Tagged items ({@code --VariantName text}) are rendered with a
+     * coloured variant label: {@code • text  [VariantName]}.
+     * Untagged items are rendered as {@code • text}.
+     */
+    private JLabel buildItemLabel(String raw)
+    {
+        String tag = parseTag(raw);
+        String text = stripTag(raw);
+
+        JLabel label;
+        if (tag != null)
+        {
+            label = new JLabel("<html>\u2022 " + text
+                    + " <font color='#8888cc'><i>(" + tag + ")</i></font></html>");
+        }
+        else
+        {
+            label = new JLabel("\u2022 " + text);
+        }
+        label.setFont(FontManager.getRunescapeSmallFont());
+        label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        label.setAlignmentX(Component.LEFT_ALIGNMENT);
+        return label;
+    }
+
+    /** Builds a plain bullet label with no tag processing. */
+    private JLabel buildUntaggedItemLabel(String text)
+    {
+        JLabel label = new JLabel("\u2022 " + text);
+        label.setFont(FontManager.getRunescapeSmallFont());
+        label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        label.setAlignmentX(Component.LEFT_ALIGNMENT);
+        return label;
     }
 
     @Override

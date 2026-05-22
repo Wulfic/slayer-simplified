@@ -22,6 +22,7 @@ import com.slayersimplified.presentation.TaskReminderOverlay;
 import com.slayersimplified.presentation.panels.MainPanel;
 import com.slayersimplified.presentation.SlayerTargetOverlay;
 import com.slayersimplified.services.SlayerHistoryService;
+import com.slayersimplified.services.SlayerStreakOptimizerService;
 import com.slayersimplified.services.SlayerTaskTracker;
 import com.slayersimplified.services.LocationRequirementService;
 import lombok.extern.slf4j.Slf4j;
@@ -105,6 +106,9 @@ public class SlayerSimplifiedPlugin extends Plugin
     @Inject
     private LocationRequirementService locationRequirementService;
 
+    @Inject
+    private SlayerStreakOptimizerService streakOptimizerService;
+
     private NavigationButton navButton;
 
     /** Set when the player types !task; cleared when the game response triggers navigation. */
@@ -162,8 +166,13 @@ public class SlayerSimplifiedPlugin extends Plugin
         overlayManager.add(taskReminderOverlay);
         // After every requirement refresh, rebuild the current task panel so the
         // Locations tab immediately reflects the player's latest quest completion.
-        locationRequirementService.addRefreshListener(
-                () -> SwingUtilities.invokeLater(mainPanel::refreshCurrentTask));
+        // The optimizer is refreshed here too since both run on the client thread
+        // and need the same player state (quest completion, combat level).
+        locationRequirementService.addRefreshListener(() ->
+        {
+            streakOptimizerService.refresh();
+            SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
+        });
         SwingUtilities.invokeLater(() ->
         {
             // Mirror the RuneLite Slayer plugin's authoritative task state into
@@ -528,6 +537,13 @@ public class SlayerSimplifiedPlugin extends Plugin
         if ("debugCoordinates".equals(event.getKey()))
         {
             mainPanel.refreshTaskList();
+            return;
+        }
+        if ("streakOptimizerEnabled".equals(event.getKey()))
+        {
+            // Immediately refresh the "no task" label so it switches between
+            // the preferred master name and the optimizer recommendation.
+            SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
             return;
         }
         if (event.getKey().startsWith("kc_"))

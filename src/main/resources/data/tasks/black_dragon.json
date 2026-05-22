@@ -1,18 +1,24 @@
 {
     "name":  "Black dragon",
-    "levelRequired":  1,
+    "levelRequired":  80,
     "itemsRequired":  [
                           "Anti-dragon shield",
                           "Dragonfire shield",
-                          "Antifire potion(4)"
+                          "Super antifire potion(4)"
                       ],
     "itemsSuggested":  [
 
                        ],
     "locations":  [
                       "Taverley Dungeon",
-                      "Lava Maze",
-                      "Evil Chicken\u0027s Lair"
+                      "Lava Maze Dungeon",
+                      "Evil Chicken's Lair",
+                      "Mynydd",
+                      "Charred Dungeon",
+                      "Wilderness Slayer Cave",
+                      "Corsair Cove Dungeon",
+                      "King Black Dragon Lair",
+                      "Catacombs of Kourend"
                   ],
     "attributes":  [
                        "Draconic",

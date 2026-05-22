@@ -3,14 +3,14 @@
     "levelRequired":  40,
     "itemsRequired":  [
                           "Mirror shield",
-                          "V\u0027s shield"
+                          "V's shield"
                       ],
     "itemsSuggested":  [
 
                        ],
     "locations":  [
                       "Fremennik Slayer Dungeon",
-                      "Jormungand\u0027s Prison"
+                      "Jormungand's Prison"
                   ],
     "attributes":  [
                        "None"
@@ -19,7 +19,10 @@
                          "Melee"
                      ],
     "variants":  [
-                     "Basilisk Knights"
+                     "Basilisk Knight",
+                     "Monstrous Basilisks",
+                     "Basilisk Sentinel",
+                     "The Jormungand"
                  ],
     "masters":  [
                     "Vannaka",

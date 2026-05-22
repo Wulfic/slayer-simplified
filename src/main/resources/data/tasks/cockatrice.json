@@ -3,13 +3,14 @@
     "levelRequired":  25,
     "itemsRequired":  [
                           "Mirror shield",
-                          "V\u0027s shield"
+                          "V's shield"
                       ],
     "itemsSuggested":  [
 
                        ],
     "locations":  [
-                      "Fremennik Slayer Dungeon"
+                      "Fremennik Slayer Dungeon",
+                      "Earthbound Cavern"
                   ],
     "attributes":  [
                        "None"
@@ -18,7 +19,8 @@
                          "Melee"
                      ],
     "variants":  [
-
+                    "Moonlight cockatrice",
+                    "Cockathrice"
                  ],
     "masters":  [
                     "Mazchna",

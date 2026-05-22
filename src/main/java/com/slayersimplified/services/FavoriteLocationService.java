@@ -88,6 +88,69 @@ public class FavoriteLocationService
         }
     }
 
+    // ── Variant-aware favorites ───────────────────────────────────────────────
+
+    /**
+     * Get the favorite location for a specific variant of a monster.
+     * Key format: fav_&lt;monster&gt;__&lt;variant&gt;
+     */
+    public String getFavoriteForVariant(String monsterName, String variantName)
+    {
+        return configManager.getConfiguration(CONFIG_GROUP, variantKey(monsterName, variantName));
+    }
+
+    /**
+     * Set the favorite location for a specific variant.
+     * Also updates the global monster favorite so quick-nav still works.
+     */
+    public void setFavoriteForVariant(String monsterName, String variantName, String locationName)
+    {
+        configManager.setConfiguration(CONFIG_GROUP, variantKey(monsterName, variantName), locationName);
+        // Keep the global monster favorite in sync for quick-nav
+        configManager.setConfiguration(CONFIG_GROUP, FAV_PREFIX + normalize(monsterName), locationName);
+    }
+
+    /**
+     * Clear the favorite location for a specific variant.
+     */
+    public void clearFavoriteForVariant(String monsterName, String variantName)
+    {
+        configManager.unsetConfiguration(CONFIG_GROUP, variantKey(monsterName, variantName));
+    }
+
+    /**
+     * Check if a specific location is the favorite for a given variant.
+     */
+    public boolean isFavoriteForVariant(String monsterName, String variantName, String locationName)
+    {
+        String fav = getFavoriteForVariant(monsterName, variantName);
+        return locationName != null && locationName.equals(fav);
+    }
+
+    /**
+     * Toggle the variant-level favorite.
+     *
+     * @return true if the location is now the favorite, false if it was cleared
+     */
+    public boolean toggleFavoriteForVariant(String monsterName, String variantName, String locationName)
+    {
+        if (isFavoriteForVariant(monsterName, variantName, locationName))
+        {
+            clearFavoriteForVariant(monsterName, variantName);
+            return false;
+        }
+        else
+        {
+            setFavoriteForVariant(monsterName, variantName, locationName);
+            return true;
+        }
+    }
+
+    private String variantKey(String monsterName, String variantName)
+    {
+        return FAV_PREFIX + normalize(monsterName) + "__" + normalize(variantName);
+    }
+
     private String normalize(String name)
     {
         return name.toLowerCase().replace(' ', '_').replace("'", "");

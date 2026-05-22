@@ -5,13 +5,15 @@
 
                       ],
     "itemsSuggested":  [
-
+                        "Salve amulet/Black Mask/Slayer Helm - These do NOT stack!",
+                        "Ectoplasmator"
                        ],
     "locations":  [
                       "Stronghold of Security",
                       "Wilderness volcano",
                       "Stronghold Slayer Cave",
-                      "Catacombs of Kourend"
+                      "Catacombs of Kourend",
+                      "Forgotten Cemetery"
                   ],
     "attributes":  [
                        "Undead"
@@ -20,7 +22,7 @@
                          "Melee"
                      ],
     "variants":  [
-
+                    "Dark Ankou"
                  ],
     "masters":  [
                     "Krystilia",

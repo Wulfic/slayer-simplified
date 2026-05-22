@@ -128,6 +128,22 @@ public interface SlayerSimplifiedConfig extends Config
     @ConfigItem(keyName = "showReminderOverlay", name = "", description = "")
     void setShowReminderOverlay(boolean value);
 
+    @ConfigItem(
+            keyName = "streakOptimizerEnabled",
+            name = "Streak Point Optimizer",
+            description = "Recommend the optimal Slayer master each task to maximise reward points (Turael boosting). "
+                    + "When enabled, this overrides the Preferred Master setting.",
+            position = 8,
+            hidden = true
+    )
+    default boolean streakOptimizerEnabled()
+    {
+        return false;
+    }
+
+    @ConfigItem(keyName = "streakOptimizerEnabled", name = "", description = "")
+    void setStreakOptimizerEnabled(boolean value);
+
     // Hidden config keys used to persist internal state across sessions
 
     @ConfigItem(
