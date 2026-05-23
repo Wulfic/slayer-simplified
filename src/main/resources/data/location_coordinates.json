@@ -7,18 +7,26 @@
       "Slayer Tower - Floor -1",
       "Slayer Tower - Floor 1",
       "Slayer Tower - Floor 2",
-      "Slayer Tower - Floor 3"
+      "Slayer Tower - Floor 3",
+      "Slayer Tower -- Floor 1",
+      "Slayer Tower -- Floor 2"
     ]
   },
   "Stronghold Slayer Cave": {
     "x": 2431,
     "y": 3424,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Stronghold Slayer Dungeon"
+    ]
   },
   "Fremennik Slayer Dungeon": {
     "x": 2794,
     "y": 3615,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Kurask Lair"
+    ]
   },
   "Catacombs of Kourend": {
     "x": 1639,
@@ -34,7 +42,8 @@
     "y": 3807,
     "plane": 0,
     "aliases": [
-      "Karuulm Dungeon"
+      "Karuulm Dungeon",
+      "Karuulm Slayer Dungeon - Floor 2"
     ]
   },
   "Smoke Dungeon": {
@@ -79,7 +88,10 @@
   "Brimhaven Dungeon": {
     "x": 2745,
     "y": 3152,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Brimhaven Dungeon - Floor 2"
+    ]
   },
   "Edgeville Dungeon": {
     "x": 3097,
@@ -170,12 +182,19 @@
   "Corsair Cove Dungeon": {
     "x": 2523,
     "y": 2860,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Corsair Cove",
+      "Corsair's Cove Dungeon"
+    ]
   },
   "Entrana Dungeon": {
     "x": 2823,
     "y": 3374,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Entrana"
+    ]
   },
   "Meiyerditch Dungeon": {
     "x": 3625,
@@ -226,7 +245,10 @@
   "Miscellania & Etceteria Dungeon": {
     "x": 2545,
     "y": 3863,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Miscellania"
+    ]
   },
   "Lithkren Vault": {
     "x": 3319,
@@ -251,7 +273,10 @@
   "Clock Tower Dungeon": {
     "x": 2567,
     "y": 3225,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Clocktower Dungeon"
+    ]
   },
   "Chaos Druid Tower dungeon": {
     "x": 2561,
@@ -279,7 +304,10 @@
   "Dungeon under Sophanem": {
     "x": 3280,
     "y": 2793,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Sophanem Dungeon"
+    ]
   },
   "Dungeon east of the Agility Pyramid": {
     "x": 3356,
@@ -365,7 +393,10 @@
   "Bandit Camp": {
     "x": 3037,
     "y": 3701,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Bandit Camp (Wilderness)"
+    ]
   },
   "White Wolf Mountain": {
     "x": 2846,
@@ -403,7 +434,10 @@
   "Crandor": {
     "x": 2834,
     "y": 3238,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Crandor Island"
+    ]
   },
   "Lunar Isle": {
     "x": 2105,
@@ -515,7 +549,12 @@
   "Kharidian Desert": {
     "x": 3300,
     "y": 3100,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Kharidian Desert - South East",
+      "Northern Kharidian Desert",
+      "Southern Kharidian Desert"
+    ]
   },
   "Near Elid": {
     "x": 3374,
@@ -618,7 +657,11 @@
   "Chaos Temple": {
     "x": 3235,
     "y": 3638,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Chaos Temple (Wilderness)",
+      "North/East of Chaos Temple"
+    ]
   },
   "Forests north and east of the Chaos Temple": {
     "x": 3260,
@@ -643,7 +686,10 @@
   "Lizardman Settlement": {
     "x": 1517,
     "y": 3703,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Lizardmen Settlement"
+    ]
   },
   "Lizardman canyon": {
     "x": 1474,
@@ -653,14 +699,19 @@
   "Heroes' Guild": {
     "x": 2898,
     "y": 3509,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Heroes' Guild - Basement"
+    ]
   },
   "Ardougne Zoo": {
     "x": 2604,
     "y": 3283,
     "plane": 0,
     "aliases": [
-      "Ardougne Zoo Scorpion Pit"
+      "Ardougne Zoo Scorpion Pit",
+      "Ardougne - Zoo",
+      "Ardounge Zoo"
     ]
   },
   "Hobgoblin Peninsula near Crafting Guild": {
@@ -824,7 +875,10 @@
   "West Ardougne (graveyard)": {
     "x": 2524,
     "y": 3291,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "West Ardougne Cementary"
+    ]
   },
   "Abyssal Area": {
     "x": 3108,
@@ -859,7 +913,10 @@
   "Braindeath Island (brewery basement)": {
     "x": 2139,
     "y": 5105,
-    "plane": 1
+    "plane": 1,
+    "aliases": [
+      "Braindeath Island"
+    ]
   },
   "Ape Atoll temple": {
     "x": 2767,
@@ -874,7 +931,10 @@
   "Ice Path north of Trollheim (Ice trolls)": {
     "x": 2891,
     "y": 3710,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Ice Path"
+    ]
   },
   "Icy islands north of Neitiznot and Jatizso": {
     "x": 2374,
@@ -944,7 +1004,8 @@
     "y": 3166,
     "plane": 0,
     "aliases": [
-      "Mor Ul Rek"
+      "Mor Ul Rek",
+      "Mor Ul Rek Fight Caves"
     ]
   },
   "Morytania Spider Cave": {
@@ -960,7 +1021,10 @@
   "Crabclaw Isle": {
     "x": 1773,
     "y": 3461,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Crabclaw Cave"
+    ]
   },
   "Isle of Souls": {
     "x": 2193,
@@ -1011,6 +1075,7 @@
     "aliases": [
       "Wilderness Slayer Cave",
       "Wildness Slayer Cave",
+      "Wildnerness Slayer Cave",
       "Wilderness Slayer Dungeon"
     ]
   },
@@ -1052,7 +1117,10 @@
   "Ape Atoll": {
     "x": 2760,
     "y": 2780,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Marim"
+    ]
   },
   "Varlamore": {
     "x": 1710,
@@ -1163,6 +1231,421 @@
   "Buccaneer's Laboratory": {
     "x": 3732,
     "y": 9880,
+    "plane": 0,
+    "aliases": [
+      "Buccaneers' Laborotory"
+    ]
+  },
+
+  "Abyssal Nexus": {
+    "x": 3041,
+    "y": 4831,
+    "plane": 0
+  },
+  "Arandar": {
+    "x": 2334,
+    "y": 3314,
+    "plane": 0
+  },
+  "Ardougne Sewers": {
+    "x": 2628,
+    "y": 9715,
+    "plane": 0
+  },
+  "Avium Savannah": {
+    "x": 1656,
+    "y": 3121,
+    "plane": 0
+  },
+  "Black Knights Fortress": {
+    "x": 3034,
+    "y": 3512,
+    "plane": 0
+  },
+  "Brimhaven": {
+    "x": 2762,
+    "y": 3178,
+    "plane": 0
+  },
+  "Callisto's Den": {
+    "x": 3283,
+    "y": 3886,
+    "plane": 0
+  },
+  "Darkmeyer": {
+    "x": 3596,
+    "y": 3333,
+    "plane": 0
+  },
+  "Enchanted Valley": {
+    "x": 2991,
+    "y": 4538,
+    "plane": 0
+  },
+  "Forthos Dungeon": {
+    "x": 1182,
+    "y": 3559,
+    "plane": 0
+  },
+  "Fremennik Isles": {
+    "x": 2374,
+    "y": 3802,
+    "plane": 0
+  },
+  "Gnome Maze": {
+    "x": 2444,
+    "y": 3423,
+    "plane": 0
+  },
+  "Hazelmere Island": {
+    "x": 2678,
+    "y": 3089,
+    "plane": 0
+  },
+  "Hosidius": {
+    "x": 1757,
+    "y": 3567,
+    "plane": 0
+  },
+  "Ice Queen's Lair": {
+    "x": 2862,
+    "y": 9921,
+    "plane": 0,
+    "aliases": [
+      "Ice Queen's lair"
+    ]
+  },
+  "Ice Troll Caves": {
+    "x": 2373,
+    "y": 3828,
+    "plane": 0
+  },
+  "Isafdar": {
+    "x": 2195,
+    "y": 3245,
+    "plane": 0
+  },
+  "Jatizso mine": {
+    "x": 2435,
+    "y": 3806,
+    "plane": 0
+  },
+  "Jiggig": {
+    "x": 2477,
+    "y": 3047,
+    "plane": 0
+  },
+  "Jiggig Dungeon": {
+    "x": 2479,
+    "y": 9434,
+    "plane": 0
+  },
+  "Kharazi Jungle": {
+    "x": 2852,
+    "y": 2959,
+    "plane": 0
+  },
+  "Khazard Battlefield": {
+    "x": 2527,
+    "y": 3246,
+    "plane": 0
+  },
+  "Kourend Castle": {
+    "x": 1628,
+    "y": 3671,
+    "plane": 0
+  },
+  "Kruk's Dungeon": {
+    "x": 2768,
+    "y": 2792,
+    "plane": 0
+  },
+  "Lovakengj": {
+    "x": 1456,
+    "y": 3834,
+    "plane": 0
+  },
+  "Lumbridge": {
+    "x": 3222,
+    "y": 3218,
+    "plane": 0
+  },
+  "Lumbridge Swamp": {
+    "x": 3184,
+    "y": 3168,
+    "plane": 0
+  },
+  "Myths' Guild": {
+    "x": 2465,
+    "y": 2848,
+    "plane": 0
+  },
+  "Nature altar": {
+    "x": 2867,
+    "y": 3019,
+    "plane": 0
+  },
+  "Rellekka": {
+    "x": 2658,
+    "y": 3659,
+    "plane": 0
+  },
+  "Sepulchre of Death": {
+    "x": 3396,
+    "y": 3479,
+    "plane": 0
+  },
+  "Shilo Village": {
+    "x": 2851,
+    "y": 2957,
+    "plane": 0
+  },
+  "Sisterhood Sanctuary": {
+    "x": 3674,
+    "y": 3309,
+    "plane": 0
+  },
+  "Slepe Church": {
+    "x": 3773,
+    "y": 3263,
+    "plane": 0
+  },
+  "Tai Bwo Wannai": {
+    "x": 2789,
+    "y": 3074,
+    "plane": 0
+  },
+  "The Hollows": {
+    "x": 3464,
+    "y": 3408,
+    "plane": 0
+  },
+  "Trollweiss Mountain": {
+    "x": 2821,
+    "y": 3873,
+    "plane": 0
+  },
+  "Ver Sinhaza": {
+    "x": 3680,
+    "y": 3221,
+    "plane": 0
+  },
+
+  "Brimhaven Mine": {
+    "x": 2744,
+    "y": 3150,
+    "plane": 0,
+    "aliases": [
+      "South Brimhaven mine"
+    ]
+  },
+  "Crombwick Manor": {
+    "x": 3726,
+    "y": 3358,
+    "plane": 0
+  },
+  "Crumbling Tower": {
+    "x": 2135,
+    "y": 2996,
+    "plane": 0
+  },
+  "Crypt of Tonali": {
+    "x": 1311,
+    "y": 9410,
+    "plane": 1
+  },
+  "Deepfin Mine": {
+    "x": 1940,
+    "y": 2805,
+    "plane": 0
+  },
+  "Giants' Plateau": {
+    "x": 3380,
+    "y": 3161,
+    "plane": 0
+  },
+  "Hadelmort Mansion": {
+    "x": 2635,
+    "y": 3320,
+    "plane": 0,
+    "aliases": [
+      "Handelmort Mansion"
+    ]
+  },
+  "Hosidius - Marketplace": {
+    "x": 1760,
+    "y": 3566,
+    "plane": 0
+  },
+  "Hosidius - Southern Coast": {
+    "x": 1781,
+    "y": 3526,
+    "plane": 0
+  },
+  "Hunter's End": {
+    "x": 3028,
+    "y": 3697,
+    "plane": 0
+  },
+  "Isafdar mine": {
+    "x": 2278,
+    "y": 3158,
+    "plane": 0,
+    "aliases": [
+      "Elven mine",
+      "Lletya mine"
+    ]
+  },
+  "Lletya - West of the city": {
+    "x": 2328,
+    "y": 3177,
+    "plane": 0
+  },
+  "Lovakite mine": {
+    "x": 1433,
+    "y": 3830,
+    "plane": 0
+  },
+  "Lumbridge - Farm": {
+    "x": 3251,
+    "y": 3298,
+    "plane": 0
+  },
+  "Lumbridge - River": {
+    "x": 3234,
+    "y": 3197,
+    "plane": 0
+  },
+  "Meiyerditch Mine": {
+    "x": 3660,
+    "y": 3277,
+    "plane": 0
+  },
+  "Mogre Camp": {
+    "x": 2975,
+    "y": 9507,
+    "plane": 0
+  },
+  "Mos Gratia": {
+    "x": 1440,
+    "y": 3240,
+    "plane": 0,
+    "aliases": [
+      "Mons Gratia"
+    ]
+  },
+  "Ortus Farm": {
+    "x": 1569,
+    "y": 3126,
+    "plane": 0
+  },
+  "Outer Fortis": {
+    "x": 1704,
+    "y": 3065,
+    "plane": 0
+  },
+  "Port Phasmatys - Farm": {
+    "x": 3703,
+    "y": 3540,
+    "plane": 0
+  },
+  "Port Phasmatys - West of the city": {
+    "x": 3671,
+    "y": 3507,
+    "plane": 0
+  },
+  "Ralos' Rise": {
+    "x": 1450,
+    "y": 3140,
+    "plane": 0
+  },
+  "Rellekka -- just outside the city": {
+    "x": 2648,
+    "y": 3644,
+    "plane": 0
+  },
+  "Rellekka - North": {
+    "x": 2659,
+    "y": 3685,
+    "plane": 0
+  },
+  "Settlement Ruins": {
+    "x": 1560,
+    "y": 3895,
+    "plane": 0
+  },
+  "Shadow Dungeon": {
+    "x": 2688,
+    "y": 5088,
+    "plane": 0
+  },
+  "SouthEast of Ferox Enclave": {
+    "x": 3160,
+    "y": 3625,
+    "plane": 0
+  },
+  "South of Slayer Tower": {
+    "x": 3428,
+    "y": 3517,
+    "plane": 0
+  },
+  "Temple of Marimbo": {
+    "x": 2797,
+    "y": 2787,
+    "plane": 0
+  },
+  "Temple of Marimbo Dungeon": {
+    "x": 2782,
+    "y": 9181,
+    "plane": 0
+  },
+  "The Proudspire": {
+    "x": 1570,
+    "y": 3235,
+    "plane": 0
+  },
+  "Trollheim - South": {
+    "x": 2872,
+    "y": 3652,
+    "plane": 0
+  },
+  "Trollweiss Dungeon": {
+    "x": 2784,
+    "y": 10208,
+    "plane": 0
+  },
+  "Varrock - South-east of mine": {
+    "x": 3298,
+    "y": 3369,
+    "plane": 0
+  },
+  "Warrior Guild - Floor 3": {
+    "x": 2852,
+    "y": 3547,
+    "plane": 2
+  },
+  "West of Port Phasmatys": {
+    "x": 3667,
+    "y": 3506,
+    "plane": 0
+  },
+  "West Ruins": {
+    "x": 2970,
+    "y": 3695,
+    "plane": 0,
+    "aliases": [
+      "Ruins (west)",
+      "Dareeyak"
+    ]
+  },
+  "Woodcutting Guild Dungeon": {
+    "x": 1572,
+    "y": 9888,
+    "plane": 0
+  },
+  "Zemouregal's Base": {
+    "x": 3578,
+    "y": 4582,
     "plane": 0
   }
 }
