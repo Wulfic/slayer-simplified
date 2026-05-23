@@ -15,23 +15,39 @@
         "Melee"
     ],
     "variants": [
-        "Loar Shade",
-        "Phrin Shade",
-        "Riyl Shade",
-        "Asyn Shade",
-        "Fiyr Shade",
-        "Urium Shade"
+        "Shade --lvl 140",
+        "Loar Shade --lvl 40",
+        "Phrin Shade --lvl 60",
+        "Riyl Shade --lvl 80",
+        "Asyn Shade --lvl 100",
+        "Fiyr Shade --lvl 120",
+        "Urium Shade --lvl 140"
     ],
     "masters": [
         "Mazchna",
         "Vannaka"
     ],
     "variantLocations": {
-        "Shade": [
-            "Mort'ton",
-            "Shade Catacombs",
-            "Temple Trekking",
+        "Shade --lvl 140": [
             "Catacombs of Kourend"
+        ],
+        "Loar Shade --lvl 40": [
+            "Mort'ton"
+        ],
+        "Phrin Shade --lvl 60": [
+            "Shade Catacombs"
+        ],
+        "Riyl Shade --lvl 80": [
+            "Shade Catacombs"
+        ],
+        "Asyn Shade --lvl 100": [
+            "Shade Catacombs"
+        ],
+        "Fiyr Shade --lvl 120": [
+            "Shade Catacombs"
+        ],
+        "Urium Shade --lvl 140": [
+            "Shade Catacombs"
         ]
     }
 }

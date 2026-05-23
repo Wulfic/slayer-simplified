@@ -2,8 +2,7 @@
     "name": "Cave horror",
     "levelRequired": 58,
     "itemsRequired": [
-        "Witchwood icon",
-        "Bullseye lantern (lit)"
+        "Witchwood icon"
     ],
     "itemsSuggested": [
         "A light source"
@@ -16,7 +15,8 @@
         "Magical melee"
     ],
     "variants": [
-        "Cave abomination"
+        "Cave horror --lvl 80",
+        "Cave abomination --lvl 206"
     ],
     "masters": [
         "Chaeldar",
@@ -24,7 +24,10 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Cave horror": [
+        "Cave horror --lvl 80": [
+            "Mos Le'Harmless Cave"
+        ],
+        "Cave abomination --lvl 206": [
             "Mos Le'Harmless Cave"
         ]
     }

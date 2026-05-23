@@ -14,13 +14,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Crocodile --lvl 63"
     ],
     "masters": [
         "Vannaka"
     ],
     "variantLocations": {
-        "Crocodile": [
+        "Crocodile --lvl 63": [
             "Near Elid",
             "Southern shore of Kharidian Desert"
         ]

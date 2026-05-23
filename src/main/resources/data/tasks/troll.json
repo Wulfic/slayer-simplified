@@ -15,15 +15,16 @@
         "Ranged"
     ],
     "variants": [
-        "Mountain troll",
-        "Thrower Troll",
-        "Ice troll",
-        "Ice troll runt",
-        "Ice troll male",
-        "Ice troll female",
-        "Ice troll grunt",
-        "River troll",
-        "Troll general"
+        "Mountain troll --lvl 69 --lvl 71",
+        "Thrower Troll --lvl 67",
+        "Ice troll --lvl 120 --lvl 124",
+        "Ice troll runt --lvl 74",
+        "Ice troll male --lvl 82",
+        "Ice troll female --lvl 82",
+        "Ice troll grunt --lvl 102",
+        "River troll --lvl 14 --lvl 159",
+        "Troll general --lvl 113",
+        "Ice Troll King --lvl 122 --lvl 213"
     ],
     "masters": [
         "Vannaka",
@@ -33,12 +34,44 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Troll": [
-            "Trollheim",
-            "Tunnel outside of Keldagrim",
-            "Death Plateau (Mountain troll)",
-            "Icy islands north of Neitiznot and Jatizso",
-            "Ice Path north of Trollheim (Ice trolls)"
+        "Mountain troll --lvl 69 --lvl 71": [
+            "Death Plateau",
+            "Trollheim - South"
+        ],
+        "Thrower Troll --lvl 67": [
+            "Death Plateau"
+        ],
+        "Ice troll --lvl 120 --lvl 124": [
+            "Ice Path",
+            "Trollweiss Dungeon"
+        ],
+        "Ice troll runt --lvl 74": [
+            "Fremennik Isles",
+            "Ice Troll Caves",
+            "Jatizso mine"
+        ],
+        "Ice troll male --lvl 82": [
+            "Fremennik Isles",
+            "Ice Troll Caves",
+            "Jatizso mine"
+        ],
+        "Ice troll female --lvl 82": [
+            "Fremennik Isles",
+            "Ice Troll Caves",
+            "Jatizso mine"
+        ],
+        "Ice troll grunt --lvl 102": [
+            "Fremennik Isles",
+            "Ice Troll Caves"
+        ],
+        "River troll --lvl 14 --lvl 159": [
+            "Trollheim"
+        ],
+        "Troll general --lvl 113": [
+            "Enchanted Valley"
+        ],
+        "Ice Troll King --lvl 122 --lvl 213": [
+            "Neitiznot"
         ]
     }
 }

@@ -14,15 +14,15 @@
         "Melee"
     ],
     "variants": [
-        
+        "Ent --lvl 86 --lvl 101"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Ent": [
-            "Forests north and east of the Chaos Temple",
-            "Woodcutting Guild"
+        "Ent --lvl 86 --lvl 101": [
+            "Woodcutting Guild Dungeon",
+            "North/East of Chaos Temple"
         ]
     }
 }

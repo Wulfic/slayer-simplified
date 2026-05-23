@@ -15,14 +15,15 @@
         "Magic"
     ],
     "variants": [
-        
+        "Icefiend --lvl 13 --lvl 18"
+
     ],
     "masters": [
         "Turael",
         "Spria"
     ],
     "variantLocations": {
-        "Icefiend": [
+        "Icefiend --lvl 13 --lvl 18": [
             "Ice Mountain",
             "God Wars Dungeon",
             "Wilderness God Wars Dungeon",

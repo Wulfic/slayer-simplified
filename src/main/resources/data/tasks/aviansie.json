@@ -14,10 +14,11 @@
         "Ranged"
     ],
     "variants": [
-        "Kree'arra",
-        "Flight Kilisa",
-        "Flockleader Geerin",
-        "Wingman Skree"
+        "Aviansie --lvl 69 --lvl 148",
+        "Kree'arra --lvl 580",
+        "Flight Kilisa --lvl 159",
+        "Flockleader Geerin --lvl 149",
+        "Wingman Skree --lvl 143"
     ],
     "masters": [
         "Krystilia",
@@ -27,7 +28,20 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Aviansie": [
+        "Aviansie --lvl 69 --lvl 148": [
+            "God Wars Dungeon",
+            "Wilderness God Wars Dungeon"
+        ],
+        "Kree'arra --lvl 580": [
+            "God Wars Dungeon"
+        ],
+        "Flight Kilisa --lvl 159": [
+            "God Wars Dungeon"
+        ],
+        "Flockleader Geerin --lvl 149": [
+            "God Wars Dungeon"
+        ],
+        "Wingman Skree --lvl 143": [
             "God Wars Dungeon"
         ]
     }

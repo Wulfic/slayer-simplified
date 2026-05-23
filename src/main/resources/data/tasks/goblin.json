@@ -15,32 +15,22 @@
         "Melee"
     ],
     "variants": [
-        "Sergeant Strongstack",
-        "Sergeant Grimspike",
-        "Sergeant Steelwill",
-        "Cave goblin",
-        "Cave goblin Guard",
-        "Cave goblin miner"
+        "Goblin --lvl 2 --lvl 25",
+        "Cave goblin --lvl 3"
     ],
     "masters": [
         "Turael",
         "Spria"
     ],
     "variantLocations": {
-        "Goblin": [
-            "Lumbridge Caves",
+        "Goblin --lvl 2 --lvl 25": [
+            "Lumbridge",
             "Goblin Village",
-            "Port Sarim",
-            "Around the Digsite",
             "Stronghold of Security",
-            "Underground Pass",
-            "Goblin Cave",
-            "Coal Trucks",
-            "Holes in Myreque Hideout in Mort Myre",
-            "God Wars Dungeon (Bandos God Wars minions)",
-            "Cave near Observatory",
-            "Dwarven coal mine",
-            "East of Barbarian Village"
+            "Goblin Cave"
+        ],
+        "Cave goblin --lvl 3": [
+            "Lumbridge Swamp Caves"
         ]
     }
 }

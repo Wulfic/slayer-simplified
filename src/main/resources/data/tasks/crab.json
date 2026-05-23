@@ -14,13 +14,14 @@
         "Melee"
     ],
     "variants": [
-        "Ammonite Crab",
-        "Frost Crab",
-        "King Sand Crab",
-        "Rock Crab",
-        "Giant Rock Crab",
-        "Sand Crab",
-        "Swamp Crab"
+        "Crab --lvl 21 --lvl 23",
+        "Ammonite Crab --lvl 25",
+        "Frost Crab --lvl 15",
+        "King Sand Crab --lvl 107",
+        "Rock Crab --lvl 13",
+        "Giant Rock Crab --lvl 137",
+        "Sand Crab --lvl 15",
+        "Swamp Crab --lvl 55"
     ],
     "masters": [
         "Mazchna",
@@ -28,14 +29,39 @@
         "Chaeldar"
     ],
     "variantLocations": {
-        "Crab": [
-            "Fossil Island",
-            "Crabclaw Isle",
-            "Isle of Souls",
-            "North of Rellekka",
-            "Ruins of Tapoyauik",
+        "Crab --lvl 21 --lvl 23": [
+            "Mogre Camp"
+        ],
+        "Ammonite Crab --lvl 25": [
+            "Fossil Island"
+        ],
+        "Frost Crab --lvl 15": [
+            "Ruins of Tapoyauik"
+        ],
+        "King Sand Crab --lvl 107": [
+            "Catacombs of Kourend",
+            "Crabclaw Cave"
+        ],
+        "Rock Crab --lvl 13": [
+            "Rellekka - North",
             "Waterbirth Island",
-            "West of Mount Quidamortem"
+            "Waterbirth Island Dungeon",
+            "Brine Rat Cavern"
+        ],
+        "Giant Rock Crab --lvl 137": [
+            "Waterbirth Island Dungeon"
+        ],
+        "Sand Crab --lvl 15": [
+            "Avium Savannah",
+            "Crabclaw Cave",
+            "Crabclaw Isle",
+            "Hosidius - Southern Coast",
+            "Isle of Souls",
+            "Outer Fortis"
+        ],
+        "Swamp Crab --lvl 55": [
+            "Haunted Woods",
+            "Slepe"
         ]
     }
 }

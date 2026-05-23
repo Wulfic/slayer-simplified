@@ -17,21 +17,23 @@
         "Dragonfire"
     ],
     "variants": [
-        "Baby green dragon",
-        "Brutal green dragon",
-        "Elvarg"
+        "Green dragon --lvl 88",
+        "Baby green dragon --lvl 48",
+        "Brutal green dragon --lvl 227"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Green dragon": [
-            "West of the Dark Warriors' Fortress",
-            "North of the Graveyard of Shadows",
-            "South of the Lava Maze",
-            "South of Venenatis",
-            "Corsair Cove Dungeon",
-            "Wildness Slayer Cave"
+        "Green dragon --lvl 88": [
+            "Wilderness Slayer Cave"
+        ],
+        "Baby green dragon --lvl 48": [
+            "Brimhaven Dungeon",
+            "Myths' Guild"
+        ],
+        "Brutal green dragon --lvl 227": [
+            "Ancient Cavern"
         ]
     }
 }

@@ -14,9 +14,8 @@
         "Melee"
     ],
     "variants": [
-        "Cyclops",
-        "Obor",
-        "Reanimated giant"
+        "Cyclops --lvl 56 --lvl 106",
+        "Hill Giant --lvl 28"
     ],
     "masters": [
         "Krystilia",
@@ -24,16 +23,21 @@
         "Vannaka"
     ],
     "variantLocations": {
-        "Hill Giant": [
+        "Hill Giant --lvl 28": [
             "Deep Wilderness Dungeon",
             "Edgeville Dungeon",
             "Gnome Stronghold",
             "Lava Maze",
             "North of Observatory",
             "Taverley Dungeon",
-            "Tree Gnome Village",
-            "Wilderness",
-            "Catacombs of Kourend"
+            "Catacombs of Kourend",
+            "Giants' Plateau"
+        ],
+        "Cyclops --lvl 56 --lvl 106": [
+            "Warrior Guild - Floor 3",
+            "Catacombs of Kourend",
+            "Ardounge Zoo",
+            "God Wars Dungeon"
         ]
     }
 }

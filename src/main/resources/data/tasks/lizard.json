@@ -2,12 +2,12 @@
     "name": "Lizard",
     "levelRequired": 22,
     "itemsRequired": [
-        "Ice cooler"
+        "Ice cooler --Small lizard --Desert lizard --Lizard"
     ],
     "itemsSuggested": [
-        "Waterskin(4)",
-        "Granite Boots/Boots of stone/brimstone",
-        "Anti-poison(4)"
+        "Waterskin(4) --Small lizard --Desert lizard --Lizard",
+        "Granite Boots/Boots of stone/brimstone --Sulphur lizard",
+        "Antipoison(4) --Grimy lizard"
     ],
     "attributes": [
         "None"
@@ -16,10 +16,11 @@
         "Melee"
     ],
     "variants": [
-        "Desert Lizard",
-        "Small Lizard",
-        "Sulphur Lizard",
-        "Grimy Lizard"
+        "Lizard --lvl 42",
+        "Desert lizard --lvl 24",
+        "Small lizard --lvl 12",
+        "Sulphur lizard --lvl 50",
+        "Grimy lizard --lvl 50"
     ],
     "masters": [
         "Turael",
@@ -27,9 +28,19 @@
         "Spira"
     ],
     "variantLocations": {
-        "Lizard": [
-            "Kharidian Desert",
-            "Karuulm Slayer Dungeon",
+        "Lizard --lvl 42": [
+            "Northern Kharidian Desert"
+        ],
+        "Desert lizard --lvl 24": [
+            "Northern Kharidian Desert"
+        ],
+        "Small lizard --lvl 12": [
+            "Northern Kharidian Desert"
+        ],
+        "Sulphur lizard --lvl 50": [
+            "Karuulm Slayer Dungeon - Floor 2"
+        ],
+        "Grimy lizard --lvl 50": [
             "Neypotzli"
         ]
     }

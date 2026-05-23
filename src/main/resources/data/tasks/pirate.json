@@ -14,14 +14,18 @@
         "Melee"
     ],
     "variants": [
-        
+        "Pirate --lvl 26",
+        "Zombie Pirate --lvl 22 --lvl 28"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Pirate": [
+        "Pirate --lvl 26": [
             "Pirates' Hideout"
+        ],
+        "Zombie Pirate --lvl 22 --lvl 28": [
+            "Chaos Temple"
         ]
     }
 }

@@ -14,7 +14,7 @@
         "Crush"
     ],
     "variants": [
-        
+        "Crawling Hand --lvl 7 --lvl 12"
     ],
     "masters": [
         "Turael",
@@ -22,8 +22,8 @@
         "Spria"
     ],
     "variantLocations": {
-        "Crawling Hand": [
-            "Slayer Tower",
+        "Crawling Hand --lvl 7 --lvl 12": [
+            "Slayer Tower - Floor 1",
             "Meiyerditch Labratories"
         ]
     }

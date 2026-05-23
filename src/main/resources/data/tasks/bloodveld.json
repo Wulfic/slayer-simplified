@@ -14,11 +14,11 @@
         "Magical melee"
     ],
     "variants": [
-        "Mutated Bloodveld",
-        "Insatiable Bloodveld",
-        "Insatiable Mutated Bloodveld",
-        "Reanimated Bloodveld"
-    ],
+        "Bloodveld --lvl 76 --lvl 81",
+        "Mutated Bloodveld --lvl 123",
+        "Insatiable Bloodveld --lvl 202",
+        "Insatiable Mutated Bloodveld --lvl 278"
+        ],
     "masters": [
         "Krystilia",
         "Vannaka",
@@ -28,14 +28,30 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Bloodveld": [
-            "Slayer Tower",
+        "Bloodveld --lvl 76 --lvl 81": [
+            "Slayer Tower - Floor -1",
+            "Slayer Tower - Floor 2",
             "God Wars Dungeon",
-            "Meiyerditch Dungeon",
-            "Stronghold Slayer Cave",
+            "Meiyerditch Laboratories",
+            "Stronghold Slayer Cave"
+            ],
+        "Mutated Bloodveld --lvl 123": [
             "Catacombs of Kourend",
-            "Buccaneer's Laboratory",
-            "Ioewerth Dungeon"
-        ]
+            "Iorwerth Dungeon",
+            "Meiyerditch Laboratories",
+            "Buccaneers' Laborotory"
+            ],
+        "Insatiable Bloodveld --lvl 202": [
+            "Slayer Tower - Floor -1",
+            "Slayer Tower - Floor 2",
+            "Meiyerditch Laboratories",
+            "Stronghold Slayer Cave"
+            ],
+        "Insatiable Mutated Bloodveld --lvl 278": [
+            "Meiyerditch Laboratories",
+            "Catacombs of Kourend",
+            "Iorwerth Dungeon",
+            "Buccaneers' Laborotory"
+            ]
     }
 }

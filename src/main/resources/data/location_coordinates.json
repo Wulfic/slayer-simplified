@@ -2,7 +2,13 @@
   "Slayer Tower": {
     "x": 3428,
     "y": 3534,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Slayer Tower - Floor -1",
+      "Slayer Tower - Floor 1",
+      "Slayer Tower - Floor 2",
+      "Slayer Tower - Floor 3"
+    ]
   },
   "Stronghold Slayer Cave": {
     "x": 2431,
@@ -12,31 +18,34 @@
   "Fremennik Slayer Dungeon": {
     "x": 2794,
     "y": 3615,
-    "plane": 0,
-    "quests": ["THE_FREMENNIK_TRIALS"]
+    "plane": 0
   },
   "Catacombs of Kourend": {
     "x": 1639,
     "y": 3673,
-    "plane": 0
+    "plane": 0,
+    "aliases": [
+      "Catacombs of Kourend - Catacombs of Xeric",
+      "Catacombs of Kourend - Skotizo Boss Room"
+    ]
   },
   "Karuulm Slayer Dungeon": {
     "x": 1311,
     "y": 3807,
     "plane": 0,
-    "aliases": ["Karuulm Dungeon"]
+    "aliases": [
+      "Karuulm Dungeon"
+    ]
   },
   "Smoke Dungeon": {
     "x": 3310,
     "y": 2963,
-    "plane": 0,
-    "suggestedItems": ["Facemask or Slayer helmet (smoke damage)"]
+    "plane": 0
   },
   "Smoke Devil Dungeon": {
     "x": 2404,
     "y": 3060,
-    "plane": 0,
-    "suggestedItems": ["Facemask or Slayer helmet (smoke damage)"]
+    "plane": 0
   },
   "Kraken Cove": {
     "x": 2278,
@@ -47,27 +56,30 @@
     "x": 3222,
     "y": 6048,
     "plane": 0,
-    "quests": ["SONG_OF_THE_ELVES"],
-    "aliases": ["Ioewerth Dungeon"]
+    "aliases": [
+      "Iorwerth Slayer Dungeon"
+    ]
   },
   "Wyvern Cave": {
     "x": 3319,
     "y": 3402,
     "plane": 0,
-    "aliases": ["Wyvern Tasks"],
-    "quests": ["BONE_VOYAGE"]
+    "aliases": [
+      "Wyvern Tasks"
+    ]
   },
   "Taverley Dungeon": {
     "x": 2884,
     "y": 3397,
     "plane": 0,
-    "aliases": ["Grimstone Dungeon"]
+    "aliases": [
+      "Grimstone Dungeon"
+    ]
   },
   "Brimhaven Dungeon": {
     "x": 2745,
     "y": 3152,
-    "plane": 0,
-    "suggestedItems": ["875 coins (entry fee) or Dragon axe"]
+    "plane": 0
   },
   "Edgeville Dungeon": {
     "x": 3097,
@@ -78,8 +90,9 @@
     "x": 2910,
     "y": 3763,
     "plane": 0,
-    "quests": ["EADGARS_RUSE"],
-    "aliases": ["God Wars Dungeon (Bandos God Wars minions)"]
+    "aliases": [
+      "God Wars Dungeon (Bandos God Wars minions)"
+    ]
   },
   "Wilderness God Wars Dungeon": {
     "x": 3017,
@@ -89,14 +102,12 @@
   "Ancient Cavern": {
     "x": 2511,
     "y": 3508,
-    "plane": 0,
-    "quests": ["WATERFALL_QUEST"]
+    "plane": 0
   },
   "Waterfall Dungeon": {
     "x": 2510,
     "y": 3494,
-    "plane": 0,
-    "quests": ["WATERFALL_QUEST"]
+    "plane": 0
   },
   "Deep Wilderness Dungeon": {
     "x": 3045,
@@ -107,20 +118,20 @@
     "x": 3081,
     "y": 3421,
     "plane": 0,
-    "aliases": ["Stronhold of Security", "Stronghold of Security (level 2)"]
+    "aliases": [
+      "Stronhold of Security",
+      "Stronghold of Security (level 2)"
+    ]
   },
   "Lumbridge Swamp Caves": {
     "x": 3168,
     "y": 3172,
-    "plane": 0,
-    "suggestedItems": ["Light source (e.g. Bullseye lantern)"]
+    "plane": 0
   },
   "Dorgesh-Kaan South Dungeon": {
     "x": 2721,
     "y": 5241,
-    "plane": 3,
-    "quests": ["THE_LOST_TRIBE", "DEATH_TO_THE_DORGESHUUN"],
-    "suggestedItems": ["Light source (e.g. Bullseye lantern)"]
+    "plane": 3
   },
   "Revenant Caves": {
     "x": 3075,
@@ -141,7 +152,10 @@
     "x": 2857,
     "y": 3167,
     "plane": 0,
-    "aliases": ["Karamja Volcano", "Above Karamja Volcano"]
+    "aliases": [
+      "Karamja Volcano",
+      "Above Karamja Volcano"
+    ]
   },
   "Varrock Sewers": {
     "x": 3237,
@@ -161,14 +175,12 @@
   "Entrana Dungeon": {
     "x": 2823,
     "y": 3374,
-    "plane": 0,
-    "suggestedItems": ["Warning: no weapons or armour allowed on Entrana — pick up gear inside the dungeon"]
+    "plane": 0
   },
   "Meiyerditch Dungeon": {
     "x": 3625,
     "y": 3253,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL", "IN_AID_OF_THE_MYREQUE"]
+    "plane": 0
   },
   "Ogre Enclave": {
     "x": 2501,
@@ -178,41 +190,38 @@
   "Brine Rat Cavern": {
     "x": 2748,
     "y": 3733,
-    "plane": 0,
-    "quests": ["OLAFS_QUEST"]
+    "plane": 0
   },
   "Witchaven Dungeon": {
     "x": 2698,
     "y": 3283,
     "plane": 0,
-    "aliases": ["Witchaven Shrine Dungeon"],
-    "quests": ["THE_SLUG_MENACE"]
+    "aliases": [
+      "Witchaven Shrine Dungeon"
+    ]
   },
   "Underground Pass": {
     "x": 2435,
     "y": 3315,
-    "plane": 0,
-    "quests": ["UNDERGROUND_PASS"]
+    "plane": 0
   },
   "Temple of Ikov": {
     "x": 2677,
     "y": 3404,
-    "plane": 0,
-    "quests": ["TEMPLE_OF_IKOV"]
+    "plane": 0
   },
   "Tarn's Lair": {
     "x": 3417,
     "y": 3454,
     "plane": 0,
-    "aliases": ["Lair of Tarn Razorlor"],
-    "quests": ["PRIEST_IN_PERIL", "HAUNTED_MINE"]
+    "aliases": [
+      "Lair of Tarn Razorlor"
+    ]
   },
   "Ape Atoll Dungeon": {
     "x": 2767,
     "y": 2703,
-    "plane": 0,
-    "quests": ["MONKEY_MADNESS_I"],
-    "suggestedItems": ["Greegree (to navigate Ape Atoll without constant attacks)"]
+    "plane": 0
   },
   "Miscellania & Etceteria Dungeon": {
     "x": 2545,
@@ -222,8 +231,7 @@
   "Lithkren Vault": {
     "x": 3319,
     "y": 3402,
-    "plane": 0,
-    "quests": ["DRAGON_SLAYER_II"]
+    "plane": 0
   },
   "Grimstone Dungeon": {
     "x": 2884,
@@ -233,8 +241,7 @@
   "Shade Catacombs": {
     "x": 3462,
     "y": 3309,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL", "SHADES_OF_MORTTON"]
+    "plane": 0
   },
   "Goblin Cave": {
     "x": 2624,
@@ -250,19 +257,19 @@
     "x": 2561,
     "y": 3356,
     "plane": 0,
-    "aliases": ["Chaos Druid Tower"]
+    "aliases": [
+      "Chaos Druid Tower"
+    ]
   },
   "Tree Gnome Village dungeon": {
     "x": 2533,
     "y": 3155,
-    "plane": 0,
-    "quests": ["TREE_GNOME_VILLAGE"]
+    "plane": 0
   },
   "Legends' Guild basement": {
     "x": 2729,
     "y": 3377,
-    "plane": 0,
-    "quests": ["LEGENDS_QUEST"]
+    "plane": 0
   },
   "Sourhog Cave": {
     "x": 3153,
@@ -283,7 +290,9 @@
     "x": 3208,
     "y": 3216,
     "plane": 0,
-    "aliases": ["Lumbridge Castle basement"]
+    "aliases": [
+      "Lumbridge Castle basement"
+    ]
   },
   "Kalphite Lair": {
     "x": 3226,
@@ -298,8 +307,7 @@
   "Evil Chicken's Lair": {
     "x": 3232,
     "y": 3148,
-    "plane": 0,
-    "suggestedItems": ["Raw chicken (required to enter the lair)"]
+    "plane": 0
   },
   "Melzar's Maze": {
     "x": 2929,
@@ -309,26 +317,25 @@
   "Canifis": {
     "x": 3496,
     "y": 3475,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL"]
+    "plane": 0
   },
   "East Ardougne": {
     "x": 2662,
     "y": 3308,
     "plane": 0,
-    "aliases": ["Ardougne"]
+    "aliases": [
+      "Ardougne"
+    ]
   },
   "Prifddinas": {
     "x": 3252,
     "y": 6075,
-    "plane": 0,
-    "quests": ["SONG_OF_THE_ELVES"]
+    "plane": 0
   },
   "Lletya": {
     "x": 2341,
     "y": 3171,
-    "plane": 0,
-    "quests": ["MOURNINGS_END_PART_I"]
+    "plane": 0
   },
   "Port Sarim": {
     "x": 3024,
@@ -343,14 +350,12 @@
   "Keldagrim": {
     "x": 2838,
     "y": 10170,
-    "plane": 0,
-    "quests": ["THE_GIANT_DWARF"]
+    "plane": 0
   },
   "Mort'ton": {
     "x": 3489,
     "y": 3287,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL"]
+    "plane": 0
   },
   "Goblin Village": {
     "x": 2957,
@@ -366,7 +371,9 @@
     "x": 2846,
     "y": 3498,
     "plane": 0,
-    "aliases": ["Beneath White Wolf Mountain"]
+    "aliases": [
+      "Beneath White Wolf Mountain"
+    ]
   },
   "Ice Mountain": {
     "x": 3007,
@@ -386,38 +393,32 @@
   "Barrows": {
     "x": 3565,
     "y": 3306,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL"]
+    "plane": 0
   },
   "Lighthouse": {
     "x": 2508,
     "y": 3635,
-    "plane": 0,
-    "quests": ["HORROR_FROM_THE_DEEP"]
+    "plane": 0
   },
   "Crandor": {
     "x": 2834,
     "y": 3238,
-    "plane": 0,
-    "quests": ["DRAGON_SLAYER_I"]
+    "plane": 0
   },
   "Lunar Isle": {
     "x": 2105,
     "y": 3915,
-    "plane": 0,
-    "quests": ["LUNAR_DIPLOMACY"]
+    "plane": 0
   },
   "Zanaris": {
     "x": 2411,
     "y": 4446,
-    "plane": 0,
-    "quests": ["LOST_CITY"]
+    "plane": 0
   },
   "Fossil Island": {
     "x": 3319,
     "y": 3402,
-    "plane": 0,
-    "quests": ["BONE_VOYAGE"]
+    "plane": 0
   },
   "Lava Maze": {
     "x": 3062,
@@ -437,53 +438,49 @@
   "Paterdomus": {
     "x": 3408,
     "y": 3490,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL"]
+    "plane": 0
   },
   "Morytania": {
     "x": 3490,
     "y": 3475,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL"]
+    "plane": 0
   },
   "Trollheim": {
     "x": 2891,
     "y": 3681,
-    "plane": 0,
-    "quests": ["EADGARS_RUSE"],
-    "suggestedItems": ["Climbing boots"]
+    "plane": 0
   },
   "Mining Guild": {
     "x": 3024,
     "y": 3337,
-    "plane": 0,
-    "skills": { "MINING": 60 }
+    "plane": 0
   },
   "Dwarven Mine": {
     "x": 3016,
     "y": 3450,
     "plane": 0,
-    "aliases": ["Dwarven mines", "Dwarven coal mine"]
+    "aliases": [
+      "Dwarven mines",
+      "Dwarven coal mine"
+    ]
   },
   "Waterbirth Island Dungeon": {
     "x": 2527,
     "y": 3739,
     "plane": 0,
-    "aliases": ["Waterbirth Island"],
-    "suggestedItems": ["Pet rock + rope (to open double doors solo) or bring a partner"]
+    "aliases": [
+      "Waterbirth Island"
+    ]
   },
   "Haunted Woods": {
     "x": 3577,
     "y": 3490,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL"]
+    "plane": 0
   },
   "Haunted Mine": {
     "x": 3440,
     "y": 3232,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL", "HAUNTED_MINE"],
-    "suggestedItems": ["Light source (e.g. Bullseye lantern)"]
+    "plane": 0
   },
   "Mudskipper Point": {
     "x": 2989,
@@ -539,7 +536,9 @@
     "x": 3173,
     "y": 3810,
     "plane": 0,
-    "aliases": ["Wilderness volcano"]
+    "aliases": [
+      "Wilderness volcano"
+    ]
   },
   "Frozen Waste Plateau": {
     "x": 2940,
@@ -634,15 +633,14 @@
   "Lithkren": {
     "x": 3547,
     "y": 3995,
-    "plane": 0,
-    "quests": ["DRAGON_SLAYER_II"]
+    "plane": 0
   },
   "Combat Training Camp": {
     "x": 2523,
     "y": 3369,
     "plane": 0
   },
-  "Lizardmen Settlement": {
+  "Lizardman Settlement": {
     "x": 1517,
     "y": 3703,
     "plane": 0
@@ -655,14 +653,15 @@
   "Heroes' Guild": {
     "x": 2898,
     "y": 3509,
-    "plane": 0,
-    "quests": ["HEROES_QUEST"]
+    "plane": 0
   },
   "Ardougne Zoo": {
     "x": 2604,
     "y": 3283,
     "plane": 0,
-    "aliases": ["Ardougne Zoo Scorpion Pit"]
+    "aliases": [
+      "Ardougne Zoo Scorpion Pit"
+    ]
   },
   "Hobgoblin Peninsula near Crafting Guild": {
     "x": 2893,
@@ -728,9 +727,9 @@
     "x": 2867,
     "y": 3592,
     "plane": 0,
-    "aliases": ["Death Plateau"],
-    "quests": ["DEATH_PLATEAU"],
-    "suggestedItems": ["Climbing boots"]
+    "aliases": [
+      "Death Plateau"
+    ]
   },
   "South of Varrock": {
     "x": 3212,
@@ -785,15 +784,12 @@
   "Mos Le'Harmless": {
     "x": 3677,
     "y": 2981,
-    "plane": 0,
-    "quests": ["CABIN_FEVER"]
+    "plane": 0
   },
   "Mos Le'Harmless Cave": {
     "x": 3748,
     "y": 2973,
-    "plane": 0,
-    "quests": ["CABIN_FEVER"],
-    "suggestedItems": ["Light source (e.g. Bullseye lantern)"]
+    "plane": 0
   },
   "McGrubor's Wood": {
     "x": 2651,
@@ -843,8 +839,7 @@
   "Glarial's Tomb": {
     "x": 2558,
     "y": 3445,
-    "plane": 0,
-    "quests": ["WATERFALL_QUEST"]
+    "plane": 0
   },
   "Around the Digsite": {
     "x": 3367,
@@ -869,9 +864,7 @@
   "Ape Atoll temple": {
     "x": 2767,
     "y": 2703,
-    "plane": 0,
-    "quests": ["MONKEY_MADNESS_I"],
-    "suggestedItems": ["Greegree (to navigate Ape Atoll without constant attacks)"]
+    "plane": 0
   },
   "Tunnel outside of Keldagrim": {
     "x": 2773,
@@ -881,8 +874,7 @@
   "Ice Path north of Trollheim (Ice trolls)": {
     "x": 2891,
     "y": 3710,
-    "plane": 0,
-    "suggestedItems": ["Climbing boots"]
+    "plane": 0
   },
   "Icy islands north of Neitiznot and Jatizso": {
     "x": 2374,
@@ -893,8 +885,9 @@
     "x": 2034,
     "y": 4637,
     "plane": 0,
-    "aliases": ["Mourner Tunnels"],
-    "quests": ["MOURNINGS_END_PART_II"]
+    "aliases": [
+      "Mourner Tunnels"
+    ]
   },
   "Sorceress 's house": {
     "x": 3325,
@@ -950,7 +943,9 @@
     "x": 2856,
     "y": 3166,
     "plane": 0,
-    "aliases": ["Mor Ul Rek"]
+    "aliases": [
+      "Mor Ul Rek"
+    ]
   },
   "Morytania Spider Cave": {
     "x": 3562,
@@ -971,14 +966,18 @@
     "x": 2193,
     "y": 2773,
     "plane": 0,
-    "aliases": ["Isle of Souls Dungeon"]
+    "aliases": [
+      "Isle of Souls Dungeon"
+    ]
   },
   "Ruins of Tapoyauik": {
     "x": 1374,
     "y": 3821,
     "plane": 0,
-    "quests": ["CHILDREN_OF_THE_SUN"],
-    "aliases": ["Ruins of Tapouik", "Tapoyauik"]
+    "aliases": [
+      "Ruins of Tapouik",
+      "Tapoyauik"
+    ]
   },
   "West of Mount Quidamortem": {
     "x": 1215,
@@ -993,8 +992,7 @@
   "Neypotzli": {
     "x": 1767,
     "y": 3043,
-    "plane": 0,
-    "quests": ["PERILOUS_MOONS"]
+    "plane": 0
   },
   "Tonali Cavern": {
     "x": 1697,
@@ -1010,81 +1008,71 @@
     "x": 3000,
     "y": 3800,
     "plane": 0,
-    "aliases": ["Wilderness Slayer Cave", "Wildness Slayer Cave", "Wilderness Slayer Dungeon"]
+    "aliases": [
+      "Wilderness Slayer Cave",
+      "Wildness Slayer Cave",
+      "Wilderness Slayer Dungeon"
+    ]
   },
   "Meiyerditch": {
     "x": 3619,
     "y": 3257,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL", "IN_AID_OF_THE_MYREQUE"]
+    "plane": 0
   },
   "Mort Myre Swamp": {
     "x": 3450,
     "y": 3430,
-    "plane": 0,
-    "quests": ["PRIEST_IN_PERIL"]
+    "plane": 0
   },
   "Slepe": {
     "x": 3756,
     "y": 3277,
-    "plane": 0,
-    "quests": ["SINS_OF_THE_FATHER"]
+    "plane": 0
   },
   "Tirannwn": {
     "x": 2200,
     "y": 3200,
-    "plane": 0,
-    "quests": ["REGICIDE"]
+    "plane": 0
   },
   "Jatizso": {
     "x": 2397,
     "y": 3804,
-    "plane": 0,
-    "quests": ["THE_FREMENNIK_ISLES"]
+    "plane": 0
   },
   "Neitiznot": {
     "x": 2336,
     "y": 3804,
-    "plane": 0,
-    "quests": ["THE_FREMENNIK_ISLES"]
+    "plane": 0
   },
   "Troll Stronghold": {
     "x": 2840,
     "y": 3710,
-    "plane": 0,
-    "quests": ["TROLL_STRONGHOLD"],
-    "suggestedItems": ["Climbing boots"]
+    "plane": 0
   },
   "Ape Atoll": {
     "x": 2760,
     "y": 2780,
-    "plane": 0,
-    "quests": ["MONKEY_MADNESS_I"],
-    "suggestedItems": ["Greegree (to navigate Ape Atoll without constant attacks)"]
+    "plane": 0
   },
   "Varlamore": {
     "x": 1710,
     "y": 3110,
-    "plane": 0,
-    "quests": ["CHILDREN_OF_THE_SUN"]
+    "plane": 0
   },
   "Aldarin": {
     "x": 1620,
     "y": 3077,
-    "plane": 0,
-    "quests": ["CHILDREN_OF_THE_SUN"]
+    "plane": 0
   },
   "Dorgesh-Kaan": {
     "x": 2722,
     "y": 5120,
-    "plane": 0,
-    "quests": ["THE_LOST_TRIBE", "DEATH_TO_THE_DORGESHUUN"]
+    "plane": 0
   },
   "Temple of Light": {
     "x": 2185,
     "y": 3143,
-    "plane": 0,
-    "quests": ["MOURNINGS_END_PART_II"]
+    "plane": 0
   },
   "Near Karamja Hunter area": {
     "x": 2830,
@@ -1095,19 +1083,19 @@
     "x": 1396,
     "y": 3873,
     "plane": 0,
-    "aliases": ["Chasm of Fire Dungeon"]
+    "aliases": [
+      "Chasm of Fire Dungeon"
+    ]
   },
   "Crash Site Cavern": {
     "x": 3774,
     "y": 3870,
-    "plane": 0,
-    "quests": ["BONE_VOYAGE"]
+    "plane": 0
   },
   "Ungael": {
     "x": 2456,
     "y": 4027,
-    "plane": 0,
-    "quests": ["DRAGON_SLAYER_II"]
+    "plane": 0
   },
   "King Black Dragon Lair": {
     "x": 2975,
@@ -1117,8 +1105,7 @@
   "Woodcutting Guild": {
     "x": 1657,
     "y": 3505,
-    "plane": 0,
-    "skills": {"WOODCUTTING": 60}
+    "plane": 0
   },
   "Yanille Agility Dungeon": {
     "x": 2599,
@@ -1128,8 +1115,7 @@
   "Mushroom Forest": {
     "x": 3673,
     "y": 3807,
-    "plane": 0,
-    "quests": ["BONE_VOYAGE"]
+    "plane": 0
   },
   "Giants' Den": {
     "x": 1575,
@@ -1144,15 +1130,15 @@
   "Mynydd": {
     "x": 2197,
     "y": 3411,
-    "plane": 0,
-    "quests": ["REGICIDE"]
+    "plane": 0
   },
   "Meiyerditch Laboratories": {
     "x": 3614,
     "y": 9770,
     "plane": 0,
-    "quests": ["PRIEST_IN_PERIL", "IN_AID_OF_THE_MYREQUE"],
-    "aliases": ["Meiyerditch Labratories"]
+    "aliases": [
+      "Meiyerditch Labratories"
+    ]
   },
   "Charred Dungeon": {
     "x": 1581,

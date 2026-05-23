@@ -14,21 +14,36 @@
         "Melee"
     ],
     "variants": [
-        "Giant rat",
-        "Dungeon rat",
-        "Crypt rat",
-        "Brine rat",
-        "Hell-Rat Behemoth"
+        "Rat --lvl 1",
+        "Giant rat --lvl 3 --lvl 26",
+        "Dungeon rat --lvl 11",
+        "Brine rat --lvl 70",
+        "Scurrius --lvl 200 --lvl 600"
     ],
     "masters": [
-        "Turael"
+        "Turael",
+        "Spria"
     ],
     "variantLocations": {
-        "Rat": [
+        "Rat --lvl 1": [
             "Varrock Sewers",
             "Lumbridge Castle basement",
             "Port Sarim",
             "Canifis"
+        ],
+        "Giant rat --lvl 3 --lvl 26": [
+            "Lumbridge Swamp"
+        ],
+        "Dungeon rat --lvl 11": [
+            "Ardougne Sewers",
+            "Clock Tower Dungeon",
+            "Goblin Cave"
+        ],
+        "Brine rat --lvl 70": [
+            "Brine Rat Cavern"
+        ],
+        "Scurrius --lvl 200 --lvl 600": [
+            "Varrock Sewers"
         ]
     }
 }

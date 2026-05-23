@@ -16,10 +16,8 @@
         "Melee"
     ],
     "variants": [
-        "Grotesque Guardians",
-        "Marble Gargoyle",
-        "Dawn",
-        "Dusk"
+        "Gargoyle --lvl 111",
+        "Marble Gargoyle --lvl 349"
     ],
     "masters": [
         "Vannaka",
@@ -29,7 +27,10 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Gargoyle": [
+        "Gargoyle --lvl 111": [
+            "Slayer Tower"
+        ],
+        "Marble Gargoyle --lvl 349": [
             "Slayer Tower"
         ]
     }

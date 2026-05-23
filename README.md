@@ -17,25 +17,28 @@ Typing `!task` in public chat also triggers the same navigation — handy if you
 ## Features
 
 **Task search**
-Searchable list of 100+ monsters with icons. Click any monster to open its detail view with tabs for locations, loot, info, and notes.
+Searchable list of over 100+ monsters.
 
 **Locations tab**
-Every location has a Nav button and a favorite star (★). Your favorite is pinned to the top and remembered between sessions. There are 194 mapped locations — dungeons use the overworld entrance so Shortest Path handles the routing underground.
+Every location has a Nav button and a favorite star (★). Your favorite is pinned to the top and remembered between sessions. There are over 200+ mapped locations.
+
+**Navigation Filtering**
+Automatically checks you meet the requirements to go to a location. If you dont it greys out.(Debug Location setting disables this)
 
 **Loot tab**
-Pulls the drop table from the OSRS Wiki when you open the tab. Shows item name, quantity, rarity (color-coded), and GE price. Cached per monster so it's not fetching every time you switch back.
+Pulls the drop table from the OSRS Wiki when you open the tab. Shows item name, quantity, rarity, and GE price.
 
 **Info tab**
-Shows required items, slayer master assignments, and combat stats scraped from the Wiki — combat level, HP, max hit, attack style, elemental weakness, and immunities. Loads async in the background so the tab is instant to open.
+Shows required items, slayer master assignments, and combat stats scraped from the Wiki — combat level, HP, max hit, attack style, elemental weakness, and immunities.
 
 **Notes tab**
-Free-text notes per monster. Auto-saved as you type, stored in RuneLite's config so they persist across sessions.
+Free-text notes per monster. Auto-saved as you type!
 
 **NPC highlighting**
-Draws a colored outline on task NPCs in the scene. Updated from spawn/despawn events so there's no per-frame scan. Color is configurable.
+Highlight your target NPCs with a configurable color of your choice!
 
 **Task history**
-Logs every task you complete — monster name, kill count, which master assigned it, task number in your streak, and the date. Viewable from the History button in the panel.
+Logs every task you complete — monster name, kill count, which master assigned it, task number in your streak, and the date.
 
 **Kill counter**
 Tracks how many kills you've done for a particular monster.
@@ -46,8 +49,11 @@ Optional setting — shows a reminder when you get a new task if you have 99 Sla
 **Suggested & Required Items**
 Reminders to bring both Required Slayer Items, and Suggested items, that may be needed to access a certain area.
 
-**Navigation masters**
-All 8 masters are supported: Turael, Mazchna, Vannaka, Chaeldar, Konar, Nieve / Steve, Duradel, and Krystilia.
+**Slayer masters**
+All 9 masters are supported: Turael, Spria, Mazchna, Vannaka, Chaeldar, Konar, Nieve / Steve, Duradel, and Krystilia.
+
+**Slayer Streak Optimizer!**
+Automatically assigns you the best Slayer Master for optimizing your task streak, to get the most points possible!
 
 ---
 

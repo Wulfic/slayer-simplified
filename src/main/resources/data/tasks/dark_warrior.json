@@ -14,13 +14,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Dark warrior --lvl 8 --lvl 145"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Dark warrior": [
+        "Dark warrior --lvl 8 --lvl 145": [
             "Dark Warriors' Fortress"
         ]
     }

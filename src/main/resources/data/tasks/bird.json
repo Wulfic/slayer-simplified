@@ -14,30 +14,72 @@
         "Melee"
     ],
     "variants": [
-        "Bird",
-        "Baby Roc",
-        "Chicken",
-        "Duck",
-        "Entrana firebird",
-        "Mounted terrorbird gnome",
-        "Oomlie bird",
-        "Penguin",
-        "Rooster",
-        "Seagull",
-        "Terrorbird",
-        "Vulture",
-        "Undead chicken",
-        "Chompy bird"
+        "Bird --lvl 5 --lvl 11",
+        "Baby Roc --lvl 75",
+        "Chicken --lvl 1",
+        "Chompy bird --lvl 6",
+        "Duck --lvl 1",
+        "Entrana firebird --lvl 2",
+        "Mounted terrorbird gnome --lvl 31 --lvl 49",
+        "Oomlie bird --lvl 46",
+        "Penguin --lvl 2",
+        "Rooster --lvl 2",
+        "Seagull --lvl 3",
+        "Terrorbird --lvl 28",
+        "Vulture --lvl 31",
+        "Undead chicken --lvl 1"
     ],
     "masters": [
         "Turael",
         "Spria"
     ],
     "variantLocations": {
-        "Bird": [
-            "Across west Lumbridge bridge",
-            "Port Sarim pier",
-            "South of Falador"
+        "Bird --lvl 5 --lvl 11": [
+            "Ape atoll",
+            "Nature altar",
+            "Isle of Souls"
+        ],
+        "Baby Roc --lvl 75": [
+            "Troll Stronghold"
+        ],
+        "Chicken --lvl 1": [
+            "Lumbridge - Farm"
+        ],
+        "Chompy bird --lvl 6": [
+            "Feldip Hills"
+        ],
+        "Duck --lvl 1": [
+            "Lumbridge - River"
+        ],
+        "Entrana firebird --lvl 2": [
+            "Entrana"
+        ],
+        "Mounted terrorbird gnome --lvl 31 --lvl 49": [
+            "Gnome Stronghold",
+            "Khazard Battlefield"
+        ],
+        "Oomlie bird --lvl 46": [
+            "Kharazi Jungle"
+        ],
+        "Penguin --lvl 2": [
+            "Ardougne - Zoo"
+        ],
+        "Rooster --lvl 2": [
+            "Rellekka",
+            "Miscellania"
+        ],
+        "Seagull --lvl 3": [
+            "Port Sarim",
+            "Corsair Cove"
+        ],
+        "Terrorbird --lvl 28": [
+            "Gnome Stronghold"
+        ],
+        "Vulture --lvl 31": [
+            "Kharidian Desert - South East"
+        ],
+        "Undead chicken --lvl 1": [
+            "Port Phasmatys - Farm"
         ]
     }
 }

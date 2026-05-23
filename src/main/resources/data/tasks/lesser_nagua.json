@@ -15,19 +15,26 @@
         "Magic"
     ],
     "variants": [
-        "Amoxliatl",
-        "Suplur Nagua",
-        "Frost Nagua",
-        "Earthen Nagua"
+        "Amoxliatl --lvl 263",
+        "Suplur Nagua --lvl 98",
+        "Frost Nagua --lvl 104",
+        "Earthen Nagua --lvl 128"
     ],
     "masters": [
         "Chaeldar",
         "Konar quo Maten"
     ],
     "variantLocations": {
-        "Lesser Nagua": [
-            "Neypotzli",
-            "Ruins of Tapoyauik",
+        "Amoxliatl --lvl 263": [
+            "Ruins of Tapoyauik"
+        ],
+        "Suplur Nagua --lvl 98": [
+            "Neypotzli"
+        ],
+        "Frost Nagua --lvl 104": [
+            "Ruins of Tapoyauik"
+        ],
+        "Earthen Nagua --lvl 128": [
             "Crypt of Tonali"
         ]
     }

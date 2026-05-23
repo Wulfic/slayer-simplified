@@ -3,11 +3,10 @@
     "levelRequired": 1,
     "itemsRequired": [
         "Anti-dragon shield",
-        "Dragonfire shield",
-        "Super antifire potion(4)"
+        "Dragonfire shield"
     ],
     "itemsSuggested": [
-        
+        "Super antifire potion(4)"
     ],
     "attributes": [
         "Draconic",
@@ -20,7 +19,7 @@
         "Dragonfire"
     ],
     "variants": [
-        
+        "Rune Dragon --lvl 380"
     ],
     "masters": [
         "Konar quo Maten",
@@ -28,8 +27,8 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Rune Dragon": [
-            "Lithkren"
+        "Rune Dragon --lvl 380": [
+            "Lithkren Vault"
         ]
     }
 }

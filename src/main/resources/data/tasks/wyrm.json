@@ -17,8 +17,11 @@
         "Magical ranged"
     ],
     "variants": [
-        "Wyrmling",
-        "Lava Strykewyrm"
+        "Wyrm --lvl 97",
+        "Shadow Wyrm --lvl 267",
+        "Wyrmling --lvl 55",
+        "Lava Strykewyrm --lvl 116",
+        "Magma Strykewyrm --lvl 249"
     ],
     "masters": [
         "Chaeldar",
@@ -27,8 +30,20 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Wyrm": [
+        "Wyrm --lvl 97": [
             "Karuulm Slayer Dungeon"
+        ],
+        "Shadow Wyrm --lvl 267": [
+            "Karuulm Slayer Dungeon"
+        ],
+        "Wyrmling --lvl 55": [
+            "Neypotzli"
+        ],
+        "Lava Strykewyrm --lvl 116": [
+            "Charred Dungeon"
+        ],
+        "Magma Strykewyrm --lvl 249": [
+            "Charred Dungeon"
         ]
     }
 }

@@ -14,14 +14,14 @@
         "Melee"
     ],
     "variants": [
-        
+        "Shadow warrior --lvl 48"
     ],
     "masters": [
         "Vannaka",
         "Chaeldar"
     ],
     "variantLocations": {
-        "Shadow warrior": [
+        "Shadow warrior --lvl 48": [
             "Legends' Guild basement"
         ]
     }

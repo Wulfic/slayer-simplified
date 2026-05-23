@@ -14,9 +14,9 @@
         "Varies with target"
     ],
     "variants": [
-        "Spiritual warrior",
-        "Spiritual ranger",
-        "Spiritual mage"
+        "Spiritual warrior --lvl 115 --lvl 158",
+        "Spiritual ranger --lvl 118 --lvl 158",
+        "Spiritual mage --lvl 121 --lvl 182"
     ],
     "masters": [
         "Krystilia",
@@ -26,7 +26,15 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Spiritual creature": [
+        "Spiritual warrior --lvl 115 --lvl 158": [
+            "God Wars Dungeon",
+            "Wilderness God Wars Dungeon"
+        ],
+        "Spiritual ranger --lvl 118 --lvl 158": [
+            "God Wars Dungeon",
+            "Wilderness God Wars Dungeon"
+        ],
+        "Spiritual mage --lvl 121 --lvl 182": [
             "God Wars Dungeon",
             "Wilderness God Wars Dungeon"
         ]

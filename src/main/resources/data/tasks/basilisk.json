@@ -15,10 +15,10 @@
         "Melee"
     ],
     "variants": [
-        "Basilisk Knight",
-        "Monstrous Basilisks",
-        "Basilisk Sentinel",
-        "The Jormungand"
+        "Basilisk --lvl 61",
+        "Basilisk Knight --lvl 204",
+        "Monstrous Basilisks --lvl 135",
+        "Basilisk Sentinel --lvl 358"
     ],
     "masters": [
         "Vannaka",
@@ -28,8 +28,18 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Basilisk": [
+        "Basilisk --lvl 61": [
             "Fremennik Slayer Dungeon",
+            "Jormungand's Prison"
+        ],
+        "Basilisk Knight --lvl 204": [
+            "Jormungand's Prison"
+        ],
+        "Monstrous Basilisks --lvl 135": [
+            "Fremennik Slayer Dungeon",
+            "Jormungand's Prison"
+        ],
+        "Basilisk Sentinel --lvl 358": [
             "Jormungand's Prison"
         ]
     }

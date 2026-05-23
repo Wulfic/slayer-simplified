@@ -14,26 +14,53 @@
         "Melee"
     ],
     "variants": [
-        "King Scorpion",
-        "Poison Scorpion",
-        "Pit Scorpion",
-        "Scorpia",
-        "Lobstrosity"
+        "Scorpion --lvl 14",
+        "King Scorpion --lvl 32",
+        "Poison Scorpion --lvl 20",
+        "Pit Scorpion --lvl 28",
+        "Scorpia --lvl 225",
+        "Scorpia's offspring --lvl 15",
+        "Scorpia's guardian --lvl 47",
+        "Giant lobster --lvl 32"
     ],
     "masters": [
         "Krystilia",
         "Turael",
+        "Spria",
         "Mazchna"
     ],
     "variantLocations": {
-        "Scorpion": [
+        "Scorpion --lvl 14": [
             "Al-Kharid Mine",
             "Dwarven mines",
             "Ardougne Zoo Scorpion Pit",
-            "Stronghold of Security",
             "Varrock Sewers",
-            "Wilderness",
-            "Above Karamja Volcano"
+            "Karamja Volcano"
+        ],
+        "King Scorpion --lvl 32": [
+            "Lava Maze",
+            "Crandor Island",
+            "Dwarven mines",
+            "Lovakite mine"
+        ],
+        "Poison Scorpion --lvl 20": [
+            "Taverley Dungeon",
+            "Brimhaven Mine"
+        ],
+        "Pit Scorpion --lvl 28": [
+            "Ardougne Zoo"
+        ],
+        "Scorpia --lvl 225": [
+            "Ardougne Zoo Scorpion Pit"
+        ],
+        "Scorpia's offspring --lvl 15": [
+            "Ardougne Zoo Scorpion Pit"
+        ],
+        "Scorpia's guardian --lvl 47": [    
+            "Ardougne Zoo Scorpion Pit"
+        ],
+        "Giant lobster --lvl 32": [
+            "Witchaven Dungeon"
         ]
     }
 }

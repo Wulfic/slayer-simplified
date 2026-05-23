@@ -14,16 +14,17 @@
         "Melee"
     ],
     "variants": [
-        
+        "Black Knight --lvl 33"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Black Knight": [
+        "Black Knight --lvl 33": [
             "Lava Maze",
             "North of Venenatis",
-            "Taverley Dungeon"
+            "Taverley Dungeon",
+            "Black Knights Fortress"
         ]
     }
 }

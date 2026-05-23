@@ -19,15 +19,16 @@
         "Icy breath"
     ],
     "variants": [
-        
+        "Skeletal Wyvern --lvl 140"
     ],
     "masters": [
         "Konar quo Maten",
         "Nieve",
-        "Duradel"
+        "Duradel",
+        "Chaeldar"
     ],
     "variantLocations": {
-        "Skeletal Wyvern": [
+        "Skeletal Wyvern --lvl 140": [
             "Asgarnian Ice Dungeon"
         ]
     }

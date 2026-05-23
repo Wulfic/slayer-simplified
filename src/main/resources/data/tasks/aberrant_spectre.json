@@ -16,7 +16,10 @@
         "Magic"
     ],
     "variants": [
-        "Deviant spectre"
+        "Aberrant spectre --lvl 96",
+        "Deviant spectre --lvl 169",
+        "Abhorrent spectre --lvl 253",
+        "Repugnant spectre --lvl 335"
     ],
     "masters": [
         "Vannaka",
@@ -26,9 +29,20 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Aberrant spectre": [
-            "Slayer Tower",
+        "Aberrant spectre --lvl 96": [
+            "Slayer Tower - Floor 2",
             "Stronghold Slayer Cave",
+            "Deepfin Mine"
+        ],
+        "Deviant spectre --lvl 169": [
+            "Catacombs of Kourend"
+        ],
+        "Abhorrent spectre --lvl 253": [
+            "Slayer Tower - Floor 2",
+            "Stronghold Slayer Cave",
+            "Deepfin Mine"
+        ],
+        "Repugnant spectre --lvl 335": [
             "Catacombs of Kourend"
         ]
     }

@@ -14,14 +14,14 @@
         "Melee"
     ],
     "variants": [
-        
+        "Mogre --lvl 60"
     ],
     "masters": [
         "Mazchna",
         "Vannaka"
     ],
     "variantLocations": {
-        "Mogre": [
+        "Mogre --lvl 60": [
             "Mudskipper Point"
         ]
     }

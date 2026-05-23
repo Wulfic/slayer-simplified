@@ -14,13 +14,11 @@
         "Melee or ranged"
     ],
     "variants": [
-        "Elf Warrior",
-        "Elf Archer",
-        "Iorwerth Warrior",
-        "Iorwerth Archer",
-        "Mourner",
-        "Reanimated elf"
-    ],
+        "Elf Warrior --lvl 108",
+        "Elf Archer --lvl 90",
+        "Iorwerth Warrior --lvl 108",
+        "Iorwerth Archer --lvl 90"
+        ],
     "masters": [
         "Vannaka",
         "Chaeldar",
@@ -28,10 +26,18 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Elf": [
-            "Lletya",
+        "Elf Warrior --lvl 108": [
+            "Lletya"
+        ],
+        "Elf Archer --lvl 90": [
+            "Lletya"
+        ],
+        "Iorwerth Warrior --lvl 108": [
             "Iorwerth Camp",
-            "Prifddinas"
+            "Iorwerth Dungeon"
+        ],
+        "Iorwerth Archer --lvl 90": [
+            "Iorwerth Camp"
         ]
     }
 }

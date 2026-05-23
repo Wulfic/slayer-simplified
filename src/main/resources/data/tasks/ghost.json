@@ -14,31 +14,33 @@
         "Melee"
     ],
     "variants": [
-        "Tortured soul",
-        "Revenant",
-        "Forgotten soul",
-        "Death Wing"
-    ],
+        "Ghost --lvl 19 --lvl 77",
+        "Tortured soul --lvl 59",
+        "Revenant --lvl 7 --lvl 397",
+        "Forgotten soul --lvl 20"    ],
     "masters": [
         "Turael",
         "Mazchna",
         "Spria"
     ],
     "variantLocations": {
-        "Ghost": [
+        "Ghost --lvl 19 --lvl 77": [
             "Varrock Sewers",
             "Draynor Manor",
-            "Melzar's Maze",
             "Stronghold of Security",
             "Taverley Dungeon",
-            "West Ardougne (graveyard)",
-            "Scorpius Shrine",
-            "Lair of Tarn Razorlor",
-            "Death altar",
             "Haunted Mine",
-            "Near Clan Wars",
             "Forgotten Cemetery",
             "Catacombs of Kourend"
+        ],
+        "Tortured soul --lvl 59": [
+            "West of Port Phasmatys"
+        ],
+        "Revenant --lvl 7 --lvl 397": [
+            "Revenant Caves"
+        ],
+        "Forgotten soul --lvl 20": [
+            "Crumbling Tower"
         ]
     }
 }

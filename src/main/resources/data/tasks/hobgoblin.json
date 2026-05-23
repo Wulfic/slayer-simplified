@@ -14,23 +14,20 @@
         "Melee"
     ],
     "variants": [
-        "Hobgoblin Champion"
+        "Hobgoblin --lvl 28 --lvl 47"
     ],
     "masters": [
         "Mazchna",
         "Vannaka"
     ],
     "variantLocations": {
-        "Hobgoblin": [
+        "Hobgoblin --lvl 28 --lvl 47": [
             "Asgarnian Ice Dungeon",
-            "Hobgoblin Peninsula near Crafting Guild",
             "Edgeville Dungeon",
             "God Wars Dungeon",
-            "Near Karamja Hunter area",
             "North of Outpost",
             "North of Rellekka",
-            "Tree Gnome Village dungeon",
-            "Witchaven Dungeon"
+            "The Hollows"
         ]
     }
 }

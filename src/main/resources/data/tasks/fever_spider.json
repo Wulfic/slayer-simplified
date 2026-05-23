@@ -14,14 +14,14 @@
         "Melee"
     ],
     "variants": [
-        
+        "Fever spider --lvl 49"
     ],
     "masters": [
         "Vannaka",
         "Chaeldar"
     ],
     "variantLocations": {
-        "Fever spider": [
+        "Fever spider --lvl 49": [
             "Braindeath Island (brewery basement)"
         ]
     }

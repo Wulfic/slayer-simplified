@@ -2,10 +2,9 @@
     "name": "Suqah",
     "levelRequired": 1,
     "itemsRequired": [
-        "Seal of passage"
     ],
     "itemsSuggested": [
-        
+        "Seal of passage"
     ],
     "attributes": [
         "None"
@@ -15,14 +14,14 @@
         "Magic"
     ],
     "variants": [
-        
+        "Suqah --lvl 111"
     ],
     "masters": [
         "Nieve",
         "Duradel"
     ],
     "variantLocations": {
-        "Suqah": [
+        "Suqah --lvl 111": [
             "Lunar Isle"
         ]
     }

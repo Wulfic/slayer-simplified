@@ -16,13 +16,13 @@
         "Ranged"
     ],
     "variants": [
-        
+        "Sourhog --lvl 37"
     ],
     "masters": [
-        "Turael"
+        "Spria"
     ],
     "variantLocations": {
-        "Sourhog": [
+        "Sourhog --lvl 37": [
             "Sourhog Cave"
         ]
     }

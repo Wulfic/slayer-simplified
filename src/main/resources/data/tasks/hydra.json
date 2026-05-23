@@ -18,14 +18,17 @@
         "Poison"
     ],
     "variants": [
-        "Alchemical Hydra",
-        "Colossal Hydra"
+        "Hydra --lvl 194",
+        "Colossal Hydra --lvl 309"
     ],
     "masters": [
         "Konar quo Maten"
     ],
     "variantLocations": {
-        "Hydra": [
+        "Hydra --lvl 194": [
+            "Karuulm Slayer Dungeon"
+        ],
+        "Colossal Hydra --lvl 309": [
             "Karuulm Slayer Dungeon"
         ]
     }

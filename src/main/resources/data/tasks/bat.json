@@ -14,21 +14,23 @@
         "Melee"
     ],
     "variants": [
-        "Giant bat",
-        "Albino bat",
-        "Deathwing"
-    ],
+        "Bat --lvl 6",
+        "Giant bat --lvl 27",
+        "Albino bat --lvl 52"    ],
     "masters": [
         "Turael",
-        "Mazchna"
+        "Mazchna",
+        "Spria"
     ],
     "variantLocations": {
-        "Bat": [
-            "Paterdomus",
-            "Morytania",
-            "Coal Trucks",
-            "Slayer Tower",
+        "Bat --lvl 6": [
+            "Slayer Tower"
+        ],
+        "Giant bat --lvl 27": [
             "Taverley Dungeon"
+        ],
+        "Albino bat --lvl 52": [
+            "Mos Le'Harmless Cave"
         ]
     }
 }

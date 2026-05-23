@@ -15,13 +15,13 @@
         "Magic"
     ],
     "variants": [
-        
+        "Catablepon --lvl 49 --lvl 68"
     ],
     "masters": [
         "Mazchna"
     ],
     "variantLocations": {
-        "Catablepon": [
+        "Catablepon --lvl 49 --lvl 68": [
             "Stronghold of Security"
         ]
     }

@@ -14,7 +14,7 @@
         "Melee"
     ],
     "variants": [
-        "Icelord"
+        "Ice warrior --lvl 57"
     ],
     "masters": [
         "Krystilia",
@@ -22,7 +22,7 @@
         "Vannaka"
     ],
     "variantLocations": {
-        "Ice warrior": [
+        "Ice warrior --lvl 57": [
             "White Wolf Mountain",
             "Frozen Waste Plateau",
             "Asgarnian Ice Dungeon",

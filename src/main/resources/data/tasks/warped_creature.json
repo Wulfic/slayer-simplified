@@ -17,8 +17,8 @@
         "Ranged"
     ],
     "variants": [
-        "Mutated Terrorbird",
-        "Mutated Tortoise"
+        "Mutated Terrorbird --lvl 96 --lvl 178",
+        "Mutated Tortoise --lvl 121 --lvl 247"
     ],
     "masters": [
         "Chaeldar",
@@ -27,7 +27,10 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Warped creature": [
+        "Mutated Terrorbird --lvl 96 --lvl 178": [
+            "Poison Waste Dungeon"
+        ],
+        "Mutated Tortoise --lvl 121 --lvl 247": [
             "Poison Waste Dungeon"
         ]
     }

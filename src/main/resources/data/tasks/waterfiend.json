@@ -15,16 +15,17 @@
         "Magical ranged"
     ],
     "variants": [
-        
+        "Waterfiend --lvl 115"
     ],
     "masters": [
         "Konar quo Maten",
         "Duradel"
     ],
     "variantLocations": {
-        "Waterfiend": [
+        "Waterfiend --lvl 115": [
             "Ancient Cavern",
-            "Kraken Cove"
+            "Kraken Cove",
+            "Iorwerth Dungeon"
         ]
     }
 }

@@ -8,6 +8,8 @@
     ],
     "itemsSuggested": [
         "Super Anti-fire potion (4)",
+        "Dragonfire shield",
+        "Anti-dragon shield",
         "Herb sack"
     ],
     "attributes": [
@@ -17,7 +19,8 @@
         "Melee"
     ],
     "variants": [
-        
+        "Drake --lvl 90",
+        "Guardian Drake --lvl 376"
     ],
     "masters": [
         "Konar quo Maten",
@@ -25,7 +28,10 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Drake": [
+        "Drake --lvl 90": [
+            "Karuulm Slayer Dungeon"
+        ],
+        "Guardian Drake --lvl 376": [
             "Karuulm Slayer Dungeon"
         ]
     }

@@ -5,7 +5,7 @@
         
     ],
     "itemsSuggested": [
-        
+        "Salve amulet"
     ],
     "attributes": [
         "Undead"
@@ -16,23 +16,57 @@
         "Magic"
     ],
     "variants": [
-        "Revenant imp",
-        "Revenant goblin",
-        "Revenant pyrefiend",
-        "Revenant hobgoblin",
-        "Revenant cyclops",
-        "Revenant hellhound",
-        "Revenant demon",
-        "Revenant ork",
-        "Revenant dark beast",
-        "Revenant knight",
-        "Revenant dragon"
+        "Revenant imp --lvl 7",
+        "Revenant goblin --lvl 15",
+        "Revenant pyrefiend --lvl 52",
+        "Revenant hobgoblin --lvl 60",
+        "Revenant cyclops --lvl 82",
+        "Revenant hellhound --lvl 90",
+        "Revenant demon --lvl 98",
+        "Revenant ork --lvl 105",
+        "Revenant dark beast --lvl 120",
+        "Revenant knight --lvl 126",
+        "Revenant dragon --lvl 135",
+        "Revenant maledictus --lvl 397"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Revenant": [
+        "Revenant imp --lvl 7": [
+            "Revenant Caves"
+        ],
+        "Revenant goblin --lvl 15": [
+            "Revenant Caves"
+        ],
+        "Revenant pyrefiend --lvl 52": [
+            "Revenant Caves"
+        ],
+        "Revenant hobgoblin --lvl 60": [
+            "Revenant Caves"
+        ],
+        "Revenant cyclops --lvl 82": [
+            "Revenant Caves"
+        ],
+        "Revenant hellhound --lvl 90": [
+            "Revenant Caves"
+        ],
+        "Revenant demon --lvl 98": [
+            "Revenant Caves"
+        ],
+        "Revenant ork --lvl 105": [
+            "Revenant Caves"
+        ],
+        "Revenant dark beast --lvl 120": [
+            "Revenant Caves"
+        ],
+        "Revenant knight --lvl 126": [
+            "Revenant Caves"
+        ],
+        "Revenant dragon --lvl 135": [
+            "Revenant Caves"
+        ],
+        "Revenant maledictus --lvl 397": [
             "Revenant Caves"
         ]
     }

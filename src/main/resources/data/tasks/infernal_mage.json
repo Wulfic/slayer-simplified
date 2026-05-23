@@ -15,15 +15,14 @@
         "Magic"
     ],
     "variants": [
-        
+        "Infernal Mage --lvl 66"
     ],
     "masters": [
-        "Vannaka",
-        "Chaeldar"
+        "Vannaka"
     ],
     "variantLocations": {
-        "Infernal Mage": [
-            "Slayer tower"
+        "Infernal Mage --lvl 66": [
+            "Slayer tower - Floor 2"
         ]
     }
 }

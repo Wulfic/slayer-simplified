@@ -14,14 +14,18 @@
         "Magic"
     ],
     "variants": [
-        
+        "Aquanite --lvl 145",
+        "Elder aquanite --lvl 305"
     ],
     "masters": [
         "Nieve",
         "Duradel"
     ],
     "variantLocations": {
-        "Aquanite": [
+        "Aquanite --lvl 145": [
+            "Ynysdail Cavern"
+        ],
+        "Elder aquanite --lvl 305": [
             "Ynysdail Cavern"
         ]
     }

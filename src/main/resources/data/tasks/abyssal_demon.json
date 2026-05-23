@@ -14,18 +14,32 @@
         "Melee"
     ],
     "variants": [
-        "Abyssal Sire",
-        "Greater abyssal demon"
+        "Abyssal demon --lvl 124",
+        "Abyssal Sire --lvl 350",
+        "Greater abyssal demon --lvl 342"
     ],
     "masters": [
         "Vannaka",
         "Konar quo Maten",
         "Nieve",
-        "Duradel"
+        "Duradel",
+        "Krystilia",
+        "Chaeldar"
     ],
     "variantLocations": {
-        "Abyssal demon": [
-            "Slayer Tower",
+        "Abyssal demon --lvl 124": [
+            "Slayer Tower - Floor 3",
+            "Slayer Tower - Floor -1",
+            "Abyssal Area",
+            "Catacombs of Kourend",
+            "Wilderness Slayer Cave"
+        ],
+        "Abyssal Sire --lvl 350": [
+            "Abyssal Nexus"
+        ],
+        "Greater abyssal demon --lvl 342": [
+            "Slayer Tower - Floor 3",
+            "Slayer Tower - Floor -1",
             "Abyssal Area",
             "Catacombs of Kourend"
         ]

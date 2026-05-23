@@ -3,11 +3,10 @@
     "levelRequired": 1,
     "itemsRequired": [
         "Anti-dragon shield",
-        "Dragonfire shield",
-        "Antifire potion(4)"
+        "Dragonfire shield"
     ],
     "itemsSuggested": [
-        
+        "Super antifire potion(4)"
     ],
     "attributes": [
         "Draconic",
@@ -18,8 +17,8 @@
         "Dragonfire"
     ],
     "variants": [
-        
-    ],
+        "Steel dragon --lvl 246 --lvl 274"
+        ],
     "masters": [
         "Chaeldar",
         "Konar quo Maten",
@@ -27,7 +26,7 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Steel dragon": [
+        "Steel dragon --lvl 246 --lvl 274": [
             "Brimhaven Dungeon",
             "Catacombs of Kourend"
         ]

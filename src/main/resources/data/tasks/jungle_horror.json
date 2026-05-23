@@ -14,14 +14,14 @@
         "Melee"
     ],
     "variants": [
-        
+        "Jungle horror --lvl 70"
     ],
     "masters": [
         "Vannaka",
         "Chaeldar"
     ],
     "variantLocations": {
-        "Jungle horror": [
+        "Jungle horror --lvl 70": [
             "Mos Le'Harmless"
         ]
     }

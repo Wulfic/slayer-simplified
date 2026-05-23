@@ -16,17 +16,22 @@
         "Ranged"
     ],
     "variants": [
-        "Locust rider",
-        "Scarab mage",
-        "Scarab swarm"
+        "Scarab mage --lvl 93",
+        "Locust rider --lvl 98",
+        "Scarab swarm --lvl 98"
     ],
     "masters": [
         "Nieve"
     ],
     "variantLocations": {
-        "Scabarite": [
-            "Dungeon under Sophanem",
-            "Dungeon east of the Agility Pyramid"
+        "Scarab mage --lvl 93": [
+            "Sophanem Dungeon"
+        ],
+        "Locust rider --lvl 98": [
+            "Sophanem Dungeon"
+        ],
+        "Scarab swarm --lvl 98": [
+            "Sophanem Dungeon"
         ]
     }
 }

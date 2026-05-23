@@ -14,10 +14,8 @@
         "Melee"
     ],
     "variants": [
-        "Cerberus",
-        "Skeleton Hellhound",
-        "Greater Skeleton Hellhound"
-    ],
+        "Hellhound --lvl 122 --lvl 136"
+        ],
     "masters": [
         "Krystilia",
         "Vannaka",
@@ -27,16 +25,15 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Hellhound": [
+        "Hellhound --lvl 122 --lvl 136": [
             "Taverley Dungeon",
             "Karuulm Slayer Dungeon",
             "Witchaven Dungeon",
             "God Wars Dungeon",
             "Wilderness Slayer Cave",
-            "Stronghold Slayer Cave",
+            "Stronghold Slayer Dungeon",
             "Catacombs of Kourend",
-            "Buccaneer's Laboratory",
-            "Charred Dungeon"
-        ]
+            "Buccaneer's Laboratory"
+            ]
     }
 }

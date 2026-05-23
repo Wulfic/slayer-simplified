@@ -14,18 +14,33 @@
         "Melee"
     ],
     "variants": [
-        
+        "Nechryael --lvl 115",
+        "Greater Nechryael --lvl 200",
+        "Nechryarch --lvl 300"
     ],
     "masters": [
         "Vannaka",
         "Konar quo Maten",
         "Nieve",
-        "Duradel"
+        "Duradel",
+        "Krystilia",
+        "Chaeldar"
     ],
     "variantLocations": {
-        "Nechryael": [
+        "Nechryael --lvl 115": [
             "Slayer Tower",
-            "Catacombs of Kourend"
+            "Charred dungeon"
+        ],
+        "Greater Nechryael --lvl 200": [
+            "Catacombs of Kourend",
+            "Iorwerth Dungeon",
+            "Wildnerness Slayer Cave"
+        ],
+        "Nechryarch --lvl 300": [
+            "Slayer Tower",
+            "Catacombs of Kourend",
+            "Iorwerth Dungeon",
+            "Wildnerness Slayer Cave"
         ]
     }
 }

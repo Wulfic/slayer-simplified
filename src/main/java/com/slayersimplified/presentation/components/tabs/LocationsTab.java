@@ -268,17 +268,29 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
         header.setAlignmentX(Component.LEFT_ALIGNMENT);
         header.setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
 
+        String[] parsed = parseVariantName(variant.name);
+        String displayName = parsed[0];
+        String levelStr = parsed[1];
+
         JLabel arrowLabel = new JLabel(startExpanded ? "\u25BC" : "\u25BA");
         arrowLabel.setFont(FontManager.getRunescapeSmallFont());
         arrowLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
 
-        JLabel nameLabel = new JLabel(variant.name);
+        JLabel nameLabel = new JLabel(displayName);
         nameLabel.setFont(FontManager.getRunescapeSmallFont().deriveFont(
                 Font.BOLD, FontManager.getRunescapeSmallFont().getSize2D() + 1f));
         nameLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
 
         header.add(arrowLabel, BorderLayout.WEST);
         header.add(nameLabel, BorderLayout.CENTER);
+
+        if (levelStr != null)
+        {
+            JLabel levelLabel = new JLabel("lvl " + levelStr);
+            levelLabel.setFont(FontManager.getRunescapeSmallFont());
+            levelLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+            header.add(levelLabel, BorderLayout.EAST);
+        }
 
         // â”€â”€ Locations list â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         JPanel locPanel = new JPanel();
@@ -596,6 +608,42 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
     private static String capitalize(String s)
     {
         return s == null || s.isEmpty() ? s : Character.toUpperCase(s.charAt(0)) + s.substring(1);
+    }
+
+    /**
+     * Splits a variant name on the {@code --lvl} flag.
+     * Returns a two-element array: {@code [displayName, levelString]}.
+     * {@code levelString} is {@code null} when no flag is present.
+     * Example: {@code "Aberrant spectre --lvl 96"} → {@code ["Aberrant spectre", "96"]}
+     */
+    private static String[] parseVariantName(String raw)
+    {
+        if (raw == null) return new String[]{raw, null};
+        int idx = raw.indexOf("--lvl ");
+        if (idx < 0) return new String[]{raw.trim(), null};
+
+        String baseName = raw.substring(0, idx).trim();
+
+        // Collect all --lvl values to support ranges (e.g. "--lvl 96 --lvl 146" → "96-146")
+        List<String> levels = new ArrayList<>();
+        String flags = raw.substring(idx);
+        int cur = 0;
+        while (true)
+        {
+            int flagStart = flags.indexOf("--lvl ", cur);
+            if (flagStart < 0) break;
+            int valueStart = flagStart + 6;
+            int nextFlag = flags.indexOf("--lvl ", valueStart);
+            String value = (nextFlag >= 0
+                    ? flags.substring(valueStart, nextFlag)
+                    : flags.substring(valueStart)).trim();
+            if (!value.isEmpty()) levels.add(value);
+            cur = valueStart;
+        }
+
+        if (levels.isEmpty()) return new String[]{baseName, null};
+        String levelStr = levels.size() >= 2 ? levels.get(0) + "-" + levels.get(1) : levels.get(0);
+        return new String[]{baseName, levelStr};
     }
 
     private void clearRows()

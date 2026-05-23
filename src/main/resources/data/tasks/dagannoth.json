@@ -14,13 +14,13 @@
         "Ranged or Melee"
     ],
     "variants": [
-        "Dagannoth fledgeling",
-        "Dagannoth spawn",
-        "Dagannoth Prime",
-        "Dagannoth Rex",
-        "Dagannoth Supreme",
-        "Reanimated Dagannoth",
-        "Daaggannoth mother"
+        "Dagannoth --lvl 74 --lvl 92",
+        "Dagannoth --lvl 88 --lvl 90",
+        "Dagannoth fledgeling --lvl 70",
+        "Dagannoth spawn --lvl 42",
+        "Dagannoth Prime --lvl 303",
+        "Dagannoth Rex --lvl 303",
+        "Dagannoth Supreme --lvl 303"
     ],
     "masters": [
         "Vannaka",
@@ -30,11 +30,28 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Dagannoth": [
+        "Dagannoth --lvl 74 --lvl 92": [
             "Lighthouse",
-            "Waterbirth Island Dungeon",
             "Catacombs of Kourend",
             "Jormungand's Prison"
+        ],
+        "Dagannoth --lvl 88 --lvl 90": [
+            "Waterbirth Island Dungeon"
+        ],
+        "Dagannoth fledgeling --lvl 70": [
+            "Waterbirth Island Dungeon"
+        ],
+        "Dagannoth spawn --lvl 42": [
+            "Waterbirth Island Dungeon"
+        ],
+        "Dagannoth Prime --lvl 303": [
+            "Waterbirth Island Dungeon"
+        ],
+        "Dagannoth Rex --lvl 303": [
+            "Waterbirth Island Dungeon"
+        ],
+        "Dagannoth Supreme --lvl 303": [
+            "Waterbirth Island Dungeon"
         ]
     }
 }

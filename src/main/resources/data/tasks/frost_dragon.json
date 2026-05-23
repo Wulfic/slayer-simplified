@@ -3,8 +3,7 @@
     "levelRequired": 1,
     "itemsRequired": [
         "Anti-dragon shield",
-        "Dragonfire shield",
-        "Antifire potion(4)"
+        "Dragonfire shield"
     ],
     "itemsSuggested": [
         "Super antifire potion(4)"
@@ -18,14 +17,14 @@
         "Icy Dragonfire"
     ],
     "variants": [
-        
+        "Frost dragon --lvl 202"
     ],
     "masters": [
         "Nieve",
         "Duradel"
     ],
     "variantLocations": {
-        "Frost dragon": [
+        "Frost dragon --lvl 202": [
             "Grimstone Dungeon"
         ]
     }

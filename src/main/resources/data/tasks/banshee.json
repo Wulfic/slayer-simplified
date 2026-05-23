@@ -3,10 +3,9 @@
     "levelRequired": 15,
     "itemsRequired": [
         "Earmuffs",
-        "Slayer helmet"
+        "Slayer helmet/Salve Amulet"
     ],
     "itemsSuggested": [
-        "Salve amulet"
     ],
     "attributes": [
         "Undead"
@@ -15,19 +14,27 @@
         "Magical melee"
     ],
     "variants": [
-        "Twisted Banshee",
-        "Screaming Banshee",
-        "Screaming twisted Banshee"
+        "Banshee --lvl 23",
+        "Twisted Banshee --lvl 89",
+        "Screaming Banshee --lvl 70",
+        "Screaming twisted Banshee --lvl 144"
     ],
     "masters": [
         "Turael",
         "Mazchna",
-        "Vannaka",
-        "Chaeldar"
+        "Spira"
     ],
     "variantLocations": {
-        "Banshee": [
-            "Slayer Tower",
+        "Banshee --lvl 23": [
+            "Slayer Tower -- Floor 1"
+        ],
+        "Twisted Banshee --lvl 89": [
+            "Catacombs of Kourend"
+        ],
+        "Screaming Banshee --lvl 70": [
+            "Slayer Tower -- Floor 2"
+        ],
+        "Screaming twisted Banshee --lvl 144": [
             "Catacombs of Kourend"
         ]
     }

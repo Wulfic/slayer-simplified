@@ -17,7 +17,7 @@
         "Poison"
     ],
     "variants": [
-        
+        "Cave slime --lvl 23"
     ],
     "masters": [
         "Turael",
@@ -25,7 +25,7 @@
         "Spiria"
     ],
     "variantLocations": {
-        "Cave slime": [
+        "Cave slime --lvl 23": [
             "Lumbridge Swamp Caves",
             "Dorgesh-Kaan South Dungeon"
         ]

@@ -14,8 +14,9 @@
         "Melee"
     ],
     "variants": [
-        "Shellbane Gryphon",
-        "Dire Gryphon"
+        "Gryphon --lvl 95",
+        "Shellbane Gryphon --lvl 235",
+        "Dire Gryphon --lvl 209"
     ],
     "masters": [
         "Vannaka",
@@ -24,7 +25,13 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Gryphon": [
+        "Gryphon --lvl 95": [
+            "The Great Conch"
+        ],
+        "Shellbane Gryphon --lvl 235": [
+            "The Great Conch"
+        ],
+        "Dire Gryphon --lvl 209": [
             "The Great Conch"
         ]
     }

@@ -15,17 +15,19 @@
         "Melee"
     ],
     "variants": [
-        
+        "Rockslug --lvl 29"
     ],
     "masters": [
         "Mazchna",
         "Vannaka"
     ],
     "variantLocations": {
-        "Rockslug": [
+        "Rockslug --lvl 29": [
             "Fremennik Slayer Dungeon",
             "Lumbridge Swamp Caves",
-            "Dorgesh-Kaan South Dungeon"
+            "Dorgesh-Kaan South Dungeon",
+            "Tonali Cavern",
+            "Ynysdail Cavern"
         ]
     }
 }

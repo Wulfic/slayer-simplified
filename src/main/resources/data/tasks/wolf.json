@@ -14,21 +14,49 @@
         "Melee"
     ],
     "variants": [
-        "Big Wolf",
-        "Dire wolf",
-        "Jungle wolf",
-        "Desert Wolf",
-        "Ice Wolf"
+        "Wolf --lvl 11 --lvl 64",
+        "Big Wolf --lvl 73",
+        "Dire wolf --lvl 88",
+        "Jungle wolf --lvl 64",
+        "Desert Wolf --lvl 27",
+        "Ice Wolf --lvl 96 --lvl 132",
+        "White wolf --lvl 25 --lvl 38"
     ],
     "masters": [
         "Turael",
-        "Mazchna"
+        "Mazchna",
+        "Spria"
     ],
     "variantLocations": {
-        "Wolf": [
+        "Wolf --lvl 11 --lvl 64": [
             "Stronghold of Security",
             "White Wolf Mountain",
-            "Feldip Hills"
+            "Feldip Hills",
+            "Ardougne Zoo"
+        ],
+        "Big Wolf --lvl 73": [
+            "Feldip Hills",
+            "White Wolf Mountain"
+        ],
+        "Dire wolf --lvl 88": [
+            "Arandar",
+            "Isafdar mine",
+            "Mynydd"
+        ],
+        "Jungle wolf --lvl 64": [
+            "Kharazi Jungle"
+        ],
+        "Desert Wolf --lvl 27": [
+            "Kharidian Desert"
+        ],
+        "Ice Wolf --lvl 96 --lvl 132": [
+            "Ice Path",
+            "Settlement Ruins",
+            "Trollweiss Mountain"
+        ],
+        "White wolf --lvl 25 --lvl 38": [
+            "White Wolf Mountain",
+            "The Proudspire"
         ]
     }
 }

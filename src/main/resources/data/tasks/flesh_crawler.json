@@ -14,13 +14,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Flesh Crawler --lvl 28 --lvl 41"
     ],
     "masters": [
         "Mazchna"
     ],
     "variantLocations": {
-        "Flesh Crawler": [
+        "Flesh Crawler --lvl 28 --lvl 41": [
             "Stronghold of Security (level 2)"
         ]
     }

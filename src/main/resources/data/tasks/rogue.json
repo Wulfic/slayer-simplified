@@ -14,13 +14,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Rogue --lvl 15 --lvl 135"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Rogue": [
+        "Rogue --lvl 15 --lvl 135": [
             "Rogues' Castle",
             "Southwest of Mage Arena"
         ]

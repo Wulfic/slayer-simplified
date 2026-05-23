@@ -14,23 +14,24 @@
         "Melee"
     ],
     "variants": [
-        "Zakl'n Gritch"
-    ],
+        "Lesser demon --lvl 82 --lvl 94"
+        ],
     "masters": [
         "Krystilia",
         "Vannaka",
         "Chaeldar"
     ],
     "variantLocations": {
-        "Lesser demon": [
+        "Lesser demon --lvl 82 --lvl 94": [
             "Wizards' Tower",
             "Karamja Dungeon",
             "Crandor",
-            "Melzar's Maze",
-            "Demonic Ruins",
             "Lava Maze",
             "Catacombs of Kourend",
-            "Wilderness Slayer Cave"
+            "Wilderness Slayer Cave",
+            "Taverley Dungeon",
+            "Temple of Ikov",
+            "Isle of Souls Dungeon"
         ]
     }
 }

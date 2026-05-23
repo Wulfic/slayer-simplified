@@ -15,7 +15,8 @@
         "Melee"
     ],
     "variants": [
-        "Dark Ankou"
+        "Ankou --lvl 75",
+        "Dark Ankou --lvl 95"
     ],
     "masters": [
         "Krystilia",
@@ -25,12 +26,17 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Ankou": [
+        "Ankou --lvl 75": [
             "Stronghold of Security",
-            "Wilderness volcano",
+            "Wilderness Slayer Cave",
             "Stronghold Slayer Cave",
             "Catacombs of Kourend",
-            "Forgotten Cemetery"
+            "Forgotten Cemetery",
+            "Sepulchre of Death",
+            "Deepfin Mine"
+        ],
+        "Dark Ankou --lvl 95": [
+            "Catacombs of Kourend - Skotizo Boss Room"
         ]
     }
 }

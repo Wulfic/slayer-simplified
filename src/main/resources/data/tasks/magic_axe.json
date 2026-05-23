@@ -2,7 +2,8 @@
     "name": "Magic axe",
     "levelRequired": 1,
     "itemsRequired": [
-        "Lockpick"
+        "Lockpick",
+        "Hair Clip"
     ],
     "itemsSuggested": [
         
@@ -14,13 +15,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Magic axe --lvl 42"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Magic axe": [
+        "Magic axe --lvl 42": [
             "Magic Axe Hut"
         ]
     }

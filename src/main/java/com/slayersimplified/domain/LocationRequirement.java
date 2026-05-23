@@ -24,20 +24,29 @@ import java.util.Set;
  */
 public final class LocationRequirement
 {
-    /** Quests that must be {@code FINISHED} for the location to be accessible. */
+    /** Quests that must ALL be {@code FINISHED} for the location to be accessible (AND). */
     private final List<Quest> quests;
+    /** At least ONE of these quests must be {@code FINISHED} (OR). Empty means no OR requirement. */
+    private final List<Quest> questsAny;
     /** Minimum real (un-boosted) skill levels keyed by skill. */
     private final Map<Skill, Integer> skills;
 
-    private LocationRequirement(List<Quest> quests, Map<Skill, Integer> skills)
+    private LocationRequirement(List<Quest> quests, List<Quest> questsAny, Map<Skill, Integer> skills)
     {
         this.quests = Collections.unmodifiableList(new ArrayList<>(quests));
+        this.questsAny = Collections.unmodifiableList(new ArrayList<>(questsAny));
         this.skills = Collections.unmodifiableMap(new LinkedHashMap<>(skills));
     }
 
     public List<Quest> getQuests()
     {
         return quests;
+    }
+
+    /** Returns the OR-group quests; at least one must be finished when non-empty. */
+    public List<Quest> getQuestsAny()
+    {
+        return questsAny;
     }
 
     public Map<Skill, Integer> getSkills()
@@ -54,6 +63,22 @@ public final class LocationRequirement
         for (Quest q : quests)
         {
             if (!completedQuests.contains(q))
+            {
+                return false;
+            }
+        }
+        if (!questsAny.isEmpty())
+        {
+            boolean anyDone = false;
+            for (Quest q : questsAny)
+            {
+                if (completedQuests.contains(q))
+                {
+                    anyDone = true;
+                    break;
+                }
+            }
+            if (!anyDone)
             {
                 return false;
             }
@@ -86,6 +111,34 @@ public final class LocationRequirement
                 sb.append(q.getName());
             }
         }
+        if (!questsAny.isEmpty())
+        {
+            boolean anyDone = false;
+            for (Quest q : questsAny)
+            {
+                if (completedQuests.contains(q))
+                {
+                    anyDone = true;
+                    break;
+                }
+            }
+            if (!anyDone)
+            {
+                if (sb.length() > 0)
+                {
+                    sb.append(", ");
+                }
+                sb.append("one of: ");
+                for (int i = 0; i < questsAny.size(); i++)
+                {
+                    if (i > 0)
+                    {
+                        sb.append(" or ");
+                    }
+                    sb.append(questsAny.get(i).getName());
+                }
+            }
+        }
         for (Map.Entry<Skill, Integer> e : skills.entrySet())
         {
             Integer have = skillLevels.get(e.getKey());
@@ -114,6 +167,21 @@ public final class LocationRequirement
                 sb.append(", ");
             }
             sb.append(q.getName());
+        }
+        if (!questsAny.isEmpty())
+        {
+            if (sb.length() > 0)
+            {
+                sb.append(", ");
+            }
+            for (int i = 0; i < questsAny.size(); i++)
+            {
+                if (i > 0)
+                {
+                    sb.append(" or ");
+                }
+                sb.append(questsAny.get(i).getName());
+            }
         }
         for (Map.Entry<Skill, Integer> e : skills.entrySet())
         {
@@ -144,11 +212,19 @@ public final class LocationRequirement
     public static final class Builder
     {
         private final List<Quest> quests = new ArrayList<>();
+        private final List<Quest> questsAny = new ArrayList<>();
         private final Map<Skill, Integer> skills = new LinkedHashMap<>();
 
         public Builder quest(Quest q)
         {
             quests.add(q);
+            return this;
+        }
+
+        /** Adds a quest to the OR-group; at least one quest in the group must be finished. */
+        public Builder questAny(Quest q)
+        {
+            questsAny.add(q);
             return this;
         }
 
@@ -160,7 +236,7 @@ public final class LocationRequirement
 
         public LocationRequirement build()
         {
-            return new LocationRequirement(quests, skills);
+            return new LocationRequirement(quests, questsAny, skills);
         }
     }
 }

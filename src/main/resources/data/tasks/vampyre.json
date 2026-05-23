@@ -2,13 +2,13 @@
     "name": "Vampyre",
     "levelRequired": 1,
     "itemsRequired": [
+        
+    ],
+    "itemsSuggested": [
         "Silver weaponry",
         "Efaritay's aid",
         "Ivandis flail",
         "Blisterwood flail"
-    ],
-    "itemsSuggested": [
-        
     ],
     "attributes": [
         "Vampyre"
@@ -17,22 +17,39 @@
         "Melee"
     ],
     "variants": [
-        "Feral Vampyre",
-        "Vampyre Juvinate",
-        "Vampyre Juvenile",
-        "Vyrewatch",
-        "Vyrewatch Sentinel"
+        "Feral Vampyre --lvl 61 --lvl 130",
+        "Vampyre Juvinate --lvl 50 --lvl 119",
+        "Vampyre Juvenile --lvl 45",
+        "Vyrewatch --lvl 87 --lvl 125",
+        "Vyrewatch Sentinel --lvl 151"
     ],
     "masters": [
         "Mazchna",
         "Vannaka"
     ],
     "variantLocations": {
-        "Vampyre": [
+        "Feral Vampyre --lvl 61 --lvl 130": [
             "God Wars Dungeon",
             "Wilderness God Wars Dungeon",
-            "Haunted Woods",
-            "Near Abandoned Mine"
+            "Haunted Woods"
+        ],
+        "Vampyre Juvinate --lvl 50 --lvl 119": [
+            "Darkmeyer",
+            "Meiyerditch Mine",
+            "Ver Sinhaza"
+        ],
+        "Vampyre Juvenile --lvl 45": [
+            "Darkmeyer",
+            "Meiyerditch Mine",
+            "Crombwick Manor"
+        ],
+        "Vyrewatch --lvl 87 --lvl 125": [
+            "Darkmeyer",
+            "Meiyerditch",
+            "Slepe"
+        ],
+        "Vyrewatch Sentinel --lvl 151": [
+            "Darkmeyer"
         ]
     }
 }

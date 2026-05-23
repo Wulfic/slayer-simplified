@@ -14,13 +14,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Earth Warrior --lvl 51"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Earth Warrior": [
+        "Earth Warrior --lvl 51": [
             "Edgeville Dungeon"
         ]
     }

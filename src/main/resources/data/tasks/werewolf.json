@@ -14,13 +14,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Werewolf --lvl 88"
     ],
     "masters": [
         "Vannaka"
     ],
     "variantLocations": {
-        "Werewolf": [
+        "Werewolf --lvl 88": [
             "Canifis",
             "God Wars Dungeon",
             "Wilderness God Wars Dungeon"

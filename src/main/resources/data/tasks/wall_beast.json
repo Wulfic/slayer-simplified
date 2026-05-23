@@ -6,7 +6,7 @@
         "Slayer helmet"
     ],
     "itemsSuggested": [
-        
+        "A Light source"
     ],
     "attributes": [
         "None"
@@ -15,15 +15,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Wall beast --lvl 49"
     ],
     "masters": [
-        "Mazchna",
-        "Vannaka",
-        "Chaeldar"
+        "Mazchna"
     ],
     "variantLocations": {
-        "Wall beast": [
+        "Wall beast --lvl 49": [
             "Lumbridge Swamp Caves"
         ]
     }

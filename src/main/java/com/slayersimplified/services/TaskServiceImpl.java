@@ -21,6 +21,7 @@ import javax.inject.Singleton;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
@@ -66,7 +67,7 @@ public class TaskServiceImpl implements TaskService
         }
 
         List<IndexEntry> entries;
-        try (Reader reader = new InputStreamReader(indexStream))
+        try (Reader reader = new InputStreamReader(indexStream, StandardCharsets.UTF_8))
         {
             Type type = new TypeToken<List<IndexEntry>>() {}.getType();
             entries = gson.fromJson(reader, type);
@@ -104,7 +105,7 @@ public class TaskServiceImpl implements TaskService
             return;
         }
 
-        try (Reader reader = new InputStreamReader(taskStream))
+        try (Reader reader = new InputStreamReader(taskStream, StandardCharsets.UTF_8))
         {
             Task value = gson.fromJson(reader, Task.class);
             if (value == null)
@@ -171,14 +172,17 @@ public class TaskServiceImpl implements TaskService
     {
         List<WikiLink> links = new ArrayList<>();
 
-        links.add(createWikiLink(task.name));
-
-        if (task.variants != null)
+        if (task.variants != null && task.variants.length > 0)
         {
+            // Variants own the full list; strip any --lvl flag for display/URL.
             for (String variant : task.variants)
             {
                 links.add(createWikiLink(variant));
             }
+        }
+        else
+        {
+            links.add(createWikiLink(task.name));
         }
 
         return links.toArray(new WikiLink[0]);
@@ -186,9 +190,11 @@ public class TaskServiceImpl implements TaskService
 
     private WikiLink createWikiLink(String name)
     {
-        String url = baseWikiUrl + name.replace(' ', '_');
-
-        return new WikiLink(name, url);
+        // Strip --lvl flag if present (e.g. "Aberrant spectre --lvl 96" → "Aberrant spectre")
+        int flagIdx = name.indexOf("--lvl ");
+        String displayName = flagIdx >= 0 ? name.substring(0, flagIdx).trim() : name;
+        String url = baseWikiUrl + displayName.replace(' ', '_');
+        return new WikiLink(displayName, url);
     }
 
     private BufferedImage getImage(String name)

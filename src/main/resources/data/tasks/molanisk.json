@@ -5,7 +5,7 @@
         "Slayer bell"
     ],
     "itemsSuggested": [
-        
+        "A Light source"
     ],
     "attributes": [
         "None"
@@ -14,13 +14,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Molanisk --lvl 51"
     ],
     "masters": [
         "Vannaka"
     ],
     "variantLocations": {
-        "Molanisk": [
+        "Molanisk --lvl 51": [
             "Dorgesh-Kaan South Dungeon"
         ]
     }

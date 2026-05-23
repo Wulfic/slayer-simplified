@@ -134,12 +134,9 @@ public class TaskTabs extends JTabbedPane
         // First entry is always the base monster (task.name); subsequent entries are its named variants.
         List<LocationsTab.LocationsData.VariantEntry> variantEntries = new ArrayList<>();
 
-        String[] baseLocs = (task.variantLocations != null) ? task.variantLocations.get(task.name) : null;
-        variantEntries.add(new LocationsTab.LocationsData.VariantEntry(
-                task.name, baseLocs != null ? baseLocs : new String[0]));
-
-        if (task.variants != null)
+        if (task.variants != null && task.variants.length > 0)
         {
+            // Variants own the full list — each may carry a "--lvl N" flag in its name.
             for (String variantName : task.variants)
             {
                 String[] variantLocs = (task.variantLocations != null)
@@ -149,30 +146,29 @@ public class TaskTabs extends JTabbedPane
                         variantName, variantLocs != null ? variantLocs : new String[0]));
             }
         }
+        else
+        {
+            // No variants: single entry using the task name.
+            String[] baseLocs = (task.variantLocations != null) ? task.variantLocations.get(task.name) : null;
+            variantEntries.add(new LocationsTab.LocationsData.VariantEntry(
+                    task.name, baseLocs != null ? baseLocs : new String[0]));
+        }
         updateTab(TabKey.LOCATIONS, new LocationsTab.LocationsData(task.name, variantEntries));
 
         updateTab(TabKey.INFO, new InfoTab.InfoData(
                 task.name,
                 task.itemsRequired,
+                task.itemsSuggested,
                 new Object[][]{task.attackStyles, task.attributes},
                 task.masters));
         updateTab(TabKey.WIKI, task.wikiLinks);
         updateTab(TabKey.LOOT, task.name);
 
-        // Aggregate all locations across all variants for location-based suggested items
-        List<String> allLocs = new ArrayList<>();
-        if (task.variantLocations != null)
-        {
-            for (String[] locs : task.variantLocations.values())
-            {
-                if (locs != null) Collections.addAll(allLocs, locs);
-            }
-        }
         updateTab(TabKey.NOTES, new NotesTab.NotesData(
                 task.name,
                 task.itemsRequired,
                 task.itemsSuggested,
-                requirementService.getSuggestedItemsForLocations(allLocs.toArray(new String[0]))));
+                Collections.emptyList()));
     }
 
     private <T> void updateTab(TabKey key, T data)

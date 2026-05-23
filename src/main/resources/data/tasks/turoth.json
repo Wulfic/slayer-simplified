@@ -17,7 +17,8 @@
         "Melee"
     ],
     "variants": [
-        
+        "Turoth --lvl 83 --lvl 89",
+        "Spiked Turoth --lvl 244"
     ],
     "masters": [
         "Vannaka",
@@ -26,7 +27,10 @@
         "Nieve"
     ],
     "variantLocations": {
-        "Turoth": [
+        "Turoth --lvl 83 --lvl 89": [
+            "Fremennik Slayer Dungeon"
+        ],
+        "Spiked Turoth --lvl 244": [
             "Fremennik Slayer Dungeon"
         ]
     }

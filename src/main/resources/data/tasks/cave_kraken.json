@@ -5,7 +5,7 @@
         
     ],
     "itemsSuggested": [
-        "Fishing Explosives"
+        "Fishing Explosives --Kraken --lvl 291"
     ],
     "attributes": [
         "None"
@@ -14,7 +14,8 @@
         "Magic"
     ],
     "variants": [
-        "Kraken"
+        "Kraken --lvl 291",
+        "Cave kraken --lvl 127"
     ],
     "masters": [
         "Chaeldar",
@@ -23,7 +24,10 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Cave kraken": [
+        "Kraken --lvl 291": [
+            "Kraken Cove"
+        ],
+        "Cave kraken --lvl 127": [
             "Kraken Cove"
         ]
     }

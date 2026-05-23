@@ -14,9 +14,9 @@
         "Melee"
     ],
     "variants": [
-        "Demonic gorilla",
-        "Balfrug Kreeyath",
-        "Skotizo"
+        "Black demon --lvl 172 --lvl 188",
+        "Demonic gorilla --lvl 275",
+        "Skotizo --lvl 321"
     ],
     "masters": [
         "Krystilia",
@@ -26,15 +26,20 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Black demon": [
+        "Black demon --lvl 172 --lvl 188": [
             "Taverley Dungeon",
             "Edgeville Dungeon",
             "Brimhaven Dungeon",
             "Catacombs of Kourend",
             "Charred Dungeon",
             "Chasm of Fire",
-            "Crash Site Cavern",
             "Wilderness Slayer Cave"
+        ],
+        "Demonic gorilla --lvl 275": [
+            "Crash Site Cavern"
+        ],
+        "Skotizo --lvl 321": [
+            "Catacombs of Kourend"
         ]
     }
 }

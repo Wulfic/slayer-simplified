@@ -17,7 +17,8 @@
         "Magical ranged"
     ],
     "variants": [
-        "Ancient Zygomite"
+        "Zygomite --lvl 74 --lvl 86",
+        "Ancient Zygomite --lvl 109"
     ],
     "masters": [
         "Chaeldar",
@@ -26,9 +27,12 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Zygomite": [
-            "Fossil Island",
+        "Zygomite --lvl 74 --lvl 86": [
             "Zanaris"
+        ],
+        "Ancient Zygomite --lvl 109": [
+            "Fossil Island",
+            "Stalker Den"
         ]
     }
 }

@@ -15,8 +15,9 @@
         "Magical ranged"
     ],
     "variants": [
-        "Thermonuclear smoke devil",
-        "Nuclear smoke devil"
+        "Smoke devil --lvl 160",
+        "Thermonuclear smoke devil --lvl 301",
+        "Nuclear smoke devil --lvl 280"
     ],
     "masters": [
         "Konar quo Maten",
@@ -24,7 +25,13 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Smoke devil": [
+        "Smoke devil --lvl 160": [
+            "Smoke Devil Dungeon"
+        ],
+        "Thermonuclear smoke devil --lvl 301": [
+            "Smoke Devil Dungeon"
+        ],
+        "Nuclear smoke devil --lvl 280": [
             "Smoke Devil Dungeon"
         ]
     }

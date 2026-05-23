@@ -3,11 +3,10 @@
     "levelRequired": 1,
     "itemsRequired": [
         "Anti-dragon shield",
-        "Dragonfire shield",
-        "Antifire potion(4)"
+        "Dragonfire shield"
     ],
     "itemsSuggested": [
-        
+        "Super antifire potion(4)"
     ],
     "attributes": [
         "Draconic",
@@ -20,7 +19,7 @@
         "Dragonfire"
     ],
     "variants": [
-        
+        "Mithril dragon --lvl 304"
     ],
     "masters": [
         "Konar quo Maten",
@@ -28,7 +27,7 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Mithril dragon": [
+        "Mithril dragon --lvl 304": [
             "Ancient Cavern"
         ]
     }

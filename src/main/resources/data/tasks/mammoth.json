@@ -14,14 +14,14 @@
         "Melee"
     ],
     "variants": [
-        
+        "Mammoth --lvl 80"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Mammoth": [
-            "West of the Chaos Temple"
+        "Mammoth --lvl 80": [
+            "SouthEast of Ferox Enclave"
         ]
     }
 }

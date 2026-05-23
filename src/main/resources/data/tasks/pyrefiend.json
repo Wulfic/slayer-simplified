@@ -14,19 +14,39 @@
         "Magical melee"
     ],
     "variants": [
-        "Pyrelord"
+        "Pyrefiend --lvl 43 --lvl 48",
+        "Flaming pyrelord --lvl 97",
+        "Pyrelord --lvl 60",
+        "Infernal pyrelord --lvl 134"
     ],
     "masters": [
         "Mazchna",
         "Vannaka"
     ],
     "variantLocations": {
-        "Pyrefiend": [
+        "Pyrefiend --lvl 43 --lvl 48": [
             "Fremennik Slayer Dungeon",
             "Smoke Dungeon",
             "God Wars Dungeon",
             "Wilderness God Wars Dungeon",
-            "Iorwerth Dungeon"
+            "Isle of Souls",
+            "Sisterhood Sanctuary"
+        ],
+        "Flaming pyrelord --lvl 97": [
+            "Fremennik Slayer Dungeon",
+            "Smoke Dungeon",
+            "God Wars Dungeon",
+            "Wilderness God Wars Dungeon",
+            "Isle of Souls",
+            "Sisterhood Sanctuary"
+        ],
+        "Pyrelord --lvl 60": [
+            "Isle of Souls",
+            "Sisterhood Sanctuary"
+        ],
+        "Infernal pyrelord --lvl 134": [
+            "Isle of Souls",
+            "Sisterhood Sanctuary"
         ]
     }
 }

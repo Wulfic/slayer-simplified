@@ -14,7 +14,7 @@
         "Melee"
     ],
     "variants": [
-        
+        "Brine rat --lvl 70"
     ],
     "masters": [
         "Vannaka",
@@ -25,7 +25,7 @@
         "Spria"
     ],
     "variantLocations": {
-        "Brine rat": [
+        "Brine rat --lvl 70": [
             "Brine Rat Cavern"
         ]
     }

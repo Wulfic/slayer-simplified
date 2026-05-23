@@ -15,15 +15,23 @@
         "Melee"
     ],
     "variants": [
-        "Moonlight cockatrice",
-        "Cockathrice"
+        "Cockatrice --lvl 37",
+        "Moonlight cockatrice --lvl 49",
+        "Cockathrice --lvl 89"
     ],
     "masters": [
         "Mazchna",
         "Vannaka"
     ],
     "variantLocations": {
-        "Cockatrice": [
+        "Cockatrice --lvl 37": [
+            "Fremennik Slayer Dungeon",
+            "Earthbound Cavern"
+        ],
+        "Moonlight cockatrice --lvl 49": [
+            "Neypotzli"
+        ],
+        "Cockathrice --lvl 89": [
             "Fremennik Slayer Dungeon",
             "Earthbound Cavern"
         ]

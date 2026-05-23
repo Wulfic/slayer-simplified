@@ -17,13 +17,13 @@
         "Dragonfire"
     ],
     "variants": [
-        
+        "Lava dragon --lvl 252"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Lava dragon": [
+        "Lava dragon --lvl 252": [
             "Lava Dragon Isle"
         ]
     }

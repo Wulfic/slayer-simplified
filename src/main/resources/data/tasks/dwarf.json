@@ -14,23 +14,34 @@
         "Melee"
     ],
     "variants": [
-        "Black Guard",
-        "Chaos dwarf",
-        "Dwarf gang member",
-        "Black Guard Berserker"
+        "Black Guard --lvl 25",
+        "Chaos dwarf --lvl 49",
+        "Dwarf gang member --lvl 44 --lvl 49",
+        "Black Guard Berserker --lvl 66",
+        "Dwarf --lvl 10"
     ],
     "masters": [
         "Turael",
         "Spria"
     ],
     "variantLocations": {
-        "Dwarf": [
+        "Dwarf --lvl 10": [
             "Ice Mountain",
-            "Mining Guild",
-            "Keldagrim",
             "Dwarven Mine",
-            "Beneath White Wolf Mountain",
-            "South of Yanille"
+            "Taverley Dungeon"
+        ],
+        "Black Guard --lvl 25": [
+            "Ice Mountain",
+            "Keldagrim"
+        ],
+        "Dwarf gang member --lvl 44 --lvl 49": [
+            "Dwarven Mine"
+        ],
+        "Chaos dwarf --lvl 49": [
+            "Taverley Dungeon"
+        ],
+        "Black Guard Berserker --lvl 66": [
+            "Keldagrim"
         ]
     }
 }

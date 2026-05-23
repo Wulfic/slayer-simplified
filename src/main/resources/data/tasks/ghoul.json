@@ -14,15 +14,15 @@
         "Melee"
     ],
     "variants": [
-        "Ghoul Champion"
-    ],
+        "Ghoul --lvl 42"    ],
     "masters": [
         "Mazchna",
         "Vannaka"
     ],
     "variantLocations": {
-        "Ghoul": [
-            "West of Canifis"
+        "Ghoul --lvl 42": [
+            "West of Canifis",
+            "South of Slayer Tower"
         ]
     }
 }

@@ -14,23 +14,22 @@
         "Melee"
     ],
     "variants": [
-        
+        "Moss giant --lvl 42 --84"
     ],
     "masters": [
         "Krystilia",
         "Vannaka"
     ],
     "variantLocations": {
-        "Moss giant": [
+        "Moss giant --lvl 42 --84": [
             "Brimhaven Dungeon",
             "Crandor",
             "West of Fishing Guild",
             "Moss Giant Island",
-            "Wilderness",
             "Varrock Sewers",
             "Pirates' Cove",
-            "Glarial's Tomb",
-            "Catacombs of Kourend"
+            "Catacombs of Kourend",
+            "Iorwerth Dungeon"
         ]
     }
 }

@@ -15,13 +15,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Otherworldly being --lvl 64"
     ],
     "masters": [
         "Vannaka"
     ],
     "variantLocations": {
-        "Otherworldly being": [
+        "Otherworldly being --lvl 64": [
             "Zanaris"
         ]
     }

@@ -15,8 +15,9 @@
         "Ranged"
     ],
     "variants": [
-        "Lizardman brute",
-        "Lizardman shaman"
+        "Lizardman --lvl 53 --lvl 62",
+        "Lizardman brute --lvl 75",
+        "Lizardman shaman --lvl 150"
     ],
     "masters": [
         "Chaeldar",
@@ -25,8 +26,16 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Lizardman": [
-            "Lizardmen Settlement",
+        "Lizardman --lvl 53 --lvl 62": [
+            "Lizardman Settlement",
+            "Lizardman canyon"
+        ],
+        "Lizardman brute --lvl 75": [
+            "Lizardman Settlement",
+            "Lizardman canyon"
+        ],
+        "Lizardman shaman --lvl 150": [
+            "Lizardman Settlement",
             "Lizardman canyon"
         ]
     }

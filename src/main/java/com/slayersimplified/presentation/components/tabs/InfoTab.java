@@ -81,6 +81,17 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
 
         contentPanel.add(Box.createRigidArea(new Dimension(0, 6)));
 
+        // -- Suggested Items section (collapsible) --
+        if (data.itemsSuggested != null && data.itemsSuggested.length > 0)
+        {
+            JPanel suggestedBody = addCollapsibleSection(contentPanel, "Suggested Items");
+            for (String item : data.itemsSuggested)
+            {
+                addTextRowTo(suggestedBody, capitalize(item));
+            }
+            contentPanel.add(Box.createRigidArea(new Dimension(0, 6)));
+        }
+
         // -- Combat section (collapsible) --
         JPanel combatBody = addCollapsibleSection(contentPanel, "Combat");
         if (data.combat != null && data.combat.length == 2)
@@ -294,13 +305,18 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
     {
         JPanel row = new JPanel(new BorderLayout());
         row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 18));
         row.setBorder(new EmptyBorder(2, 16, 2, 4));
 
-        JLabel label = new JLabel(text);
+        JTextArea label = new JTextArea(text);
+        label.setLineWrap(true);
+        label.setWrapStyleWord(true);
+        label.setOpaque(false);
+        label.setEditable(false);
+        label.setFocusable(false);
         label.setFont(BODY_FONT);
         label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        row.add(label, BorderLayout.WEST);
+        label.setBorder(null);
+        row.add(label, BorderLayout.CENTER);
 
         target.add(row);
     }
@@ -369,13 +385,15 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
     {
         public final String monsterName;
         public final String[] items;
+        public final String[] itemsSuggested;
         public final Object[][] combat;
         public final String[] masters;
 
-        public InfoData(String monsterName, String[] items, Object[][] combat, String[] masters)
+        public InfoData(String monsterName, String[] items, String[] itemsSuggested, Object[][] combat, String[] masters)
         {
             this.monsterName = monsterName;
             this.items = items;
+            this.itemsSuggested = itemsSuggested;
             this.combat = combat;
             this.masters = masters;
         }

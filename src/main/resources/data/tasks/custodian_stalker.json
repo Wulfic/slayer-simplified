@@ -15,16 +15,26 @@
         "Bleed"
     ],
     "variants": [
-        "Juvenile custodian stalker",
-        "Mature custodian stalker",
-        "Elder custodian stalker"
+        "Custodian stalker --lvl 54",
+        "Juvenile custodian stalker --lvl 93",
+        "Mature custodian stalker --lvl 117",
+        "Elder custodian stalker --lvl 142"
     ],
     "masters": [
         "Chaeldar",
         "Nieve"
     ],
     "variantLocations": {
-        "Custodian stalker": [
+        "Custodian stalker --lvl 54": [
+            "Stalker Den"
+        ],
+        "Juvenile custodian stalker --lvl 93": [
+            "Stalker Den"
+        ],
+        "Mature custodian stalker --lvl 117": [
+            "Stalker Den"
+        ],
+        "Elder custodian stalker --lvl 142": [
             "Stalker Den"
         ]
     }

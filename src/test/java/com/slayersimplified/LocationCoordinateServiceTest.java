@@ -84,33 +84,4 @@ public class LocationCoordinateServiceTest
         String self = service.resolveCanonical("Zanaris");
         Assert.assertEquals("zanaris", self);
     }
-
-    @Test
-    public void testQuestNamesLoadedFromJson()
-    {
-        // Zanaris requires LOST_CITY
-        String[] quests = service.getQuestNames("Zanaris");
-        Assert.assertNotNull("Quest names array should not be null", quests);
-        Assert.assertTrue("Zanaris should require at least one quest", quests.length > 0);
-        Assert.assertEquals("LOST_CITY", quests[0]);
-    }
-
-    @Test
-    public void testSkillRequirementsLoadedFromJson()
-    {
-        // Mining Guild requires level 60 Mining
-        java.util.Map<String, Integer> skills = service.getSkillRequirements("Mining Guild");
-        Assert.assertNotNull("Skill requirements should not be null", skills);
-        Assert.assertTrue("Mining Guild should require MINING skill", skills.containsKey("MINING"));
-        Assert.assertEquals(Integer.valueOf(60), skills.get("MINING"));
-    }
-
-    @Test
-    public void testSuggestedItemsLoadedFromJson()
-    {
-        // Brimhaven Dungeon has a suggested item hint
-        String[] items = service.getSuggestedItemNames("Brimhaven Dungeon");
-        Assert.assertNotNull("Suggested items array should not be null", items);
-        Assert.assertTrue("Brimhaven Dungeon should have at least one suggested item", items.length > 0);
-    }
 }

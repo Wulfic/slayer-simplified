@@ -14,34 +14,64 @@
         "Melee"
     ],
     "variants": [
-        "Giant spider",
-        "Shadow spider",
-        "Jungle spider",
-        "Deadly red spider",
-        "Poison spider",
-        "Blessed spider",
-        "Kalrag",
-        "Crypt spider",
-        "Temple Spider",
-        "Sarachnis",
-        "Venenatis"
+        "Spider --lvl 1",
+        "Deadly red spider --lvl 34",
+        "Fever spider --lvl 49",
+        "Giant spider --lvl 2 --lvl 50",
+        "Ice spider --lvl 61",
+        "Jungle spider --lvl 44",
+        "Poison spider --lvl 64",
+        "Temple spider --lvl 75"
     ],
     "masters": [
         "Krystilia",
-        "Turael"
+        "Turael",
+        "Spria"
     ],
     "variantLocations": {
-        "Spider": [
-            "Melzar's Maze",
-            "Sorceress 's house",
-            "Lumbridge Castle basement",
-            "Behind Lumbridge Castle",
+        "Spider --lvl 1": [
+            "Gnome Maze",
+            "Hosidius",
+            "Lovakengj",
+            "Stronghold of Security"
+        ],
+        "Deadly red spider --lvl 34": [
+            "Edgeville Dungeon",
+            "Arandar",
+            "Edgeville Dungeon",
+            "Varrock Sewers"
+        ],
+        "Fever spider --lvl 49": [
+            "Braindeath Island"
+        ],
+        "Giant spider --lvl 2 --lvl 50": [
+            "Clocktower Dungeon",
+            "Corsair Cove Dungeon",
+            "Edgeville Dungeon",
             "Stronghold of Security",
-            "Ape Atoll temple",
-            "Ogre Enclave",
-            "Wilderness",
+            "West Ruins"
+        ],
+        "Ice spider --lvl 61": [
+            "Frozen Waste Plateau",
+            "Ice Queen's lair",
+            "Settlement Ruins",
+            "Temple of Ikov"
+        ],
+        "Jungle spider --lvl 44": [
+            "Brimhaven",
+            "Hazelmere Island",
             "Karamja",
-            "Underground Pass"
+            "Kharazi Jungle",
+            "Tai Bwo Wannai"
+        ],
+        "Poison spider --lvl 64": [
+            "Edgeville Dungeon",
+            "Lava Maze Dungeon",
+            "Taverley Dungeon",
+            "Yanille Agility Dungeon"
+        ],
+        "Temple spider --lvl 75": [
+            "Forthos Dungeon"
         ]
     }
 }

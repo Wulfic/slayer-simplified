@@ -14,11 +14,12 @@
         "Magical melee"
     ],
     "variants": [
-        "Warped Jelly",
-        "Virteous Jelly",
-        "Virteous Warped Jelly",
-        "Chilled Jelly",
-        "Virteous Chilled Jelly"
+        "Jelly --lvl 78",
+        "Warped Jelly --lvl 112",
+        "Virteous Jelly --lvl 206",
+        "Virteous Warped Jelly --lvl 241",
+        "Chilled Jelly --lvl 112",
+        "Virteous Chilled Jelly --lvl 241"
     ],
     "masters": [
         "Vannaka",
@@ -27,11 +28,25 @@
         "Krystilia"
     ],
     "variantLocations": {
-        "Jelly": [
+        "Jelly --lvl 78": [
             "Fremennik Slayer Dungeon",
-            "Catacombs of Kourend",
-            "Ruins of Tapoyauik",
             "Wilderness Slayer Cave"
+        ],
+        "Warped Jelly --lvl 112": [
+            "Catacombs of Kourend"
+        ],
+        "Virteous Jelly --lvl 206": [
+            "Fremennik Slayer Dungeon",
+            "Wilderness Slayer Cave"
+        ],
+        "Virteous Warped Jelly --lvl 241": [
+            "Catacombs of Kourend"
+        ],
+        "Chilled Jelly --lvl 112": [
+            "Ruins of Tapoyauik"
+        ],
+        "Virteous Chilled Jelly --lvl 241": [
+            "Ruins of Tapoyauik"
         ]
     }
 }

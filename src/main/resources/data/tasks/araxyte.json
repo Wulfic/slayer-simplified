@@ -14,8 +14,9 @@
         "Melee"
     ],
     "variants": [
-        "Araxxor",
-        "Dreadborn Araxyte"
+        "Araxyte --lvl 96 --lvl 146",
+        "Araxxor --lvl 890",
+        "Dreadborn Araxyte --lvl 281"
     ],
     "masters": [
         "Nieve",
@@ -24,7 +25,13 @@
         "Turael"
     ],
     "variantLocations": {
-        "Araxyte": [
+        "Araxyte --lvl 96 --lvl 146": [
+            "Morytania Spider Cave"
+        ],
+        "Araxxor --lvl 890": [
+            "Morytania Spider Cave"
+        ],
+        "Dreadborn Araxyte --lvl 281": [
             "Morytania Spider Cave"
         ]
     }

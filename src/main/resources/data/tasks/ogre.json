@@ -14,27 +14,43 @@
         "Melee"
     ],
     "variants": [
-        "Ogre chieftain",
-        "Enclave guard",
-        "Ogress Shaman",
-        "Ogress Warrior"
+        "Ogre --lvl 53 --lvl 63",
+        "Mogre --lvl 60",
+        "Ogress Shaman --lvl 82",
+        "Ogress Warrior --lvl 82",
+        "Skogre --lvl 44",
+        "Zogre --lvl 44"
     ],
     "masters": [
         "Vannaka"
     ],
     "variantLocations": {
-        "Ogre": [
-            "Gu'Tanoth",
-            "West of Yanille",
-            "South of Castle Wars",
-            "south of Gu'Tanoth",
-            "Toban 's Island",
-            "Chaos Druid Tower dungeon",
+        "Ogre --lvl 53 --lvl 63": [
+            "Chaos Druid Tower Dungeon",
             "Clock Tower Dungeon",
+            "Feldip Hills",
             "Witchaven Dungeon",
-            "Underground Pass",
             "Combat Training Camp",
-            "God Wars Dungeon"
+            "Gnome Maze",
+            "God Wars Dungeon",
+            "Gu'Tanoth"
+        ],
+        "Mogre --lvl 60": [
+            "Mudskipper Point"
+        ],
+        "Ogress Shaman --lvl 82": [
+            "Corsair Cove Dungeon"
+        ],
+        "Ogress Warrior --lvl 82": [
+            "Corsair Cove Dungeon"
+        ],
+        "Skogre --lvl 44": [
+            "Jiggig",
+            "Jiggig Dungeon"
+        ],
+        "Zogre --lvl 44": [
+            "Jiggig",
+            "Jiggig Dungeon"
         ]
     }
 }

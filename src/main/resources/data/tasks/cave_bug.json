@@ -15,7 +15,7 @@
         "Melee"
     ],
     "variants": [
-        
+        "Cave bug --lvl 6 --lvl 96"
     ],
     "masters": [
         "Turael",
@@ -23,7 +23,7 @@
         "Vannaka"
     ],
     "variantLocations": {
-        "Cave bug": [
+        "Cave bug --lvl 6 --lvl 96": [
             "Lumbridge Swamp Caves",
             "Dorgesh-Kaan South Dungeon"
         ]

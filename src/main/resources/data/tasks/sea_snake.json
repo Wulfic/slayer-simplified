@@ -5,7 +5,7 @@
         
     ],
     "itemsSuggested": [
-        "Antivenom"
+        "Antipoison potion (4)"
     ],
     "attributes": [
         "None"
@@ -15,15 +15,21 @@
         "Venom"
     ],
     "variants": [
-        "Sea Snake Hatchling",
-        "Sea Snake Young",
-        "Giant Sea Snake"
+        "Sea Snake Hatchling --lvl 62",
+        "Sea Snake Young --lvl 90",
+        "Giant Sea Snake --lvl 149"
     ],
     "masters": [
         "Vannaka"
     ],
     "variantLocations": {
-        "Sea snake": [
+        "Sea Snake Hatchling --lvl 62": [
+            "Miscellania & Etceteria Dungeon"
+        ],
+        "Sea Snake Young --lvl 90": [
+            "Miscellania & Etceteria Dungeon"
+        ],
+        "Giant Sea Snake --lvl 149": [
             "Miscellania & Etceteria Dungeon"
         ]
     }

@@ -14,19 +14,34 @@
         "Melee"
     ],
     "variants": [
-        "Cow calf",
-        "Undead cow",
-        "Buffalo",
-        "Brutus"
+        "Cow --lvl 2",
+        "Cow calf --lvl 2",
+        "Undead cow --lvl 2",
+        "Buffalo --lvl 9",
+        "Brutus --lvl d0"
     ],
     "masters": [
         "Turael",
         "Spria"
     ],
     "variantLocations": {
-        "Cow": [
+        "Cow --lvl 2": [
             "South of Falador",
             "North of Al-Kharid gate",
+            "Lumbridge Cow Field"
+        ],
+        "Cow calf --lvl 2": [
+            "South of Falador",
+            "North of Al-Kharid gate",
+            "Lumbridge Cow Field"
+        ],
+        "Undead cow --lvl 2": [
+            "Port Phasmatys - West of the city"
+        ],
+        "Buffalo --lvl 9": [
+            "Ortus Farm"
+        ],
+        "Brutus --lvl 30": [
             "Lumbridge Cow Field"
         ]
     }

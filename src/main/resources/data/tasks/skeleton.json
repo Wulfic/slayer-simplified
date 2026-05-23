@@ -14,31 +14,23 @@
         "Melee"
     ],
     "variants": [
-        "Skeleton Champion",
-        "Vet'ion"
+        "Skeleton --lvl 21 --lvl 85"
     ],
     "masters": [
         "Krystilia",
         "Turael",
+        "Spria",
         "Mazchna"
     ],
     "variantLocations": {
-        "Skeleton": [
-            "Edgeville Dungeon",
+        "Skeleton --lvl 21 --lvl 85": [
+            "Catacombs of Kourend",
             "Draynor Sewers",
-            "Karamja Volcano",
-            "Ogre Enclave",
+            "Edgeville Dungeon",
             "Stronghold of Security",
             "Taverley Dungeon",
-            "Temple of Ikov",
             "Varrock Sewers",
-            "Waterfall Dungeon",
-            "Wilderness Agility Course",
-            "Barrows",
-            "Melzar's Maze",
-            "Wilderness Volcano",
-            "Ape Atoll Dungeon",
-            "Underground Pass"
+            "Waterfall Dungeon"
         ]
     }
 }

@@ -14,31 +14,51 @@
         "Melee"
     ],
     "variants": [
-        "Zombie pirate",
-        "Zombie rat",
-        "Zombie swab",
-        "Armoured zombie",
-        "Undead Druid",
-        "Undead one",
-        "Undead Zealot",
-        "Vorkath"
+        "Zombie --lvl 13 --76",
+        "Zombie pirate --lvl 22 --lvl 34",
+        "Zombie swab --lvl 55",
+        "Armoured zombie ---lvl 105",
+        "Undead Druid --lvl 105",
+        "Undead one --lvl 68 --lvl 73",
+        "Undead Zealot --lvl 34",
+        "Monkey Zombie --lvl 82 --lvl 129"
     ],
     "masters": [
         "Krystilia",
         "Turael",
-        "Mazchna"
+        "Mazchna",
+        "Spria"
     ],
     "variantLocations": {
-        "Zombie": [
-            "Tree Gnome Village dungeon",
-            "Entrana Dungeon",
+        "Zombie --lvl 13 --76": [
+            "Ardougne Sewers",
+            "Draynor Sewers",
             "Edgeville Dungeon",
-            "Graveyard of Shadows",
             "Stronghold of Security",
             "Varrock Sewers",
-            "Wizards' Guild basement",
-            "Draynor Sewers",
-            "Lair of Tarn Razorlor"
+            "West Ardougne Cementary"
+        ],
+        "Zombie pirate --lvl 22 --lvl 34": [
+            "Chaos Temple"
+        ],
+        "Zombie swab --lvl 55": [
+            "Braindeath Island"
+        ],
+        "Armoured zombie ---lvl 105": [
+            "Zemouregal's Base"
+        ],
+        "Undead Druid --lvl 105": [
+            "Forthos Dungeon"
+        ],
+        "Undead one --lvl 68 --lvl 73": [
+            "Shilo Village"
+        ],
+        "Undead Zealot --lvl 34": [
+            "Shade Catacombs"
+        ],
+        "Monkey Zombie --lvl 82 --lvl 129": [
+            "Ape Atoll Dungeon",
+            "Temple of Marimbo Dungeon"
         ]
     }
 }

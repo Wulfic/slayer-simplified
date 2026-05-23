@@ -16,7 +16,8 @@
         "Melee"
     ],
     "variants": [
-        "King kurask"
+        "Kurask --lvl 106",
+        "King kurask --lvl 295"
     ],
     "masters": [
         "Vannaka",
@@ -26,7 +27,12 @@
         "Neive"
     ],
     "variantLocations": {
-        "Kurask": [
+        "Kurask --lvl 106": [
+            "Fremennik Slayer Dungeon",
+            "Iorwerth Dungeon",
+            "Kurask Lair"
+        ],
+        "King kurask --lvl 295": [
             "Fremennik Slayer Dungeon",
             "Iorwerth Dungeon",
             "Kurask Lair"

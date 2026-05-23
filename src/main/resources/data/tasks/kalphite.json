@@ -14,10 +14,10 @@
         "Melee"
     ],
     "variants": [
-        "Kalphite Queen",
-        "Kalphite Worker",
-        "Kalphite Soldier",
-        "Kalphite Guardian"
+        "Kalphite Queen --lvl 333",
+        "Kalphite Worker --lvl 28",
+        "Kalphite Soldier --lvl 85",
+        "Kalphite Guardian --lvl 141"
     ],
     "masters": [
         "Turael",
@@ -30,7 +30,18 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Kalphite": [
+        "Kalphite Queen --lvl 333": [
+            "Kalphite Lair"
+        ],
+        "Kalphite Worker --lvl 28": [
+            "Kalphite Cave",
+            "Kalphite Lair"
+        ],
+        "Kalphite Soldier --lvl 85": [
+            "Kalphite Cave",
+            "Kalphite Lair"
+        ],
+        "Kalphite Guardian --lvl 141": [
             "Kalphite Lair",
             "Kalphite Cave"
         ]

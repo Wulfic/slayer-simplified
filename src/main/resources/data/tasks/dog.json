@@ -12,35 +12,34 @@
         "Melee"
     ],
     "variants": [
-        "Guard dog",
-        "Wild dog",
-        "Jackal",
-        "Temple Guardian",
-        "Shadow hound",
-        "Reanimated dog"
-    ],
+        "Guard dog --lvl 44",
+        "Wild dog --lvl 63",
+        "Jackal --lvl 21",
+        "Temple Guardian --lvl 30",
+        "Shadow hound --lvl 63"
+        ],
     "variantLocations": {
-        "Dog": [
-            "Ardougne",
-            "McGrubor's Wood",
-            "Black Arm Gang hideout in Brimhaven",
+        "Guard dog --lvl 44": [
+            "Hadelmort Mansion",
+            "Hosidius - Marketplace",
+            "Kourend Castle"
+        ],
+        "Wild dog --lvl 63": [
             "Brimhaven Dungeon"
         ],
-        "Guard dog": [
-            "Ardougne",
-            "Black Arm Gang hideout in Brimhaven"
+        "Shadow hound --lvl 63": [
+            "Shadow Dungeon"
         ],
-        "Wild dog": [
-            "Brimhaven Dungeon",
-            "McGrubor's Wood"
+        "Jackal --lvl 21": [
+            "Southern Kharidian Desert"
         ],
-        "Shadow hound": [
-            "Darkmeyer",
-            "Hallowed Sepulchre"
+        "Temple Guardian --lvl 30": [
+            "Paterdomus"
         ]
     },
     "masters": [
         "Turael",
-        "Mazchna"
+        "Mazchna",
+        "Spria"
     ]
 }

@@ -14,18 +14,31 @@
         "Melee"
     ],
     "variants": [
-        "Guard Bandit",
-        "Speedy Keith",
-        "Donny the lad",
-        "Black Heather"
+        "Bandit --lvl 22 --lvl 130",
+        "Guard Bandit --lvl 22",
+        "Speedy Keith --lvl 34",
+        "Donny the lad --lvl 34",
+        "Black Heather --lvl 34"
     ],
     "masters": [
         "Krystilia"
     ],
     "variantLocations": {
-        "Bandit": [
-            "Bandit Camp",
+        "Bandit --lvl 22 --lvl 130": [
+            "Bandit Camp (Wilderness)",
             "Wilderness Slayer Cave"
+        ],
+        "Guard Bandit --lvl 22": [
+            "Bandit Camp (Wilderness)"
+        ],
+        "Speedy Keith --lvl 34": [
+            "Bandit Camp (Wilderness)"
+        ],
+        "Donny the lad --lvl 34": [
+            "Bandit Camp (Wilderness)"
+        ],
+        "Black Heather --lvl 34": [
+            "Bandit Camp (Wilderness)"
         ]
     }
 }

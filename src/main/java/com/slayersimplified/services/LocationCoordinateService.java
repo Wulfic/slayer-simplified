@@ -20,6 +20,7 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 import java.io.*;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,23 +30,17 @@ import java.util.Set;
  * Loads and provides a lookup from location name strings (e.g. "Slayer Tower")
  * to their corresponding WorldPoint coordinates for pathfinding navigation.
  *
- * Also exposes quest/skill requirements and suggested-item hints that are
- * stored directly in the JSON alongside coordinates, enabling fully data-driven
- * location gating without any hardcoded Java.
- *
- * Each entry in the JSON can carry optional fields:
+ * <p>Each entry in the JSON carries:
  * <ul>
- *   <li>{@code aliases}      – alternative name strings that resolve to this entry</li>
- *   <li>{@code quests}       – {@link net.runelite.api.Quest} enum names that must be FINISHED</li>
- *   <li>{@code skills}       – map of {@link net.runelite.api.Skill} enum name → minimum level</li>
- *   <li>{@code suggestedItems} – free-text hints about items to bring</li>
+ *   <li>{@code x}, {@code y}, {@code plane} – tile coordinates</li>
+ *   <li>{@code aliases} – alternative name strings that resolve to this entry (optional)</li>
  * </ul>
  *
- * Alias resolution is transparent: any method that accepts a location name will
- * first check whether that name is a registered alias and, if so, operate on the
- * canonical entry instead.
+ * <p>Quest/skill access requirements live in {@code requirements.json} and are
+ * handled by {@link LocationRequirementService}. Suggested items live in
+ * the individual task JSON files.
  *
- * Coordinates are loaded from /data/location_coordinates.json at startup.
+ * <p>Coordinates are loaded from /data/location_coordinates.json at startup.
  */
 @Slf4j
 @Singleton
@@ -54,11 +49,11 @@ public class LocationCoordinateService
     /** All names (canonical + aliases) → WorldPoint. */
     private final Map<String, WorldPoint> coordinates;
 
-    /** Canonical lower-case name → full entry (for requirements / suggestions). */
-    private final Map<String, CoordEntry> definitions;
-
     /** Alias lower-case name → canonical lower-case name. */
     private final Map<String, String> aliasToCanonical;
+
+    /** All canonical lower-case names (for external iteration). */
+    private final Set<String> canonicalNames;
 
     @Inject
     public LocationCoordinateService(
@@ -66,8 +61,8 @@ public class LocationCoordinateService
             @Named("locationDataPath") String locationDataPath)
     {
         Map<String, WorldPoint> coords = new HashMap<>();
-        Map<String, CoordEntry> defs = new HashMap<>();
         Map<String, String> aliasMap = new HashMap<>();
+        java.util.LinkedHashSet<String> canonicals = new java.util.LinkedHashSet<>();
 
         InputStream inputStream = this.getClass().getResourceAsStream(locationDataPath);
 
@@ -75,12 +70,12 @@ public class LocationCoordinateService
         {
             log.error("Could not find location coordinates JSON at path {}", locationDataPath);
             this.coordinates = Collections.emptyMap();
-            this.definitions = Collections.emptyMap();
             this.aliasToCanonical = Collections.emptyMap();
+            this.canonicalNames = Collections.emptySet();
             return;
         }
 
-        try (Reader reader = new InputStreamReader(inputStream))
+        try (Reader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8))
         {
             Type type = new TypeToken<Map<String, CoordEntry>>() {}.getType();
             Map<String, CoordEntry> data = gson.fromJson(reader, type);
@@ -90,9 +85,9 @@ public class LocationCoordinateService
                 String canonicalKey = locationName.toLowerCase();
                 WorldPoint wp = new WorldPoint(entry.x, entry.y, entry.plane);
 
-                // Register the canonical name in both maps
+                // Register the canonical name
                 coords.put(canonicalKey, wp);
-                defs.put(canonicalKey, entry);
+                canonicals.add(canonicalKey);
 
                 // Register each alias → same WorldPoint, and record alias → canonical mapping
                 if (entry.aliases != null)
@@ -107,7 +102,7 @@ public class LocationCoordinateService
             });
 
             log.info("Loaded {} location definitions ({} total name lookups) for Slayer Simplified",
-                    defs.size(), coords.size());
+                    canonicals.size(), coords.size());
         }
         catch (JsonSyntaxException e)
         {
@@ -119,8 +114,8 @@ public class LocationCoordinateService
         }
 
         this.coordinates = Collections.unmodifiableMap(coords);
-        this.definitions = Collections.unmodifiableMap(defs);
         this.aliasToCanonical = Collections.unmodifiableMap(aliasMap);
+        this.canonicalNames = Collections.unmodifiableSet(canonicals);
     }
 
     // -------------------------------------------------------------------------
@@ -175,80 +170,17 @@ public class LocationCoordinateService
 
     /**
      * Returns an unmodifiable set of all canonical location names (lower-case).
-     * Does not include alias names. Useful for iterating all defined locations.
+     * Does not include alias names.
      */
     public Set<String> getAllCanonicalNames()
     {
-        return definitions.keySet();
-    }
-
-    // -------------------------------------------------------------------------
-    // Requirement and suggestion accessors (alias-transparent)
-    // -------------------------------------------------------------------------
-
-    /**
-     * Returns the {@link net.runelite.api.Quest} enum names that must all be
-     * {@code FINISHED} to access this location. Resolves aliases transparently.
-     * Returns an empty array when no quest is required or the location is unknown.
-     */
-    public String[] getQuestNames(String locationName)
-    {
-        CoordEntry entry = getDefinitionEntry(locationName);
-        if (entry == null || entry.quests == null)
-        {
-            return new String[0];
-        }
-        return entry.quests;
+        return canonicalNames;
     }
 
     /**
-     * Returns the minimum real skill levels required to access this location,
-     * keyed by {@link net.runelite.api.Skill} enum name. Resolves aliases
-     * transparently. Returns an empty map when no skill gate is defined.
-     */
-    public Map<String, Integer> getSkillRequirements(String locationName)
-    {
-        CoordEntry entry = getDefinitionEntry(locationName);
-        if (entry == null || entry.skills == null)
-        {
-            return Collections.emptyMap();
-        }
-        return entry.skills;
-    }
-
-    /**
-     * Returns free-text hints about items to bring when visiting this location
-     * (e.g. "Light source (e.g. Bullseye lantern)"). Resolves aliases
-     * transparently. Returns an empty array when none are recorded.
-     */
-    public String[] getSuggestedItemNames(String locationName)
-    {
-        CoordEntry entry = getDefinitionEntry(locationName);
-        if (entry == null || entry.suggestedItems == null)
-        {
-            return new String[0];
-        }
-        return entry.suggestedItems;
-    }
-
-    // -------------------------------------------------------------------------
-    // Internal helpers
-    // -------------------------------------------------------------------------
-
-    private CoordEntry getDefinitionEntry(String locationName)
-    {
-        if (locationName == null)
-        {
-            return null;
-        }
-        String canonical = resolveCanonical(locationName);
-        return definitions.get(canonical);
-    }
-
-    /**
-     * JSON deserialization model for a single location entry. All fields
-     * beyond {@code x}/{@code y}/{@code plane} are optional; Gson leaves them
-     * {@code null} when absent, which is treated as "no data" by the accessors.
+     * JSON deserialization model for a single location entry.
+     * Only {@code x}/{@code y}/{@code plane} are required; {@code aliases} is optional.
+     * Any other fields in the JSON (quests, skills, suggestedItems) are ignored.
      */
     private static class CoordEntry
     {
@@ -258,14 +190,5 @@ public class LocationCoordinateService
 
         /** Alternative names that resolve to this entry. */
         String[] aliases;
-
-        /** {@link net.runelite.api.Quest} enum names that must all be FINISHED. */
-        String[] quests;
-
-        /** {@link net.runelite.api.Skill} enum name → minimum real level. */
-        Map<String, Integer> skills;
-
-        /** Free-text item suggestions for accessing this location. */
-        String[] suggestedItems;
     }
 }

@@ -14,13 +14,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Terror dog --lvl 100 --lvl 110"
     ],
     "masters": [
         "Vannaka"
     ],
     "variantLocations": {
-        "Terror dog": [
+        "Terror dog --lvl 100 --lvl 110": [
             "Tarn's Lair"
         ]
     }

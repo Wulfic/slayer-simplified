@@ -19,10 +19,10 @@
         "Icy breath"
     ],
     "variants": [
-        "Ancient wyvern",
-        "Spitting wyvern",
-        "Taloned wyvern",
-        "Long-tailed wyvern"
+        "Ancient wyvern --lvl 210",
+        "Spitting wyvern --lvl 139",
+        "Taloned wyvern --lvl 147",
+        "Long-tailed wyvern --lvl 152"
     ],
     "masters": [
         "Chaeldar",
@@ -31,8 +31,16 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Fossil Island Wyvern": [
-            "Wyvern Cave",
+        "Ancient wyvern --lvl 210": [
+            "Wyvern Cave"
+        ],
+        "Spitting wyvern --lvl 139": [
+            "Wyvern Cave"
+        ],
+        "Taloned wyvern --lvl 147": [
+            "Wyvern Cave"
+        ],
+        "Long-tailed wyvern --lvl 152": [
             "Mushroom Forest"
         ]
     }

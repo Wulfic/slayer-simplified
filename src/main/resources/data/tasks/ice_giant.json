@@ -14,14 +14,14 @@
         "Melee"
     ],
     "variants": [
-        "Eldric the Ice King"
+        "Ice giant --lvl 53 --lvl 67"
     ],
     "masters": [
         "Krystilia",
         "Vannaka"
     ],
     "variantLocations": {
-        "Ice giant": [
+        "Ice giant --lvl 53 --lvl 67": [
             "Asgarnian Ice Dungeon",
             "Frozen Waste Plateau",
             "White Wolf Mountain",

@@ -15,7 +15,8 @@
         "Melee"
     ],
     "variants": [
-        "Choke devil"
+        "Choke devil --lvl 264",
+        "Dust devil --lvl 93"
     ],
     "masters": [
         "Vannaka",
@@ -26,7 +27,12 @@
         "Krystilia"
     ],
     "variantLocations": {
-        "Dust devil": [
+        "Dust devil --lvl 93": [
+            "Smoke Dungeon",
+            "Catacombs of Kourend",
+            "Wilderness Slayer Dungeon"
+        ],
+        "Choke devil --lvl 264": [
             "Smoke Dungeon",
             "Catacombs of Kourend",
             "Wilderness Slayer Dungeon"

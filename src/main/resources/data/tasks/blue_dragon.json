@@ -3,11 +3,10 @@
     "levelRequired": 65,
     "itemsRequired": [
         "Anti-dragon shield",
-        "Dragonfire shield",
-        "Super antifire potion(4)"
+        "Dragonfire shield"
     ],
     "itemsSuggested": [
-        
+        "Super antifire potion(4)"
     ],
     "attributes": [
         "Draconic",
@@ -18,10 +17,9 @@
         "Dragonfire"
     ],
     "variants": [
-        "Baby blue dragon",
-        "Brutal blue dragon",
-        "Vorkath"
-    ],
+        "Blue dragon --lvl 111",
+        "Baby blue dragon --lvl 48",
+        "Brutal blue dragon --lvl 271"    ],
     "masters": [
         "Vannaka",
         "Chaeldar",
@@ -30,17 +28,25 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Blue dragon": [
+        "Baby blue dragon --lvl 48": [
+            "Corsair's Cove Dungeon",
             "Taverley Dungeon",
-            "Ogre Enclave",
-            "Heroes' Guild",
-            "Corsair Cove Dungeon",
-            "Catacombs of Kourend",
-            "Dragon Nest",
             "Isle of Souls Dungeon",
+            "Ruins of Tapoyauik",
+            "Dragon Nest"
+        ],
+        "Blue dragon --lvl 111": [
             "Taverley Dungeon",
-            "Tapoyauik",
-            "Ungael"
+            "Isle of Souls Dungeon",
+            "Ruins of Tapoyauik",
+            "Dragon Nest",
+            "Corsair's Cove Dungeon",
+            "Heroes' Guild - Basement",
+            "Ogre Enclave"
+        ],
+        "Brutal blue dragon --lvl 271": [
+            "Ruins of Tapoyauik",
+            "Catacombs of Kourend"
         ]
     }
 }

@@ -3,11 +3,11 @@
     "levelRequired": 1,
     "itemsRequired": [
         "Anti-dragon shield",
-        "Dragonfire shield",
-        "Antifire potion(4)"
+        "Dragonfire shield"
     ],
     "itemsSuggested": [
-        
+        "Super antifire potion(4)"
+
     ],
     "attributes": [
         "Draconic",
@@ -19,15 +19,15 @@
         "Ranged Dragonfire"
     ],
     "variants": [
-        
+        "Bronze dragon --lvl 131 --lvl 143"
     ],
     "masters": [
-        "Vannaka",
-        "Chaeldar",
+        "Duradel",
+        "Nieve",
         "Konar quo Maten"
     ],
     "variantLocations": {
-        "Bronze dragon": [
+        "Bronze dragon --lvl 131 --lvl 143": [
             "Brimhaven Dungeon",
             "Catacombs of Kourend"
         ]

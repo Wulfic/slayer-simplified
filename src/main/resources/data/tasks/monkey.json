@@ -14,21 +14,42 @@
         "Melee"
     ],
     "variants": [
-        "Monkey Guard",
-        "Monkey Archer",
-        "Monkey Zombie",
-        "Maniacal monkey",
-        "Tortured gorilla",
-        "Demonic gorilla"
+        "Monkey --lvl 3",
+        "Monkey Guard --lvl 167",
+        "Monkey Archer --lvl 86",
+        "Monkey Zombie --lvl 82 --lvl 129",
+        "Maniacal monkey --lvl 140",
+        "Tortured gorilla --lvl 141",
+        "Demonic gorilla --lvl 275"
     ],
     "masters": [
-        "Turael"
+        "Turael",
+        "Spria"
     ],
     "variantLocations": {
-        "Monkey": [
+        "Monkey --lvl 3": [
             "Karamja",
             "Mos Le'Harmless",
             "Ardougne Zoo"
+        ],
+        "Monkey Guard --lvl 167": [
+            "Temple of Marimbo"
+        ],
+        "Monkey Archer --lvl 86": [
+            "Marim"
+        ],
+        "Monkey Zombie --lvl 82 --lvl 129": [
+            "Ape Atoll Dungeon",
+            "Temple of Marimbo Dungeon"
+        ],
+        "Maniacal monkey --lvl 140": [
+            "Kruk's Dungeon"
+        ],
+        "Tortured gorilla --lvl 141": [
+            "Crash Site Cavern"
+        ],
+        "Demonic gorilla --lvl 275": [
+            "Crash Site Cavern"
         ]
     }
 }

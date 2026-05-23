@@ -49,8 +49,10 @@ public class TaskReminderOverlay extends Overlay
 
     // --- Cached panel state. The PanelComponent is only rebuilt when one of
     // these inputs changes, so the per-frame render() is essentially free.
-    private String cachedTaskName;
-    private String cachedNotes;
+    private String  cachedTaskName;
+    private String  cachedNotes;
+    private int     cachedStreak           = -1;
+    private boolean cachedOptimizerEnabled = false;
     private boolean cachedHasContent;
 
     @Inject
@@ -106,13 +108,19 @@ public class TaskReminderOverlay extends Overlay
         }
 
         String notes = notesService.getNotes(task.name);
+        int streak = taskTracker.getTaskStreak();
+
+        boolean optimizerEnabled = config.streakOptimizerEnabled();
 
         // Rebuild the PanelComponent only when one of the inputs changes.
-        if (!task.name.equals(cachedTaskName) || !notes.equals(cachedNotes))
+        if (!task.name.equals(cachedTaskName) || !notes.equals(cachedNotes)
+                || streak != cachedStreak || optimizerEnabled != cachedOptimizerEnabled)
         {
-            cachedTaskName = task.name;
-            cachedNotes = notes;
-            cachedHasContent = rebuildPanel(task, notes);
+            cachedTaskName        = task.name;
+            cachedNotes           = notes;
+            cachedStreak          = streak;
+            cachedOptimizerEnabled = optimizerEnabled;
+            cachedHasContent = rebuildPanel(task, notes, streak);
         }
 
         if (!cachedHasContent)
@@ -128,7 +136,7 @@ public class TaskReminderOverlay extends Overlay
      *
      * @return true if the panel has any content worth rendering.
      */
-    private boolean rebuildPanel(Task task, String notes)
+    private boolean rebuildPanel(Task task, String notes, int streak)
     {
         final boolean hasRequired = task.itemsRequired != null
                 && Arrays.stream(task.itemsRequired)
@@ -143,6 +151,14 @@ public class TaskReminderOverlay extends Overlay
         if (!hasRequired && !hasSuggested && !hasNotes)
         {
             return false;
+        }
+
+        if (config.streakOptimizerEnabled() && streak > 0)
+        {
+            panelComponent.getChildren().add(LineComponent.builder()
+                    .left("Streak #" + streak)
+                    .leftColor(new Color(100, 180, 255))
+                    .build());
         }
 
         panelComponent.getChildren().add(TitleComponent.builder()

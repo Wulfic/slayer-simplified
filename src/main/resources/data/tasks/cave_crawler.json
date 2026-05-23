@@ -15,7 +15,7 @@
         "Poison"
     ],
     "variants": [
-        
+        "Cave crawler --lvl 23"
     ],
     "masters": [
         "Turael",
@@ -23,7 +23,7 @@
         "Spria"
     ],
     "variantLocations": {
-        "Cave crawler": [
+        "Cave crawler --lvl 23": [
             "Fremennik Slayer Dungeon",
             "Lumbridge Swamp Caves",
             "Dorgesh-Kaan South Dungeon",

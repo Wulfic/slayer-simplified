@@ -14,10 +14,8 @@
         "Melee"
     ],
     "variants": [
-        "K'ril Tsutsaroth",
-        "Tstanon Karlak",
-        "Skotizo",
-        "Tormented Demon"
+        "Greater demon --lvl 92 --lvl 113",
+        "Skotizo --lvl 321"
     ],
     "masters": [
         "Krystilia",
@@ -27,16 +25,19 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Greater demon": [
+        "Greater demon --lvl 92 --lvl 113": [
             "Entrana Dungeon",
             "Brimhaven Dungeon",
             "Ogre Enclave",
             "Demonic Ruins",
             "Lava Maze Dungeon",
             "Catacombs of Kourend",
-            "Chasm of Fire Dungeon",
+            "Chasm of Fire",
             "Isle of Souls Dungeon",
-            "Karuulm Dungeon"
+            "Karuulm Slayer Dungeon"
+        ],
+        "Skotizo --lvl 321": [
+            "Catacombs of Kourend"
         ]
     }
 }

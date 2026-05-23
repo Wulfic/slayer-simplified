@@ -169,53 +169,6 @@ public class NotesTab extends JPanel implements Tab<NotesTab.NotesData>
             northWrapper.remove(0);
         }
 
-        int insertIdx = 0;
-
-        // ── Required Items ────────────────────────────────────────────────
-        if (data.requiredItems.length > 0)
-        {
-            JPanel section = buildItemSection("Required Items", data.requiredItems);
-            if (section != null)
-            {
-                northWrapper.add(section, insertIdx++);
-            }
-        }
-
-        // ── Suggested Items (task-level + location-level) ─────────────────
-        // Merge: location-derived items have no tag and go last.
-        boolean hasSuggested = data.taskSuggestedItems.length > 0
-                || !data.locationSuggestedItems.isEmpty();
-        if (hasSuggested)
-        {
-            JPanel section = new JPanel();
-            section.setLayout(new BoxLayout(section, BoxLayout.Y_AXIS));
-            section.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-            section.setBorder(BorderFactory.createCompoundBorder(
-                    BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                    new EmptyBorder(5, 8, 5, 8)));
-            section.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-            JLabel header = new JLabel("Suggested Items");
-            header.setFont(FontManager.getRunescapeBoldFont());
-            header.setForeground(ColorScheme.BRAND_ORANGE);
-            header.setAlignmentX(Component.LEFT_ALIGNMENT);
-            section.add(header);
-            section.add(Box.createVerticalStrut(3));
-
-            // Task-level suggested items (may have --VariantName tags)
-            for (String raw : data.taskSuggestedItems)
-            {
-                section.add(buildItemLabel(raw));
-            }
-            // Location-derived suggested items (no tags)
-            for (String item : data.locationSuggestedItems)
-            {
-                section.add(buildUntaggedItemLabel(item));
-            }
-
-            northWrapper.add(section, insertIdx);
-        }
-
         northWrapper.revalidate();
         northWrapper.repaint();
 

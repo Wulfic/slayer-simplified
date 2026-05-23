@@ -14,23 +14,40 @@
         "Melee"
     ],
     "variants": [
-        "Black bear",
-        "Grizzly bear",
-        "Grizzly bear cub",
-        "Callisto",
-        "Artio",
-        "Bear Cub"
+        "Bear Cub --lvl 15",
+        "Black bear --lvl 19",
+        "Grizzly bear --lvl 21 --lvl 42",
+        "Grizzly bear cub --lvl 33 --lvl 36",
+        "Artio --lvl 320",
+        "Callisto --lvl 470"
     ],
     "masters": [
         "Krystilia",
         "Turael",
-        "Mazchna"
+        "Mazchna",
+        "Spiria"
     ],
     "variantLocations": {
-        "Bear": [
-            "East Ardougne",
-            "South of Varrock",
-            "South-east of Rellekka house portal"
+        "Bear Cub --lvl 15": [
+            "Rellekka -- just outside the city"
+        ],
+        "Black bear --lvl 19": [
+            "Varrock - South-east of mine",
+            "Entrana"
+        ],
+        "Grizzly bear --lvl 21 --lvl 42": [
+            "Isafdar",
+            "Lletya - West of the city"
+        ],
+        "Grizzly bear cub --lvl 33 --lvl 36": [
+            "Isafdar",
+            "Lletya - West of the city"
+        ],
+        "Artio --lvl 320": [
+            "Hunter's End"
+        ],
+        "Callisto --lvl 470": [
+            "Callisto's Den"
         ]
     }
 }

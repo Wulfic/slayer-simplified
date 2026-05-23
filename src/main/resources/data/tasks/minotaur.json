@@ -14,13 +14,14 @@
         "Melee"
     ],
     "variants": [
-        
+        "Minotaur --lvl 12 --lvl 27"
     ],
     "masters": [
-        "Turael"
+        "Turael",
+        "Spria"
     ],
     "variantLocations": {
-        "Minotaur": [
+        "Minotaur --lvl 12 --lvl 27": [
             "Stronghold of Security"
         ]
     }

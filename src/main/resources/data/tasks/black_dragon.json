@@ -3,11 +3,10 @@
     "levelRequired": 80,
     "itemsRequired": [
         "Anti-dragon shield",
-        "Dragonfire shield",
-        "Super antifire potion(4)"
+        "Dragonfire shield"
     ],
     "itemsSuggested": [
-        
+        "Super antifire potion(4)"
     ],
     "attributes": [
         "Draconic",
@@ -18,9 +17,9 @@
         "Dragonfire"
     ],
     "variants": [
-        "Baby black dragon",
-        "King Black Dragon",
-        "Brutal black dragon"
+        "Black dragon --lvl 227 --lvl 247",
+        "Baby black dragon --lvl 83",
+        "Brutal black dragon --lvl 318"
     ],
     "masters": [
         "Krystilia",
@@ -29,15 +28,21 @@
         "Duradel"
     ],
     "variantLocations": {
-        "Black dragon": [
+        "Black dragon --lvl 227 --lvl 247": [
             "Taverley Dungeon",
             "Lava Maze Dungeon",
             "Evil Chicken's Lair",
             "Mynydd",
-            "Charred Dungeon",
             "Wilderness Slayer Cave",
             "Corsair Cove Dungeon",
-            "King Black Dragon Lair",
+            "Wilderness Slayer Cave"
+        ],
+        "Baby black dragon --lvl 83": [
+            "Taverley Dungeon",
+            "Evil Chicken's Lair",
+            "Corsair Cove Dungeon"
+        ],
+        "Brutal black dragon --lvl 318": [
             "Catacombs of Kourend"
         ]
     }

@@ -17,18 +17,18 @@
         "Dragonfire"
     ],
     "variants": [
-        
+        "Iron dragon --lvl 189 --lvl 215"
     ],
     "masters": [
-        "Chaeldar",
         "Konar quo Maten",
         "Nieve",
         "Duradel"
     ],
     "variantLocations": {
-        "Iron dragon": [
+        "Iron dragon --lvl 189 --lvl 215": [
             "Brimhaven Dungeon",
-            "Catacombs of Kourend"
+            "Catacombs of Kourend",
+            "Isle of Souls Dungeon"
         ]
     }
 }

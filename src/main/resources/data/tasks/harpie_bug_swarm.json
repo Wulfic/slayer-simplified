@@ -14,13 +14,13 @@
         "Melee"
     ],
     "variants": [
-        
+        "Harpie bug swarm --lvl 46"
     ],
     "masters": [
         "Vannaka"
     ],
     "variantLocations": {
-        "Harpie bug swarm": [
+        "Harpie bug swarm --lvl 46": [
             "NE of Tai Bwo Wannai",
             "East of Colossal Wyrm Remains"
         ]
