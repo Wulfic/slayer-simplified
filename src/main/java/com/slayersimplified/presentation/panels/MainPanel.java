@@ -488,6 +488,21 @@ public class MainPanel extends PluginPanel
         return config.preferredMaster();
     }
 
+    /**
+     * Re-renders the currently selected task's detail panel (if any).
+     * Called when debug mode changes so LocationsTab re-evaluates row colours.
+     */
+    public void refreshSelectedTask()
+    {
+        SwingUtilities.invokeLater(() ->
+        {
+            if (currentlySelectedTask != null)
+            {
+                taskSelectedPanel.update(currentlySelectedTask, getKillCount(currentlySelectedTask.name));
+            }
+        });
+    }
+
     /** Rebuilds the task search list, applying the current locationDebug filter. Safe to call from any thread. */
     public void refreshTaskList()
     {
@@ -497,7 +512,7 @@ public class MainPanel extends PluginPanel
             if (!config.debugCoordinates())
             {
                 tasks = Arrays.stream(tasks)
-                        .filter(t -> !"AAAAA".equals(t.name))
+                        .filter(t -> !"A DEBUG TASK".equals(t.name))
                         .toArray(Task[]::new);
             }
             taskSearchPanel.setAllTasks(tasks);
@@ -516,7 +531,7 @@ public class MainPanel extends PluginPanel
         if (!config.debugCoordinates())
         {
             matchedTasks = Arrays.stream(matchedTasks)
-                    .filter(t -> !"AAAAA".equals(t.name))
+                    .filter(t -> !"A DEBUG TASK".equals(t.name))
                     .toArray(Task[]::new);
         }
         taskSearchPanel.showSearchResults(matchedTasks);

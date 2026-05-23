@@ -537,6 +537,7 @@ public class SlayerSimplifiedPlugin extends Plugin
         if ("debugCoordinates".equals(event.getKey()))
         {
             mainPanel.refreshTaskList();
+            mainPanel.refreshSelectedTask();
             return;
         }
         if ("streakOptimizerEnabled".equals(event.getKey()))

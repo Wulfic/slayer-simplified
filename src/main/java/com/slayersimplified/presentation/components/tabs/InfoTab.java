@@ -149,6 +149,9 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
             }
         }
 
+        // Absorb all remaining viewport height so BoxLayout doesn't stretch rows
+        contentPanel.add(Box.createVerticalGlue());
+
         contentPanel.revalidate();
         contentPanel.repaint();
 
@@ -305,17 +308,14 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
     {
         JPanel row = new JPanel(new BorderLayout());
         row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 36));
         row.setBorder(new EmptyBorder(2, 16, 2, 4));
 
-        JTextArea label = new JTextArea(text);
-        label.setLineWrap(true);
-        label.setWrapStyleWord(true);
-        label.setOpaque(false);
-        label.setEditable(false);
-        label.setFocusable(false);
+        // HTML label wraps long text; CENTER expands to full row width
+        String safe = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
+        JLabel label = new JLabel("<html>" + safe + "</html>");
         label.setFont(BODY_FONT);
         label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        label.setBorder(null);
         row.add(label, BorderLayout.CENTER);
 
         target.add(row);
