@@ -402,6 +402,9 @@ public class SlayerTaskTracker
         IRREGULAR_PLURALS.put("elves", "Elf");
         // Alias for values that were incorrectly stored before the irregular-plural fix
         IRREGULAR_PLURALS.put("elve", "Elf");
+        IRREGULAR_PLURALS.put("werewolves", "Werewolf");
+        // Alias for already-cached bad value ("Werewolve") from before this fix
+        IRREGULAR_PLURALS.put("werewolve", "Werewolf");
     }
 
     /**
