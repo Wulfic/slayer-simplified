@@ -6,6 +6,7 @@
 package com.slayersimplified;
 
 import com.slayersimplified.domain.SlayerMaster;
+import com.slayersimplified.domain.StreakFillerMaster;
 import net.runelite.client.config.Alpha;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
@@ -143,6 +144,23 @@ public interface SlayerSimplifiedConfig extends Config
 
     @ConfigItem(keyName = "streakOptimizerEnabled", name = "", description = "")
     void setStreakOptimizerEnabled(boolean value);
+
+    @ConfigItem(
+            keyName = "streakFillerMaster",
+            name = "Streak Filler Master",
+            description = "Which master to use for non-milestone (filler) tasks when the Streak Point Optimizer is enabled. "
+                    + "Turael / Spria give 0 points per filler but have the shortest tasks (classic Turael boosting). "
+                    + "Mazchna gives 6 points per filler but tasks take longer (Mazchna boosting).",
+            position = 9,
+            hidden = true
+    )
+    default StreakFillerMaster streakFillerMaster()
+    {
+        return StreakFillerMaster.TURAEL;
+    }
+
+    @ConfigItem(keyName = "streakFillerMaster", name = "", description = "")
+    void setStreakFillerMaster(StreakFillerMaster value);
 
     // Hidden config keys used to persist internal state across sessions
 

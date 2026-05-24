@@ -5,7 +5,9 @@
  */
 package com.slayersimplified.services;
 
+import com.slayersimplified.SlayerSimplifiedConfig;
 import com.slayersimplified.domain.SlayerMaster;
+import com.slayersimplified.domain.StreakFillerMaster;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
@@ -17,27 +19,45 @@ import javax.inject.Singleton;
 
 /**
  * Recommends the optimal Slayer master to use each task in order to maximise
- * reward points over a streak ("Turael boosting" method).
+ * reward points over a streak (a.k.a. "Turael boosting" or "Mazchna boosting").
  *
- * <p>Strategy:</p>
+ * <h2>Strategy</h2>
  * <ul>
- *   <li>Filler tasks (not landing on a milestone): use <strong>Turael</strong>
- *       — his tasks are trivially fast, contributing 0 points but building
- *       the streak counter toward the next milestone as quickly as possible.</li>
- *   <li>Milestone tasks (every 10th, 50th, 100th, 250th, or 1,000th completed
- *       assignment): use the <strong>highest-eligible master</strong> to collect
- *       the disproportionate bonus points.<br>
- *       Point values per task: Konar 18 (cbt 75) &gt; Chaeldar 10 (cbt 70 +
- *       Lost City) &gt; Vannaka 8 (cbt 40) &gt; Mazchna 6.</li>
+ *   <li><strong>Filler tasks</strong> (not landing on a milestone): use the
+ *       player-selected {@link StreakFillerMaster}.
+ *       <ul>
+ *         <li>{@code TURAEL} / {@code SPRIA} — 0 pts per task, shortest tasks
+ *             (fastest streak progression).</li>
+ *         <li>{@code MAZCHNA} — 6 pts per task, longer tasks (more points but
+ *             slower per hour). Convenient in Morytania/Kourend.</li>
+ *       </ul>
+ *   </li>
+ *   <li><strong>Milestone tasks</strong> (every 10th / 50th / 100th / 250th /
+ *       1,000th completed assignment): use the <strong>highest-eligible
+ *       master</strong> to collect the multiplied bonus.</li>
  * </ul>
  *
- * <p>Konar beats both Duradel (15 pts, cbt 100) and Nieve (12 pts, cbt 85)
- * because she gives more points and has a lower combat requirement (75), so
- * any player who could use Nieve or Duradel already qualifies for Konar.</p>
+ * <h2>Milestone multipliers (per OSRS Wiki — Slayer reward point)</h2>
+ * <pre>
+ *   10th  →  5x   50th  → 15x   100th → 25x   250th → 35x   1,000th → 50x
+ * </pre>
+ *
+ * <h2>Milestone master selection</h2>
+ * Highest base-points master the player qualifies for, with Krystilia and the
+ * filler masters excluded:
+ * <ol>
+ *   <li>Konar (18 pts) — combat &ge; 75</li>
+ *   <li>Chaeldar (10 pts) — combat &ge; 70 and Lost City completed</li>
+ *   <li>Vannaka (8 pts) — combat &ge; 40</li>
+ *   <li>Mazchna (6 pts) — no requirements</li>
+ * </ol>
+ * Nieve (12 pts, cbt 85) and Duradel (15 pts, cbt 100) are both outclassed by
+ * Konar (18 pts, cbt 75) — every player who qualifies for them already
+ * qualifies for Konar.
  *
  * <p>Krystilia is intentionally excluded — Wilderness tasks maintain a
- * <em>separate</em> completion counter that is independent of the normal
- * streak used for milestone bonuses.</p>
+ * <em>separate</em> completion counter independent of the streak used for
+ * milestone bonuses.</p>
  *
  * <p>{@link #refresh()} <strong>must</strong> be called on the client thread
  * before recommendations are needed. All other methods are thread-safe.</p>
@@ -47,21 +67,26 @@ import javax.inject.Singleton;
 public class SlayerStreakOptimizerService
 {
     // Milestone boundaries in descending order (to match the highest first).
-    private static final int[] MILESTONE_MULTIPLES  = {1000, 250, 100, 50, 10};
+    private static final int[] MILESTONE_MULTIPLES   = {1000, 250, 100, 50, 10};
     private static final int[] MILESTONE_MULTIPLIERS = {  50,  35,  25, 15,  5};
 
     private final Client client;
     private final SlayerTaskTracker taskTracker;
+    private final SlayerSimplifiedConfig config;
 
     // Player state — written on the client thread, read from any thread.
-    private volatile int     combatLevel        = 0;
-    private volatile boolean lostCityCompleted  = false;
+    private volatile int     combatLevel       = 0;
+    private volatile boolean lostCityCompleted = false;
 
     @Inject
-    public SlayerStreakOptimizerService(Client client, SlayerTaskTracker taskTracker)
+    public SlayerStreakOptimizerService(
+            Client client,
+            SlayerTaskTracker taskTracker,
+            SlayerSimplifiedConfig config)
     {
         this.client      = client;
         this.taskTracker = taskTracker;
+        this.config      = config;
     }
 
     // -------------------------------------------------------------------------
@@ -98,27 +123,19 @@ public class SlayerStreakOptimizerService
     }
 
     /**
-     * Returns the recommended Slayer master for the player's <em>next</em> task,
-     * based on their current streak and eligibility.
+     * Returns the recommended Slayer master for the player's <em>next</em> task.
      *
      * <ul>
-     *   <li>Milestone task → highest eligible master for maximum bonus points.</li>
-     *   <li>Filler task → {@link SlayerMaster#TURAEL} for the fastest progression.</li>
+     *   <li>Milestone task → highest eligible master (max bonus points).</li>
+     *   <li>Filler task → the configured {@link StreakFillerMaster}.</li>
      * </ul>
-     *
-     * Falls back to {@link SlayerMaster#TURAEL} when the streak is unknown
-     * or the player is not logged in.
      */
     public SlayerMaster getRecommendedMaster()
     {
         int nextTask = getNextTaskNumber();
-        if (nextTask <= 0)
-        {
-            return SlayerMaster.TURAEL;
-        }
         return isMilestoneTask(nextTask)
-                ? getHighestEligibleMilestonemaster()
-                : SlayerMaster.TURAEL;
+                ? getHighestEligibleMilestoneMaster()
+                : getFillerMaster();
     }
 
     /**
@@ -127,44 +144,53 @@ public class SlayerStreakOptimizerService
      */
     public String getRecommendationReason()
     {
-        int streak   = taskTracker.getTaskStreak();
-        int nextTask = streak + 1;
-
-        if (streak <= 0)
-        {
-            return "Streak unknown — go to Turael";
-        }
+        int nextTask           = getNextTaskNumber();
+        SlayerMaster filler    = getFillerMaster();
+        SlayerMaster milestone = getHighestEligibleMilestoneMaster();
 
         if (isMilestoneTask(nextTask))
         {
-            int mult   = getMilestoneMultiplier(nextTask);
-            SlayerMaster master = getHighestEligibleMilestonemaster();
-            int pts    = master.getBasePoints() * mult;
-            return "Task #" + nextTask + " — milestone! +" + pts + " pts with " + master.getDisplayName();
+            int mult = getMilestoneMultiplier(nextTask);
+            int pts  = milestone.getBasePoints() * mult;
+            return "Task #" + nextTask + " — milestone! +" + pts
+                    + " pts with " + milestone.getDisplayName();
         }
-        else
-        {
-            int nextMilestone = getNextMilestone(nextTask);
-            int filler        = nextMilestone - nextTask;
-            SlayerMaster milestoneMaster = getHighestEligibleMilestonemaster();
-            return "Task #" + nextTask + " — " + filler + " Turael task(s) until #"
-                    + nextMilestone + " (" + milestoneMaster.getDisplayName() + ")";
-        }
+
+        int nextMilestone = getNextMilestone(nextTask);
+        int fillersLeft   = nextMilestone - nextTask;
+        String fillerName = filler.getDisplayName();
+        // Mazchna fillers award points too — call that out so users understand
+        // why they might pick the slower path.
+        String fillerPts  = filler.getBasePoints() > 0
+                ? " (+" + filler.getBasePoints() + " pts each)"
+                : " (0 pts)";
+        return "Task #" + nextTask + " — " + fillersLeft + " "
+                + fillerName + " task" + (fillersLeft == 1 ? "" : "s") + fillerPts
+                + " until milestone #" + nextMilestone + " (" + milestone.getDisplayName() + ")";
     }
 
     /**
      * Returns the 1-based task number the player will receive next
-     * (current streak + 1), or {@code 0} if the streak is unknown.
+     * (completed-streak + 1). When the streak is unknown (e.g. RuneLite slayer
+     * plugin has never written its config), defaults to {@code 1} — task #1
+     * is always a filler, so the recommendation is still useful.
      */
     public int getNextTaskNumber()
     {
         int streak = taskTracker.getTaskStreak();
-        return streak > 0 ? streak + 1 : 0;
+        return Math.max(1, streak + 1);
     }
 
     // -------------------------------------------------------------------------
     // Private helpers
     // -------------------------------------------------------------------------
+
+    /** Returns the user-selected filler master, falling back to Turael if unset. */
+    private SlayerMaster getFillerMaster()
+    {
+        StreakFillerMaster choice = config.streakFillerMaster();
+        return choice != null ? choice.getMaster() : SlayerMaster.TURAEL;
+    }
 
     /** @return {@code true} when {@code taskNumber} falls on any milestone boundary. */
     private boolean isMilestoneTask(int taskNumber)
@@ -196,21 +222,9 @@ public class SlayerStreakOptimizerService
 
     /**
      * Picks the highest-points master the player currently qualifies for,
-     * excluding Krystilia and Turael/Spria.
-     *
-     * <p>Priority (highest base points first):</p>
-     * <ol>
-     *   <li>Konar (18 pts) — combat ≥ 75</li>
-     *   <li>Chaeldar (10 pts) — combat ≥ 70 and Lost City completed</li>
-     *   <li>Vannaka (8 pts) — combat ≥ 40</li>
-     *   <li>Mazchna (6 pts) — no requirements</li>
-     * </ol>
-     *
-     * Note: Nieve (12 pts, cbt 85) and Duradel (15 pts, cbt 100) are both
-     * outclassed by Konar (18 pts, cbt 75).  Any player eligible for Nieve
-     * or Duradel is also eligible for Konar, which gives more points.
+     * excluding Krystilia and the zero-point filler masters.
      */
-    private SlayerMaster getHighestEligibleMilestonemaster()
+    private SlayerMaster getHighestEligibleMilestoneMaster()
     {
         if (combatLevel >= 75)
         {

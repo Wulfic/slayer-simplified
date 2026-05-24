@@ -52,7 +52,6 @@ public class TaskReminderOverlay extends Overlay
     private String  cachedTaskName;
     private String  cachedNotes;
     private int     cachedStreak           = -1;
-    private boolean cachedOptimizerEnabled = false;
     private boolean cachedHasContent;
 
     @Inject
@@ -108,18 +107,15 @@ public class TaskReminderOverlay extends Overlay
         }
 
         String notes = notesService.getNotes(task.name);
-        int streak = taskTracker.getTaskStreak();
-
-        boolean optimizerEnabled = config.streakOptimizerEnabled();
+        int streak = taskTracker.getCurrentAssignmentNumber();
 
         // Rebuild the PanelComponent only when one of the inputs changes.
         if (!task.name.equals(cachedTaskName) || !notes.equals(cachedNotes)
-                || streak != cachedStreak || optimizerEnabled != cachedOptimizerEnabled)
+                || streak != cachedStreak)
         {
-            cachedTaskName        = task.name;
-            cachedNotes           = notes;
-            cachedStreak          = streak;
-            cachedOptimizerEnabled = optimizerEnabled;
+            cachedTaskName = task.name;
+            cachedNotes    = notes;
+            cachedStreak   = streak;
             cachedHasContent = rebuildPanel(task, notes, streak);
         }
 
@@ -145,15 +141,16 @@ public class TaskReminderOverlay extends Overlay
                 && Arrays.stream(task.itemsSuggested)
                          .anyMatch(s -> s != null && !s.trim().isEmpty() && !s.equalsIgnoreCase("none"));
         final boolean hasNotes = !notes.isEmpty();
+        final boolean hasStreak = streak > 0;
 
         panelComponent.getChildren().clear();
 
-        if (!hasRequired && !hasSuggested && !hasNotes)
+        if (!hasRequired && !hasSuggested && !hasNotes && !hasStreak)
         {
             return false;
         }
 
-        if (config.streakOptimizerEnabled() && streak > 0)
+        if (hasStreak)
         {
             panelComponent.getChildren().add(LineComponent.builder()
                     .left("Streak #" + streak)

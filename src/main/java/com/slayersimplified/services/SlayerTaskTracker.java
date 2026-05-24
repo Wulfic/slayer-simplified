@@ -218,8 +218,12 @@ public class SlayerTaskTracker
     }
 
     /**
-     * Returns the player's slayer task streak (assignment number) by reading
-     * RuneLite's built-in Slayer plugin RSProfile config. Returns 0 if unknown.
+     * Returns the number of slayer tasks the player has <em>completed</em>, as
+     * stored by RuneLite's built-in Slayer plugin (mirrors
+     * {@code VarbitID.SLAYER_TASKS_COMPLETED}). Returns 0 if unknown.
+     *
+     * <p>This is <strong>not</strong> the current assignment number. For the
+     * 1-based number of the active task use {@link #getCurrentAssignmentNumber()}.</p>
      */
     public int getTaskStreak()
     {
@@ -231,6 +235,35 @@ public class SlayerTaskTracker
         try
         {
             return Integer.parseInt(val.trim());
+        }
+        catch (NumberFormatException ignored)
+        {
+            return 0;
+        }
+    }
+
+    /**
+     * Returns the 1-based assignment number of the player's <em>current</em>
+     * slayer task.
+     *
+     * <p>RuneLite stores {@code SLAYER_TASKS_COMPLETED} as the streak, which
+     * increments only when a task is <em>finished</em>. While a task is active
+     * that value is therefore one less than the actual assignment number, so we
+     * add one here.</p>
+     *
+     * <p>Returns {@code 0} when the streak is not yet known (e.g. RuneLite
+     * slayer plugin has never populated its RSProfile config).</p>
+     */
+    public int getCurrentAssignmentNumber()
+    {
+        String val = configManager.getRSProfileConfiguration(RL_SLAYER_GROUP, RL_STREAK_KEY);
+        if (val == null)
+        {
+            return 0;
+        }
+        try
+        {
+            return Integer.parseInt(val.trim()) + 1;
         }
         catch (NumberFormatException ignored)
         {

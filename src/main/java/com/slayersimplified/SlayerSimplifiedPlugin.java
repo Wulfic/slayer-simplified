@@ -225,7 +225,7 @@ public class SlayerSimplifiedPlugin extends Plugin
                 pendingTaskNavigation = false;
                 final String newTask = taskTracker.getCurrentTaskName();
                 final int count = taskTracker.getLastAssignedCount();
-                final int taskNumber = readTaskStreak();
+                final int taskNumber = taskTracker.getCurrentAssignmentNumber();
                 final String master = lastInteractedMasterName;
                 final boolean remindCape = config.remindSlayerCape()
                         && client.getRealSkillLevel(Skill.SLAYER) == 99;
@@ -452,24 +452,24 @@ public class SlayerSimplifiedPlugin extends Plugin
         }
 
         int total = taskTracker.getCurrentTaskTotal();
-        int streak = taskTracker.getTaskStreak();
+        int assignmentNumber = taskTracker.getCurrentAssignmentNumber();
 
         java.util.List<TaskHistoryEntry> entries = historyService.getHistory();
         if (!entries.isEmpty() && taskName.equalsIgnoreCase(entries.get(0).taskName))
         {
             // Same task already at the top — backfill any missing count/streak now
             // that the RuneLite Slayer plugin has populated its RSProfile config.
-            if (historyService.updateLatestEntry(taskName, total, streak))
+            if (historyService.updateLatestEntry(taskName, total, assignmentNumber))
             {
-                log.debug("Backfilled active task entry: {} x{} (streak {})", taskName, total, streak);
+                log.debug("Backfilled active task entry: {} x{} (task #{})", taskName, total, assignmentNumber);
             }
             return;
         }
 
         historyService.addEntry(new TaskHistoryEntry(
                 taskName, total, lastInteractedMasterName,
-                System.currentTimeMillis(), streak));
-        log.debug("Synced active task to history: {} x{} (streak {})", taskName, total, streak);
+                System.currentTimeMillis(), assignmentNumber));
+        log.debug("Synced active task to history: {} x{} (task #{})", taskName, total, assignmentNumber);
     }
 
     @Subscribe
@@ -546,7 +546,8 @@ public class SlayerSimplifiedPlugin extends Plugin
             mainPanel.refreshSelectedTask();
             return;
         }
-        if ("streakOptimizerEnabled".equals(event.getKey()))
+        if ("streakOptimizerEnabled".equals(event.getKey())
+                || "streakFillerMaster".equals(event.getKey()))
         {
             // Immediately refresh the "no task" label so it switches between
             // the preferred master name and the optimizer recommendation.

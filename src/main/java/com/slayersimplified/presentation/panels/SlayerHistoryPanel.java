@@ -171,7 +171,7 @@ public class SlayerHistoryPanel extends JPanel
     private JPanel buildCurrentTaskRow(String taskName, int taskCount)
     {
         int total = taskTracker.getCurrentTaskTotal(); // volatile read, safe from EDT
-        int streak = taskTracker.getTaskStreak();
+        int streak = taskTracker.getCurrentAssignmentNumber();
         TaskHistoryEntry synthetic = new TaskHistoryEntry(taskName, total, null, 0, streak);
         JPanel row = buildEntryRow(synthetic, true, taskCount);
 
@@ -212,7 +212,7 @@ public class SlayerHistoryPanel extends JPanel
             }
             if (displayNumber <= 0)
             {
-                displayNumber = taskTracker.getTaskStreak();
+                displayNumber = taskTracker.getCurrentAssignmentNumber();
             }
         }
 

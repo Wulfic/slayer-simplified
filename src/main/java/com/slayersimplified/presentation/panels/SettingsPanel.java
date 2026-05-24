@@ -7,6 +7,7 @@ package com.slayersimplified.presentation.panels;
 
 import com.slayersimplified.SlayerSimplifiedConfig;
 import com.slayersimplified.domain.SlayerMaster;
+import com.slayersimplified.domain.StreakFillerMaster;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.util.LinkBrowser;
@@ -35,6 +36,7 @@ public class SettingsPanel extends JPanel
     private JCheckBox remindCapeCheck;
     private JCheckBox showReminderOverlayCheck;
     private JCheckBox streakOptimizerCheck;
+    private JComboBox<StreakFillerMaster> fillerMasterCombo;
 
     public SettingsPanel(SlayerSimplifiedConfig config, Runnable onClose)
     {
@@ -55,6 +57,8 @@ public class SettingsPanel extends JPanel
         streakOptimizerCheck.setSelected(optimizerOn);
         masterCombo.setSelectedItem(config.preferredMaster());
         masterCombo.setEnabled(!optimizerOn);
+        fillerMasterCombo.setSelectedItem(config.streakFillerMaster());
+        fillerMasterCombo.setEnabled(optimizerOn);
         highlightCheck.setSelected(config.highlightTarget());
         colorButton.setBackground(config.highlightColor());
         autoNavCheck.setSelected(config.autoNavigate());
@@ -81,11 +85,36 @@ public class SettingsPanel extends JPanel
             boolean on = streakOptimizerCheck.isSelected();
             config.setStreakOptimizerEnabled(on);
             masterCombo.setEnabled(!on);
+            fillerMasterCombo.setEnabled(on);
         });
         add(makeRow("Streak Optimizer", streakOptimizerCheck,
                 "<html>Recommend the best master each task to maximise Slayer reward points<br>"
                         + "(Turael boosting: Turael for fillers, Konar/Chaeldar for milestones).<br>"
                         + "<b>Overrides the Preferred Master setting below.</b></html>"));
+        add(Box.createVerticalStrut(6));
+
+        // --- Streak Filler Master ---
+        fillerMasterCombo = new JComboBox<>(StreakFillerMaster.values());
+        fillerMasterCombo.setSelectedItem(config.streakFillerMaster());
+        fillerMasterCombo.setEnabled(config.streakOptimizerEnabled());
+        fillerMasterCombo.setFont(FontManager.getRunescapeSmallFont());
+        fillerMasterCombo.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        fillerMasterCombo.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        fillerMasterCombo.setPreferredSize(new Dimension(120, 22));
+        fillerMasterCombo.setMaximumSize(new Dimension(120, 22));
+        fillerMasterCombo.addActionListener(e ->
+        {
+            StreakFillerMaster selected = (StreakFillerMaster) fillerMasterCombo.getSelectedItem();
+            if (selected != null)
+            {
+                config.setStreakFillerMaster(selected);
+            }
+        });
+        add(makeRow("Filler Master", fillerMasterCombo,
+                "<html>Master used for non-milestone tasks while the optimizer is enabled.<br>"
+                        + "<b>Turael / Spria</b> — 0 pts, shortest tasks (classic Turael boosting).<br>"
+                        + "<b>Mazchna</b> — 6 pts per filler, longer tasks (Mazchna boosting).<br>"
+                        + "Milestone tasks (10/50/100/250/1000) always use your highest-eligible master.</html>"));
         add(Box.createVerticalStrut(6));
 
         // --- Preferred Master ---
