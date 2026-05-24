@@ -151,7 +151,10 @@ public class SlayerTargetOverlay extends Overlay
             {
                 for (String variant : task.variants)
                 {
-                    targetNames.add(variant.toLowerCase());
+                    // Strip --lvl flag before storing (e.g. "Sea Snake Hatchling --lvl 62" -> "sea snake hatchling")
+                    int flagIdx = variant.indexOf("--lvl ");
+                    String variantName = flagIdx >= 0 ? variant.substring(0, flagIdx).trim() : variant;
+                    targetNames.add(variantName.toLowerCase());
                 }
             }
         }

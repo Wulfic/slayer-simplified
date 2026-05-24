@@ -113,13 +113,13 @@ public class SlayerHistoryPanel extends JPanel
             // the plugin was running), prepend a live "Current Task" row.
             if (hasCurrentTask && !currentTaskIsFirstEntry)
             {
-                listPanel.add(buildCurrentTaskRow(currentName));
+                listPanel.add(buildCurrentTaskRow(currentName, entries.size() + 1));
             }
 
             for (int i = 0; i < entries.size(); i++)
             {
                 boolean isActive = i == 0 && currentTaskIsFirstEntry;
-                listPanel.add(buildEntryRow(entries.get(i), isActive));
+                listPanel.add(buildEntryRow(entries.get(i), isActive, entries.size() - i));
             }
         }
         listPanel.revalidate();
@@ -168,12 +168,12 @@ public class SlayerHistoryPanel extends JPanel
     }
 
     /** Builds a highlighted row for the player's currently active task (not yet in the log). */
-    private JPanel buildCurrentTaskRow(String taskName)
+    private JPanel buildCurrentTaskRow(String taskName, int taskCount)
     {
         int total = taskTracker.getCurrentTaskTotal(); // volatile read, safe from EDT
         int streak = taskTracker.getTaskStreak();
         TaskHistoryEntry synthetic = new TaskHistoryEntry(taskName, total, null, 0, streak);
-        JPanel row = buildEntryRow(synthetic, true);
+        JPanel row = buildEntryRow(synthetic, true, taskCount);
 
         // If the streak is unknown we can't show a task number, so fall back to an "Active" badge
         if (streak <= 0)
@@ -189,10 +189,15 @@ public class SlayerHistoryPanel extends JPanel
 
     private JPanel buildEntryRow(TaskHistoryEntry entry)
     {
-        return buildEntryRow(entry, false);
+        return buildEntryRow(entry, false, 0);
     }
 
     private JPanel buildEntryRow(TaskHistoryEntry entry, boolean isActive)
+    {
+        return buildEntryRow(entry, isActive, 0);
+    }
+
+    private JPanel buildEntryRow(TaskHistoryEntry entry, boolean isActive, int taskCount)
     {
         // Render-time fallback: if this row represents the active task but its
         // stored count/streak haven't been backfilled yet, read live values from
@@ -340,6 +345,16 @@ public class SlayerHistoryPanel extends JPanel
             skippedLabel.setFont(FontManager.getRunescapeSmallFont().deriveFont(Font.BOLD));
             skippedLabel.setAlignmentX(Component.RIGHT_ALIGNMENT);
             eastPanel.add(skippedLabel);
+        }
+
+        if (taskCount > 0)
+        {
+            eastPanel.add(Box.createVerticalGlue());
+            JLabel totalLabel = new JLabel(String.valueOf(taskCount));
+            totalLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+            totalLabel.setFont(FontManager.getRunescapeSmallFont());
+            totalLabel.setAlignmentX(Component.RIGHT_ALIGNMENT);
+            eastPanel.add(totalLabel);
         }
 
         if (eastPanel.getComponentCount() > 0)

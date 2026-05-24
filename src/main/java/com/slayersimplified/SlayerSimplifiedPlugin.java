@@ -402,7 +402,10 @@ public class SlayerSimplifiedPlugin extends Plugin
                 if (t.variants == null) continue;
                 for (String variant : t.variants)
                 {
-                    if (variant.equalsIgnoreCase(npcName))
+                    // Strip --lvl flag (e.g. "Sea Snake Hatchling --lvl 62" -> "Sea Snake Hatchling")
+                    int flagIdx = variant.indexOf("--lvl ");
+                    String variantName = flagIdx >= 0 ? variant.substring(0, flagIdx).trim() : variant;
+                    if (variantName.equalsIgnoreCase(npcName))
                     {
                         task = t;
                         break outer;

@@ -136,6 +136,7 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
                 BorderFactory.createEmptyBorder(3, 8, 3, 4)
         ));
         debugPanel.add(debugNavLabel, BorderLayout.CENTER);
+        debugPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
         debugPanel.setVisible(false);
 
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
