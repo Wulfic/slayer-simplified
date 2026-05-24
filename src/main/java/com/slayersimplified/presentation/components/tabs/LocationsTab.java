@@ -227,16 +227,13 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
 
         // Auto-favourite when exactly one accessible location and none set yet
         if (valid.size() == 1 && currentMonsterName != null
-                && favoriteService.getFavoriteForVariant(currentMonsterName, variant.name) == null
+                && favoriteService.getFavorite(currentMonsterName) == null
                 && (debugMode.get() || requirementService.isAvailable(valid.get(0))))
         {
-            favoriteService.setFavoriteForVariant(currentMonsterName, variant.name, valid.get(0));
-            for (Component comp : contentPanel.getComponents())
+            favoriteService.setFavorite(currentMonsterName, valid.get(0));
+            for (JPanel row : allLocationRows)
             {
-                if (comp instanceof JPanel && comp != debugPanel)
-                {
-                    updateStarsInRow((JPanel) comp, variant.name);
-                }
+                updateStarsInRow(row);
             }
         }
     }
@@ -326,16 +323,13 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
 
             // Auto-favourite when there is exactly one accessible location and none set yet
             if (valid.size() == 1 && currentMonsterName != null
-                    && favoriteService.getFavoriteForVariant(currentMonsterName, variant.name) == null
+                    && favoriteService.getFavorite(currentMonsterName) == null
                     && (debugMode.get() || requirementService.isAvailable(valid.get(0))))
             {
-                favoriteService.setFavoriteForVariant(currentMonsterName, variant.name, valid.get(0));
-                for (Component comp : locPanel.getComponents())
+                favoriteService.setFavorite(currentMonsterName, valid.get(0));
+                for (JPanel row : allLocationRows)
                 {
-                    if (comp instanceof JPanel)
-                    {
-                        updateStarsInRow((JPanel) comp, variant.name);
-                    }
+                    updateStarsInRow(row);
                 }
             }
         }
@@ -400,7 +394,7 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
         String missing = reqMet ? "" : requirementService.getMissingText(locationName);
 
         boolean isFav = currentMonsterName != null
-                && favoriteService.isFavoriteForVariant(currentMonsterName, variantName, locationName);
+                && favoriteService.isFavorite(currentMonsterName, locationName);
         JButton favButton = new JButton(isFav ? "\u2605" : "\u2606");
         favButton.setFont(favButton.getFont().deriveFont(Font.PLAIN, 16f));
         favButton.setPreferredSize(new Dimension(28, 24));
@@ -421,7 +415,7 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
             favButton.setToolTipText(isFav ? "Remove favourite" : "Set as favourite location");
             favButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-            ActionListener favListener = e -> onFavouriteClicked(locationName, variantName, row);
+            ActionListener favListener = e -> onFavouriteClicked(locationName, row);
             favButton.addActionListener(favListener);
             buttons.add(favButton);
             listeners.add(favListener);
@@ -499,33 +493,26 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
 
     // â”€â”€ Favourite / nav interactions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-    private void onFavouriteClicked(String locationName, String variantName, JPanel clickedRow)
+    private void onFavouriteClicked(String locationName, JPanel clickedRow)
     {
         if (currentMonsterName == null)
         {
             return;
         }
 
-        boolean nowFavourite = favoriteService.toggleFavoriteForVariant(currentMonsterName, variantName, locationName);
+        boolean nowFavourite = favoriteService.toggleFavorite(currentMonsterName, locationName);
 
-        // Refresh stars for all rows in the same variant's locPanel
-        Container locPanel = clickedRow.getParent();
-        if (locPanel != null)
+        // Refresh stars for ALL location rows across every variant section
+        for (JPanel row : allLocationRows)
         {
-            for (Component comp : locPanel.getComponents())
-            {
-                if (comp instanceof JPanel)
-                {
-                    updateStarsInRow((JPanel) comp, variantName);
-                }
-            }
+            updateStarsInRow(row);
         }
 
-        log.debug("{} {} as favourite for {} / variant {}",
-                nowFavourite ? "Set" : "Cleared", locationName, currentMonsterName, variantName);
+        log.debug("{} {} as favourite for {}",
+                nowFavourite ? "Set" : "Cleared", locationName, currentMonsterName);
     }
 
-    private void updateStarsInRow(JPanel row, String variantName)
+    private void updateStarsInRow(JPanel row)
     {
         Component east = ((BorderLayout) row.getLayout()).getLayoutComponent(BorderLayout.EAST);
         if (!(east instanceof JPanel))
@@ -540,7 +527,7 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
             return;
         }
 
-        boolean isFav = favoriteService.isFavoriteForVariant(currentMonsterName, variantName, locationName);
+        boolean isFav = favoriteService.isFavorite(currentMonsterName, locationName);
 
         for (Component btn : ((JPanel) east).getComponents())
         {
