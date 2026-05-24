@@ -523,6 +523,9 @@ public class SlayerSimplifiedPlugin extends Plugin
                     // task; refresh from config so future skip-checks are accurate.
                     lastSeenSlayerRemaining = taskTracker.getRemainingAmount();
                 }
+                // Rebuild the NPC highlight set now that the task name has changed.
+                // onConfigChanged fires on the client thread, so this is safe to call directly.
+                targetOverlay.onTaskChanged();
                 SwingUtilities.invokeLater(() ->
                 {
                     syncCurrentTaskToHistory();
