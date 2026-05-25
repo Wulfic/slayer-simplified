@@ -40,6 +40,9 @@ import net.runelite.api.events.InteractingChanged;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.NpcDespawned;
 import net.runelite.api.events.NpcSpawned;
+import net.runelite.api.events.GameTick;
+import net.runelite.api.events.WidgetLoaded;
+import net.runelite.api.gameval.InterfaceID;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
@@ -114,6 +117,13 @@ public class SlayerSimplifiedPlugin extends Plugin
     /** Set when the player types !task; cleared when the game response triggers navigation. */
     private volatile boolean pendingTaskNavigation = false;
 
+    /**
+     * Set to true on LOGGED_IN so the first GameTick re-reads quest/skill state.
+     * Using GameTick (rather than clientThread.invokeLater) ensures all quest
+     * varbits are fully synced before we query them.
+     */
+    private volatile boolean pendingRequirementsRefresh = false;
+
     /** Name of the most recently interacted slayer master NPC, for history attribution. */
     private String lastInteractedMasterName = "";
 
@@ -172,6 +182,7 @@ public class SlayerSimplifiedPlugin extends Plugin
         {
             streakOptimizerService.refresh();
             SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
+            SwingUtilities.invokeLater(mainPanel::refreshSelectedTask);
         });
         SwingUtilities.invokeLater(() ->
         {
@@ -190,7 +201,7 @@ public class SlayerSimplifiedPlugin extends Plugin
         // Populate the NPC highlight set in case the plugin is enabled while already logged in.
         clientThread.invokeLater(targetOverlay::onTaskChanged);
         // Cache quest/skill state so the LocationsTab can gray out inaccessible options.
-        clientThread.invokeLater(locationRequirementService::refresh);
+        pendingRequirementsRefresh = true;
         log.info("Slayer Simplified started");
     }
 
@@ -333,9 +344,34 @@ public class SlayerSimplifiedPlugin extends Plugin
     {
         if (event.getGameState() == net.runelite.api.GameState.LOGGED_IN)
         {
-            // onGameStateChanged fires on the client thread, so call refresh() directly.
-            // The refresh listener will then schedule a Swing-side panel rebuild.
+            // Flag so the next GameTick re-reads quest/skill state once all
+            // varbits for the session are fully synchronised.
+            pendingRequirementsRefresh = true;
+        }
+    }
+
+    @Subscribe
+    public void onGameTick(GameTick event)
+    {
+        if (pendingRequirementsRefresh)
+        {
+            pendingRequirementsRefresh = false;
             locationRequirementService.refresh();
+        }
+    }
+
+    /**
+     * When the quest-complete scroll interface loads, the player has just
+     * finished a quest in-session.  Re-read all quest states immediately so
+     * the Locations tab unlocks any newly-available areas without requiring
+     * the player to log out and back in.
+     */
+    @Subscribe
+    public void onWidgetLoaded(WidgetLoaded event)
+    {
+        if (event.getGroupId() == InterfaceID.QUESTSCROLL)
+        {
+            clientThread.invokeLater(locationRequirementService::refresh);
         }
     }
 

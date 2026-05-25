@@ -129,8 +129,10 @@ public class LocationRequirementService
         }
         this.completedQuests = Collections.unmodifiableSet(completed);
         this.skillLevels = Collections.unmodifiableMap(levels);
-        log.debug("LocationRequirementService refreshed: {} / {} quests completed, {} skills tracked",
-                completed.size(), trackedQuests.size(), levels.size());
+        log.info("LocationRequirementService refreshed: {}/{} quests completed ({}), {} skills tracked",
+                completed.size(), trackedQuests.size(),
+                completed.isEmpty() ? "none" : completed.stream().map(Quest::name).collect(java.util.stream.Collectors.joining(", ")),
+                levels.size());
         for (Runnable listener : refreshListeners)
         {
             listener.run();
