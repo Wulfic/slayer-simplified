@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Animated Bronze Armour",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Animated Bronze Armour --lvl 11"
     ],

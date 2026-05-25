@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Swamp Crab",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Swamp Crab --lvl 55": []
+        "Swamp Crab --lvl 55": [
+            "Haunted Woods",
+            "Slepe"
+        ]
     }
 }

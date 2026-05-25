@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Ogress Warrior",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ogress Warrior --lvl 82": []
+        "Ogress Warrior --lvl 82": [
+            "Corsair Cove Dungeon"
+        ]
     }
 }

@@ -1,0 +1,31 @@
+{
+    "name": "Vorkath",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Anti-dragon shield",
+        "Antifire potion",
+        "Dragonbane ammo"
+    ],
+    "attributes": [
+        "Draconic",
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic",
+        "Dragonfire"
+    ],
+    "variants": [
+        "Vorkath --lvl 732"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Vorkath --lvl 732": [
+            "Ungael"
+        ]
+    }
+}

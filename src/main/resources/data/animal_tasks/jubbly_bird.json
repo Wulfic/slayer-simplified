@@ -1,0 +1,17 @@
+{
+    "name": "Jubbly bird",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jubbly bird --lvl 9"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Jubbly bird --lvl 9": "Feldip Hills"
+    }
+}

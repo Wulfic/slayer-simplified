@@ -1,10 +1,13 @@
-﻿{
+{
     "name": "Death spawn",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Slash","Typeless"],
+    "attackStyles": [
+        "Slash",
+        "Typeless"
+    ],
     "variants": [
         "Death spawn --lvl 46"
     ],

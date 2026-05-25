@@ -1,0 +1,22 @@
+{
+    "name": "Crazy Archaeologist",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Crazy Archaeologist --lvl 204"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Crazy Archaeologist --lvl 204": [
+            "Forgotten Cemetery"
+        ]
+    }
+}

@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Battle mage (Zamorak)",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Magic"],
+    "attackStyles": [
+        "Magic"
+    ],
     "variants": [
         "Battle mage (Zamorak) --lvl 54"
     ],

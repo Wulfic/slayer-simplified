@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Bandit (Bandit Camp)",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Bandit (Bandit Camp) --lvl 130"
     ],

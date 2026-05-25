@@ -1,0 +1,25 @@
+{
+    "name": "Verzik Vitur",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Vampyre"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Verzik Vitur --lvl 1520"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Verzik Vitur --lvl 1520": [
+            "Theatre of Blood"
+        ]
+    }
+}

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Screaming banshee",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Screaming banshee --lvl 70": []
+        "Screaming banshee --lvl 70": [
+            "Slayer Tower -- Floor 2"
+        ]
     }
 }

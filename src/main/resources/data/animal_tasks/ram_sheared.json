@@ -1,0 +1,19 @@
+{
+    "name": "Ram (Sheared)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Crush"
+    ],
+    "variants": [
+        "Ram (Sheared) --lvl 2"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Ram (Sheared) --lvl 2": []
+    }
+}

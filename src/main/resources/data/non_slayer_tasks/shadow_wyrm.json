@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Shadow Wyrm",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Shadow Wyrm --lvl 267": []
+        "Shadow Wyrm --lvl 267": [
+            "Karuulm Slayer Dungeon"
+        ]
     }
 }

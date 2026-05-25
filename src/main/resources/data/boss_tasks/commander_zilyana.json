@@ -1,0 +1,25 @@
+{
+    "name": "Commander Zilyana",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Saradomin item"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Commander Zilyana --lvl 596"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Commander Zilyana --lvl 596": [
+            "God Wars Dungeon"
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Porcupine",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Porcupine --lvl 4"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Porcupine --lvl 4": "Aldarin"
+    }
+}

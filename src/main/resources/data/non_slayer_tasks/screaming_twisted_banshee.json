@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Screaming twisted banshee",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Screaming twisted banshee --lvl 144": []
+        "Screaming twisted banshee --lvl 144": [
+            "Catacombs of Kourend"
+        ]
     }
 }

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Spitting Wyvern",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Spitting Wyvern --lvl 139": []
+        "Spitting Wyvern --lvl 139": [
+            "Wyvern Cave"
+        ]
     }
 }

@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Animated Iron Armour",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Animated Iron Armour --lvl 23"
     ],

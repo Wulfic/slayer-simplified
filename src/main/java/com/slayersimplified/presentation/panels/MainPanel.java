@@ -508,7 +508,9 @@ public class MainPanel extends PluginPanel
         }
         for (String m : t.masters)
         {
-            if (SlayerMaster.NON_SLAYER_ENEMIES.getDisplayName().equals(m))
+            if (SlayerMaster.NON_SLAYER_ENEMIES.getDisplayName().equals(m)
+                    || SlayerMaster.ANIMALS.getDisplayName().equals(m)
+                    || SlayerMaster.BOSSES.getDisplayName().equals(m))
             {
                 return true;
             }

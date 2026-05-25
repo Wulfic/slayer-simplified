@@ -1,0 +1,17 @@
+{
+    "name": "Crocodile",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Crocodile --lvl 71"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Crocodile --lvl 71": []
+    }
+}

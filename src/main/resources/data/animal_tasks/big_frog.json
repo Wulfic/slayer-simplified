@@ -1,0 +1,19 @@
+{
+    "name": "Big frog",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Crush"
+    ],
+    "variants": [
+        "Big frog --lvl 24"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Big frog --lvl 24": []
+    }
+}

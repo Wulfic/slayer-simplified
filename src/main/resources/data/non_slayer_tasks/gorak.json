@@ -1,10 +1,13 @@
-﻿{
+{
     "name": "Gorak",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush","Typeless"],
+    "attackStyles": [
+        "Crush",
+        "Typeless"
+    ],
     "variants": [
         "Gorak --lvl 149"
     ],
@@ -12,6 +15,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Gorak --lvl 149": []
+        "Gorak --lvl 149": "God Wars Dungeon"
     }
 }

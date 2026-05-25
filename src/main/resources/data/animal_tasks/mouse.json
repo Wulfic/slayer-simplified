@@ -1,0 +1,17 @@
+{
+    "name": "Mouse",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mouse --lvl 95"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Mouse --lvl 95": []
+    }
+}

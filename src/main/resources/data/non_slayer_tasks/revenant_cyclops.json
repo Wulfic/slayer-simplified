@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Revenant cyclops",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Revenant cyclops --lvl 82": []
+        "Revenant cyclops --lvl 82": [
+            "Revenant Caves"
+        ]
     }
 }

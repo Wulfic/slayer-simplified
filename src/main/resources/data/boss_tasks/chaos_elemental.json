@@ -1,0 +1,23 @@
+{
+    "name": "Chaos Elemental",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Chaos Elemental --lvl 305"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Chaos Elemental --lvl 305": [
+            "Wilderness Volcano"
+        ]
+    }
+}

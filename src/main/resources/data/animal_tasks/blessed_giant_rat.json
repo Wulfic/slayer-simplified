@@ -1,0 +1,17 @@
+{
+    "name": "Blessed giant rat",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Blessed giant rat --lvl 9"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Blessed giant rat --lvl 9": "Underground Pass"
+    }
+}

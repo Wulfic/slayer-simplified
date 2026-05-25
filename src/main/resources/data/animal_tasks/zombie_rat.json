@@ -1,0 +1,17 @@
+{
+    "name": "Zombie rat",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Zombie rat --lvl 3"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Zombie rat --lvl 3": "Melzar's Maze"
+    }
+}

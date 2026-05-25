@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Pirate Guard",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Pirate Guard --lvl 19": []
+        "Pirate Guard --lvl 19": "Brimhaven"
     }
 }

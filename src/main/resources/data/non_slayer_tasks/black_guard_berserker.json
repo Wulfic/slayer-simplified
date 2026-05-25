@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Black Guard Berserker",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Black Guard Berserker --lvl 66": []
+        "Black Guard Berserker --lvl 66": [
+            "Keldagrim"
+        ]
     }
 }

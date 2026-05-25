@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Tormented Warrior",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Tormented Warrior --lvl 90": []
+        "Tormented Warrior --lvl 90": "Kharazi Jungle"
     }
 }

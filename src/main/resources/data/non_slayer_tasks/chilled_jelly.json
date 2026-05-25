@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Chilled jelly",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Chilled jelly --lvl 112": []
+        "Chilled jelly --lvl 112": [
+            "Ruins of Tapoyauik"
+        ]
     }
 }

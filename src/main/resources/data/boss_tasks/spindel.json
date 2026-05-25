@@ -1,0 +1,24 @@
+{
+    "name": "Spindel",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Spider"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Spindel --lvl 279"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Spindel --lvl 279": [
+            "Spindel's Den"
+        ]
+    }
+}

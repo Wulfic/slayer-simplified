@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Taloned Wyvern",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Taloned Wyvern --lvl 147": []
+        "Taloned Wyvern --lvl 147": [
+            "Wyvern Cave"
+        ]
     }
 }

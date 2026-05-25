@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Brutal blue dragon",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Brutal blue dragon --lvl 271": []
+        "Brutal blue dragon --lvl 271": [
+            "Ruins of Tapoyauik",
+            "Catacombs of Kourend"
+        ]
     }
 }

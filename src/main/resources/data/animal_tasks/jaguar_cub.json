@@ -1,0 +1,17 @@
+{
+    "name": "Jaguar cub",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jaguar cub --lvl 31"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Jaguar cub --lvl 31": "Avium Savannah"
+    }
+}

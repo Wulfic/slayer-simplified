@@ -1,10 +1,13 @@
-﻿{
+{
     "name": "Torcher",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Ranged","Magic"],
+    "attackStyles": [
+        "Ranged",
+        "Magic"
+    ],
     "variants": [
         "Torcher --lvl 92"
     ],

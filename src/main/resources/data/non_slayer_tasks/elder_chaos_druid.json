@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Elder Chaos druid",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Elder Chaos druid --lvl 129": []
+        "Elder Chaos druid --lvl 129": [
+            "Chaos Temple (Wilderness)"
+        ]
     }
 }

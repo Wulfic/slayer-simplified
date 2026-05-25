@@ -31,7 +31,10 @@ public enum SlayerMaster
     NIEVE("Nieve / Steve",     new WorldPoint(2432, 3424, 0), 12),
     DURADEL("Duradel",         new WorldPoint(2869, 2982, 0), 15),
     KRYSTILIA("Krystilia",     new WorldPoint(3109, 3514, 0), 25),
-    NON_SLAYER_ENEMIES("Non-Slayer Enemies", null, 0);
+    // ── Non-standard "masters" – always rendered at the bottom when the toggle is on ──
+    NON_SLAYER_ENEMIES("Non-Slayer Enemies", null, 0),
+    ANIMALS("Animals",        null, 0),
+    BOSSES("Bosses",          null, 0);
 
     private final String displayName;
     private final WorldPoint worldPoint;

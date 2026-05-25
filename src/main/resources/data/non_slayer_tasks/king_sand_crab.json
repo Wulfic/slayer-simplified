@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "King Sand Crab",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "King Sand Crab --lvl 107": []
+        "King Sand Crab --lvl 107": [
+            "Catacombs of Kourend",
+            "Crabclaw Cave"
+        ]
     }
 }

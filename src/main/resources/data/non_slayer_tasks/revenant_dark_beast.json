@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Revenant dark beast",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Revenant dark beast --lvl 120": []
+        "Revenant dark beast --lvl 120": [
+            "Revenant Caves"
+        ]
     }
 }

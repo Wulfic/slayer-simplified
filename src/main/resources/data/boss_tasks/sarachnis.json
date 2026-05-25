@@ -1,0 +1,26 @@
+{
+    "name": "Sarachnis",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Slash weapon"
+    ],
+    "attributes": [
+        "Spider"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Sarachnis --lvl 318"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Sarachnis --lvl 318": [
+            "Forthos Dungeon"
+        ]
+    }
+}

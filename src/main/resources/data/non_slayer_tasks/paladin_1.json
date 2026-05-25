@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Paladin (1)",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Slash"],
+    "attackStyles": [
+        "Slash"
+    ],
     "variants": [
         "Paladin (1) --lvl 121"
     ],

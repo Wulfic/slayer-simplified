@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Animated spade",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Animated spade --lvl 50": []
+        "Animated spade --lvl 50": "Tarn's Lair"
     }
 }

@@ -1,0 +1,17 @@
+{
+    "name": "Yak",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Yak --lvl 22"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Yak --lvl 22": "Neitiznot"
+    }
+}

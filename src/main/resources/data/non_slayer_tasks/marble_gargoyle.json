@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Marble gargoyle",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Marble gargoyle --lvl 349": []
+        "Marble gargoyle --lvl 349": [
+            "Slayer Tower"
+        ]
     }
 }

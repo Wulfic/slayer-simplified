@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Sourhog",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Sourhog --lvl 37": []
+        "Sourhog --lvl 37": [
+            "Sourhog Cave"
+        ]
     }
 }

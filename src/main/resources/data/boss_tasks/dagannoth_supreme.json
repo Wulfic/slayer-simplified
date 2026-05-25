@@ -1,0 +1,23 @@
+{
+    "name": "Dagannoth Supreme",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Dagannoth"
+    ],
+    "attackStyles": [
+        "Ranged"
+    ],
+    "variants": [
+        "Dagannoth Supreme --lvl 303"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Dagannoth Supreme --lvl 303": [
+            "Waterbirth Island Dungeon"
+        ]
+    }
+}

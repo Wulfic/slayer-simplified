@@ -1,0 +1,19 @@
+{
+    "name": "Snake",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Stab"
+    ],
+    "variants": [
+        "Snake --lvl 35"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Snake --lvl 35": "Ardougne Zoo"
+    }
+}

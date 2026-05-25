@@ -1,0 +1,17 @@
+{
+    "name": "Mudskipper",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mudskipper --lvl 31"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Mudskipper --lvl 31": "Mogre Camp"
+    }
+}

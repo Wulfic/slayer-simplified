@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Jogre (GWD)",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Jogre (GWD) --lvl 58"
     ],

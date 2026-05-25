@@ -1,0 +1,19 @@
+{
+    "name": "Chinchompa (Hunter)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Crush"
+    ],
+    "variants": [
+        "Chinchompa (Hunter) --lvl 1"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Chinchompa (Hunter) --lvl 1": []
+    }
+}

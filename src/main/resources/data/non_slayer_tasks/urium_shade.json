@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Urium Shade",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Urium Shade --lvl 140": []
+        "Urium Shade --lvl 140": [
+            "Shade Catacombs"
+        ]
     }
 }

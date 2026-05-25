@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Sand Crab",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,13 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Sand Crab --lvl 15": []
+        "Sand Crab --lvl 15": [
+            "Avium Savannah",
+            "Crabclaw Cave",
+            "Crabclaw Isle",
+            "Hosidius - Southern Coast",
+            "Isle of Souls",
+            "Outer Fortis"
+        ]
     }
 }

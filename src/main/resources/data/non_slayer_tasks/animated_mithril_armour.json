@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Animated Mithril Armour",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Stab"],
+    "attackStyles": [
+        "Stab"
+    ],
     "variants": [
         "Animated Mithril Armour --lvl 92"
     ],

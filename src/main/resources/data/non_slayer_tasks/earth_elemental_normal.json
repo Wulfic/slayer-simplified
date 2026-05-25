@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Earth elemental (Normal)",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Earth elemental (Normal) --lvl 35"
     ],

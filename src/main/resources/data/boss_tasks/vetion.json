@@ -1,0 +1,24 @@
+{
+    "name": "Vet'ion",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Vet'ion --lvl 454"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Vet'ion --lvl 454": [
+            "Vet'ion's Lair"
+        ]
+    }
+}

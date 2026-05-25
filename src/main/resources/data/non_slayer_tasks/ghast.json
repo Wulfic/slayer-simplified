@@ -1,10 +1,14 @@
-﻿{
+{
     "name": "Ghast",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
-    "attributes": ["Spectral"],
-    "attackStyles": ["Slash"],
+    "attributes": [
+        "Spectral"
+    ],
+    "attackStyles": [
+        "Slash"
+    ],
     "variants": [
         "Ghast --lvl 139"
     ],
@@ -12,6 +16,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ghast --lvl 139": []
+        "Ghast --lvl 139": "Morytania"
     }
 }

@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Huge spider",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Huge spider --lvl 81"
     ],

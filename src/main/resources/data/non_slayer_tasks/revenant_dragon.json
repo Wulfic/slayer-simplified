@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Revenant dragon",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Revenant dragon --lvl 135": []
+        "Revenant dragon --lvl 135": [
+            "Revenant Caves"
+        ]
     }
 }

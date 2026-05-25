@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Earth wizard",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Magic"],
+    "attackStyles": [
+        "Magic"
+    ],
     "variants": [
         "Earth wizard --lvl 13"
     ],

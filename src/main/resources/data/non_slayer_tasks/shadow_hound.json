@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Shadow Hound",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Shadow Hound --lvl 63": []
+        "Shadow Hound --lvl 63": [
+            "Shadow Dungeon"
+        ]
     }
 }

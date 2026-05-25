@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Nail beast",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Slash"],
+    "attackStyles": [
+        "Slash"
+    ],
     "variants": [
         "Nail beast --lvl 141"
     ],

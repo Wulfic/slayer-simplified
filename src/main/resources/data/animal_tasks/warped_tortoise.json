@@ -1,0 +1,17 @@
+{
+    "name": "Warped Tortoise",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Warped Tortoise --lvl 121"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Warped Tortoise --lvl 121": "Poison Waste Dungeon"
+    }
+}

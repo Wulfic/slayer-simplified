@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Revenant pyrefiend",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Revenant pyrefiend --lvl 52": []
+        "Revenant pyrefiend --lvl 52": [
+            "Revenant Caves"
+        ]
     }
 }

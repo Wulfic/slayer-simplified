@@ -1,0 +1,17 @@
+{
+    "name": "Warped Terrorbird",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Warped Terrorbird --lvl 138"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Warped Terrorbird --lvl 138": "Poison Waste Dungeon"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Blessed spider",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Blessed spider --lvl 39"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Blessed spider --lvl 39": "Underground Pass"
+    }
+}

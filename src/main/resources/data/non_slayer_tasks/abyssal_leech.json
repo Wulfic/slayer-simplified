@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Abyssal leech",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Slash"],
+    "attackStyles": [
+        "Slash"
+    ],
     "variants": [
         "Abyssal leech --lvl 54"
     ],

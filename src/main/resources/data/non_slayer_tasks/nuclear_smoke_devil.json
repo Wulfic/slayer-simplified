@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Nuclear smoke devil",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Nuclear smoke devil --lvl 280": []
+        "Nuclear smoke devil --lvl 280": [
+            "Smoke Devil Dungeon"
+        ]
     }
 }

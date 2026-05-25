@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Iorwerth Warrior",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Iorwerth Warrior --lvl 108": []
+        "Iorwerth Warrior --lvl 108": [
+            "Iorwerth Camp",
+            "Iorwerth Dungeon"
+        ]
     }
 }

@@ -1,0 +1,25 @@
+{
+    "name": "Amoxliatl",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Ice protection",
+        "Antidote"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Amoxliatl --lvl 200"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Amoxliatl --lvl 200": [
+            "Neypotzli"
+        ]
+    }
+}

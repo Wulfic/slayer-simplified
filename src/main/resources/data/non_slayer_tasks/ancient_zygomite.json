@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Ancient Zygomite",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ancient Zygomite --lvl 109": []
+        "Ancient Zygomite --lvl 109": [
+            "Fossil Island",
+            "Stalker Den"
+        ]
     }
 }

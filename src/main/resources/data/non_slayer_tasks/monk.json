@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Monk",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Monk --lvl 5"
     ],

@@ -1,0 +1,17 @@
+{
+    "name": "Lobstrosity",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Lobstrosity --lvl 68"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Lobstrosity --lvl 68": "Fossil Island"
+    }
+}

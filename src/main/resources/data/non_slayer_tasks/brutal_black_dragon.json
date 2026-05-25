@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Brutal black dragon",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Brutal black dragon --lvl 318": []
+        "Brutal black dragon --lvl 318": [
+            "Catacombs of Kourend"
+        ]
     }
 }

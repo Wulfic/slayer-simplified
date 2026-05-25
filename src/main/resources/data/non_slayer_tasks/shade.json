@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Shade",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Shade --lvl 159": []
+        "Shade --lvl 159": [
+            "Sepulchre of Death",
+            "Stronghold of Security"
+        ]
     }
 }

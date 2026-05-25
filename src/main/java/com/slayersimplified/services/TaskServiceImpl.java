@@ -81,6 +81,8 @@ public class TaskServiceImpl implements TaskService
             Gson gson,
             @Named("dataPath") String dataPath,
             @Named("nonSlayerDataPath") String nonSlayerDataPath,
+            @Named("bossDataPath") String bossDataPath,
+            @Named("animalDataPath") String animalDataPath,
             @Named("baseWikiUrl") String baseWikiUrl,
             @Named("baseImagesPath") String baseImagesPath)
     {
@@ -88,6 +90,8 @@ public class TaskServiceImpl implements TaskService
         this.baseImagesPath = baseImagesPath;
         loadDirectory(gson, dataPath);
         loadDirectory(gson, nonSlayerDataPath);
+        loadDirectory(gson, bossDataPath);
+        loadDirectory(gson, animalDataPath);
     }
 
     private void loadDirectory(Gson gson, String dataPath)

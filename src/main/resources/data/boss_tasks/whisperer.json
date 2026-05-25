@@ -1,0 +1,21 @@
+{
+    "name": "Whisperer",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Magic"
+    ],
+    "variants": [
+        "Whisperer --lvl 895"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Whisperer --lvl 895": [
+            "Ancient Vault"
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Corporeal Beast",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Zamorakian hasta",
+        "Dragon warhammer"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Corporeal Beast --lvl 785"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Corporeal Beast --lvl 785": [
+            "Corporeal Beast Lair"
+        ]
+    }
+}

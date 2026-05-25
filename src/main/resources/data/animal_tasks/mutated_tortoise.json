@@ -1,0 +1,17 @@
+{
+    "name": "Mutated Tortoise",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mutated Tortoise --lvl 247"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Mutated Tortoise --lvl 247": []
+    }
+}

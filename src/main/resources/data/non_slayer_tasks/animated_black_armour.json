@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Animated Black Armour",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Stab"],
+    "attackStyles": [
+        "Stab"
+    ],
     "variants": [
         "Animated Black Armour --lvl 69"
     ],

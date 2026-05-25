@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Ogress Shaman",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ogress Shaman --lvl 82": []
+        "Ogress Shaman --lvl 82": [
+            "Corsair Cove Dungeon"
+        ]
     }
 }

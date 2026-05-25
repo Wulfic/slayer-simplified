@@ -1,0 +1,26 @@
+{
+    "name": "Skotizo",
+    "levelRequired": 0,
+    "itemsRequired": [
+        "Dark totem"
+    ],
+    "itemsSuggested": [],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Skotizo --lvl 321"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Skotizo --lvl 321": [
+            "Catacombs of Kourend"
+        ]
+    }
+}

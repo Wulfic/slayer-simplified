@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Bandit champion",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Slash"],
+    "attackStyles": [
+        "Slash"
+    ],
     "variants": [
         "Bandit champion --lvl 70"
     ],

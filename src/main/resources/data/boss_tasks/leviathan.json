@@ -1,0 +1,22 @@
+{
+    "name": "Leviathan",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Leviathan --lvl 553"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Leviathan --lvl 553": [
+            "Lassar Undercity"
+        ]
+    }
+}

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Ogre chieftain",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ogre chieftain --lvl 81": []
+        "Ogre chieftain --lvl 81": "Feldip Hills"
     }
 }

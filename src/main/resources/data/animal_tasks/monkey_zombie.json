@@ -1,0 +1,17 @@
+{
+    "name": "Monkey Zombie",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Monkey Zombie --lvl 129"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Monkey Zombie --lvl 129": "Ape Atoll Dungeon"
+    }
+}

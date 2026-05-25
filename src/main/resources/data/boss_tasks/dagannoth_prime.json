@@ -1,0 +1,23 @@
+{
+    "name": "Dagannoth Prime",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Dagannoth"
+    ],
+    "attackStyles": [
+        "Magic"
+    ],
+    "variants": [
+        "Dagannoth Prime --lvl 303"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Dagannoth Prime --lvl 303": [
+            "Waterbirth Island Dungeon"
+        ]
+    }
+}

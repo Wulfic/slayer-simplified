@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Vyrewatch",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Vyrewatch --lvl 125": []
+        "Vyrewatch --lvl 125": "Meiyerditch"
     }
 }

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Grimy Lizard",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Grimy Lizard --lvl 50": []
+        "Grimy Lizard --lvl 50": [
+            "Neypotzli"
+        ]
     }
 }

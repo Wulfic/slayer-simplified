@@ -1,0 +1,23 @@
+{
+    "name": "Crystalline Hunllef",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Crystalline Hunllef --lvl 600"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Crystalline Hunllef --lvl 600": [
+            "Prifddinas"
+        ]
+    }
+}

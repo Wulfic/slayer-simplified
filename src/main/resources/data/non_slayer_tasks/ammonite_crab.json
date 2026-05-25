@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Ammonite Crab",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ammonite Crab --lvl 25": []
+        "Ammonite Crab --lvl 25": [
+            "Fossil Island"
+        ]
     }
 }

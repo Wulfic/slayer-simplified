@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Angry barbarian spirit",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Angry barbarian spirit --lvl 166": []
+        "Angry barbarian spirit --lvl 166": "Ancient Cavern"
     }
 }

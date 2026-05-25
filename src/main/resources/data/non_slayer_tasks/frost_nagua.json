@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Frost Nagua",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Frost Nagua --lvl 104": []
+        "Frost Nagua --lvl 104": [
+            "Ruins of Tapoyauik"
+        ]
     }
 }

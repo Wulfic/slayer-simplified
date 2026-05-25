@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Araxyte",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Araxyte --lvl 146": []
+        "Araxyte --lvl 146": "Morytania Spider Cave"
     }
 }

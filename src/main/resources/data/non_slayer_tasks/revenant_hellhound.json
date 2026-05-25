@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Revenant hellhound",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Revenant hellhound --lvl 90": []
+        "Revenant hellhound --lvl 90": [
+            "Revenant Caves"
+        ]
     }
 }

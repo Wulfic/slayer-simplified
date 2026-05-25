@@ -1,10 +1,13 @@
-﻿{
+{
     "name": "Abyssal guardian",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Stab","Magic"],
+    "attackStyles": [
+        "Stab",
+        "Magic"
+    ],
     "variants": [
         "Abyssal guardian --lvl 59"
     ],

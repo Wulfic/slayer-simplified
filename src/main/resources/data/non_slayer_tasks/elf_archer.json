@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Elf Archer",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Elf Archer --lvl 90": []
+        "Elf Archer --lvl 90": [
+            "Lletya"
+        ]
     }
 }

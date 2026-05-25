@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Temple Spider",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Temple Spider --lvl 75": []
+        "Temple Spider --lvl 75": [
+            "Forthos Dungeon"
+        ]
     }
 }

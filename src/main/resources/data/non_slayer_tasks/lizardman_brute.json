@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Lizardman brute",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Lizardman brute --lvl 75": []
+        "Lizardman brute --lvl 75": [
+            "Lizardman Settlement",
+            "Lizardman canyon"
+        ]
     }
 }

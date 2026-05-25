@@ -1,0 +1,26 @@
+{
+    "name": "General Graardor",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Bandos item"
+    ],
+    "attributes": [
+        "Giant"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged"
+    ],
+    "variants": [
+        "General Graardor --lvl 624"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "General Graardor --lvl 624": [
+            "God Wars Dungeon"
+        ]
+    }
+}

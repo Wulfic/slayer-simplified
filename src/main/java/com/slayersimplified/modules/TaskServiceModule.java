@@ -67,4 +67,20 @@ public class TaskServiceModule extends AbstractModule
     {
         return "/data/non_slayer_tasks";
     }
+
+    /** Classpath path to the boss task JSON files. */
+    @Provides
+    @Named("bossDataPath")
+    String provideBossDataPath()
+    {
+        return "/data/boss_tasks";
+    }
+
+    /** Classpath path to the animal task JSON files. */
+    @Provides
+    @Named("animalDataPath")
+    String provideAnimalDataPath()
+    {
+        return "/data/animal_tasks";
+    }
 }

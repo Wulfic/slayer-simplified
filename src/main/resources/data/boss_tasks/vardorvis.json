@@ -1,0 +1,24 @@
+{
+    "name": "Vardorvis",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged"
+    ],
+    "variants": [
+        "Vardorvis --lvl 520"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Vardorvis --lvl 520": [
+            "Lassar Undercity"
+        ]
+    }
+}

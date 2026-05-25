@@ -1,0 +1,21 @@
+{
+    "name": "Chaos Fanatic",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Magic"
+    ],
+    "variants": [
+        "Chaos Fanatic --lvl 202"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Chaos Fanatic --lvl 202": [
+            "West of the Chaos Temple"
+        ]
+    }
+}

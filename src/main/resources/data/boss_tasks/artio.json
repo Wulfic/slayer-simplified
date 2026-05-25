@@ -1,0 +1,24 @@
+{
+    "name": "Artio",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Bear"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Artio --lvl 329"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Artio --lvl 329": [
+            "Artio's Den"
+        ]
+    }
+}

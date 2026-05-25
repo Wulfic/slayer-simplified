@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Yrsa",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Yrsa --lvl 1": []
+        "Yrsa --lvl 1": "Rellekka"
     }
 }

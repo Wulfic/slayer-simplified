@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Guardian of Armadyl",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Guardian of Armadyl --lvl 45": []
+        "Guardian of Armadyl --lvl 45": "Temple of Ikov"
     }
 }

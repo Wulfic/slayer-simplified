@@ -1,0 +1,19 @@
+{
+    "name": "Giant frog",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Crush"
+    ],
+    "variants": [
+        "Giant frog --lvl 99"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Giant frog --lvl 99": "Lumbridge Swamp"
+    }
+}

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Pyrelord",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Pyrelord --lvl 60": []
+        "Pyrelord --lvl 60": [
+            "Isle of Souls",
+            "Sisterhood Sanctuary"
+        ]
     }
 }

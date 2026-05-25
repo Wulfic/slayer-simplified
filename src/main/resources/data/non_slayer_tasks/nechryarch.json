@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Nechryarch",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,11 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Nechryarch --lvl 300": []
+        "Nechryarch --lvl 300": [
+            "Slayer Tower",
+            "Catacombs of Kourend",
+            "Iorwerth Dungeon",
+            "Wildnerness Slayer Cave"
+        ]
     }
 }

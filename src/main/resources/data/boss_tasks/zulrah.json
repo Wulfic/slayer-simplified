@@ -1,0 +1,34 @@
+{
+    "name": "Zulrah",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Antipoison",
+        "Magic gear",
+        "Range gear"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Zulrah --lvl 725 (Serpentine)",
+        "Zulrah --lvl 725 (Magma)",
+        "Zulrah --lvl 725 (Tanzanite)"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Zulrah --lvl 725 (Serpentine)": [
+            "Zul-Andra"
+        ],
+        "Zulrah --lvl 725 (Magma)": [
+            "Zul-Andra"
+        ],
+        "Zulrah --lvl 725 (Tanzanite)": [
+            "Zul-Andra"
+        ]
+    }
+}

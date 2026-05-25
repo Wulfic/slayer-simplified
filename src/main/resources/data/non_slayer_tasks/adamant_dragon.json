@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Adamant dragon",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Adamant dragon --lvl 338": []
+        "Adamant dragon --lvl 338": [
+            "Lithkren Vault"
+        ]
     }
 }

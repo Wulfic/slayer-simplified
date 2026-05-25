@@ -1,10 +1,13 @@
-﻿{
+{
     "name": "Mummy (Ancient Pyramid) (1)",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Melee","Crush"],
+    "attackStyles": [
+        "Melee",
+        "Crush"
+    ],
     "variants": [
         "Mummy (Ancient Pyramid) (1) --lvl 103"
     ],

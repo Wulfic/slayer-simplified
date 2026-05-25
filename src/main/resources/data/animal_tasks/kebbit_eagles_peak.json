@@ -1,0 +1,19 @@
+{
+    "name": "Kebbit (Eagles' Peak)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Crush"
+    ],
+    "variants": [
+        "Kebbit (Eagles' Peak) --lvl 13"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Kebbit (Eagles' Peak) --lvl 13": []
+    }
+}

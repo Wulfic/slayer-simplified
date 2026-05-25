@@ -1,10 +1,14 @@
-﻿{
+{
     "name": "Imp (God Wars)",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
-    "attributes": ["Demon"],
-    "attackStyles": ["Stab"],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Stab"
+    ],
     "variants": [
         "Imp (God Wars) --lvl 7"
     ],

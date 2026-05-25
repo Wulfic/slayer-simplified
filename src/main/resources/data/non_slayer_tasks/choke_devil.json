@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Choke devil",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,10 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Choke devil --lvl 264": []
+        "Choke devil --lvl 264": [
+            "Smoke Dungeon",
+            "Catacombs of Kourend",
+            "Wilderness Slayer Dungeon"
+        ]
     }
 }

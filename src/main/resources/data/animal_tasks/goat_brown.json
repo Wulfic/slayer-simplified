@@ -1,0 +1,19 @@
+{
+    "name": "Goat (Brown)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Crush"
+    ],
+    "variants": [
+        "Goat (Brown) --lvl 23"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Goat (Brown) --lvl 23": []
+    }
+}

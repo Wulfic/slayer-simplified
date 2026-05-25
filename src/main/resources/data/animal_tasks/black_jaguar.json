@@ -1,0 +1,17 @@
+{
+    "name": "Black jaguar",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Black jaguar --lvl 67"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Black jaguar --lvl 67": "Ralos' Rise"
+    }
+}

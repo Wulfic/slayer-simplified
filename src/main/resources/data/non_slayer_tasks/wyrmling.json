@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Wyrmling",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Wyrmling --lvl 55": []
+        "Wyrmling --lvl 55": [
+            "Neypotzli"
+        ]
     }
 }

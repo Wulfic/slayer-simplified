@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Deviant spectre",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Deviant spectre --lvl 169": []
+        "Deviant spectre --lvl 169": [
+            "Catacombs of Kourend"
+        ]
     }
 }

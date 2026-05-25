@@ -1,0 +1,23 @@
+{
+    "name": "Phosani's Nightmare",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Phosani's Nightmare --lvl 837"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Phosani's Nightmare --lvl 837": [
+            "Sisterhood Sanctuary"
+        ]
+    }
+}

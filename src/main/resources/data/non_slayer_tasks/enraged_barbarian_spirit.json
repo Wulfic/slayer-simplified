@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Enraged barbarian spirit",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Enraged barbarian spirit --lvl 166": []
+        "Enraged barbarian spirit --lvl 166": "Ancient Cavern"
     }
 }

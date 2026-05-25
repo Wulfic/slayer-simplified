@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Brine rat",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Brine rat --lvl 70": []
+        "Brine rat --lvl 70": [
+            "Brine Rat Cavern"
+        ]
     }
 }

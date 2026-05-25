@@ -1,0 +1,19 @@
+{
+    "name": "Monkey Guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Monkey Guard --lvl 167"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Monkey Guard --lvl 167": [
+            "Temple of Marimbo"
+        ]
+    }
+}

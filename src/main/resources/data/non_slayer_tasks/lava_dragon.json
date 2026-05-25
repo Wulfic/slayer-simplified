@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Lava dragon",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Lava dragon --lvl 252": []
+        "Lava dragon --lvl 252": [
+            "Lava Dragon Isle"
+        ]
     }
 }

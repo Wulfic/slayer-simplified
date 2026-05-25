@@ -1,0 +1,24 @@
+{
+    "name": "Giant Sea Snake",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Super antipoison(4)"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Crush",
+        "Ranged"
+    ],
+    "variants": [
+        "Giant Sea Snake --lvl 149"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Giant Sea Snake --lvl 149": [
+            "Miscellania & Etceteria Dungeon"
+        ]
+    }
+}

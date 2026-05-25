@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Afflicted",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Afflicted --lvl 37"
     ],
@@ -12,6 +14,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Afflicted --lvl 37": []
+        "Afflicted --lvl 37": "Mort'ton"
     }
 }

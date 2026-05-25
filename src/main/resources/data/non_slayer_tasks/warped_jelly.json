@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Warped Jelly",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Warped Jelly --lvl 112": []
+        "Warped Jelly --lvl 112": [
+            "Catacombs of Kourend"
+        ]
     }
 }

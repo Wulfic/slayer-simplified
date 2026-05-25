@@ -1,0 +1,23 @@
+{
+    "name": "Giant Mole",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Spade"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Giant Mole --lvl 230"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Giant Mole --lvl 230": [
+            "Falador Park"
+        ]
+    }
+}

@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Mugger (Regular)",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Mugger (Regular) --lvl 6"
     ],

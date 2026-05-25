@@ -1,0 +1,17 @@
+{
+    "name": "Frog",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Frog --lvl 5"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Frog --lvl 5": "Lumbridge Swamp"
+    }
+}

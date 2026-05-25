@@ -1,0 +1,17 @@
+{
+    "name": "Bird",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bird --lvl 11"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Bird --lvl 11": "Ape Atoll"
+    }
+}

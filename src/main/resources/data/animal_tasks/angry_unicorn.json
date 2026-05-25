@@ -1,0 +1,19 @@
+{
+    "name": "Angry unicorn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Stab"
+    ],
+    "variants": [
+        "Angry unicorn --lvl 47"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Angry unicorn --lvl 47": []
+    }
+}

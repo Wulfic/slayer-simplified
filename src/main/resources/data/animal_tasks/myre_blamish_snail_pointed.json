@@ -1,0 +1,19 @@
+{
+    "name": "Myre Blamish Snail (Pointed)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Ranged"
+    ],
+    "variants": [
+        "Myre Blamish Snail (Pointed) --lvl 10"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Myre Blamish Snail (Pointed) --lvl 10": []
+    }
+}

@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Animated Steel Armour",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Stab"],
+    "attackStyles": [
+        "Stab"
+    ],
     "variants": [
         "Animated Steel Armour --lvl 53"
     ],

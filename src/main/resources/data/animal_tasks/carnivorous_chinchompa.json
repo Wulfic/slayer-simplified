@@ -1,0 +1,19 @@
+{
+    "name": "Carnivorous chinchompa",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Crush"
+    ],
+    "variants": [
+        "Carnivorous chinchompa --lvl 2"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Carnivorous chinchompa --lvl 2": []
+    }
+}

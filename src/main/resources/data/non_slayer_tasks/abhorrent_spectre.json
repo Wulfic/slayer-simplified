@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Abhorrent spectre",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,10 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Abhorrent spectre --lvl 253": []
+        "Abhorrent spectre --lvl 253": [
+            "Slayer Tower - Floor 2",
+            "Stronghold Slayer Cave",
+            "Deepfin Mine"
+        ]
     }
 }

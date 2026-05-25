@@ -1,0 +1,23 @@
+{
+    "name": "Great Olm",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Great Olm --lvl 239"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Great Olm --lvl 239": [
+            "Chambers of Xeric"
+        ]
+    }
+}

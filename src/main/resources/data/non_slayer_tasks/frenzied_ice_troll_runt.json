@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Frenzied ice troll runt",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Frenzied ice troll runt --lvl 74": []
+        "Frenzied ice troll runt --lvl 74": "Ice Troll Caves"
     }
 }

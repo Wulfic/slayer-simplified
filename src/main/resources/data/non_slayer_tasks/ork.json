@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Ork",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush"],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
         "Ork --lvl 107"
     ],
@@ -12,6 +14,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ork --lvl 107": []
+        "Ork --lvl 107": "God Wars Dungeon"
     }
 }

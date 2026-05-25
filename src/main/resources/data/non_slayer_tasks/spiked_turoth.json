@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Spiked Turoth",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Spiked Turoth --lvl 244": []
+        "Spiked Turoth --lvl 244": [
+            "Fremennik Slayer Dungeon"
+        ]
     }
 }

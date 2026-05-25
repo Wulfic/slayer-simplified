@@ -1,0 +1,23 @@
+{
+    "name": "Corrupted Hunllef",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Corrupted Hunllef --lvl 830"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Corrupted Hunllef --lvl 830": [
+            "Prifddinas"
+        ]
+    }
+}

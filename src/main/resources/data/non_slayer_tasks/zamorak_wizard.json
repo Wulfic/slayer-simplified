@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Zamorak wizard",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Magic"],
+    "attackStyles": [
+        "Magic"
+    ],
     "variants": [
         "Zamorak wizard --lvl 65"
     ],

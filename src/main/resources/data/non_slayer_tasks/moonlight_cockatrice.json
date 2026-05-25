@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Moonlight Cockatrice",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Moonlight Cockatrice --lvl 49": []
+        "Moonlight Cockatrice --lvl 49": [
+            "Neypotzli"
+        ]
     }
 }

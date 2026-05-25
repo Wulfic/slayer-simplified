@@ -1,0 +1,19 @@
+{
+    "name": "Monkey Archer",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Monkey Archer --lvl 86"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Monkey Archer --lvl 86": [
+            "Marim"
+        ]
+    }
+}

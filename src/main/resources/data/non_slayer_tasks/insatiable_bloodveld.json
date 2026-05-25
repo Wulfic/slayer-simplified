@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Insatiable Bloodveld",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,11 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Insatiable Bloodveld --lvl 202": []
+        "Insatiable Bloodveld --lvl 202": [
+            "Slayer Tower - Floor -1",
+            "Slayer Tower - Floor 2",
+            "Meiyerditch Laboratories",
+            "Stronghold Slayer Cave"
+        ]
     }
 }

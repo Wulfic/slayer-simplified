@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Mutated Bloodveld",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,11 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Mutated Bloodveld --lvl 123": []
+        "Mutated Bloodveld --lvl 123": [
+            "Catacombs of Kourend",
+            "Iorwerth Dungeon",
+            "Meiyerditch Laboratories",
+            "Buccaneers' Laborotory"
+        ]
     }
 }

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Long-tailed Wyvern",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Long-tailed Wyvern --lvl 152": []
+        "Long-tailed Wyvern --lvl 152": [
+            "Mushroom Forest"
+        ]
     }
 }

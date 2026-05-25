@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Sulphur Lizard",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Sulphur Lizard --lvl 257": []
+        "Sulphur Lizard --lvl 257": "Karuulm Slayer Dungeon"
     }
 }

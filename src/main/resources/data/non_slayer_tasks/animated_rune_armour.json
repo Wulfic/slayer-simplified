@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Animated Rune Armour",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Stab"],
+    "attackStyles": [
+        "Stab"
+    ],
     "variants": [
         "Animated Rune Armour --lvl 138"
     ],

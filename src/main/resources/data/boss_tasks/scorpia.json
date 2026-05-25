@@ -1,0 +1,23 @@
+{
+    "name": "Scorpia",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Scorpion"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Scorpia --lvl 225"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Scorpia --lvl 225": [
+            "Scorpius Shrine"
+        ]
+    }
+}

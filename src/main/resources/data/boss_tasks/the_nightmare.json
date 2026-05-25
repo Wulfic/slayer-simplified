@@ -1,0 +1,23 @@
+{
+    "name": "The Nightmare",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "The Nightmare --lvl 814"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "The Nightmare --lvl 814": [
+            "Sisterhood Sanctuary"
+        ]
+    }
+}

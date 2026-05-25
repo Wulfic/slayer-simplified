@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Disciple of Iban",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Disciple of Iban --lvl 13": []
+        "Disciple of Iban --lvl 13": "Underground Pass"
     }
 }

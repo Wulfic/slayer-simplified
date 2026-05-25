@@ -1,0 +1,17 @@
+{
+    "name": "Jaguar",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jaguar --lvl 67"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Jaguar --lvl 67": "Avium Savannah"
+    }
+}

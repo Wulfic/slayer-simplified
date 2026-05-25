@@ -1,0 +1,27 @@
+{
+    "name": "King Black Dragon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Anti-dragon shield",
+        "Antifire potion"
+    ],
+    "attributes": [
+        "Draconic"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Dragonfire"
+    ],
+    "variants": [
+        "King Black Dragon --lvl 276"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "King Black Dragon --lvl 276": [
+            "King Black Dragon Lair"
+        ]
+    }
+}

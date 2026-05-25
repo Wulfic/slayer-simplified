@@ -1,0 +1,25 @@
+{
+    "name": "Hueycoatl",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Draconic"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Hueycoatl --lvl 540"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Hueycoatl --lvl 540": [
+            "Ruins of Tapoyauik"
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Calvar'ion",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Calvar'ion --lvl 238"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Calvar'ion --lvl 238": [
+            "Calvar'ion's Den"
+        ]
+    }
+}

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Cave goblin",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Cave goblin --lvl 3": []
+        "Cave goblin --lvl 3": [
+            "Lumbridge Swamp Caves"
+        ]
     }
 }

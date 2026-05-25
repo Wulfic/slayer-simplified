@@ -1,0 +1,19 @@
+{
+    "name": "Unicorn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Stab"
+    ],
+    "variants": [
+        "Unicorn --lvl 15"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Unicorn --lvl 15": "Entrana Dungeon"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Kree'arra",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Armadyl item"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Kree'arra --lvl 580"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Kree'arra --lvl 580": [
+            "God Wars Dungeon"
+        ]
+    }
+}

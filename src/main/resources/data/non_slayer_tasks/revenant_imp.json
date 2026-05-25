@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Revenant imp",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Revenant imp --lvl 7": []
+        "Revenant imp --lvl 7": [
+            "Revenant Caves"
+        ]
     }
 }

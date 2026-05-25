@@ -1,0 +1,17 @@
+{
+    "name": "Blood jaguar",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Blood jaguar --lvl 40"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Blood jaguar --lvl 40": []
+    }
+}

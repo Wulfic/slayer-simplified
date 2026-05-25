@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Revenant maledictus",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Revenant maledictus --lvl 397": []
+        "Revenant maledictus --lvl 397": [
+            "Revenant Caves"
+        ]
     }
 }

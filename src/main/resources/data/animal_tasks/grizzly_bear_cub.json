@@ -1,0 +1,17 @@
+{
+    "name": "Grizzly bear cub",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Grizzly bear cub --lvl 36"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Grizzly bear cub --lvl 36": "Isafdar"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "White jaguar",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "White jaguar --lvl 67"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "White jaguar --lvl 67": "Mos Gratia"
+    }
+}

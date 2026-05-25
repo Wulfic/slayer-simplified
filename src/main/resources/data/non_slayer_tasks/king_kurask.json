@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "King kurask",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,10 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "King kurask --lvl 295": []
+        "King kurask --lvl 295": [
+            "Fremennik Slayer Dungeon",
+            "Iorwerth Dungeon",
+            "Kurask Lair"
+        ]
     }
 }

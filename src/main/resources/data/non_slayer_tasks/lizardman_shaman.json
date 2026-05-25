@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Lizardman shaman",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Lizardman shaman --lvl 150": []
+        "Lizardman shaman --lvl 150": [
+            "Lizardman Settlement",
+            "Lizardman canyon"
+        ]
     }
 }

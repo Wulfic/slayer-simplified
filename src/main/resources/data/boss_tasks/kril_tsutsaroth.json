@@ -1,0 +1,27 @@
+{
+    "name": "K'ril Tsutsaroth",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Zamorak item"
+    ],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "K'ril Tsutsaroth --lvl 650"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "K'ril Tsutsaroth --lvl 650": [
+            "God Wars Dungeon"
+        ]
+    }
+}

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Sulphur Nagua",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Sulphur Nagua --lvl 98": []
+        "Sulphur Nagua --lvl 98": "Neypotzli"
     }
 }

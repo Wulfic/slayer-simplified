@@ -1,10 +1,14 @@
-﻿{
+{
     "name": "Snakeling (Melee)",
     "levelRequired": 0,
     "itemsRequired": [],
-    "itemsSuggested": ["Super antipoison(4)"],
+    "itemsSuggested": [
+        "Super antipoison(4)"
+    ],
     "attributes": [],
-    "attackStyles": ["Stab"],
+    "attackStyles": [
+        "Stab"
+    ],
     "variants": [
         "Snakeling (Melee) --lvl 90"
     ],

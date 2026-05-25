@@ -1,0 +1,21 @@
+{
+    "name": "Big Snake",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Super antipoison(4)"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Stab"
+    ],
+    "variants": [
+        "Big Snake --lvl 84"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Big Snake --lvl 84": []
+    }
+}

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Infernal pyrelord",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Infernal pyrelord --lvl 134": []
+        "Infernal pyrelord --lvl 134": [
+            "Isle of Souls",
+            "Sisterhood Sanctuary"
+        ]
     }
 }

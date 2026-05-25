@@ -1,0 +1,25 @@
+{
+    "name": "Scurrius",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Rat"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Scurrius --lvl 134"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Scurrius --lvl 134": [
+            "Varrock Sewers"
+        ]
+    }
+}

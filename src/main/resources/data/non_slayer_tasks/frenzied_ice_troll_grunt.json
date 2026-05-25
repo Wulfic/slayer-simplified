@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Frenzied ice troll grunt",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Frenzied ice troll grunt --lvl 102": []
+        "Frenzied ice troll grunt --lvl 102": "Ice Troll Caves"
     }
 }

@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Dark beast",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Dark beast --lvl 182": []
+        "Dark beast --lvl 182": [
+            "Mourner Tunnels",
+            "Iorwerth Dungeon"
+        ]
     }
 }

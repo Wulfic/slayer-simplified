@@ -1,0 +1,19 @@
+{
+    "name": "Buffalo",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Buffalo --lvl 9"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Buffalo --lvl 9": [
+            "Ortus Farm"
+        ]
+    }
+}

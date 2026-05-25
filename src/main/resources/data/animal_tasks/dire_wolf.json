@@ -1,0 +1,21 @@
+{
+    "name": "Dire Wolf",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Dire Wolf --lvl 88"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Dire Wolf --lvl 88": [
+            "Arandar",
+            "Isafdar mine",
+            "Mynydd"
+        ]
+    }
+}

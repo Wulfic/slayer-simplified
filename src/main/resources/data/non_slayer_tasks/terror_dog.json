@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Terror dog",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Terror dog --lvl 110": []
+        "Terror dog --lvl 110": "Tarn's Lair"
     }
 }

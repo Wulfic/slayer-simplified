@@ -1,0 +1,19 @@
+{
+    "name": "Stag",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Stab"
+    ],
+    "variants": [
+        "Stag --lvl 15"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Stag --lvl 15": "Enchanted Valley"
+    }
+}

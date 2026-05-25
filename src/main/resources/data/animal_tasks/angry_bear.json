@@ -1,0 +1,19 @@
+{
+    "name": "Angry bear",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Stab"
+    ],
+    "variants": [
+        "Angry bear --lvl 47"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Angry bear --lvl 47": []
+    }
+}

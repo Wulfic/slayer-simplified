@@ -1,0 +1,17 @@
+{
+    "name": "Large mosquito",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Large mosquito --lvl 13"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Large mosquito --lvl 13": []
+    }
+}

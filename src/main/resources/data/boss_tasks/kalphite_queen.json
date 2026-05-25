@@ -1,0 +1,27 @@
+{
+    "name": "Kalphite Queen",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Ranged armour"
+    ],
+    "attributes": [
+        "Kalphite"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Kalphite Queen --lvl 333"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Kalphite Queen --lvl 333": [
+            "Kalphite Lair"
+        ]
+    }
+}

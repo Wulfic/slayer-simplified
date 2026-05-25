@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Water wizard",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Magic"],
+    "attackStyles": [
+        "Magic"
+    ],
     "variants": [
         "Water wizard --lvl 13"
     ],

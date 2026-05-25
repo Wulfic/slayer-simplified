@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Troll general",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Troll general --lvl 113": []
+        "Troll general --lvl 113": [
+            "Enchanted Valley"
+        ]
     }
 }

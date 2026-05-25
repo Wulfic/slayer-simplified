@@ -1,10 +1,13 @@
-﻿{
+{
     "name": "Monk of Zamorak",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Crush","Magic"],
+    "attackStyles": [
+        "Crush",
+        "Magic"
+    ],
     "variants": [
         "Monk of Zamorak --lvl 45"
     ],
@@ -12,6 +15,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Monk of Zamorak --lvl 45": []
+        "Monk of Zamorak --lvl 45": "Chaos Temple"
     }
 }

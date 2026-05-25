@@ -1,0 +1,31 @@
+{
+    "name": "Colossal Hydra",
+    "levelRequired": 95,
+    "itemsRequired": [
+        "Boots of stone",
+        "Boots of brimstone",
+        "Granite boots"
+    ],
+    "itemsSuggested": [
+        "Super antipoison"
+    ],
+    "attributes": [
+        "Draconic"
+    ],
+    "attackStyles": [
+        "Magic",
+        "Ranged",
+        "Poison"
+    ],
+    "variants": [
+        "Colossal Hydra --lvl 309"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Colossal Hydra --lvl 309": [
+            "Karuulm Slayer Dungeon"
+        ]
+    }
+}

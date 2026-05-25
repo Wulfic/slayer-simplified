@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Drake",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Drake --lvl 192": []
+        "Drake --lvl 192": "Karuulm Slayer Dungeon"
     }
 }

@@ -1,0 +1,17 @@
+{
+    "name": "Baboon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Baboon --lvl 77"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Baboon --lvl 77": []
+    }
+}

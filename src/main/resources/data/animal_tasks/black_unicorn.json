@@ -1,0 +1,19 @@
+{
+    "name": "Black unicorn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Stab"
+    ],
+    "variants": [
+        "Black unicorn --lvl 27"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Black unicorn --lvl 27": "Graveyard of Shadows"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Black chinchompa (Hunter)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Crush"
+    ],
+    "variants": [
+        "Black chinchompa (Hunter) --lvl 2"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Black chinchompa (Hunter) --lvl 2": "Lava Maze"
+    }
+}

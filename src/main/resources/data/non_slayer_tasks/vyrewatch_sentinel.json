@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Vyrewatch Sentinel",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Vyrewatch Sentinel --lvl 151": []
+        "Vyrewatch Sentinel --lvl 151": [
+            "Darkmeyer"
+        ]
     }
 }

@@ -1,0 +1,19 @@
+{
+    "name": "Desert Wolf",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Desert Wolf --lvl 27"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Desert Wolf --lvl 27": [
+            "Kharidian Desert"
+        ]
+    }
+}

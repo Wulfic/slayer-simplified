@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Basilisk Sentinel",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Basilisk Sentinel --lvl 358": []
+        "Basilisk Sentinel --lvl 358": [
+            "Jormungand's Prison"
+        ]
     }
 }

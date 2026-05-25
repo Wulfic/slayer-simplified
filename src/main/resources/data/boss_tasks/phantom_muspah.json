@@ -1,0 +1,25 @@
+{
+    "name": "Phantom Muspah",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Phantom Muspah --lvl 1000"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Phantom Muspah --lvl 1000": [
+            "Frozen Waste Plateau"
+        ]
+    }
+}

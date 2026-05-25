@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "White Knight (Initiate (m))",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Slash"],
+    "attackStyles": [
+        "Slash"
+    ],
     "variants": [
         "White Knight (Initiate (m)) --lvl 42"
     ],

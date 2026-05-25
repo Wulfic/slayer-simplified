@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Necromancer (Necromancer Tower)",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Melee"],
+    "attackStyles": [
+        "Melee"
+    ],
     "variants": [
         "Necromancer (Necromancer Tower) --lvl 68"
     ],

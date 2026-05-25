@@ -1,0 +1,24 @@
+{
+    "name": "Venenatis",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Spider"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Venenatis --lvl 464"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Venenatis --lvl 464": [
+            "Venenatis' Lair"
+        ]
+    }
+}

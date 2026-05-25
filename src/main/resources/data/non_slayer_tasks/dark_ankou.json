@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Dark Ankou",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Dark Ankou --lvl 95": []
+        "Dark Ankou --lvl 95": [
+            "Catacombs of Kourend - Skotizo Boss Room"
+        ]
     }
 }

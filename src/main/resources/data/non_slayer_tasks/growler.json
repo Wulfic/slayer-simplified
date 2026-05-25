@@ -1,10 +1,12 @@
-﻿{
+{
     "name": "Growler",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": ["Magic"],
+    "attackStyles": [
+        "Magic"
+    ],
     "variants": [
         "Growler --lvl 139"
     ],
@@ -12,6 +14,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Growler --lvl 139": []
+        "Growler --lvl 139": "God Wars Dungeon"
     }
 }

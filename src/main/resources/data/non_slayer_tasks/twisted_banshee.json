@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Twisted Banshee",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Twisted Banshee --lvl 89": []
+        "Twisted Banshee --lvl 89": [
+            "Catacombs of Kourend"
+        ]
     }
 }

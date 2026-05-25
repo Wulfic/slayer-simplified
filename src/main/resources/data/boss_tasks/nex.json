@@ -1,0 +1,23 @@
+{
+    "name": "Nex",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Nex --lvl 1001"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Nex --lvl 1001": [
+            "God Wars Dungeon"
+        ]
+    }
+}

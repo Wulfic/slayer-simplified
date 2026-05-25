@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Basilisk Knight",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Basilisk Knight --lvl 204": []
+        "Basilisk Knight --lvl 204": [
+            "Jormungand's Prison"
+        ]
     }
 }

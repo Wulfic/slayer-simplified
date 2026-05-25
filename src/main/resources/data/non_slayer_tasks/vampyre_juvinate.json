@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Vampyre Juvinate",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,6 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Vampyre Juvinate --lvl 119": []
+        "Vampyre Juvinate --lvl 119": "Ver Sinhaza"
     }
 }

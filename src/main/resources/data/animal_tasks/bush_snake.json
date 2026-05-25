@@ -1,0 +1,17 @@
+{
+    "name": "Bush snake",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bush snake --lvl 35"
+    ],
+    "masters": [
+        "Animals"
+    ],
+    "variantLocations": {
+        "Bush snake --lvl 35": []
+    }
+}

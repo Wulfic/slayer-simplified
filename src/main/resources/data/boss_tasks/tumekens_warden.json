@@ -1,0 +1,22 @@
+{
+    "name": "Tumeken's Warden",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Tumeken's Warden --lvl 370"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Tumeken's Warden --lvl 370": [
+            "Tombs of Amascut"
+        ]
+    }
+}

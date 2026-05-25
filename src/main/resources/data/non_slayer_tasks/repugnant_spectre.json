@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Repugnant spectre",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Repugnant spectre --lvl 335": []
+        "Repugnant spectre --lvl 335": [
+            "Catacombs of Kourend"
+        ]
     }
 }

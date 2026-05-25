@@ -1,0 +1,25 @@
+{
+    "name": "Obor",
+    "levelRequired": 0,
+    "itemsRequired": [
+        "Giant key"
+    ],
+    "itemsSuggested": [],
+    "attributes": [
+        "Giant"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Obor --lvl 106"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Obor --lvl 106": [
+            "Giants' Den"
+        ]
+    }
+}

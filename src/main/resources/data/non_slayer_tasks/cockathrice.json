@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Cockathrice",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Cockathrice --lvl 89": []
+        "Cockathrice --lvl 89": [
+            "Fremennik Slayer Dungeon",
+            "Earthbound Cavern"
+        ]
     }
 }

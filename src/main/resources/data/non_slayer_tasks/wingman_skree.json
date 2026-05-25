@@ -1,4 +1,4 @@
-﻿{
+{
     "name": "Wingman Skree",
     "levelRequired": 0,
     "itemsRequired": [],
@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Wingman Skree --lvl 143": []
+        "Wingman Skree --lvl 143": [
+            "God Wars Dungeon"
+        ]
     }
 }

@@ -1,0 +1,24 @@
+{
+    "name": "Duke Sucellus",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Duke Sucellus --lvl 198"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Duke Sucellus --lvl 198": [
+            "Lassar Undercity"
+        ]
+    }
+}

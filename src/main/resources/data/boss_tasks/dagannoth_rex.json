@@ -1,0 +1,23 @@
+{
+    "name": "Dagannoth Rex",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Dagannoth"
+    ],
+    "attackStyles": [
+        "Melee"
+    ],
+    "variants": [
+        "Dagannoth Rex --lvl 303"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Dagannoth Rex --lvl 303": [
+            "Waterbirth Island Dungeon"
+        ]
+    }
+}

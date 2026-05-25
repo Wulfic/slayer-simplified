@@ -1,0 +1,24 @@
+{
+    "name": "Callisto",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [
+        "Bear"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Callisto --lvl 470"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Callisto --lvl 470": [
+            "Callisto's Den"
+        ]
+    }
+}
