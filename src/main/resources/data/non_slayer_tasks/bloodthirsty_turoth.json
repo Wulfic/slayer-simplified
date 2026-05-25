@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty Turoth",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty Turoth --lvl 244"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty Turoth --lvl 244": []
+    }
+}

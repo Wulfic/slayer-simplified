@@ -1,0 +1,17 @@
+﻿{
+    "name": "Chronozon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Chronozon --lvl 170"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Chronozon --lvl 170": []
+    }
+}

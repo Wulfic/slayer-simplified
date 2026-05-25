@@ -1,0 +1,17 @@
+﻿{
+    "name": "H.A.M. Guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "H.A.M. Guard --lvl 22"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "H.A.M. Guard --lvl 22": []
+    }
+}

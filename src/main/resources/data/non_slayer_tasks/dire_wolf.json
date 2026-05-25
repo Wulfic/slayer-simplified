@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dire Wolf",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Dire Wolf --lvl 88"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dire Wolf --lvl 88": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Brine rat",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Brine rat --lvl 70"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Brine rat --lvl 70": []
+    }
+}

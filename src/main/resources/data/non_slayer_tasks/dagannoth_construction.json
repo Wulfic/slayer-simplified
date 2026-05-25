@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dagannoth (Construction)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Dagannoth (Construction) --lvl 135"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dagannoth (Construction) --lvl 135": []
+    }
+}

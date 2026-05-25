@@ -1,0 +1,17 @@
+﻿{
+    "name": "Monkey Archer",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Monkey Archer --lvl 86"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Monkey Archer --lvl 86": []
+    }
+}

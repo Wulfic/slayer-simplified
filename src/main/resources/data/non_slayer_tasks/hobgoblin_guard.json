@@ -1,0 +1,17 @@
+﻿{
+    "name": "Hobgoblin guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Hobgoblin guard --lvl 54"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Hobgoblin guard --lvl 54": []
+    }
+}

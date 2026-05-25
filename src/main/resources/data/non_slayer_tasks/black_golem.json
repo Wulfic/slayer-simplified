@@ -1,0 +1,17 @@
+﻿{
+    "name": "Black golem",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Black golem --lvl 75"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Black golem --lvl 75": []
+    }
+}

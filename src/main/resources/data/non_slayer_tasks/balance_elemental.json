@@ -1,0 +1,17 @@
+﻿{
+    "name": "Balance Elemental",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Balance Elemental --lvl 524"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Balance Elemental --lvl 524": []
+    }
+}

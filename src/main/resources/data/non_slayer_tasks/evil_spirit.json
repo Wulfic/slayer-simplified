@@ -1,0 +1,17 @@
+﻿{
+    "name": "Evil spirit",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": ["Spectral"],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Evil spirit --lvl 150"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Evil spirit --lvl 150": []
+    }
+}

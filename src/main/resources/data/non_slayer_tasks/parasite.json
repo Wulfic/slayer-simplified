@@ -1,0 +1,17 @@
+﻿{
+    "name": "Parasite",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Parasite --lvl 129"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Parasite --lvl 129": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Lynx",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Lynx --lvl 24"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Lynx --lvl 24": []
+    }
+}

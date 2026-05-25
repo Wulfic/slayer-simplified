@@ -1,0 +1,17 @@
+﻿{
+    "name": "Nezikchened",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Nezikchened --lvl 187"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Nezikchened --lvl 187": []
+    }
+}

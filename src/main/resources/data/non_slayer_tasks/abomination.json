@@ -1,0 +1,17 @@
+﻿{
+    "name": "Abomination",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Abomination --lvl 149"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Abomination --lvl 149": []
+    }
+}

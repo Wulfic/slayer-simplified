@@ -1,0 +1,17 @@
+﻿{
+    "name": "Agrith Naar (Normal)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": ["Demon"],
+    "attackStyles": ["Crush","Magic"],
+    "variants": [
+        "Agrith Naar (Normal) --lvl 100"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Agrith Naar (Normal) --lvl 100": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bryophyta",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bryophyta --lvl 128"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bryophyta --lvl 128": []
+    }
+}

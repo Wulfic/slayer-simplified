@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sergeant",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sergeant --lvl 84"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sergeant --lvl 84": []
+    }
+}

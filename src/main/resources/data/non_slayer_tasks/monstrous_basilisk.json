@@ -1,0 +1,17 @@
+﻿{
+    "name": "Monstrous Basilisk",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Monstrous Basilisk --lvl 135"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Monstrous Basilisk --lvl 135": []
+    }
+}

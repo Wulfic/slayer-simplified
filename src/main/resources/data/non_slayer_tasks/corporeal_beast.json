@@ -1,0 +1,17 @@
+﻿{
+    "name": "Corporeal Beast",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush","Magic"],
+    "variants": [
+        "Corporeal Beast --lvl 785"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Corporeal Beast --lvl 785": []
+    }
+}

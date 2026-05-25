@@ -1,0 +1,17 @@
+﻿{
+    "name": "Nazastarool (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Nazastarool (hard) --lvl 181"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Nazastarool (hard) --lvl 181": []
+    }
+}

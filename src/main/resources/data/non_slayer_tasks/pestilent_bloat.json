@@ -1,0 +1,17 @@
+﻿{
+    "name": "Pestilent Bloat",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Pestilent Bloat --lvl 1044"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Pestilent Bloat --lvl 1044": []
+    }
+}

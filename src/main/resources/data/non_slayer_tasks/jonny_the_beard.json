@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jonny the Beard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jonny the Beard --lvl 2"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jonny the Beard --lvl 2": []
+    }
+}

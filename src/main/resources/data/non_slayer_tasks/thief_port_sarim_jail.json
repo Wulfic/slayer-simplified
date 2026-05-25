@@ -1,0 +1,17 @@
+﻿{
+    "name": "Thief (Port Sarim Jail)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Melee","Crush"],
+    "variants": [
+        "Thief (Port Sarim Jail) --lvl 21"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Thief (Port Sarim Jail) --lvl 21": []
+    }
+}

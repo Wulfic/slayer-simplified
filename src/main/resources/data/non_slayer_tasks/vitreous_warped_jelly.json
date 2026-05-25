@@ -1,0 +1,17 @@
+﻿{
+    "name": "Vitreous warped Jelly",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Vitreous warped Jelly --lvl 408"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Vitreous warped Jelly --lvl 408": []
+    }
+}

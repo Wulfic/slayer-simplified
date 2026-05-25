@@ -1,0 +1,17 @@
+﻿{
+    "name": "Alomone",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Alomone --lvl 13"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Alomone --lvl 13": []
+    }
+}

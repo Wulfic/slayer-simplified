@@ -1,0 +1,17 @@
+﻿{
+    "name": "River troll",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "River troll --lvl 159"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "River troll --lvl 159": []
+    }
+}

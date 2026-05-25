@@ -1,0 +1,17 @@
+﻿{
+    "name": "Amoxliatl",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Amoxliatl --lvl 263"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Amoxliatl --lvl 263": []
+    }
+}

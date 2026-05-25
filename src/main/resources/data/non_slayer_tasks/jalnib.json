@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jal-Nib",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jal-Nib --lvl 32"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jal-Nib --lvl 32": []
+    }
+}

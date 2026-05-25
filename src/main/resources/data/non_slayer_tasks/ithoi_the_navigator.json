@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ithoi the Navigator",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ithoi the Navigator --lvl 35"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ithoi the Navigator --lvl 35": []
+    }
+}

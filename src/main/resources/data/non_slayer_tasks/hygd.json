@@ -1,0 +1,17 @@
+﻿{
+    "name": "Hygd",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Hygd --lvl 4"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Hygd --lvl 4": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Growthling",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Growthling --lvl 37"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Growthling --lvl 37": []
+    }
+}

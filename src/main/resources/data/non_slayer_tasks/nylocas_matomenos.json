@@ -1,0 +1,17 @@
+﻿{
+    "name": "Nylocas Matomenos",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Nylocas Matomenos --lvl 138"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Nylocas Matomenos --lvl 138": []
+    }
+}

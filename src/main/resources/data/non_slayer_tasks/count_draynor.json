@@ -1,0 +1,17 @@
+﻿{
+    "name": "Count Draynor",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Count Draynor --lvl 34"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Count Draynor --lvl 34": []
+    }
+}

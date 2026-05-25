@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirst rockslug",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirst rockslug --lvl 86"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirst rockslug --lvl 86": []
+    }
+}

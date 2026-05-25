@@ -1,0 +1,17 @@
+﻿{
+    "name": "Body Golem",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Body Golem --lvl 50"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Body Golem --lvl 50": []
+    }
+}

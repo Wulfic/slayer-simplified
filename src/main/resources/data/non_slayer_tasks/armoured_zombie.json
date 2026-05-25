@@ -1,0 +1,17 @@
+﻿{
+    "name": "Armoured zombie",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Armoured zombie --lvl 109"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Armoured zombie --lvl 109": []
+    }
+}

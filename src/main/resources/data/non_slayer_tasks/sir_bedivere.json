@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sir Bedivere",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sir Bedivere --lvl 110"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sir Bedivere --lvl 110": []
+    }
+}

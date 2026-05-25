@@ -1,0 +1,17 @@
+﻿{
+    "name": "Evelot",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Evelot --lvl 148"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Evelot --lvl 148": []
+    }
+}

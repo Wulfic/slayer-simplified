@@ -1,0 +1,17 @@
+﻿{
+    "name": "King Sand Crab",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "King Sand Crab --lvl 107"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "King Sand Crab --lvl 107": []
+    }
+}

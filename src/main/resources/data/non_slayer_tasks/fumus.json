@@ -1,0 +1,17 @@
+﻿{
+    "name": "Fumus",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Fumus --lvl 285"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Fumus --lvl 285": []
+    }
+}

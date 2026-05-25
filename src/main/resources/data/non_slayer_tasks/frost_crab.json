@@ -1,0 +1,17 @@
+﻿{
+    "name": "Frost Crab",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Frost Crab --lvl 15"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Frost Crab --lvl 15": []
+    }
+}

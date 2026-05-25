@@ -1,0 +1,17 @@
+﻿{
+    "name": "Derwen",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Derwen --lvl 280"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Derwen --lvl 280": []
+    }
+}

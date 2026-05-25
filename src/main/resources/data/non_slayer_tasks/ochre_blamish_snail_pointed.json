@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ochre Blamish Snail (Pointed)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Ranged"],
+    "variants": [
+        "Ochre Blamish Snail (Pointed) --lvl 15"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ochre Blamish Snail (Pointed) --lvl 15": []
+    }
+}

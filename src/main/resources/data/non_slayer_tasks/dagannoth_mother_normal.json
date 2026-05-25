@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dagannoth mother (Normal)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Melee","Ranged"],
+    "variants": [
+        "Dagannoth mother (Normal) --lvl 100"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dagannoth mother (Normal) --lvl 100": []
+    }
+}

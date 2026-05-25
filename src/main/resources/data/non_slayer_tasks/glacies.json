@@ -1,0 +1,17 @@
+﻿{
+    "name": "Glacies",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Glacies --lvl 285"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Glacies --lvl 285": []
+    }
+}

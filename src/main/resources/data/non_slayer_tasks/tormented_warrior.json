@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tormented Warrior",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tormented Warrior --lvl 90"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tormented Warrior --lvl 90": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Swordchick",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Swordchick --lvl 46"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Swordchick --lvl 46": []
+    }
+}

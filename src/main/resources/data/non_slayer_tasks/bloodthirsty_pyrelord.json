@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty pyrelord",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty pyrelord --lvl 97"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty pyrelord --lvl 97": []
+    }
+}

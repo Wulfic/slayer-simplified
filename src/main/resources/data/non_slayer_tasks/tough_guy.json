@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tough Guy",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tough Guy --lvl 75"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tough Guy --lvl 75": []
+    }
+}

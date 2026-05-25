@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sir Harry",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sir Harry --lvl 62"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sir Harry --lvl 62": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty Nechryarch",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty Nechryarch --lvl 300"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty Nechryarch --lvl 300": []
+    }
+}

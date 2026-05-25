@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tar Monster",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tar Monster --lvl 132"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tar Monster --lvl 132": []
+    }
+}

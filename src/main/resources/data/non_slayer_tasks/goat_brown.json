@@ -1,0 +1,17 @@
+﻿{
+    "name": "Goat (Brown)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Goat (Brown) --lvl 23"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Goat (Brown) --lvl 23": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Gelatinnoth Mother (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Gelatinnoth Mother (hard) --lvl 201"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Gelatinnoth Mother (hard) --lvl 201": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Abyssal Sire",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Abyssal Sire --lvl 350"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Abyssal Sire --lvl 350": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jailer",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Jailer --lvl 47"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jailer --lvl 47": []
+    }
+}

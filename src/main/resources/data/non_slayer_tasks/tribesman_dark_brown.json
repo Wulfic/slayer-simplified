@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tribesman (Dark brown)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": ["Super antipoison(4)"],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Tribesman (Dark brown) --lvl 32"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tribesman (Dark brown) --lvl 32": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Freidir",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Freidir --lvl 48"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Freidir --lvl 48": []
+    }
+}

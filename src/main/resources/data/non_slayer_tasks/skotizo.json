@@ -1,0 +1,17 @@
+﻿{
+    "name": "Skotizo",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Skotizo --lvl 321"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Skotizo --lvl 321": []
+    }
+}

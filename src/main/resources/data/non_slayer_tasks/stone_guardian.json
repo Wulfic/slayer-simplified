@@ -1,0 +1,17 @@
+﻿{
+    "name": "Stone Guardian",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Stone Guardian --lvl 124"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Stone Guardian --lvl 124": []
+    }
+}

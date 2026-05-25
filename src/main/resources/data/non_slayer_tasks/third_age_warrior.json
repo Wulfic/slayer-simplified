@@ -1,0 +1,17 @@
+﻿{
+    "name": "Third Age Warrior",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Third Age Warrior --lvl 83"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Third Age Warrior --lvl 83": []
+    }
+}

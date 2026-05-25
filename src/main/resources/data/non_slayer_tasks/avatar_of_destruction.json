@@ -1,0 +1,17 @@
+﻿{
+    "name": "Avatar of Destruction",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Avatar of Destruction --lvl 525"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Avatar of Destruction --lvl 525": []
+    }
+}

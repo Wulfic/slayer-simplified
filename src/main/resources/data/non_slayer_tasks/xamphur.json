@@ -1,0 +1,17 @@
+﻿{
+    "name": "Xamphur",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Xamphur --lvl 239"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Xamphur --lvl 239": []
+    }
+}

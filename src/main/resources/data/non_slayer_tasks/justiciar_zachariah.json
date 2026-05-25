@@ -1,0 +1,17 @@
+﻿{
+    "name": "Justiciar Zachariah",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Justiciar Zachariah --lvl 393"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Justiciar Zachariah --lvl 393": []
+    }
+}

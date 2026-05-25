@@ -1,0 +1,17 @@
+﻿{
+    "name": "General Khazard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "General Khazard --lvl 142"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "General Khazard --lvl 142": []
+    }
+}

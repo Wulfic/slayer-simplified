@@ -1,0 +1,17 @@
+﻿{
+    "name": "Strangled Bear",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Strangled Bear --lvl 197"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Strangled Bear --lvl 197": []
+    }
+}

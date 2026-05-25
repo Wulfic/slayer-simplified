@@ -1,0 +1,17 @@
+﻿{
+    "name": "Colonel Radick",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Colonel Radick --lvl 38"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Colonel Radick --lvl 38": []
+    }
+}

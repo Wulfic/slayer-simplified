@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ocga",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ocga --lvl 5"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ocga --lvl 5": []
+    }
+}

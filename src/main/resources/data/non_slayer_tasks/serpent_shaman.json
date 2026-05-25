@@ -1,0 +1,17 @@
+﻿{
+    "name": "Serpent shaman",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Serpent shaman --lvl 161"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Serpent shaman --lvl 161": []
+    }
+}

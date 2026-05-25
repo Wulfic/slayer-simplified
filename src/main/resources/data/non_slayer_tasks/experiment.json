@@ -1,0 +1,17 @@
+﻿{
+    "name": "Experiment",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Experiment --lvl 51"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Experiment --lvl 51": []
+    }
+}

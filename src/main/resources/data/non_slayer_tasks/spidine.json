@@ -1,0 +1,17 @@
+﻿{
+    "name": "Spidine",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Spidine --lvl 42"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Spidine --lvl 42": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Baby red dragon (Construction)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Slash"],
+    "variants": [
+        "Baby red dragon (Construction) --lvl 65"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Baby red dragon (Construction) --lvl 65": []
+    }
+}

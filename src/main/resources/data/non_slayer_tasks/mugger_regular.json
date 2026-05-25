@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mugger (Regular)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Mugger (Regular) --lvl 6"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mugger (Regular) --lvl 6": []
+    }
+}

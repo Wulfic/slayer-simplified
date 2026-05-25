@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ancient Wyvern",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ancient Wyvern --lvl 210"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ancient Wyvern --lvl 210": []
+    }
+}

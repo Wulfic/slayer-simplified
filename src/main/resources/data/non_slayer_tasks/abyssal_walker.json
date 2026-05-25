@@ -1,0 +1,17 @@
+﻿{
+    "name": "Abyssal walker",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Abyssal walker --lvl 109"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Abyssal walker --lvl 109": []
+    }
+}

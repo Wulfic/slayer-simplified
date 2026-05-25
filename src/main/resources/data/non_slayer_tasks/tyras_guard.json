@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tyras guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Tyras guard --lvl 110"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tyras guard --lvl 110": []
+    }
+}

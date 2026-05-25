@@ -1,0 +1,17 @@
+﻿{
+    "name": "Cockathrice",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Cockathrice --lvl 89"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Cockathrice --lvl 89": []
+    }
+}

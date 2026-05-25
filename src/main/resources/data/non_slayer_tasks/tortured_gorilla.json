@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tortured gorilla",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tortured gorilla --lvl 142"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tortured gorilla --lvl 142": []
+    }
+}

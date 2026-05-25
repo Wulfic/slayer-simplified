@@ -1,0 +1,17 @@
+﻿{
+    "name": "Fragment of Seren",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Fragment of Seren --lvl 494"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Fragment of Seren --lvl 494": []
+    }
+}

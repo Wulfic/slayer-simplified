@@ -1,0 +1,17 @@
+﻿{
+    "name": "Gorak",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush","Typeless"],
+    "variants": [
+        "Gorak --lvl 149"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Gorak --lvl 149": []
+    }
+}

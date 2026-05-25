@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jal-MejRah",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jal-MejRah --lvl 85"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jal-MejRah --lvl 85": []
+    }
+}

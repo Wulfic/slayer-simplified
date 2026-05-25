@@ -1,0 +1,17 @@
+﻿{
+    "name": "Newtroost",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Newtroost --lvl 19"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Newtroost --lvl 19": []
+    }
+}

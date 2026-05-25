@@ -1,0 +1,17 @@
+﻿{
+    "name": "Khazard Guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Slash"],
+    "variants": [
+        "Khazard Guard --lvl 23"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Khazard Guard --lvl 23": []
+    }
+}

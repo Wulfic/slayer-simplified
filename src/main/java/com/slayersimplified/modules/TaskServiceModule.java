@@ -56,4 +56,15 @@ public class TaskServiceModule extends AbstractModule
     {
         return "/data/location_coordinates.json";
     }
+
+    /**
+     * Classpath path to the non-slayer enemy JSON files and their
+     * {@code _index.json} manifest.
+     */
+    @Provides
+    @Named("nonSlayerDataPath")
+    String provideNonSlayerDataPath()
+    {
+        return "/data/non_slayer_tasks";
+    }
 }

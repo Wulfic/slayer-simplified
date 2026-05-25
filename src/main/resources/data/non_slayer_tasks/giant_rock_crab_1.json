@@ -1,0 +1,17 @@
+﻿{
+    "name": "Giant Rock Crab (1)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Giant Rock Crab (1) --lvl 137"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Giant Rock Crab (1) --lvl 137": []
+    }
+}

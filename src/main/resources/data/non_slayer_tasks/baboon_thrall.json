@@ -1,0 +1,17 @@
+﻿{
+    "name": "Baboon Thrall",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Baboon Thrall --lvl 52"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Baboon Thrall --lvl 52": []
+    }
+}

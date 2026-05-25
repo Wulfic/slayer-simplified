@@ -1,0 +1,17 @@
+﻿{
+    "name": "Chaotic death spawn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Chaotic death spawn --lvl 215"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Chaotic death spawn --lvl 215": []
+    }
+}

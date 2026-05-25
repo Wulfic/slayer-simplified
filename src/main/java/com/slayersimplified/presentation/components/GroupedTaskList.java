@@ -18,6 +18,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
+import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
 
 /**
@@ -30,6 +31,9 @@ public class GroupedTaskList extends JPanel
     private final Consumer<Task> onTaskSelected;
     private final Map<SlayerMaster, Boolean> expandedStates = new EnumMap<>(SlayerMaster.class);
 
+    /** Cached tasks — set by {@link #setTasks}. */
+    private Task[] cachedTasks = new Task[0];
+
     public GroupedTaskList(Consumer<Task> onTaskSelected)
     {
         this.onTaskSelected = onTaskSelected;
@@ -38,11 +42,18 @@ public class GroupedTaskList extends JPanel
     }
 
     /**
-     * Rebuilds the grouped sections from the provided task array.
+     * Rebuilds the grouped sections from the provided slayer task array.
      * Expanded/collapsed states are preserved across calls.
      * Must be called from any thread — switches to EDT internally.
      */
     public void setTasks(Task[] allTasks)
+    {
+        this.cachedTasks = allTasks;
+        rebuildAll();
+    }
+
+    /** Rebuilds the entire grouped panel from cached task data. */
+    private void rebuildAll()
     {
         Map<SlayerMaster, List<Task>> byMaster = new EnumMap<>(SlayerMaster.class);
         for (SlayerMaster m : SlayerMaster.values())
@@ -50,7 +61,7 @@ public class GroupedTaskList extends JPanel
             byMaster.put(m, new ArrayList<>());
         }
 
-        for (Task task : allTasks)
+        for (Task task : cachedTasks)
         {
             if (task.masters == null)
             {
@@ -90,21 +101,26 @@ public class GroupedTaskList extends JPanel
 
     private JPanel buildSection(SlayerMaster master, List<Task> tasks)
     {
-        // Override getMaximumSize so BoxLayout never stretches this section
-        // taller than its actual content — critical for tight collapsed headers.
-        JPanel section = new JPanel()
-        {
-            @Override
-            public Dimension getMaximumSize()
-            {
-                return new Dimension(Integer.MAX_VALUE, getPreferredSize().height);
-            }
-        };
-        section.setLayout(new BoxLayout(section, BoxLayout.Y_AXIS));
-        section.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        section.setAlignmentX(Component.LEFT_ALIGNMENT);
-
         boolean expanded = expandedStates.getOrDefault(master, false);
+        return buildLabeledSection(
+                master.getDisplayName() + "  (" + tasks.size() + ")",
+                expanded,
+                () -> expandedStates.getOrDefault(master, false),
+                v -> expandedStates.put(master, v),
+                tasks);
+    }
+
+    /**
+     * Builds a collapsible section panel with a string display name.
+     */
+    private JPanel buildLabeledSection(
+            String displayName,
+            boolean initiallyExpanded,
+            BooleanSupplier getExpanded,
+            Consumer<Boolean> setExpanded,
+            List<Task> tasks)
+    {
+        boolean expanded = initiallyExpanded;
 
         // ── Header row ──────────────────────────────────────────────────────
         JPanel header = new JPanel(new BorderLayout(6, 0));
@@ -121,7 +137,7 @@ public class GroupedTaskList extends JPanel
         arrowLabel.setFont(FontManager.getRunescapeSmallFont());
         arrowLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
 
-        JLabel nameLabel = new JLabel(master.getDisplayName() + "  (" + tasks.size() + ")");
+        JLabel nameLabel = new JLabel(displayName);
         nameLabel.setFont(FontManager.getRunescapeSmallFont().deriveFont(
                 Font.BOLD, FontManager.getRunescapeSmallFont().getSize2D() + 2f));
         nameLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
@@ -148,7 +164,7 @@ public class GroupedTaskList extends JPanel
             public void mouseClicked(MouseEvent e)
             {
                 boolean nowExpanded = !tasksPanel.isVisible();
-                expandedStates.put(master, nowExpanded);
+                setExpanded.accept(nowExpanded);
                 tasksPanel.setVisible(nowExpanded);
                 arrowLabel.setText(nowExpanded ? "\u25BC" : "\u25BA");
                 revalidate();
@@ -168,6 +184,19 @@ public class GroupedTaskList extends JPanel
             }
         };
         header.addMouseListener(toggleAdapter);
+
+        // ── Section wrapper ─────────────────────────────────────────────────
+        JPanel section = new JPanel()
+        {
+            @Override
+            public Dimension getMaximumSize()
+            {
+                return new Dimension(Integer.MAX_VALUE, getPreferredSize().height);
+            }
+        };
+        section.setLayout(new BoxLayout(section, BoxLayout.Y_AXIS));
+        section.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        section.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         section.add(header);
         section.add(tasksPanel);

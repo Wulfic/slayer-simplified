@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sulphur Lizard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sulphur Lizard --lvl 257"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sulphur Lizard --lvl 257": []
+    }
+}

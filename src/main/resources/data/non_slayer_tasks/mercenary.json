@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mercenary",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mercenary --lvl 45"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mercenary --lvl 45": []
+    }
+}

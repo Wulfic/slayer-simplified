@@ -1,0 +1,17 @@
+﻿{
+    "name": "Embertailed jerboa",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Embertailed jerboa --lvl 2"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Embertailed jerboa --lvl 2": []
+    }
+}

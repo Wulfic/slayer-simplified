@@ -1,0 +1,17 @@
+﻿{
+    "name": "Essyllt",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Essyllt --lvl 236"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Essyllt --lvl 236": []
+    }
+}

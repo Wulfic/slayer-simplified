@@ -1,0 +1,17 @@
+﻿{
+    "name": "Glod (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Glod (hard) --lvl 276"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Glod (hard) --lvl 276": []
+    }
+}

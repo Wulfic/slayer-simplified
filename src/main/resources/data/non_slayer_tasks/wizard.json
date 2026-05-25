@@ -1,0 +1,17 @@
+﻿{
+    "name": "Wizard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Wizard --lvl 9"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Wizard --lvl 9": []
+    }
+}

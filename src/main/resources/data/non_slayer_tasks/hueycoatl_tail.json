@@ -1,0 +1,17 @@
+﻿{
+    "name": "Hueycoatl tail",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Hueycoatl tail --lvl 642"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Hueycoatl tail --lvl 642": []
+    }
+}

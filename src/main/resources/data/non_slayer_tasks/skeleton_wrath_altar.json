@@ -1,0 +1,17 @@
+﻿{
+    "name": "Skeleton (Wrath Altar)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Skeleton (Wrath Altar) --lvl 58"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Skeleton (Wrath Altar) --lvl 58": []
+    }
+}

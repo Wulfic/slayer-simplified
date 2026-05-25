@@ -1,0 +1,17 @@
+﻿{
+    "name": "Weaponsmaster",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Weaponsmaster --lvl 23"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Weaponsmaster --lvl 23": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mutated Terrorbird",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mutated Terrorbird --lvl 178"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mutated Terrorbird --lvl 178": []
+    }
+}

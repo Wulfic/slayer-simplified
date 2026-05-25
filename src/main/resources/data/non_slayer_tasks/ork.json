@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ork",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Ork --lvl 107"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ork --lvl 107": []
+    }
+}

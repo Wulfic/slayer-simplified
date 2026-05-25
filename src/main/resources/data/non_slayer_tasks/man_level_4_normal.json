@@ -1,0 +1,17 @@
+﻿{
+    "name": "Man (level 4) (Normal)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Man (level 4) (Normal) --lvl 4"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Man (level 4) (Normal) --lvl 4": []
+    }
+}

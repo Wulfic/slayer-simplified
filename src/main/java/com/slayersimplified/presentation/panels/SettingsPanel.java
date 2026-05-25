@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Arrays;
 
 /**
  * Inline settings panel displayed within the plugin panel when the gear icon
@@ -37,6 +38,7 @@ public class SettingsPanel extends JPanel
     private JCheckBox showReminderOverlayCheck;
     private JCheckBox streakOptimizerCheck;
     private JComboBox<StreakFillerMaster> fillerMasterCombo;
+    private JCheckBox showNonSlayerCheck;
 
     public SettingsPanel(SlayerSimplifiedConfig config, Runnable onClose)
     {
@@ -54,6 +56,7 @@ public class SettingsPanel extends JPanel
     public void refresh()
     {
         boolean optimizerOn = config.streakOptimizerEnabled();
+        showNonSlayerCheck.setSelected(config.showNonSlayerEnemies());
         streakOptimizerCheck.setSelected(optimizerOn);
         masterCombo.setSelectedItem(config.preferredMaster());
         masterCombo.setEnabled(!optimizerOn);
@@ -118,7 +121,10 @@ public class SettingsPanel extends JPanel
         add(Box.createVerticalStrut(6));
 
         // --- Preferred Master ---
-        masterCombo = new JComboBox<>(SlayerMaster.values());
+        SlayerMaster[] settingsMasters = Arrays.stream(SlayerMaster.values())
+                .filter(m -> m != SlayerMaster.NON_SLAYER_ENEMIES)
+                .toArray(SlayerMaster[]::new);
+        masterCombo = new JComboBox<>(settingsMasters);
         masterCombo.setSelectedItem(config.preferredMaster());
         masterCombo.setEnabled(!config.streakOptimizerEnabled());
         masterCombo.setFont(FontManager.getRunescapeSmallFont());
@@ -186,6 +192,30 @@ public class SettingsPanel extends JPanel
         showReminderOverlayCheck.addActionListener(e -> config.setShowReminderOverlay(showReminderOverlayCheck.isSelected()));
         add(makeRow("Task Reminder Overlay", showReminderOverlayCheck,
                 "Show the on-screen overlay with required items, suggested items, and your notes while on a slayer task"));
+        // --- Show Non-Slayer Enemies ---
+        showNonSlayerCheck = makeCheckBox(config.showNonSlayerEnemies());
+        showNonSlayerCheck.addActionListener(e -> config.setShowNonSlayerEnemies(showNonSlayerCheck.isSelected()));
+
+        JPanel nonSlayerRow = new JPanel(new BorderLayout(8, 0));
+        nonSlayerRow.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        nonSlayerRow.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
+        nonSlayerRow.setAlignmentX(Component.LEFT_ALIGNMENT);
+        nonSlayerRow.setToolTipText("Show non-slayer enemies grouped in the task browser (work in progress)");
+
+        JPanel nonSlayerLabelPanel = new JPanel(new GridLayout(2, 1, 0, 0));
+        nonSlayerLabelPanel.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        JLabel nonSlayerLabel = new JLabel("Show non-slayer enemies");
+        nonSlayerLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        nonSlayerLabel.setFont(FontManager.getRunescapeSmallFont());
+        JLabel nonSlayerWip = new JLabel("(WIP)");
+        nonSlayerWip.setForeground(new Color(180, 140, 50));
+        nonSlayerWip.setFont(FontManager.getRunescapeSmallFont());
+        nonSlayerLabelPanel.add(nonSlayerLabel);
+        nonSlayerLabelPanel.add(nonSlayerWip);
+
+        nonSlayerRow.add(nonSlayerLabelPanel, BorderLayout.CENTER);
+        nonSlayerRow.add(showNonSlayerCheck, BorderLayout.EAST);
+        add(nonSlayerRow);
         add(Box.createVerticalStrut(12));
 
         add(makeSeparator());

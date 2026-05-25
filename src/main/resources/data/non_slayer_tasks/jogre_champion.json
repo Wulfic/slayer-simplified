@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jogre Champion",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jogre Champion --lvl 107"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jogre Champion --lvl 107": []
+    }
+}

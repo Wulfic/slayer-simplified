@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sol Heredit",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sol Heredit --lvl 1563"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sol Heredit --lvl 1563": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Marble gargoyle",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Marble gargoyle --lvl 349"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Marble gargoyle --lvl 349": []
+    }
+}

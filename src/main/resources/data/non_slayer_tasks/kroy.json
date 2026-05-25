@@ -1,0 +1,17 @@
+﻿{
+    "name": "Kroy",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Kroy --lvl 133"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Kroy --lvl 133": []
+    }
+}

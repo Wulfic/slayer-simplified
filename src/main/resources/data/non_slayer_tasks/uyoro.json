@@ -1,0 +1,17 @@
+﻿{
+    "name": "Uyoro",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Uyoro --lvl 149"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Uyoro --lvl 149": []
+    }
+}

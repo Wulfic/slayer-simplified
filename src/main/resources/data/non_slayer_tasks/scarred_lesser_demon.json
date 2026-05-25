@@ -1,0 +1,17 @@
+﻿{
+    "name": "Scarred lesser demon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Scarred lesser demon --lvl 121"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Scarred lesser demon --lvl 121": []
+    }
+}

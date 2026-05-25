@@ -18,6 +18,10 @@ import net.runelite.client.util.ImageUtil;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.lang.reflect.Type;
@@ -37,6 +41,30 @@ public class TaskServiceImpl implements TaskService
     /** Name of the manifest file inside the tasks directory. */
     private static final String INDEX_FILE = "_index.json";
 
+    /**
+     * Placeholder image returned for tasks that have no monster image on disk.
+     * Generated once at class-load time; shared (read-only) across all tasks.
+     */
+    private static final BufferedImage PLACEHOLDER_IMAGE;
+    static
+    {
+        int size = 64;
+        BufferedImage img = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = img.createGraphics();
+        g.setColor(new Color(40, 40, 40));
+        g.fillRect(0, 0, size, size);
+        g.setColor(new Color(100, 100, 100));
+        g.drawRect(1, 1, size - 3, size - 3);
+        g.setFont(new Font("Dialog", Font.BOLD, 30));
+        FontMetrics fm = g.getFontMetrics();
+        String text = "?";
+        g.drawString(text,
+                (size - fm.stringWidth(text)) / 2,
+                fm.getAscent() + (size - fm.getHeight()) / 2);
+        g.dispose();
+        PLACEHOLDER_IMAGE = img;
+    }
+
     private final Map<String, Task> tasks = new HashMap<>();
     private final String baseWikiUrl;
     private final String baseImagesPath;
@@ -52,12 +80,18 @@ public class TaskServiceImpl implements TaskService
     public TaskServiceImpl(
             Gson gson,
             @Named("dataPath") String dataPath,
+            @Named("nonSlayerDataPath") String nonSlayerDataPath,
             @Named("baseWikiUrl") String baseWikiUrl,
             @Named("baseImagesPath") String baseImagesPath)
     {
         this.baseWikiUrl = baseWikiUrl;
         this.baseImagesPath = baseImagesPath;
+        loadDirectory(gson, dataPath);
+        loadDirectory(gson, nonSlayerDataPath);
+    }
 
+    private void loadDirectory(Gson gson, String dataPath)
+    {
         String indexPath = dataPath + "/" + INDEX_FILE;
         InputStream indexStream = this.getClass().getResourceAsStream(indexPath);
 
@@ -207,7 +241,7 @@ public class TaskServiceImpl implements TaskService
             BufferedImage image = ImageUtil.loadImageResource(getClass(), path);
             if (image == null)
             {
-                return null;
+                return PLACEHOLDER_IMAGE;
             }
             // First halve the source resolution, then cap at 160px to prevent
             // large downloaded images from overflowing the panel and hiding the tabs.
@@ -225,7 +259,7 @@ public class TaskServiceImpl implements TaskService
         catch (Exception e)
         {
             log.debug("No image resource for task '{}' at {}", name, path);
-            return null;
+            return PLACEHOLDER_IMAGE;
         }
     }
 }

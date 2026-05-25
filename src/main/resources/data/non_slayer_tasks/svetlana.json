@@ -1,0 +1,17 @@
+﻿{
+    "name": "Svetlana",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Svetlana --lvl 24"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Svetlana --lvl 24": []
+    }
+}

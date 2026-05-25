@@ -1,0 +1,17 @@
+﻿{
+    "name": "Skeleton Hellhound",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Skeleton Hellhound --lvl 194"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Skeleton Hellhound --lvl 194": []
+    }
+}

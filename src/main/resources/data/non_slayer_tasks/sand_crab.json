@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sand Crab",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sand Crab --lvl 15"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sand Crab --lvl 15": []
+    }
+}

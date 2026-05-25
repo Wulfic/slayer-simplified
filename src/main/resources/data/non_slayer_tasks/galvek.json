@@ -1,0 +1,17 @@
+﻿{
+    "name": "Galvek",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Galvek --lvl 608"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Galvek --lvl 608": []
+    }
+}

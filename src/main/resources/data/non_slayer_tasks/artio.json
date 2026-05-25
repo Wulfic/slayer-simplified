@@ -1,0 +1,17 @@
+﻿{
+    "name": "Artio",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Artio --lvl 320"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Artio --lvl 320": []
+    }
+}

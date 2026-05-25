@@ -1,0 +1,17 @@
+﻿{
+    "name": "Phantom Hand",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Phantom Hand --lvl 47"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Phantom Hand --lvl 47": []
+    }
+}

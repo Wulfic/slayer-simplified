@@ -1,0 +1,17 @@
+﻿{
+    "name": "Baboon Mage",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Baboon Mage --lvl 68"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Baboon Mage --lvl 68": []
+    }
+}

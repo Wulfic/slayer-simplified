@@ -1,0 +1,17 @@
+﻿{
+    "name": "Barrelchest (Normal)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush","Ranged"],
+    "variants": [
+        "Barrelchest (Normal) --lvl 190"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Barrelchest (Normal) --lvl 190": []
+    }
+}

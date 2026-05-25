@@ -1,0 +1,17 @@
+﻿{
+    "name": "Khazard trooper",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Khazard trooper --lvl 19"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Khazard trooper --lvl 19": []
+    }
+}

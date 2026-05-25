@@ -1,0 +1,17 @@
+﻿{
+    "name": "Zalcano",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Zalcano --lvl 336"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Zalcano --lvl 336": []
+    }
+}

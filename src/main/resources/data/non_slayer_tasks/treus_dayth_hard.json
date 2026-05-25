@@ -1,0 +1,17 @@
+﻿{
+    "name": "Treus Dayth (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Treus Dayth (hard) --lvl 194"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Treus Dayth (hard) --lvl 194": []
+    }
+}

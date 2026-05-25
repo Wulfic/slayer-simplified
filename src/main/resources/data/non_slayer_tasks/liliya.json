@@ -1,0 +1,17 @@
+﻿{
+    "name": "Liliya",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Liliya --lvl 24"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Liliya --lvl 24": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Trapped Soul (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Trapped Soul (hard) --lvl 101"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Trapped Soul (hard) --lvl 101": []
+    }
+}

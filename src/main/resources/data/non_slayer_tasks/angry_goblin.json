@@ -1,0 +1,17 @@
+﻿{
+    "name": "Angry goblin",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Angry goblin --lvl 47"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Angry goblin --lvl 47": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Combat Test (maxhit)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Combat Test (maxhit) --lvl 12743"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Combat Test (maxhit) --lvl 12743": []
+    }
+}

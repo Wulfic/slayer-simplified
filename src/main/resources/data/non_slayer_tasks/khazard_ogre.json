@@ -1,0 +1,17 @@
+﻿{
+    "name": "Khazard Ogre",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Khazard Ogre --lvl 63"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Khazard Ogre --lvl 63": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Brutal blue dragon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Brutal blue dragon --lvl 271"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Brutal blue dragon --lvl 271": []
+    }
+}

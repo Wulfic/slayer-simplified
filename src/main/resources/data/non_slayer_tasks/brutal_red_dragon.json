@@ -1,0 +1,17 @@
+﻿{
+    "name": "Brutal red dragon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Brutal red dragon --lvl 289"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Brutal red dragon --lvl 289": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Hengel",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Hengel --lvl 2"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Hengel --lvl 2": []
+    }
+}

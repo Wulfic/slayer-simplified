@@ -1,0 +1,17 @@
+﻿{
+    "name": "Renegade Knight",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Renegade Knight --lvl 37"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Renegade Knight --lvl 37": []
+    }
+}

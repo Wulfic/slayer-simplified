@@ -1,0 +1,17 @@
+﻿{
+    "name": "The Everlasting",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "The Everlasting --lvl 223"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "The Everlasting --lvl 223": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Maniacal Monkey Archer",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Maniacal Monkey Archer --lvl 132"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Maniacal Monkey Archer --lvl 132": []
+    }
+}

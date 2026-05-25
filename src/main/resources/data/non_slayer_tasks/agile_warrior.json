@@ -1,0 +1,17 @@
+﻿{
+    "name": "Agile Warrior",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Agile Warrior --lvl 96"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Agile Warrior --lvl 96": []
+    }
+}

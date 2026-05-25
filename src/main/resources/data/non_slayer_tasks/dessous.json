@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dessous",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Dessous --lvl 139"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dessous --lvl 139": []
+    }
+}

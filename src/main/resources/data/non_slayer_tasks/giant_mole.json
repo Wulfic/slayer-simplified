@@ -1,0 +1,17 @@
+﻿{
+    "name": "Giant Mole",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Giant Mole --lvl 230"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Giant Mole --lvl 230": []
+    }
+}

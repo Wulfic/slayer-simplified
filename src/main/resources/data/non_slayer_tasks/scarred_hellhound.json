@@ -1,0 +1,17 @@
+﻿{
+    "name": "Scarred hellhound",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Scarred hellhound --lvl 101"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Scarred hellhound --lvl 101": []
+    }
+}

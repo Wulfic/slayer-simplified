@@ -1,0 +1,17 @@
+﻿{
+    "name": "Zebak",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Zebak --lvl 371"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Zebak --lvl 371": []
+    }
+}

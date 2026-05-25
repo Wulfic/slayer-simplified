@@ -1,0 +1,17 @@
+﻿{
+    "name": "Arzinian Avatar of Strength",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Arzinian Avatar of Strength --lvl 125"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Arzinian Avatar of Strength --lvl 125": []
+    }
+}

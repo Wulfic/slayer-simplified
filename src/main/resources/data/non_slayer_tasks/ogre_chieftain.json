@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ogre chieftain",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ogre chieftain --lvl 81"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ogre chieftain --lvl 81": []
+    }
+}

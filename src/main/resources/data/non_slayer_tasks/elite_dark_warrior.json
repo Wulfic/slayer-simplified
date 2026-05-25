@@ -1,0 +1,17 @@
+﻿{
+    "name": "Elite Dark Warrior",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Elite Dark Warrior --lvl 96"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Elite Dark Warrior --lvl 96": []
+    }
+}

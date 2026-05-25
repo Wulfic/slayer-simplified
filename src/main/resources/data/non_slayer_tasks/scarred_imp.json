@@ -1,0 +1,17 @@
+﻿{
+    "name": "Scarred imp",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Scarred imp --lvl 19"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Scarred imp --lvl 19": []
+    }
+}

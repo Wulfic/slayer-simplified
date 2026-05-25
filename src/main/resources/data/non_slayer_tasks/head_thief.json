@@ -1,0 +1,17 @@
+﻿{
+    "name": "Head Thief",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Head Thief --lvl 26"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Head Thief --lvl 26": []
+    }
+}

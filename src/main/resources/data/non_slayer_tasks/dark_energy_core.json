@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dark energy core",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Dark energy core --lvl 75"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dark energy core --lvl 75": []
+    }
+}

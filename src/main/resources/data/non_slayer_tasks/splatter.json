@@ -1,0 +1,17 @@
+﻿{
+    "name": "Splatter",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Splatter --lvl 65"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Splatter --lvl 65": []
+    }
+}

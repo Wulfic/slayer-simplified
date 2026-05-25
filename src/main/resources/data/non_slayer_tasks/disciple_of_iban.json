@@ -1,0 +1,17 @@
+﻿{
+    "name": "Disciple of Iban",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Disciple of Iban --lvl 13"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Disciple of Iban --lvl 13": []
+    }
+}

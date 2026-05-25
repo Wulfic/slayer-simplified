@@ -1,0 +1,17 @@
+﻿{
+    "name": "Temple Guardian",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Temple Guardian --lvl 30"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Temple Guardian --lvl 30": []
+    }
+}

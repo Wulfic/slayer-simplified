@@ -1,0 +1,17 @@
+﻿{
+    "name": "Avatar of Creation",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Avatar of Creation --lvl 525"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Avatar of Creation --lvl 525": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ent",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ent --lvl 101"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ent --lvl 101": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ungadulu",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ungadulu --lvl 169"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ungadulu --lvl 169": []
+    }
+}

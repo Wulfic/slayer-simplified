@@ -1,0 +1,17 @@
+﻿{
+    "name": "Battle mage (Zamorak)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Magic"],
+    "variants": [
+        "Battle mage (Zamorak) --lvl 54"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Battle mage (Zamorak) --lvl 54": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Growler",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Magic"],
+    "variants": [
+        "Growler --lvl 139"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Growler --lvl 139": []
+    }
+}

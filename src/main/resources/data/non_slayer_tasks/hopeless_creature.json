@@ -1,0 +1,17 @@
+﻿{
+    "name": "Hopeless creature",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Hopeless creature --lvl 71"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Hopeless creature --lvl 71": []
+    }
+}

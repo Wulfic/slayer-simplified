@@ -1,0 +1,17 @@
+﻿{
+    "name": "Brawler",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Brawler --lvl 158"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Brawler --lvl 158": []
+    }
+}

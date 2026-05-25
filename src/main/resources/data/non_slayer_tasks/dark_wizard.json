@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dark wizard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Magic"],
+    "variants": [
+        "Dark wizard --lvl 23"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dark wizard --lvl 23": []
+    }
+}

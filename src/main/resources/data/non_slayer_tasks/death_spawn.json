@@ -1,0 +1,17 @@
+﻿{
+    "name": "Death spawn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Slash","Typeless"],
+    "variants": [
+        "Death spawn --lvl 46"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Death spawn --lvl 46": []
+    }
+}

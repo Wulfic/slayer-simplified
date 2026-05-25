@@ -1,0 +1,17 @@
+﻿{
+    "name": "Baby tanglefoot",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Baby tanglefoot --lvl 45"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Baby tanglefoot --lvl 45": []
+    }
+}

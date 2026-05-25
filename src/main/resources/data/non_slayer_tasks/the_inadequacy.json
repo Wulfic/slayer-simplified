@@ -1,0 +1,17 @@
+﻿{
+    "name": "The Inadequacy",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "The Inadequacy --lvl 343"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "The Inadequacy --lvl 343": []
+    }
+}

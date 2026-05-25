@@ -1,0 +1,17 @@
+﻿{
+    "name": "Animated Iron Armour",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Animated Iron Armour --lvl 23"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Animated Iron Armour --lvl 23": []
+    }
+}

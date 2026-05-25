@@ -1,0 +1,17 @@
+﻿{
+    "name": "Revenant dark beast",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Revenant dark beast --lvl 120"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Revenant dark beast --lvl 120": []
+    }
+}

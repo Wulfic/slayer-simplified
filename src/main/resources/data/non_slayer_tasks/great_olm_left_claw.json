@@ -1,0 +1,17 @@
+﻿{
+    "name": "Great Olm (Left claw)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Great Olm (Left claw) --lvl 750"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Great Olm (Left claw) --lvl 750": []
+    }
+}

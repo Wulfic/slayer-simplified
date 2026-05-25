@@ -1,0 +1,17 @@
+﻿{
+    "name": "Zamorak crafter",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Zamorak crafter --lvl 19"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Zamorak crafter --lvl 19": []
+    }
+}

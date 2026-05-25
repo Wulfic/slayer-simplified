@@ -1,0 +1,17 @@
+﻿{
+    "name": "Swamp Crab",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Swamp Crab --lvl 55"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Swamp Crab --lvl 55": []
+    }
+}

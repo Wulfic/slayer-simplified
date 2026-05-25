@@ -1,0 +1,17 @@
+﻿{
+    "name": "White Knight (Initiate (m))",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Slash"],
+    "variants": [
+        "White Knight (Initiate (m)) --lvl 42"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "White Knight (Initiate (m)) --lvl 42": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Nylocas Prinkipas",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Nylocas Prinkipas --lvl 400"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Nylocas Prinkipas --lvl 400": []
+    }
+}

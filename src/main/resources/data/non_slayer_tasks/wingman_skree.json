@@ -1,0 +1,17 @@
+﻿{
+    "name": "Wingman Skree",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Wingman Skree --lvl 143"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Wingman Skree --lvl 143": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Fareed (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Fareed (hard) --lvl 299"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Fareed (hard) --lvl 299": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Yrsa",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Yrsa --lvl 1"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Yrsa --lvl 1": []
+    }
+}

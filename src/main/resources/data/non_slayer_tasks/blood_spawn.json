@@ -1,0 +1,17 @@
+﻿{
+    "name": "Blood spawn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Blood spawn --lvl 183"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Blood spawn --lvl 183": []
+    }
+}

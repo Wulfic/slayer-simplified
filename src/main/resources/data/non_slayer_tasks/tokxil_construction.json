@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tok-Xil (Construction)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush","Ranged"],
+    "variants": [
+        "Tok-Xil (Construction) --lvl 135"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tok-Xil (Construction) --lvl 135": []
+    }
+}

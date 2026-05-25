@@ -1,0 +1,17 @@
+﻿{
+    "name": "Imp (God Wars)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": ["Demon"],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Imp (God Wars) --lvl 7"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Imp (God Wars) --lvl 7": []
+    }
+}

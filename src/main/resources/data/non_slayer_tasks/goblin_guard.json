@@ -1,0 +1,17 @@
+﻿{
+    "name": "Goblin guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Goblin guard --lvl 42"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Goblin guard --lvl 42": []
+    }
+}

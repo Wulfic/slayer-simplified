@@ -1,0 +1,17 @@
+﻿{
+    "name": "Oryx",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Oryx --lvl 15"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Oryx --lvl 15": []
+    }
+}

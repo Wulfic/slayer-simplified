@@ -1,0 +1,17 @@
+﻿{
+    "name": "Black Knight Titan (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Black Knight Titan (hard) --lvl 210"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Black Knight Titan (hard) --lvl 210": []
+    }
+}

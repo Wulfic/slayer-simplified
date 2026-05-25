@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sotetseg",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sotetseg --lvl 1195"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sotetseg --lvl 1195": []
+    }
+}

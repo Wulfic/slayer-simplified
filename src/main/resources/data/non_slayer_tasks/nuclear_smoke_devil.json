@@ -1,0 +1,17 @@
+﻿{
+    "name": "Nuclear smoke devil",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Nuclear smoke devil --lvl 280"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Nuclear smoke devil --lvl 280": []
+    }
+}

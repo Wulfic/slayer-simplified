@@ -1,0 +1,17 @@
+﻿{
+    "name": "Agile Scarab",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Agile Scarab --lvl 53"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Agile Scarab --lvl 53": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Crystalline Bear",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Crystalline Bear --lvl 172"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Crystalline Bear --lvl 172": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Spawn of Sarachnis",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Spawn of Sarachnis --lvl 107"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Spawn of Sarachnis --lvl 107": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Zamorak mage",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Zamorak mage --lvl 84"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Zamorak mage --lvl 84": []
+    }
+}

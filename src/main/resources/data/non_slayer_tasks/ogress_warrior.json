@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ogress Warrior",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ogress Warrior --lvl 82"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ogress Warrior --lvl 82": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Skeletal miner",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Skeletal miner --lvl 42"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Skeletal miner --lvl 42": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Melzar the Mad",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush","Magic"],
+    "variants": [
+        "Melzar the Mad --lvl 43"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Melzar the Mad --lvl 43": []
+    }
+}

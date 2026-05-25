@@ -1,0 +1,17 @@
+﻿{
+    "name": "Rocnar",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Rocnar --lvl 97"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Rocnar --lvl 97": []
+    }
+}

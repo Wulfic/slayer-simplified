@@ -1,0 +1,17 @@
+﻿{
+    "name": "Fortress Guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Fortress Guard --lvl 20"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Fortress Guard --lvl 20": []
+    }
+}

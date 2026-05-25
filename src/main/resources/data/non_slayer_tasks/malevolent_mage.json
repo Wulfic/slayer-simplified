@@ -1,0 +1,17 @@
+﻿{
+    "name": "Malevolent Mage",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Malevolent Mage --lvl 286"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Malevolent Mage --lvl 286": []
+    }
+}

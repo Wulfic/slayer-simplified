@@ -1,0 +1,17 @@
+﻿{
+    "name": "Spitting Scarab",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Spitting Scarab --lvl 89"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Spitting Scarab --lvl 89": []
+    }
+}

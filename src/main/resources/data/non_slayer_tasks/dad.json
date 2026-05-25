@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dad",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Dad --lvl 101"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dad --lvl 101": []
+    }
+}

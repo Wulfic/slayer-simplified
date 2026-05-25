@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mosschin",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mosschin --lvl 88"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mosschin --lvl 88": []
+    }
+}

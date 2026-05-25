@@ -1,0 +1,17 @@
+﻿{
+    "name": "Starlight",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Starlight --lvl 149"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Starlight --lvl 149": []
+    }
+}

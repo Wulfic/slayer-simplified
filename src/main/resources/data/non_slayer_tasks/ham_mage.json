@@ -1,0 +1,17 @@
+﻿{
+    "name": "H.A.M. Mage",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "H.A.M. Mage --lvl 30"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "H.A.M. Mage --lvl 30": []
+    }
+}

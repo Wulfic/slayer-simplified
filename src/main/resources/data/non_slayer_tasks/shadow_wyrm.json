@@ -1,0 +1,17 @@
+﻿{
+    "name": "Shadow Wyrm",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Shadow Wyrm --lvl 267"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Shadow Wyrm --lvl 267": []
+    }
+}

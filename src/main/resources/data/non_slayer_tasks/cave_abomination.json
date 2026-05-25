@@ -1,0 +1,17 @@
+﻿{
+    "name": "Cave abomination",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Cave abomination --lvl 361"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Cave abomination --lvl 361": []
+    }
+}

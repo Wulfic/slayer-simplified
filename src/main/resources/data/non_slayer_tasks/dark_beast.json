@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dark beast",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Dark beast --lvl 182"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dark beast --lvl 182": []
+    }
+}

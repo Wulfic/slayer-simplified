@@ -1,0 +1,17 @@
+﻿{
+    "name": "Defiler",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Ranged"],
+    "variants": [
+        "Defiler --lvl 97"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Defiler --lvl 97": []
+    }
+}

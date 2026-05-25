@@ -1,0 +1,17 @@
+﻿{
+    "name": "Head Menaphite Guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Head Menaphite Guard --lvl 174"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Head Menaphite Guard --lvl 174": []
+    }
+}

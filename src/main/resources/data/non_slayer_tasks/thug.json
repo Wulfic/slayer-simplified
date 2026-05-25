@@ -1,0 +1,17 @@
+﻿{
+    "name": "Thug",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Thug --lvl 10"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Thug --lvl 10": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Kalphite soldier (Construction)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": ["Super antipoison(4)"],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Kalphite soldier (Construction) --lvl 85"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Kalphite soldier (Construction) --lvl 85": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dusk",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Dusk --lvl 328"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dusk --lvl 328": []
+    }
+}

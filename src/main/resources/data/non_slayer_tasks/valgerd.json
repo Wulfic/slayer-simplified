@@ -1,0 +1,17 @@
+﻿{
+    "name": "Valgerd",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Valgerd --lvl 2"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Valgerd --lvl 2": []
+    }
+}

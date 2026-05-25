@@ -1,0 +1,17 @@
+﻿{
+    "name": "Armoured Foe",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Armoured Foe --lvl 820"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Armoured Foe --lvl 820": []
+    }
+}

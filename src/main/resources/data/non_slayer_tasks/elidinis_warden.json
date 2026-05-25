@@ -1,0 +1,17 @@
+﻿{
+    "name": "Elidinis' Warden",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Elidinis' Warden --lvl 544"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Elidinis' Warden --lvl 544": []
+    }
+}

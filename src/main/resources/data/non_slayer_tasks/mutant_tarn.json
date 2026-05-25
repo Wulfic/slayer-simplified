@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mutant tarn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mutant tarn --lvl 69"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mutant tarn --lvl 69": []
+    }
+}

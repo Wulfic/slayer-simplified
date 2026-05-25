@@ -1,0 +1,17 @@
+﻿{
+    "name": "Scorpia's offspring",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Scorpia's offspring --lvl 15"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Scorpia's offspring --lvl 15": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Frenzied ice troll female",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Frenzied ice troll female --lvl 82"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Frenzied ice troll female --lvl 82": []
+    }
+}

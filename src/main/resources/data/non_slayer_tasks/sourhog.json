@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sourhog",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sourhog --lvl 37"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sourhog --lvl 37": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Urium Shade",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Urium Shade --lvl 140"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Urium Shade --lvl 140": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty warped Jelly",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty warped Jelly --lvl 241"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty warped Jelly --lvl 241": []
+    }
+}

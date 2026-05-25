@@ -1,0 +1,17 @@
+﻿{
+    "name": "Anja",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Anja --lvl 2"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Anja --lvl 2": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Moonlight Cockatrice",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Moonlight Cockatrice --lvl 49"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Moonlight Cockatrice --lvl 49": []
+    }
+}

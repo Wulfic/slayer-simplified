@@ -1,0 +1,17 @@
+﻿{
+    "name": "Flambeed (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Flambeed (hard) --lvl 238"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Flambeed (hard) --lvl 238": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Barbarian Warlord",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Barbarian Warlord --lvl 91"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Barbarian Warlord --lvl 91": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ogress Shaman",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ogress Shaman --lvl 82"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ogress Shaman --lvl 82": []
+    }
+}

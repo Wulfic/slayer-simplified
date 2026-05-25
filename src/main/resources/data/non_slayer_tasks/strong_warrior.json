@@ -1,0 +1,17 @@
+﻿{
+    "name": "Strong Warrior",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Strong Warrior --lvl 96"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Strong Warrior --lvl 96": []
+    }
+}

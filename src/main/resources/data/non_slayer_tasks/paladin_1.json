@@ -1,0 +1,17 @@
+﻿{
+    "name": "Paladin (1)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Slash"],
+    "variants": [
+        "Paladin (1) --lvl 121"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Paladin (1) --lvl 121": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Porazdir",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Porazdir --lvl 280"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Porazdir --lvl 280": []
+    }
+}

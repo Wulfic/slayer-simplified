@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ogre shaman",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ogre shaman --lvl 113"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ogre shaman --lvl 113": []
+    }
+}

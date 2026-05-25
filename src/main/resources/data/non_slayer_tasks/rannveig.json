@@ -1,0 +1,17 @@
+﻿{
+    "name": "Rannveig",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Rannveig --lvl 2"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Rannveig --lvl 2": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Lucien",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Lucien --lvl 14"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Lucien --lvl 14": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Revenant cyclops",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Revenant cyclops --lvl 82"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Revenant cyclops --lvl 82": []
+    }
+}

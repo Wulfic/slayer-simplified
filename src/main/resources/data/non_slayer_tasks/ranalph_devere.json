@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ranalph Devere",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ranalph Devere --lvl 92"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ranalph Devere --lvl 92": []
+    }
+}

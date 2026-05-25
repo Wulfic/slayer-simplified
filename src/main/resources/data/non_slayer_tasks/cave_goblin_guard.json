@@ -1,0 +1,17 @@
+﻿{
+    "name": "Cave goblin guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Cave goblin guard --lvl 26"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Cave goblin guard --lvl 26": []
+    }
+}

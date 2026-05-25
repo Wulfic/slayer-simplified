@@ -1,0 +1,17 @@
+﻿{
+    "name": "Kruk",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Kruk --lvl 207"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Kruk --lvl 207": []
+    }
+}

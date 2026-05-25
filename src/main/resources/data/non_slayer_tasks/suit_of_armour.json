@@ -1,0 +1,17 @@
+﻿{
+    "name": "Suit of armour",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Suit of armour --lvl 19"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Suit of armour --lvl 19": []
+    }
+}

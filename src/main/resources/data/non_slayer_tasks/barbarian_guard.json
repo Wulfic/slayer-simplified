@@ -1,0 +1,17 @@
+﻿{
+    "name": "Barbarian guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Barbarian guard --lvl 8"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Barbarian guard --lvl 8": []
+    }
+}

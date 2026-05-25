@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sea Troll Queen",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sea Troll Queen --lvl 170"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sea Troll Queen --lvl 170": []
+    }
+}

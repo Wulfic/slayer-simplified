@@ -1,0 +1,17 @@
+﻿{
+    "name": "Scarab",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Scarab --lvl 56"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Scarab --lvl 56": []
+    }
+}

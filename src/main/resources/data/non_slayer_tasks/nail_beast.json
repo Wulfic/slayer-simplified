@@ -1,0 +1,17 @@
+﻿{
+    "name": "Nail beast",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Slash"],
+    "variants": [
+        "Nail beast --lvl 141"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Nail beast --lvl 141": []
+    }
+}

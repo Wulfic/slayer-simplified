@@ -1,0 +1,17 @@
+﻿{
+    "name": "Animated Adamant Armour",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Animated Adamant Armour --lvl 113"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Animated Adamant Armour --lvl 113": []
+    }
+}

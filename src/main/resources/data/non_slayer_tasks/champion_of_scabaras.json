@@ -1,0 +1,17 @@
+﻿{
+    "name": "Champion of Scabaras",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Champion of Scabaras --lvl 379"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Champion of Scabaras --lvl 379": []
+    }
+}

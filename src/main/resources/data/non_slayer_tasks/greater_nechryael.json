@@ -1,0 +1,17 @@
+﻿{
+    "name": "Greater Nechryael",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Greater Nechryael --lvl 200"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Greater Nechryael --lvl 200": []
+    }
+}

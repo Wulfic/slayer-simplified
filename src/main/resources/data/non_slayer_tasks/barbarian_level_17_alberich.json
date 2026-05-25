@@ -1,0 +1,17 @@
+﻿{
+    "name": "Barbarian (Level 17 (Alberich))",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Barbarian (Level 17 (Alberich)) --lvl 17"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Barbarian (Level 17 (Alberich)) --lvl 17": []
+    }
+}

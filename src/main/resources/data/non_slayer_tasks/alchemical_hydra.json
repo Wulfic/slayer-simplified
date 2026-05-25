@@ -1,0 +1,17 @@
+﻿{
+    "name": "Alchemical Hydra",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Alchemical Hydra --lvl 426"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Alchemical Hydra --lvl 426": []
+    }
+}

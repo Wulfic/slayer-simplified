@@ -1,0 +1,17 @@
+﻿{
+    "name": "Chasm Crawler",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Chasm Crawler --lvl 68"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Chasm Crawler --lvl 68": []
+    }
+}

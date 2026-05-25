@@ -1,0 +1,17 @@
+﻿{
+    "name": "Arzinian Avatar of Magic",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Magic"],
+    "variants": [
+        "Arzinian Avatar of Magic --lvl 125"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Arzinian Avatar of Magic --lvl 125": []
+    }
+}

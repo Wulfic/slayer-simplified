@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bandosian guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bandosian guard --lvl 125"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bandosian guard --lvl 125": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dagannoth spawn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Dagannoth spawn --lvl 42"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dagannoth spawn --lvl 42": []
+    }
+}

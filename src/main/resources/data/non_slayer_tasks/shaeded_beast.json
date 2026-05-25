@@ -1,0 +1,17 @@
+﻿{
+    "name": "Shaeded Beast",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Shaeded Beast --lvl 186"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Shaeded Beast --lvl 186": []
+    }
+}

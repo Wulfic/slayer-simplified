@@ -1,0 +1,17 @@
+﻿{
+    "name": "Basilisk Sentinel",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Basilisk Sentinel --lvl 358"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Basilisk Sentinel --lvl 358": []
+    }
+}

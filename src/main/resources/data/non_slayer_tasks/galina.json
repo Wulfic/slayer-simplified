@@ -1,0 +1,17 @@
+﻿{
+    "name": "Galina",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Galina --lvl 24"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Galina --lvl 24": []
+    }
+}

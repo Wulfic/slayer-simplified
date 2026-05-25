@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tree spirit (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tree spirit (hard) --lvl 199"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tree spirit (hard) --lvl 199": []
+    }
+}

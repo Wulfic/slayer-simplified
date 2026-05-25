@@ -1,0 +1,17 @@
+﻿{
+    "name": "Blessed spider",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Blessed spider --lvl 39"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Blessed spider --lvl 39": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bedabin Nomad Fighter",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bedabin Nomad Fighter --lvl 56"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bedabin Nomad Fighter --lvl 56": []
+    }
+}

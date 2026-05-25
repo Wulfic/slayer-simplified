@@ -1,0 +1,17 @@
+﻿{
+    "name": "Unicow",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Unicow --lvl 25"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Unicow --lvl 25": []
+    }
+}

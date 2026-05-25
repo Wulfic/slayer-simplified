@@ -1,0 +1,17 @@
+﻿{
+    "name": "Lava dragon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Lava dragon --lvl 252"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Lava dragon --lvl 252": []
+    }
+}

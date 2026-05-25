@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mutated Bloodveld",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mutated Bloodveld --lvl 123"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mutated Bloodveld --lvl 123": []
+    }
+}

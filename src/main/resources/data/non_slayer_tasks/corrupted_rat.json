@@ -1,0 +1,17 @@
+﻿{
+    "name": "Corrupted Rat",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Corrupted Rat --lvl 34"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Corrupted Rat --lvl 34": []
+    }
+}

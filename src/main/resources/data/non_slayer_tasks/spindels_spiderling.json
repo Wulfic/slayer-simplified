@@ -1,0 +1,17 @@
+﻿{
+    "name": "Spindel's Spiderling",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Spindel's Spiderling --lvl 12"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Spindel's Spiderling --lvl 12": []
+    }
+}

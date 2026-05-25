@@ -1,0 +1,17 @@
+﻿{
+    "name": "Brutal green dragon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": ["Dragon","Fiery"],
+    "attackStyles": ["Stab","Magic","Dragonfire"],
+    "variants": [
+        "Brutal green dragon --lvl 227"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Brutal green dragon --lvl 227": []
+    }
+}

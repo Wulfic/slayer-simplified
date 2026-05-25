@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty hand",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty hand --lvl 45"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty hand --lvl 45": []
+    }
+}

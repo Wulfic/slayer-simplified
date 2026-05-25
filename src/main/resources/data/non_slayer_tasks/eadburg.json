@@ -1,0 +1,17 @@
+﻿{
+    "name": "Eadburg",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Eadburg --lvl 4"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Eadburg --lvl 4": []
+    }
+}

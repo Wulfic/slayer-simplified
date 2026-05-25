@@ -1,0 +1,17 @@
+﻿{
+    "name": "Venenatis' Spiderling",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Venenatis' Spiderling --lvl 12"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Venenatis' Spiderling --lvl 12": []
+    }
+}

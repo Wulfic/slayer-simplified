@@ -1,0 +1,17 @@
+﻿{
+    "name": "Don't Know What",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Don't Know What --lvl 163"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Don't Know What --lvl 163": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Maniacal monkey",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Maniacal monkey --lvl 140"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Maniacal monkey --lvl 140": []
+    }
+}

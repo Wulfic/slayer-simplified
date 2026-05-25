@@ -1,0 +1,17 @@
+﻿{
+    "name": "Radiant sanguisphera",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Radiant sanguisphera --lvl 34"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Radiant sanguisphera --lvl 34": []
+    }
+}

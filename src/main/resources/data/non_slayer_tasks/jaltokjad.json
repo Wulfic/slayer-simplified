@@ -1,0 +1,17 @@
+﻿{
+    "name": "JalTok-Jad",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "JalTok-Jad --lvl 900"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "JalTok-Jad --lvl 900": []
+    }
+}

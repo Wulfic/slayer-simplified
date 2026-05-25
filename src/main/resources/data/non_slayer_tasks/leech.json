@@ -1,0 +1,17 @@
+﻿{
+    "name": "Leech",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Leech --lvl 52"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Leech --lvl 52": []
+    }
+}

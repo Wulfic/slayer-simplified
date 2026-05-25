@@ -1,0 +1,17 @@
+﻿{
+    "name": "Menaphite Shadow",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Menaphite Shadow --lvl 147"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Menaphite Shadow --lvl 147": []
+    }
+}

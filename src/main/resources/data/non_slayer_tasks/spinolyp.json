@@ -1,0 +1,17 @@
+﻿{
+    "name": "Spinolyp",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Spinolyp --lvl 76"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Spinolyp --lvl 76": []
+    }
+}

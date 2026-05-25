@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ancient Guardian",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ancient Guardian --lvl 153"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ancient Guardian --lvl 153": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Soldier (tier 3)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Soldier (tier 3) --lvl 58"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Soldier (tier 3) --lvl 58": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Possessed pickaxe",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Possessed pickaxe --lvl 50"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Possessed pickaxe --lvl 50": []
+    }
+}

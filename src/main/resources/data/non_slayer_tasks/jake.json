@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jake",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jake --lvl 37"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jake --lvl 37": []
+    }
+}

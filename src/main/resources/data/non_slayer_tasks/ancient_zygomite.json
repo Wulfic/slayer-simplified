@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ancient Zygomite",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ancient Zygomite --lvl 109"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ancient Zygomite --lvl 109": []
+    }
+}

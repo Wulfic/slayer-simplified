@@ -1,0 +1,17 @@
+﻿{
+    "name": "Lizardman brute",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Lizardman brute --lvl 75"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Lizardman brute --lvl 75": []
+    }
+}

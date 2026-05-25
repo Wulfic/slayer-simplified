@@ -1,0 +1,17 @@
+﻿{
+    "name": "Shipyard worker",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Shipyard worker --lvl 11"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Shipyard worker --lvl 11": []
+    }
+}

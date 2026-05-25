@@ -1,0 +1,17 @@
+﻿{
+    "name": "Earth Warrior Champion",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Earth Warrior Champion --lvl 102"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Earth Warrior Champion --lvl 102": []
+    }
+}

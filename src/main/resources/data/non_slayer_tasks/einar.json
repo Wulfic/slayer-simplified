@@ -1,0 +1,17 @@
+﻿{
+    "name": "Einar",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Einar --lvl 1"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Einar --lvl 1": []
+    }
+}

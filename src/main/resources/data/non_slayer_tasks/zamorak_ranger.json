@@ -1,0 +1,17 @@
+﻿{
+    "name": "Zamorak ranger",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Zamorak ranger --lvl 82"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Zamorak ranger --lvl 82": []
+    }
+}

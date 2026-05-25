@@ -1,0 +1,17 @@
+﻿{
+    "name": "Soldier",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Soldier --lvl 48"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Soldier --lvl 48": []
+    }
+}

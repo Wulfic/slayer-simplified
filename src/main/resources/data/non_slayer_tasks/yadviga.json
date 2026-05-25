@@ -1,0 +1,17 @@
+﻿{
+    "name": "Yadviga",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Yadviga --lvl 24"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Yadviga --lvl 24": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Elder Chaos druid",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Elder Chaos druid --lvl 129"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Elder Chaos druid --lvl 129": []
+    }
+}

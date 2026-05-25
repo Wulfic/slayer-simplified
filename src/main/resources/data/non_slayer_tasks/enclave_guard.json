@@ -1,0 +1,17 @@
+﻿{
+    "name": "Enclave guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Enclave guard --lvl 83"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Enclave guard --lvl 83": []
+    }
+}

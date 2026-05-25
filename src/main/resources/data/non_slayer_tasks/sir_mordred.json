@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sir Mordred",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sir Mordred --lvl 39"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sir Mordred --lvl 39": []
+    }
+}

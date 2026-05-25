@@ -1,0 +1,17 @@
+﻿{
+    "name": "Snake",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Snake --lvl 35"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Snake --lvl 35": []
+    }
+}

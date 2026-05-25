@@ -1,0 +1,17 @@
+﻿{
+    "name": "Delrith",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Delrith --lvl 27"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Delrith --lvl 27": []
+    }
+}

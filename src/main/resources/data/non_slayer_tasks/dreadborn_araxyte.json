@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dreadborn Araxyte",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Dreadborn Araxyte --lvl 281"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dreadborn Araxyte --lvl 281": []
+    }
+}

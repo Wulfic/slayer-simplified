@@ -1,0 +1,17 @@
+﻿{
+    "name": "Black unicorn Foal",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Black unicorn Foal --lvl 22"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Black unicorn Foal --lvl 22": []
+    }
+}

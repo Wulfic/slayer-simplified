@@ -1,0 +1,17 @@
+﻿{
+    "name": "Vanstrom Klause",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Vanstrom Klause --lvl 472"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Vanstrom Klause --lvl 472": []
+    }
+}

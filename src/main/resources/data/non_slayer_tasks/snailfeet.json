@@ -1,0 +1,17 @@
+﻿{
+    "name": "Snailfeet",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Snailfeet --lvl 56"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Snailfeet --lvl 56": []
+    }
+}

@@ -57,7 +57,7 @@ public class MainPanel extends PluginPanel
     private Task currentlySelectedTask;
 
     private final Map<Panel, JPanel> panels = new HashMap<>();
-    private final JPanel currentPanelContainer = new JPanel(new BorderLayout());
+    private final JPanel currentPanelContainer = new JPanel(new CardLayout());
     private final JButton quickNavButton = new JButton("Quick Navigate");
 
     /** Pinned row showing the active task name with a quick-nav button. */
@@ -102,6 +102,12 @@ public class MainPanel extends PluginPanel
         {
             orderedTasks = Arrays.stream(orderedTasks)
                     .filter(t -> !"A DEBUG TASK".equals(t.name))
+                    .toArray(Task[]::new);
+        }
+        if (!config.showNonSlayerEnemies())
+        {
+            orderedTasks = Arrays.stream(orderedTasks)
+                    .filter(t -> !isNonSlayerTask(t))
                     .toArray(Task[]::new);
         }
         taskSearchPanel.setAllTasks(orderedTasks);
@@ -262,6 +268,12 @@ public class MainPanel extends PluginPanel
 
         setBackground(ColorScheme.DARK_GRAY_COLOR);
         currentPanelContainer.setBackground(ColorScheme.DARK_GRAY_COLOR);
+
+        // Add all panels to the CardLayout container once; switching is free
+        for (Map.Entry<Panel, JPanel> entry : panels.entrySet())
+        {
+            currentPanelContainer.add(entry.getValue(), entry.getKey().name());
+        }
 
         add(northWrapper, BorderLayout.NORTH);
         add(currentPanelContainer, BorderLayout.CENTER);
@@ -488,6 +500,22 @@ public class MainPanel extends PluginPanel
         return config.preferredMaster();
     }
 
+    private static boolean isNonSlayerTask(Task t)
+    {
+        if (t.masters == null)
+        {
+            return false;
+        }
+        for (String m : t.masters)
+        {
+            if (SlayerMaster.NON_SLAYER_ENEMIES.getDisplayName().equals(m))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Re-renders the currently selected task's detail panel (if any).
      * Called when debug mode changes so LocationsTab re-evaluates row colours.
@@ -515,6 +543,12 @@ public class MainPanel extends PluginPanel
                         .filter(t -> !"A DEBUG TASK".equals(t.name))
                         .toArray(Task[]::new);
             }
+            if (!config.showNonSlayerEnemies())
+            {
+                tasks = Arrays.stream(tasks)
+                        .filter(t -> !isNonSlayerTask(t))
+                        .toArray(Task[]::new);
+            }
             taskSearchPanel.setAllTasks(tasks);
         });
     }
@@ -534,6 +568,13 @@ public class MainPanel extends PluginPanel
                     .filter(t -> !"A DEBUG TASK".equals(t.name))
                     .toArray(Task[]::new);
         }
+        if (!config.showNonSlayerEnemies())
+        {
+            matchedTasks = Arrays.stream(matchedTasks)
+                    .filter(t -> !isNonSlayerTask(t))
+                    .toArray(Task[]::new);
+        }
+
         taskSearchPanel.showSearchResults(matchedTasks);
     }
 
@@ -583,20 +624,7 @@ public class MainPanel extends PluginPanel
     {
         SwingUtilities.invokeLater(() ->
         {
-            currentPanelContainer.removeAll();
-            currentPanelContainer.add(panels.get(panel), BorderLayout.CENTER);
-            currentPanelContainer.revalidate();
-            currentPanelContainer.repaint();
-
-            // Force the full component tree to lay out immediately so that
-            // nested JScrollPanes (LootTab, InfoTab, etc.) get correct sizes
-            // and their scrollbars appear without requiring a manual resize.
-            Window window = SwingUtilities.getWindowAncestor(this);
-            if (window != null)
-            {
-                window.revalidate();
-                window.repaint();
-            }
+            ((CardLayout) currentPanelContainer.getLayout()).show(currentPanelContainer, panel.name());
         });
     }
 }

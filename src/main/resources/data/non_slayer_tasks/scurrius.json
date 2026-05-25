@@ -1,0 +1,17 @@
+﻿{
+    "name": "Scurrius",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Scurrius --lvl 250"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Scurrius --lvl 250": []
+    }
+}

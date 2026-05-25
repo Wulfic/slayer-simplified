@@ -1,0 +1,17 @@
+﻿{
+    "name": "Choke devil",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Choke devil --lvl 264"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Choke devil --lvl 264": []
+    }
+}

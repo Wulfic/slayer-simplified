@@ -1,0 +1,17 @@
+﻿{
+    "name": "Reanimated demon spawn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Reanimated demon spawn --lvl 87"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Reanimated demon spawn --lvl 87": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Javelin Colossus",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Javelin Colossus --lvl 278"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Javelin Colossus --lvl 278": []
+    }
+}

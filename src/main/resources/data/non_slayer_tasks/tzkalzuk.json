@@ -1,0 +1,17 @@
+﻿{
+    "name": "TzKal-Zuk",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "TzKal-Zuk --lvl 1400"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "TzKal-Zuk --lvl 1400": []
+    }
+}

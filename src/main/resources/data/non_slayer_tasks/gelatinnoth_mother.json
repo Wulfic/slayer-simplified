@@ -1,0 +1,17 @@
+﻿{
+    "name": "Gelatinnoth Mother",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Gelatinnoth Mother --lvl 130"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Gelatinnoth Mother --lvl 130": []
+    }
+}

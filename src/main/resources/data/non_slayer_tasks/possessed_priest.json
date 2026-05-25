@@ -1,0 +1,17 @@
+﻿{
+    "name": "Possessed Priest",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Possessed Priest --lvl 91"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Possessed Priest --lvl 91": []
+    }
+}

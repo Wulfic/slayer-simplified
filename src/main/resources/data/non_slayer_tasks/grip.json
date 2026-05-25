@@ -1,0 +1,17 @@
+﻿{
+    "name": "Grip",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Grip --lvl 22"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Grip --lvl 22": []
+    }
+}

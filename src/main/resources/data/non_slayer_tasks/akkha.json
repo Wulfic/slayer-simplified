@@ -1,0 +1,17 @@
+﻿{
+    "name": "Akkha",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Akkha --lvl 337"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Akkha --lvl 337": []
+    }
+}

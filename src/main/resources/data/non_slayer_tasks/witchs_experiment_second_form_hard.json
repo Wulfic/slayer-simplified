@@ -1,0 +1,17 @@
+﻿{
+    "name": "Witch's experiment (second form) (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Witch's experiment (second form) (hard) --lvl 77"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Witch's experiment (second form) (hard) --lvl 77": []
+    }
+}

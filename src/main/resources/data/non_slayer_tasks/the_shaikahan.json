@@ -1,0 +1,17 @@
+﻿{
+    "name": "The Shaikahan",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "The Shaikahan --lvl 83"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "The Shaikahan --lvl 83": []
+    }
+}

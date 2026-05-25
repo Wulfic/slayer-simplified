@@ -1,0 +1,17 @@
+﻿{
+    "name": "Nylocas Vasilias",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Nylocas Vasilias --lvl 800"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Nylocas Vasilias --lvl 800": []
+    }
+}

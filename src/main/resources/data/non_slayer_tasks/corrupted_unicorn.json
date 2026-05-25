@@ -1,0 +1,17 @@
+﻿{
+    "name": "Corrupted Unicorn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Corrupted Unicorn --lvl 64"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Corrupted Unicorn --lvl 64": []
+    }
+}

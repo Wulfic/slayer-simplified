@@ -1,0 +1,17 @@
+﻿{
+    "name": "Armadylean guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Armadylean guard --lvl 97"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Armadylean guard --lvl 97": []
+    }
+}

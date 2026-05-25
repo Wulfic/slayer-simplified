@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jubster",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jubster --lvl 87"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jubster --lvl 87": []
+    }
+}

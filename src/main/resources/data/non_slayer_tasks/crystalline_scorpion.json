@@ -1,0 +1,17 @@
+﻿{
+    "name": "Crystalline Scorpion",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Crystalline Scorpion --lvl 64"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Crystalline Scorpion --lvl 64": []
+    }
+}

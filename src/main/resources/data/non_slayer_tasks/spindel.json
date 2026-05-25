@@ -1,0 +1,17 @@
+﻿{
+    "name": "Spindel",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Spindel --lvl 302"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Spindel --lvl 302": []
+    }
+}

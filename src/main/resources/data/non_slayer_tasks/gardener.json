@@ -1,0 +1,17 @@
+﻿{
+    "name": "Gardener",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Gardener --lvl 4"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Gardener --lvl 4": []
+    }
+}

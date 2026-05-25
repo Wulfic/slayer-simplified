@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mouse",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mouse --lvl 95"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mouse --lvl 95": []
+    }
+}

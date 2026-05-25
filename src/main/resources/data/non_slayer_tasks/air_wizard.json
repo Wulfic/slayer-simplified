@@ -1,0 +1,17 @@
+﻿{
+    "name": "Air wizard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Magic"],
+    "variants": [
+        "Air wizard --lvl 13"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Air wizard --lvl 13": []
+    }
+}

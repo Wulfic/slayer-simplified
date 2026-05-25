@@ -1,0 +1,17 @@
+﻿{
+    "name": "Menaphite Thug",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Menaphite Thug --lvl 55"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Menaphite Thug --lvl 55": []
+    }
+}

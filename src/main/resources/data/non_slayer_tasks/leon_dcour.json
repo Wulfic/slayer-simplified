@@ -1,0 +1,17 @@
+﻿{
+    "name": "Leon d'Cour",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Leon d'Cour --lvl 141"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Leon d'Cour --lvl 141": []
+    }
+}

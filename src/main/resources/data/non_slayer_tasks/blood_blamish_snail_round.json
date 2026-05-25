@@ -1,0 +1,17 @@
+﻿{
+    "name": "Blood Blamish Snail (Round)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Ranged"],
+    "variants": [
+        "Blood Blamish Snail (Round) --lvl 20"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Blood Blamish Snail (Round) --lvl 20": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Scorpia's guardian",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Scorpia's guardian --lvl 47"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Scorpia's guardian --lvl 47": []
+    }
+}

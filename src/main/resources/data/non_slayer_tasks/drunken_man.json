@@ -1,0 +1,17 @@
+﻿{
+    "name": "Drunken man",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Drunken man --lvl 3"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Drunken man --lvl 3": []
+    }
+}

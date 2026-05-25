@@ -1,0 +1,17 @@
+﻿{
+    "name": "Golem (unused NPC)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Golem (unused NPC) --lvl 64"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Golem (unused NPC) --lvl 64": []
+    }
+}

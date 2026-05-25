@@ -1,0 +1,17 @@
+﻿{
+    "name": "Air elemental",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Air elemental --lvl 34"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Air elemental --lvl 34": []
+    }
+}

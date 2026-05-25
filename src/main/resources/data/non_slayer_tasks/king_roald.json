@@ -1,0 +1,17 @@
+﻿{
+    "name": "King Roald",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "King Roald --lvl 47"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "King Roald --lvl 47": []
+    }
+}

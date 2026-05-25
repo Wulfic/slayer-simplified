@@ -1,0 +1,17 @@
+﻿{
+    "name": "Frenzied ice troll grunt",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Frenzied ice troll grunt --lvl 102"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Frenzied ice troll grunt --lvl 102": []
+    }
+}

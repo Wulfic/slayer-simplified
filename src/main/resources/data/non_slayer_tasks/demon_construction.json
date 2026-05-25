@@ -1,0 +1,17 @@
+﻿{
+    "name": "Demon (Construction)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Demon (Construction) --lvl 82"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Demon (Construction) --lvl 82": []
+    }
+}

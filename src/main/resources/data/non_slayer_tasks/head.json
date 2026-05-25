@@ -1,0 +1,17 @@
+﻿{
+    "name": "Head",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Head --lvl 140"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Head --lvl 140": []
+    }
+}

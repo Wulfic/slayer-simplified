@@ -1,0 +1,17 @@
+﻿{
+    "name": "Druid",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Druid --lvl 33"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Druid --lvl 33": []
+    }
+}

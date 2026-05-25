@@ -1,0 +1,17 @@
+﻿{
+    "name": "Crazy archaeologist",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Crazy archaeologist --lvl 204"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Crazy archaeologist --lvl 204": []
+    }
+}

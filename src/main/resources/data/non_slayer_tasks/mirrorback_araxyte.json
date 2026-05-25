@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mirrorback Araxyte",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mirrorback Araxyte --lvl 114"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mirrorback Araxyte --lvl 114": []
+    }
+}

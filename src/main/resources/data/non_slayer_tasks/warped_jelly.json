@@ -1,0 +1,17 @@
+﻿{
+    "name": "Warped Jelly",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Warped Jelly --lvl 112"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Warped Jelly --lvl 112": []
+    }
+}

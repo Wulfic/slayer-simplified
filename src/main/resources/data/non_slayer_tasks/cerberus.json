@@ -1,0 +1,17 @@
+﻿{
+    "name": "Cerberus",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Cerberus --lvl 430"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Cerberus --lvl 430": []
+    }
+}

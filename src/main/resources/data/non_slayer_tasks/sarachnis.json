@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sarachnis",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sarachnis --lvl 318"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sarachnis --lvl 318": []
+    }
+}

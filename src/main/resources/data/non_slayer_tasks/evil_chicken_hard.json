@@ -1,0 +1,17 @@
+﻿{
+    "name": "Evil Chicken (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Evil Chicken (hard) --lvl 286"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Evil Chicken (hard) --lvl 286": []
+    }
+}

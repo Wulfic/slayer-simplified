@@ -1,0 +1,17 @@
+﻿{
+    "name": "Frost Nagua",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Frost Nagua --lvl 104"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Frost Nagua --lvl 104": []
+    }
+}

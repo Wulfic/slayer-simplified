@@ -1,0 +1,17 @@
+﻿{
+    "name": "Abhorrent spectre",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Abhorrent spectre --lvl 253"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Abhorrent spectre --lvl 253": []
+    }
+}

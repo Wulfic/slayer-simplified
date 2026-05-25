@@ -1,0 +1,17 @@
+﻿{
+    "name": "Rowdy slave",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Rowdy slave --lvl 10"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Rowdy slave --lvl 10": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Monk",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Monk --lvl 5"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Monk --lvl 5": []
+    }
+}

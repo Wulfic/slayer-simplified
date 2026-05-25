@@ -1,0 +1,17 @@
+﻿{
+    "name": "Broodoo victim",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Broodoo victim --lvl 60"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Broodoo victim --lvl 60": []
+    }
+}

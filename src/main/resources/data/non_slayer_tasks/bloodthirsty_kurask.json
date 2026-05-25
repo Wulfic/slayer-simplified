@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty kurask",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty kurask --lvl 295"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty kurask --lvl 295": []
+    }
+}

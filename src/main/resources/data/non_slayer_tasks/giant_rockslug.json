@@ -1,0 +1,17 @@
+﻿{
+    "name": "Giant rockslug",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Giant rockslug --lvl 86"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Giant rockslug --lvl 86": []
+    }
+}

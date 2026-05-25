@@ -1,0 +1,17 @@
+﻿{
+    "name": "Penance Queen",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Penance Queen --lvl 209"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Penance Queen --lvl 209": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Guardian Drake",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Guardian Drake --lvl 386"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Guardian Drake --lvl 386": []
+    }
+}

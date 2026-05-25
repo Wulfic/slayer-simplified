@@ -1,0 +1,17 @@
+﻿{
+    "name": "Cave goblin miner",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Cave goblin miner --lvl 11"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Cave goblin miner --lvl 11": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jal-Zek",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jal-Zek --lvl 490"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jal-Zek --lvl 490": []
+    }
+}

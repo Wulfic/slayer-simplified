@@ -1,0 +1,17 @@
+﻿{
+    "name": "Soldier (tier 2)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Soldier (tier 2) --lvl 48"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Soldier (tier 2) --lvl 48": []
+    }
+}

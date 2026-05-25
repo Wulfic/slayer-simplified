@@ -1,0 +1,17 @@
+﻿{
+    "name": "The Hueycoatl",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "The Hueycoatl --lvl 642"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "The Hueycoatl --lvl 642": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Revenant hellhound",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Revenant hellhound --lvl 90"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Revenant hellhound --lvl 90": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Undead Lumberjack",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Undead Lumberjack --lvl 70"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Undead Lumberjack --lvl 70": []
+    }
+}

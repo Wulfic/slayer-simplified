@@ -1,0 +1,17 @@
+﻿{
+    "name": "Shockwave Colossus",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Shockwave Colossus --lvl 239"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Shockwave Colossus --lvl 239": []
+    }
+}

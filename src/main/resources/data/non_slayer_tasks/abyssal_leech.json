@@ -1,0 +1,17 @@
+﻿{
+    "name": "Abyssal leech",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Slash"],
+    "variants": [
+        "Abyssal leech --lvl 54"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Abyssal leech --lvl 54": []
+    }
+}

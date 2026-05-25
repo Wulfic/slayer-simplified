@@ -1,0 +1,17 @@
+﻿{
+    "name": "Brutal black dragon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Brutal black dragon --lvl 318"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Brutal black dragon --lvl 318": []
+    }
+}

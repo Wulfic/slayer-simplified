@@ -1,0 +1,17 @@
+﻿{
+    "name": "Zamorak wizard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Magic"],
+    "variants": [
+        "Zamorak wizard --lvl 65"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Zamorak wizard --lvl 65": []
+    }
+}

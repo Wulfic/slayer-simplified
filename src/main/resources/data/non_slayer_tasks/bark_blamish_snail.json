@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bark Blamish Snail",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Ranged"],
+    "variants": [
+        "Bark Blamish Snail --lvl 15"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bark Blamish Snail --lvl 15": []
+    }
+}

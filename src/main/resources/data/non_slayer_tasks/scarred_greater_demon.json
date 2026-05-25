@@ -1,0 +1,17 @@
+﻿{
+    "name": "Scarred greater demon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Scarred greater demon --lvl 113"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Scarred greater demon --lvl 113": []
+    }
+}

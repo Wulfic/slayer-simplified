@@ -1,0 +1,17 @@
+﻿{
+    "name": "Well-armed Foe",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Well-armed Foe --lvl 820"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Well-armed Foe --lvl 820": []
+    }
+}

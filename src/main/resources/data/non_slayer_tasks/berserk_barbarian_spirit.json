@@ -1,0 +1,17 @@
+﻿{
+    "name": "Berserk barbarian spirit",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Berserk barbarian spirit --lvl 166"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Berserk barbarian spirit --lvl 166": []
+    }
+}

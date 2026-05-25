@@ -1,0 +1,17 @@
+﻿{
+    "name": "Duke Sucellus",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Duke Sucellus --lvl 758"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Duke Sucellus --lvl 758": []
+    }
+}

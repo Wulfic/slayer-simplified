@@ -1,0 +1,17 @@
+﻿{
+    "name": "Fire elemental",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": ["Fiery"],
+    "attackStyles": ["Slash"],
+    "variants": [
+        "Fire elemental --lvl 35"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Fire elemental --lvl 35": []
+    }
+}

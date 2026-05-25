@@ -1,0 +1,17 @@
+﻿{
+    "name": "Culinaromancer (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Culinaromancer (hard) --lvl 209"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Culinaromancer (hard) --lvl 209": []
+    }
+}

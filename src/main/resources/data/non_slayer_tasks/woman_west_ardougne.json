@@ -1,0 +1,17 @@
+﻿{
+    "name": "Woman (West Ardougne)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Woman (West Ardougne) --lvl 14"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Woman (West Ardougne) --lvl 14": []
+    }
+}

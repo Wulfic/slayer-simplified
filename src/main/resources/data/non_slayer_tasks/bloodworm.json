@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodworm",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Bloodworm --lvl 52"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodworm --lvl 52": []
+    }
+}

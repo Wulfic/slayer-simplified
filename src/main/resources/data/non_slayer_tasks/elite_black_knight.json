@@ -1,0 +1,17 @@
+﻿{
+    "name": "Elite Black Knight",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Elite Black Knight --lvl 138"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Elite Black Knight --lvl 138": []
+    }
+}

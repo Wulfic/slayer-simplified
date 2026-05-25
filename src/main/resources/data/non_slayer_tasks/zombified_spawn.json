@@ -1,0 +1,17 @@
+﻿{
+    "name": "Zombified Spawn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Zombified Spawn --lvl 64"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Zombified Spawn --lvl 64": []
+    }
+}

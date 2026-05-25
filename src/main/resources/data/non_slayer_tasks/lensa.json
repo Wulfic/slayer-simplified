@@ -1,0 +1,17 @@
+﻿{
+    "name": "Lensa",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Lensa --lvl 48"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Lensa --lvl 48": []
+    }
+}

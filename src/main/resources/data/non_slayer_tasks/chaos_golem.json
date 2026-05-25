@@ -1,0 +1,17 @@
+﻿{
+    "name": "Chaos Golem",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Chaos Golem --lvl 70"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Chaos Golem --lvl 70": []
+    }
+}

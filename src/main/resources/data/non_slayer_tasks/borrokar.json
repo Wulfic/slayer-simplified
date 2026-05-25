@@ -1,0 +1,17 @@
+﻿{
+    "name": "Borrokar",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Borrokar --lvl 48"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Borrokar --lvl 48": []
+    }
+}

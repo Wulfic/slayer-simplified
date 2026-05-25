@@ -1,0 +1,17 @@
+﻿{
+    "name": "Acidic Bloodveld",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Acidic Bloodveld --lvl 56"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Acidic Bloodveld --lvl 56": []
+    }
+}

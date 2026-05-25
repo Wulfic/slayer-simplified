@@ -1,0 +1,17 @@
+﻿{
+    "name": "Corrupted Bear",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Corrupted Bear --lvl 258"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Corrupted Bear --lvl 258": []
+    }
+}

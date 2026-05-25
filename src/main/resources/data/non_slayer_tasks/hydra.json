@@ -1,0 +1,17 @@
+﻿{
+    "name": "Hydra",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Hydra --lvl 194"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Hydra --lvl 194": []
+    }
+}

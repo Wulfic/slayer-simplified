@@ -1,0 +1,17 @@
+﻿{
+    "name": "Emissary Brawler",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Emissary Brawler --lvl 86"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Emissary Brawler --lvl 86": []
+    }
+}

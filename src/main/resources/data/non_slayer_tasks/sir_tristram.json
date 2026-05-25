@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sir Tristram",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sir Tristram --lvl 115"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sir Tristram --lvl 115": []
+    }
+}

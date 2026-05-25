@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tower guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tower guard --lvl 28"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tower guard --lvl 28": []
+    }
+}

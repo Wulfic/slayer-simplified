@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty basilisk",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty basilisk --lvl 135"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty basilisk --lvl 135": []
+    }
+}

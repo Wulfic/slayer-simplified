@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sea troll",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sea troll --lvl 101"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sea troll --lvl 101": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Elvarg (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Elvarg (hard) --lvl 214"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Elvarg (hard) --lvl 214": []
+    }
+}

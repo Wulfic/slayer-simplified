@@ -1,0 +1,17 @@
+﻿{
+    "name": "Rock Golem",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Rock Golem --lvl 159"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Rock Golem --lvl 159": []
+    }
+}

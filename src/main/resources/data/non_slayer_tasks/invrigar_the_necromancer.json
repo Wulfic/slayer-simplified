@@ -1,0 +1,17 @@
+﻿{
+    "name": "Invrigar the Necromancer",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Melee","Magic"],
+    "variants": [
+        "Invrigar the Necromancer --lvl 20"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Invrigar the Necromancer --lvl 20": []
+    }
+}

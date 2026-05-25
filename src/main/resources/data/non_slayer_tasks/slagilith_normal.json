@@ -1,0 +1,17 @@
+﻿{
+    "name": "Slagilith (Normal)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Slagilith (Normal) --lvl 92"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Slagilith (Normal) --lvl 92": []
+    }
+}

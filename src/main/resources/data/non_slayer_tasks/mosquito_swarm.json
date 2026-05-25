@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mosquito swarm",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mosquito swarm --lvl 20"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mosquito swarm --lvl 20": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ranis Drakan",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ranis Drakan --lvl 233"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ranis Drakan --lvl 233": []
+    }
+}

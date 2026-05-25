@@ -1,0 +1,17 @@
+﻿{
+    "name": "Enraged barbarian spirit",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Enraged barbarian spirit --lvl 166"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Enraged barbarian spirit --lvl 166": []
+    }
+}

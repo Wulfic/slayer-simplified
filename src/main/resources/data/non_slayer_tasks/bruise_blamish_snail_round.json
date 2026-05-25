@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bruise Blamish Snail (Round)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Ranged"],
+    "variants": [
+        "Bruise Blamish Snail (Round) --lvl 20"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bruise Blamish Snail (Round) --lvl 20": []
+    }
+}

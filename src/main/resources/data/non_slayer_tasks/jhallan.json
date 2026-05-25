@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jhallan",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jhallan --lvl 491"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jhallan --lvl 491": []
+    }
+}

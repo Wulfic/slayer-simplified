@@ -1,0 +1,17 @@
+﻿{
+    "name": "Animated Mithril Armour",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Animated Mithril Armour --lvl 92"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Animated Mithril Armour --lvl 92": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Elf Archer",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Elf Archer --lvl 90"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Elf Archer --lvl 90": []
+    }
+}

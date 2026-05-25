@@ -1,0 +1,17 @@
+﻿{
+    "name": "Corrupted Scorpion",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Corrupted Scorpion --lvl 89"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Corrupted Scorpion --lvl 89": []
+    }
+}

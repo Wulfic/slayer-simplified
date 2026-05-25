@@ -1,0 +1,17 @@
+﻿{
+    "name": "Kasonde the Craven",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Kasonde the Craven --lvl 221"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Kasonde the Craven --lvl 221": []
+    }
+}

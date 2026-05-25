@@ -1,0 +1,17 @@
+﻿{
+    "name": "Skraeling (Etceteria) (Sword)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Skraeling (Etceteria) (Sword) --lvl 2"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Skraeling (Etceteria) (Sword) --lvl 2": []
+    }
+}

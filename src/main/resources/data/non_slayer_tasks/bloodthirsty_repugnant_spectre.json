@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty Repugnant spectre",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty Repugnant spectre --lvl 335"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty Repugnant spectre --lvl 335": []
+    }
+}

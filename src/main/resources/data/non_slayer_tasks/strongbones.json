@@ -1,0 +1,17 @@
+﻿{
+    "name": "Strongbones",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Strongbones --lvl 184"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Strongbones --lvl 184": []
+    }
+}

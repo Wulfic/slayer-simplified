@@ -1,0 +1,17 @@
+﻿{
+    "name": "Earth elemental (Normal)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Earth elemental (Normal) --lvl 35"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Earth elemental (Normal) --lvl 35": []
+    }
+}

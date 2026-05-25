@@ -1,0 +1,17 @@
+﻿{
+    "name": "Night beast",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Night beast --lvl 374"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Night beast --lvl 374": []
+    }
+}

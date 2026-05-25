@@ -1,0 +1,17 @@
+﻿{
+    "name": "Magic Mark",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Magic Mark --lvl 467"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Magic Mark --lvl 467": []
+    }
+}

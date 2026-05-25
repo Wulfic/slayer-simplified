@@ -1,0 +1,17 @@
+﻿{
+    "name": "Holthion",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Holthion --lvl 91"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Holthion --lvl 91": []
+    }
+}

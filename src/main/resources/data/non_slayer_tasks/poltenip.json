@@ -1,0 +1,17 @@
+﻿{
+    "name": "Poltenip",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Poltenip --lvl 21"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Poltenip --lvl 21": []
+    }
+}

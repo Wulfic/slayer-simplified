@@ -1,0 +1,17 @@
+﻿{
+    "name": "Chilled jelly",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Chilled jelly --lvl 112"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Chilled jelly --lvl 112": []
+    }
+}

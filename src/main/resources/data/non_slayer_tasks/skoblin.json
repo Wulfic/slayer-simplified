@@ -1,0 +1,17 @@
+﻿{
+    "name": "Skoblin",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Skoblin --lvl 29"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Skoblin --lvl 29": []
+    }
+}

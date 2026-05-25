@@ -1,0 +1,17 @@
+﻿{
+    "name": "Dagannoth fledgeling",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Dagannoth fledgeling --lvl 70"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Dagannoth fledgeling --lvl 70": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Passionate Supporter",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Passionate Supporter --lvl 7"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Passionate Supporter --lvl 7": []
+    }
+}

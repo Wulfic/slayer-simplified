@@ -1,0 +1,17 @@
+﻿{
+    "name": "Huge spider",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Huge spider --lvl 81"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Huge spider --lvl 81": []
+    }
+}

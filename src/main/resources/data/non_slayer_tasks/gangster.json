@@ -1,0 +1,17 @@
+﻿{
+    "name": "Gangster",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Gangster --lvl 50"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Gangster --lvl 50": []
+    }
+}

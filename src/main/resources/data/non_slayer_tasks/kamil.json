@@ -1,0 +1,17 @@
+﻿{
+    "name": "Kamil",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Kamil --lvl 154"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Kamil --lvl 154": []
+    }
+}

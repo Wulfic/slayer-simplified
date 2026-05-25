@@ -1,0 +1,17 @@
+﻿{
+    "name": "Wilson",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Wilson --lvl 37"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Wilson --lvl 37": []
+    }
+}

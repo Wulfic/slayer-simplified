@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tarik",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tarik --lvl 21"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tarik --lvl 21": []
+    }
+}

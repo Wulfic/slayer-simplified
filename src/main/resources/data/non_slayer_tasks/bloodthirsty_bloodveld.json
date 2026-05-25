@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty Bloodveld",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty Bloodveld --lvl 202"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty Bloodveld --lvl 202": []
+    }
+}

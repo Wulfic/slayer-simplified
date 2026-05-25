@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ravager",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Ravager --lvl 106"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ravager --lvl 106": []
+    }
+}

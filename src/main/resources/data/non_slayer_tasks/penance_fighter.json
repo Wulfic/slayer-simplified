@@ -1,0 +1,17 @@
+﻿{
+    "name": "Penance Fighter",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Penance Fighter --lvl 77"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Penance Fighter --lvl 77": []
+    }
+}

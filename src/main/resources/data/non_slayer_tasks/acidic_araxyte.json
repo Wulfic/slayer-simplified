@@ -1,0 +1,17 @@
+﻿{
+    "name": "Acidic Araxyte",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Acidic Araxyte --lvl 114"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Acidic Araxyte --lvl 114": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Headless Beast (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Headless Beast (hard) --lvl 233"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Headless Beast (hard) --lvl 233": []
+    }
+}

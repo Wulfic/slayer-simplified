@@ -1,0 +1,17 @@
+﻿{
+    "name": "Giant mosquito",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Giant mosquito --lvl 13"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Giant mosquito --lvl 13": []
+    }
+}

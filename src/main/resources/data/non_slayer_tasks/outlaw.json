@@ -1,0 +1,17 @@
+﻿{
+    "name": "Outlaw",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Outlaw --lvl 32"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Outlaw --lvl 32": []
+    }
+}

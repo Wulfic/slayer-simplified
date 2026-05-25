@@ -1,0 +1,17 @@
+﻿{
+    "name": "Aviansie",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Aviansie --lvl 148"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Aviansie --lvl 148": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Soldier (tier 5)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Soldier (tier 5) --lvl 99"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Soldier (tier 5) --lvl 99": []
+    }
+}

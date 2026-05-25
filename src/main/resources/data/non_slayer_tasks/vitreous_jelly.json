@@ -1,0 +1,17 @@
+﻿{
+    "name": "Vitreous Jelly",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Vitreous Jelly --lvl 206"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Vitreous Jelly --lvl 206": []
+    }
+}

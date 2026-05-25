@@ -1,0 +1,17 @@
+﻿{
+    "name": "Cruor",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Cruor --lvl 285"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Cruor --lvl 285": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Umbra",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Umbra --lvl 285"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Umbra --lvl 285": []
+    }
+}

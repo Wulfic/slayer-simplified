@@ -1,0 +1,17 @@
+﻿{
+    "name": "Market Guard (Draynor) (Draynor Bank Robbery)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Market Guard (Draynor) (Draynor Bank Robbery) --lvl 48"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Market Guard (Draynor) (Draynor Bank Robbery) --lvl 48": []
+    }
+}

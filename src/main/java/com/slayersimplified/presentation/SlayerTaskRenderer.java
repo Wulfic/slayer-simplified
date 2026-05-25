@@ -30,15 +30,28 @@ public class SlayerTaskRenderer extends JPanel implements ListCellRenderer<Task>
     private static final int ROW_HEIGHT = 42;
     private static final int ICON_SIZE  = 32;
 
-    /** Maps lower-case-underscore task key → scaled icon (or EMPTY_ICON). */
+    /** Maps lower-case-underscore task key → scaled icon (or PLACEHOLDER_ICON). */
     private static final Map<String, Icon> imageCache = new HashMap<>();
-    private static final Icon EMPTY_ICON;
+    private static final Icon PLACEHOLDER_ICON;
 
     static
     {
-        // Transparent placeholder so every row occupies the same width.
-        BufferedImage blank = new BufferedImage(ICON_SIZE, ICON_SIZE, BufferedImage.TYPE_INT_ARGB);
-        EMPTY_ICON = new ImageIcon(blank);
+        // Generic placeholder shown for any monster that has no image on disk.
+        // Dark gray square with a centred '?' glyph; same fixed size as real icons.
+        int size = ICON_SIZE;
+        BufferedImage img = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = img.createGraphics();
+        g.setColor(new Color(40, 40, 40));
+        g.fillRect(0, 0, size, size);
+        g.setColor(new Color(100, 100, 100));
+        g.setFont(new Font("Dialog", Font.BOLD, 18));
+        FontMetrics fm = g.getFontMetrics();
+        String text = "?";
+        g.drawString(text,
+                (size - fm.stringWidth(text)) / 2,
+                fm.getAscent() + (size - fm.getHeight()) / 2);
+        g.dispose();
+        PLACEHOLDER_ICON = new ImageIcon(img);
     }
 
     private static int hoverIndex = -1;
@@ -108,9 +121,9 @@ public class SlayerTaskRenderer extends JPanel implements ListCellRenderer<Task>
             }
             catch (Exception ignored)
             {
-                // No image for this monster — fall through to transparent placeholder.
+                // No image for this monster — fall through to placeholder.
             }
-            return EMPTY_ICON;
+            return PLACEHOLDER_ICON;
         });
     }
 }

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Strangled",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Strangled --lvl 149"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Strangled --lvl 149": []
+    }
+}

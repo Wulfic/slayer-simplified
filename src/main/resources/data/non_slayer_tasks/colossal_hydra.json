@@ -1,0 +1,17 @@
+﻿{
+    "name": "Colossal Hydra",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Colossal Hydra --lvl 334"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Colossal Hydra --lvl 334": []
+    }
+}

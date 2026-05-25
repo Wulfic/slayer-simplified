@@ -1,0 +1,17 @@
+﻿{
+    "name": "Crimson sanguisphera",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Crimson sanguisphera --lvl 34"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Crimson sanguisphera --lvl 34": []
+    }
+}

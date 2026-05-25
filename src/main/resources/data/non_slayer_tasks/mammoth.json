@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mammoth",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mammoth --lvl 80"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mammoth --lvl 80": []
+    }
+}

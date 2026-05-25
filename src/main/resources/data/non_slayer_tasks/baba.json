@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ba-Ba",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ba-Ba --lvl 359"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ba-Ba --lvl 359": []
+    }
+}

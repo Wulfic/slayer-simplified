@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bouncer (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bouncer (hard) --lvl 244"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bouncer (hard) --lvl 244": []
+    }
+}

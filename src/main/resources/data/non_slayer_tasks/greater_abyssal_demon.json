@@ -1,0 +1,17 @@
+﻿{
+    "name": "Greater abyssal demon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Greater abyssal demon --lvl 407"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Greater abyssal demon --lvl 407": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mysterious Figure",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mysterious Figure --lvl 271"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mysterious Figure --lvl 271": []
+    }
+}

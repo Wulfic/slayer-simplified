@@ -1,0 +1,17 @@
+﻿{
+    "name": "Black unicorn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Stab"],
+    "variants": [
+        "Black unicorn --lvl 27"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Black unicorn --lvl 27": []
+    }
+}

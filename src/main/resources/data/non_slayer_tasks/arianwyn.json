@@ -1,0 +1,17 @@
+﻿{
+    "name": "Arianwyn",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Arianwyn --lvl 212"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Arianwyn --lvl 212": []
+    }
+}

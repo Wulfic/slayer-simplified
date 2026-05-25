@@ -1,0 +1,17 @@
+﻿{
+    "name": "Terror dog",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Terror dog --lvl 110"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Terror dog --lvl 110": []
+    }
+}

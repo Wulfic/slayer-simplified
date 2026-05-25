@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sulphur Nagua",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sulphur Nagua --lvl 98"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sulphur Nagua --lvl 98": []
+    }
+}

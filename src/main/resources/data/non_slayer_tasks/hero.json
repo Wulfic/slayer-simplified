@@ -1,0 +1,17 @@
+﻿{
+    "name": "Hero",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Hero --lvl 69"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Hero --lvl 69": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Drake",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Drake --lvl 192"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Drake --lvl 192": []
+    }
+}

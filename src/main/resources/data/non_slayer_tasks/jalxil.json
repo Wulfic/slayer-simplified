@@ -1,0 +1,17 @@
+﻿{
+    "name": "Jal-Xil",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Jal-Xil --lvl 370"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Jal-Xil --lvl 370": []
+    }
+}

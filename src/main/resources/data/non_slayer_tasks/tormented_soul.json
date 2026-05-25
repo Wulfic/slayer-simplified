@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tormented Soul",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tormented Soul --lvl 16"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tormented Soul --lvl 16": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Zamorak warrior",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Zamorak warrior --lvl 85"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Zamorak warrior --lvl 85": []
+    }
+}

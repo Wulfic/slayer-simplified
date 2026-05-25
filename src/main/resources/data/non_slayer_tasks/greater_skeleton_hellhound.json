@@ -1,0 +1,17 @@
+﻿{
+    "name": "Greater Skeleton Hellhound",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Greater Skeleton Hellhound --lvl 231"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Greater Skeleton Hellhound --lvl 231": []
+    }
+}

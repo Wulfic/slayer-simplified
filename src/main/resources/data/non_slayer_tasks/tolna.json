@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tolna",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": ["Super antipoison(4)"],
+    "attributes": [],
+    "attackStyles": ["Slash","Ranged"],
+    "variants": [
+        "Tolna --lvl 46"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tolna --lvl 46": []
+    }
+}

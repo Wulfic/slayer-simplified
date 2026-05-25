@@ -1,0 +1,17 @@
+﻿{
+    "name": "Monk of Zamorak",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush","Magic"],
+    "variants": [
+        "Monk of Zamorak --lvl 45"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Monk of Zamorak --lvl 45": []
+    }
+}

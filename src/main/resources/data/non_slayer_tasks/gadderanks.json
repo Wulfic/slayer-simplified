@@ -1,0 +1,17 @@
+﻿{
+    "name": "Gadderanks",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Gadderanks --lvl 35"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Gadderanks --lvl 35": []
+    }
+}

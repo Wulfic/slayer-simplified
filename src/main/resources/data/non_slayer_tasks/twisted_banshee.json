@@ -1,0 +1,17 @@
+﻿{
+    "name": "Twisted Banshee",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Twisted Banshee --lvl 89"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Twisted Banshee --lvl 89": []
+    }
+}

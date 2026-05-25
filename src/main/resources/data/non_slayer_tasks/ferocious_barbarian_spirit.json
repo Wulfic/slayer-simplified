@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ferocious barbarian spirit",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ferocious barbarian spirit --lvl 166"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ferocious barbarian spirit --lvl 166": []
+    }
+}

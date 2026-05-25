@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tribeswoman",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tribeswoman --lvl 32"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tribeswoman --lvl 32": []
+    }
+}

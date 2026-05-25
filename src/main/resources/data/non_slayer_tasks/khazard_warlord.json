@@ -1,0 +1,17 @@
+﻿{
+    "name": "Khazard warlord",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Khazard warlord --lvl 112"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Khazard warlord --lvl 112": []
+    }
+}

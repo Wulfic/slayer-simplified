@@ -1,0 +1,17 @@
+﻿{
+    "name": "Elite Dark Ranger",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Elite Dark Ranger --lvl 96"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Elite Dark Ranger --lvl 96": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Corrupted Dragon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Corrupted Dragon --lvl 258"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Corrupted Dragon --lvl 258": []
+    }
+}

@@ -582,6 +582,11 @@ public class SlayerSimplifiedPlugin extends Plugin
             mainPanel.refreshSelectedTask();
             return;
         }
+        if ("showNonSlayerEnemies".equals(event.getKey()))
+        {
+            mainPanel.refreshTaskList();
+            return;
+        }
         if ("streakOptimizerEnabled".equals(event.getKey())
                 || "streakFillerMaster".equals(event.getKey()))
         {

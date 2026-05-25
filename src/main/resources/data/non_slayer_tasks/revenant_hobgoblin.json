@@ -1,0 +1,17 @@
+﻿{
+    "name": "Revenant hobgoblin",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Revenant hobgoblin --lvl 60"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Revenant hobgoblin --lvl 60": []
+    }
+}

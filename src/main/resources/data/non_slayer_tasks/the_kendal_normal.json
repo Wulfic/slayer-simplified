@@ -1,0 +1,17 @@
+﻿{
+    "name": "The Kendal (Normal)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "The Kendal (Normal) --lvl 70"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "The Kendal (Normal) --lvl 70": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Araxxor",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Araxxor --lvl 890"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Araxxor --lvl 890": []
+    }
+}

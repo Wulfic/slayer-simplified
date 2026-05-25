@@ -1,0 +1,17 @@
+﻿{
+    "name": "Cave goblin",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Cave goblin --lvl 3"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Cave goblin --lvl 3": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ice Queen",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ice Queen --lvl 111"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ice Queen --lvl 111": []
+    }
+}

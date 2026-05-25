@@ -1,0 +1,17 @@
+﻿{
+    "name": "Lizardman",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Lizardman --lvl 62"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Lizardman --lvl 62": []
+    }
+}

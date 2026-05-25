@@ -1,0 +1,17 @@
+﻿{
+    "name": "Warrior of Murahs",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Warrior of Murahs --lvl 21"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Warrior of Murahs --lvl 21": []
+    }
+}

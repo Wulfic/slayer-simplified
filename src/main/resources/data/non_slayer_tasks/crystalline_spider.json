@@ -1,0 +1,17 @@
+﻿{
+    "name": "Crystalline Spider",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Crystalline Spider --lvl 22"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Crystalline Spider --lvl 22": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Al Kharid warrior",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Al Kharid warrior --lvl 9"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Al Kharid warrior --lvl 9": []
+    }
+}

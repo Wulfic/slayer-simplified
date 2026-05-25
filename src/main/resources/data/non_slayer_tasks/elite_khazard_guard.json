@@ -1,0 +1,17 @@
+﻿{
+    "name": "Elite Khazard Guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Elite Khazard Guard --lvl 95"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Elite Khazard Guard --lvl 95": []
+    }
+}

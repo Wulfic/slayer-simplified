@@ -1,0 +1,17 @@
+﻿{
+    "name": "Abyssal antibody",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Abyssal antibody --lvl 30"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Abyssal antibody --lvl 30": []
+    }
+}

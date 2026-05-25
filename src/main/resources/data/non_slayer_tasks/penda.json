@@ -1,0 +1,17 @@
+﻿{
+    "name": "Penda",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Penda --lvl 5"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Penda --lvl 5": []
+    }
+}

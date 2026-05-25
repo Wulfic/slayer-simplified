@@ -1,0 +1,17 @@
+﻿{
+    "name": "Shadow Hound",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Shadow Hound --lvl 63"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Shadow Hound --lvl 63": []
+    }
+}

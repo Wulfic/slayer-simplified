@@ -1,0 +1,17 @@
+﻿{
+    "name": "Headless Beast",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Headless Beast --lvl 82"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Headless Beast --lvl 82": []
+    }
+}

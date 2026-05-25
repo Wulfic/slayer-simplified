@@ -1,0 +1,380 @@
+{
+  "locations": {
+    "Fremennik Slayer Dungeon": {
+      "quests": [
+        "THE_FREMENNIK_TRIALS"
+      ]
+    },
+    "Killerwatt plane": {
+      "quests": [
+        "ERNEST_THE_CHICKEN"
+      ]
+    },
+    "Iorwerth Dungeon": {
+      "quests": [
+        "SONG_OF_THE_ELVES"
+      ]
+    },
+    "Wyvern Cave": {
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "God Wars Dungeon": {
+      "quests": [
+        "EADGARS_RUSE"
+      ]
+    },
+    "Ancient Cavern": {
+      "quests": [
+        "WATERFALL_QUEST"
+      ]
+    },
+    "Waterfall Dungeon": {
+      "quests": [
+        "WATERFALL_QUEST"
+      ]
+    },
+    "Dorgesh-Kaan South Dungeon": {
+      "quests": [
+        "THE_LOST_TRIBE",
+        "DEATH_TO_THE_DORGESHUUN"
+      ]
+    },
+    "Meiyerditch Dungeon": {
+      "quests": [
+        "PRIEST_IN_PERIL",
+        "IN_AID_OF_THE_MYREQUE"
+      ]
+    },
+    "Brine Rat Cavern": {
+      "quests": [
+        "OLAFS_QUEST"
+      ]
+    },
+    "Witchaven Dungeon": {
+      "quests": [
+        "THE_SLUG_MENACE"
+      ]
+    },
+    "Underground Pass": {
+      "quests": [
+        "UNDERGROUND_PASS"
+      ]
+    },
+    "Temple of Ikov": {
+      "quests": [
+        "TEMPLE_OF_IKOV"
+      ]
+    },
+    "Tarn's Lair": {
+      "quests": [
+        "PRIEST_IN_PERIL",
+        "HAUNTED_MINE"
+      ]
+    },
+    "Ape Atoll Dungeon": {
+      "quests": [
+        "MONKEY_MADNESS_I"
+      ]
+    },
+    "Lithkren Vault": {
+      "quests": [
+        "DRAGON_SLAYER_II"
+      ]
+    },
+    "Shade Catacombs": {
+      "quests": [
+        "PRIEST_IN_PERIL",
+        "SHADES_OF_MORTTON"
+      ]
+    },
+    "Tree Gnome Village dungeon": {
+      "quests": [
+        "TREE_GNOME_VILLAGE"
+      ]
+    },
+    "Legends' Guild basement": {
+      "quests": [
+        "LEGENDS_QUEST"
+      ]
+    },
+    "Canifis": {
+      "quests": [
+        "PRIEST_IN_PERIL"
+      ]
+    },
+    "Prifddinas": {
+      "quests": [
+        "SONG_OF_THE_ELVES"
+      ]
+    },
+    "Lletya": {
+      "quests": [
+        "MOURNINGS_END_PART_I"
+      ]
+    },
+    "Keldagrim": {
+      "quests": [
+        "THE_GIANT_DWARF"
+      ]
+    },
+    "Mort'ton": {
+      "quests": [
+        "PRIEST_IN_PERIL"
+      ]
+    },
+    "Barrows": {
+      "quests": [
+        "PRIEST_IN_PERIL"
+      ]
+    },
+    "Lighthouse": {
+      "quests": [
+        "HORROR_FROM_THE_DEEP"
+      ]
+    },
+    "Crandor": {
+      "quests": [
+        "DRAGON_SLAYER_I"
+      ]
+    },
+    "Lunar Isle": {
+      "quests": [
+        "LUNAR_DIPLOMACY"
+      ]
+    },
+    "Zanaris": {
+      "quests": [
+        "LOST_CITY"
+      ]
+    },
+    "Fossil Island": {
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "Paterdomus": {
+      "quests": [
+        "PRIEST_IN_PERIL"
+      ]
+    },
+    "Morytania": {
+      "quests": [
+        "PRIEST_IN_PERIL"
+      ]
+    },
+    "Trollheim": {
+      "quests": [
+        "EADGARS_RUSE"
+      ]
+    },
+    "Mining Guild": {
+      "skills": {
+        "MINING": 60
+      }
+    },
+    "Haunted Woods": {
+      "quests": [
+        "PRIEST_IN_PERIL"
+      ]
+    },
+    "Haunted Mine": {
+      "quests": [
+        "PRIEST_IN_PERIL",
+        "HAUNTED_MINE"
+      ]
+    },
+    "Lithkren": {
+      "quests": [
+        "DRAGON_SLAYER_II"
+      ]
+    },
+    "Heroes' Guild": {
+      "quests": [
+        "HEROES_QUEST"
+      ]
+    },
+    "Death Plateau (Mountain troll)": {
+      "quests": [
+        "DEATH_PLATEAU"
+      ]
+    },
+    "Mos Le'Harmless": {
+      "quests": [
+        "CABIN_FEVER"
+      ]
+    },
+    "Mos Le'Harmless Cave": {
+      "quests": [
+        "CABIN_FEVER"
+      ]
+    },
+    "Glarial's Tomb": {
+      "quests": [
+        "WATERFALL_QUEST"
+      ]
+    },
+    "Ape Atoll temple": {
+      "quests": [
+        "MONKEY_MADNESS_I"
+      ]
+    },
+    "Path to Temple of Light (Mourner tunnels)": {
+      "quests": [
+        "MOURNINGS_END_PART_II"
+      ]
+    },
+    "Ruins of Tapoyauik": {
+      "quests": [
+        "CHILDREN_OF_THE_SUN"
+      ]
+    },
+    "Neypotzli": {
+      "quests": [
+        "PERILOUS_MOONS"
+      ]
+    },
+    "Meiyerditch": {
+      "quests": [
+        "PRIEST_IN_PERIL",
+        "IN_AID_OF_THE_MYREQUE"
+      ]
+    },
+    "Mort Myre Swamp": {
+      "quests": [
+        "PRIEST_IN_PERIL"
+      ]
+    },
+    "Slepe": {
+      "quests": [
+        "SINS_OF_THE_FATHER"
+      ]
+    },
+    "Tirannwn": {
+      "quests": [
+        "REGICIDE"
+      ]
+    },
+    "Jatizso": {
+      "quests": [
+        "THE_FREMENNIK_ISLES"
+      ]
+    },
+    "Neitiznot": {
+      "quests": [
+        "THE_FREMENNIK_ISLES"
+      ]
+    },
+    "Troll Stronghold": {
+      "quests": [
+        "TROLL_STRONGHOLD"
+      ]
+    },
+    "Ape Atoll": {
+      "quests": [
+        "MONKEY_MADNESS_I"
+      ]
+    },
+    "Varlamore": {
+      "quests": [
+        "CHILDREN_OF_THE_SUN"
+      ]
+    },
+    "Aldarin": {
+      "quests": [
+        "CHILDREN_OF_THE_SUN"
+      ]
+    },
+    "Dorgesh-Kaan": {
+      "quests": [
+        "THE_LOST_TRIBE",
+        "DEATH_TO_THE_DORGESHUUN"
+      ]
+    },
+    "Temple of Light": {
+      "quests": [
+        "MOURNINGS_END_PART_II"
+      ]
+    },
+    "Crash Site Cavern": {
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "Ungael": {
+      "quests": [
+        "DRAGON_SLAYER_II"
+      ]
+    },
+    "Woodcutting Guild": {
+      "skills": {
+        "WOODCUTTING": 60
+      }
+    },
+    "Mushroom Forest": {
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "Mynydd": {
+      "quests": [
+        "REGICIDE"
+      ]
+    },
+    "Meiyerditch Laboratories": {
+      "quests": [
+        "PRIEST_IN_PERIL",
+        "IN_AID_OF_THE_MYREQUE"
+      ]
+    }
+  },
+  "monsters": {
+    "Shadow hound": {
+      "quests": [
+        "SINS_OF_THE_FATHER"
+      ]
+    },
+    "Abyssal demon": {
+      "questsAny": [
+        "PRIEST_IN_PERIL",
+        "FAIRYTALE_II__CURE_A_QUEEN"
+      ]
+    },
+    "Aviansie": {
+      "quests": [
+        "DEATH_PLATEAU"
+      ]
+    },
+    "Bloodveld": {
+      "quests": [
+        "PRIEST_IN_PERIL"
+      ]
+    },
+    "Brine rat": {
+      "quests": [
+        "OLAFS_QUEST"
+      ]
+    },
+    "Dagannoth": {
+      "quests": [
+        "HORROR_FROM_THE_DEEP"
+      ]
+    },
+    "Fossil Island Wyvern": {
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "Killerwatt": {
+      "quests": [
+        "ERNEST_THE_CHICKEN"
+      ]
+    },
+    "Lesser Nagua": {
+      "quests": [
+        "PERILOUS_MOONS"
+      ]
+    }
+  }
+}

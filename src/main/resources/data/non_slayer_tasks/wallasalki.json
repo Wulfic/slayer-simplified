@@ -1,0 +1,17 @@
+﻿{
+    "name": "Wallasalki",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Wallasalki --lvl 98"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Wallasalki --lvl 98": []
+    }
+}

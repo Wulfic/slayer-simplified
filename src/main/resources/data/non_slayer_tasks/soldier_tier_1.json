@@ -1,0 +1,17 @@
+﻿{
+    "name": "Soldier (tier 1)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Soldier (tier 1) --lvl 39"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Soldier (tier 1) --lvl 39": []
+    }
+}

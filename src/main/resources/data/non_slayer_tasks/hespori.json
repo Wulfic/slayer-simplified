@@ -1,0 +1,17 @@
+﻿{
+    "name": "Hespori",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Hespori --lvl 302"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Hespori --lvl 302": []
+    }
+}

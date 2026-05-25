@@ -1,0 +1,17 @@
+﻿{
+    "name": "Black jaguar",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Black jaguar --lvl 67"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Black jaguar --lvl 67": []
+    }
+}

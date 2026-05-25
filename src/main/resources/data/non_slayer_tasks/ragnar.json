@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ragnar",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ragnar --lvl 1"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ragnar --lvl 1": []
+    }
+}

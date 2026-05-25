@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tormented Demon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tormented Demon --lvl 450"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tormented Demon --lvl 450": []
+    }
+}

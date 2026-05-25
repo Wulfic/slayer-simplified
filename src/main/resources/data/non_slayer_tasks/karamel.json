@@ -1,0 +1,17 @@
+﻿{
+    "name": "Karamel",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Karamel --lvl 136"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Karamel --lvl 136": []
+    }
+}

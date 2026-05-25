@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mercenary Captain",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mercenary Captain --lvl 47"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mercenary Captain --lvl 47": []
+    }
+}

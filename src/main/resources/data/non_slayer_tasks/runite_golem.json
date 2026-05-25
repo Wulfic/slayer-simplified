@@ -1,0 +1,17 @@
+﻿{
+    "name": "Runite Golem",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Runite Golem --lvl 178"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Runite Golem --lvl 178": []
+    }
+}

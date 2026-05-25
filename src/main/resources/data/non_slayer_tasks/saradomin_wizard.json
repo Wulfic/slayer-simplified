@@ -1,0 +1,17 @@
+﻿{
+    "name": "Saradomin wizard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": ["Super antipoison(4)"],
+    "attributes": [],
+    "attackStyles": ["Stab","Magic"],
+    "variants": [
+        "Saradomin wizard --lvl 108"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Saradomin wizard --lvl 108": []
+    }
+}

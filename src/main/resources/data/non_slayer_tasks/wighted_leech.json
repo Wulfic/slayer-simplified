@@ -1,0 +1,17 @@
+﻿{
+    "name": "Wighted Leech",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Wighted Leech --lvl 96"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Wighted Leech --lvl 96": []
+    }
+}

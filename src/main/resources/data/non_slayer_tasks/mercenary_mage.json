@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mercenary mage",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mercenary mage --lvl 112"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mercenary mage --lvl 112": []
+    }
+}

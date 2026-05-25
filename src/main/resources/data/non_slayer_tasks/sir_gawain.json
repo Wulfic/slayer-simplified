@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sir Gawain",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sir Gawain --lvl 122"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sir Gawain --lvl 122": []
+    }
+}

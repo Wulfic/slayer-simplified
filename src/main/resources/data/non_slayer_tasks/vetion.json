@@ -1,0 +1,17 @@
+﻿{
+    "name": "Vet'ion",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Vet'ion --lvl 454"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Vet'ion --lvl 454": []
+    }
+}

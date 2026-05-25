@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bloodthirsty Drake",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bloodthirsty Drake --lvl 386"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bloodthirsty Drake --lvl 386": []
+    }
+}

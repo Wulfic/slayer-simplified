@@ -1,0 +1,17 @@
+﻿{
+    "name": "Scarred black demon",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Scarred black demon --lvl 176"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Scarred black demon --lvl 176": []
+    }
+}

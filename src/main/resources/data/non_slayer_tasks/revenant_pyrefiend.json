@@ -1,0 +1,17 @@
+﻿{
+    "name": "Revenant pyrefiend",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Revenant pyrefiend --lvl 52"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Revenant pyrefiend --lvl 52": []
+    }
+}

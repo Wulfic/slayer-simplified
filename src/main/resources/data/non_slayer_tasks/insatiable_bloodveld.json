@@ -1,0 +1,17 @@
+﻿{
+    "name": "Insatiable Bloodveld",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Insatiable Bloodveld --lvl 202"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Insatiable Bloodveld --lvl 202": []
+    }
+}

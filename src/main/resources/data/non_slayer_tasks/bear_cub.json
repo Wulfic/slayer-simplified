@@ -1,0 +1,17 @@
+﻿{
+    "name": "Bear Cub",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Bear Cub --lvl 15"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Bear Cub --lvl 15": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Screaming banshee",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Screaming banshee --lvl 70"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Screaming banshee --lvl 70": []
+    }
+}

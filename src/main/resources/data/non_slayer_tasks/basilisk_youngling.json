@@ -1,0 +1,17 @@
+﻿{
+    "name": "Basilisk Youngling",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Basilisk Youngling --lvl 53"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Basilisk Youngling --lvl 53": []
+    }
+}

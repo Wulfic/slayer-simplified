@@ -1,0 +1,17 @@
+﻿{
+    "name": "Spiked Turoth",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Spiked Turoth --lvl 244"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Spiked Turoth --lvl 244": []
+    }
+}

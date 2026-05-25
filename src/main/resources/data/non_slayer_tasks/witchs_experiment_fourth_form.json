@@ -1,0 +1,17 @@
+﻿{
+    "name": "Witch's experiment (fourth form)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Witch's experiment (fourth form) --lvl 53"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Witch's experiment (fourth form) --lvl 53": []
+    }
+}

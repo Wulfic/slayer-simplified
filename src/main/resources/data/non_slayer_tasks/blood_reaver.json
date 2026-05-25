@@ -1,0 +1,17 @@
+﻿{
+    "name": "Blood Reaver",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Blood Reaver --lvl 174"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Blood Reaver --lvl 174": []
+    }
+}

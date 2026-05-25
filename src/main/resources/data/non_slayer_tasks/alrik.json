@@ -1,0 +1,17 @@
+﻿{
+    "name": "Alrik",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Alrik --lvl 1"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Alrik --lvl 1": []
+    }
+}

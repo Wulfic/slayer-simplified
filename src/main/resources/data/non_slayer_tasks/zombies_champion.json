@@ -1,0 +1,17 @@
+﻿{
+    "name": "Zombies Champion",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Zombies Champion --lvl 51"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Zombies Champion --lvl 51": []
+    }
+}

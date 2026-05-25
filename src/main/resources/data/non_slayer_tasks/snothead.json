@@ -1,0 +1,17 @@
+﻿{
+    "name": "Snothead",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Snothead --lvl 32"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Snothead --lvl 32": []
+    }
+}

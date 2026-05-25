@@ -1,0 +1,17 @@
+﻿{
+    "name": "Sir Lancelot",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Sir Lancelot --lvl 127"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Sir Lancelot --lvl 127": []
+    }
+}

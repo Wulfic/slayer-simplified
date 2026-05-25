@@ -1,0 +1,17 @@
+﻿{
+    "name": "Mercenary axeman",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Mercenary axeman --lvl 131"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mercenary axeman --lvl 131": []
+    }
+}

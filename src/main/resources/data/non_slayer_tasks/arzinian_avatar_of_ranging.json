@@ -1,0 +1,17 @@
+﻿{
+    "name": "Arzinian Avatar of Ranging",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Ranged"],
+    "variants": [
+        "Arzinian Avatar of Ranging --lvl 125"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Arzinian Avatar of Ranging --lvl 125": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Black demon (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Black demon (hard) --lvl 292"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Black demon (hard) --lvl 292": []
+    }
+}

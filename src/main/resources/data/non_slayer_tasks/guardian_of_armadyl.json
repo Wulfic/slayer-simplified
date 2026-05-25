@@ -1,0 +1,17 @@
+﻿{
+    "name": "Guardian of Armadyl",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Guardian of Armadyl --lvl 45"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Guardian of Armadyl --lvl 45": []
+    }
+}

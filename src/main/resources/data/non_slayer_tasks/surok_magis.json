@@ -1,0 +1,17 @@
+﻿{
+    "name": "Surok Magis",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Surok Magis --lvl 265"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Surok Magis --lvl 265": []
+    }
+}

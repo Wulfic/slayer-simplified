@@ -162,6 +162,21 @@ public interface SlayerSimplifiedConfig extends Config
     @ConfigItem(keyName = "streakFillerMaster", name = "", description = "")
     void setStreakFillerMaster(StreakFillerMaster value);
 
+    @ConfigItem(
+            keyName = "showNonSlayerEnemies",
+            name = "Show non-slayer enemies",
+            description = "Show non-slayer enemies in the task browser (Work in progress)",
+            position = 10,
+            hidden = true
+    )
+    default boolean showNonSlayerEnemies()
+    {
+        return false;
+    }
+
+    @ConfigItem(keyName = "showNonSlayerEnemies", name = "", description = "")
+    void setShowNonSlayerEnemies(boolean value);
+
     // Hidden config keys used to persist internal state across sessions
 
     @ConfigItem(

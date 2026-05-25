@@ -1,0 +1,17 @@
+﻿{
+    "name": "Adala",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Adala --lvl 49"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Adala --lvl 49": []
+    }
+}

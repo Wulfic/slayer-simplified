@@ -1,0 +1,17 @@
+﻿{
+    "name": "Obor",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Obor --lvl 106"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Obor --lvl 106": []
+    }
+}

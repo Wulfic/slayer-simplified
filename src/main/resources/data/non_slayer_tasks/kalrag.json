@@ -1,0 +1,17 @@
+﻿{
+    "name": "Kalrag",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Kalrag --lvl 89"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Kalrag --lvl 89": []
+    }
+}

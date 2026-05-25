@@ -1,0 +1,17 @@
+﻿{
+    "name": "Nylocas Toxobolos",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Nylocas Toxobolos --lvl 260"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Nylocas Toxobolos --lvl 260": []
+    }
+}

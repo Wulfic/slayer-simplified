@@ -1,0 +1,17 @@
+﻿{
+    "name": "Slagilith (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Slagilith (hard) --lvl 202"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Slagilith (hard) --lvl 202": []
+    }
+}

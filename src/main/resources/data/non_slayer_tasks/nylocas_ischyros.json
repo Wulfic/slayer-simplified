@@ -1,0 +1,17 @@
+﻿{
+    "name": "Nylocas Ischyros",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Nylocas Ischyros --lvl 260"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Nylocas Ischyros --lvl 260": []
+    }
+}

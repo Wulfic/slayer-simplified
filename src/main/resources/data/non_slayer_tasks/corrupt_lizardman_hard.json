@@ -1,0 +1,17 @@
+﻿{
+    "name": "Corrupt Lizardman (hard)",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Corrupt Lizardman (hard) --lvl 152"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Corrupt Lizardman (hard) --lvl 152": []
+    }
+}

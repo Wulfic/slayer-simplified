@@ -1,0 +1,17 @@
+﻿{
+    "name": "Gang boss",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Gang boss --lvl 83"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Gang boss --lvl 83": []
+    }
+}

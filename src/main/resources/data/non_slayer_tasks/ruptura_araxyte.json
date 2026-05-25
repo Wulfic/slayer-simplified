@@ -1,0 +1,17 @@
+﻿{
+    "name": "Ruptura Araxyte",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Ruptura Araxyte --lvl 114"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Ruptura Araxyte --lvl 114": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Vorkath",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Vorkath --lvl 732"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Vorkath --lvl 732": []
+    }
+}

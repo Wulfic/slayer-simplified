@@ -1,0 +1,17 @@
+﻿{
+    "name": "Agrith-Na-Na",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Agrith-Na-Na --lvl 146"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Agrith-Na-Na --lvl 146": []
+    }
+}

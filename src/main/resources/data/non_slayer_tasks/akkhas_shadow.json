@@ -1,0 +1,17 @@
+﻿{
+    "name": "Akkha's Shadow",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Akkha's Shadow --lvl 108"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Akkha's Shadow --lvl 108": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Revenant maledictus",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Revenant maledictus --lvl 397"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Revenant maledictus --lvl 397": []
+    }
+}

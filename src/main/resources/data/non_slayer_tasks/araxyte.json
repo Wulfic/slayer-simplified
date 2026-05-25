@@ -1,0 +1,17 @@
+﻿{
+    "name": "Araxyte",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Araxyte --lvl 146"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Araxyte --lvl 146": []
+    }
+}

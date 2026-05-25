@@ -1,0 +1,17 @@
+﻿{
+    "name": "Husk",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Husk --lvl 104"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Husk --lvl 104": []
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tanglefoot",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Tanglefoot --lvl 111"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tanglefoot --lvl 111": []
+    }
+}

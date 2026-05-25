@@ -1,0 +1,17 @@
+﻿{
+    "name": "Tree spirit",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": ["Crush"],
+    "variants": [
+        "Tree spirit --lvl 159"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Tree spirit --lvl 159": []
+    }
+}

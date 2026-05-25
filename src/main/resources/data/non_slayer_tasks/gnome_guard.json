@@ -1,0 +1,17 @@
+﻿{
+    "name": "Gnome guard",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Gnome guard --lvl 1337"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Gnome guard --lvl 1337": []
+    }
+}

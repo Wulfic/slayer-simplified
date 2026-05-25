@@ -1,0 +1,17 @@
+﻿{
+    "name": "Emissary Forebearer",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [],
+    "variants": [
+        "Emissary Forebearer --lvl 131"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Emissary Forebearer --lvl 131": []
+    }
+}
