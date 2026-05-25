@@ -5,8 +5,7 @@
     "itemsSuggested": [],
     "attributes": [],
     "attackStyles": [
-        "Slash",
-        "Typeless"
+        "Slash"
     ],
     "variants": [
         "Death spawn --lvl 46"
