@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Warped Tortoise --lvl 121": "Poison Waste Dungeon"
+        "Warped Tortoise --lvl 121": [
+            "Poison Waste Dungeon"
+        ]
     }
 }

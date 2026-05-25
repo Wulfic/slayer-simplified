@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Lobstrosity --lvl 68": "Fossil Island"
+        "Lobstrosity --lvl 68": [
+            "Fossil Island"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "The Jormungand --lvl 363": "Jormungand's Prison"
+        "The Jormungand --lvl 363": [
+            "Jormungand's Prison"
+        ]
     }
 }

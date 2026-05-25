@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Shaeded Beast --lvl 186": "Forthos Dungeon"
+        "Shaeded Beast --lvl 186": [
+            "Forthos Dungeon"
+        ]
     }
 }

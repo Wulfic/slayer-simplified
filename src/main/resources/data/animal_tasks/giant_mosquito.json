@@ -14,6 +14,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Giant mosquito --lvl 13": "Mos Le'Harmless"
+        "Giant mosquito --lvl 13": [
+            "Mos Le'Harmless"
+        ]
     }
 }

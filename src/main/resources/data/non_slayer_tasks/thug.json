@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Thug --lvl 10": "Wilderness"
+        "Thug --lvl 10": [
+            "Wilderness"
+        ]
     }
 }

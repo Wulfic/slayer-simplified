@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Dark wizard --lvl 23": "Wilderness"
+        "Dark wizard --lvl 23": [
+            "Wilderness"
+        ]
     }
 }

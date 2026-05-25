@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Leech --lvl 52": "Haunted Woods"
+        "Leech --lvl 52": [
+            "Haunted Woods"
+        ]
     }
 }

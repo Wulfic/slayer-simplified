@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Blood Reaver --lvl 174": "God Wars Dungeon"
+        "Blood Reaver --lvl 174": [
+            "God Wars Dungeon"
+        ]
     }
 }

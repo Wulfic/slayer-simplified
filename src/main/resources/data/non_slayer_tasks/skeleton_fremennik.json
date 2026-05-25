@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Skeleton fremennik --lvl 60": "Brine Rat Cavern"
+        "Skeleton fremennik --lvl 60": [
+            "Brine Rat Cavern"
+        ]
     }
 }

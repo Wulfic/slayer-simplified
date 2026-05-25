@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Wizard --lvl 9": "Wizards' Tower"
+        "Wizard --lvl 9": [
+            "Wizards' Tower"
+        ]
     }
 }

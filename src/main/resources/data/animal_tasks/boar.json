@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Boar --lvl 7": "Kourend Castle"
+        "Boar --lvl 7": [
+            "Kourend Castle"
+        ]
     }
 }

@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Growler --lvl 139": "God Wars Dungeon"
+        "Growler --lvl 139": [
+            "God Wars Dungeon"
+        ]
     }
 }

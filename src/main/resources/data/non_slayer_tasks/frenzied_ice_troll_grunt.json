@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Frenzied ice troll grunt --lvl 102": "Ice Troll Caves"
+        "Frenzied ice troll grunt --lvl 102": [
+            "Ice Troll Caves"
+        ]
     }
 }

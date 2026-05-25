@@ -14,6 +14,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Black unicorn --lvl 27": "Graveyard of Shadows"
+        "Black unicorn --lvl 27": [
+            "Graveyard of Shadows"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Bunny --lvl 2": "Rellekka"
+        "Bunny --lvl 2": [
+            "Rellekka"
+        ]
     }
 }

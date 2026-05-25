@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Ugthanki --lvl 42": "Kharidian Desert"
+        "Ugthanki --lvl 42": [
+            "Kharidian Desert"
+        ]
     }
 }

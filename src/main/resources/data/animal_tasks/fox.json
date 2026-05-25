@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Fox --lvl 19": "Rellekka"
+        "Fox --lvl 19": [
+            "Rellekka"
+        ]
     }
 }

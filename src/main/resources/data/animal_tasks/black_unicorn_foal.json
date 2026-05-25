@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Black unicorn Foal --lvl 22": "Rellekka"
+        "Black unicorn Foal --lvl 22": [
+            "Rellekka"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ogre chieftain --lvl 81": "Feldip Hills"
+        "Ogre chieftain --lvl 81": [
+            "Feldip Hills"
+        ]
     }
 }

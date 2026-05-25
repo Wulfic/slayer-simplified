@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "White jaguar --lvl 67": "Mos Gratia"
+        "White jaguar --lvl 67": [
+            "Mos Gratia"
+        ]
     }
 }

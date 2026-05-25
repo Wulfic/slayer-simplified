@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Berserk barbarian spirit --lvl 166": "Ancient Cavern"
+        "Berserk barbarian spirit --lvl 166": [
+            "Ancient Cavern"
+        ]
     }
 }

@@ -16,6 +16,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ghast --lvl 139": "Morytania"
+        "Ghast --lvl 139": [
+            "Morytania"
+        ]
     }
 }

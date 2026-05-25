@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Rock lobster --lvl 127": "Waterbirth Island Dungeon"
+        "Rock lobster --lvl 127": [
+            "Waterbirth Island Dungeon"
+        ]
     }
 }

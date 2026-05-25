@@ -1,83 +1,270 @@
 [
-  {"key":"Angry bear","file":"angry_bear.json"},
-  {"key":"Angry giant rat","file":"angry_giant_rat.json"},
-  {"key":"Angry unicorn","file":"angry_unicorn.json"},
-  {"key":"Baboon","file":"baboon.json"},
-  {"key":"Bark Blamish Snail","file":"bark_blamish_snail.json"},
-  {"key":"Bear Cub","file":"bear_cub.json"},
-  {"key":"Big frog","file":"big_frog.json"},
-  {"key":"Big Snake","file":"big_snake.json"},
-  {"key":"Billy Goat (Brown)","file":"billy_goat_brown.json"},
-  {"key":"Bird","file":"bird.json"},
-  {"key":"Black chinchompa (Hunter)","file":"black_chinchompa_hunter.json"},
-  {"key":"Black jaguar","file":"black_jaguar.json"},
-  {"key":"Black unicorn","file":"black_unicorn.json"},
-  {"key":"Black unicorn Foal","file":"black_unicorn_foal.json"},
-  {"key":"Blessed giant rat","file":"blessed_giant_rat.json"},
-  {"key":"Blessed spider","file":"blessed_spider.json"},
-  {"key":"Blood Blamish Snail (Round)","file":"blood_blamish_snail_round.json"},
-  {"key":"Blood jaguar","file":"blood_jaguar.json"},
-  {"key":"Boar","file":"boar.json"},
-  {"key":"Bruise Blamish Snail (Round)","file":"bruise_blamish_snail_round.json"},
-  {"key":"Buffalo","file":"buffalo.json"},
-  {"key":"Bunny","file":"bunny.json"},
-  {"key":"Bush snake","file":"bush_snake.json"},
-  {"key":"Carnivorous chinchompa","file":"carnivorous_chinchompa.json"},
-  {"key":"Cave lizard","file":"cave_lizard.json"},
-  {"key":"Chinchompa (Hunter)","file":"chinchompa_hunter.json"},
-  {"key":"Crocodile","file":"crocodile.json"},
-  {"key":"Desert Wolf","file":"desert_wolf.json"},
-  {"key":"Dire Wolf","file":"dire_wolf.json"},
-  {"key":"Dire Wolf Alpha","file":"dire_wolf_alpha.json"},
-  {"key":"Embertailed jerboa","file":"embertailed_jerboa.json"},
-  {"key":"Enraged Boar","file":"enraged_boar.json"},
-  {"key":"Ent","file":"ent.json"},
-  {"key":"Entrana firebird","file":"entrana_firebird.json"},
-  {"key":"Fox","file":"fox.json"},
-  {"key":"Frog","file":"frog.json"},
-  {"key":"Giant frog","file":"giant_frog.json"},
-  {"key":"Giant mosquito","file":"giant_mosquito.json"},
-  {"key":"Giant Sea Snake","file":"giant_sea_snake.json"},
-  {"key":"Giant snail","file":"giant_snail.json"},
-  {"key":"Goat (Brown)","file":"goat_brown.json"},
-  {"key":"Grizzly bear cub","file":"grizzly_bear_cub.json"},
-  {"key":"Hoop Snake","file":"hoop_snake.json"},
-  {"key":"Jackal","file":"jackal.json"},
-  {"key":"Jaguar","file":"jaguar.json"},
-  {"key":"Jaguar cub","file":"jaguar_cub.json"},
-  {"key":"Jubbly bird","file":"jubbly_bird.json"},
-  {"key":"Kebbit (Eagles' Peak)","file":"kebbit_eagles_peak.json"},
-  {"key":"Large mosquito","file":"large_mosquito.json"},
-  {"key":"Lobstrosity","file":"lobstrosity.json"},
-  {"key":"Lynx","file":"lynx.json"},
-  {"key":"Mammoth","file":"mammoth.json"},
-  {"key":"Maniacal monkey","file":"maniacal_monkey.json"},
-  {"key":"Maniacal Monkey Archer","file":"maniacal_monkey_archer.json"},
-  {"key":"Monkey Archer","file":"monkey_archer.json"},
-  {"key":"Monkey Guard","file":"monkey_guard.json"},
-  {"key":"Monkey Zombie","file":"monkey_zombie.json"},
-  {"key":"Mosquito swarm","file":"mosquito_swarm.json"},
-  {"key":"Mouse","file":"mouse.json"},
-  {"key":"Mudskipper","file":"mudskipper.json"},
-  {"key":"Mutated Terrorbird","file":"mutated_terrorbird.json"},
-  {"key":"Mutated Tortoise","file":"mutated_tortoise.json"},
-  {"key":"Myre Blamish Snail (Pointed)","file":"myre_blamish_snail_pointed.json"},
-  {"key":"Ochre Blamish Snail (Pointed)","file":"ochre_blamish_snail_pointed.json"},
-  {"key":"Porcupine","file":"porcupine.json"},
-  {"key":"Ram (Sheared)","file":"ram_sheared.json"},
-  {"key":"Rock lobster","file":"rock_lobster.json"},
-  {"key":"Snake","file":"snake.json"},
-  {"key":"Stag","file":"stag.json"},
-  {"key":"Swamp frog","file":"swamp_frog.json"},
-  {"key":"Swamp snake","file":"swamp_snake.json"},
-  {"key":"Tortoise","file":"tortoise.json"},
-  {"key":"Ugthanki","file":"ugthanki.json"},
-  {"key":"Unicorn","file":"unicorn.json"},
-  {"key":"Unicorn Foal","file":"unicorn_foal.json"},
-  {"key":"Unicow","file":"unicow.json"},
-  {"key":"Warped Terrorbird","file":"warped_terrorbird.json"},
-  {"key":"Warped Tortoise","file":"warped_tortoise.json"},
-  {"key":"White jaguar","file":"white_jaguar.json"},
-  {"key":"Yak","file":"yak.json"},
-  {"key":"Zombie rat","file":"zombie_rat.json"}
+    {
+        "key": "Angry bear",
+        "file": "angry_bear.json"
+    },
+    {
+        "key": "Angry giant rat",
+        "file": "angry_giant_rat.json"
+    },
+    {
+        "key": "Angry unicorn",
+        "file": "angry_unicorn.json"
+    },
+    {
+        "key": "Baboon",
+        "file": "baboon.json"
+    },
+    {
+        "key": "Bark Blamish Snail",
+        "file": "bark_blamish_snail.json"
+    },
+    {
+        "key": "Big frog",
+        "file": "big_frog.json"
+    },
+    {
+        "key": "Big Snake",
+        "file": "big_snake.json"
+    },
+    {
+        "key": "Billy Goat (Brown)",
+        "file": "billy_goat_brown.json"
+    },
+    {
+        "key": "Black chinchompa (Hunter)",
+        "file": "black_chinchompa_hunter.json"
+    },
+    {
+        "key": "Black jaguar",
+        "file": "black_jaguar.json"
+    },
+    {
+        "key": "Black unicorn",
+        "file": "black_unicorn.json"
+    },
+    {
+        "key": "Black unicorn Foal",
+        "file": "black_unicorn_foal.json"
+    },
+    {
+        "key": "Blessed giant rat",
+        "file": "blessed_giant_rat.json"
+    },
+    {
+        "key": "Blessed spider",
+        "file": "blessed_spider.json"
+    },
+    {
+        "key": "Blood Blamish Snail (Round)",
+        "file": "blood_blamish_snail_round.json"
+    },
+    {
+        "key": "Blood jaguar",
+        "file": "blood_jaguar.json"
+    },
+    {
+        "key": "Boar",
+        "file": "boar.json"
+    },
+    {
+        "key": "Bruise Blamish Snail (Round)",
+        "file": "bruise_blamish_snail_round.json"
+    },
+    {
+        "key": "Bunny",
+        "file": "bunny.json"
+    },
+    {
+        "key": "Bush snake",
+        "file": "bush_snake.json"
+    },
+    {
+        "key": "Carnivorous chinchompa",
+        "file": "carnivorous_chinchompa.json"
+    },
+    {
+        "key": "Cave lizard",
+        "file": "cave_lizard.json"
+    },
+    {
+        "key": "Chinchompa (Hunter)",
+        "file": "chinchompa_hunter.json"
+    },
+    {
+        "key": "Dire Wolf Alpha",
+        "file": "dire_wolf_alpha.json"
+    },
+    {
+        "key": "Embertailed jerboa",
+        "file": "embertailed_jerboa.json"
+    },
+    {
+        "key": "Enraged Boar",
+        "file": "enraged_boar.json"
+    },
+    {
+        "key": "Fox",
+        "file": "fox.json"
+    },
+    {
+        "key": "Frog",
+        "file": "frog.json"
+    },
+    {
+        "key": "Giant frog",
+        "file": "giant_frog.json"
+    },
+    {
+        "key": "Giant mosquito",
+        "file": "giant_mosquito.json"
+    },
+    {
+        "key": "Giant snail",
+        "file": "giant_snail.json"
+    },
+    {
+        "key": "Goat (Brown)",
+        "file": "goat_brown.json"
+    },
+    {
+        "key": "Grizzly bear cub",
+        "file": "grizzly_bear_cub.json"
+    },
+    {
+        "key": "Hoop Snake",
+        "file": "hoop_snake.json"
+    },
+    {
+        "key": "Jaguar",
+        "file": "jaguar.json"
+    },
+    {
+        "key": "Jaguar cub",
+        "file": "jaguar_cub.json"
+    },
+    {
+        "key": "Jubbly bird",
+        "file": "jubbly_bird.json"
+    },
+    {
+        "key": "Kebbit (Eagles' Peak)",
+        "file": "kebbit_eagles_peak.json"
+    },
+    {
+        "key": "Large mosquito",
+        "file": "large_mosquito.json"
+    },
+    {
+        "key": "Lobstrosity",
+        "file": "lobstrosity.json"
+    },
+    {
+        "key": "Lynx",
+        "file": "lynx.json"
+    },
+    {
+        "key": "Maniacal Monkey Archer",
+        "file": "maniacal_monkey_archer.json"
+    },
+    {
+        "key": "Monkey Zombie",
+        "file": "monkey_zombie.json"
+    },
+    {
+        "key": "Mosquito swarm",
+        "file": "mosquito_swarm.json"
+    },
+    {
+        "key": "Mouse",
+        "file": "mouse.json"
+    },
+    {
+        "key": "Mudskipper",
+        "file": "mudskipper.json"
+    },
+    {
+        "key": "Mutated Terrorbird",
+        "file": "mutated_terrorbird.json"
+    },
+    {
+        "key": "Mutated Tortoise",
+        "file": "mutated_tortoise.json"
+    },
+    {
+        "key": "Myre Blamish Snail (Pointed)",
+        "file": "myre_blamish_snail_pointed.json"
+    },
+    {
+        "key": "Ochre Blamish Snail (Pointed)",
+        "file": "ochre_blamish_snail_pointed.json"
+    },
+    {
+        "key": "Porcupine",
+        "file": "porcupine.json"
+    },
+    {
+        "key": "Ram (Sheared)",
+        "file": "ram_sheared.json"
+    },
+    {
+        "key": "Rock lobster",
+        "file": "rock_lobster.json"
+    },
+    {
+        "key": "Snake",
+        "file": "snake.json"
+    },
+    {
+        "key": "Stag",
+        "file": "stag.json"
+    },
+    {
+        "key": "Swamp frog",
+        "file": "swamp_frog.json"
+    },
+    {
+        "key": "Swamp snake",
+        "file": "swamp_snake.json"
+    },
+    {
+        "key": "Tortoise",
+        "file": "tortoise.json"
+    },
+    {
+        "key": "Ugthanki",
+        "file": "ugthanki.json"
+    },
+    {
+        "key": "Unicorn",
+        "file": "unicorn.json"
+    },
+    {
+        "key": "Unicorn Foal",
+        "file": "unicorn_foal.json"
+    },
+    {
+        "key": "Unicow",
+        "file": "unicow.json"
+    },
+    {
+        "key": "Warped Terrorbird",
+        "file": "warped_terrorbird.json"
+    },
+    {
+        "key": "Warped Tortoise",
+        "file": "warped_tortoise.json"
+    },
+    {
+        "key": "White jaguar",
+        "file": "white_jaguar.json"
+    },
+    {
+        "key": "Yak",
+        "file": "yak.json"
+    },
+    {
+        "key": "Zombie rat",
+        "file": "zombie_rat.json"
+    }
 ]

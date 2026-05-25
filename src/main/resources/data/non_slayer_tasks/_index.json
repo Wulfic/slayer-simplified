@@ -1,175 +1,682 @@
 [
-  {"key":"Abomination","file":"abomination.json"},
-  {"key":"Abyssal antibody","file":"abyssal_antibody.json"},
-  {"key":"Abyssal guardian","file":"abyssal_guardian.json"},
-  {"key":"Abyssal leech","file":"abyssal_leech.json"},
-  {"key":"Abyssal walker","file":"abyssal_walker.json"},
-  {"key":"Acidic Bloodveld","file":"acidic_bloodveld.json"},
-  {"key":"Afflicted","file":"afflicted.json"},
-  {"key":"Air elemental","file":"air_elemental.json"},
-  {"key":"Air wizard","file":"air_wizard.json"},
-  {"key":"Al Kharid warrior","file":"al_kharid_warrior.json"},
-  {"key":"Ancient Guardian","file":"ancient_guardian.json"},
-  {"key":"Ancient Wizard","file":"ancient_wizard.json"},
-  {"key":"Angry barbarian spirit","file":"angry_barbarian_spirit.json"},
-  {"key":"Angry goblin","file":"angry_goblin.json"},
-  {"key":"Animated spade","file":"animated_spade.json"},
-  {"key":"Archer","file":"archer.json"},
-  {"key":"Armadylean guard","file":"armadylean_guard.json"},
-  {"key":"Armoured zombie","file":"armoured_zombie.json"},
-  {"key":"Bandit (Bandit Camp)","file":"bandit_bandit_camp.json"},
-  {"key":"Bandosian guard","file":"bandosian_guard.json"},
-  {"key":"Barbarian guard","file":"barbarian_guard.json"},
-  {"key":"Barbarian Warlord","file":"barbarian_warlord.json"},
-  {"key":"Basilisk Youngling","file":"basilisk_youngling.json"},
-  {"key":"Battle mage (Zamorak)","file":"battle_mage_zamorak.json"},
-  {"key":"Bedabin Nomad Fighter","file":"bedabin_nomad_fighter.json"},
-  {"key":"Berserk barbarian spirit","file":"berserk_barbarian_spirit.json"},
-  {"key":"Black golem","file":"black_golem.json"},
-  {"key":"Blood Reaver","file":"blood_reaver.json"},
-  {"key":"Bloodworm","file":"bloodworm.json"},
-  {"key":"Cave goblin guard","file":"cave_goblin_guard.json"},
-  {"key":"Cave goblin miner","file":"cave_goblin_miner.json"},
-  {"key":"Chaos Golem","file":"chaos_golem.json"},
-  {"key":"Chasm Crawler","file":"chasm_crawler.json"},
-  {"key":"Corrupt Lizardman","file":"corrupt_lizardman.json"},
-  {"key":"Crimson sanguisphera","file":"crimson_sanguisphera.json"},
-  {"key":"Cruor","file":"cruor.json"},
-  {"key":"Crushing hand","file":"crushing_hand.json"},
-  {"key":"Cultist","file":"cultist.json"},
-  {"key":"Dark wizard","file":"dark_wizard.json"},
-  {"key":"Death spawn","file":"death_spawn.json"},
-  {"key":"Derwen","file":"derwen.json"},
-  {"key":"Disciple of Iban","file":"disciple_of_iban.json"},
-  {"key":"Druid","file":"druid.json"},
-  {"key":"Earth elemental (Normal)","file":"earth_elemental_normal.json"},
-  {"key":"Earth wizard","file":"earth_wizard.json"},
-  {"key":"Elite Black Knight","file":"elite_black_knight.json"},
-  {"key":"Elite Dark Mage","file":"elite_dark_mage.json"},
-  {"key":"Elite Dark Ranger","file":"elite_dark_ranger.json"},
-  {"key":"Elite Dark Warrior","file":"elite_dark_warrior.json"},
-  {"key":"Elite Khazard Guard","file":"elite_khazard_guard.json"},
-  {"key":"Enraged barbarian spirit","file":"enraged_barbarian_spirit.json"},
-  {"key":"Ferocious barbarian spirit","file":"ferocious_barbarian_spirit.json"},
-  {"key":"Fire elemental","file":"fire_elemental.json"},
-  {"key":"Fire wizard","file":"fire_wizard.json"},
-  {"key":"Frenzied ice troll female","file":"frenzied_ice_troll_female.json"},
-  {"key":"Frenzied ice troll grunt","file":"frenzied_ice_troll_grunt.json"},
-  {"key":"Frenzied ice troll male","file":"frenzied_ice_troll_male.json"},
-  {"key":"Frenzied ice troll runt","file":"frenzied_ice_troll_runt.json"},
-  {"key":"Fumus","file":"fumus.json"},
-  {"key":"Gangster","file":"gangster.json"},
-  {"key":"Ghast","file":"ghast.json"},
-  {"key":"Giant goblin","file":"giant_goblin.json"},
-  {"key":"Giant Rock Crab (1)","file":"giant_rock_crab_1.json"},
-  {"key":"Giant rockslug","file":"giant_rockslug.json"},
-  {"key":"Glacies","file":"glacies.json"},
-  {"key":"Goblin guard","file":"goblin_guard.json"},
-  {"key":"Golem guard","file":"golem_guard.json"},
-  {"key":"Gorak","file":"gorak.json"},
-  {"key":"Grave scorpion","file":"grave_scorpion.json"},
-  {"key":"Greater Skeleton Hellhound","file":"greater_skeleton_hellhound.json"},
-  {"key":"Grey golem","file":"grey_golem.json"},
-  {"key":"Growler","file":"growler.json"},
-  {"key":"Growthling","file":"growthling.json"},
-  {"key":"Guardian of Armadyl","file":"guardian_of_armadyl.json"},
-  {"key":"H.A.M. Archer","file":"ham_archer.json"},
-  {"key":"H.A.M. Guard","file":"ham_guard.json"},
-  {"key":"H.A.M. Mage","file":"ham_mage.json"},
-  {"key":"Highwayman (No hood)","file":"highwayman_no_hood.json"},
-  {"key":"Hobgoblin guard","file":"hobgoblin_guard.json"},
-  {"key":"Huge spider","file":"huge_spider.json"},
-  {"key":"Imp (God Wars)","file":"imp_god_wars.json"},
-  {"key":"Jogre (GWD)","file":"jogre_gwd.json"},
-  {"key":"Jubster","file":"jubster.json"},
-  {"key":"Leech","file":"leech.json"},
-  {"key":"Menaphite Akh","file":"menaphite_akh.json"},
-  {"key":"Menaphite Shadow","file":"menaphite_shadow.json"},
-  {"key":"Menaphite Thug","file":"menaphite_thug.json"},
-  {"key":"Mercenary","file":"mercenary.json"},
-  {"key":"Mercenary axeman","file":"mercenary_axeman.json"},
-  {"key":"Mercenary Captain","file":"mercenary_captain.json"},
-  {"key":"Mercenary mage","file":"mercenary_mage.json"},
-  {"key":"Monk","file":"monk.json"},
-  {"key":"Monk of Zamorak","file":"monk_of_zamorak.json"},
-  {"key":"Monstrous Basilisk","file":"monstrous_basilisk.json"},
-  {"key":"Mugger (Regular)","file":"mugger_regular.json"},
-  {"key":"Mummy (Ancient Pyramid) (1)","file":"mummy_ancient_pyramid_1.json"},
-  {"key":"Nail beast","file":"nail_beast.json"},
-  {"key":"Necromancer (Necromancer Tower)","file":"necromancer_necromancer_tower.json"},
-  {"key":"Night beast","file":"night_beast.json"},
-  {"key":"Ogre chieftain","file":"ogre_chieftain.json"},
-  {"key":"Ogre shaman","file":"ogre_shaman.json"},
-  {"key":"Ork","file":"ork.json"},
-  {"key":"Oryx","file":"oryx.json"},
-  {"key":"Outlaw","file":"outlaw.json"},
-  {"key":"Paladin (1)","file":"paladin_1.json"},
-  {"key":"Phantom Hand","file":"phantom_hand.json"},
-  {"key":"Pirate Guard","file":"pirate_guard.json"},
-  {"key":"Radiant sanguisphera","file":"radiant_sanguisphera.json"},
-  {"key":"Reanimated demon spawn","file":"reanimated_demon_spawn.json"},
-  {"key":"River troll","file":"river_troll.json"},
-  {"key":"Rock Crab (Active)","file":"rock_crab_active.json"},
-  {"key":"Rock Golem","file":"rock_golem.json"},
-  {"key":"Runite Golem","file":"runite_golem.json"},
-  {"key":"Saradomin wizard","file":"saradomin_wizard.json"},
-  {"key":"Scarab","file":"scarab.json"},
-  {"key":"Scarred black demon","file":"scarred_black_demon.json"},
-  {"key":"Scarred greater demon","file":"scarred_greater_demon.json"},
-  {"key":"Scarred hellhound","file":"scarred_hellhound.json"},
-  {"key":"Scarred imp","file":"scarred_imp.json"},
-  {"key":"Scarred lesser demon","file":"scarred_lesser_demon.json"},
-  {"key":"Sea troll","file":"sea_troll.json"},
-  {"key":"Sea Troll Queen","file":"sea_troll_queen.json"},
-  {"key":"Serpent shaman","file":"serpent_shaman.json"},
-  {"key":"Shadow","file":"shadow.json"},
-  {"key":"Shadow Keeper","file":"shadow_keeper.json"},
-  {"key":"Shaeded Beast","file":"shaeded_beast.json"},
-  {"key":"Skeletal miner","file":"skeletal_miner.json"},
-  {"key":"Skeleton (Wrath Altar)","file":"skeleton_wrath_altar.json"},
-  {"key":"Skeleton fremennik","file":"skeleton_fremennik.json"},
-  {"key":"Skeleton Hellhound","file":"skeleton_hellhound.json"},
-  {"key":"Skoblin","file":"skoblin.json"},
-  {"key":"Snakeling (Melee)","file":"snakeling_melee.json"},
-  {"key":"Spawn","file":"spawn.json"},
-  {"key":"Spidine","file":"spidine.json"},
-  {"key":"Stone Guardian","file":"stone_guardian.json"},
-  {"key":"Sulphur Nagua","file":"sulphur_nagua.json"},
-  {"key":"Swordchick","file":"swordchick.json"},
-  {"key":"Tar Monster","file":"tar_monster.json"},
-  {"key":"The Jormungand","file":"the_jormungand.json"},
-  {"key":"Third Age Mage","file":"third_age_mage.json"},
-  {"key":"Third Age Ranger","file":"third_age_ranger.json"},
-  {"key":"Third Age Warrior","file":"third_age_warrior.json"},
-  {"key":"Thug","file":"thug.json"},
-  {"key":"Tormented Demon","file":"tormented_demon.json"},
-  {"key":"Tormented Soul","file":"tormented_soul.json"},
-  {"key":"Tormented Warrior","file":"tormented_warrior.json"},
-  {"key":"Tough Guy","file":"tough_guy.json"},
-  {"key":"Tower Archer","file":"tower_archer.json"},
-  {"key":"Tribesman (Dark brown)","file":"tribesman_dark_brown.json"},
-  {"key":"Tribeswoman","file":"tribeswoman.json"},
-  {"key":"Umbra","file":"umbra.json"},
-  {"key":"Undead Lumberjack","file":"undead_lumberjack.json"},
-  {"key":"Urium Shadow","file":"urium_shadow.json"},
-  {"key":"Vampyre Juvinate","file":"vampyre_juvinate.json"},
-  {"key":"Vitreous Jelly","file":"vitreous_jelly.json"},
-  {"key":"Vitreous warped Jelly","file":"vitreous_warped_jelly.json"},
-  {"key":"Vyrewatch","file":"vyrewatch.json"},
-  {"key":"Wallasalki","file":"wallasalki.json"},
-  {"key":"Warrior","file":"warrior.json"},
-  {"key":"Water elemental","file":"water_elemental.json"},
-  {"key":"Water wizard","file":"water_wizard.json"},
-  {"key":"Well-armed Foe","file":"wellarmed_foe.json"},
-  {"key":"White golem","file":"white_golem.json"},
-  {"key":"White Knight (Initiate (m))","file":"white_knight_initiate_m.json"},
-  {"key":"Wighted Leech","file":"wighted_leech.json"},
-  {"key":"Wizard","file":"wizard.json"},
-  {"key":"Yrsa","file":"yrsa.json"},
-  {"key":"Zamorak crafter","file":"zamorak_crafter.json"},
-  {"key":"Zamorak mage","file":"zamorak_mage.json"},
-  {"key":"Zamorak ranger","file":"zamorak_ranger.json"},
-  {"key":"Zamorak warrior","file":"zamorak_warrior.json"},
-  {"key":"Zamorak wizard","file":"zamorak_wizard.json"},
-  {"key":"Zombified Spawn","file":"zombified_spawn.json"}
+    {
+        "key": "Abomination",
+        "file": "abomination.json"
+    },
+    {
+        "key": "Abyssal antibody",
+        "file": "abyssal_antibody.json"
+    },
+    {
+        "key": "Abyssal guardian",
+        "file": "abyssal_guardian.json"
+    },
+    {
+        "key": "Abyssal leech",
+        "file": "abyssal_leech.json"
+    },
+    {
+        "key": "Abyssal walker",
+        "file": "abyssal_walker.json"
+    },
+    {
+        "key": "Acidic Bloodveld",
+        "file": "acidic_bloodveld.json"
+    },
+    {
+        "key": "Afflicted",
+        "file": "afflicted.json"
+    },
+    {
+        "key": "Air elemental",
+        "file": "air_elemental.json"
+    },
+    {
+        "key": "Air wizard",
+        "file": "air_wizard.json"
+    },
+    {
+        "key": "Al Kharid warrior",
+        "file": "al_kharid_warrior.json"
+    },
+    {
+        "key": "Ancient Guardian",
+        "file": "ancient_guardian.json"
+    },
+    {
+        "key": "Ancient Wizard",
+        "file": "ancient_wizard.json"
+    },
+    {
+        "key": "Angry barbarian spirit",
+        "file": "angry_barbarian_spirit.json"
+    },
+    {
+        "key": "Angry goblin",
+        "file": "angry_goblin.json"
+    },
+    {
+        "key": "Animated spade",
+        "file": "animated_spade.json"
+    },
+    {
+        "key": "Archer",
+        "file": "archer.json"
+    },
+    {
+        "key": "Armadylean guard",
+        "file": "armadylean_guard.json"
+    },
+    {
+        "key": "Armoured zombie",
+        "file": "armoured_zombie.json"
+    },
+    {
+        "key": "Bandit (Bandit Camp)",
+        "file": "bandit_bandit_camp.json"
+    },
+    {
+        "key": "Bandosian guard",
+        "file": "bandosian_guard.json"
+    },
+    {
+        "key": "Barbarian guard",
+        "file": "barbarian_guard.json"
+    },
+    {
+        "key": "Barbarian Warlord",
+        "file": "barbarian_warlord.json"
+    },
+    {
+        "key": "Basilisk Youngling",
+        "file": "basilisk_youngling.json"
+    },
+    {
+        "key": "Battle mage (Zamorak)",
+        "file": "battle_mage_zamorak.json"
+    },
+    {
+        "key": "Bedabin Nomad Fighter",
+        "file": "bedabin_nomad_fighter.json"
+    },
+    {
+        "key": "Berserk barbarian spirit",
+        "file": "berserk_barbarian_spirit.json"
+    },
+    {
+        "key": "Black golem",
+        "file": "black_golem.json"
+    },
+    {
+        "key": "Blood Reaver",
+        "file": "blood_reaver.json"
+    },
+    {
+        "key": "Bloodworm",
+        "file": "bloodworm.json"
+    },
+    {
+        "key": "Cave goblin guard",
+        "file": "cave_goblin_guard.json"
+    },
+    {
+        "key": "Cave goblin miner",
+        "file": "cave_goblin_miner.json"
+    },
+    {
+        "key": "Chaos Golem",
+        "file": "chaos_golem.json"
+    },
+    {
+        "key": "Chasm Crawler",
+        "file": "chasm_crawler.json"
+    },
+    {
+        "key": "Corrupt Lizardman",
+        "file": "corrupt_lizardman.json"
+    },
+    {
+        "key": "Crimson sanguisphera",
+        "file": "crimson_sanguisphera.json"
+    },
+    {
+        "key": "Cruor",
+        "file": "cruor.json"
+    },
+    {
+        "key": "Crushing hand",
+        "file": "crushing_hand.json"
+    },
+    {
+        "key": "Cultist",
+        "file": "cultist.json"
+    },
+    {
+        "key": "Dark wizard",
+        "file": "dark_wizard.json"
+    },
+    {
+        "key": "Death spawn",
+        "file": "death_spawn.json"
+    },
+    {
+        "key": "Derwen",
+        "file": "derwen.json"
+    },
+    {
+        "key": "Disciple of Iban",
+        "file": "disciple_of_iban.json"
+    },
+    {
+        "key": "Druid",
+        "file": "druid.json"
+    },
+    {
+        "key": "Earth elemental (Normal)",
+        "file": "earth_elemental_normal.json"
+    },
+    {
+        "key": "Earth wizard",
+        "file": "earth_wizard.json"
+    },
+    {
+        "key": "Elite Black Knight",
+        "file": "elite_black_knight.json"
+    },
+    {
+        "key": "Elite Dark Mage",
+        "file": "elite_dark_mage.json"
+    },
+    {
+        "key": "Elite Dark Ranger",
+        "file": "elite_dark_ranger.json"
+    },
+    {
+        "key": "Elite Dark Warrior",
+        "file": "elite_dark_warrior.json"
+    },
+    {
+        "key": "Elite Khazard Guard",
+        "file": "elite_khazard_guard.json"
+    },
+    {
+        "key": "Enraged barbarian spirit",
+        "file": "enraged_barbarian_spirit.json"
+    },
+    {
+        "key": "Ferocious barbarian spirit",
+        "file": "ferocious_barbarian_spirit.json"
+    },
+    {
+        "key": "Fire elemental",
+        "file": "fire_elemental.json"
+    },
+    {
+        "key": "Fire wizard",
+        "file": "fire_wizard.json"
+    },
+    {
+        "key": "Frenzied ice troll female",
+        "file": "frenzied_ice_troll_female.json"
+    },
+    {
+        "key": "Frenzied ice troll grunt",
+        "file": "frenzied_ice_troll_grunt.json"
+    },
+    {
+        "key": "Frenzied ice troll male",
+        "file": "frenzied_ice_troll_male.json"
+    },
+    {
+        "key": "Frenzied ice troll runt",
+        "file": "frenzied_ice_troll_runt.json"
+    },
+    {
+        "key": "Fumus",
+        "file": "fumus.json"
+    },
+    {
+        "key": "Gangster",
+        "file": "gangster.json"
+    },
+    {
+        "key": "Ghast",
+        "file": "ghast.json"
+    },
+    {
+        "key": "Giant goblin",
+        "file": "giant_goblin.json"
+    },
+    {
+        "key": "Giant Rock Crab (1)",
+        "file": "giant_rock_crab_1.json"
+    },
+    {
+        "key": "Giant rockslug",
+        "file": "giant_rockslug.json"
+    },
+    {
+        "key": "Glacies",
+        "file": "glacies.json"
+    },
+    {
+        "key": "Goblin guard",
+        "file": "goblin_guard.json"
+    },
+    {
+        "key": "Golem guard",
+        "file": "golem_guard.json"
+    },
+    {
+        "key": "Gorak",
+        "file": "gorak.json"
+    },
+    {
+        "key": "Grave scorpion",
+        "file": "grave_scorpion.json"
+    },
+    {
+        "key": "Greater Skeleton Hellhound",
+        "file": "greater_skeleton_hellhound.json"
+    },
+    {
+        "key": "Grey golem",
+        "file": "grey_golem.json"
+    },
+    {
+        "key": "Growler",
+        "file": "growler.json"
+    },
+    {
+        "key": "Growthling",
+        "file": "growthling.json"
+    },
+    {
+        "key": "Guardian of Armadyl",
+        "file": "guardian_of_armadyl.json"
+    },
+    {
+        "key": "H.A.M. Archer",
+        "file": "ham_archer.json"
+    },
+    {
+        "key": "H.A.M. Guard",
+        "file": "ham_guard.json"
+    },
+    {
+        "key": "H.A.M. Mage",
+        "file": "ham_mage.json"
+    },
+    {
+        "key": "Highwayman (No hood)",
+        "file": "highwayman_no_hood.json"
+    },
+    {
+        "key": "Hobgoblin guard",
+        "file": "hobgoblin_guard.json"
+    },
+    {
+        "key": "Huge spider",
+        "file": "huge_spider.json"
+    },
+    {
+        "key": "Imp (God Wars)",
+        "file": "imp_god_wars.json"
+    },
+    {
+        "key": "Jogre (GWD)",
+        "file": "jogre_gwd.json"
+    },
+    {
+        "key": "Jubster",
+        "file": "jubster.json"
+    },
+    {
+        "key": "Leech",
+        "file": "leech.json"
+    },
+    {
+        "key": "Menaphite Akh",
+        "file": "menaphite_akh.json"
+    },
+    {
+        "key": "Menaphite Shadow",
+        "file": "menaphite_shadow.json"
+    },
+    {
+        "key": "Menaphite Thug",
+        "file": "menaphite_thug.json"
+    },
+    {
+        "key": "Mercenary",
+        "file": "mercenary.json"
+    },
+    {
+        "key": "Mercenary axeman",
+        "file": "mercenary_axeman.json"
+    },
+    {
+        "key": "Mercenary Captain",
+        "file": "mercenary_captain.json"
+    },
+    {
+        "key": "Mercenary mage",
+        "file": "mercenary_mage.json"
+    },
+    {
+        "key": "Monk",
+        "file": "monk.json"
+    },
+    {
+        "key": "Monk of Zamorak",
+        "file": "monk_of_zamorak.json"
+    },
+    {
+        "key": "Monstrous Basilisk",
+        "file": "monstrous_basilisk.json"
+    },
+    {
+        "key": "Mugger (Regular)",
+        "file": "mugger_regular.json"
+    },
+    {
+        "key": "Mummy (Ancient Pyramid) (1)",
+        "file": "mummy_ancient_pyramid_1.json"
+    },
+    {
+        "key": "Nail beast",
+        "file": "nail_beast.json"
+    },
+    {
+        "key": "Necromancer (Necromancer Tower)",
+        "file": "necromancer_necromancer_tower.json"
+    },
+    {
+        "key": "Night beast",
+        "file": "night_beast.json"
+    },
+    {
+        "key": "Ogre chieftain",
+        "file": "ogre_chieftain.json"
+    },
+    {
+        "key": "Ogre shaman",
+        "file": "ogre_shaman.json"
+    },
+    {
+        "key": "Ork",
+        "file": "ork.json"
+    },
+    {
+        "key": "Oryx",
+        "file": "oryx.json"
+    },
+    {
+        "key": "Outlaw",
+        "file": "outlaw.json"
+    },
+    {
+        "key": "Paladin (1)",
+        "file": "paladin_1.json"
+    },
+    {
+        "key": "Phantom Hand",
+        "file": "phantom_hand.json"
+    },
+    {
+        "key": "Pirate Guard",
+        "file": "pirate_guard.json"
+    },
+    {
+        "key": "Radiant sanguisphera",
+        "file": "radiant_sanguisphera.json"
+    },
+    {
+        "key": "Reanimated demon spawn",
+        "file": "reanimated_demon_spawn.json"
+    },
+    {
+        "key": "Rock Crab (Active)",
+        "file": "rock_crab_active.json"
+    },
+    {
+        "key": "Rock Golem",
+        "file": "rock_golem.json"
+    },
+    {
+        "key": "Runite Golem",
+        "file": "runite_golem.json"
+    },
+    {
+        "key": "Saradomin wizard",
+        "file": "saradomin_wizard.json"
+    },
+    {
+        "key": "Scarab",
+        "file": "scarab.json"
+    },
+    {
+        "key": "Scarred black demon",
+        "file": "scarred_black_demon.json"
+    },
+    {
+        "key": "Scarred greater demon",
+        "file": "scarred_greater_demon.json"
+    },
+    {
+        "key": "Scarred hellhound",
+        "file": "scarred_hellhound.json"
+    },
+    {
+        "key": "Scarred imp",
+        "file": "scarred_imp.json"
+    },
+    {
+        "key": "Scarred lesser demon",
+        "file": "scarred_lesser_demon.json"
+    },
+    {
+        "key": "Sea troll",
+        "file": "sea_troll.json"
+    },
+    {
+        "key": "Sea Troll Queen",
+        "file": "sea_troll_queen.json"
+    },
+    {
+        "key": "Serpent shaman",
+        "file": "serpent_shaman.json"
+    },
+    {
+        "key": "Shadow",
+        "file": "shadow.json"
+    },
+    {
+        "key": "Shadow Keeper",
+        "file": "shadow_keeper.json"
+    },
+    {
+        "key": "Shaeded Beast",
+        "file": "shaeded_beast.json"
+    },
+    {
+        "key": "Skeletal miner",
+        "file": "skeletal_miner.json"
+    },
+    {
+        "key": "Skeleton (Wrath Altar)",
+        "file": "skeleton_wrath_altar.json"
+    },
+    {
+        "key": "Skeleton fremennik",
+        "file": "skeleton_fremennik.json"
+    },
+    {
+        "key": "Skeleton Hellhound",
+        "file": "skeleton_hellhound.json"
+    },
+    {
+        "key": "Skoblin",
+        "file": "skoblin.json"
+    },
+    {
+        "key": "Snakeling (Melee)",
+        "file": "snakeling_melee.json"
+    },
+    {
+        "key": "Spawn",
+        "file": "spawn.json"
+    },
+    {
+        "key": "Spidine",
+        "file": "spidine.json"
+    },
+    {
+        "key": "Stone Guardian",
+        "file": "stone_guardian.json"
+    },
+    {
+        "key": "Sulphur Nagua",
+        "file": "sulphur_nagua.json"
+    },
+    {
+        "key": "Swordchick",
+        "file": "swordchick.json"
+    },
+    {
+        "key": "Tar Monster",
+        "file": "tar_monster.json"
+    },
+    {
+        "key": "The Jormungand",
+        "file": "the_jormungand.json"
+    },
+    {
+        "key": "Third Age Mage",
+        "file": "third_age_mage.json"
+    },
+    {
+        "key": "Third Age Ranger",
+        "file": "third_age_ranger.json"
+    },
+    {
+        "key": "Third Age Warrior",
+        "file": "third_age_warrior.json"
+    },
+    {
+        "key": "Thug",
+        "file": "thug.json"
+    },
+    {
+        "key": "Tormented Demon",
+        "file": "tormented_demon.json"
+    },
+    {
+        "key": "Tormented Soul",
+        "file": "tormented_soul.json"
+    },
+    {
+        "key": "Tormented Warrior",
+        "file": "tormented_warrior.json"
+    },
+    {
+        "key": "Tough Guy",
+        "file": "tough_guy.json"
+    },
+    {
+        "key": "Tower Archer",
+        "file": "tower_archer.json"
+    },
+    {
+        "key": "Tribesman (Dark brown)",
+        "file": "tribesman_dark_brown.json"
+    },
+    {
+        "key": "Tribeswoman",
+        "file": "tribeswoman.json"
+    },
+    {
+        "key": "Umbra",
+        "file": "umbra.json"
+    },
+    {
+        "key": "Undead Lumberjack",
+        "file": "undead_lumberjack.json"
+    },
+    {
+        "key": "Urium Shadow",
+        "file": "urium_shadow.json"
+    },
+    {
+        "key": "Vitreous Jelly",
+        "file": "vitreous_jelly.json"
+    },
+    {
+        "key": "Vitreous warped Jelly",
+        "file": "vitreous_warped_jelly.json"
+    },
+    {
+        "key": "Wallasalki",
+        "file": "wallasalki.json"
+    },
+    {
+        "key": "Warrior",
+        "file": "warrior.json"
+    },
+    {
+        "key": "Water elemental",
+        "file": "water_elemental.json"
+    },
+    {
+        "key": "Water wizard",
+        "file": "water_wizard.json"
+    },
+    {
+        "key": "Well-armed Foe",
+        "file": "wellarmed_foe.json"
+    },
+    {
+        "key": "White golem",
+        "file": "white_golem.json"
+    },
+    {
+        "key": "White Knight (Initiate (m))",
+        "file": "white_knight_initiate_m.json"
+    },
+    {
+        "key": "Wighted Leech",
+        "file": "wighted_leech.json"
+    },
+    {
+        "key": "Wizard",
+        "file": "wizard.json"
+    },
+    {
+        "key": "Yrsa",
+        "file": "yrsa.json"
+    },
+    {
+        "key": "Zamorak crafter",
+        "file": "zamorak_crafter.json"
+    },
+    {
+        "key": "Zamorak mage",
+        "file": "zamorak_mage.json"
+    },
+    {
+        "key": "Zamorak ranger",
+        "file": "zamorak_ranger.json"
+    },
+    {
+        "key": "Zamorak warrior",
+        "file": "zamorak_warrior.json"
+    },
+    {
+        "key": "Zamorak wizard",
+        "file": "zamorak_wizard.json"
+    },
+    {
+        "key": "Zombified Spawn",
+        "file": "zombified_spawn.json"
+    }
 ]

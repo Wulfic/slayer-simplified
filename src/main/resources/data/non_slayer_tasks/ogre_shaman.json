@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ogre shaman --lvl 113": "Ogre Enclave"
+        "Ogre shaman --lvl 113": [
+            "Ogre Enclave"
+        ]
     }
 }

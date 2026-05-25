@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Afflicted --lvl 37": "Mort'ton"
+        "Afflicted --lvl 37": [
+            "Mort'ton"
+        ]
     }
 }

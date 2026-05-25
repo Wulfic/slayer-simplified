@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Mudskipper --lvl 31": "Mogre Camp"
+        "Mudskipper --lvl 31": [
+            "Mogre Camp"
+        ]
     }
 }

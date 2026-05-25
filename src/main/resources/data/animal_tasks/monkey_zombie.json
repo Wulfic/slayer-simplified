@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Monkey Zombie --lvl 129": "Ape Atoll Dungeon"
+        "Monkey Zombie --lvl 129": [
+            "Ape Atoll Dungeon"
+        ]
     }
 }

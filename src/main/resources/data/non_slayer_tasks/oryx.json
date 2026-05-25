@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Oryx --lvl 15": "Avium Savannah"
+        "Oryx --lvl 15": [
+            "Avium Savannah"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Yrsa --lvl 1": "Rellekka"
+        "Yrsa --lvl 1": [
+            "Rellekka"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Black jaguar --lvl 67": "Ralos' Rise"
+        "Black jaguar --lvl 67": [
+            "Ralos' Rise"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Guardian of Armadyl --lvl 45": "Temple of Ikov"
+        "Guardian of Armadyl --lvl 45": [
+            "Temple of Ikov"
+        ]
     }
 }

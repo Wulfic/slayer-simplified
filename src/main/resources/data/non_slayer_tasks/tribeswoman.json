@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Tribeswoman --lvl 32": "Shilo Village"
+        "Tribeswoman --lvl 32": [
+            "Shilo Village"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Disciple of Iban --lvl 13": "Underground Pass"
+        "Disciple of Iban --lvl 13": [
+            "Underground Pass"
+        ]
     }
 }

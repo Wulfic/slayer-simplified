@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Frog --lvl 5": "Lumbridge Swamp"
+        "Frog --lvl 5": [
+            "Lumbridge Swamp"
+        ]
     }
 }

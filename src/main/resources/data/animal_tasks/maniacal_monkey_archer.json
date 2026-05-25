@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Maniacal Monkey Archer --lvl 132": "Kruk's Dungeon"
+        "Maniacal Monkey Archer --lvl 132": [
+            "Kruk's Dungeon"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Zombie rat --lvl 3": "Melzar's Maze"
+        "Zombie rat --lvl 3": [
+            "Melzar's Maze"
+        ]
     }
 }

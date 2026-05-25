@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Unicorn Foal --lvl 12": "Hosidius"
+        "Unicorn Foal --lvl 12": [
+            "Hosidius"
+        ]
     }
 }

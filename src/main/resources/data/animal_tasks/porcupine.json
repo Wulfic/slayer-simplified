@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Porcupine --lvl 4": "Aldarin"
+        "Porcupine --lvl 4": [
+            "Aldarin"
+        ]
     }
 }

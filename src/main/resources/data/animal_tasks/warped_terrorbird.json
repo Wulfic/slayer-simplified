@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Warped Terrorbird --lvl 138": "Poison Waste Dungeon"
+        "Warped Terrorbird --lvl 138": [
+            "Poison Waste Dungeon"
+        ]
     }
 }

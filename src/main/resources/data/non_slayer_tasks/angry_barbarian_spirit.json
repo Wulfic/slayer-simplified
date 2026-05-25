@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Angry barbarian spirit --lvl 166": "Ancient Cavern"
+        "Angry barbarian spirit --lvl 166": [
+            "Ancient Cavern"
+        ]
     }
 }

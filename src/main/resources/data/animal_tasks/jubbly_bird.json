@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Jubbly bird --lvl 9": "Feldip Hills"
+        "Jubbly bird --lvl 9": [
+            "Feldip Hills"
+        ]
     }
 }

@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Bloodworm --lvl 52": "Barrows"
+        "Bloodworm --lvl 52": [
+            "Barrows"
+        ]
     }
 }

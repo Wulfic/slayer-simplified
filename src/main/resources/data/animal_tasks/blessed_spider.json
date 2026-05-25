@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Blessed spider --lvl 39": "Underground Pass"
+        "Blessed spider --lvl 39": [
+            "Underground Pass"
+        ]
     }
 }

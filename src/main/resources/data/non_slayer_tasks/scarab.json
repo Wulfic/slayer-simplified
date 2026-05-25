@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Scarab --lvl 56": "Kharidian Desert"
+        "Scarab --lvl 56": [
+            "Kharidian Desert"
+        ]
     }
 }

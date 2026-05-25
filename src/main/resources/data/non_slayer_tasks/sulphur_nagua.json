@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Sulphur Nagua --lvl 98": "Neypotzli"
+        "Sulphur Nagua --lvl 98": [
+            "Neypotzli"
+        ]
     }
 }

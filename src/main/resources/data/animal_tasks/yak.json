@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Yak --lvl 22": "Neitiznot"
+        "Yak --lvl 22": [
+            "Neitiznot"
+        ]
     }
 }

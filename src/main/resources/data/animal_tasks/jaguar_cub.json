@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Jaguar cub --lvl 31": "Avium Savannah"
+        "Jaguar cub --lvl 31": [
+            "Avium Savannah"
+        ]
     }
 }

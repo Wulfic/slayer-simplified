@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Pirate Guard --lvl 19": "Brimhaven"
+        "Pirate Guard --lvl 19": [
+            "Brimhaven"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Animals"
     ],
     "variantLocations": {
-        "Grizzly bear cub --lvl 36": "Isafdar"
+        "Grizzly bear cub --lvl 36": [
+            "Isafdar"
+        ]
     }
 }
