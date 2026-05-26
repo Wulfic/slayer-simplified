@@ -7,6 +7,7 @@
 package com.slayersimplified.services;
 
 import com.slayersimplified.domain.Task;
+import com.slayersimplified.domain.TaskSearchResult;
 
 import java.util.Comparator;
 
@@ -22,4 +23,11 @@ public interface TaskService
     Task[] getAll(Comparator<Task> comparator);
 
     Task[] searchPartialName(String text);
+
+    /**
+     * Searches task names and all variant names for {@code text}.
+     * Returns one {@link TaskSearchResult} per matching name; variant hits
+     * carry the variant display name but point to the parent task.
+     */
+    TaskSearchResult[] searchWithVariants(String text);
 }

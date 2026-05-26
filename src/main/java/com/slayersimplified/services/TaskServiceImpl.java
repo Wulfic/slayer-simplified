@@ -11,6 +11,7 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
 import com.slayersimplified.domain.Task;
+import com.slayersimplified.domain.TaskSearchResult;
 import com.slayersimplified.domain.WikiLink;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.util.ImageUtil;
@@ -204,6 +205,81 @@ public class TaskServiceImpl implements TaskService
                 .stream()
                 .filter(m -> m.name.toLowerCase().contains(searchTerm))
                 .toArray(Task[]::new);
+    }
+
+    @Override
+    public TaskSearchResult[] searchWithVariants(String text)
+    {
+        if (text == null || text.isEmpty())
+        {
+            return new TaskSearchResult[0];
+        }
+
+        String term = text.toLowerCase();
+        List<TaskSearchResult> results = new ArrayList<>();
+
+        for (Task task : tasks.values())
+        {
+            boolean hasVariants = task.variants != null && task.variants.length > 0;
+
+            // The task name is a "real" monster entry only when there are no
+            // variants at all, or when at least one variant's stripped display
+            // name equals the task name (e.g. "Guard dog" in its own variant list).
+            // If every variant has a different name the task name is just a
+            // grouping label (e.g. "Sea snake") and should not appear as a
+            // standalone search result.
+            boolean taskNameIsRealMonster = !hasVariants;
+            if (hasVariants)
+            {
+                for (String v : task.variants)
+                {
+                    int fi = v.indexOf("--lvl ");
+                    String dv = fi >= 0 ? v.substring(0, fi).trim() : v;
+                    if (dv.equalsIgnoreCase(task.name))
+                    {
+                        taskNameIsRealMonster = true;
+                        break;
+                    }
+                }
+            }
+
+            boolean nameMatched = task.name.toLowerCase().contains(term);
+            if (nameMatched && taskNameIsRealMonster)
+            {
+                results.add(new TaskSearchResult(task, task.name));
+            }
+
+            if (hasVariants)
+            {
+                for (String variant : task.variants)
+                {
+                    // Strip the --lvl flag for the display name.
+                    int flagIdx = variant.indexOf("--lvl ");
+                    String displayVariant = flagIdx >= 0 ? variant.substring(0, flagIdx).trim() : variant;
+
+                    // Skip if the stripped display name equals the task name —
+                    // that entry is handled by the task-name result above.
+                    if (displayVariant.equalsIgnoreCase(task.name))
+                    {
+                        continue;
+                    }
+
+                    // Match against the full variant string (including any --lvl flag).
+                    if (variant.toLowerCase().contains(term))
+                    {
+                        results.add(new TaskSearchResult(task, displayVariant));
+                    }
+                }
+            }
+        }
+
+        // Sort: parent task name first, then display name so variants cluster
+        // below their parent in the results list.
+        results.sort(Comparator
+                .comparing((TaskSearchResult r) -> r.parentTask.name)
+                .thenComparing(r -> r.displayName));
+
+        return results.toArray(new TaskSearchResult[0]);
     }
 
     private WikiLink[] createWikiLinks(Task task)

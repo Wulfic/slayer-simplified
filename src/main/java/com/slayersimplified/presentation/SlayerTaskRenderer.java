@@ -126,4 +126,38 @@ public class SlayerTaskRenderer extends JPanel implements ListCellRenderer<Task>
             return PLACEHOLDER_ICON;
         });
     }
+
+    /**
+     * Returns the icon for {@code variantName} if a matching image exists on
+     * the classpath; otherwise falls back to the icon for {@code parentName}.
+     * Results are cached by a composite key so the same variant owned by
+     * different parents resolves independently.
+     */
+    private static final Map<String, Icon> variantIconCache = new HashMap<>();
+
+    public static Icon getVariantIcon(String variantName, String parentName)
+    {
+        final String variantKey = variantName.toLowerCase().replace(" ", "_");
+        final String parentKey  = parentName.toLowerCase().replace(" ", "_");
+        final String cacheKey   = variantKey + "|" + parentKey;
+
+        return variantIconCache.computeIfAbsent(cacheKey, k ->
+        {
+            try
+            {
+                BufferedImage img = ImageUtil.loadImageResource(
+                        SlayerTaskRenderer.class, "/images/monsters/" + variantKey + ".png");
+                if (img != null)
+                {
+                    return new ImageIcon(ImageUtil.resizeImage(img, ICON_SIZE, ICON_SIZE));
+                }
+            }
+            catch (Exception ignored)
+            {
+                // No variant-specific image — fall through to parent.
+            }
+            // Fall back to the parent task's icon (may itself be PLACEHOLDER_ICON).
+            return getMonsterIcon(parentName);
+        });
+    }
 }

@@ -563,21 +563,22 @@ public class MainPanel extends PluginPanel
             return;
         }
 
-        Task[] matchedTasks = taskService.searchPartialName(searchTerm.trim());
+        com.slayersimplified.domain.TaskSearchResult[] results =
+                taskService.searchWithVariants(searchTerm.trim());
         if (!config.debugCoordinates())
         {
-            matchedTasks = Arrays.stream(matchedTasks)
-                    .filter(t -> !"A DEBUG TASK".equals(t.name))
-                    .toArray(Task[]::new);
+            results = Arrays.stream(results)
+                    .filter(r -> !"A DEBUG TASK".equals(r.parentTask.name))
+                    .toArray(com.slayersimplified.domain.TaskSearchResult[]::new);
         }
         if (!config.showNonSlayerEnemies())
         {
-            matchedTasks = Arrays.stream(matchedTasks)
-                    .filter(t -> !isNonSlayerTask(t))
-                    .toArray(Task[]::new);
+            results = Arrays.stream(results)
+                    .filter(r -> !isNonSlayerTask(r.parentTask))
+                    .toArray(com.slayersimplified.domain.TaskSearchResult[]::new);
         }
 
-        taskSearchPanel.showSearchResults(matchedTasks);
+        taskSearchPanel.showSearchResults(results);
     }
 
     /** Opens the task detail panel for the given task. Safe to call from the EDT. */

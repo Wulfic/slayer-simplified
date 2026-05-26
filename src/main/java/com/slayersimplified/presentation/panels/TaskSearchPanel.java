@@ -7,7 +7,9 @@
 package com.slayersimplified.presentation.panels;
 
 import com.slayersimplified.domain.Task;
+import com.slayersimplified.domain.TaskSearchResult;
 import com.slayersimplified.presentation.SlayerTaskRenderer;
+import com.slayersimplified.presentation.TaskSearchResultRenderer;
 import com.slayersimplified.presentation.components.GroupedTaskList;
 import com.slayersimplified.presentation.components.ScrollBarStyling;
 import com.slayersimplified.presentation.components.SearchBar;
@@ -32,8 +34,8 @@ public class TaskSearchPanel extends JPanel
     private static final String SEARCH_VIEW  = "search";
 
     private final SearchBar searchBar;
-    private final SelectList<Task> selectList;
-    private final SlayerTaskRenderer taskRenderer = new SlayerTaskRenderer();
+    private final SelectList<TaskSearchResult> selectList;
+    private final TaskSearchResultRenderer searchResultRenderer = new TaskSearchResultRenderer();
     private final GroupedTaskList groupedTaskList;
 
     /** Container that switches between the grouped and flat views. */
@@ -42,7 +44,9 @@ public class TaskSearchPanel extends JPanel
     public TaskSearchPanel(Consumer<String> onSearch, Consumer<Task> onSelect)
     {
         searchBar = new SearchBar(onSearch);
-        selectList = new SelectList<>(taskRenderer, onSelect, this::onTaskHover);
+        selectList = new SelectList<>(searchResultRenderer,
+                result -> onSelect.accept(result.parentTask),
+                this::onTaskHover);
         groupedTaskList = new GroupedTaskList(onSelect);
 
         setLayout(new BorderLayout());
@@ -94,9 +98,9 @@ public class TaskSearchPanel extends JPanel
      * Updates the flat list with filtered results and switches to it.
      * Call this when the search bar has active text.
      */
-    public void showSearchResults(Task[] tasks)
+    public void showSearchResults(TaskSearchResult[] results)
     {
-        selectList.update(tasks);
+        selectList.update(results);
         ((CardLayout) listContainer.getLayout()).show(listContainer, SEARCH_VIEW);
     }
 
@@ -108,7 +112,7 @@ public class TaskSearchPanel extends JPanel
 
     private void onTaskHover(int index)
     {
-        taskRenderer.setHoverIndex(index);
+        searchResultRenderer.setHoverIndex(index);
         setCursor(new Cursor(index != -1 ? Cursor.HAND_CURSOR : Cursor.DEFAULT_CURSOR));
     }
 }
