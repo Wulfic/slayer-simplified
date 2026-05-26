@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Tar Monster --lvl 132": []
+        "Tar Monster --lvl 132": [
+            "Mort Myre Swamp"
+        ]
     }
 }

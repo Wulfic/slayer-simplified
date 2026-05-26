@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Giant rockslug --lvl 86": []
+        "Giant rockslug --lvl 86": [
+            "Lumbridge Swamp Caves"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Golem guard --lvl 141": []
+        "Golem guard --lvl 141": [
+            "Forthos Dungeon"
+        ]
     }
 }

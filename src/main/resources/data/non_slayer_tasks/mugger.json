@@ -1,21 +1,21 @@
 {
-    "name": "Tribesman (Dark brown)",
+    "name": "Mugger",
     "levelRequired": 0,
     "itemsRequired": [],
-    "itemsSuggested": [
-        "Super antipoison(4)"
-    ],
+    "itemsSuggested": [],
     "attributes": [],
     "attackStyles": [
-        "Melee"
+        "Crush"
     ],
     "variants": [
-        "Tribesman (Dark brown) --lvl 32"
+        "Mugger --lvl 6"
     ],
     "masters": [
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Tribesman (Dark brown) --lvl 32": []
+        "Mugger --lvl 6": [
+            "Port Sarim"
+        ]
     }
 }

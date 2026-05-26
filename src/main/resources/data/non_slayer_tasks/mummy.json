@@ -1,0 +1,30 @@
+{
+    "name": "Mummy",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Crush"
+    ],
+    "variants": [
+        "Mummy --lvl 103",
+        "Mummy --lvl 96",
+        "Mummy --lvl 98"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "Mummy --lvl 103": [
+            "Dungeon east of the Agility Pyramid"
+        ],
+        "Mummy --lvl 96": [
+            "Dungeon east of the Agility Pyramid"
+        ],
+        "Mummy --lvl 98": [
+            "Dungeon east of the Agility Pyramid"
+        ]
+    }
+}

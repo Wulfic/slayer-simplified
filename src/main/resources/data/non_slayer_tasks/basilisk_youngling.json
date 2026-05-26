@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Basilisk Youngling --lvl 53": []
+        "Basilisk Youngling --lvl 53": [
+            "Fremennik Slayer Dungeon"
+        ]
     }
 }

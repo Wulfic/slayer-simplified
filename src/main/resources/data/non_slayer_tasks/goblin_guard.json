@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Goblin guard --lvl 42": []
+        "Goblin guard --lvl 42": [
+            "Goblin Village"
+        ]
     }
 }

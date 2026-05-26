@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Elite Khazard Guard --lvl 95": []
+        "Elite Khazard Guard --lvl 95": [
+            "Khazard Battlefield"
+        ]
     }
 }

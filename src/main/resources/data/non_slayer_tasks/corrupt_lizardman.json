@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Corrupt Lizardman --lvl 46": []
+        "Corrupt Lizardman --lvl 46": [
+            "Lizardman Settlement",
+            "Lizardman canyon"
+        ]
     }
 }

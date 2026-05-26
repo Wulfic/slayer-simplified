@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Cultist --lvl 34": []
+        "Cultist --lvl 34": [
+            "Forthos Dungeon"
+        ]
     }
 }

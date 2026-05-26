@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Third Age Warrior --lvl 83": []
+        "Third Age Warrior --lvl 83": [
+            "Wilderness"
+        ]
     }
 }

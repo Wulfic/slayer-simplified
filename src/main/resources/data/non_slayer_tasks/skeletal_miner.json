@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Skeletal miner --lvl 42": []
+        "Skeletal miner --lvl 42": [
+            "Haunted Mine"
+        ]
     }
 }

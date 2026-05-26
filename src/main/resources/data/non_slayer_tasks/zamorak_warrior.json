@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Zamorak warrior --lvl 85": []
+        "Zamorak warrior --lvl 85": [
+            "God Wars Dungeon"
+        ]
     }
 }

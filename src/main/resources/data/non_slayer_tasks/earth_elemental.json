@@ -1,5 +1,5 @@
 {
-    "name": "Chinchompa (Hunter)",
+    "name": "Earth elemental",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
@@ -8,12 +8,14 @@
         "Crush"
     ],
     "variants": [
-        "Chinchompa (Hunter) --lvl 1"
+        "Earth elemental --lvl 35"
     ],
     "masters": [
-        "Animals"
+        "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Chinchompa (Hunter) --lvl 1": []
+        "Earth elemental --lvl 35": [
+            "Elemental Workshop"
+        ]
     }
 }

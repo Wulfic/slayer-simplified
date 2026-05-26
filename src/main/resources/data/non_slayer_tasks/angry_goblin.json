@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Angry goblin --lvl 47": []
+        "Angry goblin --lvl 47": [
+            "Goblin Village"
+        ]
     }
 }

@@ -1,9 +1,5 @@
 [
     {
-        "key": "Abomination",
-        "file": "abomination.json"
-    },
-    {
         "key": "Abyssal antibody",
         "file": "abyssal_antibody.json"
     },
@@ -172,8 +168,8 @@
         "file": "druid.json"
     },
     {
-        "key": "Earth elemental (Normal)",
-        "file": "earth_elemental_normal.json"
+        "key": "Earth elemental",
+        "file": "earth_elemental.json"
     },
     {
         "key": "Earth wizard",
@@ -248,8 +244,8 @@
         "file": "giant_goblin.json"
     },
     {
-        "key": "Giant Rock Crab (1)",
-        "file": "giant_rock_crab_1.json"
+        "key": "Giant Rock Crab",
+        "file": "giant_rock_crab.json"
     },
     {
         "key": "Giant rockslug",
@@ -308,8 +304,8 @@
         "file": "ham_mage.json"
     },
     {
-        "key": "Highwayman (No hood)",
-        "file": "highwayman_no_hood.json"
+        "key": "Highwayman",
+        "file": "highwayman.json"
     },
     {
         "key": "Hobgoblin guard",
@@ -318,14 +314,6 @@
     {
         "key": "Huge spider",
         "file": "huge_spider.json"
-    },
-    {
-        "key": "Imp (God Wars)",
-        "file": "imp_god_wars.json"
-    },
-    {
-        "key": "Jogre (GWD)",
-        "file": "jogre_gwd.json"
     },
     {
         "key": "Jubster",
@@ -372,24 +360,20 @@
         "file": "monk_of_zamorak.json"
     },
     {
-        "key": "Monstrous Basilisk",
-        "file": "monstrous_basilisk.json"
+        "key": "Mugger",
+        "file": "mugger.json"
     },
     {
-        "key": "Mugger (Regular)",
-        "file": "mugger_regular.json"
-    },
-    {
-        "key": "Mummy (Ancient Pyramid) (1)",
-        "file": "mummy_ancient_pyramid_1.json"
+        "key": "Mummy",
+        "file": "mummy.json"
     },
     {
         "key": "Nail beast",
         "file": "nail_beast.json"
     },
     {
-        "key": "Necromancer (Necromancer Tower)",
-        "file": "necromancer_necromancer_tower.json"
+        "key": "Necromancer",
+        "file": "necromancer.json"
     },
     {
         "key": "Night beast",
@@ -436,8 +420,8 @@
         "file": "reanimated_demon_spawn.json"
     },
     {
-        "key": "Rock Crab (Active)",
-        "file": "rock_crab_active.json"
+        "key": "Rock Crab",
+        "file": "rock_crab.json"
     },
     {
         "key": "Rock Golem",
@@ -450,10 +434,6 @@
     {
         "key": "Saradomin wizard",
         "file": "saradomin_wizard.json"
-    },
-    {
-        "key": "Scarab",
-        "file": "scarab.json"
     },
     {
         "key": "Scarred black demon",
@@ -488,10 +468,6 @@
         "file": "serpent_shaman.json"
     },
     {
-        "key": "Shadow",
-        "file": "shadow.json"
-    },
-    {
         "key": "Shadow Keeper",
         "file": "shadow_keeper.json"
     },
@@ -512,16 +488,8 @@
         "file": "skeleton_fremennik.json"
     },
     {
-        "key": "Skeleton Hellhound",
-        "file": "skeleton_hellhound.json"
-    },
-    {
         "key": "Skoblin",
         "file": "skoblin.json"
-    },
-    {
-        "key": "Snakeling (Melee)",
-        "file": "snakeling_melee.json"
     },
     {
         "key": "Spawn",
@@ -588,8 +556,8 @@
         "file": "tower_archer.json"
     },
     {
-        "key": "Tribesman (Dark brown)",
-        "file": "tribesman_dark_brown.json"
+        "key": "Tribesman",
+        "file": "tribesman.json"
     },
     {
         "key": "Tribeswoman",
@@ -604,24 +572,16 @@
         "file": "undead_lumberjack.json"
     },
     {
-        "key": "Urium Shadow",
-        "file": "urium_shadow.json"
+        "key": "Urium Shade",
+        "file": "urium_shade.json"
     },
     {
         "key": "Vitreous Jelly",
         "file": "vitreous_jelly.json"
     },
     {
-        "key": "Vitreous warped Jelly",
-        "file": "vitreous_warped_jelly.json"
-    },
-    {
         "key": "Wallasalki",
         "file": "wallasalki.json"
-    },
-    {
-        "key": "Warrior",
-        "file": "warrior.json"
     },
     {
         "key": "Water elemental",
@@ -640,8 +600,8 @@
         "file": "white_golem.json"
     },
     {
-        "key": "White Knight (Initiate (m))",
-        "file": "white_knight_initiate_m.json"
+        "key": "White Knight",
+        "file": "white_knight.json"
     },
     {
         "key": "Wighted Leech",

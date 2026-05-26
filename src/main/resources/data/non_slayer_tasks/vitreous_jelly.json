@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Vitreous Jelly --lvl 206": []
+        "Vitreous Jelly --lvl 206": [
+            "Catacombs of Kourend"
+        ]
     }
 }

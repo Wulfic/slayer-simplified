@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Tormented Soul --lvl 16": []
+        "Tormented Soul --lvl 16": [
+            "Mort'ton"
+        ]
     }
 }

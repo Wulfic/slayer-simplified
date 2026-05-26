@@ -28,12 +28,8 @@
         "file": "big_snake.json"
     },
     {
-        "key": "Billy Goat (Brown)",
-        "file": "billy_goat_brown.json"
-    },
-    {
-        "key": "Black chinchompa (Hunter)",
-        "file": "black_chinchompa_hunter.json"
+        "key": "Billy Goat",
+        "file": "billy_goat.json"
     },
     {
         "key": "Black jaguar",
@@ -80,16 +76,8 @@
         "file": "bush_snake.json"
     },
     {
-        "key": "Carnivorous chinchompa",
-        "file": "carnivorous_chinchompa.json"
-    },
-    {
         "key": "Cave lizard",
         "file": "cave_lizard.json"
-    },
-    {
-        "key": "Chinchompa (Hunter)",
-        "file": "chinchompa_hunter.json"
     },
     {
         "key": "Dire Wolf Alpha",
@@ -124,8 +112,8 @@
         "file": "giant_snail.json"
     },
     {
-        "key": "Goat (Brown)",
-        "file": "goat_brown.json"
+        "key": "Goat",
+        "file": "goat.json"
     },
     {
         "key": "Grizzly bear cub",

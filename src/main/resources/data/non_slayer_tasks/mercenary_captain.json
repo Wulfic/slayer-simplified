@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Mercenary Captain --lvl 47": []
+        "Mercenary Captain --lvl 47": [
+            "Brimhaven"
+        ]
     }
 }

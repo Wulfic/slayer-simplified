@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Al Kharid warrior --lvl 9": []
+        "Al Kharid warrior --lvl 9": [
+            "Al-Kharid"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Archer --lvl 42": []
+        "Archer --lvl 42": [
+            "East Ardougne"
+        ]
     }
 }

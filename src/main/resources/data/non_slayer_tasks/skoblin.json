@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Skoblin --lvl 29": []
+        "Skoblin --lvl 29": [
+            "Goblin Cave"
+        ]
     }
 }

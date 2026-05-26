@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Crushing hand --lvl 45": []
+        "Crushing hand --lvl 45": [
+            "Catacombs of Kourend"
+        ]
     }
 }

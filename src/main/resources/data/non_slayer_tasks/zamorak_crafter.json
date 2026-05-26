@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Zamorak crafter --lvl 19": []
+        "Zamorak crafter --lvl 19": [
+            "Chaos Temple"
+        ]
     }
 }

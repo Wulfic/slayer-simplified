@@ -1,5 +1,5 @@
 {
-    "name": "Giant Rock Crab (1)",
+    "name": "Rock Crab",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
@@ -8,12 +8,17 @@
         "Crush"
     ],
     "variants": [
-        "Giant Rock Crab (1) --lvl 137"
+        "Rock Crab --lvl 13"
     ],
     "masters": [
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Giant Rock Crab (1) --lvl 137": []
+        "Rock Crab --lvl 13": [
+            "Crabclaw Isle",
+            "Rellekka",
+            "North of Rellekka",
+            "Waterbirth Island Dungeon"
+        ]
     }
 }

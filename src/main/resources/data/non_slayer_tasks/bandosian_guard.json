@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Bandosian guard --lvl 125": []
+        "Bandosian guard --lvl 125": [
+            "God Wars Dungeon"
+        ]
     }
 }

@@ -4,14 +4,38 @@
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": [],
+    "attackStyles": [
+        "Ranged"
+    ],
     "variants": [
-        "Rock Golem --lvl 159"
+        "Rock Golem --lvl 13",
+        "Rock Golem --lvl 27",
+        "Rock Golem --lvl 46",
+        "Rock Golem --lvl 76",
+        "Rock Golem --lvl 115",
+        "Rock Golem --lvl 154"
     ],
     "masters": [
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Rock Golem --lvl 159": []
+        "Rock Golem --lvl 13": [
+            "Enchanted Valley"
+        ],
+        "Rock Golem --lvl 27": [
+            "Enchanted Valley"
+        ],
+        "Rock Golem --lvl 46": [
+            "Enchanted Valley"
+        ],
+        "Rock Golem --lvl 76": [
+            "Enchanted Valley"
+        ],
+        "Rock Golem --lvl 115": [
+            "Enchanted Valley"
+        ],
+        "Rock Golem --lvl 154": [
+            "Enchanted Valley"
+        ]
     }
 }

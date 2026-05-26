@@ -2,9 +2,13 @@
     "name": "Tribeswoman",
     "levelRequired": 0,
     "itemsRequired": [],
-    "itemsSuggested": [],
+    "itemsSuggested": [
+        "Super antipoison(4)"
+    ],
     "attributes": [],
-    "attackStyles": [],
+    "attackStyles": [
+        "Melee"
+    ],
     "variants": [
         "Tribeswoman --lvl 32"
     ],
@@ -13,7 +17,8 @@
     ],
     "variantLocations": {
         "Tribeswoman --lvl 32": [
-            "Shilo Village"
+            "Shilo Village",
+            "Brimhaven"
         ]
     }
 }

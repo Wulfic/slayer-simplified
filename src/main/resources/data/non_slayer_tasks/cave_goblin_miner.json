@@ -12,6 +12,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Cave goblin miner --lvl 11": []
+        "Cave goblin miner --lvl 11": [
+            "Dorgesh-Kaan",
+            "Lumbridge Caves"
+        ]
     }
 }

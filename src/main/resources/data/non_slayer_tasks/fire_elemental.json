@@ -16,6 +16,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Fire elemental --lvl 35": []
+        "Fire elemental --lvl 35": [
+            "Elemental Workshop"
+        ]
     }
 }

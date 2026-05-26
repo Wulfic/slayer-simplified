@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Air elemental --lvl 34": []
+        "Air elemental --lvl 34": [
+            "Elemental Workshop"
+        ]
     }
 }

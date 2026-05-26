@@ -1,21 +1,22 @@
 {
-    "name": "Black chinchompa (Hunter)",
+    "name": "Necromancer",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
     "attackStyles": [
-        "Crush"
+        "Crush",
+        "Magic"
     ],
     "variants": [
-        "Black chinchompa (Hunter) --lvl 2"
+        "Necromancer --lvl 26"
     ],
     "masters": [
-        "Animals"
+        "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Black chinchompa (Hunter) --lvl 2": [
-            "Lava Maze"
+        "Necromancer --lvl 26": [
+            "Necromancer Tower"
         ]
     }
 }

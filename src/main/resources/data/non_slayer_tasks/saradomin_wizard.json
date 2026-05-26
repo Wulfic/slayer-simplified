@@ -17,6 +17,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Saradomin wizard --lvl 108": []
+        "Saradomin wizard --lvl 108": [
+            "Wilderness"
+        ]
     }
 }

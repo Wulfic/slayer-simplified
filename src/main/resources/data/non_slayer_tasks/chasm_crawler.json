@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Chasm Crawler --lvl 68": []
+        "Chasm Crawler --lvl 68": [
+            "Iorwerth Dungeon"
+        ]
     }
 }

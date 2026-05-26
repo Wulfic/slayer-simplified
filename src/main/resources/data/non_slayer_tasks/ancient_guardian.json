@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ancient Guardian --lvl 153": []
+        "Ancient Guardian --lvl 153": [
+            "Ancient Vault"
+        ]
     }
 }

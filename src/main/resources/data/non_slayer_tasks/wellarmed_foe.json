@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Well-armed Foe --lvl 820": []
+        "Well-armed Foe --lvl 820": [
+            "Outer Fortis"
+        ]
     }
 }

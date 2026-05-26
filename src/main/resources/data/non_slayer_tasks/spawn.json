@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Spawn --lvl 100": []
+        "Spawn --lvl 100": [
+            "Slepe Church"
+        ]
     }
 }

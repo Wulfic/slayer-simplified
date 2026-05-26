@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Gangster --lvl 50": []
+        "Gangster --lvl 50": [
+            "Brimhaven"
+        ]
     }
 }

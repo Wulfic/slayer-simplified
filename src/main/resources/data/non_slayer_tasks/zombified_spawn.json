@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Zombified Spawn --lvl 64": []
+        "Zombified Spawn --lvl 64": [
+            "Slepe Church"
+        ]
     }
 }

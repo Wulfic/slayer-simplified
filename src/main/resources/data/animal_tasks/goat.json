@@ -1,17 +1,21 @@
 {
-    "name": "Monstrous Basilisk",
+    "name": "Goat",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": [],
+    "attackStyles": [
+        "Crush"
+    ],
     "variants": [
-        "Monstrous Basilisk --lvl 135"
+        "Goat --lvl 23"
     ],
     "masters": [
-        "Non-Slayer Enemies"
+        "Animals"
     ],
     "variantLocations": {
-        "Monstrous Basilisk --lvl 135": []
+        "Goat --lvl 23": [
+            "Kharidian Desert"
+        ]
     }
 }

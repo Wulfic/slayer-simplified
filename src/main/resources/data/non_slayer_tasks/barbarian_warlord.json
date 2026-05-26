@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Barbarian Warlord --lvl 91": []
+        "Barbarian Warlord --lvl 91": [
+            "Ancient Cavern"
+        ]
     }
 }

@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Zamorak wizard --lvl 65": []
+        "Zamorak wizard --lvl 65": [
+            "Chaos Temple"
+        ]
     }
 }

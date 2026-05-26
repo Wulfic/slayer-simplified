@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Undead Lumberjack --lvl 70": []
+        "Undead Lumberjack --lvl 70": [
+            "Mos Le'Harmless"
+        ]
     }
 }

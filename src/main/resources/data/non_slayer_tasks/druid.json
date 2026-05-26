@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Druid --lvl 33": []
+        "Druid --lvl 33": [
+            "Taverley"
+        ]
     }
 }

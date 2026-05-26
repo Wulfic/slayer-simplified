@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Chaos Golem --lvl 70": []
+        "Chaos Golem --lvl 70": [
+            "Enchanted Valley"
+        ]
     }
 }

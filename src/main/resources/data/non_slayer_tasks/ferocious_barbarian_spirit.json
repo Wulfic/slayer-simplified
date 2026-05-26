@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Ferocious barbarian spirit --lvl 166": []
+        "Ferocious barbarian spirit --lvl 166": [
+            "Ancient Cavern"
+        ]
     }
 }

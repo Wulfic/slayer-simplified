@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Scarred imp --lvl 19": []
+        "Scarred imp --lvl 19": [
+            "Charred Dungeon"
+        ]
     }
 }

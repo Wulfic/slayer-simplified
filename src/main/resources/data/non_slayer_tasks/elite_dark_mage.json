@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Elite Dark Mage --lvl 96": []
+        "Elite Dark Mage --lvl 96": [
+            "Iorwerth Camp"
+        ]
     }
 }

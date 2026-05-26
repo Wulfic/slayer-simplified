@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Tough Guy --lvl 75": []
+        "Tough Guy --lvl 75": [
+            "East Ardougne"
+        ]
     }
 }

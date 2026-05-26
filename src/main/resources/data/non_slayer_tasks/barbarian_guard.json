@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Barbarian guard --lvl 8": []
+        "Barbarian guard --lvl 8": [
+            "East of Barbarian Village"
+        ]
     }
 }

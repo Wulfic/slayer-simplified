@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Outlaw --lvl 32": []
+        "Outlaw --lvl 32": [
+            "Hosidius"
+        ]
     }
 }

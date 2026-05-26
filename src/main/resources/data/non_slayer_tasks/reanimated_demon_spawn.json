@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Reanimated demon spawn --lvl 87": []
+        "Reanimated demon spawn --lvl 87": [
+            "Dark Altar"
+        ]
     }
 }

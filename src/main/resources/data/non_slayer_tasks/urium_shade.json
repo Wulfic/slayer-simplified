@@ -1,21 +1,21 @@
 {
-    "name": "Imp (God Wars)",
+    "name": "Urium Shade",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
-    "attributes": [
-        "Demon"
-    ],
+    "attributes": [],
     "attackStyles": [
         "Melee"
     ],
     "variants": [
-        "Imp (God Wars) --lvl 7"
+        "Urium Shade --lvl 140"
     ],
     "masters": [
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Imp (God Wars) --lvl 7": []
+        "Urium Shade --lvl 140": [
+            "Shade Catacombs"
+        ]
     }
 }

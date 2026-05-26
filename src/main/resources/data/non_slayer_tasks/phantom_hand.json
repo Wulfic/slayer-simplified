@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Phantom Hand --lvl 47": []
+        "Phantom Hand --lvl 47": [
+            "Slayer Tower"
+        ]
     }
 }

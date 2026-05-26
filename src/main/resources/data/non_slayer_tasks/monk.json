@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Monk --lvl 5": []
+        "Monk --lvl 5": [
+            "Edgeville Monastery"
+        ]
     }
 }

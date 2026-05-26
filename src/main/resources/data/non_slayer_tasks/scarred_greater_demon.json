@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Scarred greater demon --lvl 113": []
+        "Scarred greater demon --lvl 113": [
+            "Charred Dungeon"
+        ]
     }
 }

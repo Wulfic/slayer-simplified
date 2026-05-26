@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Greater Skeleton Hellhound --lvl 231": []
+        "Greater Skeleton Hellhound --lvl 231": [
+            "Catacombs of Kourend"
+        ]
     }
 }

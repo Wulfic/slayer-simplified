@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Giant goblin --lvl 397": []
+        "Giant goblin --lvl 397": [
+            "Goblin Cave"
+        ]
     }
 }

@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "H.A.M. Guard --lvl 22": []
+        "H.A.M. Guard --lvl 22": [
+            "H.A.M. Hideout"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Armoured zombie --lvl 109": []
+        "Armoured zombie --lvl 109": [
+            "Tarn's Lair"
+        ]
     }
 }

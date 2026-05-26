@@ -1,17 +1,22 @@
 {
-    "name": "Skeleton Hellhound",
+    "name": "Highwayman",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
-    "attackStyles": [],
+    "attackStyles": [
+        "Melee"
+    ],
     "variants": [
-        "Skeleton Hellhound --lvl 194"
+        "Highwayman --lvl 5"
     ],
     "masters": [
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Skeleton Hellhound --lvl 194": []
+        "Highwayman --lvl 5": [
+            "South of Falador",
+            "Draynor Manor"
+        ]
     }
 }

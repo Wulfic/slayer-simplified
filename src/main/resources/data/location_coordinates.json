@@ -14,6 +14,11 @@
         "y": 3218,
         "plane": 0
     },
+    "Al-Kharid": {
+        "x": 3293,
+        "y": 3172,
+        "plane": 0
+    },
     "Al-Kharid Mine": {
         "x": 3300,
         "y": 3284,
@@ -301,6 +306,11 @@
         "y": 9410,
         "plane": 1
     },
+    "Dark Altar": {
+        "x": 1716,
+        "y": 3883,
+        "plane": 0
+    },
     "Dark Warriors' Fortress": {
         "x": 3030,
         "y": 3631,
@@ -419,6 +429,16 @@
         "y": 3468,
         "plane": 0
     },
+    "Edgeville Monastery": {
+        "x": 3050,
+        "y": 3494,
+        "plane": 0
+    },
+    "Elemental Workshop": {
+        "x": 2712,
+        "y": 9897,
+        "plane": 0
+    },
     "Enchanted Valley": {
         "x": 2991,
         "y": 4538,
@@ -435,6 +455,11 @@
     "Evil Chicken's Lair": {
         "x": 3232,
         "y": 3148,
+        "plane": 0
+    },
+    "Falador": {
+        "x": 2966,
+        "y": 3348,
         "plane": 0
     },
     "Falador Park": {
@@ -553,6 +578,11 @@
         "aliases": [
             "Handelmort Mansion"
         ]
+    },
+    "H.A.M. Hideout": {
+        "x": 3166,
+        "y": 9615,
+        "plane": 0
     },
     "Haunted Mine": {
         "x": 3440,
@@ -1054,6 +1084,11 @@
         "y": 3094,
         "plane": 0
     },
+    "Necromancer Tower": {
+        "x": 3664,
+        "y": 3569,
+        "plane": 0
+    },
     "Neitiznot": {
         "x": 2336,
         "y": 3804,
@@ -1384,6 +1419,11 @@
             "Lair of Tarn Razorlor"
         ]
     },
+    "Taverley": {
+        "x": 2892,
+        "y": 3427,
+        "plane": 0
+    },
     "Taverley Dungeon": {
         "x": 2884,
         "y": 3397,
@@ -1430,6 +1470,11 @@
     "The Proudspire": {
         "x": 1570,
         "y": 3235,
+        "plane": 0
+    },
+    "The Scar": {
+        "x": 3108,
+        "y": 3557,
         "plane": 0
     },
     "Theatre of Blood": {

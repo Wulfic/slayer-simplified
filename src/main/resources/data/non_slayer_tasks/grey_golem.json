@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Grey golem --lvl 75": []
+        "Grey golem --lvl 75": [
+            "Enchanted Valley"
+        ]
     }
 }

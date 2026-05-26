@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Armadylean guard --lvl 97": []
+        "Armadylean guard --lvl 97": [
+            "God Wars Dungeon"
+        ]
     }
 }

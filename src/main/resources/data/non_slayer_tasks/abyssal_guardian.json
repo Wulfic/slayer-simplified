@@ -15,6 +15,9 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Abyssal guardian --lvl 59": []
+        "Abyssal guardian --lvl 59": [
+            "Abyssal Area",
+            "Abyssal Nexus"
+        ]
     }
 }

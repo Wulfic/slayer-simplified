@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Mercenary axeman --lvl 131": []
+        "Mercenary axeman --lvl 131": [
+            "Kharazi Jungle"
+        ]
     }
 }

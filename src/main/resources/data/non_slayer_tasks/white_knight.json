@@ -1,0 +1,33 @@
+{
+    "name": "White Knight",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [],
+    "attributes": [],
+    "attackStyles": [
+        "Slash"
+    ],
+    "variants": [
+        "White Knight --lvl 36",
+        "White Knight --lvl 38",
+        "White Knight --lvl 39",
+        "White Knight --lvl 42"
+    ],
+    "masters": [
+        "Non-Slayer Enemies"
+    ],
+    "variantLocations": {
+        "White Knight --lvl 36": [
+            "Falador"
+        ],
+        "White Knight --lvl 38": [
+            "Falador"
+        ],
+        "White Knight --lvl 39": [
+            "Falador"
+        ],
+        "White Knight --lvl 42": [
+            "Falador"
+        ]
+    }
+}

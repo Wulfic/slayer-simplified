@@ -14,6 +14,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Huge spider --lvl 81": []
+        "Huge spider --lvl 81": [
+            "Stronghold of Security"
+        ]
     }
 }

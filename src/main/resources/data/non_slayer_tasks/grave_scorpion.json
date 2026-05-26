@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Grave scorpion --lvl 12": []
+        "Grave scorpion --lvl 12": [
+            "South of Slayer Tower"
+        ]
     }
 }

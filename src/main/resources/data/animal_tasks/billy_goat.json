@@ -1,5 +1,5 @@
 {
-    "name": "Carnivorous chinchompa",
+    "name": "Billy Goat",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
@@ -8,12 +8,14 @@
         "Crush"
     ],
     "variants": [
-        "Carnivorous chinchompa --lvl 2"
+        "Billy Goat --lvl 33"
     ],
     "masters": [
         "Animals"
     ],
     "variantLocations": {
-        "Carnivorous chinchompa --lvl 2": []
+        "Billy Goat --lvl 33": [
+            "Kharidian Desert"
+        ]
     }
 }

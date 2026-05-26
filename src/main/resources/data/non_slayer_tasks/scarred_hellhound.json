@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Scarred hellhound --lvl 101": []
+        "Scarred hellhound --lvl 101": [
+            "Charred Dungeon"
+        ]
     }
 }

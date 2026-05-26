@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Shadow Keeper --lvl 131": []
+        "Shadow Keeper --lvl 131": [
+            "Shadow Dungeon"
+        ]
     }
 }

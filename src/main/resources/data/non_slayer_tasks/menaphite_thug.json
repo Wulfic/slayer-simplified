@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Menaphite Thug --lvl 55": []
+        "Menaphite Thug --lvl 55": [
+            "Kharidian Desert"
+        ]
     }
 }

@@ -1,19 +1,21 @@
 {
-    "name": "White Knight (Initiate (m))",
+    "name": "Giant Rock Crab",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [],
     "attributes": [],
     "attackStyles": [
-        "Slash"
+        "Crush"
     ],
     "variants": [
-        "White Knight (Initiate (m)) --lvl 42"
+        "Giant Rock Crab --lvl 137"
     ],
     "masters": [
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "White Knight (Initiate (m)) --lvl 42": []
+        "Giant Rock Crab --lvl 137": [
+            "Waterbirth Island Dungeon"
+        ]
     }
 }

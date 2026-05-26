@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "H.A.M. Mage --lvl 30": []
+        "H.A.M. Mage --lvl 30": [
+            "H.A.M. Hideout"
+        ]
     }
 }

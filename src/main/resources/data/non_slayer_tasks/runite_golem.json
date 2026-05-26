@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Runite Golem --lvl 178": []
+        "Runite Golem --lvl 178": [
+            "Wilderness Hobgoblin Mine"
+        ]
     }
 }

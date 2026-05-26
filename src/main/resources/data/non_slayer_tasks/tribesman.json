@@ -1,5 +1,5 @@
 {
-    "name": "Snakeling (Melee)",
+    "name": "Tribesman",
     "levelRequired": 0,
     "itemsRequired": [],
     "itemsSuggested": [
@@ -10,12 +10,16 @@
         "Melee"
     ],
     "variants": [
-        "Snakeling (Melee) --lvl 90"
+        "Tribesman --lvl 32"
     ],
     "masters": [
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Snakeling (Melee) --lvl 90": []
+        "Tribesman --lvl 32": [
+            "Tai Bwo Wannai",
+            "Shilo Village",
+            "Brimhaven"
+        ]
     }
 }

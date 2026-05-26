@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Cave goblin guard --lvl 26": []
+        "Cave goblin guard --lvl 26": [
+            "Dorgesh-Kaan"
+        ]
     }
 }

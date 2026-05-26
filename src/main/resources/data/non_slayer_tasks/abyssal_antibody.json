@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Abyssal antibody --lvl 30": []
+        "Abyssal antibody --lvl 30": [
+            "The Scar"
+        ]
     }
 }

@@ -12,6 +12,8 @@
         "Non-Slayer Enemies"
     ],
     "variantLocations": {
-        "Skeleton (Wrath Altar) --lvl 58": []
+        "Skeleton (Wrath Altar) --lvl 58": [
+            "Ape Atoll Dungeon"
+        ]
     }
 }
