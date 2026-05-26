@@ -38,6 +38,7 @@ import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.HitsplatApplied;
 import net.runelite.api.events.InteractingChanged;
 import net.runelite.api.events.MenuOptionClicked;
+import net.runelite.api.events.NpcChanged;
 import net.runelite.api.events.NpcDespawned;
 import net.runelite.api.events.NpcSpawned;
 import net.runelite.api.events.GameTick;
@@ -461,6 +462,12 @@ public class SlayerSimplifiedPlugin extends Plugin
             try { current = Integer.parseInt(stored); } catch (NumberFormatException ignored) {}
         }
         configManager.setConfiguration(SlayerSimplifiedConfig.CONFIG_GROUP, key, current + 1);
+    }
+
+    @Subscribe
+    public void onNpcChanged(NpcChanged event)
+    {
+        targetOverlay.onNpcChanged(event.getNpc());
     }
 
     @Subscribe

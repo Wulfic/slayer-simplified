@@ -102,6 +102,23 @@ public class SlayerTargetOverlay extends Overlay
     }
 
     /**
+     * Called by the plugin's NpcChanged subscriber. Handles NPCs that change
+     * composition in-place (e.g. a werewolf transforming from human to wolf
+     * form). Adds the NPC if its new name matches, removes it if not.
+     */
+    public void onNpcChanged(NPC npc)
+    {
+        if (npc.getName() != null && targetNames.contains(npc.getName().toLowerCase()))
+        {
+            trackedNpcs.add(npc);
+        }
+        else
+        {
+            trackedNpcs.remove(npc);
+        }
+    }
+
+    /**
      * Called by the plugin's NpcDespawned subscriber. Removes the NPC from
      * the tracked set.
      */

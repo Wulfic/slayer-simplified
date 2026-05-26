@@ -10,7 +10,6 @@
 package com.slayersimplified.presentation;
 
 import com.slayersimplified.SlayerSimplifiedConfig;
-import com.slayersimplified.services.NavigationService;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.coords.WorldPoint;
@@ -30,15 +29,13 @@ public class CoordinatesOverlay extends Overlay
 {
     private final Client client;
     private final SlayerSimplifiedConfig config;
-    private final NavigationService navigationService;
     private final PanelComponent panelComponent = new PanelComponent();
 
     @Inject
-    public CoordinatesOverlay(Client client, SlayerSimplifiedConfig config, NavigationService navigationService)
+    public CoordinatesOverlay(Client client, SlayerSimplifiedConfig config)
     {
         this.client = client;
         this.config = config;
-        this.navigationService = navigationService;
         setPosition(OverlayPosition.TOP_LEFT);
         setLayer(OverlayLayer.ABOVE_SCENE);
         setPriority(PRIORITY_LOW);
@@ -75,34 +72,6 @@ public class CoordinatesOverlay extends Overlay
                 .left("Plane:")
                 .right(String.valueOf(wp.getPlane()))
                 .build());
-
-        WorldPoint navTarget = navigationService.getLastTarget();
-        if (navTarget != null)
-        {
-            panelComponent.getChildren().add(LineComponent.builder()
-                    .left("Nav Target:")
-                    .right("")
-                    .build());
-            panelComponent.getChildren().add(LineComponent.builder()
-                    .left("  X:")
-                    .right(String.valueOf(navTarget.getX()))
-                    .build());
-            panelComponent.getChildren().add(LineComponent.builder()
-                    .left("  Y:")
-                    .right(String.valueOf(navTarget.getY()))
-                    .build());
-            panelComponent.getChildren().add(LineComponent.builder()
-                    .left("  Plane:")
-                    .right(String.valueOf(navTarget.getPlane()))
-                    .build());
-        }
-        else
-        {
-            panelComponent.getChildren().add(LineComponent.builder()
-                    .left("Nav Target:")
-                    .right("none")
-                    .build());
-        }
 
         return panelComponent.render(graphics);
     }
