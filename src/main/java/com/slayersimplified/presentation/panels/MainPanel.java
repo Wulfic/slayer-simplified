@@ -25,6 +25,8 @@ import okhttp3.OkHttpClient;
 import javax.inject.Inject;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -58,12 +60,116 @@ public class MainPanel extends PluginPanel
 
     private final Map<Panel, JPanel> panels = new HashMap<>();
     private final JPanel currentPanelContainer = new JPanel(new CardLayout());
-    private final JButton quickNavButton = new JButton("Quick Navigate");
 
     /** Pinned row showing the active task name with a quick-nav button. */
-    private final JPanel currentTaskPanel = new JPanel(new BorderLayout(6, 0));
-    private final JLabel currentTaskLabel = new JLabel();
-    private final JButton currentTaskNavButton = new JButton("Nav");
+    private final JPanel currentTaskPanel = new JPanel(new BorderLayout(4, 0));
+    private final JButton currentTaskButton = new JButton()
+    {
+        @Override
+        protected void paintComponent(Graphics g)
+        {
+            Graphics2D g2 = (Graphics2D) g.create();
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            Color bg = getModel().isArmed()
+                    ? new Color(28, 28, 28)
+                    : (getModel().isRollover() ? new Color(50, 50, 50) : new Color(38, 38, 38));
+            g2.setColor(bg);
+            g2.fillRoundRect(0, 0, getWidth(), getHeight(), 12, 12);
+            g2.dispose();
+            super.paintComponent(g);
+        }
+
+        @Override
+        protected void paintBorder(Graphics g)
+        {
+            Graphics2D g2 = (Graphics2D) g.create();
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setColor(new Color(60, 60, 60));
+            g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 12, 12);
+            g2.dispose();
+        }
+    };
+    private final JButton currentTaskNavButton = new JButton("Nav")
+    {
+        boolean hovered;
+        {
+            addMouseListener(new MouseAdapter()
+            {
+                @Override public void mouseEntered(MouseEvent e) { hovered = true;  repaint(); }
+                @Override public void mouseExited(MouseEvent e)  { hovered = false; repaint(); }
+            });
+        }
+
+        @Override
+        protected void paintComponent(Graphics g)
+        {
+            Graphics2D g2 = (Graphics2D) g.create();
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+            Color base = hovered ? new Color(70, 70, 70) : getBackground();
+            g2.setColor(getModel().isArmed() ? base.darker() : base);
+            g2.fillRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
+            g2.setFont(getFont());
+            g2.setColor(getForeground());
+            FontMetrics fm = g2.getFontMetrics();
+            String txt = getText();
+            int tx = (getWidth() - fm.stringWidth(txt)) / 2;
+            int ty = (getHeight() - fm.getHeight()) / 2 + fm.getAscent();
+            g2.drawString(txt, tx, ty);
+            g2.dispose();
+        }
+
+        @Override
+        protected void paintBorder(Graphics g)
+        {
+            Graphics2D g2 = (Graphics2D) g.create();
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setColor(hovered ? new Color(115, 115, 115) : new Color(95, 95, 95));
+            g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 10, 10);
+            g2.dispose();
+        }
+    };
+
+    private final JButton cancelNavButton = new JButton("\u2715")
+    {
+        boolean hovered;
+        {
+            addMouseListener(new MouseAdapter()
+            {
+                @Override public void mouseEntered(MouseEvent e) { hovered = true;  repaint(); }
+                @Override public void mouseExited(MouseEvent e)  { hovered = false; repaint(); }
+            });
+        }
+
+        @Override
+        protected void paintComponent(Graphics g)
+        {
+            Graphics2D g2 = (Graphics2D) g.create();
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+            Color base = hovered ? new Color(160, 55, 55) : getBackground();
+            g2.setColor(getModel().isArmed() ? base.darker() : base);
+            g2.fillRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
+            g2.setFont(getFont());
+            g2.setColor(getForeground());
+            FontMetrics fm = g2.getFontMetrics();
+            String txt = getText();
+            int tx = (getWidth() - fm.stringWidth(txt)) / 2;
+            int ty = (getHeight() - fm.getHeight()) / 2 + fm.getAscent();
+            g2.drawString(txt, tx, ty);
+            g2.dispose();
+        }
+
+        @Override
+        protected void paintBorder(Graphics g)
+        {
+            Graphics2D g2 = (Graphics2D) g.create();
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setColor(hovered ? new Color(215, 105, 105) : new Color(190, 80, 80));
+            g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 10, 10);
+            g2.dispose();
+        }
+    };
 
     private final ConfigManager configManager;
 
@@ -92,7 +198,7 @@ public class MainPanel extends PluginPanel
         this.optimizerService = optimizerService;
         this.configManager = configManager;
 
-        this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onTaskSelected);
+        this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onLocationSearchChanged, this::onTaskSelected);
         this.taskSelectedPanel = new TaskSelectedPanel(
                 this::onTaskClosed, navigationService, locationCoordinateService, favoriteService,
                 requirementService, okHttpClient, notesService, this::refreshTaskReminder, config::debugCoordinates);
@@ -112,106 +218,150 @@ public class MainPanel extends PluginPanel
         }
         taskSearchPanel.setAllTasks(orderedTasks);
 
-        // Quick Navigate button styling — match RuneLite panel aesthetic
-        quickNavButton.setFont(FontManager.getRunescapeSmallFont());
-        quickNavButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        quickNavButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        quickNavButton.setFocusPainted(false);
-        quickNavButton.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(5, 0, 5, 0)
-        ));
-        quickNavButton.setToolTipText("Navigate based on current slayer task");
-        quickNavButton.addActionListener(e -> quickNavigate());
+        // Gear icon button — opens inline settings (rounded)
+        JButton gearButton = new JButton("\u2699")
+        {
+            boolean hovered;
+            float   angle = 0f;
+            Timer   spinTimer;
+            {
+                spinTimer = new Timer(16, e -> { angle = (angle + 6f) % 360f; repaint(); });
+                addMouseListener(new MouseAdapter()
+                {
+                    @Override public void mouseEntered(MouseEvent e) { hovered = true;  spinTimer.start(); repaint(); }
+                    @Override public void mouseExited(MouseEvent e)  { hovered = false; spinTimer.stop(); angle = 0f; repaint(); }
+                });
+            }
 
-        // Gear icon button — opens inline settings
-        JButton gearButton = new JButton("\u2699");
+            @Override
+            protected void paintComponent(Graphics g)
+            {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+                Color base = hovered ? new Color(50, 50, 50) : getBackground();
+                g2.setColor(getModel().isArmed() ? base.darker() : base);
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
+                g2.setFont(getFont());
+                g2.setColor(getForeground());
+                FontMetrics fm = g2.getFontMetrics();
+                String txt = getText();
+                int cx = getWidth() / 2;
+                int cy = getHeight() / 2;
+                g2.rotate(Math.toRadians(angle), cx, cy);
+                int tx = (getWidth() - fm.stringWidth(txt)) / 2;
+                int ty = (getHeight() - fm.getHeight()) / 2 + fm.getAscent();
+                g2.drawString(txt, tx, ty);
+                g2.dispose();
+            }
+
+            @Override
+            protected void paintBorder(Graphics g)
+            {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(hovered ? new Color(100, 100, 100) : new Color(75, 75, 75));
+                g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 10, 10);
+                g2.dispose();
+            }
+        };
         gearButton.setFont(gearButton.getFont().deriveFont(Font.BOLD, 14f));
         gearButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         gearButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
         gearButton.setFocusPainted(false);
-        gearButton.setPreferredSize(new Dimension(28, 0));
-        gearButton.setMinimumSize(new Dimension(28, 0));
-        gearButton.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(5, 2, 5, 2)
-        ));
+        gearButton.setContentAreaFilled(false);
+        gearButton.setOpaque(false);
+        gearButton.setPreferredSize(new Dimension(24, 24));
+        gearButton.setMinimumSize(new Dimension(24, 24));
+        gearButton.setMargin(new Insets(0, 0, 0, 0));
+        gearButton.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        gearButton.setHorizontalAlignment(SwingConstants.CENTER);
+        gearButton.setVerticalAlignment(SwingConstants.CENTER);
         gearButton.setToolTipText("Plugin settings");
 
-        // Cancel (X) button — red square to the left of gear
-        JButton cancelXButton = new JButton("\u2715");
-        cancelXButton.setFont(cancelXButton.getFont().deriveFont(Font.BOLD, 11f));
-        cancelXButton.setBackground(new Color(160, 50, 50));
-        cancelXButton.setForeground(Color.WHITE);
-        cancelXButton.setFocusPainted(false);
-        cancelXButton.setPreferredSize(new Dimension(28, 0));
-        cancelXButton.setMinimumSize(new Dimension(28, 0));
-        cancelXButton.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(5, 2, 5, 2)
-        ));
-        cancelXButton.setToolTipText("Clear the current navigation waypoint");
-        cancelXButton.addActionListener(e -> navigationService.clearNavigation());
+        // Cancel nav button — rounded red X, lives in the task banner row
+        cancelNavButton.setFont(cancelNavButton.getFont().deriveFont(Font.BOLD, 11f));
+        cancelNavButton.setBackground(new Color(130, 40, 40));
+        cancelNavButton.setForeground(Color.WHITE);
+        cancelNavButton.setFocusPainted(false);
+        cancelNavButton.setContentAreaFilled(false);
+        cancelNavButton.setOpaque(false);
+        cancelNavButton.setPreferredSize(new Dimension(22, 22));
+        cancelNavButton.setMinimumSize(new Dimension(22, 22));
+        cancelNavButton.setMaximumSize(new Dimension(22, 22));
+        cancelNavButton.setMargin(new Insets(0, 0, 0, 0));
+        cancelNavButton.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cancelNavButton.setHorizontalAlignment(SwingConstants.CENTER);
+        cancelNavButton.setVerticalAlignment(SwingConstants.CENTER);
+        cancelNavButton.setToolTipText("Clear the current navigation waypoint");
+        cancelNavButton.addActionListener(e -> navigationService.clearNavigation());
 
-        // Right-side icon buttons: [X][Gear]
-        JPanel iconButtons = new JPanel(new GridLayout(1, 2, 0, 0));
-        iconButtons.setBackground(ColorScheme.DARK_GRAY_COLOR);
-        iconButtons.add(cancelXButton);
-        iconButtons.add(gearButton);
-
-        // Single header row: [History | Quick Navigate | X | Gear]
-        JPanel topButtonPanel = new JPanel(new BorderLayout(2, 0));
+        // Single header row: [History (full width) | Gear]
+        JPanel topButtonPanel = new JPanel(new BorderLayout(0, 0));
         topButtonPanel.setBackground(ColorScheme.DARK_GRAY_COLOR);
 
-        // Current-task banner: shows the active monster name with a Nav button
-        currentTaskLabel.setFont(FontManager.getRunescapeSmallFont());
-        currentTaskLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        currentTaskLabel.setText(config.preferredMaster().getDisplayName());
-        currentTaskLabel.setToolTipText("Click to view task details");
-        currentTaskLabel.setCursor(Cursor.getDefaultCursor());
-        currentTaskLabel.addMouseListener(new java.awt.event.MouseAdapter()
+        // Current-task banner: monster name as a full-width clickable button
+        currentTaskButton.setFont(FontManager.getRunescapeSmallFont());
+        currentTaskButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        currentTaskButton.setText(config.preferredMaster().getDisplayName());
+        currentTaskButton.setHorizontalAlignment(SwingConstants.CENTER);
+        currentTaskButton.setVerticalAlignment(SwingConstants.CENTER);
+        currentTaskButton.setToolTipText("Click to view task details");
+        currentTaskButton.setFocusPainted(false);
+        currentTaskButton.setContentAreaFilled(false);
+        currentTaskButton.setOpaque(false);
+        currentTaskButton.setMargin(new Insets(0, 0, 0, 0));
+        currentTaskButton.setBorder(BorderFactory.createEmptyBorder(1, 6, 1, 6));
+        currentTaskButton.addActionListener(e ->
         {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent e)
+            String name = taskTracker.getCurrentTaskName();
+            if (name == null || name.isEmpty())
             {
-                String name = taskTracker.getCurrentTaskName();
-                if (name == null || name.isEmpty())
+                return;
+            }
+            Task t = taskService.get(name);
+            if (t == null)
+            {
+                Task[] matches = taskService.searchPartialName(name);
+                if (matches.length > 0)
                 {
-                    return;
+                    t = matches[0];
                 }
-                Task t = taskService.get(name);
-                if (t == null)
-                {
-                    Task[] matches = taskService.searchPartialName(name);
-                    if (matches.length > 0)
-                    {
-                        t = matches[0];
-                    }
-                }
-                if (t != null)
-                {
-                    onTaskSelected(t);
-                }
+            }
+            if (t != null)
+            {
+                onTaskSelected(t);
             }
         });
 
         currentTaskNavButton.setFont(FontManager.getRunescapeSmallFont());
         currentTaskNavButton.setBackground(ColorScheme.DARKER_GRAY_HOVER_COLOR);
         currentTaskNavButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        currentTaskNavButton.setPreferredSize(new Dimension(50, 24));
-        currentTaskNavButton.setMinimumSize(new Dimension(50, 24));
-        currentTaskNavButton.setMaximumSize(new Dimension(50, 24));
+        currentTaskNavButton.setPreferredSize(new Dimension(50, 22));
+        currentTaskNavButton.setMinimumSize(new Dimension(50, 22));
+        currentTaskNavButton.setMaximumSize(new Dimension(50, 22));
         currentTaskNavButton.setFocusPainted(false);
-        currentTaskNavButton.setMargin(new Insets(0, 2, 0, 2));
+        currentTaskNavButton.setContentAreaFilled(false);
+        currentTaskNavButton.setOpaque(false);
+        currentTaskNavButton.setMargin(new Insets(0, 0, 0, 0));
+        currentTaskNavButton.setBorder(BorderFactory.createEmptyBorder(1, 2, 1, 2));
+        currentTaskNavButton.setHorizontalAlignment(SwingConstants.CENTER);
+        currentTaskNavButton.setVerticalAlignment(SwingConstants.CENTER);
         currentTaskNavButton.setToolTipText("Navigate to current slayer task");
         currentTaskNavButton.addActionListener(e -> quickNavigate());
 
         currentTaskPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        currentTaskPanel.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(1, 0, 0, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(4, 8, 4, 4)));
-        currentTaskPanel.add(currentTaskLabel, BorderLayout.CENTER);
-        currentTaskPanel.add(currentTaskNavButton, BorderLayout.EAST);
+        currentTaskPanel.setBorder(BorderFactory.createEmptyBorder(2, 4, 3, 4));
+
+        JPanel navButtonGroup = new JPanel();
+        navButtonGroup.setLayout(new BoxLayout(navButtonGroup, BoxLayout.X_AXIS));
+        navButtonGroup.setOpaque(false);
+        navButtonGroup.add(cancelNavButton);
+        navButtonGroup.add(Box.createHorizontalStrut(4));
+        navButtonGroup.add(currentTaskNavButton);
+
+        currentTaskPanel.add(currentTaskButton, BorderLayout.CENTER);
+        currentTaskPanel.add(navButtonGroup, BorderLayout.EAST);
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -220,21 +370,61 @@ public class MainPanel extends PluginPanel
         JPanel northWrapper = new JPanel(new GridBagLayout());
         northWrapper.setBackground(ColorScheme.DARK_GRAY_COLOR);
 
-        // History button — same styling as Quick Navigate, placed to its left
-        JButton historyButton = new JButton("History");
+        // History pill button fills the top row
+        JButton historyButton = new JButton("History")
+        {
+            @Override
+            protected void paintComponent(Graphics g)
+            {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                Color bg = getModel().isArmed()
+                        ? ColorScheme.DARKER_GRAY_COLOR.darker()
+                        : (getModel().isRollover() ? new Color(45, 45, 45) : ColorScheme.DARKER_GRAY_COLOR);
+                g2.setColor(bg);
+                int arc = 10;
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), arc, arc);
+                g2.dispose();
+                super.paintComponent(g);
+            }
+
+            @Override
+            protected void paintBorder(Graphics g)
+            {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(new Color(65, 65, 65));
+                int arc = 10;
+                g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, arc, arc);
+                g2.dispose();
+            }
+        };
         historyButton.setFont(FontManager.getRunescapeSmallFont());
         historyButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         historyButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
         historyButton.setFocusPainted(false);
-        historyButton.setPreferredSize(new Dimension(70, 0));
-        historyButton.setMinimumSize(new Dimension(70, 0));
-        historyButton.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(5, 0, 5, 0)));
+        historyButton.setContentAreaFilled(false);
+        historyButton.setOpaque(false);
         historyButton.setToolTipText("View your slayer task history");
-        topButtonPanel.add(historyButton, BorderLayout.WEST);
-        topButtonPanel.add(quickNavButton, BorderLayout.CENTER);
-        topButtonPanel.add(iconButtons, BorderLayout.EAST);
+
+        // Wrap history pill with padding so it floats inside the header bar
+        JPanel historyWrapper = new JPanel(new BorderLayout());
+        historyWrapper.setOpaque(false);
+        historyWrapper.setBorder(BorderFactory.createEmptyBorder(3, 6, 2, 6));
+        historyWrapper.add(historyButton);
+
+        // Gear wrapper: left divider line + padding
+        JPanel gearWrapper = new JPanel(new BorderLayout());
+        gearWrapper.setOpaque(false);
+        gearWrapper.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 1, 0, 0, new Color(20, 20, 20)),
+                BorderFactory.createEmptyBorder(3, 4, 2, 4)));
+        gearWrapper.add(gearButton);
+
+        // Full-width bottom separator on the panel itself
+        topButtonPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(20, 20, 20)));
+        topButtonPanel.add(historyWrapper, BorderLayout.CENTER);
+        topButtonPanel.add(gearWrapper, BorderLayout.EAST);
 
         gbc.gridy = 0;
         northWrapper.add(topButtonPanel, gbc);
@@ -242,6 +432,7 @@ public class MainPanel extends PluginPanel
         northWrapper.add(currentTaskPanel, gbc);
 
         setLayout(new BorderLayout(0, 0));
+        setBorder(BorderFactory.createLineBorder(new Color(50, 50, 50), 2));
 
         SettingsPanel settingsPanel = new SettingsPanel(config, () -> showPanel(Panel.TASK_SEARCH));
         gearButton.addActionListener(e ->
@@ -327,30 +518,30 @@ public class MainPanel extends PluginPanel
         boolean hasTask = taskName != null && !taskName.isEmpty();
         if (hasTask)
         {
-            currentTaskLabel.setText(taskName);
-            currentTaskLabel.setForeground(new Color(255, 152, 0));
-            currentTaskLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            currentTaskButton.setText(taskName);
+            currentTaskButton.setForeground(new Color(255, 152, 0));
+            currentTaskButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             currentTaskNavButton.setToolTipText("Navigate to current slayer task");
         }
         else
         {
             SlayerMaster effectiveMaster = getEffectiveMaster();
             String masterName = effectiveMaster.getDisplayName();
-            currentTaskLabel.setText(masterName);
+            currentTaskButton.setText(masterName);
             if (config.streakOptimizerEnabled())
             {
-                currentTaskLabel.setForeground(new Color(100, 180, 255));
-                currentTaskLabel.setToolTipText(optimizerService.getRecommendationReason());
+                currentTaskButton.setForeground(new Color(100, 180, 255));
+                currentTaskButton.setToolTipText(optimizerService.getRecommendationReason());
                 currentTaskNavButton.setToolTipText(
                         "Navigate to " + masterName + " (Streak Optimizer)");
             }
             else
             {
-                currentTaskLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-                currentTaskLabel.setToolTipText(null);
+                currentTaskButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+                currentTaskButton.setToolTipText(null);
                 currentTaskNavButton.setToolTipText("Navigate to " + masterName);
             }
-            currentTaskLabel.setCursor(Cursor.getDefaultCursor());
+            currentTaskButton.setCursor(Cursor.getDefaultCursor());
         }
         currentTaskPanel.setVisible(true);
         revalidate();
@@ -565,6 +756,32 @@ public class MainPanel extends PluginPanel
 
         com.slayersimplified.domain.TaskSearchResult[] results =
                 taskService.searchWithVariants(searchTerm.trim());
+        if (!config.debugCoordinates())
+        {
+            results = Arrays.stream(results)
+                    .filter(r -> !"A DEBUG TASK".equals(r.parentTask.name))
+                    .toArray(com.slayersimplified.domain.TaskSearchResult[]::new);
+        }
+        if (!config.showNonSlayerEnemies())
+        {
+            results = Arrays.stream(results)
+                    .filter(r -> !isNonSlayerTask(r.parentTask))
+                    .toArray(com.slayersimplified.domain.TaskSearchResult[]::new);
+        }
+
+        taskSearchPanel.showSearchResults(results);
+    }
+
+    private void onLocationSearchChanged(String searchTerm)
+    {
+        if (searchTerm.isBlank())
+        {
+            taskSearchPanel.showGroupedView();
+            return;
+        }
+
+        com.slayersimplified.domain.TaskSearchResult[] results =
+                taskService.searchByLocation(searchTerm.trim());
         if (!config.debugCoordinates())
         {
             results = Arrays.stream(results)

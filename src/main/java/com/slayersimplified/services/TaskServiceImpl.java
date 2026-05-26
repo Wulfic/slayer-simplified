@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.util.ImageUtil;
 
 import javax.inject.Inject;
+import java.util.LinkedHashSet;
 import javax.inject.Named;
 import javax.inject.Singleton;
 import java.awt.Color;
@@ -279,6 +280,58 @@ public class TaskServiceImpl implements TaskService
                 .comparing((TaskSearchResult r) -> r.parentTask.name)
                 .thenComparing(r -> r.displayName));
 
+        return results.toArray(new TaskSearchResult[0]);
+    }
+
+    @Override
+    public TaskSearchResult[] searchByLocation(String location)
+    {
+        if (location == null || location.isBlank())
+        {
+            return new TaskSearchResult[0];
+        }
+        String term = location.trim().toLowerCase();
+        List<TaskSearchResult> results = new ArrayList<>();
+
+        for (Task task : tasks.values())
+        {
+            if (task.variantLocations == null || task.variantLocations.isEmpty())
+            {
+                continue;
+            }
+
+            // Collect unique display names whose variant has the matching location.
+            Set<String> addedDisplayNames = new LinkedHashSet<>();
+            for (Map.Entry<String, String[]> entry : task.variantLocations.entrySet())
+            {
+                String[] locs = entry.getValue();
+                if (locs == null) continue;
+                boolean matches = false;
+                for (String loc : locs)
+                {
+                    if (loc.toLowerCase().contains(term))
+                    {
+                        matches = true;
+                        break;
+                    }
+                }
+                if (!matches) continue;
+
+                String variantKey = entry.getKey();
+                int flagIdx = variantKey.indexOf("--lvl ");
+                String displayName = flagIdx >= 0 ? variantKey.substring(0, flagIdx).trim() : variantKey;
+                addedDisplayNames.add(displayName);
+            }
+
+            for (String dn : addedDisplayNames)
+            {
+                results.add(new TaskSearchResult(task, dn));
+            }
+        }
+
+        results.sort(Comparator
+                .comparing((TaskSearchResult r) -> r.parentTask.name)
+                .thenComparing(r -> r.displayName));
         return results.toArray(new TaskSearchResult[0]);
     }
 

@@ -205,21 +205,58 @@ public class GroupedTaskList extends JPanel
 
     private JPanel buildTaskRow(Task task)
     {
-        JPanel row = new JPanel(new BorderLayout(4, 0));
-        row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
-        row.setPreferredSize(new Dimension(0, 42));
-        row.setAlignmentX(Component.LEFT_ALIGNMENT);
-        row.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                new EmptyBorder(0, 5, 0, 0)
-        ));
-
         JLabel nameLabel = new JLabel(task.name);
         nameLabel.setFont(FontManager.getRunescapeSmallFont()
                 .deriveFont(FontManager.getRunescapeSmallFont().getSize2D() + 4f));
         nameLabel.setForeground(ColorScheme.TEXT_COLOR);
         nameLabel.setOpaque(false);
+
+        JPanel row = new JPanel(new BorderLayout(4, 0))
+        {
+            boolean hovered;
+            {
+                setOpaque(false);
+                setCursor(new Cursor(Cursor.HAND_CURSOR));
+                addMouseListener(new MouseAdapter()
+                {
+                    @Override
+                    public void mouseEntered(MouseEvent e)
+                    {
+                        hovered = true;
+                        nameLabel.setForeground(Color.WHITE);
+                        repaint();
+                    }
+
+                    @Override
+                    public void mouseExited(MouseEvent e)
+                    {
+                        hovered = false;
+                        nameLabel.setForeground(ColorScheme.TEXT_COLOR);
+                        repaint();
+                    }
+
+                    @Override
+                    public void mouseClicked(MouseEvent e)
+                    {
+                        onTaskSelected.accept(task);
+                    }
+                });
+            }
+
+            @Override
+            protected void paintComponent(Graphics g)
+            {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(hovered ? ColorScheme.DARKER_GRAY_HOVER_COLOR : ColorScheme.DARKER_GRAY_COLOR);
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 8, 8);
+                g2.dispose();
+            }
+        };
+        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
+        row.setPreferredSize(new Dimension(0, 42));
+        row.setAlignmentX(Component.LEFT_ALIGNMENT);
+        row.setBorder(new EmptyBorder(0, 5, 0, 0));
 
         JLabel iconLabel = new JLabel(SlayerTaskRenderer.getMonsterIcon(task.name));
         iconLabel.setBorder(new EmptyBorder(0, 0, 0, 4));
@@ -227,31 +264,6 @@ public class GroupedTaskList extends JPanel
 
         row.add(nameLabel, BorderLayout.CENTER);
         row.add(iconLabel, BorderLayout.EAST);
-
-        row.addMouseListener(new MouseAdapter()
-        {
-            @Override
-            public void mouseClicked(MouseEvent e)
-            {
-                onTaskSelected.accept(task);
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e)
-            {
-                row.setBackground(ColorScheme.DARKER_GRAY_HOVER_COLOR);
-                nameLabel.setForeground(Color.WHITE);
-                row.setCursor(new Cursor(Cursor.HAND_CURSOR));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e)
-            {
-                row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-                nameLabel.setForeground(ColorScheme.TEXT_COLOR);
-                row.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-            }
-        });
 
         return row;
     }

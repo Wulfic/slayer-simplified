@@ -15,6 +15,7 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
+import java.awt.geom.RoundRectangle2D;
 import java.util.function.Consumer;
 /**
  * Search bar component with a text field and search icon.
@@ -42,6 +43,31 @@ public class SearchBar extends JPanel
         searchBar.getDocument().removeDocumentListener(onChangeListener);
     }
 
+    public String getText()
+    {
+        return searchBar.getText();
+    }
+
+    @Override
+    public void paint(Graphics g)
+    {
+        // Fill rounded background first so no parent bleed-through at corners
+        Graphics2D g2 = (Graphics2D) g.create();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setColor(getBackground());
+        g2.fill(new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), 10, 10));
+        // Clip all children to the rounded shape
+        g2.setClip(new RoundRectangle2D.Float(0, 0, getWidth(), getHeight(), 10, 10));
+        super.paint(g2);
+        g2.dispose();
+        // Draw rounded border stroke on top (outside the clip)
+        Graphics2D g3 = (Graphics2D) g.create();
+        g3.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g3.setColor(ColorScheme.MEDIUM_GRAY_COLOR);
+        g3.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 10, 10);
+        g3.dispose();
+    }
+
     private DocumentListener createDocumentListener(Consumer<String> handler)
     {
         return new DocumentListener()
@@ -57,19 +83,18 @@ public class SearchBar extends JPanel
 
     private void initialiseStyles()
     {
-        // Give the outer panel a visible frame so the search field stands out
-        // against the plugin panel background.
-        setBackground(ColorScheme.DARK_GRAY_COLOR);
-        setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(ColorScheme.MEDIUM_GRAY_COLOR, 1),
-                BorderFactory.createEmptyBorder(4, 4, 4, 4)));
+        setOpaque(false);
+        setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        // Insets only — visual border is painted by paint() override
+        setBorder(BorderFactory.createEmptyBorder(2, 4, 2, 2));
 
         searchBar.setIcon(IconTextField.Icon.SEARCH);
-        searchBar.setFont(FontManager.getRunescapeSmallFont());
-        searchBar.setPreferredSize(new Dimension(PluginPanel.PANEL_WIDTH, 30));
+        Font baseFont = FontManager.getRunescapeSmallFont();
+        searchBar.setFont(baseFont.deriveFont(baseFont.getSize2D() + 2f));
+        searchBar.setPreferredSize(new Dimension(PluginPanel.PANEL_WIDTH, 22));
         searchBar.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         searchBar.setHoverBackgroundColor(ColorScheme.DARKER_GRAY_HOVER_COLOR);
-        searchBar.setMinimumSize(new Dimension(0, 30));
+        searchBar.setMinimumSize(new Dimension(0, 22));
 
         // Recursively fix text color and clear button styling after the
         // component tree is fully constructed on the EDT.

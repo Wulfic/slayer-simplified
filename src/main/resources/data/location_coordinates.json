@@ -1279,9 +1279,7 @@
             "Slayer Tower - Floor -1",
             "Slayer Tower - Floor 1",
             "Slayer Tower - Floor 2",
-            "Slayer Tower - Floor 3",
-            "Slayer Tower -- Floor 1",
-            "Slayer Tower -- Floor 2"
+            "Slayer Tower - Floor 3"
         ]
     },
     "Slepe": {
@@ -1460,6 +1458,16 @@
     "The Great Conch": {
         "x": 3180,
         "y": 2447,
+        "plane": 0
+    },
+    "The Great Conch - Gryphon Boss": {
+        "x": 3175,
+        "y": 2478,
+        "plane": 0
+    },
+     "The Great Conch - Gryphon Dungeon": {
+        "x": 3122,
+        "y": 2490,
         "plane": 0
     },
     "The Hollows": {

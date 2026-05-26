@@ -46,6 +46,16 @@ public class TaskSearchResultRenderer extends JPanel implements ListCellRenderer
     }
 
     @Override
+    protected void paintComponent(Graphics g)
+    {
+        Graphics2D g2 = (Graphics2D) g.create();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setColor(getBackground());
+        g2.fillRoundRect(1, 1, getWidth() - 2, getHeight() - 2, 8, 8);
+        g2.dispose();
+    }
+
+    @Override
     public Component getListCellRendererComponent(
             JList<? extends TaskSearchResult> list,
             TaskSearchResult value,
@@ -53,12 +63,9 @@ public class TaskSearchResultRenderer extends JPanel implements ListCellRenderer
             boolean isSelected,
             boolean cellHasFocus)
     {
-        setOpaque(true);
+        setOpaque(false);
         setPreferredSize(new Dimension(PluginPanel.PANEL_WIDTH, ROW_HEIGHT));
-        setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                BorderFactory.createEmptyBorder(0, 5, 0, 0)
-        ));
+        setBorder(BorderFactory.createEmptyBorder(1, 5, 1, 0));
 
         final Color bg = (index == hoverIndex)
                 ? ColorScheme.DARKER_GRAY_HOVER_COLOR

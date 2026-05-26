@@ -30,4 +30,10 @@ public interface TaskService
      * carry the variant display name but point to the parent task.
      */
     TaskSearchResult[] searchWithVariants(String text);
+
+    /**
+     * Returns all tasks that have at least one variant located at a place
+     * whose name contains {@code location} (case-insensitive).
+     */
+    TaskSearchResult[] searchByLocation(String location);
 }

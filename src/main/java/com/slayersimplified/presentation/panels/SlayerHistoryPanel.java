@@ -133,7 +133,7 @@ public class SlayerHistoryPanel extends JPanel
     private JPanel buildHeaderPanel()
     {
         JButton backButton = new JButton("\u2190");
-        backButton.setFont(FontManager.getRunescapeSmallFont());
+        backButton.setFont(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 13));
         backButton.setBackground(ColorScheme.DARK_GRAY_COLOR);
         backButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
         backButton.setFocusPainted(false);
@@ -141,6 +141,8 @@ public class SlayerHistoryPanel extends JPanel
         backButton.setContentAreaFilled(false);
         backButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         backButton.setToolTipText("Back");
+        backButton.setMargin(new Insets(0, 0, 0, 0));
+        backButton.setPreferredSize(new Dimension(18, 18));
         backButton.addActionListener(e -> onClose.run());
 
         JLabel titleLabel = new JLabel("Slayer History");
@@ -219,18 +221,52 @@ public class SlayerHistoryPanel extends JPanel
         // Look up the Task object for this history entry so we can open the task detail panel.
         Task clickableTask = taskService.get(entry.taskName);
 
-        JPanel row = new JPanel(new BorderLayout(4, 0));
-        row.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        // Outer EmptyBorder = gap between rows; middle = solid box (green when active);
-        // inner EmptyBorder = padding around row content.
-        row.setBorder(BorderFactory.createCompoundBorder(
-                new EmptyBorder(0, 0, 4, 0),
-                BorderFactory.createCompoundBorder(
-                        isActive
-                                ? BorderFactory.createLineBorder(ACTIVE_BORDER_COLOR, 2)
-                                : BorderFactory.createLineBorder(ColorScheme.MEDIUM_GRAY_COLOR, 1),
-                        BorderFactory.createEmptyBorder(8, 6, 8, 6))));
-        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 74));
+        final boolean activeTile = isActive;
+        JPanel row = new JPanel(new BorderLayout(4, 0))
+        {
+            boolean hovered;
+            {
+                setOpaque(false);
+                addMouseListener(new MouseAdapter()
+                {
+                    @Override public void mouseEntered(MouseEvent e) { hovered = true;  repaint(); }
+                    @Override public void mouseExited(MouseEvent e)  { hovered = false; repaint(); }
+                });
+            }
+
+            @Override
+            protected void paintComponent(Graphics g)
+            {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                int tileH = getHeight() - 4;
+                g2.setColor(hovered ? new Color(50, 50, 50) : ColorScheme.DARKER_GRAY_COLOR);
+                g2.fillRoundRect(0, 0, getWidth(), tileH, 10, 10);
+                g2.dispose();
+            }
+
+            @Override
+            protected void paintBorder(Graphics g)
+            {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                int tileH = getHeight() - 4;
+                if (activeTile)
+                {
+                    g2.setColor(hovered ? new Color(110, 240, 110) : ACTIVE_BORDER_COLOR);
+                    g2.setStroke(new BasicStroke(2f));
+                    g2.drawRoundRect(1, 1, getWidth() - 3, tileH - 3, 10, 10);
+                }
+                else
+                {
+                    g2.setColor(hovered ? new Color(90, 90, 90) : ColorScheme.MEDIUM_GRAY_COLOR);
+                    g2.drawRoundRect(0, 0, getWidth() - 1, tileH - 1, 10, 10);
+                }
+                g2.dispose();
+            }
+        };
+        row.setBorder(new EmptyBorder(8, 6, 12, 6));
+        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 78));
 
         if (clickableTask != null)
         {
@@ -243,24 +279,12 @@ public class SlayerHistoryPanel extends JPanel
                 {
                     onTaskSelected.accept(clickableTask);
                 }
-
-                @Override
-                public void mouseEntered(MouseEvent e)
-                {
-                    setBackground(row, ColorScheme.DARK_GRAY_COLOR);
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e)
-                {
-                    setBackground(row, ColorScheme.DARKER_GRAY_COLOR);
-                }
             });
         }
 
         // WEST: kill count + monster icon (icon vertically centered)
         JPanel leftPanel = new JPanel(new BorderLayout(2, 0));
-        leftPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        leftPanel.setOpaque(false);
         leftPanel.setPreferredSize(new Dimension(58, 0));
 
         if (displayCount > 0)
@@ -289,7 +313,7 @@ public class SlayerHistoryPanel extends JPanel
         // CENTER: name, master, date — vertically centered as a block, horizontally centered
         JPanel centerContent = new JPanel();
         centerContent.setLayout(new BoxLayout(centerContent, BoxLayout.Y_AXIS));
-        centerContent.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        centerContent.setOpaque(false);
 
         JLabel nameLabel = new JLabel(entry.taskName != null ? entry.taskName : "");
         nameLabel.setForeground(Color.WHITE);
@@ -319,7 +343,7 @@ public class SlayerHistoryPanel extends JPanel
 
         // Vertically center the block within the row
         JPanel centerPanel = new JPanel(new GridBagLayout());
-        centerPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        centerPanel.setOpaque(false);
         centerPanel.setBorder(new EmptyBorder(0, 4, 0, 4));
         centerPanel.add(centerContent);
         row.add(centerPanel, BorderLayout.CENTER);
@@ -327,7 +351,7 @@ public class SlayerHistoryPanel extends JPanel
         // EAST: task number (#31) stacked above a "Skipped" badge when applicable
         JPanel eastPanel = new JPanel();
         eastPanel.setLayout(new BoxLayout(eastPanel, BoxLayout.Y_AXIS));
-        eastPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        eastPanel.setOpaque(false);
 
         if (displayNumber > 0)
         {
