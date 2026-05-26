@@ -129,10 +129,8 @@ public class LocationRequirementService
         }
         this.completedQuests = Collections.unmodifiableSet(completed);
         this.skillLevels = Collections.unmodifiableMap(levels);
-        log.info("LocationRequirementService refreshed: {}/{} quests completed ({}), {} skills tracked",
-                completed.size(), trackedQuests.size(),
-                completed.isEmpty() ? "none" : completed.stream().map(Quest::name).collect(java.util.stream.Collectors.joining(", ")),
-                levels.size());
+        log.debug("LocationRequirementService refreshed: {}/{} quests completed, {} skills tracked",
+                completed.size(), trackedQuests.size(), levels.size());
         for (Runnable listener : refreshListeners)
         {
             listener.run();
@@ -192,9 +190,6 @@ public class LocationRequirementService
         return r == null ? "" : r.getDescription();
     }
 
-    /**
-     * Returns items suggested for accessing the given location (e.g. a light
-     * source for dark caves, climbing boots for mountain paths). Delegates to
     /** Returns all canonical gated location names (lower-case). */
     public Set<String> getGatedLocations()
     {

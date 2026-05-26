@@ -17,83 +17,27 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Tab that allows players to write and save notes for a specific monster.
  * Notes are auto-saved when the text changes and persisted via ConfigManager.
- *
- * When location-specific suggested items are available (e.g. a light source
- * for dark caves, climbing boots for mountain paths), they are shown in a
- * read-only "Suggested Items" section above the player's note text area.
  */
 @Slf4j
 public class NotesTab extends JPanel implements Tab<NotesTab.NotesData>
 {
-    /**
-     * Data passed to {@link #update} on each task selection.
-     *
-     * <p>Items in {@code requiredItems} and {@code taskSuggestedItems} may optionally end with
-     * a variant tag of the form {@code --VariantName} (e.g. {@code "Darklight --Shadow hound"}).
-     * Untagged items apply to all variants; tagged items are labelled accordingly in the display.
-     */
+    /** Data passed to {@link #update} on each task selection. */
     public static class NotesData
     {
         public final String monsterName;
-        /** Raw task.itemsRequired — may contain trailing {@code --VariantName} tags. */
-        public final String[] requiredItems;
-        /** Raw task.itemsSuggested — may contain trailing {@code --VariantName} tags. */
-        public final String[] taskSuggestedItems;
-        /** Suggested items derived from location requirements (no variant tags). */
-        public final List<String> locationSuggestedItems;
 
-        public NotesData(String monsterName,
-                         String[] requiredItems,
-                         String[] taskSuggestedItems,
-                         List<String> locationSuggestedItems)
+        public NotesData(String monsterName)
         {
             this.monsterName = monsterName;
-            this.requiredItems = requiredItems != null ? requiredItems : new String[0];
-            this.taskSuggestedItems = taskSuggestedItems != null ? taskSuggestedItems : new String[0];
-            this.locationSuggestedItems = locationSuggestedItems != null
-                    ? locationSuggestedItems : Collections.emptyList();
         }
-    }
-
-    // ── Tag parsing ───────────────────────────────────────────────────────────
-
-    /** Separator between an item name and its optional variant tag: {@code " --"}. */
-    private static final String TAG_SEPARATOR = " --";
-
-    /**
-     * Returns the variant name embedded in {@code raw} as a trailing {@code --VariantName} tag
-     * (e.g. {@code "Darklight --Shadow hound"} → {@code "Shadow hound"}), or {@code null} when
-     * there is no tag (item applies to all variants).
-     */
-    private static String parseTag(String raw)
-    {
-        if (raw == null) return null;
-        int idx = raw.lastIndexOf(TAG_SEPARATOR);
-        if (idx < 0) return null;
-        String tag = raw.substring(idx + TAG_SEPARATOR.length()).trim();
-        return tag.isEmpty() ? null : tag;
-    }
-
-    /**
-     * Returns the display text for an item, stripping any trailing {@code --VariantName} suffix.
-     */
-    private static String stripTag(String raw)
-    {
-        if (raw == null) return null;
-        int idx = raw.lastIndexOf(TAG_SEPARATOR);
-        return idx >= 0 ? raw.substring(0, idx).trim() : raw;
     }
 
     private final MonsterNotesService notesService;
     private final Runnable onNotesChanged;
     private final JTextArea textArea;
-    /** Dynamic panel rebuilt on each update to reflect the current task's suggested items. */
     private final JPanel northWrapper;
     private String currentMonster;
     private boolean suppressSave = false;
@@ -181,76 +125,6 @@ public class NotesTab extends JPanel implements Tab<NotesTab.NotesData>
     }
 
     // ── Private helpers ───────────────────────────────────────────────────────
-
-    /**
-     * Builds a section panel for an items array (required or suggested).
-     * Returns {@code null} if all items would produce empty labels.
-     */
-    private JPanel buildItemSection(String title, String[] rawItems)
-    {
-        if (rawItems == null || rawItems.length == 0)
-        {
-            return null;
-        }
-
-        JPanel section = new JPanel();
-        section.setLayout(new BoxLayout(section, BoxLayout.Y_AXIS));
-        section.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        section.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
-                new EmptyBorder(5, 8, 5, 8)));
-        section.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-        JLabel header = new JLabel(title);
-        header.setFont(FontManager.getRunescapeBoldFont());
-        header.setForeground(ColorScheme.BRAND_ORANGE);
-        header.setAlignmentX(Component.LEFT_ALIGNMENT);
-        section.add(header);
-        section.add(Box.createVerticalStrut(3));
-
-        for (String raw : rawItems)
-        {
-            section.add(buildItemLabel(raw));
-        }
-        return section;
-    }
-
-    /**
-     * Builds a label for a potentially-tagged item.
-     * Tagged items ({@code --VariantName text}) are rendered with a
-     * coloured variant label: {@code • text  [VariantName]}.
-     * Untagged items are rendered as {@code • text}.
-     */
-    private JLabel buildItemLabel(String raw)
-    {
-        String tag = parseTag(raw);
-        String text = stripTag(raw);
-
-        JLabel label;
-        if (tag != null)
-        {
-            label = new JLabel("<html>\u2022 " + text
-                    + " <font color='#8888cc'><i>(" + tag + ")</i></font></html>");
-        }
-        else
-        {
-            label = new JLabel("\u2022 " + text);
-        }
-        label.setFont(FontManager.getRunescapeSmallFont());
-        label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        label.setAlignmentX(Component.LEFT_ALIGNMENT);
-        return label;
-    }
-
-    /** Builds a plain bullet label with no tag processing. */
-    private JLabel buildUntaggedItemLabel(String text)
-    {
-        JLabel label = new JLabel("\u2022 " + text);
-        label.setFont(FontManager.getRunescapeSmallFont());
-        label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        label.setAlignmentX(Component.LEFT_ALIGNMENT);
-        return label;
-    }
 
     @Override
     public void shutDown()

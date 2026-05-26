@@ -31,7 +31,6 @@ import okhttp3.OkHttpClient;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -164,11 +163,7 @@ public class TaskTabs extends JTabbedPane
         updateTab(TabKey.WIKI, task.wikiLinks);
         updateTab(TabKey.LOOT, task.name);
 
-        updateTab(TabKey.NOTES, new NotesTab.NotesData(
-                task.name,
-                task.itemsRequired,
-                task.itemsSuggested,
-                Collections.emptyList()));
+        updateTab(TabKey.NOTES, new NotesTab.NotesData(task.name));
     }
 
     private <T> void updateTab(TabKey key, T data)

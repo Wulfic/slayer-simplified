@@ -640,23 +640,4 @@ public class SlayerSimplifiedPlugin extends Plugin
         }
     }
 
-    /**
-     * Reads the player's slayer task streak from RuneLite's built-in Slayer
-     * plugin RSProfile config. Returns 0 if unavailable.
-     */
-    private int readTaskStreak()
-    {
-        String streakStr = configManager.getRSProfileConfiguration("slayer", "streak");
-        if (streakStr != null)
-        {
-            try
-            {
-                return Integer.parseInt(streakStr.trim());
-            }
-            catch (NumberFormatException ignored)
-            {
-            }
-        }
-        return 0;
-    }
 }
