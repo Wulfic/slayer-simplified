@@ -676,14 +676,9 @@
     "Iorwerth Camp": {
         "x": 2213,
         "y": 3257,
-        "plane": 0
-    },
-    "Iorwerth Dungeon": {
-        "x": 3222,
-        "y": 6048,
         "plane": 0,
         "aliases": [
-            "Iorwerth Slayer Dungeon"
+            "Iorwerth Dungeon"
         ]
     },
     "Isafdar": {
