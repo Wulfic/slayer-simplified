@@ -231,8 +231,8 @@
         "plane": 0
     },
     "Chasm of Fire": {
-        "x": 1396,
-        "y": 3873,
+        "x": 1435,
+        "y": 3671,
         "plane": 0,
         "aliases": [
             "Chasm of Fire Dungeon"
@@ -427,6 +427,11 @@
     "Edgeville Dungeon": {
         "x": 3097,
         "y": 3468,
+        "plane": 0
+    },
+    "Edgeville Dungeon - Hobgoblins": {
+        "x": 3124,
+        "y": 9875,
         "plane": 0
     },
     "Edgeville Monastery": {
