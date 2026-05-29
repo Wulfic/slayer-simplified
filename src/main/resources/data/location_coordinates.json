@@ -194,6 +194,31 @@
             "Catacombs of Kourend - Skotizo Boss Room"
         ]
     },
+    "Catacombs of Kourend - Fire Giants": {
+        "x": 1627,
+        "y": 10042,
+        "plane": 0
+    },
+    "Catacombs of Kourend - Hill Giants": {
+        "x": 1664,
+        "y": 10069,
+        "plane": 0
+    },
+    "Catacombs of Kourend - Bloodvelds": {
+        "x": 1678,
+        "y": 10073,
+        "plane": 0
+    },
+    "Catacombs of Kourend - Greater Nechryael": {
+        "x": 1693,
+        "y": 10079,
+        "plane": 0
+    },
+    "Catacombs of Kourend - Greater Demons": {
+        "x": 1685,
+        "y": 10088,
+        "plane": 0
+    },
     "Cave near Observatory": {
         "x": 2437,
         "y": 3120,
