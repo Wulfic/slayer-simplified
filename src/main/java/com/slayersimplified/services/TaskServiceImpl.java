@@ -376,11 +376,10 @@ public class TaskServiceImpl implements TaskService
             {
                 return PLACEHOLDER_IMAGE;
             }
-            // First halve the source resolution, then cap at 160px to prevent
-            // large downloaded images from overflowing the panel and hiding the tabs.
-            int w = image.getWidth() / 2;
-            int h = image.getHeight() / 2;
-            final int MAX_DIM = 160;
+            // Cap at 120px to match the pre-resized source images.
+            int w = image.getWidth();
+            int h = image.getHeight();
+            final int MAX_DIM = 120;
             if (w > MAX_DIM || h > MAX_DIM)
             {
                 double scale = Math.min((double) MAX_DIM / w, (double) MAX_DIM / h);
