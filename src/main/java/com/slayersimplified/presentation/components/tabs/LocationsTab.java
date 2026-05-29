@@ -165,7 +165,7 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
         {
             WorldPoint last = navigationService.getLastTarget();
             debugNavLabel.setText(last != null
-                    ? "Last Nav Ã¢â€ â€™ x:" + last.getX() + "  y:" + last.getY() + "  plane:" + last.getPlane()
+                    ? "Last Nav \u2192 x:" + last.getX() + "  y:" + last.getY() + "  plane:" + last.getPlane()
                     : "No nav yet");
         }
 
@@ -520,7 +520,7 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
 
         if (debugMode.get())
         {
-            debugNavLabel.setText("Last Nav Ã¢â€ â€™ x:" + coords.getX() + "  y:" + coords.getY() + "  plane:" + coords.getPlane());
+            debugNavLabel.setText("Last Nav \u2192 x:" + coords.getX() + "  y:" + coords.getY() + "  plane:" + coords.getPlane());
         }
 
         resetAllRowColors();
