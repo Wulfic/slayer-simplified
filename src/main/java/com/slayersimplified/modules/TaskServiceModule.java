@@ -83,4 +83,12 @@ public class TaskServiceModule extends AbstractModule
     {
         return "/data/animal_tasks";
     }
+
+    /** Classpath path to the explicit tile/object notes JSON. */
+    @Provides
+    @Named("tileNotesDataPath")
+    String provideTileNotesDataPath()
+    {
+        return "/data/tile_notes.json";
+    }
 }

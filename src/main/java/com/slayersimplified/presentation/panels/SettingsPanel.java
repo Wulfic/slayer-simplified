@@ -39,6 +39,7 @@ public class SettingsPanel extends JPanel
     private JCheckBox streakOptimizerCheck;
     private JComboBox<StreakFillerMaster> fillerMasterCombo;
     private JCheckBox showNonSlayerCheck;
+    private JCheckBox tileNotesCheck;
 
     public SettingsPanel(SlayerSimplifiedConfig config, Runnable onClose)
     {
@@ -57,6 +58,7 @@ public class SettingsPanel extends JPanel
     {
         boolean optimizerOn = config.streakOptimizerEnabled();
         showNonSlayerCheck.setSelected(config.showNonSlayerEnemies());
+        tileNotesCheck.setSelected(config.tileNotes());
         streakOptimizerCheck.setSelected(optimizerOn);
         masterCombo.setSelectedItem(config.preferredMaster());
         masterCombo.setEnabled(!optimizerOn);
@@ -192,6 +194,15 @@ public class SettingsPanel extends JPanel
         showReminderOverlayCheck.addActionListener(e -> config.setShowReminderOverlay(showReminderOverlayCheck.isSelected()));
         add(makeRow("Task Reminder Overlay", showReminderOverlayCheck,
                 "Show the on-screen overlay with required items, suggested items, and your notes while on a slayer task"));
+        add(Box.createVerticalStrut(6));
+
+        // --- Tile Notes ---
+        tileNotesCheck = makeCheckBox(config.tileNotes());
+        tileNotesCheck.addActionListener(e -> config.setTileNotes(tileNotesCheck.isSelected()));
+        add(makeRow("TileNotes", tileNotesCheck,
+                "<html>Highlight every known training-spot tile for your current task directly in the<br>"
+                        + "game scene. The location name is drawn above each tile. Only tiles within<br>"
+                        + "your loaded area are visible — walk to the spot to see the marker.</html>"));
         // --- Show Non-Slayer Enemies ---
         showNonSlayerCheck = makeCheckBox(config.showNonSlayerEnemies());
         showNonSlayerCheck.addActionListener(e -> config.setShowNonSlayerEnemies(showNonSlayerCheck.isSelected()));

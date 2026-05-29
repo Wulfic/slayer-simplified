@@ -19,12 +19,14 @@ import com.slayersimplified.domain.TaskHistoryEntry;
 import com.slayersimplified.modules.TaskServiceModule;
 import com.slayersimplified.presentation.CoordinatesOverlay;
 import com.slayersimplified.presentation.TaskReminderOverlay;
+import com.slayersimplified.presentation.TileNoteOverlay;
 import com.slayersimplified.presentation.panels.MainPanel;
 import com.slayersimplified.presentation.SlayerTargetOverlay;
 import com.slayersimplified.services.SlayerHistoryService;
 import com.slayersimplified.services.SlayerStreakOptimizerService;
 import com.slayersimplified.services.SlayerTaskTracker;
 import com.slayersimplified.services.LocationRequirementService;
+import com.slayersimplified.services.TileNoteService;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
@@ -97,6 +99,12 @@ public class SlayerSimplifiedPlugin extends Plugin
 
     @Inject
     private TaskReminderOverlay taskReminderOverlay;
+
+    @Inject
+    private TileNoteOverlay tileNoteOverlay;
+
+    @Inject
+    private TileNoteService tileNoteService;
 
     @Inject
     private SlayerHistoryService historyService;
@@ -175,6 +183,7 @@ public class SlayerSimplifiedPlugin extends Plugin
         overlayManager.add(targetOverlay);
         overlayManager.add(coordinatesOverlay);
         overlayManager.add(taskReminderOverlay);
+        overlayManager.add(tileNoteOverlay);
         // After every requirement refresh, rebuild the current task panel so the
         // Locations tab immediately reflects the player's latest quest completion.
         // The optimizer is refreshed here too since both run on the client thread
@@ -201,6 +210,8 @@ public class SlayerSimplifiedPlugin extends Plugin
         lastSeenSlayerRemaining = taskTracker.getRemainingAmount();
         // Populate the NPC highlight set in case the plugin is enabled while already logged in.
         clientThread.invokeLater(targetOverlay::onTaskChanged);
+        // Seed tile notes for any task already active when the plugin starts.
+        tileNoteService.updateForTask(taskTracker.getCurrentTaskName());
         // Cache quest/skill state so the LocationsTab can gray out inaccessible options.
         pendingRequirementsRefresh = true;
         log.info("Slayer Simplified started");
@@ -214,6 +225,8 @@ public class SlayerSimplifiedPlugin extends Plugin
         overlayManager.remove(targetOverlay);
         overlayManager.remove(coordinatesOverlay);
         overlayManager.remove(taskReminderOverlay);
+        overlayManager.remove(tileNoteOverlay);
+        tileNoteService.clear();
         historyService.shutDown();
         mainPanel.shutDown();
         log.info("Slayer Simplified stopped");
@@ -569,6 +582,8 @@ public class SlayerSimplifiedPlugin extends Plugin
                 // Rebuild the NPC highlight set now that the task name has changed.
                 // onConfigChanged fires on the client thread, so this is safe to call directly.
                 targetOverlay.onTaskChanged();
+                // Refresh tile note markers for the new task.
+                tileNoteService.updateForTask(taskTracker.getCurrentTaskName());
                 SwingUtilities.invokeLater(() ->
                 {
                     syncCurrentTaskToHistory();
@@ -592,6 +607,8 @@ public class SlayerSimplifiedPlugin extends Plugin
         if ("showNonSlayerEnemies".equals(event.getKey()))
         {
             mainPanel.refreshTaskList();
+            // Refresh tile notes so non-slayer markers are shown/hidden immediately.
+            tileNoteService.updateForTask(taskTracker.getCurrentTaskName());
             return;
         }
         if ("streakOptimizerEnabled".equals(event.getKey())

@@ -1,0 +1,836 @@
+{
+  "_comment": "Safespot markers sourced from the OSRS wiki (https://oldschool.runescape.wiki). Tile coordinates are approximate — walk to the described area and the marker will become visible. Verify exact positions in-game with the Location Debug overlay.",
+  "_schema": {
+    "type":     "'tile' draws a polygon at the given coordinates; 'object' highlights a game object by ID (future use)",
+    "x":        "World x coordinate",
+    "y":        "World y coordinate",
+    "plane":    "Floor level: 0=ground, 1=first floor, 2=second floor (underground dungeons use plane 0 with high y values)",
+    "objectId": "RuneScape game-object ID (object type only)",
+    "label":    "Short text rendered above the tile in-game",
+    "note":     "Safespot description — how to set it up and any requirements"
+  },
+
+  "Terror dog": [
+    {
+      "type": "tile", "x": 3428, "y": 3234, "plane": 0,
+      "label": "Step 1 — Mine cart",
+      "note": "Surface entrance to Tarn's Lair. Right-click 'Climb-over' this mine cart (just south of the Zealot NPC). You need a Salve amulet in your inventory to access Tarn's Lair. Then crawl down the cart tunnel inside the mine."
+    },
+    {
+      "type": "tile", "x": 3426, "y": 9617, "plane": 0,
+      "label": "Step 2 — Mine Level 1",
+      "note": "After crawling down the cart tunnel, you are now underground in the Abandoned Mine (Level 1). Head north along the path to the end to reach Tarn's Lair entrance. Monsters and floor traps start here — watch for X-marks on the floor."
+    },
+    {
+      "type": "tile", "x": 3419, "y": 9624, "plane": 0,
+      "label": "Step 3 — Lair Entrance",
+      "note": "Tarn's Lair entrance. A cutscene plays showing Mutant Tarn and two Terror Dog statues. Activate Protect from Melee here. Optional: go east past the floor traps, then north, to reach banker Odovacar (100 coins/use) to restock before the final route."
+    },
+    {
+      "type": "tile", "x": 3462, "y": 9640, "plane": 0,
+      "label": "Step 4 — Banker",
+      "note": "Odovacar the banker is here — costs 100 coins per use. This is the last safe restocking point before heading to Tarn and the Terror Dogs. Stock food and prayer potions here."
+    },
+    {
+      "type": "tile", "x": 3461, "y": 9649, "plane": 0,
+      "label": "Step 5 — North doorway",
+      "note": "Go north through this doorway after the bank to begin the route to Tarn (route: D-S-T-U on the dungeon map, following ornate/water-feature doors). Auto Retaliate OFF is strongly recommended — you don't want to run back into traps."
+    },
+    {
+      "type": "tile", "x": 3441, "y": 9658, "plane": 0,
+      "label": "Step 6 — Door D (SW doorway)",
+      "note": "Follow the U-shaped hallway heading westward to its end, then take the south-western-most doorway (Door D). Two wall traps in the north hall: first on the west wall, second on the east wall — right-click 'Search' them to disarm, or walk carefully."
+    },
+    {
+      "type": "tile", "x": 3432, "y": 9655, "plane": 0,
+      "label": "Step 7 — Giant Skeleton room",
+      "note": "You are now in a trap-free square room containing a single giant skeleton. Go through the northern door into the room to the north, which has THREE floor traps (X-marks). Navigate around or Search them to disarm. Then take the passage to the WEST."
+    },
+    {
+      "type": "tile", "x": 3422, "y": 9667, "plane": 0,
+      "label": "Step 8 — Inverted-T: go NORTH!",
+      "note": "CRITICAL navigation point: you are in an inverted-T shaped hallway. Go NORTH then through the opening on the WEST side. Do NOT go all the way west — that leads in a big circle with more monsters and traps. There are no traps in the first part, but the north hall has two wall traps (west wall, then east wall)."
+    },
+    {
+      "type": "tile", "x": 3411, "y": 9672, "plane": 0,
+      "label": "Step 9 — Pillar room: disarm log trap!",
+      "note": "Jump across the pillars. BEFORE crossing: right-click 'Search' the floor near the south-western wall to disarm the log swing trap. If the floor says 'already pressed down', it's safe. The log trap resets in 10-15 seconds and RESETS if you fall — disarm it again every time. Use the SOUTHERN row of pillars first, then the second row from the west going north."
+    },
+    {
+      "type": "tile", "x": 3432, "y": 9672, "plane": 0,
+      "label": "Step 10 — Receding walls room",
+      "note": "Room with a HOLE in the centre. Walls shoot out from the sides and knock you into the hole if you stand in the wrong spot. Walk along the perimeter walls, not the centre. Time your movement — wait for the walls to retract, then quickly run past. Take the passageway on the east wall."
+    },
+    {
+      "type": "tile", "x": 3442, "y": 9668, "plane": 0,
+      "label": "Step 11 — Second pillar room (stairs)",
+      "note": "Cross the zigzag pillar room from north-west to south-east. Two skeleton mages (lvl 94) attack from the second pillar onward — activate Protect from Magic. Hurry across without stopping and go DOWN the stairs at the east end of the room."
+    },
+    {
+      "type": "tile", "x": 3443, "y": 9628, "plane": 0,
+      "label": "Step 12 — Terror Dog chamber",
+      "note": "Bottom floor of Tarn's Lair. After descending the stairs, go north along the corridor to reach Tarn's chamber. Terror Dogs (level 100 and 110) are here alongside Tarn Razorlor. Use Protect from Melee — Terror Dogs attack with melee only. Keep at least 2 prayer potions and 15+ food for the Tarn fight."
+    }
+  ],
+
+  "Banshee": [
+    {
+      "type": "tile", "x": 3430, "y": 3550, "plane": 0,
+      "label": "Safespot",
+      "note": "Stand north of the staircase to floor 1, behind the standing torch between the staircase and the east wall. Ranged or Magic only."
+    }
+  ],
+
+  "Aberrant spectre": [
+    {
+      "type": "tile", "x": 3403, "y": 3573, "plane": 1,
+      "label": "Safespot (Tower)",
+      "note": "Brick pile west of the Agility chain shortcut on floor 1 of the Slayer Tower. Lure a spectre from the south room. Requires 6+ tile gap — Ranged or Magic only (not halberds/throwing weapons)."
+    },
+    {
+      "type": "tile", "x": 2434, "y": 9783, "plane": 0,
+      "label": "Safespot (Stronghold)",
+      "note": "Cave wall section in the eastern part of the Stronghold Slayer Cave. Multiple spots available along the wall. Ranged or Magic only."
+    },
+    {
+      "type": "tile", "x": 1942, "y": 2800, "plane": 0,
+      "label": "Safespot (Deepfin Mine)",
+      "note": "Near the easternmost torch around the nickel rocks in Deepfin Mine. No additional setup required. Ranged or Magic only."
+    }
+  ],
+
+  "Infernal mage": [
+    {
+      "type": "tile", "x": 3413, "y": 3543, "plane": 0,
+      "label": "Safespot",
+      "note": "Use the nook against the west wall on the ground floor of the Slayer Tower to block Infernal Mages. Ranged or Magic."
+    }
+  ],
+
+  "Bloodveld": [
+    {
+      "type": "tile", "x": 3432, "y": 3573, "plane": 1,
+      "label": "Safespot (Tower F1)",
+      "note": "NE corner of the central room on floor 1, behind the chair. Also works next to armour stands and wardrobes along the walls. Ranged or Magic."
+    },
+    {
+      "type": "tile", "x": 3413, "y": 4933, "plane": 0,
+      "label": "Safespot (Basement)",
+      "note": "NW corner of the Slayer Tower basement task-only area, between the chest, chair, broken table and shelves. Ranged or Magic."
+    }
+  ],
+
+  "Gargoyle": [
+    {
+      "type": "tile", "x": 3415, "y": 3568, "plane": 2,
+      "label": "Safespot (Tower top)",
+      "note": "Near the south-west doorway on the top floor of the Slayer Tower. Ranged or Magic. Another spot is in the NE corner of the basement behind an immovable bucket."
+    }
+  ],
+
+  "Abyssal demon": [
+    {
+      "type": "tile", "x": 3422, "y": 3570, "plane": 2,
+      "label": "Safespot (Tower top)",
+      "note": "Use the pillars on the top floor (floor 2) of the Slayer Tower to block line of sight. Various pillar corners work. Ranged or Magic."
+    }
+  ],
+
+  "Nechryael": [
+    {
+      "type": "tile", "x": 3434, "y": 3571, "plane": 2,
+      "label": "Safespot (Tower top)",
+      "note": "Many tables and buckets on the top floor of the Slayer Tower can be used as safespots. Stand behind any table to block the Nechryael. Death spawns are not summoned when safespotting. Ranged or Magic."
+    }
+  ],
+
+  "Dust devil": [
+    {
+      "type": "tile", "x": 3312, "y": 9368, "plane": 0,
+      "label": "Safespot (Smoke Dungeon)",
+      "note": "Use one of the large pillars in the Smoke Dungeon to block Dust Devils. Stand on the far side of a pillar from the monster. Ranged or Magic. Bring a facemask or Slayer helmet."
+    },
+    {
+      "type": "tile", "x": 1699, "y": 10089, "plane": 0,
+      "label": "Safespot (Catacombs)",
+      "note": "In the Catacombs of Kourend, use Ranged across the water channel in the south-east section. The two north spawns can be lured to the westernmost arch and safespotted from under the arch."
+    }
+  ],
+
+  "Smoke devil": [
+    {
+      "type": "tile", "x": 2406, "y": 9410, "plane": 0,
+      "label": "Safespot",
+      "note": "Use the pillars in the Smoke Devil Dungeon (south of Castle Wars, accessed via Slayer ring). Stand behind a pillar to block the Smoke Devil. Ranged or Magic."
+    }
+  ],
+
+  "Skeletal wyvern": [
+    {
+      "type": "tile", "x": 3057, "y": 9567, "plane": 0,
+      "label": "Safespot (entrance)",
+      "note": "Trap a wyvern on the east or west side of the cave entrance after losing aggression (wait 10 min). Stand at the cave entrance rocks so the wyvern gets stuck. Wait for wyverns to be unaggressive before attempting. Ranged or Magic."
+    }
+  ],
+
+  "Cave horror": [
+    {
+      "type": "tile", "x": 3725, "y": 9369, "plane": 0,
+      "label": "Safespot (entrance)",
+      "note": "Use mushrooms, stalagmites and boulders near the swamp by the cave entrance in Mos Le'Harmless Cave. Use caution when leaving the safespot to loot. Always bring a Witchwood icon unless using Protect from Melee. Ranged or Magic."
+    }
+  ],
+
+  "Black demon": [
+    {
+      "type": "tile", "x": 2593, "y": 9462, "plane": 0,
+      "label": "Safespot (Brimhaven)",
+      "note": "Behind a pillar or rock formation in the Brimhaven Dungeon. Multiple safespot locations available. Ranged, Magic, or Halberd."
+    },
+    {
+      "type": "tile", "x": 2881, "y": 9844, "plane": 0,
+      "label": "Safespot (Taverley)",
+      "note": "Two safespots available in the Taverley Dungeon, using pillars in the black demon area. Ranged, Magic, or Halberd."
+    },
+    {
+      "type": "tile", "x": 3097, "y": 9875, "plane": 0,
+      "label": "Safespot (Edgeville)",
+      "note": "Safespot available in Edgeville Dungeon using the rock formation. Ranged, Magic, or Halberd."
+    },
+    {
+      "type": "tile", "x": 1415, "y": 10058, "plane": 0,
+      "label": "Safespot (Chasm of Fire)",
+      "note": "Multiple safespots in the Chasm of Fire dungeon. Use the wall corners and pillars. Also available in Catacombs of Kourend. Ranged, Magic, or Halberd."
+    }
+  ],
+
+  "Greater demon": [
+    {
+      "type": "tile", "x": 2598, "y": 9456, "plane": 0,
+      "label": "Safespot (Brimhaven)",
+      "note": "Use a pillar in the Brimhaven Dungeon to safespot Greater Demons. Ranged or Magic."
+    },
+    {
+      "type": "tile", "x": 3693, "y": 3879, "plane": 0,
+      "label": "Safespot (Demonic Ruins)",
+      "note": "Multiple safespots at the Demonic Ruins (Wilderness). Use the ruins/rocks to block Greater Demons. Ranged or Magic. Beware PKers."
+    }
+  ],
+
+  "Lesser demon": [
+    {
+      "type": "tile", "x": 1428, "y": 10052, "plane": 0,
+      "label": "Safespot (Chasm of Fire)",
+      "note": "Narrow bridge north of the entrance rope in the Chasm of Fire. Stand on the bridge so the Lesser Demon cannot reach you. Ranged or Magic."
+    }
+  ],
+
+  "Fire giant": [
+    {
+      "type": "tile", "x": 2510, "y": 9895, "plane": 0,
+      "label": "Safespot (Waterfall Dungeon)",
+      "note": "Various pillars and columns in the Waterfall Dungeon. Fire Giants are spread across many locations each with safespots. Ranged or Magic."
+    },
+    {
+      "type": "tile", "x": 2594, "y": 9512, "plane": 0,
+      "label": "Safespot (Brimhaven)",
+      "note": "Wall and pillar safespots available in Brimhaven Dungeon Fire Giant area. Ranged or Magic."
+    }
+  ],
+
+  "Hellhound": [
+    {
+      "type": "tile", "x": 2884, "y": 9825, "plane": 0,
+      "label": "Safespot (Taverley)",
+      "note": "Hellhounds are 2x2 tiles, making them easy to safespot using rocks and columns in the Taverley Dungeon. Ranged or Magic."
+    },
+    {
+      "type": "tile", "x": 1313, "y": 9998, "plane": 0,
+      "label": "Safespot (Karuulm)",
+      "note": "In Karuulm Slayer Dungeon, stay against the north wall near the entrance and lure the two northern Hellhounds. Ranged or Magic."
+    },
+    {
+      "type": "tile", "x": 1677, "y": 10082, "plane": 0,
+      "label": "Safespot (Catacombs)",
+      "note": "Safespot from the south of the Catacombs of Kourend Hellhound room, using the entry hallway corner. Also: drag along north exit wall to the furthest corridor tile near the brutal dragons. Ranged or Magic."
+    }
+  ],
+
+  "Blue dragon": [
+    {
+      "type": "tile", "x": 2898, "y": 9892, "plane": 0,
+      "label": "Safespot (Heroes Guild)",
+      "note": "The Heroes' Guild basement has a blue dragon in a fenced-off area that can be attacked safely from outside the fence. Ranged or Magic."
+    },
+    {
+      "type": "tile", "x": 2887, "y": 9839, "plane": 0,
+      "label": "Safespot (Taverley)",
+      "note": "Multiple safespots in Taverley Dungeon: behind columns near the big eggs/stalagmite, upper level rocks, and the passageway to the black demons. Ranged, Magic, or Melee (with column blocking)."
+    }
+  ],
+
+  "Black dragon": [
+    {
+      "type": "tile", "x": 2884, "y": 9821, "plane": 0,
+      "label": "Safespot (Taverley)",
+      "note": "Two safespots in the upper area of Taverley Dungeon using rock formations. Left safespot is more reliable. Ranged, Magic, or Halberd. Also safespots in the Lava Maze Dungeon (Wilderness) and Evil Chicken's Lair."
+    }
+  ],
+
+  "Cave crawler": [
+    {
+      "type": "tile", "x": 2718, "y": 9988, "plane": 0,
+      "label": "Safespot (Fremenik Slayer Dungeon)",
+      "note": "Use rocks along the room walls in the Fremennik Slayer Dungeon to safespot Cave Crawlers. Ranged or Magic recommended to avoid poison. Also a safespot in Lumbridge Caves between a stalactite and a gas hole."
+    }
+  ],
+
+  "Jelly": [
+    {
+      "type": "tile", "x": 2715, "y": 9998, "plane": 0,
+      "label": "Safespot (Fremennik Slayer Dungeon)",
+      "note": "Use either side of the rockfall in the northern part of the Fremennik Slayer Cave. Jellies may need to be lured into position. Also a safespot on the north wall near the room entrance. Ranged or Magic."
+    }
+  ],
+
+  "Turoth": [
+    {
+      "type": "tile", "x": 2707, "y": 9995, "plane": 0,
+      "label": "Training area",
+      "note": "Turoth are located in the Fremennik Slayer Dungeon. Must use Broad bolts, Broad arrows, Slayer dart, or Magic Dart to damage them effectively."
+    }
+  ],
+
+  "Kurask": [
+    {
+      "type": "tile", "x": 2691, "y": 9996, "plane": 0,
+      "label": "Safespot (Fremennik NW corner)",
+      "note": "Safespot in the north-west corner of the lower-level Kurask area in the Fremennik Slayer Cave. Must use Broad bolts, Broad arrows, or leaf-bladed weapons to damage Kurask."
+    },
+    {
+      "type": "tile", "x": 2201, "y": 9948, "plane": 0,
+      "label": "Safespot (Iorwerth Dungeon)",
+      "note": "Safespot on the northern wall of the southernmost Kurask section of Iorwerth Dungeon. Also a safespot on the east side of the task-only area. Must use Broad bolts/arrows or leaf-bladed weapons."
+    }
+  ],
+
+  "Cockatrice": [
+    {
+      "type": "tile", "x": 2725, "y": 9985, "plane": 0,
+      "label": "Safespot",
+      "note": "Effective safespot available in the Fremennik Slayer Dungeon using rocks. Always equip a mirror shield or V's shield regardless of safespotting — their stat-drain attack still applies. Ranged or Magic."
+    }
+  ],
+
+  "Basilisk": [
+    {
+      "type": "tile", "x": 2728, "y": 9989, "plane": 0,
+      "label": "Safespot (SE wall)",
+      "note": "Stand at the southern entrance to the Basilisk area in the Fremennik Slayer Dungeon, using the south-east wall to block their movement. Other spots on either side of rocks in the room also work. Mirror shield or V's shield is always required — their drain is ranged. Ranged or Magic."
+    }
+  ],
+
+  "Pyrefiend": [
+    {
+      "type": "tile", "x": 2706, "y": 9995, "plane": 0,
+      "label": "Safespot",
+      "note": "Specific safespot spot available in the Fremennik Slayer Dungeon. Use a halberd or Ranged to attack from safety. Pyrefiends hit consistently despite low max hit."
+    }
+  ],
+
+  "Mogre": [
+    {
+      "type": "tile", "x": 2992, "y": 3107, "plane": 0,
+      "label": "Safespot (shoreline)",
+      "note": "Mogres can be safespotted along the shoreline at Mudskipper Point, using the STASH unit, fairy ring, or shoreline obstacles. Ranged or Magic. An altar is just north if prayer is needed."
+    }
+  ],
+
+  "Suqah": [
+    {
+      "type": "tile", "x": 2082, "y": 3924, "plane": 0,
+      "label": "Safespot (tree/bridge)",
+      "note": "Stand near the tree closest to the Oneiromancer on Lunar Isle, or on the bridge — Suqah cannot reach you. The hybrid (melee+magic) variant will not cast spells out of melee range. Ranged or Magic."
+    }
+  ],
+
+  "Killerwatt": [
+    {
+      "type": "tile", "x": 2594, "y": 5016, "plane": 2,
+      "label": "Safespot (cloud/hole)",
+      "note": "Stand behind a cloud or over one of the holes in the Killerwatt Plane. This removes their melee attack; they will only use their magical ranged attacks which Dragonhide armour resists well."
+    }
+  ],
+
+  "_comment_non_slayer": "=== NON-SLAYER TASK SAFESPOTS ===",
+
+  "Angry barbarian spirit": [
+    {
+      "type": "tile", "x": 1771, "y": 5363, "plane": 0,
+      "label": "Safespot (stalactite)",
+      "note": "Use the stalactites and rock columns in the main Ancient Cavern chamber to block angry barbarian spirits. Stand on the opposite side of a stalactite. Protect from Melee is strongly recommended. Note: all barbarian spirit variants (Berserk, Enraged, Ferocious) share this area and can use the same spots."
+    }
+  ],
+  "Berserk barbarian spirit": [
+    {
+      "type": "tile", "x": 1771, "y": 5363, "plane": 0,
+      "label": "Safespot (stalactite)",
+      "note": "Same stalactite safespots as Angry barbarian spirit. Use any of the rock columns in the Ancient Cavern to break line-of-sight. Protect from Melee."
+    }
+  ],
+  "Enraged barbarian spirit": [
+    {
+      "type": "tile", "x": 1771, "y": 5363, "plane": 0,
+      "label": "Safespot (stalactite)",
+      "note": "Same stalactite safespots as Angry barbarian spirit. Use any of the rock columns in the Ancient Cavern to break line-of-sight. Protect from Melee."
+    }
+  ],
+  "Ferocious barbarian spirit": [
+    {
+      "type": "tile", "x": 1771, "y": 5363, "plane": 0,
+      "label": "Safespot (stalactite)",
+      "note": "Same stalactite safespots as Angry barbarian spirit. Use any of the rock columns in the Ancient Cavern. The Ferocious variant hits harder — Protect from Melee is essential. Ranged or Magic."
+    }
+  ],
+
+  "Hobgoblin guard": [
+    {
+      "type": "tile", "x": 2897, "y": 3281, "plane": 0,
+      "label": "Safespot (coastal rocks)",
+      "note": "Hobgoblin Peninsula, south-east of the Crafting Guild. Use the boulders and rocky outcroppings along the southern and eastern shoreline to safespot hobgoblins. Stand on the far side of a boulder so the hobgoblin cannot reach you. Ranged or Magic."
+    }
+  ],
+
+  "Frenzied ice troll female": [
+    {
+      "type": "tile", "x": 2378, "y": 3822, "plane": 0,
+      "label": "Safespot (cave entrance)",
+      "note": "Ice Troll Caves (Jatizso north-east peninsula). All four Frenzied ice troll variants share this cave. Stand just inside the cave entrance — the natural rock walls of the narrow entrance act as a bottleneck. Ranged or Magic from behind the rocks at the entrance. Protect from Melee for any that break through."
+    }
+  ],
+  "Frenzied ice troll male": [
+    {
+      "type": "tile", "x": 2378, "y": 3822, "plane": 0,
+      "label": "Safespot (cave entrance)",
+      "note": "Same cave entrance safespot as Frenzied ice troll female. Ranged or Magic from the cave entrance rocks."
+    }
+  ],
+  "Frenzied ice troll grunt": [
+    {
+      "type": "tile", "x": 2378, "y": 3822, "plane": 0,
+      "label": "Safespot (cave entrance)",
+      "note": "Same cave entrance safespot as Frenzied ice troll female. Ranged or Magic from the cave entrance rocks."
+    }
+  ],
+  "Frenzied ice troll runt": [
+    {
+      "type": "tile", "x": 2378, "y": 3822, "plane": 0,
+      "label": "Safespot (cave entrance)",
+      "note": "Same cave entrance safespot as Frenzied ice troll female. Ranged or Magic from the cave entrance rocks."
+    }
+  ],
+
+  "Sea troll": [
+    {
+      "type": "tile", "x": 2374, "y": 3854, "plane": 0,
+      "label": "Safespot (boulders)",
+      "note": "Icy islands north of Neitiznot and Jatizso. Use the boulders scattered on the islands to block Sea Trolls. Ranged or Magic. Sea Trolls can still attack you with Ranged from water — Dragonhide armour helps. Protect from Melee once you've lured them onto land."
+    }
+  ],
+  "Sea Troll Queen": [
+    {
+      "type": "tile", "x": 2374, "y": 3860, "plane": 0,
+      "label": "Safespot (large boulder)",
+      "note": "The Sea Troll Queen spawns on the north-most icy island. Use the large boulders near the centre of the island to block her melee. She can attack with Ranged when she can't reach you; Dragonhide armour reduces this. The queen drops a big bone and raw shark on death. Protect from Melee/Ranged recommended."
+    }
+  ],
+
+  "Gorak": [
+    {
+      "type": "tile", "x": 2907, "y": 3759, "plane": 0,
+      "label": "Safespot (lobby rocks)",
+      "note": "Goraks patrol the main God Wars Dungeon lobby. Use the large boulders and rock walls along the edges of the lobby as obstacles. Goraks are aggressive to all players; enter with protection prayers active. Ranged or Magic recommended so minions cannot drag you into melee range."
+    }
+  ],
+
+  "Tormented Demon": [
+    {
+      "type": "tile", "x": 2972, "y": 9676, "plane": 0,
+      "label": "Behind ice chunk",
+      "note": "Frozen Waste Plateau (Ghorrock Dungeon). Tormented Demons WILL switch between magic and ranged when they cannot reach you, so a true 'safespot' is not possible. Instead: stand behind an ice chunk to avoid melee, use Protect from Magic/Ranged as they switch. You MUST break their fire shield first: attack once with any weapon (drops shield for 1 hit), then deal full damage with Darklight or abyssal weapon. Repeat cycle. 600 HP total — use food and prayer pots."
+    }
+  ],
+
+  "Wallasalki": [
+    {
+      "type": "tile", "x": 2534, "y": 9889, "plane": 0,
+      "label": "Safespot (rock formation)",
+      "note": "Waterbirth Island Dungeon, Sub-level 1 Room 2 (best room — 29 spawns). Use the many rock formations and pillars throughout the dungeon rooms to safespot Wallasalki. They attack exclusively with Magic, so Dragonhide armour with Protect from Magic reduces damage significantly. Ranged or Melee (from safespot) recommended."
+    }
+  ],
+
+  "Giant Rock Crab": [
+    {
+      "type": "tile", "x": 2524, "y": 9883, "plane": 0,
+      "label": "Safespot (behind rock)",
+      "note": "Waterbirth Island Dungeon. Giant Rock Crabs are large (4x4 tiles) making them easy to safespot. Stand on the far side of any wall corner or rock obstacle. They move slowly — once safespotted with Ranged/Magic they cannot reach you. Protect from Melee in case you get tagged walking to the spot."
+    }
+  ],
+
+  "Night beast": [
+    {
+      "type": "tile", "x": 3261, "y": 12454, "plane": 0,
+      "label": "Safespot (south wall)",
+      "note": "Iorwerth Dungeon (Crystal Caves below Prifddinas). Night Beasts are large and slow. Use the south wall of their room and any protruding wall segments to block their melee. Ranged or Magic only — they have high defence against melee. Crystal bow/ballista recommended."
+    }
+  ],
+
+  "Warped Tortoise": [
+    {
+      "type": "tile", "x": 2315, "y": 9585, "plane": 0,
+      "label": "Safespot (rocks)",
+      "note": "Poison Waste Dungeon (south of Feldip Hills, accessed near Jiggig). Use the various rocks and stalagmites in the dungeon to safespot Warped Tortoises. They are slow-moving and 2x2 tiles, making them easy to trap. Ranged or Magic (Magic is less affected by their ranged defence). Anti-poison recommended."
+    }
+  ],
+
+  "Warped Terrorbird": [
+    {
+      "type": "tile", "x": 2318, "y": 9580, "plane": 0,
+      "label": "Safespot (cave wall)",
+      "note": "Poison Waste Dungeon. Use cave walls and rock columns to block Warped Terrorbirds. They move faster than Warped Tortoises — get behind a wall corner before they close in. Ranged or Magic. Anti-poison recommended."
+    }
+  ],
+
+  "Ogre shaman": [
+    {
+      "type": "tile", "x": 2503, "y": 9472, "plane": 0,
+      "label": "Safespot (rock pillar)",
+      "note": "Ogre Enclave (underground beneath Gu'Tanoth). Use the rock pillars throughout the cave to safespot Ogre Shamans. A Halberd can also reach over the rocks for melee. Ogre Shamans use Magic attacks — Protect from Magic or Dragonhide armour recommended."
+    }
+  ],
+
+  "Shadow Keeper": [
+    {
+      "type": "tile", "x": 2693, "y": 5087, "plane": 0,
+      "label": "Safespot (column)",
+      "note": "Shadow Dungeon (north of the Tree Gnome Stronghold, requires Ring of visibility). Use the dark columns throughout the dungeon to block Shadow Keepers. They attack with Melee only, so standing behind a column completely neutralises them. Ranged or Magic, Protect from Melee as backup."
+    }
+  ],
+
+  "Disciple of Iban": [
+    {
+      "type": "tile", "x": 2013, "y": 4720, "plane": 0,
+      "label": "Safespot (well area)",
+      "note": "Underground Pass dungeon. Stand on the far side of the central well or use the alcoves in the passage walls to break line-of-sight with Disciples of Iban. They attack with Magic — Protect from Magic or Dragonhide armour is recommended."
+    }
+  ],
+
+  "Abyssal guardian": [
+    {
+      "type": "tile", "x": 3041, "y": 4839, "plane": 0,
+      "label": "Safespot (rock outcrop)",
+      "note": "Abyssal Area (south of Zanaris, accessed via fairy ring ALR or the Abyss). Use the numerous rocky outcroppings and formations in the Abyssal Area or Abyssal Nexus to block Abyssal Guardians. Ranged or Magic. Bring food — the Abyss drains prayer every few seconds unless wearing an abyssal bracelet or Amulet of the Eye."
+    }
+  ],
+  "Abyssal leech": [
+    {
+      "type": "tile", "x": 3041, "y": 4839, "plane": 0,
+      "label": "Safespot (rock outcrop)",
+      "note": "Same area as Abyssal Guardian. Abyssal Leeches move quickly — get behind a rock before they latch on. They drain your stats (primarily Attack) when they hit. Ranged or Magic from a rock outcrop."
+    }
+  ],
+  "Abyssal walker": [
+    {
+      "type": "tile", "x": 3041, "y": 4839, "plane": 0,
+      "label": "Safespot (rock outcrop)",
+      "note": "Same area as Abyssal Guardian. Abyssal Walkers are the fastest-moving of the Abyssal trio — secure a safespot quickly. They drain your stats on hit. Ranged or Magic."
+    }
+  ],
+
+  "Maniacal Monkey Archer": [
+    {
+      "type": "tile", "x": 2770, "y": 9175, "plane": 0,
+      "label": "Safespot (cave formation)",
+      "note": "Kruk's Dungeon (Ape Atoll underground). Maniacal Monkey Archers use Ranged — equip Dragonhide armour or activate Protect from Missiles. Use the cave rock formations in Kruk's Dungeon to break line-of-sight. Bring Ninja/gorilla greegree to enter Ape Atoll safely."
+    }
+  ],
+
+  "Animated spade": [
+    {
+      "type": "tile", "x": 3454, "y": 9628, "plane": 0,
+      "label": "Safespot (corner)",
+      "note": "Tarn's Lair (encountered while navigating to Terror Dogs). Animated Spades are aggressive and relatively weak. Use any corner of the dungeon rooms to break their pathing and attack with Ranged or Magic. They use melee only."
+    }
+  ],
+
+  "Armoured zombie": [
+    {
+      "type": "tile", "x": 3430, "y": 9630, "plane": 0,
+      "label": "Safespot (pillar)",
+      "note": "Tarn's Lair. Armoured Zombies use melee only. Use the pillars and wall corners of the dungeon to safespot. They are slow — easy to outmanoeuvre. Protect from Melee recommended in the tight corridors near the entrance where several may attack at once."
+    }
+  ],
+
+  "Rock Crab": [
+    {
+      "type": "tile", "x": 2680, "y": 3722, "plane": 0,
+      "label": "Safespot (behind rock)",
+      "note": "Rock Crabs (Rellekka coast, Crabclaw Isle, North of Rellekka). Rock Crabs disguise themselves as boulders until you step near. Stand directly behind an adjacent boulder when one attacks — they are 2x2 tiles and cannot path around tight corners. Ranged or Magic. Tap aggressive by clicking away every ~10 minutes."
+    }
+  ],
+
+  "Rock lobster": [
+    {
+      "type": "tile", "x": 2484, "y": 9877, "plane": 0,
+      "label": "Safespot (behind rock)",
+      "note": "Waterbirth Island Dungeon. Rock Lobsters are 2x2 tiles and slow — easy to safespot using the rock formations throughout the dungeon. They use melee only. Ranged or Magic from behind any wall corner. High Prayer bonus helps offset prayer drain from nearby Dagannoth."
+    }
+  ],
+
+  "Skeleton fremennik": [
+    {
+      "type": "tile", "x": 2748, "y": 10146, "plane": 0,
+      "label": "Safespot (rock wall)",
+      "note": "Brine Rat Cavern (west of Rellekka). Skeleton Fremenniks are found guarding the Brine Rats. Use the cave rock walls at the sides of the cavern to break their melee pathing. They attack with melee — Protect from Melee or Ranged/Magic from a wall corner."
+    }
+  ],
+
+  "Giant goblin": [
+    {
+      "type": "tile", "x": 2625, "y": 9804, "plane": 0,
+      "label": "Safespot (rock column)",
+      "note": "Goblin Cave (east of Tree Gnome Village). The Giant Goblin (lvl 397) is located in the deepest part of the cave. Use the rock columns in the cave to safespot this single powerful spawn. It attacks with melee — Ranged or Magic from behind a rock column. Bring a crush-style weapon to damage the rock skin, or simply use Ranged/Magic."
+    }
+  ],
+
+  "_comment_boss": "=== BOSS TASK SAFESPOTS ===",
+
+  "Giant Mole": [
+    {
+      "type": "tile", "x": 1984, "y": 5135, "plane": 0,
+      "label": "Mole Hole entrance",
+      "note": "Dig with a spade on a mole hill in Falador Park to enter. ALWAYS bring an inextinguishable light source (bullseye lantern, abyssal lantern, mining helmet) — candles/torches are extinguished when she burrows. Equip a Falador shield 3+ to track her burrow location. She burrows away when she takes a non-magic hit (unless below 5% HP). Poison does NOT trigger a burrow — poison her for faster kills. No traditional safespot; focus on prayer (Protect from Melee) and chasing her between burrows."
+    }
+  ],
+
+  "Kalphite Queen": [
+    {
+      "type": "tile", "x": 3509, "y": 9496, "plane": 0,
+      "label": "Safespot — Phase 1 (tunnel)",
+      "note": "Kalphite Lair (south of Shantay Pass). Phase 1 uses Ranged; Phase 2 (flying) uses Melee and Magic. Safespot for Phase 1: stand in the tunnel entry corridor so Kalphite Workers block the Queen. She can only melee and ranged; lure workers between you and her. For Phase 2 (flying), use Protect from Missiles or simply DPS through. Bring antipoison. The Worker entrance tunnel provides the best Phase 1 cover."
+    }
+  ],
+
+  "King Black Dragon": [
+    {
+      "type": "tile", "x": 2975, "y": 9887, "plane": 0,
+      "label": "Safespot (pillar column)",
+      "note": "King Black Dragon Lair (via trapdoor in Wilderness Lava Maze or Edgeville dungeon). Use the large stone pillars in the lair to break the KBD's melee reach. Stand on the far side of a pillar — the KBD is 5x5 tiles and cannot path around tight columns. He still attacks with dragonfire (all four types) so always equip an anti-dragon shield or DFS. Prayer potions + 4 prayer types for full breath protection."
+    }
+  ],
+
+  "Dagannoth Prime": [
+    {
+      "type": "tile", "x": 2901, "y": 4449, "plane": 0,
+      "label": "Dagannoth Kings room",
+      "note": "Waterbirth Island Dungeon (final level). Prime uses Magic, Supreme uses Ranged, Rex uses Melee. DAGANNOTH REX SAFESPOT: stand in the far north-east corner of the room — Rex cannot reach you from the NE corner if you stand correctly, so you can kill Rex with Melee while using Protect from Magic for Prime. Kill in order: Rex (prayer Melee, no threat from Magic corner) → Supreme → Prime. All three together requires prayer switching every hit."
+    }
+  ],
+  "Dagannoth Rex": [
+    {
+      "type": "tile", "x": 2910, "y": 4453, "plane": 0,
+      "label": "Safespot — NE corner",
+      "note": "Stand in the north-east corner of the Dagannoth Kings room. Rex (Melee) cannot reach this corner if positioned correctly. Kill Rex with Melee while praying against Prime (Magic) and Supreme (Ranged). After Rex dies, switch prayer and attack Supreme, then Prime. Dagannoth-bane weapons are best: Arclight, Zamorakian spear, Twisted bow."
+    }
+  ],
+  "Dagannoth Supreme": [
+    {
+      "type": "tile", "x": 2901, "y": 4449, "plane": 0,
+      "label": "Dagannoth Kings room",
+      "note": "Supreme uses Ranged attacks. Protect from Missiles when fighting Supreme. Kill order: Rex → Supreme → Prime. Use the NE corner safespot for Rex, then move to attack Supreme and Prime. See 'Dagannoth Rex' entry for full room strategy."
+    }
+  ],
+
+  "Chaos Fanatic": [
+    {
+      "type": "tile", "x": 2977, "y": 3688, "plane": 0,
+      "label": "Safespot (south pillar)",
+      "note": "West of the Wilderness Chaos Temple (level 38-39 Wilderness). Stand south of his spawn behind the large stone pillar near the ruins. He uses explosive Magic — the orb splashes on your tile but the pillar breaks his movement cycle. Protect from Magic. Bring antidote — he can poison. WILDERNESS: always risk only what you can afford to lose."
+    }
+  ],
+
+  "Chaos Elemental": [
+    {
+      "type": "tile", "x": 3248, "y": 3922, "plane": 0,
+      "label": "Behind pillar (Wilderness)",
+      "note": "Wilderness Volcano area (level 50+ Wilderness). The Chaos Elemental uses all three combat styles and teleports you away. Use Protect from Magic. Stand behind rock pillars/ruins to limit its movement. It unequips your armour pieces — always have backup gear in inventory. HIGH WILDERNESS risk — always bring only what you can afford to lose."
+    }
+  ],
+
+  "Scorpia": [
+    {
+      "type": "tile", "x": 3233, "y": 10254, "plane": 0,
+      "label": "Scorpia's lair",
+      "note": "Scorpius Shrine (Wilderness, level 54). Scorpia uses Ranged and spawns two level-47 guardians when below 50% HP. Protect from Missiles for the main fight. No hard safespot — position at the room entrance so only Scorpia and not both guardians can attack at once. The guardians heal Scorpia if they touch her; attack them when they appear. Anti-venom recommended."
+    }
+  ],
+
+  "Artio": [
+    {
+      "type": "tile", "x": 3039, "y": 10266, "plane": 0,
+      "label": "Safespot (Artio's Den)",
+      "note": "Artio's Den (non-Wilderness version of Callisto, accessible via Wilderness Slayer Cave). Artio uses all three attack styles — switch prayers appropriately. She has a 'slam' attack that damages in an area. She can be safespotted behind the rocks in the west side of her lair when positioned correctly. Protect from Missiles for the main phase. Highly popular for low-risk Callisto kills."
+    }
+  ],
+  "Callisto": [
+    {
+      "type": "tile", "x": 3282, "y": 3886, "plane": 0,
+      "label": "Callisto's Den (Wilderness)",
+      "note": "Callisto's Den (level 44-50 Wilderness). Uses melee and a Magic area-slam. Use Protect from Melee for the slamming phase. There are limited safespot opportunities using the rocks in the cave — position on the south-eastern side of the den. HIGH WILDERNESS risk. Prefer Artio's Den (non-Wilderness version) for safer kills."
+    }
+  ],
+
+  "Spindel": [
+    {
+      "type": "tile", "x": 3301, "y": 10262, "plane": 0,
+      "label": "Safespot (Spindel's Den)",
+      "note": "Spindel's Den (non-Wilderness version of Venenatis). Spindel uses Ranged and Magic and spawns spiderlings at certain HP thresholds. Use Protect from Missiles. Stand behind the pillars in the den — Spindel is 2x2 tiles and can be blocked by the stone formations. Clear spiderlings when they appear (they heal Spindel). Highly popular for safer Venenatis kills."
+    }
+  ],
+  "Venenatis": [
+    {
+      "type": "tile", "x": 3307, "y": 3762, "plane": 0,
+      "label": "Venenatis' Lair (Wilderness)",
+      "note": "Venenatis' Lair (level 32-36 Wilderness). Uses Ranged and Magic, spawns spiderlings. Protect from Missiles. Safespot behind rocks/pillars in the south-west of the arena. HIGH WILDERNESS risk. Prefer Spindel's Den (non-Wilderness version)."
+    }
+  ],
+
+  "Calvar'ion": [
+    {
+      "type": "tile", "x": 3283, "y": 10265, "plane": 0,
+      "label": "Safespot (Calvar'ion's Den)",
+      "note": "Calvar'ion's Den (non-Wilderness Vet'ion). Calvar'ion switches between Magic and Melee phases. In the Melee phase: stand AWAY and use Protect from Melee. In the Magic phase: stand AWAY and use Protect from Magic. Safespot: use the rocks in the den's western side to keep distance during phase switches. He heals from dying skeleton hellhounds — kill them when they spawn."
+    }
+  ],
+  "Vet'ion": [
+    {
+      "type": "tile", "x": 3202, "y": 3788, "plane": 0,
+      "label": "Vet'ion's Lair (Wilderness)",
+      "note": "Vet'ion's Lair (level 32-37 Wilderness). Uses Magic (lightning). Safespot: stand far north or south of the spawn to reduce damage from lightning. HIGH WILDERNESS risk. Prefer Calvar'ion's Den (non-Wilderness version). Kill skeleton hellhounds to prevent him healing."
+    }
+  ],
+
+  "General Graardor": [
+    {
+      "type": "tile", "x": 2867, "y": 5354, "plane": 2,
+      "label": "Safespot — door corner",
+      "note": "God Wars Dungeon, Bandos Stronghold (plane 2). Entry safespot: stand in the north-west door corner just inside the room. Graardor will walk toward you and stop one tile away — use Ranged from this tile so he can't melee you. His minions (Sergeant Strongstack, Steelwill, Grimspike) WILL reach you — kill them first or ignore and focus on Graardor. Use Protect from Melee. Bring Bandos killcount (40) and level 70 Strength."
+    }
+  ],
+
+  "Commander Zilyana": [
+    {
+      "type": "tile", "x": 2888, "y": 5298, "plane": 2,
+      "label": "Safespot — behind altar",
+      "note": "God Wars Dungeon, Saradomin Stronghold (plane 2). Zilyana moves VERY fast. Safespot: stand behind the large altar in the south of the room. She can't reach you over the altar — attack with Ranged. Minions (Growler, Starlight, Bree) will still attack. Use Protect from Magic (Growler). Bring Saradomin killcount (40) and level 70 Agility."
+    }
+  ],
+
+  "Kree'arra": [
+    {
+      "type": "tile", "x": 2826, "y": 5296, "plane": 2,
+      "label": "Door-corner position",
+      "note": "God Wars Dungeon, Armadyl Stronghold (plane 2). Kree'arra cannot be attacked with Melee (flies). Ranged or Magic only. Position at the south-east corner of the entrance — stand in the corner so Kree'arra attacks predictably and minions only approach from one side. Use Protect from Missiles. Kill Flockleader Geerin, Wingman Skree, and Flight Kilisa if they overwhelm. Requires 40 Armadyl killcount and 70 Ranged."
+    }
+  ],
+
+  "K'ril Tsutsaroth": [
+    {
+      "type": "tile", "x": 2925, "y": 5329, "plane": 2,
+      "label": "Safespot — entrance corner",
+      "note": "God Wars Dungeon, Zamorak Stronghold (plane 2). K'ril attacks with Melee and Magic. Entry safespot: stand in the east corner of the room entrance. K'ril and Balfrug Kreeyath (Magic-using demon) both attack from here. Use Protect from Magic. Tstanon Karlak (Melee minion) will still reach you — protect switches needed. Requires 40 Zamorak killcount and 70 Hitpoints."
+    }
+  ],
+
+  "Corporeal Beast": [
+    {
+      "type": "tile", "x": 2972, "y": 4381, "plane": 0,
+      "label": "South-west corner",
+      "note": "Corporeal Beast Lair (accessed via the Spirit Realm, north of Edgeville). The Corp Beast is 5x5 tiles and uses Melee and Magic (dark energy core included). Stand in the south-west corner of the room — Corp is forced to stand in a fixed position, making it predictable. Protect from Melee or Magic based on its attack. ONLY Spears, Halberds, or Magic deal full damage; all other melee weapons deal 50% damage."
+    }
+  ],
+
+  "Obor": [
+    {
+      "type": "tile", "x": 1575, "y": 2967, "plane": 0,
+      "label": "Safespot — entrance corridor",
+      "note": "Giants' Den (Hill Giant boss, requires a giant key). Obor uses Melee and a rare Ranged attack. Stand in the narrow entrance corridor — Obor is 4x4 tiles and cannot enter the corridor. Ranged or Halberd attack from the corridor entrance. He becomes briefly invulnerable during some animations — wait for these to pass. Easy boss, good for beginners."
+    }
+  ],
+
+  "Scurrius": [
+    {
+      "type": "tile", "x": 3250, "y": 9890, "plane": 0,
+      "label": "Behind pillar",
+      "note": "Varrock Sewers (accessed via manhole in Varrock, or directly if you know the route). Scurrius uses Magic and summons giant rats periodically. Use Protect from Magic. Stand behind the stone pillars in the room to break line-of-sight between rat spawns — this forces Scurrius into a fixed melee position. Kill giant rats when summoned (they heal Scurrius). Ranged or Melee effective."
+    }
+  ],
+
+  "Sarachnis": [
+    {
+      "type": "tile", "x": 1247, "y": 10075, "plane": 0,
+      "label": "Safespot — column",
+      "note": "Forthos Dungeon (below Hosidius). Sarachnis uses Melee, Ranged, and spawns spiderlings. Safespot: position behind one of the large stone columns in the south of the room — she cannot reach over the column. Ranged or Magic from behind the column. Spiderlings still attack; use area-of-effect attacks (chinchompa, burst/barrage) or ignore them. Protect from Missiles for her ranged phase."
+    }
+  ],
+
+  "Crazy Archaeologist": [
+    {
+      "type": "tile", "x": 3293, "y": 3855, "plane": 0,
+      "label": "Safespot — ruined wall",
+      "note": "Forgotten Cemetery (Wilderness, level 24). Uses explosive Ranged salvos. Safespot: stand behind any of the ruined wall sections of the forgotten cemetery. His explosive salvos (three at once) will miss when you're behind the wall. He runs around — keep the wall between you. Protect from Missiles. Wilderness level 24 — moderate risk. Good drop table for a low-effort boss."
+    }
+  ],
+
+  "Colossal Hydra": [
+    {
+      "type": "tile", "x": 1314, "y": 10248, "plane": 0,
+      "label": "Lair entrance",
+      "note": "Karuulm Slayer Dungeon (level 95 Slayer required). Colossal Hydra changes combat styles (Melee, Ranged, Magic) like the normal Alchemical Hydra. Must wear Boots of Stone, Brimstone, or Granite boots (or suffer constant damage from the hot floor). Safespot: the Hydra is 5x5 — use the pools in the lair to force it through specific paths. Switch prayers as it changes styles. Similar to Alchemical Hydra but larger. Requires boots to enter the lair."
+    }
+  ],
+
+  "Phantom Muspah": [
+    {
+      "type": "tile", "x": 2948, "y": 3905, "plane": 0,
+      "label": "Spiky form — south wall",
+      "note": "Frozen Waste Plateau (surface entrance). Phantom Muspah changes between a ranged and melee 'spiky' form. When in spiky form (Melee/Ranged), stand FAR south of the room — at max range, his spikes cannot reach. When in magic form, Protect from Magic and stand 5+ tiles away. He charges at you in melee form — stay moving. Kill the spawned nightmare cores when they appear. No specific single-tile safespot — movement is the key strategy."
+    }
+  ],
+
+  "Skotizo": [
+    {
+      "type": "tile", "x": 1308, "y": 10202, "plane": 0,
+      "label": "Side altar position",
+      "note": "Catacombs of Kourend (requires Totem of the Dead/Evil, assembled from Demonic Gorilla drops). Skotizo uses Melee and powers up via four altars in the corners. Disable the altars first (attack each one) — while an altar is active, Skotizo takes reduced damage and his minions deal more damage. Kill minions quickly. No traditional safespot — DPS race. Arclight deals 4x damage here. Bring super combats and full Dharok's/Arclight for quick kills."
+    }
+  ],
+
+  "Vorkath": [
+    {
+      "type": "tile", "x": 2272, "y": 4059, "plane": 0,
+      "label": "Stand 5 tiles away (south)",
+      "note": "Ungael (accessed after Dragon Slayer II quest). Vorkath uses 6 Dragonfire types + Ranged + Acid. ALWAYS equip Dragonfire Ward/DHSB/Anti-dragon shield. Position 5+ tiles south of Vorkath. For the Acid Phase: walk BACK AND FORTH (never stand still) to avoid acid pools spawning under you. For the Zombie spawn: use Crumble Undead (Magic) on the zombie IMMEDIATELY or it will heal Vorkath for 60 HP. At 50%: Woox-walk (run under Vorkath between attacks). An anti-venom+ is required every kill."
+    }
+  ],
+
+  "Zulrah": [
+    {
+      "type": "tile", "x": 2268, "y": 3074, "plane": 0,
+      "label": "Zulrah shrine — start position",
+      "note": "Zul-Andra (south-west of Mos Le'Harmless). Zulrah rotates through 4 set phases (Serpentine/green, Tanzanite/blue, Magma/red) each with specific safe tile positions. Learn the rotation by watching which corner Zulrah first appears. Stand in the snake's outer coil area and step to the specific jad tile for each phase. MUST have anti-venom+. Rotations are fixed — memorise 2-3 common rotations. High-level ranged + magic switch recommended. Jad phase: switch prayer when the projectile appears."
+    }
+  ]
+}
+
+

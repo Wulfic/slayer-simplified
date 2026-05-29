@@ -55,6 +55,9 @@ All 9 masters are supported: Turael, Spria, Mazchna, Vannaka, Chaeldar, Konar, N
 **Slayer Streak Optimizer!**
 Automatically assigns you the best Slayer Master for optimizing your task streak, to get the most points possible!
 
+**Tile Notes**
+Notes on specific tiles such as safe spots, or help traveling to certain areas by using tile notes/hints.
+
 ---
 
 ## Bug reports & support

@@ -177,6 +177,22 @@ public interface SlayerSimplifiedConfig extends Config
     @ConfigItem(keyName = "showNonSlayerEnemies", name = "", description = "")
     void setShowNonSlayerEnemies(boolean value);
 
+    @ConfigItem(
+            keyName = "tileNotes",
+            name = "TileNotes",
+            description = "Highlight each known training-spot tile for your current task in the game scene, "
+                    + "showing the location name above the tile. Only tiles within your loaded area are shown.",
+            position = 11,
+            hidden = true
+    )
+    default boolean tileNotes()
+    {
+        return false;
+    }
+
+    @ConfigItem(keyName = "tileNotes", name = "", description = "")
+    void setTileNotes(boolean value);
+
     // Hidden config keys used to persist internal state across sessions
 
     @ConfigItem(
