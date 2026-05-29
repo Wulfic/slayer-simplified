@@ -604,6 +604,19 @@ public class SlayerSimplifiedPlugin extends Plugin
             mainPanel.refreshSelectedTask();
             return;
         }
+        if ("tileNotes".equals(event.getKey()))
+        {
+            // Explicitly add/remove the overlay so the toggle takes effect immediately.
+            if (config.tileNotes())
+            {
+                overlayManager.add(tileNoteOverlay);
+            }
+            else
+            {
+                overlayManager.remove(tileNoteOverlay);
+            }
+            return;
+        }
         if ("showNonSlayerEnemies".equals(event.getKey()))
         {
             mainPanel.refreshTaskList();
