@@ -94,8 +94,8 @@
         "plane": 0
     },
     "Avium Savannah": {
-        "x": 1656,
-        "y": 3121,
+        "x": 1645,
+        "y": 3011,
         "plane": 0
     },
     "Bandit Camp": {
@@ -111,12 +111,7 @@
         "y": 3306,
         "plane": 0
     },
-    "Behind Lumbridge Castle": {
-        "x": 3222,
-        "y": 3197,
-        "plane": 0
-    },
-    "Black Arm Gang hideout in Brimhaven": {
+    "Black Arm Gang Hideout": {
         "x": 2773,
         "y": 3185,
         "plane": 0
@@ -168,15 +163,13 @@
             "Buccaneers' Laborotory"
         ]
     },
-    "Callisto's Den": {
-        "x": 3283,
-        "y": 3886,
-        "plane": 0
-    },
-    "Calvar'ion's Den": {
-        "x": 3292,
-        "y": 10275,
-        "plane": 0
+    "Skeletal Tomb": {
+        "x": 3179,
+        "y": 3684,
+        "plane": 0,
+        "aliases": [
+            "Calvarion's Den"
+        ]
     },
     "Canifis": {
         "x": 3487,
@@ -216,14 +209,6 @@
         "x": 1685,
         "y": 10088,
         "plane": 0
-    },
-    "Observatory Dungeon": {
-        "x": 2458,
-        "y": 3186,
-        "plane": 0,
-        "aliases": [
-            "Cave near the Observatory"
-        ]
     },
     "Chambers of Xeric": {
         "x": 1232,
@@ -306,10 +291,11 @@
     },
     "Crandor": {
         "x": 2834,
-        "y": 3238,
+        "y": 3257,
         "plane": 0,
         "aliases": [
-            "Crandor Island"
+            "Crandor Island",
+            "Crandor Dungeon"
         ]
     },
     "Crash Site Cavern": {
@@ -343,8 +329,8 @@
         "plane": 0
     },
     "Darkmeyer": {
-        "x": 3596,
-        "y": 3333,
+        "x": 3604,
+        "y": 3361,
         "plane": 0
     },
     "Death Plateau (Mountain troll)": {
@@ -354,11 +340,6 @@
         "aliases": [
             "Death Plateau"
         ]
-    },
-    "Death altar": {
-        "x": 2210,
-        "y": 3718,
-        "plane": 0
     },
     "Deep Wilderness Dungeon": {
         "x": 3045,
@@ -427,19 +408,14 @@
             "Ardougne"
         ]
     },
-    "East of Barbarian Village": {
+    "Barbarian Village": {
         "x": 3100,
         "y": 3420,
         "plane": 0
     },
     "East of Colossal Wyrm Remains": {
-        "x": 3727,
-        "y": 3832,
-        "plane": 0
-    },
-    "East of the Deserted Keep": {
-        "x": 3264,
-        "y": 3900,
+        "x": 1686,
+        "y": 2933,
         "plane": 0
     },
     "Edgeville Dungeon": {
@@ -460,11 +436,6 @@
     "Elemental Workshop": {
         "x": 2710,
         "y": 3498,
-        "plane": 0
-    },
-    "Enchanted Valley": {
-        "x": 2991,
-        "y": 4538,
         "plane": 0
     },
     "Entrana Dungeon": {
@@ -498,11 +469,6 @@
         "y": 2982,
         "plane": 0
     },
-    "Forests north and east of the Chaos Temple": {
-        "x": 3260,
-        "y": 3660,
-        "plane": 0
-    },
     "Forgotten Cemetery": {
         "x": 2970,
         "y": 3751,
@@ -514,8 +480,8 @@
         "plane": 0
     },
     "Fossil Island": {
-        "x": 3319,
-        "y": 3402,
+        "x": 3734,
+        "y": 3808,
         "plane": 0
     },
     "Fremennik Isles": {
@@ -549,11 +515,6 @@
     "Glarial's Tomb": {
         "x": 2558,
         "y": 3445,
-        "plane": 0
-    },
-    "Gnome Maze": {
-        "x": 2444,
-        "y": 3423,
         "plane": 0
     },
     "Gnome Stronghold": {
@@ -643,27 +604,33 @@
     "Hosidius": {
         "x": 1757,
         "y": 3567,
-        "plane": 0
-    },
-    "Hosidius - Marketplace": {
-        "x": 1760,
-        "y": 3566,
-        "plane": 0
-    },
-    "Hosidius - Southern Coast": {
-        "x": 1781,
-        "y": 3526,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "Hosidius - Marketplace",
+            "Hosidius - Southern Coast"
+        ]
     },
     "Hunter's End": {
-        "x": 3028,
-        "y": 3697,
+        "x": 3115,
+        "y": 3677,
+        "plane": 0,
+        "aliases": [
+            "Hunter's End Dungeon",
+            "Artio's Den"
+        ]
+    },
+    "Callisto's Den": {
+        "x": 3292,
+        "y": 3851,
         "plane": 0
     },
     "Ice Mountain": {
         "x": 3007,
         "y": 3472,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "Ruins of Camdozaal"
+        ]
     },
     "Ice Path north of Trollheim (Ice trolls)": {
         "x": 2891,
@@ -700,8 +667,8 @@
         ]
     },
     "Isafdar": {
-        "x": 2195,
-        "y": 3245,
+        "x": 2198,
+        "y": 3152,
         "plane": 0
     },
     "Isafdar mine": {
@@ -714,11 +681,12 @@
         ]
     },
     "Isle of Souls": {
-        "x": 2193,
-        "y": 2773,
+        "x": 2209,
+        "y": 2854,
         "plane": 0,
         "aliases": [
-            "Isle of Souls Dungeon"
+            "Isle of Souls Dungeon",
+            "Soul Wars"
         ]
     },
     "Jatizso": {
@@ -766,7 +734,8 @@
         "plane": 0,
         "aliases": [
             "Karamja Volcano",
-            "Above Karamja Volcano"
+            "Above Karamja Volcano",
+            "Mor Ul Rek"
         ]
     },
     "Karuulm Slayer Dungeon": {
@@ -779,8 +748,8 @@
         ]
     },
     "Keldagrim": {
-        "x": 2838,
-        "y": 10170,
+        "x": 2730,
+        "y": 3713,
         "plane": 0
     },
     "Kharazi Jungle": {
@@ -809,8 +778,8 @@
         "plane": 2
     },
     "King Black Dragon Lair": {
-        "x": 2975,
-        "y": 9877,
+        "x": 3016,
+        "y": 3849,
         "plane": 0
     },
     "Kourend Castle": {
@@ -874,27 +843,20 @@
         "y": 3703,
         "plane": 0,
         "aliases": [
-            "Lizardmen Settlement"
+            "Lizardman canyon"
         ]
-    },
-    "Lizardman canyon": {
-        "x": 1474,
-        "y": 3687,
-        "plane": 0
     },
     "Lletya": {
         "x": 2341,
         "y": 3171,
-        "plane": 0
-    },
-    "Lletya - West of the city": {
-        "x": 2328,
-        "y": 3177,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "Lletya - West of the city"
+        ]
     },
     "Lovakengj": {
-        "x": 1456,
-        "y": 3834,
+        "x": 1521,
+        "y": 3745,
         "plane": 0
     },
     "Lovakite mine": {
@@ -905,17 +867,18 @@
     "Lumbridge": {
         "x": 3222,
         "y": 3218,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "Lumbridge - River"
+        ]
     },
     "Lumbridge - Farm": {
         "x": 3251,
         "y": 3298,
-        "plane": 0
-    },
-    "Lumbridge - River": {
-        "x": 3234,
-        "y": 3197,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "Lumbridge Cow Field"
+        ]
     },
     "Lumbridge Caves": {
         "x": 3208,
@@ -924,11 +887,6 @@
         "aliases": [
             "Lumbridge Castle basement"
         ]
-    },
-    "Lumbridge Cow Field": {
-        "x": 3254,
-        "y": 3268,
-        "plane": 0
     },
     "Lumbridge Swamp": {
         "x": 3184,
@@ -988,13 +946,8 @@
         ]
     },
     "Mogre Camp": {
-        "x": 2975,
-        "y": 9507,
-        "plane": 0
-    },
-    "Mor Ul Rek": {
-        "x": 2856,
-        "y": 3166,
+        "x": 2666,
+        "y": 3162,
         "plane": 0
     },
     "Mort Myre Swamp": {
@@ -1036,8 +989,8 @@
         "plane": 0
     },
     "Moss Giant Island": {
-        "x": 2709,
-        "y": 3209,
+        "x": 2698,
+        "y": 3206,
         "plane": 0
     },
     "Mudskipper Point": {
@@ -1046,8 +999,8 @@
         "plane": 0
     },
     "Mushroom Forest": {
-        "x": 3673,
-        "y": 3807,
+        "x": 3695,
+        "y": 3818,
         "plane": 0
     },
     "Mynydd": {
@@ -1091,8 +1044,8 @@
         "plane": 0
     },
     "Necromancer Tower": {
-        "x": 3664,
-        "y": 3569,
+        "x": 2669,
+        "y": 3243,
         "plane": 0
     },
     "Neitiznot": {
@@ -1101,42 +1054,27 @@
         "plane": 0
     },
     "Neypotzli": {
-        "x": 1767,
-        "y": 3043,
+        "x": 1435,
+        "y": 3131,
         "plane": 0,
         "aliases": [
             "Neypotzli Prison",
             "Earthbound Cavern"
         ]
     },
-    "North of Al-Kharid gate": {
-        "x": 3267,
-        "y": 3222,
-        "plane": 0
-    },
-    "North of Observatory": {
-        "x": 2437,
-        "y": 3120,
-        "plane": 0
-    },
     "North of Outpost": {
         "x": 2447,
         "y": 3366,
         "plane": 0
     },
-    "North of Rellekka": {
-        "x": 2660,
-        "y": 3687,
-        "plane": 0
-    },
-    "North of Venenatis": {
+    "North of Silk Cavern": {
         "x": 3319,
         "y": 3820,
         "plane": 0
     },
-    "North of the Graveyard of Shadows": {
-        "x": 3147,
-        "y": 3692,
+    "Silk Cavern": {
+        "x": 3320,
+        "y": 3795,
         "plane": 0
     },
     "Ogre Enclave": {
@@ -1165,7 +1103,8 @@
         "plane": 0,
         "aliases": [
             "Temple of Light",
-            "Mourner HQ"
+            "Mourner HQ",
+            "Death altar"
         ]
     },
     "Pirates' Cove": {
@@ -1183,25 +1122,23 @@
         "y": 3100,
         "plane": 0
     },
-    "Port Phasmatys - Farm": {
-        "x": 3703,
-        "y": 3540,
-        "plane": 0
-    },
-    "Port Phasmatys - West of the city": {
-        "x": 3671,
-        "y": 3507,
-        "plane": 0
+    "Port Phasmatys": {
+        "x": 3660,
+        "y": 3501,
+        "plane": 0,
+        "aliases": [
+            "West of Port Phasmatys",
+            "Port Phasmatys - Farm",
+            "Port Phasmatys - West of the city"
+        ]
     },
     "Port Sarim": {
         "x": 3024,
         "y": 3217,
-        "plane": 0
-    },
-    "Port Sarim pier": {
-        "x": 3040,
-        "y": 3202,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "Port Sarim pier"
+        ]
     },
     "Prifddinas": {
         "x": 3252,
@@ -1209,24 +1146,19 @@
         "plane": 0
     },
     "Ralos' Rise": {
-        "x": 1450,
-        "y": 3140,
+        "x": 1439,
+        "y": 3169,
         "plane": 0
     },
     "Rellekka": {
         "x": 2658,
         "y": 3659,
-        "plane": 0
-    },
-    "Rellekka - North": {
-        "x": 2659,
-        "y": 3685,
-        "plane": 0
-    },
-    "Rellekka -- just outside the city": {
-        "x": 2648,
-        "y": 3644,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "North of Rellekka",
+            "Rellekka - North",
+            "Rellekka -- just outside the city"
+        ]
     },
     "Revenant Caves": {
         "x": 3075,
@@ -1239,8 +1171,8 @@
         "plane": 0
     },
     "Ruins of Tapoyauik": {
-        "x": 1374,
-        "y": 3821,
+        "x": 1693,
+        "y": 3231,
         "plane": 0,
         "aliases": [
             "Ruins of Tapouik",
@@ -1288,18 +1220,17 @@
             "Slayer Tower - Floor -1",
             "Slayer Tower - Floor 1",
             "Slayer Tower - Floor 2",
-            "Slayer Tower - Floor 3"
+            "Slayer Tower - Floor 3",
+            "South of Slayer Tower"
         ]
     },
     "Slepe": {
-        "x": 3756,
-        "y": 3277,
-        "plane": 0
-    },
-    "Slepe Church": {
-        "x": 3773,
-        "y": 3263,
-        "plane": 0
+        "x": 3733,
+        "y": 3308,
+        "plane": 0,
+        "aliases": [
+            "Slepe Church"
+        ]
     },
     "Smoke Devil Dungeon": {
         "x": 2404,
@@ -1327,8 +1258,8 @@
         "plane": 0
     },
     "South of Falador": {
-        "x": 2965,
-        "y": 3340,
+        "x": 2984,
+        "y": 3293,
         "plane": 0
     },
     "South of Gu'Tanoth": {
@@ -1342,23 +1273,13 @@
         "plane": 0
     },
     "South of Varrock": {
-        "x": 3212,
-        "y": 3380,
-        "plane": 0
-    },
-    "South of Venenatis": {
-        "x": 3319,
-        "y": 3780,
+        "x": 3228,
+        "y": 3370,
         "plane": 0
     },
     "South of Yanille": {
         "x": 2600,
         "y": 3070,
-        "plane": 0
-    },
-    "South of the Lava Maze": {
-        "x": 3062,
-        "y": 3857,
         "plane": 0
     },
     "South-east of Rellekka house portal": {
@@ -1381,9 +1302,9 @@
         "y": 3910,
         "plane": 0
     },
-    "Spindel's Den": {
-        "x": 3302,
-        "y": 10262,
+    "Web Chasm": {
+        "x": 3184,
+        "y": 3743,
         "plane": 0
     },
     "Stalker Den": {
@@ -1496,13 +1417,13 @@
         ]
     },
     "Tirannwn": {
-        "x": 2200,
-        "y": 3200,
+        "x": 2241,
+        "y": 3269,
         "plane": 0
     },
     "Toban 's Island": {
-        "x": 2850,
-        "y": 3070,
+        "x": 2574,
+        "y": 3028,
         "plane": 0
     },
     "Tombs of Amascut": {
@@ -1525,7 +1446,10 @@
     "Tree Gnome Village": {
         "x": 2525,
         "y": 3176,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "Gnome Maze"
+        ]
     },
     "Tree Gnome Village dungeon": {
         "x": 2533,
@@ -1572,8 +1496,8 @@
         "plane": 0
     },
     "Ungael": {
-        "x": 2456,
-        "y": 4027,
+        "x": 2273,
+        "y": 4040,
         "plane": 0
     },
     "Varlamore": {
@@ -1601,10 +1525,13 @@
         "y": 3221,
         "plane": 0
     },
-    "Vet'ion's Lair": {
-        "x": 3152,
-        "y": 3815,
-        "plane": 0
+    "Vet'ion's Rest": {
+        "x": 3221,
+        "y": 3788,
+        "plane": 0,
+        "aliases": [
+            "Vet'ion's Lair"
+        ]
     },
     "Warrior Guild - Floor 3": {
         "x": 2852,
@@ -1617,6 +1544,14 @@
         "plane": 0,
         "aliases": [
             "Waterbirth Island"
+        ]
+    },
+    "River Elid Dungeon": {
+        "x": 3370,
+        "y": 3132,
+        "plane": 0,
+        "aliases": [
+            "Water Ravine Dungeon"
         ]
     },
     "Waterfall Dungeon": {
@@ -1651,29 +1586,9 @@
         "y": 3400,
         "plane": 0
     },
-    "West of Mount Quidamortem": {
-        "x": 1215,
-        "y": 3819,
-        "plane": 0
-    },
-    "West of Port Phasmatys": {
-        "x": 3667,
-        "y": 3506,
-        "plane": 0
-    },
-    "West of Yanille": {
-        "x": 2570,
-        "y": 3090,
-        "plane": 0
-    },
     "West of the Chaos Temple": {
-        "x": 3220,
+        "x": 3210,
         "y": 3620,
-        "plane": 0
-    },
-    "West of the Dark Warriors' Fortress": {
-        "x": 3010,
-        "y": 3631,
         "plane": 0
     },
     "White Wolf Mountain": {
@@ -1685,8 +1600,8 @@
         ]
     },
     "Wilderness": {
-        "x": 3100,
-        "y": 3700,
+        "x": 3141,
+        "y": 3525,
         "plane": 0
     },
     "Wilderness Agility Course": {
@@ -1704,20 +1619,9 @@
         "y": 3773,
         "plane": 0
     },
-    "Wilderness Slayer Cave - Find real Cords": {
-        "x": 3000,
-        "y": 3800,
-        "plane": 0,
-        "aliases": [
-            "Wilderness Slayer Cave",
-            "Wildness Slayer Cave",
-            "Wildnerness Slayer Cave",
-            "Wilderness Slayer Dungeon"
-        ]
-    },
     "Wilderness Volcano": {
-        "x": 3173,
-        "y": 3810,
+        "x": 3349,
+        "y": 3914,
         "plane": 0,
         "aliases": [
             "Wilderness volcano"

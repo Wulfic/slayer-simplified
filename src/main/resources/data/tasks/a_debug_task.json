@@ -2,10 +2,10 @@
     "name": "A DEBUG TASK",
     "levelRequired": 1,
     "itemsRequired": [
-        "TEST ITEM"
+        "TEST ITEM REQUIRED"
     ],
     "itemsSuggested": [
-        
+        "TEST ITEM SUGGESTION"
     ],
     "attributes": [
         "TEST ATTRIBUTE"
@@ -192,7 +192,6 @@
             "Wilderness Volcano"
         ],
         "TEST VARIANT - OVERWORLD": [
-            "Across west Lumbridge bridge",
             "Al-Kharid",
             "Aldarin",
             "Ape Atoll",
@@ -202,8 +201,7 @@
             "Around the Digsite",
             "Avium Savannah",
             "Bandit Camp",
-            "Behind Lumbridge Castle",
-            "Black Arm Gang hideout in Brimhaven",
+            "Black Arm Gang Hideout",
             "Black Knights Fortress",
             "Braindeath Island (brewery basement)",
             "Brimhaven",
@@ -292,8 +290,6 @@
             "Necromancer Tower",
             "Neitiznot",
             "Neypotzli",
-            "North of Al-Kharid gate",
-            "North of Observatory",
             "North of Outpost",
             "North of Rellekka",
             "Ortus Farm",
@@ -350,7 +346,6 @@
             "West of Fishing Guild",
             "West of Mount Quidamortem",
             "West of Port Phasmatys",
-            "West of Yanille",
             "White Wolf Mountain",
             "Wizards' Tower",
             "Woodcutting Guild",
