@@ -2,7 +2,10 @@
     "Abyssal Area": {
         "x": 3059,
         "y": 4877,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "The Scar"
+        ]
     },
     "Abyssal Nexus": {
         "x": 3037,
@@ -325,8 +328,8 @@
         "plane": 0
     },
     "Crypt of Tonali": {
-        "x": 1311,
-        "y": 9410,
+        "x": 1306,
+        "y": 3035,
         "plane": 1
     },
     "Dark Altar": {
@@ -373,18 +376,18 @@
         "plane": 0
     },
     "Dorgesh-Kaan": {
-        "x": 2722,
-        "y": 5120,
+        "x": 2721,
+        "y": 5350,
         "plane": 0
     },
     "Dorgesh-Kaan South Dungeon": {
         "x": 2721,
-        "y": 5241,
+        "y": 5260,
         "plane": 3
     },
     "Dragon Nest": {
-        "x": 1567,
-        "y": 2970,
+        "x": 1289,
+        "y": 3135,
         "plane": 0
     },
     "Draynor Manor": {
@@ -397,18 +400,15 @@
         "y": 3272,
         "plane": 0
     },
-    "Dungeon east of the Agility Pyramid": {
-        "x": 3356,
-        "y": 2825,
+    "Scabaras Dungeon": {
+        "x": 3420,
+        "y": 2802,
         "plane": 0
     },
-    "Dungeon under Sophanem": {
+    "Sophanem Dungeon": {
         "x": 3280,
         "y": 2793,
-        "plane": 0,
-        "aliases": [
-            "Sophanem Dungeon"
-        ]
+        "plane": 0
     },
     "Dwarven Mine": {
         "x": 3016,
@@ -418,11 +418,6 @@
             "Dwarven mines",
             "Dwarven coal mine"
         ]
-    },
-    "Earthbound Cavern": {
-        "x": 2726,
-        "y": 9797,
-        "plane": 0
     },
     "East Ardougne": {
         "x": 2662,
@@ -463,8 +458,8 @@
         "plane": 0
     },
     "Elemental Workshop": {
-        "x": 2712,
-        "y": 9897,
+        "x": 2710,
+        "y": 3498,
         "plane": 0
     },
     "Enchanted Valley": {
@@ -473,7 +468,7 @@
         "plane": 0
     },
     "Entrana Dungeon": {
-        "x": 2823,
+        "x": 2819,
         "y": 3374,
         "plane": 0,
         "aliases": [
@@ -481,8 +476,8 @@
         ]
     },
     "Evil Chicken's Lair": {
-        "x": 3232,
-        "y": 3148,
+        "x": 2454,
+        "y": 4475,
         "plane": 0
     },
     "Falador": {
@@ -542,8 +537,8 @@
         "plane": 0
     },
     "Giants' Den": {
-        "x": 1575,
-        "y": 2967,
+        "x": 1419,
+        "y": 3588,
         "plane": 0
     },
     "Giants' Plateau": {
@@ -590,8 +585,8 @@
         "plane": 0
     },
     "Grimstone Dungeon": {
-        "x": 2884,
-        "y": 3397,
+        "x": 2913,
+        "y": 4067,
         "plane": 0
     },
     "Gu'Tanoth": {
@@ -608,8 +603,8 @@
         ]
     },
     "H.A.M. Hideout": {
-        "x": 3166,
-        "y": 9615,
+        "x": 3164,
+        "y": 3252,
         "plane": 0
     },
     "Haunted Mine": {
@@ -640,9 +635,9 @@
         "y": 3295,
         "plane": 0
     },
-    "Holes in Myreque Hideout in Mort Myre": {
-        "x": 3441,
-        "y": 3434,
+    "Myreque Hideout": {
+        "x": 3508,
+        "y": 3447,
         "plane": 0
     },
     "Hosidius": {
@@ -679,16 +674,16 @@
         ]
     },
     "Ice Queen's Lair": {
-        "x": 2862,
-        "y": 9921,
+        "x": 2837,
+        "y": 3518,
         "plane": 0,
         "aliases": [
             "Ice Queen's lair"
         ]
     },
     "Ice Troll Caves": {
-        "x": 2373,
-        "y": 3828,
+        "x": 2315,
+        "y": 3894,
         "plane": 0
     },
     "Icy islands north of Neitiznot and Jatizso": {
@@ -727,8 +722,8 @@
         ]
     },
     "Jatizso": {
-        "x": 2397,
-        "y": 3804,
+        "x": 2394,
+        "y": 3812,
         "plane": 0
     },
     "Jatizso mine": {
@@ -736,24 +731,23 @@
         "y": 3806,
         "plane": 0
     },
-    "Jiggig": {
-        "x": 2477,
-        "y": 3047,
-        "plane": 0
-    },
     "Jiggig Dungeon": {
-        "x": 2479,
-        "y": 9434,
-        "plane": 0
+        "x": 2484,
+        "y": 3043,
+        "plane": 0,
+        "aliases": [
+            "Jiggig",
+            "Zogre Cave"
+        ]
     },
     "Jormungand's Prison": {
-        "x": 2399,
-        "y": 3786,
+        "x": 2464,
+        "y": 4012,
         "plane": 0
     },
     "Kalphite Cave": {
-        "x": 3323,
-        "y": 3118,
+        "x": 3319,
+        "y": 3122,
         "plane": 0
     },
     "Kalphite Lair": {
@@ -767,8 +761,8 @@
         "plane": 0
     },
     "Karamja Dungeon": {
-        "x": 2857,
-        "y": 3167,
+        "x": 2855,
+        "y": 3168,
         "plane": 0,
         "aliases": [
             "Karamja Volcano",
@@ -810,9 +804,9 @@
         "plane": 0
     },
     "Killerwatt plane": {
-        "x": 2683,
-        "y": 5175,
-        "plane": 0
+        "x": 3110,
+        "y": 3363,
+        "plane": 2
     },
     "King Black Dragon Lair": {
         "x": 2975,
@@ -825,18 +819,18 @@
         "plane": 0
     },
     "Kraken Cove": {
-        "x": 2278,
-        "y": 3609,
+        "x": 2277,
+        "y": 3611,
         "plane": 0
     },
     "Kruk's Dungeon": {
-        "x": 2768,
-        "y": 2792,
+        "x": 2714,
+        "y": 2789,
         "plane": 0
     },
     "Lassar Undercity": {
-        "x": 3052,
-        "y": 9893,
+        "x": 2998,
+        "y": 3493,
         "plane": 0,
         "aliases": [
             "Lassar Ice Lake Dungeon"
@@ -868,14 +862,12 @@
         "plane": 0
     },
     "Lithkren": {
-        "x": 3547,
-        "y": 3995,
-        "plane": 0
-    },
-    "Lithkren Vault": {
-        "x": 3319,
-        "y": 3402,
-        "plane": 0
+        "x": 3581,
+        "y": 3984,
+        "plane": 0,
+        "aliases": [
+            "Lithkren Vault"
+        ]
     },
     "Lizardman Settlement": {
         "x": 1517,
@@ -971,24 +963,15 @@
     "Meiyerditch Dungeon": {
         "x": 3625,
         "y": 3253,
-        "plane": 0
-    },
-    "Meiyerditch Laboratories": {
-        "x": 3614,
-        "y": 9770,
         "plane": 0,
         "aliases": [
+            "Meiyerditch Laboratories",
             "Meiyerditch Labratories"
         ]
     },
-    "Meiyerditch Mine": {
-        "x": 3660,
-        "y": 3277,
-        "plane": 0
-    },
     "Melzar's Maze": {
-        "x": 2929,
-        "y": 3244,
+        "x": 2942,
+        "y": 3248,
         "plane": 0
     },
     "Mining Guild": {
@@ -1030,8 +1013,8 @@
         "plane": 0
     },
     "Morytania Spider Cave": {
-        "x": 3562,
-        "y": 3288,
+        "x": 3657,
+        "y": 3409,
         "plane": 0
     },
     "Mos Gratia": {
@@ -1120,7 +1103,11 @@
     "Neypotzli": {
         "x": 1767,
         "y": 3043,
-        "plane": 0
+        "plane": 0,
+        "aliases": [
+            "Neypotzli Prison",
+            "Earthbound Cavern"
+        ]
     },
     "North of Al-Kharid gate": {
         "x": 3267,
@@ -1172,12 +1159,13 @@
         "y": 3490,
         "plane": 0
     },
-    "Path to Temple of Light (Mourner tunnels)": {
-        "x": 2034,
-        "y": 4637,
+    "Mourner Tunnels": {
+        "x": 2543,
+        "y": 3326,
         "plane": 0,
         "aliases": [
-            "Mourner Tunnels"
+            "Temple of Light",
+            "Mourner HQ"
         ]
     },
     "Pirates' Cove": {
@@ -1191,8 +1179,8 @@
         "plane": 0
     },
     "Poison Waste Dungeon": {
-        "x": 2319,
-        "y": 3167,
+        "x": 2320,
+        "y": 3100,
         "plane": 0
     },
     "Port Phasmatys - Farm": {
@@ -1264,24 +1252,19 @@
         "y": 3234,
         "plane": 0
     },
-    "Sepulchre of Death": {
-        "x": 3396,
-        "y": 3479,
-        "plane": 0
-    },
     "Settlement Ruins": {
         "x": 1560,
         "y": 3895,
         "plane": 0
     },
     "Shade Catacombs": {
-        "x": 3462,
-        "y": 3309,
+        "x": 3484,
+        "y": 3321,
         "plane": 0
     },
     "Shadow Dungeon": {
-        "x": 2688,
-        "y": 5088,
+        "x": 2547,
+        "y": 3420,
         "plane": 0
     },
     "Shilo Village": {
@@ -1290,9 +1273,12 @@
         "plane": 0
     },
     "Sisterhood Sanctuary": {
-        "x": 3674,
-        "y": 3309,
-        "plane": 0
+        "x": 3724,
+        "y": 3356,
+        "plane": 0,
+        "aliases": [
+            "Slepe Dungeon"
+        ]
     },
     "Slayer Tower": {
         "x": 3428,
@@ -1401,8 +1387,8 @@
         "plane": 0
     },
     "Stalker Den": {
-        "x": 1627,
-        "y": 2891,
+        "x": 1295,
+        "y": 3374,
         "plane": 0
     },
     "Stronghold Slayer Cave": {
@@ -1418,8 +1404,10 @@
         "y": 3421,
         "plane": 0,
         "aliases": [
-            "Stronhold of Security",
-            "Stronghold of Security (level 2)"
+            "Stronghold of Security - Floor 1",
+            "Stronghold of Security - Floor 2",
+            "Stronghold of Security - Floor 3",
+            "Sepulchre of Death"
         ]
     },
     "Stronhold of Security": {
@@ -1463,14 +1451,9 @@
         "y": 3404,
         "plane": 0
     },
-    "Temple of Light": {
-        "x": 2185,
-        "y": 3143,
-        "plane": 0
-    },
     "Temple of Marimbo": {
-        "x": 2797,
-        "y": 2787,
+        "x": 2806,
+        "y": 2785,
         "plane": 0
     },
     "Temple of Marimbo Dungeon": {
@@ -1503,14 +1486,9 @@
         "y": 3235,
         "plane": 0
     },
-    "The Scar": {
-        "x": 3108,
-        "y": 3557,
-        "plane": 0
-    },
     "Theatre of Blood": {
-        "x": 3268,
-        "y": 3163,
+        "x": 3676,
+        "y": 3220,
         "plane": 0,
         "aliases": [
             "ToB",
@@ -1528,8 +1506,8 @@
         "plane": 0
     },
     "Tombs of Amascut": {
-        "x": 3281,
-        "y": 9141,
+        "x": 3357,
+        "y": 2711,
         "plane": 0,
         "aliases": [
             "ToA",
@@ -1540,8 +1518,8 @@
         ]
     },
     "Tonali Cavern": {
-        "x": 1697,
-        "y": 2957,
+        "x": 1305,
+        "y": 3035,
         "plane": 0
     },
     "Tree Gnome Village": {
@@ -1570,18 +1548,13 @@
         "plane": 0
     },
     "Trollweiss Dungeon": {
-        "x": 2784,
-        "y": 10208,
+        "x": 2820,
+        "y": 3744,
         "plane": 0
     },
     "Trollweiss Mountain": {
         "x": 2821,
         "y": 3873,
-        "plane": 0
-    },
-    "Tunnel outside of Keldagrim": {
-        "x": 2773,
-        "y": 3686,
         "plane": 0
     },
     "TzHaar City": {
@@ -1769,18 +1742,18 @@
         "plane": 0
     },
     "Woodcutting Guild": {
-        "x": 1657,
+        "x": 1659,
         "y": 3505,
         "plane": 0
     },
     "Woodcutting Guild Dungeon": {
-        "x": 1572,
-        "y": 9888,
+        "x": 1606,
+        "y": 3508,
         "plane": 0
     },
     "Wyvern Cave": {
-        "x": 3319,
-        "y": 3402,
+        "x": 3745,
+        "y": 3780,
         "plane": 0,
         "aliases": [
             "Wyvern Tasks"
@@ -1792,9 +1765,13 @@
         "plane": 0
     },
     "Ynysdail Cavern": {
-        "x": 2237,
-        "y": 3139,
-        "plane": 0
+        "x": 2218,
+        "y": 3477,
+        "plane": 0,
+        "aliases": [
+            "Ynysdail Dungeon",
+            "Ynysdail"
+        ]
     },
     "Zanaris": {
         "x": 2411,
@@ -1802,8 +1779,8 @@
         "plane": 0
     },
     "Zemouregal's Base": {
-        "x": 3578,
-        "y": 4582,
+        "x": 3342,
+        "y": 3514,
         "plane": 0
     },
     "Zul-Andra": {
