@@ -21,6 +21,7 @@ import com.slayersimplified.services.FavoriteLocationService;
 import com.slayersimplified.services.LocationCoordinateService;
 import com.slayersimplified.services.LocationRequirementService;
 import com.slayersimplified.services.NavigationService;
+import com.slayersimplified.services.TileNoteService;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.ui.ColorScheme;
@@ -87,6 +88,7 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
     private final LocationCoordinateService locationCoordinateService;
     private final FavoriteLocationService favoriteService;
     private final LocationRequirementService requirementService;
+    private final TileNoteService tileNoteService;
     private final Supplier<Boolean> debugMode;
 
     // Ã¢â€â‚¬Ã¢â€â‚¬ Layout Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
@@ -120,12 +122,14 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
             LocationCoordinateService locationCoordinateService,
             FavoriteLocationService favoriteService,
             LocationRequirementService requirementService,
+            TileNoteService tileNoteService,
             Supplier<Boolean> debugMode)
     {
         this.navigationService = navigationService;
         this.locationCoordinateService = locationCoordinateService;
         this.favoriteService = favoriteService;
         this.requirementService = requirementService;
+        this.tileNoteService = tileNoteService;
         this.debugMode = debugMode;
 
         debugNavLabel.setForeground(new Color(100, 220, 255));
@@ -517,6 +521,7 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
 
         navigationService.navigateTo(coords);
         activeLocation = locationName;
+        tileNoteService.updateForTask(currentMonsterName);
 
         if (debugMode.get())
         {

@@ -6,6 +6,8 @@
 package com.slayersimplified.services;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.slayersimplified.domain.SlayerMaster;
@@ -79,6 +81,10 @@ public class TileNoteService
         this.taskService = taskService;
         this.locationCoordinateService = locationCoordinateService;
         this.explicitEntries = loadExplicitEntries(gson, tileNotesDataPath);
+        int totalTiles = explicitEntries.values().stream()
+                .mapToInt(List::size).sum();
+        log.info("TileNoteService: loaded {} task keys, {} total tile entries from {}",
+                explicitEntries.size(), totalTiles, tileNotesDataPath);
     }
 
     // -------------------------------------------------------------------------
@@ -152,6 +158,38 @@ public class TileNoteService
     }
 
     /**
+     * Returns all explicit tile entries from tile_notes.json as a flat
+     * label → WorldPoint map, regardless of the current task.
+     * Used in Location Debug mode so every annotated tile is visible.
+     *
+     * @param includeNonSlayer when {@code false}, entries belonging to
+     *                         non-slayer tasks (Animals, Bosses, etc.) are excluded
+     */
+    public Map<String, WorldPoint> getAllDebugTiles(boolean includeNonSlayer)
+    {
+        Map<String, WorldPoint> all = new LinkedHashMap<>();
+        for (Map.Entry<String, List<TileNoteEntry>> taskEntry : explicitEntries.entrySet())
+        {
+            if (!includeNonSlayer)
+            {
+                Task task = taskService.get(taskEntry.getKey());
+                if (isNonSlayerTask(task))
+                {
+                    continue;
+                }
+            }
+            for (TileNoteEntry entry : taskEntry.getValue())
+            {
+                if ("tile".equalsIgnoreCase(entry.type) && entry.label != null)
+                {
+                    all.put(entry.label, new WorldPoint(entry.x, entry.y, entry.plane));
+                }
+            }
+        }
+        return all;
+    }
+
+    /**
      * Returns the raw explicit entries for the current task (includes object
      * markers and any additional metadata such as {@code note}).
      */
@@ -208,21 +246,34 @@ public class TileNoteService
 
         try (Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8))
         {
-            Type type = new TypeToken<Map<String, List<TileNoteEntry>>>() {}.getType();
-            Map<String, List<TileNoteEntry>> raw = gson.fromJson(reader, type);
+            // Parse as Map<String, JsonElement> first so that top-level comment/schema
+            // keys (which are String/Object, not Array) don't cause a type mismatch.
+            Type rawType = new TypeToken<Map<String, JsonElement>>() {}.getType();
+            Map<String, JsonElement> raw = gson.fromJson(reader, rawType);
             if (raw == null)
             {
                 return Collections.emptyMap();
             }
-            // Normalise keys to lower-case for case-insensitive lookup
+            Type entryListType = new TypeToken<List<TileNoteEntry>>() {}.getType();
             Map<String, List<TileNoteEntry>> normalised = new LinkedHashMap<>();
-            raw.forEach((k, v) ->
+            for (Map.Entry<String, JsonElement> e : raw.entrySet())
             {
-                if (k != null && !k.startsWith("_"))
+                String k = e.getKey();
+                if (k == null || k.startsWith("_"))
                 {
-                    normalised.put(k.toLowerCase(), v);
+                    continue;
                 }
-            });
+                JsonElement val = e.getValue();
+                if (!val.isJsonArray())
+                {
+                    continue;
+                }
+                List<TileNoteEntry> entries = gson.fromJson(val, entryListType);
+                if (entries != null)
+                {
+                    normalised.put(k.toLowerCase(), entries);
+                }
+            }
             log.debug("Loaded tile_notes.json: {} task entries", normalised.size());
             return Collections.unmodifiableMap(normalised);
         }

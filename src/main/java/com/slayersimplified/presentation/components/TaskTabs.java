@@ -23,6 +23,7 @@ import com.slayersimplified.services.LocationCoordinateService;
 import com.slayersimplified.services.LocationRequirementService;
 import com.slayersimplified.services.MonsterNotesService;
 import com.slayersimplified.services.NavigationService;
+import com.slayersimplified.services.TileNoteService;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.laf.RuneLiteTabbedPaneUI;
@@ -63,6 +64,7 @@ public class TaskTabs extends JTabbedPane
             LocationCoordinateService locationCoordinateService,
             FavoriteLocationService favoriteService,
             LocationRequirementService requirementService,
+            TileNoteService tileNoteService,
             OkHttpClient okHttpClient,
             MonsterNotesService notesService,
             Runnable onNotesChanged,
@@ -98,7 +100,7 @@ public class TaskTabs extends JTabbedPane
         TabKey loot = TabKey.LOOT;
         TabKey notes = TabKey.NOTES;
 
-        locationsTab = new LocationsTab(navigationService, locationCoordinateService, favoriteService, requirementService, debugMode);
+        locationsTab = new LocationsTab(navigationService, locationCoordinateService, favoriteService, requirementService, tileNoteService, debugMode);
         lootTab = new LootTab(okHttpClient);
         infoTab = new InfoTab(okHttpClient);
         this.requirementService = requirementService;

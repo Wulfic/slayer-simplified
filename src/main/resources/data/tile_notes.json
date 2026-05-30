@@ -12,64 +12,16 @@
 
   "Terror dog": [
     {
-      "type": "tile", "x": 3428, "y": 3234, "plane": 0,
-      "label": "Step 1 — Mine cart",
-      "note": "Surface entrance to Tarn's Lair. Right-click 'Climb-over' this mine cart (just south of the Zealot NPC). You need a Salve amulet in your inventory to access Tarn's Lair. Then crawl down the cart tunnel inside the mine."
+      "type": "tile", "x": 3445, "y": 3236, "plane": 0,
+      "label": "Step 1 — Mine cart"
     },
     {
-      "type": "tile", "x": 3426, "y": 9617, "plane": 0,
-      "label": "Step 2 — Mine Level 1",
-      "note": "After crawling down the cart tunnel, you are now underground in the Abandoned Mine (Level 1). Head north along the path to the end to reach Tarn's Lair entrance. Monsters and floor traps start here — watch for X-marks on the floor."
+      "type": "tile", "x": 3167, "y": 4549, "plane": 0,
+      "label": "Trap Here"
     },
     {
-      "type": "tile", "x": 3419, "y": 9624, "plane": 0,
-      "label": "Step 3 — Lair Entrance",
-      "note": "Tarn's Lair entrance. A cutscene plays showing Mutant Tarn and two Terror Dog statues. Activate Protect from Melee here. Optional: go east past the floor traps, then north, to reach banker Odovacar (100 coins/use) to restock before the final route."
-    },
-    {
-      "type": "tile", "x": 3462, "y": 9640, "plane": 0,
-      "label": "Step 4 — Banker",
-      "note": "Odovacar the banker is here — costs 100 coins per use. This is the last safe restocking point before heading to Tarn and the Terror Dogs. Stock food and prayer potions here."
-    },
-    {
-      "type": "tile", "x": 3461, "y": 9649, "plane": 0,
-      "label": "Step 5 — North doorway",
-      "note": "Go north through this doorway after the bank to begin the route to Tarn (route: D-S-T-U on the dungeon map, following ornate/water-feature doors). Auto Retaliate OFF is strongly recommended — you don't want to run back into traps."
-    },
-    {
-      "type": "tile", "x": 3441, "y": 9658, "plane": 0,
-      "label": "Step 6 — Door D (SW doorway)",
-      "note": "Follow the U-shaped hallway heading westward to its end, then take the south-western-most doorway (Door D). Two wall traps in the north hall: first on the west wall, second on the east wall — right-click 'Search' them to disarm, or walk carefully."
-    },
-    {
-      "type": "tile", "x": 3432, "y": 9655, "plane": 0,
-      "label": "Step 7 — Giant Skeleton room",
-      "note": "You are now in a trap-free square room containing a single giant skeleton. Go through the northern door into the room to the north, which has THREE floor traps (X-marks). Navigate around or Search them to disarm. Then take the passage to the WEST."
-    },
-    {
-      "type": "tile", "x": 3422, "y": 9667, "plane": 0,
-      "label": "Step 8 — Inverted-T: go NORTH!",
-      "note": "CRITICAL navigation point: you are in an inverted-T shaped hallway. Go NORTH then through the opening on the WEST side. Do NOT go all the way west — that leads in a big circle with more monsters and traps. There are no traps in the first part, but the north hall has two wall traps (west wall, then east wall)."
-    },
-    {
-      "type": "tile", "x": 3411, "y": 9672, "plane": 0,
-      "label": "Step 9 — Pillar room: disarm log trap!",
-      "note": "Jump across the pillars. BEFORE crossing: right-click 'Search' the floor near the south-western wall to disarm the log swing trap. If the floor says 'already pressed down', it's safe. The log trap resets in 10-15 seconds and RESETS if you fall — disarm it again every time. Use the SOUTHERN row of pillars first, then the second row from the west going north."
-    },
-    {
-      "type": "tile", "x": 3432, "y": 9672, "plane": 0,
-      "label": "Step 10 — Receding walls room",
-      "note": "Room with a HOLE in the centre. Walls shoot out from the sides and knock you into the hole if you stand in the wrong spot. Walk along the perimeter walls, not the centre. Time your movement — wait for the walls to retract, then quickly run past. Take the passageway on the east wall."
-    },
-    {
-      "type": "tile", "x": 3442, "y": 9668, "plane": 0,
-      "label": "Step 11 — Second pillar room (stairs)",
-      "note": "Cross the zigzag pillar room from north-west to south-east. Two skeleton mages (lvl 94) attack from the second pillar onward — activate Protect from Magic. Hurry across without stopping and go DOWN the stairs at the east end of the room."
-    },
-    {
-      "type": "tile", "x": 3443, "y": 9628, "plane": 0,
-      "label": "Step 12 — Terror Dog chamber",
-      "note": "Bottom floor of Tarn's Lair. After descending the stairs, go north along the corridor to reach Tarn's chamber. Terror Dogs (level 100 and 110) are here alongside Tarn Razorlor. Use Protect from Melee — Terror Dogs attack with melee only. Keep at least 2 prayer potions and 15+ food for the Tarn fight."
+      "type": "tile", "x": 3184, "y": 4553, "plane": 0,
+      "label": "Step 2 - Use Door"
     }
   ],
 

@@ -62,14 +62,22 @@ public class TileNoteOverlay extends Overlay
             return null;
         }
 
-        // Respect the "show non-slayer enemies" toggle: hide tile notes for
-        // non-slayer task creatures when that setting is disabled.
-        if (!config.showNonSlayerEnemies() && tileNoteService.isCurrentTaskNonSlayer())
+        Map<String, WorldPoint> tiles;
+        if (config.debugCoordinates())
         {
-            return null;
+            // Location Debug: show all known tile notes, respecting the non-slayer filter
+            tiles = tileNoteService.getAllDebugTiles(config.showNonSlayerEnemies());
+        }
+        else
+        {
+            // Normal mode: only the current/last-navigated task
+            if (tileNoteService.isCurrentTaskNonSlayer() && !config.showNonSlayerEnemies())
+            {
+                return null;
+            }
+            tiles = tileNoteService.getCurrentTaskTiles();
         }
 
-        Map<String, WorldPoint> tiles = tileNoteService.getCurrentTaskTiles();
         if (tiles.isEmpty())
         {
             return null;
