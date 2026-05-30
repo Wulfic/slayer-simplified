@@ -22,6 +22,174 @@
     {
       "type": "tile", "x": 3184, "y": 4553, "plane": 0,
       "label": "Step 2 - Use Door"
+    },
+    {
+      "type": "tile", "x": 3183, "y": 4557, "plane": 1,
+      "label": "Step 3 - Disable Trap"
+    },
+    {
+      "type": "tile", "x": 3184, "y": 4558, "plane": 1,
+      "label": "Step 4 - Stand Here"
+    },
+    {
+      "type": "tile", "x": 3184, "y": 4560, "plane": 1,
+      "label": "Step 5 - Jump Here"
+    },
+    {
+      "type": "tile", "x": 3184, "y": 4562, "plane": 1,
+      "label": "Step 6 - Then Here"
+    },
+    {
+      "type": "tile", "x": 3184, "y": 4564, "plane": 1,
+      "label": "Step 7 - Finally Here"
+    },
+    {
+      "type": "tile", "x": 3184, "y": 4567, "plane": 1,
+      "label": "Step 8 - Use Door"
+    },
+    {
+      "type": "tile", "x": 3184, "y": 4580, "plane": 0,
+      "label": "Step 9 - Use Door"
+    },
+    {
+      "type": "tile", "x": 3174, "y": 4577, "plane": 1,
+      "label": "Step 10 - Use Door"
+    },
+    {
+      "type": "tile", "x": 3168, "y": 4580, "plane": 0,
+      "label": "Step 11 - Use Door"
+    },
+    {
+      "type": "tile", "x": 3165, "y": 4589, "plane": 0,
+      "label": "Step 12 - Use Door"
+    },
+    {
+      "type": "tile", "x": 3154, "y": 4597, "plane": 1,
+      "label": "Step 13 - Use Door"
+    },
+    {
+      "type": "tile", "x": 3150, "y": 4595, "plane": 1,
+      "label": "Step 14 - Stand Here"
+    },
+    {
+      "type": "tile", "x": 3148, "y": 4595, "plane": 1,
+      "label": "Step 15 - Jump Here"
+    },
+    {
+      "type": "tile", "x": 3146, "y": 4595, "plane": 1,
+      "label": "Step 16 - Jump Here"
+    },
+    {
+      "type": "tile", "x": 3144, "y": 4595, "plane": 1,
+      "label": "Step 17/23 - Jump Here"
+    },
+    {
+      "type": "tile", "x": 3142, "y": 4595, "plane": 1,
+      "label": "Step 18/22 - Jump Here"
+    },
+    {
+      "type": "tile", "x": 3140, "y": 4595, "plane": 1,
+      "label": "Step 19/21 - Go Here"
+    },
+    {
+      "type": "tile", "x": 3138, "y": 4595, "plane": 1,
+      "label": "Step 20 - Disable Trap"
+    },
+    {
+      "type": "tile", "x": 3144, "y": 4597, "plane": 1,
+      "label": "Step 24 - Jump Here"
+    },
+    {
+      "type": "tile", "x": 3144, "y": 4599, "plane": 1,
+      "label": "Step 25 - Jump Here"
+    },
+   {
+      "type": "tile", "x": 3144, "y": 4601, "plane": 1,
+      "label": "Step 26 - Jump Here"
+    },
+    {
+      "type": "tile", "x": 3149, "y": 4603, "plane": 1,
+      "label": "Step 27 - Disable Trap"
+    },
+    {
+      "type": "tile", "x": 3148, "y": 4603, "plane": 1,
+      "label": ""
+    },
+    {
+      "type": "tile", "x": 3154, "y": 4605, "plane": 1,
+      "label": "Step 28 - Disable Trap"
+    },
+    {
+      "type": "tile", "x": 3155, "y": 4605, "plane": 1,
+      "label": ""
+    },
+    {
+      "type": "tile", "x": 3161, "y": 4600, "plane": 1,
+      "label": "Step 28 - Stand Here avoid the moving walls"
+    },
+    {
+      "type": "tile", "x": 3163, "y": 4600, "plane": 1,
+      "label": "Step 29 - Go here"
+    },
+    {
+      "type": "tile", "x": 3165, "y": 4600, "plane": 1,
+      "label": "Step 30 - Go here"
+    },
+    {
+      "type": "tile", "x": 3170, "y": 4600, "plane": 1,
+      "label": "Step 31 - Go here"
+    },
+    {
+      "type": "tile", "x": 3172, "y": 4600, "plane": 1,
+      "label": "Step 32 - Go here"
+    },
+    {
+      "type": "tile", "x": 3174, "y": 4600, "plane": 1,
+      "label": "Step 33 - Go here"
+    },
+    {
+      "type": "tile", "x": 3176, "y": 4598, "plane": 1,
+      "label": "Step 34 - Enter Door"
+    },
+    {
+      "type": "tile", "x": 3180, "y": 4600, "plane": 1,
+      "label": "Step 35 - Go here"
+    },
+        {
+      "type": "tile", "x": 3182, "y": 4600, "plane": 1,
+      "label": "Step 36 - Go here"
+    },
+        {
+      "type": "tile", "x": 3184, "y": 4600, "plane": 1,
+      "label": "Step 37 - Go here"
+    },
+        {
+      "type": "tile", "x": 3184, "y": 4598, "plane": 1,
+      "label": "Step 38 - Go here"
+    },
+        {
+      "type": "tile", "x": 3186, "y": 4598, "plane": 1,
+      "label": "Step 39 - Go here"
+    },
+        {
+      "type": "tile", "x": 3186, "y": 4596, "plane": 1,
+      "label": "Step 40 - Go here"
+    },
+        {
+      "type": "tile", "x": 3188, "y": 4596, "plane": 1,
+      "label": "Step 41 - Go here"
+    },
+        {
+      "type": "tile", "x": 3190, "y": 4596, "plane": 1,
+      "label": "Step 42 - Go here"
+    },
+        {
+      "type": "tile", "x": 3193, "y": 4598, "plane": 1,
+      "label": "Step 43 - Take Stairs"
+    },
+        {
+      "type": "tile", "x": 3185, "y": 4602, "plane": 0,
+      "label": "Step 44 - Terror Dog Entrance"
     }
   ],
 
