@@ -46,7 +46,7 @@
         ]
     },
     "Ape Atoll Dungeon": {
-        "x": 2767,
+        "x": 2762,
         "y": 2703,
         "plane": 0
     },
@@ -86,7 +86,7 @@
         "plane": 0
     },
     "Asgarnian Ice Dungeon": {
-        "x": 3008,
+        "x": 3006,
         "y": 3150,
         "plane": 0
     },
@@ -137,8 +137,8 @@
         "plane": 0
     },
     "Brimhaven Dungeon": {
-        "x": 2745,
-        "y": 3152,
+        "x": 2743,
+        "y": 3154,
         "plane": 0,
         "aliases": [
             "Brimhaven Dungeon - Floor 2"
@@ -214,10 +214,13 @@
         "y": 10088,
         "plane": 0
     },
-    "Cave near Observatory": {
-        "x": 2437,
-        "y": 3120,
-        "plane": 0
+    "Observatory Dungeon": {
+        "x": 2458,
+        "y": 3186,
+        "plane": 0,
+        "aliases": [
+            "Cave near the Observatory"
+        ]
     },
     "Chambers of Xeric": {
         "x": 1232,
@@ -246,8 +249,8 @@
         ]
     },
     "Charred Dungeon": {
-        "x": 1581,
-        "y": 9486,
+        "x": 2636,
+        "y": 2416,
         "plane": 0
     },
     "Chasm of Fire": {
@@ -277,8 +280,8 @@
         "plane": 0
     },
     "Corporeal Beast Lair": {
-        "x": 2965,
-        "y": 3827,
+        "x": 3202,
+        "y": 3680,
         "plane": 0
     },
     "Corsair Cove Dungeon": {
@@ -307,8 +310,8 @@
         ]
     },
     "Crash Site Cavern": {
-        "x": 3774,
-        "y": 3870,
+        "x": 2435,
+        "y": 3518,
         "plane": 0
     },
     "Crombwick Manor": {
@@ -511,8 +514,8 @@
         "plane": 0
     },
     "Forthos Dungeon": {
-        "x": 1182,
-        "y": 3559,
+        "x": 1670,
+        "y": 3568,
         "plane": 0
     },
     "Fossil Island": {

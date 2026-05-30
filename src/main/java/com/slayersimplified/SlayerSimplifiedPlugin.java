@@ -22,6 +22,7 @@ import com.slayersimplified.presentation.TaskReminderOverlay;
 import com.slayersimplified.presentation.TileNoteOverlay;
 import com.slayersimplified.presentation.panels.MainPanel;
 import com.slayersimplified.presentation.SlayerTargetOverlay;
+import com.slayersimplified.services.NavigationService;
 import com.slayersimplified.services.SlayerHistoryService;
 import com.slayersimplified.services.SlayerStreakOptimizerService;
 import com.slayersimplified.services.SlayerTaskTracker;
@@ -46,6 +47,7 @@ import net.runelite.api.events.NpcSpawned;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.events.WidgetLoaded;
 import net.runelite.api.gameval.InterfaceID;
+import net.runelite.api.widgets.Widget;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
@@ -120,6 +122,9 @@ public class SlayerSimplifiedPlugin extends Plugin
 
     @Inject
     private SlayerStreakOptimizerService streakOptimizerService;
+
+    @Inject
+    private NavigationService navigationService;
 
     private NavigationButton navButton;
 
@@ -361,6 +366,11 @@ public class SlayerSimplifiedPlugin extends Plugin
             // Flag so the next GameTick re-reads quest/skill state once all
             // varbits for the session are fully synchronised.
             pendingRequirementsRefresh = true;
+        }
+        else
+        {
+            // Clean up the world map handle when the player logs out or hops worlds.
+            navigationService.closeWorldMapAsync();
         }
     }
 
@@ -645,6 +655,15 @@ public class SlayerSimplifiedPlugin extends Plugin
     @Subscribe
     public void onMenuOptionClicked(MenuOptionClicked event)
     {
+        // Close the plugin-opened world map when the player clicks the map's X button or the minimap orb.
+        Widget clickedWidget = event.getWidget();
+        if (clickedWidget != null && navigationService.isOurWorldMapCloseWidget(clickedWidget.getId()))
+        {
+            navigationService.closeWorldMap();
+            // Do not consume — let RuneLite also process the click so it can finish its own cleanup.
+            return;
+        }
+
         String option = event.getMenuOption();
         if (!"Talk-to".equalsIgnoreCase(option) && !"Assignment".equalsIgnoreCase(option))
         {

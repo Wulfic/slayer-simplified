@@ -16,6 +16,7 @@
 package com.slayersimplified.presentation.components.tabs;
 
 import com.slayersimplified.domain.Tab;
+import com.slayersimplified.presentation.components.LocationNavGroup;
 import com.slayersimplified.presentation.components.ScrollBarStyling;
 import com.slayersimplified.services.FavoriteLocationService;
 import com.slayersimplified.services.LocationCoordinateService;
@@ -360,8 +361,8 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
         boolean isFav = currentMonsterName != null
                 && favoriteService.isFavorite(currentMonsterName, locationName);
         JButton favButton = new JButton(isFav ? "\u2605" : "\u2606");
-        favButton.setFont(favButton.getFont().deriveFont(Font.PLAIN, 16f));
-        favButton.setPreferredSize(new Dimension(28, 24));
+        favButton.setFont(favButton.getFont().deriveFont(Font.PLAIN, 19f));
+        favButton.setPreferredSize(new Dimension(34, 24));
         favButton.setFocusPainted(false);
         favButton.setBorderPainted(false);
         favButton.setContentAreaFilled(false);
@@ -384,9 +385,6 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
             buttons.add(favButton);
             listeners.add(favListener);
         }
-        buttonPanel.add(favButton);
-        buttonPanel.add(Box.createHorizontalStrut(2));
-
         if (!reqMet)
         {
             label.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
@@ -397,33 +395,20 @@ public class LocationsTab extends JScrollPane implements Tab<LocationsTab.Locati
             label.setToolTipText("Requires: " + reqDesc);
         }
 
+        buttonPanel.add(favButton);
+        buttonPanel.add(Box.createHorizontalStrut(2));
+
         if (coords != null)
         {
-            JButton navButton = new JButton("Nav");
-            navButton.setFont(FontManager.getRunescapeSmallFont());
-            navButton.setBackground(ColorScheme.DARKER_GRAY_HOVER_COLOR);
-            navButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-            navButton.setPreferredSize(new Dimension(50, 24));
-            navButton.setMinimumSize(new Dimension(50, 24));
-            navButton.setMaximumSize(new Dimension(50, 24));
-            navButton.setFocusPainted(false);
-            navButton.setMargin(new Insets(0, 2, 0, 2));
-            navButton.setToolTipText("Navigate to " + capitalize(locationName));
-
-            if (!reqMet)
-            {
-                navButton.setEnabled(false);
-                navButton.setForeground(ColorScheme.MEDIUM_GRAY_COLOR);
-                navButton.setToolTipText("Requires: " + missing);
-            }
-            else
-            {
-                ActionListener navListener = e -> onNavigateClicked(locationName, coords, row);
-                navButton.addActionListener(navListener);
-                buttons.add(navButton);
-                listeners.add(navListener);
-            }
-            buttonPanel.add(navButton);
+            JPanel navGroup = LocationNavGroup.create(
+                    locationName,
+                    reqMet,
+                    missing,
+                    () -> onNavigateClicked(locationName, coords, row),
+                    () -> navigationService.openOnWorldMap(coords),
+                    buttons,
+                    listeners);
+            buttonPanel.add(navGroup);
         }
         else
         {
