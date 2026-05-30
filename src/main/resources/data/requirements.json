@@ -327,6 +327,26 @@
         "PRIEST_IN_PERIL",
         "IN_AID_OF_THE_MYREQUE"
       ]
+    },
+    "Charred Dungeon": {
+      "skills": {
+        "SAILING": 60
+      }
+    },
+    "Deepfin Mine": {
+      "skills": {
+        "SAILING": 67
+      }
+    },
+    "Ynysdail Cavern": {
+      "skills": {
+        "SAILING": 73
+      }
+    },
+    "Buccaneer's Laboratory": {
+      "skills": {
+        "SAILING": 76
+      }
     }
   },
   "monsters": {

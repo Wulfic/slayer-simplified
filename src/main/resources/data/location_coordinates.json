@@ -1,42 +1,37 @@
 {
     "Abyssal Area": {
-        "x": 3108,
-        "y": 3557,
+        "x": 3059,
+        "y": 4877,
         "plane": 0
     },
     "Abyssal Nexus": {
-        "x": 3041,
-        "y": 4831,
-        "plane": 0
-    },
-    "Across west Lumbridge bridge": {
-        "x": 3205,
-        "y": 3218,
+        "x": 3037,
+        "y": 4765,
         "plane": 0
     },
     "Al-Kharid": {
-        "x": 3293,
-        "y": 3172,
+        "x": 3281,
+        "y": 3193,
         "plane": 0
     },
     "Al-Kharid Mine": {
-        "x": 3300,
-        "y": 3284,
+        "x": 3294,
+        "y": 3274,
         "plane": 0
     },
     "Aldarin": {
-        "x": 1620,
-        "y": 3077,
+        "x": 1391,
+        "y": 2927,
         "plane": 0
     },
     "Ancient Cavern": {
         "x": 2511,
-        "y": 3508,
+        "y": 3512,
         "plane": 0
     },
     "Ancient Vault": {
-        "x": 3118,
-        "y": 9587,
+        "x": 3506,
+        "y": 2971,
         "plane": 0,
         "aliases": [
             "Whisperer's Vault"
@@ -66,8 +61,8 @@
         "plane": 0
     },
     "Ardougne Sewers": {
-        "x": 2628,
-        "y": 9715,
+        "x": 2631,
+        "y": 3294,
         "plane": 0
     },
     "Ardougne Zoo": {
@@ -163,8 +158,8 @@
         "plane": 0
     },
     "Buccaneer's Laboratory": {
-        "x": 3732,
-        "y": 9880,
+        "x": 2074,
+        "y": 3687,
         "plane": 0,
         "aliases": [
             "Buccaneers' Laborotory"
