@@ -8,10 +8,7 @@ A RuneLite plugin that makes slayer less painful. It keeps track of your current
 
 ## What it does
 
-When you get assigned a task, the plugin picks it up from the chat and shows a small banner at the top of the panel with a **Nav** button. Hit that and Shortest Path will draw a route to the monster's location automatically. If you haven't started a task yet, the same button routes you to your preferred slayer master instead.
-
-Typing `!task` in public chat also triggers the same navigation — handy if you've logged back in and want to get back to your task without clicking through menus.
-
+Type `!task` to start auto-navigating, it will select your favorited location for that monster and route you to the location. Navigation is limited to where shortest path can navigate to, and tiles notes are used to fill in the rest. Check out the features below for a comprehensive list of what it can do!
 ---
 
 ## Features
