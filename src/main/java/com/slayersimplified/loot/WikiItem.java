@@ -48,6 +48,11 @@ public class WikiItem
     public int getAlchemyPrice() { return alchemyPrice; }
     public String getImageUrl() { return imageUrl; }
 
+    public WikiItem withPrices(int exchangePrice, int alchemyPrice)
+    {
+        return new WikiItem(imageUrl, name, quantity, quantityStr, rarityStr, rarity, exchangePrice, alchemyPrice);
+    }
+
     public String getQuantityLabelText()
     {
         if (quantityStr.contains("-") || quantityStr.endsWith(" (noted)"))

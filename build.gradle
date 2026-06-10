@@ -22,16 +22,13 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok:1.18.30'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
-	// Jsoup for OSRS Wiki HTML parsing (loot table scraping)
-	implementation 'org.jsoup:jsoup:1.13.1'
-
 	testImplementation 'junit:junit:4.13.2'
 	testImplementation group: 'net.runelite', name: 'client', version: runeLiteVersion
 	testImplementation group: 'net.runelite', name: 'jshell', version: runeLiteVersion
 }
 
 group = 'com.slayersimplified'
-version = '2.3.18'
+version = '2.4.26'
 
 tasks.withType(JavaCompile).configureEach {
 	options.encoding = 'UTF-8'

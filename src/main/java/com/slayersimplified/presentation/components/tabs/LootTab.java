@@ -8,6 +8,7 @@ package com.slayersimplified.presentation.components.tabs;
 import com.slayersimplified.domain.Tab;
 import com.slayersimplified.loot.DropTableSection;
 import com.slayersimplified.loot.WikiItem;
+import com.slayersimplified.loot.WikiPriceCache;
 import com.slayersimplified.loot.WikiScraper;
 import com.slayersimplified.presentation.components.ScrollBarStyling;
 import lombok.extern.slf4j.Slf4j;
@@ -80,6 +81,7 @@ public class LootTab extends JScrollPane implements Tab<String>
         showLoadingState();
 
         WikiScraper.getDropsByMonster(okHttpClient, monsterName)
+                .thenCompose(sections -> WikiPriceCache.enrichDropTables(okHttpClient, sections))
                 .whenCompleteAsync((dropTableSections, ex) ->
                 {
                     SwingUtilities.invokeLater(() ->
@@ -163,6 +165,20 @@ public class LootTab extends JScrollPane implements Tab<String>
 
     private void buildDropTables(DropTableSection[] sections)
     {
+        // Many monsters split their drops across several variant tables (e.g. by combat
+        // level, world type, or location). Each variant repeats the same category names
+        // ("100%", "Weapons and armour", ...), so the variant header must be shown to tell
+        // them apart — otherwise the categories look like they are listed multiple times.
+        int renderable = 0;
+        for (DropTableSection section : sections)
+        {
+            if (section.getTable() != null && !section.getTable().isEmpty())
+            {
+                renderable++;
+            }
+        }
+        boolean showVariantHeaders = renderable > 1;
+
         for (DropTableSection section : sections)
         {
             if (section.getTable() == null || section.getTable().isEmpty())
@@ -170,14 +186,22 @@ public class LootTab extends JScrollPane implements Tab<String>
                 continue;
             }
 
+            String variant = section.getHeader();
+            if (showVariantHeaders && variant != null && !variant.isEmpty())
+            {
+                contentPanel.add(createVariantHeader(variant));
+            }
+
             for (var entry : section.getTable().entrySet())
             {
                 String subHeader = entry.getKey();
                 WikiItem[] items = entry.getValue();
 
-                // Section header
-                JPanel headerPanel = createSectionHeader(subHeader);
-                contentPanel.add(headerPanel);
+                // Skip a category header that merely repeats the variant header (flat tables).
+                if (!(showVariantHeaders && subHeader.equals(variant)))
+                {
+                    contentPanel.add(createSectionHeader(subHeader));
+                }
 
                 // Items
                 for (int i = 0; i < items.length; i++)
@@ -189,6 +213,29 @@ public class LootTab extends JScrollPane implements Tab<String>
                 contentPanel.add(Box.createRigidArea(new Dimension(0, 4)));
             }
         }
+    }
+
+    /**
+     * Top-level header naming a drop-table variant (combat level, world type, location, ...).
+     * Styled more prominently than {@link #createSectionHeader} so the category sub-headers
+     * beneath it read as belonging to this variant.
+     */
+    private JPanel createVariantHeader(String text)
+    {
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        panel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 30));
+        panel.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.BRAND_ORANGE),
+                new EmptyBorder(5, 8, 5, 4)));
+
+        JLabel label = new JLabel(text);
+        label.setFont(FontManager.getRunescapeBoldFont());
+        label.setForeground(ColorScheme.BRAND_ORANGE);
+        panel.add(label, BorderLayout.WEST);
+        panel.setToolTipText(text);
+
+        return panel;
     }
 
     private JPanel createSectionHeader(String text)
