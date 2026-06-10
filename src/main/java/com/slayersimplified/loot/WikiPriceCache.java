@@ -34,9 +34,6 @@ public class WikiPriceCache
     private static final String PRICES_URL  = "https://prices.runescape.wiki/api/v1/osrs/latest";
     private static final String USER_AGENT  = RuneLite.USER_AGENT + " (slayer-simplified)";
 
-    // Static Gson: no custom config, equivalent to the Guice-provided default.
-    private static final Gson GSON = new Gson();
-
     // Session-level caches — initialised at most once each.
     private static volatile CompletableFuture<Map<String, Integer>> nameToIdFuture  = null;
     private static volatile CompletableFuture<Map<Integer, Integer>> idToAlchFuture = null;
@@ -49,16 +46,16 @@ public class WikiPriceCache
      * On any network/parse failure the original (price-less) sections are returned.
      */
     public static CompletableFuture<DropTableSection[]> enrichDropTables(
-            OkHttpClient client, DropTableSection[] sections)
+            OkHttpClient client, Gson gson, DropTableSection[] sections)
     {
         if (sections.length == 0)
         {
             return CompletableFuture.completedFuture(sections);
         }
 
-        CompletableFuture<Map<String, Integer>> mappingF = loadNameToId(client);
-        CompletableFuture<Map<Integer, Integer>> alchF   = loadIdToAlch(client);
-        CompletableFuture<Map<Integer, Integer>> pricesF = loadIdToPrice(client);
+        CompletableFuture<Map<String, Integer>> mappingF = loadNameToId(client, gson);
+        CompletableFuture<Map<Integer, Integer>> alchF   = loadIdToAlch(client, gson);
+        CompletableFuture<Map<Integer, Integer>> pricesF = loadIdToPrice(client, gson);
 
         return CompletableFuture.allOf(mappingF, alchF, pricesF)
                 .thenApply(ignored ->
@@ -108,29 +105,29 @@ public class WikiPriceCache
 
     // -- Lazy session caches -------------------------------------------------
 
-    private static synchronized CompletableFuture<Map<String, Integer>> loadNameToId(OkHttpClient client)
+    private static synchronized CompletableFuture<Map<String, Integer>> loadNameToId(OkHttpClient client, Gson gson)
     {
         if (nameToIdFuture == null)
         {
-            nameToIdFuture = fetchMappingNameToId(client);
+            nameToIdFuture = fetchMappingNameToId(client, gson);
         }
         return nameToIdFuture;
     }
 
-    private static synchronized CompletableFuture<Map<Integer, Integer>> loadIdToAlch(OkHttpClient client)
+    private static synchronized CompletableFuture<Map<Integer, Integer>> loadIdToAlch(OkHttpClient client, Gson gson)
     {
         if (idToAlchFuture == null)
         {
-            idToAlchFuture = fetchMappingIdToAlch(client);
+            idToAlchFuture = fetchMappingIdToAlch(client, gson);
         }
         return idToAlchFuture;
     }
 
-    private static synchronized CompletableFuture<Map<Integer, Integer>> loadIdToPrice(OkHttpClient client)
+    private static synchronized CompletableFuture<Map<Integer, Integer>> loadIdToPrice(OkHttpClient client, Gson gson)
     {
         if (idToPriceFuture == null)
         {
-            idToPriceFuture = fetchAllLatestPrices(client);
+            idToPriceFuture = fetchAllLatestPrices(client, gson);
         }
         return idToPriceFuture;
     }
@@ -140,14 +137,14 @@ public class WikiPriceCache
     /**
      * Parses the /mapping response into a lowercase-name → item-id map.
      */
-    private static CompletableFuture<Map<String, Integer>> fetchMappingNameToId(OkHttpClient client)
+    private static CompletableFuture<Map<String, Integer>> fetchMappingNameToId(OkHttpClient client, Gson gson)
     {
         return fetchRaw(client, MAPPING_URL).thenApply(json ->
         {
             Map<String, Integer> map = new HashMap<>();
             try
             {
-                JsonArray arr = GSON.fromJson(json, JsonArray.class);
+                JsonArray arr = gson.fromJson(json, JsonArray.class);
                 for (JsonElement elem : arr)
                 {
                     if (!elem.isJsonObject()) continue;
@@ -168,14 +165,14 @@ public class WikiPriceCache
     /**
      * Parses the /mapping response into an item-id → highalch map.
      */
-    private static CompletableFuture<Map<Integer, Integer>> fetchMappingIdToAlch(OkHttpClient client)
+    private static CompletableFuture<Map<Integer, Integer>> fetchMappingIdToAlch(OkHttpClient client, Gson gson)
     {
         return fetchRaw(client, MAPPING_URL).thenApply(json ->
         {
             Map<Integer, Integer> map = new HashMap<>();
             try
             {
-                JsonArray arr = GSON.fromJson(json, JsonArray.class);
+                JsonArray arr = gson.fromJson(json, JsonArray.class);
                 for (JsonElement elem : arr)
                 {
                     if (!elem.isJsonObject()) continue;
@@ -198,14 +195,14 @@ public class WikiPriceCache
      * Fetches ALL current prices from /latest and returns an item-id → high-price map.
      * The full snapshot is ~200 KB and is fetched only once per session.
      */
-    private static CompletableFuture<Map<Integer, Integer>> fetchAllLatestPrices(OkHttpClient client)
+    private static CompletableFuture<Map<Integer, Integer>> fetchAllLatestPrices(OkHttpClient client, Gson gson)
     {
         return fetchRaw(client, PRICES_URL).thenApply(json ->
         {
             Map<Integer, Integer> map = new HashMap<>();
             try
             {
-                JsonObject root = GSON.fromJson(json, JsonObject.class);
+                JsonObject root = gson.fromJson(json, JsonObject.class);
                 if (root == null || !root.has("data")) return map;
                 JsonObject data = root.getAsJsonObject("data");
                 for (Map.Entry<String, JsonElement> entry : data.entrySet())

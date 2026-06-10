@@ -9,6 +9,7 @@
  */
 package com.slayersimplified.presentation.panels;
 
+import com.google.gson.Gson;
 import com.slayersimplified.SlayerSimplifiedConfig;
 import com.slayersimplified.domain.Panel;
 import com.slayersimplified.domain.SlayerMaster;
@@ -184,6 +185,7 @@ public class MainPanel extends PluginPanel
             TileNoteService tileNoteService,
             SlayerSimplifiedConfig config,
             OkHttpClient okHttpClient,
+            Gson gson,
             MonsterNotesService notesService,
             SlayerHistoryService historyService,
             SlayerStreakOptimizerService optimizerService,
@@ -202,7 +204,7 @@ public class MainPanel extends PluginPanel
         this.taskSearchPanel = new TaskSearchPanel(this::onSearchBarChanged, this::onLocationSearchChanged, this::onTaskSelected);
         this.taskSelectedPanel = new TaskSelectedPanel(
                 this::onTaskClosed, navigationService, locationCoordinateService, favoriteService,
-                requirementService, tileNoteService, okHttpClient, notesService, this::refreshTaskReminder, config::debugCoordinates);
+                requirementService, tileNoteService, okHttpClient, gson, notesService, this::refreshTaskReminder, config::debugCoordinates);
 
         Task[] orderedTasks = taskService.getAll(Comparator.comparing(t -> t.name));
         if (!config.debugCoordinates())

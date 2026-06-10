@@ -9,6 +9,7 @@
  */
 package com.slayersimplified.presentation.components;
 
+import com.google.gson.Gson;
 import com.slayersimplified.domain.Icon;
 import com.slayersimplified.domain.Tab;
 import com.slayersimplified.domain.TabKey;
@@ -56,6 +57,7 @@ public class TaskTabs extends JTabbedPane
      * @param locationCoordinateService service for resolving location names to WorldPoints
      * @param favoriteService           service for persisting favorite locations
      * @param okHttpClient              HTTP client for wiki lookups
+     * @param gson                      client Gson for parsing price API responses
      * @param notesService              service for persisting monster notes
      * @param debugMode                 supplier that returns true when location debug mode is enabled
      */
@@ -66,6 +68,7 @@ public class TaskTabs extends JTabbedPane
             LocationRequirementService requirementService,
             TileNoteService tileNoteService,
             OkHttpClient okHttpClient,
+            Gson gson,
             MonsterNotesService notesService,
             Runnable onNotesChanged,
             Supplier<Boolean> debugMode)
@@ -101,7 +104,7 @@ public class TaskTabs extends JTabbedPane
         TabKey notes = TabKey.NOTES;
 
         locationsTab = new LocationsTab(navigationService, locationCoordinateService, favoriteService, requirementService, tileNoteService, debugMode);
-        lootTab = new LootTab(okHttpClient);
+        lootTab = new LootTab(okHttpClient, gson);
         infoTab = new InfoTab(okHttpClient);
         this.requirementService = requirementService;
 

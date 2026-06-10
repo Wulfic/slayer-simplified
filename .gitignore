@@ -5,6 +5,7 @@ build
 .settings/
 .classpath
 .vscode/
+.mcp.json
 nbactions.xml
 nb-configuration.xml
 nbproject/
@@ -12,3 +13,8 @@ references/
 dev-run.log
 bin/
 /resources/
+.github/
+.claude/
+.mcp.json
+CLAUDE.md
+AGENTS.md

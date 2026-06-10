@@ -9,6 +9,7 @@
  */
 package com.slayersimplified.presentation.panels;
 
+import com.google.gson.Gson;
 import com.slayersimplified.domain.Task;
 import com.slayersimplified.presentation.components.Header;
 import com.slayersimplified.presentation.components.TaskTabs;
@@ -47,6 +48,7 @@ public class TaskSelectedPanel extends JPanel
      * @param locationCoordinateService coordinate lookup service
      * @param favoriteService           favorite location persistence service
      * @param okHttpClient              HTTP client for wiki loot lookups
+     * @param gson                      client Gson for parsing price API responses
      * @param notesService              monster notes persistence service
      * @param debugMode                 supplier that returns true when location debug mode is enabled
      */
@@ -58,13 +60,14 @@ public class TaskSelectedPanel extends JPanel
             LocationRequirementService requirementService,
             TileNoteService tileNoteService,
             OkHttpClient okHttpClient,
+            Gson gson,
             MonsterNotesService notesService,
             Runnable onNotesChanged,
             Supplier<Boolean> debugMode)
     {
         // Pass all services down to TaskTabs → tabs
         this.taskTabs = new TaskTabs(navigationService, locationCoordinateService, favoriteService,
-                requirementService, tileNoteService, okHttpClient, notesService, onNotesChanged, debugMode);
+                requirementService, tileNoteService, okHttpClient, gson, notesService, onNotesChanged, debugMode);
         this.onClickListener = e -> onClose.run();
         closeButton.addActionListener(this.onClickListener);
         closeButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);

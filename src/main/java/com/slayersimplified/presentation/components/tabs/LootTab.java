@@ -5,6 +5,7 @@
  */
 package com.slayersimplified.presentation.components.tabs;
 
+import com.google.gson.Gson;
 import com.slayersimplified.domain.Tab;
 import com.slayersimplified.loot.DropTableSection;
 import com.slayersimplified.loot.WikiItem;
@@ -29,6 +30,7 @@ import java.awt.*;
 public class LootTab extends JScrollPane implements Tab<String>
 {
     private final OkHttpClient okHttpClient;
+    private final Gson gson;
     private final JPanel contentPanel = new ScrollablePanel();
     private String currentMonster;
     /** Incremented on every new fetch; lets async callbacks discard stale responses. */
@@ -44,9 +46,10 @@ public class LootTab extends JScrollPane implements Tab<String>
     private static final Color RARITY_SUPER_RARE = new Color(200, 50, 200);
     private static final Color PRICE_COLOR = ColorScheme.GRAND_EXCHANGE_ALCH;
 
-    public LootTab(OkHttpClient okHttpClient)
+    public LootTab(OkHttpClient okHttpClient, Gson gson)
     {
         this.okHttpClient = okHttpClient;
+        this.gson = gson;
 
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
         contentPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
@@ -81,7 +84,7 @@ public class LootTab extends JScrollPane implements Tab<String>
         showLoadingState();
 
         WikiScraper.getDropsByMonster(okHttpClient, monsterName)
-                .thenCompose(sections -> WikiPriceCache.enrichDropTables(okHttpClient, sections))
+                .thenCompose(sections -> WikiPriceCache.enrichDropTables(okHttpClient, gson, sections))
                 .whenCompleteAsync((dropTableSections, ex) ->
                 {
                     SwingUtilities.invokeLater(() ->
