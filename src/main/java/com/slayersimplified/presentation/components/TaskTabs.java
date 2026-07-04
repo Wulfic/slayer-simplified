@@ -115,6 +115,25 @@ public class TaskTabs extends JTabbedPane
         setTab(wiki, Icon.WIKI.getIcon(), new WikiTab(), wiki.getName());
     }
 
+    /**
+     * BasicTabbedPaneUI derives the tabbed pane's <em>minimum</em> height from
+     * the tallest tab's <em>preferred</em> size (a long-standing Swing quirk).
+     * Our tabs are scroll panes whose preferred height grows with content, so a
+     * data-heavy monster (many locations, a long drop table) would inflate this
+     * pane's minimum size. That minimum bubbles all the way up to the RuneLite
+     * sidebar and forces {@code ContainableFrame} to grow the client taller in
+     * fixed (non-maximized) mode — see issue #1.
+     * <p>
+     * The tab content scrolls, so a minimal reported height is correct here:
+     * the enclosing {@code BorderLayout.CENTER} stretches this pane to fill
+     * whatever height the sidebar actually has.
+     */
+    @Override
+    public Dimension getMinimumSize()
+    {
+        return new Dimension(0, 0);
+    }
+
     public void shutDown()
     {
         tabMap.values().forEach(Tab::shutDown);
