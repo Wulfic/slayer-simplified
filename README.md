@@ -12,46 +12,46 @@ Type `!task` to start auto-navigating, it will select your favorited location fo
 ## Features
 
 **Task search**
-Searchable list of over 100+ monsters.
+- Searchable list of over 100+ monsters.
 
 **Locations tab**
-Every location has a Nav button and a favorite star (★). Your favorite is pinned to the top and remembered between sessions. There are over 200+ mapped locations.
+- Every location has a Nav button and a favorite star (★). Your favorite is pinned to the top and remembered between sessions. There are over 200+ mapped locations.
 
 **Navigation Filtering**
-Automatically checks you meet the requirements to go to a location. If you dont it greys out.(Debug Location setting disables this)
+- Automatically checks you meet the requirements to go to a location. If you dont it greys out.(Debug Location setting disables this)
 
 **Loot tab**
-Pulls the drop table from the OSRS Wiki when you open the tab. Shows item name, quantity, rarity, and GE price.
+- Pulls the drop table from the OSRS Wiki when you open the tab. Shows item name, quantity, rarity, and GE price.
 
 **Info tab**
-Shows required items, slayer master assignments, and combat stats scraped from the Wiki — combat level, HP, max hit, attack style, elemental weakness, and immunities.
+- Shows required items, slayer master assignments, and combat stats scraped from the Wiki — combat level, HP, max hit, attack style, elemental weakness, and immunities.
 
 **Notes tab**
-Free-text notes per monster. Auto-saved as you type!
+- Free-text notes per monster. Auto-saved as you type!
 
 **NPC highlighting**
-Highlight your target NPCs with a configurable color of your choice!
+- Highlight your target NPCs with a configurable color of your choice!
 
 **Task history**
-Logs every task you complete — monster name, kill count, which master assigned it, task number in your streak, and the date.
+- Logs every task you complete — monster name, kill count, which master assigned it, task number in your streak, and the date.
 
 **Kill counter**
-Tracks how many kills you've done for a particular monster.
+- Tracks how many kills you've done for a particular monster.
 
 **Slayer cape reminder**
-Optional setting — shows a reminder when you get a new task if you have 99 Slayer but didn't bring your cape. Off by default.
+- Optional setting — shows a reminder when you get a new task if you have 99 Slayer but didn't bring your cape. Off by default.
 
 **Suggested & Required Items**
-Reminders to bring both Required Slayer Items, and Suggested items, that may be needed to access a certain area.
+- Reminders to bring both Required Slayer Items, and Suggested items, that may be needed to access a certain area.
 
 **Slayer masters**
-All 9 masters are supported: Turael, Spria, Mazchna, Vannaka, Chaeldar, Konar, Nieve / Steve, Duradel, and Krystilia.
+- All 9 masters are supported: Turael, Spria, Mazchna, Vannaka, Chaeldar, Konar, Nieve / Steve, Duradel, and Krystilia.
 
 **Slayer Streak Optimizer!**
-Automatically assigns you the best Slayer Master for optimizing your task streak, to get the most points possible!
+- Automatically assigns you the best Slayer Master for optimizing your task streak, to get the most points possible!
 
 **Tile Notes**
-Notes on specific tiles such as safe spots, or help traveling to certain areas by using tile notes/hints.
+- Notes on specific tiles such as safe spots, or help traveling to certain areas by using tile notes/hints.
 
 ---
 
