@@ -374,6 +374,7 @@ public class TaskServiceImpl implements TaskService
         // a warning for the expected miss; fall back to the shared placeholder.
         if (getClass().getResource(path) == null)
         {
+            log.debug("No image resource for task '{}' at {}", name, path);
             return PLACEHOLDER_IMAGE;
         }
 
