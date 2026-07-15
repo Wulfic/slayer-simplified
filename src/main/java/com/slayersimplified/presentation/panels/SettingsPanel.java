@@ -28,6 +28,7 @@ public class SettingsPanel extends JPanel
 {
     private final SlayerSimplifiedConfig config;
     private final Runnable onClose;
+    private final Runnable onShowSpecialThanks;
 
     private JComboBox<SlayerMaster> masterCombo;
     private JCheckBox highlightCheck;
@@ -41,10 +42,11 @@ public class SettingsPanel extends JPanel
     private JCheckBox showNonSlayerCheck;
     private JCheckBox tileNotesCheck;
 
-    public SettingsPanel(SlayerSimplifiedConfig config, Runnable onClose)
+    public SettingsPanel(SlayerSimplifiedConfig config, Runnable onClose, Runnable onShowSpecialThanks)
     {
         this.config = config;
         this.onClose = onClose;
+        this.onShowSpecialThanks = onShowSpecialThanks;
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBackground(ColorScheme.DARK_GRAY_COLOR);
@@ -313,16 +315,6 @@ public class SettingsPanel extends JPanel
         add(Box.createVerticalStrut(8));
 
         // --- Special Thanks ---
-        JPanel thanksPanel = new JPanel();
-        thanksPanel.setLayout(new BoxLayout(thanksPanel, BoxLayout.Y_AXIS));
-        thanksPanel.setBackground(ColorScheme.DARK_GRAY_COLOR);
-        thanksPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        thanksPanel.setVisible(false);
-        addContributor(thanksPanel, "vividflash",
-                "Contributed the fix silencing startup warnings for tasks without a bundled monster image.");
-        addContributor(thanksPanel, "danielvxsp",
-                "Reported the bug where opening the plugin tab extended the client's minimum window size.");
-
         JButton thanksButton = new JButton("Special Thanks");
         thanksButton.setFont(FontManager.getRunescapeSmallFont());
         thanksButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
@@ -331,28 +323,9 @@ public class SettingsPanel extends JPanel
         thanksButton.setAlignmentX(Component.LEFT_ALIGNMENT);
         thanksButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
         thanksButton.setToolTipText("Everyone who has helped improve the plugin");
-        thanksButton.addActionListener(e ->
-        {
-            thanksPanel.setVisible(!thanksPanel.isVisible());
-            revalidate();
-            repaint();
-        });
+        thanksButton.addActionListener(e -> onShowSpecialThanks.run());
         add(thanksButton);
-        add(Box.createVerticalStrut(4));
-        add(thanksPanel);
         add(Box.createVerticalStrut(8));
-    }
-
-    /** Adds one contributor line ("username — what they did") to the Special Thanks panel. */
-    private void addContributor(JPanel panel, String username, String contribution)
-    {
-        JLabel label = new JLabel("<html><body style='width:170px'><b><font color='#ff9800'>"
-                + username + "</font></b> — " + contribution + "</body></html>");
-        label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        label.setFont(FontManager.getRunescapeSmallFont());
-        label.setAlignmentX(Component.LEFT_ALIGNMENT);
-        label.setBorder(new EmptyBorder(2, 2, 4, 2));
-        panel.add(label);
     }
 
     private JPanel makeRow(String labelText, JComponent control, String tooltip)

@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * Guards that the settings panel builds without throwing and that the
  * community section renders: bug link, feature suggestion link, Ko-fi link,
- * and the Special Thanks button with one line per contributor.
+ * and a Special Thanks button that navigates to its own pane.
  */
 public class SettingsPanelRenderTest
 {
@@ -45,9 +45,9 @@ public class SettingsPanelRenderTest
     }
 
     @Test
-    public void panelBuildsAndShowsCommunityLinksAndSpecialThanks()
+    public void panelBuildsAndShowsCommunityLinks()
     {
-        SettingsPanel panel = new SettingsPanel(new StubConfig(), () -> {});
+        SettingsPanel panel = new SettingsPanel(new StubConfig(), () -> {}, () -> {});
         panel.refresh();
 
         List<JLabel> labels = new ArrayList<>();
@@ -60,6 +60,19 @@ public class SettingsPanelRenderTest
                 labels.stream().anyMatch(l -> text(l).contains("feature suggestion")));
         Assert.assertTrue("Ko-fi link missing",
                 labels.stream().anyMatch(l -> text(l).contains("Ko-fi")));
+        Assert.assertTrue("Done button missing",
+                buttons.stream().anyMatch(b -> "Done".equals(b.getText())));
+    }
+
+    @Test
+    public void specialThanksButtonNavigatesToItsOwnPane()
+    {
+        boolean[] navigated = {false};
+        SettingsPanel panel = new SettingsPanel(new StubConfig(), () -> {}, () -> navigated[0] = true);
+
+        List<JLabel> labels = new ArrayList<>();
+        List<AbstractButton> buttons = new ArrayList<>();
+        collect(panel, labels, buttons);
 
         AbstractButton thanks = buttons.stream()
                 .filter(b -> "Special Thanks".equals(b.getText()))
@@ -67,20 +80,12 @@ public class SettingsPanelRenderTest
                 .orElse(null);
         Assert.assertNotNull("Special Thanks button missing", thanks);
 
-        JLabel vividflash = labels.stream()
-                .filter(l -> text(l).contains("vividflash")).findFirst().orElse(null);
-        JLabel danielvxsp = labels.stream()
-                .filter(l -> text(l).contains("danielvxsp")).findFirst().orElse(null);
-        Assert.assertNotNull("vividflash credit missing", vividflash);
-        Assert.assertNotNull("danielvxsp credit missing", danielvxsp);
+        // Credits live on their own pane now, not inline in settings.
+        Assert.assertFalse("contributor credits should not render inside settings",
+                labels.stream().anyMatch(l -> text(l).contains("vividflash")));
 
-        // The contributor list starts hidden and toggles with the button.
-        Container thanksPanel = vividflash.getParent();
-        Assert.assertFalse("thanks list should start hidden", thanksPanel.isVisible());
         thanks.doClick();
-        Assert.assertTrue("thanks list should show after click", thanksPanel.isVisible());
-        thanks.doClick();
-        Assert.assertFalse("thanks list should hide after second click", thanksPanel.isVisible());
+        Assert.assertTrue("Special Thanks button did not request its pane", navigated[0]);
     }
 
     private static String text(JLabel label)

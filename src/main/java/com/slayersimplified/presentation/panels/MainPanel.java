@@ -437,12 +437,17 @@ public class MainPanel extends PluginPanel
         setLayout(new BorderLayout(0, 0));
         setBorder(BorderFactory.createLineBorder(new Color(50, 50, 50), 2));
 
-        SettingsPanel settingsPanel = new SettingsPanel(config, () -> showPanel(Panel.TASK_SEARCH));
+        SettingsPanel settingsPanel = new SettingsPanel(
+                config,
+                () -> showPanel(Panel.TASK_SEARCH),
+                () -> showPanel(Panel.SPECIAL_THANKS));
         gearButton.addActionListener(e ->
         {
             settingsPanel.refresh();
             showPanel(Panel.SETTINGS);
         });
+
+        SpecialThanksPanel specialThanksPanel = new SpecialThanksPanel(() -> showPanel(Panel.SETTINGS));
 
         SlayerHistoryPanel historyPanel = new SlayerHistoryPanel(
                 historyService, taskService, taskTracker,
@@ -458,6 +463,7 @@ public class MainPanel extends PluginPanel
         panels.put(Panel.TASK_SEARCH, taskSearchPanel);
         panels.put(Panel.TASK_SELECTED, taskSelectedPanel);
         panels.put(Panel.SETTINGS, settingsPanel);
+        panels.put(Panel.SPECIAL_THANKS, specialThanksPanel);
         panels.put(Panel.HISTORY, historyPanel);
 
         setBackground(ColorScheme.DARK_GRAY_COLOR);

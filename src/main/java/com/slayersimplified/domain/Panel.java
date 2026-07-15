@@ -14,5 +14,6 @@ public enum Panel
     TASK_SEARCH,
     TASK_SELECTED,
     SETTINGS,
+    SPECIAL_THANKS,
     HISTORY
 }
