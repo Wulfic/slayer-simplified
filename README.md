@@ -6,7 +6,7 @@ A RuneLite plugin that makes slayer less painful. It keeps track of your current
 
 ---
 
-## What it does
+# What it does
 
 Type `!task` to start auto-navigating, it will select your favorited location for that monster and route you to the location. Navigation is limited to where shortest path can navigate to, and tiles notes are used to fill in the rest. Check out the features below for a comprehensive list of what it can do!
 ---
@@ -60,6 +60,8 @@ Notes on specific tiles such as safe spots, or help traveling to certain areas b
 ## Bug reports & support
 
 Found a bug? [Open an issue](https://github.com/Wulfic/slayer-simplified/issues) on GitHub.
+
+Have a feature suggestion? [Open an issue](https://github.com/Wulfic/slayer-simplified/issues) on GitHub.
 
 If you enjoy the plugin, [buy me a Ko-fi](https://ko-fi.com/wulfic) ☕
 

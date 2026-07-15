@@ -269,6 +269,28 @@ public class SettingsPanel extends JPanel
         add(bugRow);
         add(Box.createVerticalStrut(4));
 
+        // --- Feature suggestion link ---
+        JLabel featureLabel = new JLabel("<html>Have a <font color='#4fc3f7'><u>feature suggestion</u></font>?</html>");
+        featureLabel.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        featureLabel.setFont(FontManager.getRunescapeSmallFont());
+        featureLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        featureLabel.setToolTipText("https://github.com/Wulfic/slayer-simplified/issues");
+        featureLabel.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e)
+            {
+                LinkBrowser.browse("https://github.com/Wulfic/slayer-simplified/issues");
+            }
+        });
+        JPanel featureRow = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
+        featureRow.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        featureRow.setAlignmentX(Component.LEFT_ALIGNMENT);
+        featureRow.setMaximumSize(new Dimension(Integer.MAX_VALUE, 18));
+        featureRow.add(featureLabel);
+        add(featureRow);
+        add(Box.createVerticalStrut(4));
+
         // --- Ko-fi support link ---
         JLabel kofiLabel = new JLabel("<html><font color='#4fc3f7'><u>Buy me a Ko-fi</u></font></html>");
         kofiLabel.setFont(FontManager.getRunescapeSmallFont());
@@ -289,6 +311,48 @@ public class SettingsPanel extends JPanel
         kofiRow.add(kofiLabel);
         add(kofiRow);
         add(Box.createVerticalStrut(8));
+
+        // --- Special Thanks ---
+        JPanel thanksPanel = new JPanel();
+        thanksPanel.setLayout(new BoxLayout(thanksPanel, BoxLayout.Y_AXIS));
+        thanksPanel.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        thanksPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        thanksPanel.setVisible(false);
+        addContributor(thanksPanel, "vividflash",
+                "Contributed the fix silencing startup warnings for tasks without a bundled monster image.");
+        addContributor(thanksPanel, "danielvxsp",
+                "Reported the bug where opening the plugin tab extended the client's minimum window size.");
+
+        JButton thanksButton = new JButton("Special Thanks");
+        thanksButton.setFont(FontManager.getRunescapeSmallFont());
+        thanksButton.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        thanksButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        thanksButton.setFocusPainted(false);
+        thanksButton.setAlignmentX(Component.LEFT_ALIGNMENT);
+        thanksButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
+        thanksButton.setToolTipText("Everyone who has helped improve the plugin");
+        thanksButton.addActionListener(e ->
+        {
+            thanksPanel.setVisible(!thanksPanel.isVisible());
+            revalidate();
+            repaint();
+        });
+        add(thanksButton);
+        add(Box.createVerticalStrut(4));
+        add(thanksPanel);
+        add(Box.createVerticalStrut(8));
+    }
+
+    /** Adds one contributor line ("username — what they did") to the Special Thanks panel. */
+    private void addContributor(JPanel panel, String username, String contribution)
+    {
+        JLabel label = new JLabel("<html><body style='width:170px'><b><font color='#ff9800'>"
+                + username + "</font></b> — " + contribution + "</body></html>");
+        label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        label.setFont(FontManager.getRunescapeSmallFont());
+        label.setAlignmentX(Component.LEFT_ALIGNMENT);
+        label.setBorder(new EmptyBorder(2, 2, 4, 2));
+        panel.add(label);
     }
 
     private JPanel makeRow(String labelText, JComponent control, String tooltip)
