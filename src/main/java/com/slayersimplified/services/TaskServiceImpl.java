@@ -369,6 +369,14 @@ public class TaskServiceImpl implements TaskService
         String normalizedName = name.replace(' ', '_').toLowerCase();
         String path = baseImagesPath + normalizedName + ".png";
 
+        // Some tasks (e.g. newer content or level variants) have no bundled
+        // monster image. Check for the resource first so ImageUtil does not log
+        // a warning for the expected miss; fall back to the shared placeholder.
+        if (getClass().getResource(path) == null)
+        {
+            return PLACEHOLDER_IMAGE;
+        }
+
         try
         {
             BufferedImage image = ImageUtil.loadImageResource(getClass(), path);
