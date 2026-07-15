@@ -65,9 +65,9 @@ public class LocationCoordinateServiceTest
     @Test
     public void testAliasResolvesToSameCoordinates()
     {
-        // "Mourner Tunnels" is an alias for "Path to Temple of Light (Mourner tunnels)"
-        WorldPoint canonical = service.getCoordinates("Path to Temple of Light (Mourner tunnels)");
-        WorldPoint alias = service.getCoordinates("Mourner Tunnels");
+        // "Mourner Tunnels" is canonical; the older, longer name is an alias for it.
+        WorldPoint canonical = service.getCoordinates("Mourner Tunnels");
+        WorldPoint alias = service.getCoordinates("Path to Temple of Light (Mourner tunnels)");
         Assert.assertNotNull("Canonical name should resolve", canonical);
         Assert.assertNotNull("Alias should resolve to same WorldPoint", alias);
         Assert.assertEquals("Alias should give identical coordinates to canonical entry", canonical, alias);

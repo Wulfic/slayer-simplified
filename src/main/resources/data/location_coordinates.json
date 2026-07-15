@@ -1104,7 +1104,8 @@
         "aliases": [
             "Temple of Light",
             "Mourner HQ",
-            "Death altar"
+            "Death altar",
+            "Path to Temple of Light (Mourner tunnels)"
         ]
     },
     "Pirates' Cove": {
@@ -1328,13 +1329,9 @@
             "Stronghold of Security - Floor 1",
             "Stronghold of Security - Floor 2",
             "Stronghold of Security - Floor 3",
-            "Sepulchre of Death"
+            "Sepulchre of Death",
+            "Stronhold of Security"
         ]
-    },
-    "Stronhold of Security": {
-        "x": 3081,
-        "y": 3421,
-        "plane": 0
     },
     "Tai Bwo Wannai": {
         "x": 2789,
