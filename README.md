@@ -4,12 +4,10 @@ A RuneLite plugin that makes slayer less painful. It keeps track of your current
 
 > **Shortest Path is required** for the navigation buttons to work. If you don't have it installed, everything else still works fine.
 
----
 
 # What it does
 
 Type `!task` to start auto-navigating, it will select your favorited location for that monster and route you to the location. Navigation is limited to where shortest path can navigate to, and tiles notes are used to fill in the rest. Check out the features below for a comprehensive list of what it can do!
----
 
 ## Features
 

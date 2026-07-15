@@ -65,6 +65,26 @@ public class SettingsPanelRenderTest
     }
 
     @Test
+    public void panelCreditsTheUpstreamPluginsItWasBuiltOn()
+    {
+        SettingsPanel panel = new SettingsPanel(new StubConfig(), () -> {}, () -> {});
+
+        List<JLabel> labels = new ArrayList<>();
+        List<AbstractButton> buttons = new ArrayList<>();
+        collect(panel, labels, buttons);
+
+        Assert.assertTrue("Slayer Assistant credit missing",
+                labels.stream().anyMatch(l -> text(l).contains("Slayer Assistant")
+                        && text(l).contains("LeeOKeefe")));
+        Assert.assertTrue("Loot Lookup credit missing",
+                labels.stream().anyMatch(l -> text(l).contains("Loot Lookup")
+                        && text(l).contains("donth77")));
+        Assert.assertTrue("Shortest Path credit missing",
+                labels.stream().anyMatch(l -> text(l).contains("Shortest Path")
+                        && text(l).contains("Skretzo")));
+    }
+
+    @Test
     public void specialThanksButtonNavigatesToItsOwnPane()
     {
         boolean[] navigated = {false};

@@ -312,6 +312,25 @@ public class SettingsPanel extends JPanel
         kofiRow.setMaximumSize(new Dimension(Integer.MAX_VALUE, 18));
         kofiRow.add(kofiLabel);
         add(kofiRow);
+
+        // Absorbs the leftover height so the credits and Special Thanks sit at the
+        // very bottom of the pane rather than floating under the links.
+        add(Box.createVerticalGlue());
+
+        // --- Upstream plugin credits ---
+        JLabel builtOn = new JLabel("Built on top of:");
+        builtOn.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        builtOn.setFont(FontManager.getRunescapeSmallFont());
+        builtOn.setAlignmentX(Component.LEFT_ALIGNMENT);
+        add(builtOn);
+        add(Box.createVerticalStrut(2));
+
+        add(makeLinkRow("Slayer Assistant", "by LeeOKeefe",
+                "https://github.com/LeeOkeefe/slayer-assistant-plugin"));
+        add(makeLinkRow("Loot Lookup", "by donth77",
+                "https://github.com/donth77/loot-lookup-plugin"));
+        add(makeLinkRow("Shortest Path", "by Skretzo",
+                "https://github.com/Skretzo/shortest-path"));
         add(Box.createVerticalStrut(8));
 
         // --- Special Thanks ---
@@ -326,6 +345,32 @@ public class SettingsPanel extends JPanel
         thanksButton.addActionListener(e -> onShowSpecialThanks.run());
         add(thanksButton);
         add(Box.createVerticalStrut(8));
+    }
+
+    /** Left-aligned "<i>Name</i> by Author" row where the name opens {@code url}. */
+    private JPanel makeLinkRow(String name, String author, String url)
+    {
+        JLabel label = new JLabel("<html><font color='#4fc3f7'><u>" + name + "</u></font> "
+                + author + "</html>");
+        label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        label.setFont(FontManager.getRunescapeSmallFont());
+        label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        label.setToolTipText(url);
+        label.addMouseListener(new MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(MouseEvent e)
+            {
+                LinkBrowser.browse(url);
+            }
+        });
+
+        JPanel row = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        row.setBackground(ColorScheme.DARK_GRAY_COLOR);
+        row.setAlignmentX(Component.LEFT_ALIGNMENT);
+        row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 16));
+        row.add(label);
+        return row;
     }
 
     private JPanel makeRow(String labelText, JComponent control, String tooltip)

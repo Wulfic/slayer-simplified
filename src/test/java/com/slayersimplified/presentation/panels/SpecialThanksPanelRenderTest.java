@@ -5,6 +5,7 @@
  */
 package com.slayersimplified.presentation.panels;
 
+import net.runelite.client.ui.PluginPanel;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -45,6 +46,38 @@ public class SpecialThanksPanelRenderTest
                 labels.stream().anyMatch(l -> text(l).contains("monster image")));
         Assert.assertTrue("danielvxsp contribution description missing",
                 labels.stream().anyMatch(l -> text(l).contains("minimum window size")));
+    }
+
+    /**
+     * The bug this guards: HTML labels report their unwrapped width as their
+     * minimum, so without an explicit CSS width the text runs off the pane.
+     */
+    @Test
+    public void bodyTextWrapsInsideTheViewportAtAnyWidth()
+    {
+        for (int viewportWidth : new int[]{PluginPanel.PANEL_WIDTH, 150, 400})
+        {
+            SpecialThanksPanel panel = new SpecialThanksPanel(() -> {});
+            panel.rewrapText(viewportWidth);
+
+            List<JLabel> labels = new ArrayList<>();
+            List<AbstractButton> buttons = new ArrayList<>();
+            List<JScrollPane> scrollPanes = new ArrayList<>();
+            collect(panel, labels, buttons, scrollPanes);
+
+            for (JLabel label : labels)
+            {
+                if (!text(label).startsWith("<html>"))
+                {
+                    continue;
+                }
+                int width = label.getPreferredSize().width;
+                Assert.assertTrue(
+                        "text overflows a " + viewportWidth + "px viewport (needs " + width + "px): "
+                                + text(label),
+                        width <= viewportWidth);
+            }
+        }
     }
 
     @Test

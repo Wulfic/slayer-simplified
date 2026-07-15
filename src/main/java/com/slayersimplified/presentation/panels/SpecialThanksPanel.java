@@ -8,10 +8,15 @@ package com.slayersimplified.presentation.panels;
 import com.slayersimplified.presentation.components.ScrollBarStyling;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
+import net.runelite.client.ui.PluginPanel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Scrollable panel crediting everyone who has meaningfully contributed to the
@@ -24,8 +29,20 @@ public class SpecialThanksPanel extends JPanel
 {
     private static final Color USERNAME_COLOR = new Color(255, 152, 0);
 
+    private static final int LIST_PADDING = 8;
+    private static final int ENTRY_PADDING = 6;
+
+    /** Horizontal space between the viewport edge and text sitting directly in the list. */
+    private static final int INTRO_INSET = LIST_PADDING * 2;
+    /** Same, for text nested one level deeper inside a contributor entry. */
+    private static final int ENTRY_INSET = INTRO_INSET + (ENTRY_PADDING * 2);
+
+    /** Floor so a collapsed viewport can never produce a zero or negative wrap width. */
+    private static final int MIN_WRAP_WIDTH = 40;
+
     private final Runnable onClose;
-    private final JPanel listPanel = new JPanel();
+    private final JPanel listPanel = new ViewportWidthPanel();
+    private final List<WrappingLabel> wrappingLabels = new ArrayList<>();
 
     public SpecialThanksPanel(Runnable onClose)
     {
@@ -38,13 +55,10 @@ public class SpecialThanksPanel extends JPanel
 
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
         listPanel.setBackground(ColorScheme.DARKER_GRAY_COLOR);
-        listPanel.setBorder(new EmptyBorder(8, 8, 8, 8));
+        listPanel.setBorder(new EmptyBorder(LIST_PADDING, LIST_PADDING, LIST_PADDING, LIST_PADDING));
 
-        JLabel intro = new JLabel("<html><body>Thank you to everyone who has helped "
-                + "improve Slayer Simplified.</body></html>");
-        intro.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        intro.setFont(FontManager.getRunescapeSmallFont());
-        intro.setAlignmentX(Component.LEFT_ALIGNMENT);
+        JLabel intro = wrappingLabel("Thank you to everyone who has helped improve Slayer Simplified.",
+                INTRO_INSET);
         intro.setBorder(new EmptyBorder(0, 0, 8, 0));
         listPanel.add(intro);
 
@@ -61,27 +75,58 @@ public class SpecialThanksPanel extends JPanel
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
         ScrollBarStyling.apply(scrollPane);
 
+        // The viewport's width is the real text width — it already excludes
+        // RuneLite's panel borders and the scrollbar, whatever they happen to be.
+        JViewport viewport = scrollPane.getViewport();
+        viewport.addComponentListener(new ComponentAdapter()
+        {
+            @Override
+            public void componentResized(ComponentEvent e)
+            {
+                rewrapText(viewport.getWidth());
+            }
+        });
+
         add(scrollPane, BorderLayout.CENTER);
+    }
+
+    /**
+     * Re-wraps every body label to the pane's measured width. Package-private so
+     * the render test can drive it without realising a real window.
+     */
+    void rewrapText(int viewportWidth)
+    {
+        for (WrappingLabel label : wrappingLabels)
+        {
+            label.wrapTo(viewportWidth);
+        }
+        listPanel.revalidate();
     }
 
     /** Adds one contributor entry: GitHub username above a one-line description. */
     private void addContributor(String username, String contribution)
     {
-        JPanel entry = new JPanel();
+        // Stretches to the pane's full width but never taller than its content,
+        // so the entry background spans the panel without BoxLayout inflating it.
+        JPanel entry = new JPanel()
+        {
+            @Override
+            public Dimension getMaximumSize()
+            {
+                return new Dimension(Integer.MAX_VALUE, getPreferredSize().height);
+            }
+        };
         entry.setLayout(new BoxLayout(entry, BoxLayout.Y_AXIS));
         entry.setBackground(ColorScheme.DARK_GRAY_COLOR);
         entry.setAlignmentX(Component.LEFT_ALIGNMENT);
-        entry.setBorder(new EmptyBorder(6, 6, 6, 6));
+        entry.setBorder(new EmptyBorder(ENTRY_PADDING, ENTRY_PADDING, ENTRY_PADDING, ENTRY_PADDING));
 
         JLabel name = new JLabel(username);
         name.setForeground(USERNAME_COLOR);
         name.setFont(FontManager.getRunescapeBoldFont());
         name.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel what = new JLabel("<html><body>" + contribution + "</body></html>");
-        what.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        what.setFont(FontManager.getRunescapeSmallFont());
-        what.setAlignmentX(Component.LEFT_ALIGNMENT);
+        JLabel what = wrappingLabel(contribution, ENTRY_INSET);
 
         entry.add(name);
         entry.add(Box.createVerticalStrut(2));
@@ -89,6 +134,60 @@ public class SpecialThanksPanel extends JPanel
 
         listPanel.add(entry);
         listPanel.add(Box.createVerticalStrut(6));
+    }
+
+    /**
+     * Body-text label that wraps to the pane instead of running off it.
+     *
+     * @param inset horizontal space this label's text sits inside of, measured
+     *              from the viewport edge
+     */
+    private JLabel wrappingLabel(String text, int inset)
+    {
+        WrappingLabel label = new WrappingLabel(text, inset);
+        label.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
+        label.setFont(FontManager.getRunescapeSmallFont());
+        label.setAlignmentX(Component.LEFT_ALIGNMENT);
+        wrappingLabels.add(label);
+        return label;
+    }
+
+    /**
+     * An HTML label reports its full unwrapped width as its minimum size, so
+     * BoxLayout cannot shrink it and long text runs off the pane. Only an explicit
+     * CSS width makes it wrap — and that width has to be the real one, since the
+     * plugin panel's usable width depends on RuneLite's own borders and scrollbar
+     * and on how wide the user has dragged the sidebar. So each label re-wraps
+     * itself against the measured viewport width whenever the viewport resizes.
+     */
+    private static final class WrappingLabel extends JLabel
+    {
+        private final String rawText;
+        private final int inset;
+        private int wrapWidth = -1;
+
+        private WrappingLabel(String rawText, int inset)
+        {
+            this.rawText = rawText;
+            this.inset = inset;
+            // Best-effort width until the pane is first laid out and measured.
+            wrapTo(PluginPanel.PANEL_WIDTH);
+        }
+
+        /** Re-wraps to {@code viewportWidth}; a no-op when the usable width is unchanged. */
+        private void wrapTo(int viewportWidth)
+        {
+            int width = Math.max(MIN_WRAP_WIDTH, viewportWidth - inset);
+            if (width == wrapWidth)
+            {
+                return;
+            }
+            wrapWidth = width;
+            // Width is in pt, not px: Swing's CSS scales px by 1.3, so a px width
+            // renders ~30% wider than asked and the text overruns the pane. pt maps
+            // 1:1 onto device pixels.
+            setText("<html><body style='width:" + width + "pt'>" + rawText + "</body></html>");
+        }
     }
 
     private JPanel buildHeaderPanel()
@@ -124,5 +223,39 @@ public class SpecialThanksPanel extends JPanel
         header.add(titleRow, BorderLayout.NORTH);
         header.add(sep, BorderLayout.SOUTH);
         return header;
+    }
+
+    /** Keeps the contributor list at the viewport's width so nothing scrolls sideways. */
+    private static class ViewportWidthPanel extends JPanel implements Scrollable
+    {
+        @Override
+        public Dimension getPreferredScrollableViewportSize()
+        {
+            return getPreferredSize();
+        }
+
+        @Override
+        public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction)
+        {
+            return 16;
+        }
+
+        @Override
+        public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction)
+        {
+            return visibleRect.height;
+        }
+
+        @Override
+        public boolean getScrollableTracksViewportWidth()
+        {
+            return true;
+        }
+
+        @Override
+        public boolean getScrollableTracksViewportHeight()
+        {
+            return false;
+        }
     }
 }
