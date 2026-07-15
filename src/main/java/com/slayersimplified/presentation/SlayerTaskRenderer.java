@@ -7,6 +7,7 @@
 package com.slayersimplified.presentation;
 
 import com.slayersimplified.domain.Task;
+import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.PluginPanel;
@@ -25,6 +26,7 @@ import java.util.Map;
  * Images are loaded lazily from classpath resources and cached after first use.
  * At 32×32 pixels the full set of ~120 monsters uses under 2 MB.
  */
+@Slf4j
 public class SlayerTaskRenderer extends JPanel implements ListCellRenderer<Task>
 {
     private static final int ROW_HEIGHT = 42;
@@ -112,23 +114,43 @@ public class SlayerTaskRenderer extends JPanel implements ListCellRenderer<Task>
         return this;
     }
 
+    /**
+     * Loads a monster image by key, or returns null when none is bundled.
+     *
+     * Several tasks ship no image (newer content and level variants). Checking
+     * the classpath first keeps ImageUtil from logging a warning for a miss we
+     * expect and handle, which otherwise fires on every panel render.
+     */
+    private static BufferedImage loadMonsterImage(String key)
+    {
+        String path = "/images/monsters/" + key + ".png";
+
+        if (SlayerTaskRenderer.class.getResource(path) == null)
+        {
+            log.debug("No monster image at {}", path);
+            return null;
+        }
+
+        try
+        {
+            return ImageUtil.loadImageResource(SlayerTaskRenderer.class, path);
+        }
+        catch (Exception e)
+        {
+            log.debug("Could not load monster image at {}", path, e);
+            return null;
+        }
+    }
+
     public static Icon getMonsterIcon(String taskName)
     {
         final String key = taskName.toLowerCase().replace(" ", "_");
         return imageCache.computeIfAbsent(key, k ->
         {
-            try
+            BufferedImage img = loadMonsterImage(k);
+            if (img != null)
             {
-                BufferedImage img = ImageUtil.loadImageResource(
-                        SlayerTaskRenderer.class, "/images/monsters/" + k + ".png");
-                if (img != null)
-                {
-                    return new ImageIcon(ImageUtil.resizeImage(img, ICON_SIZE, ICON_SIZE));
-                }
-            }
-            catch (Exception ignored)
-            {
-                // No image for this monster — fall through to placeholder.
+                return new ImageIcon(ImageUtil.resizeImage(img, ICON_SIZE, ICON_SIZE));
             }
             return PLACEHOLDER_ICON;
         });
@@ -150,18 +172,10 @@ public class SlayerTaskRenderer extends JPanel implements ListCellRenderer<Task>
 
         return variantIconCache.computeIfAbsent(cacheKey, k ->
         {
-            try
+            BufferedImage img = loadMonsterImage(variantKey);
+            if (img != null)
             {
-                BufferedImage img = ImageUtil.loadImageResource(
-                        SlayerTaskRenderer.class, "/images/monsters/" + variantKey + ".png");
-                if (img != null)
-                {
-                    return new ImageIcon(ImageUtil.resizeImage(img, ICON_SIZE, ICON_SIZE));
-                }
-            }
-            catch (Exception ignored)
-            {
-                // No variant-specific image — fall through to parent.
+                return new ImageIcon(ImageUtil.resizeImage(img, ICON_SIZE, ICON_SIZE));
             }
             // Fall back to the parent task's icon (may itself be PLACEHOLDER_ICON).
             return getMonsterIcon(parentName);
