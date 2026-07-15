@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.slayersimplified.services.LocationCoordinateService;
 import net.runelite.api.Quest;
 import net.runelite.api.Skill;
 import org.junit.Assert;
@@ -102,5 +103,53 @@ public class RequirementsJsonValidationTest
             Assert.fail("requirements.json contains " + errors.size() + " invalid enum name(s):\n  "
                     + String.join("\n  ", errors));
         }
+    }
+
+    /**
+     * Every location key in requirements.json must resolve to a location that
+     * actually exists in location_coordinates.json.
+     *
+     * LocationRequirementService stores requirements under
+     * {@code resolveCanonical(key)}, and tasks look them up by the canonical name
+     * of the location they reference. A key that resolves to nothing therefore
+     * parks its requirements under a name no lookup ever reaches, and the
+     * requirement is silently dropped instead of failing loudly — which is how a
+     * rename in location_coordinates.json orphaned the Mourner Tunnels quest
+     * requirement. Renaming a location means adding the old name as an alias.
+     */
+    @Test
+    public void everyRequirementLocationResolvesToAKnownLocation() throws Exception
+    {
+        LocationCoordinateService locationService =
+                new LocationCoordinateService(new Gson(), "/data/location_coordinates.json");
+
+        InputStream is = getClass().getResourceAsStream("/data/requirements.json");
+        Assert.assertNotNull("requirements.json must exist on the classpath", is);
+
+        List<String> orphans = new ArrayList<>();
+
+        try (Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8))
+        {
+            JsonObject root = new JsonParser().parse(reader).getAsJsonObject();
+            if (!root.has("locations"))
+            {
+                return;
+            }
+
+            for (String key : root.getAsJsonObject("locations").keySet())
+            {
+                String canonical = locationService.resolveCanonical(key);
+                if (!locationService.getAllCanonicalNames().contains(canonical))
+                {
+                    orphans.add(key + "' resolved to '" + canonical);
+                }
+            }
+        }
+
+        Assert.assertEquals(
+                "requirements.json references location(s) missing from location_coordinates.json;"
+                        + " add the old name as an alias if it was renamed: " + orphans,
+                0,
+                orphans.size());
     }
 }
