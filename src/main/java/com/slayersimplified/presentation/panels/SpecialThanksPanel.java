@@ -66,6 +66,8 @@ public class SpecialThanksPanel extends JPanel
                 "Contributed the fix silencing startup warnings for tasks without a bundled monster image.");
         addContributor("danielvxsp",
                 "Reported the bug where opening the plugin tab extended the client's minimum window size.");
+        addContributor("Bruster112",
+                "Contributed the fix gating the task overlays behind combat, so they only show once you're actually fighting the assigned monster.");
 
         JScrollPane scrollPane = new JScrollPane(listPanel);
         scrollPane.setBorder(null);

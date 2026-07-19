@@ -6,6 +6,7 @@
 package com.slayersimplified.presentation;
 
 import com.slayersimplified.SlayerSimplifiedConfig;
+import com.slayersimplified.services.TaskEngagementService;
 import com.slayersimplified.services.TileNoteService;
 import net.runelite.api.Client;
 import net.runelite.api.Perspective;
@@ -41,13 +42,16 @@ public class TileNoteOverlay extends Overlay
     private final Client client;
     private final SlayerSimplifiedConfig config;
     private final TileNoteService tileNoteService;
+    private final TaskEngagementService engagement;
 
     @Inject
-    public TileNoteOverlay(Client client, SlayerSimplifiedConfig config, TileNoteService tileNoteService)
+    public TileNoteOverlay(Client client, SlayerSimplifiedConfig config,
+                           TileNoteService tileNoteService, TaskEngagementService engagement)
     {
         this.client = client;
         this.config = config;
         this.tileNoteService = tileNoteService;
+        this.engagement = engagement;
 
         setPosition(OverlayPosition.DYNAMIC);
         setLayer(OverlayLayer.ABOVE_SCENE);
@@ -70,6 +74,12 @@ public class TileNoteOverlay extends Overlay
         }
         else
         {
+            // Normal mode: gated behind task engagement so markers only show
+            // once the player is actually working the task (see TaskEngagementService).
+            if (!engagement.shouldShowOverlays())
+            {
+                return null;
+            }
             // Normal mode: only the current/last-navigated task
             if (tileNoteService.isCurrentTaskNonSlayer() && !config.showNonSlayerEnemies())
             {

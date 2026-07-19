@@ -8,6 +8,7 @@ package com.slayersimplified.presentation;
 import com.slayersimplified.SlayerSimplifiedConfig;
 import com.slayersimplified.domain.Task;
 import com.slayersimplified.services.SlayerTaskTracker;
+import com.slayersimplified.services.TaskEngagementService;
 import com.slayersimplified.services.TaskService;
 import net.runelite.api.Client;
 import net.runelite.api.NPC;
@@ -29,6 +30,7 @@ public class SlayerTargetOverlay extends Overlay
     private final SlayerSimplifiedConfig config;
     private final SlayerTaskTracker taskTracker;
     private final TaskService taskService;
+    private final TaskEngagementService engagement;
     private final ModelOutlineRenderer modelOutlineRenderer;
 
     /** Names of NPCs that match the current task (lower-cased). */
@@ -47,12 +49,14 @@ public class SlayerTargetOverlay extends Overlay
             SlayerSimplifiedConfig config,
             SlayerTaskTracker taskTracker,
             TaskService taskService,
+            TaskEngagementService engagement,
             ModelOutlineRenderer modelOutlineRenderer)
     {
         this.client = client;
         this.config = config;
         this.taskTracker = taskTracker;
         this.taskService = taskService;
+        this.engagement = engagement;
         this.modelOutlineRenderer = modelOutlineRenderer;
 
         setPosition(OverlayPosition.DYNAMIC);
@@ -136,7 +140,7 @@ public class SlayerTargetOverlay extends Overlay
     @Override
     public Dimension render(Graphics2D graphics)
     {
-        if (!config.highlightTarget() || trackedNpcs.isEmpty())
+        if (!config.highlightTarget() || trackedNpcs.isEmpty() || !engagement.shouldShowOverlays())
         {
             return null;
         }

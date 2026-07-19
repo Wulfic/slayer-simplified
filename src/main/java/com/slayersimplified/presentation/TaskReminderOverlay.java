@@ -13,6 +13,7 @@ import com.slayersimplified.SlayerSimplifiedConfig;
 import com.slayersimplified.domain.Task;
 import com.slayersimplified.services.MonsterNotesService;
 import com.slayersimplified.services.SlayerTaskTracker;
+import com.slayersimplified.services.TaskEngagementService;
 import com.slayersimplified.services.TaskService;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
@@ -44,6 +45,7 @@ public class TaskReminderOverlay extends Overlay
     private final SlayerTaskTracker taskTracker;
     private final TaskService taskService;
     private final MonsterNotesService notesService;
+    private final TaskEngagementService engagement;
     private final SlayerSimplifiedConfig config;
     private final PanelComponent panelComponent = new PanelComponent();
 
@@ -60,12 +62,14 @@ public class TaskReminderOverlay extends Overlay
             SlayerTaskTracker taskTracker,
             TaskService taskService,
             MonsterNotesService notesService,
+            TaskEngagementService engagement,
             SlayerSimplifiedConfig config)
     {
         this.client = client;
         this.taskTracker = taskTracker;
         this.taskService = taskService;
         this.notesService = notesService;
+        this.engagement = engagement;
         this.config = config;
         setPosition(OverlayPosition.TOP_LEFT);
         setLayer(OverlayLayer.ABOVE_SCENE);
@@ -75,7 +79,7 @@ public class TaskReminderOverlay extends Overlay
     @Override
     public Dimension render(Graphics2D graphics)
     {
-        if (!config.showReminderOverlay())
+        if (!config.showReminderOverlay() || !engagement.shouldShowOverlays())
         {
             return null;
         }

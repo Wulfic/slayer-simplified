@@ -40,12 +40,16 @@ public class SpecialThanksPanelRenderTest
                 labels.stream().anyMatch(l -> text(l).contains("vividflash")));
         Assert.assertTrue("danielvxsp credit missing",
                 labels.stream().anyMatch(l -> text(l).contains("danielvxsp")));
+        Assert.assertTrue("Bruster112 credit missing",
+                labels.stream().anyMatch(l -> text(l).contains("Bruster112")));
 
         // Each credited name needs a sentence saying what they actually did.
         Assert.assertTrue("vividflash contribution description missing",
                 labels.stream().anyMatch(l -> text(l).contains("monster image")));
         Assert.assertTrue("danielvxsp contribution description missing",
                 labels.stream().anyMatch(l -> text(l).contains("minimum window size")));
+        Assert.assertTrue("Bruster112 contribution description missing",
+                labels.stream().anyMatch(l -> text(l).contains("only show once you're actually fighting")));
     }
 
     /**

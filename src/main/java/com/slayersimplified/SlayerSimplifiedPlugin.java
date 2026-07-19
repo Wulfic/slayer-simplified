@@ -26,6 +26,7 @@ import com.slayersimplified.services.NavigationService;
 import com.slayersimplified.services.SlayerHistoryService;
 import com.slayersimplified.services.SlayerStreakOptimizerService;
 import com.slayersimplified.services.SlayerTaskTracker;
+import com.slayersimplified.services.TaskEngagementService;
 import com.slayersimplified.services.LocationRequirementService;
 import com.slayersimplified.services.TileNoteService;
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +35,7 @@ import net.runelite.api.Client;
 import net.runelite.api.Skill;
 import com.slayersimplified.domain.Task;
 import com.slayersimplified.services.TaskService;
+import net.runelite.api.Actor;
 import net.runelite.api.NPC;
 import net.runelite.api.events.ActorDeath;
 import net.runelite.api.events.ChatMessage;
@@ -86,6 +88,9 @@ public class SlayerSimplifiedPlugin extends Plugin
 
     @Inject
     private SlayerTaskTracker taskTracker;
+
+    @Inject
+    private TaskEngagementService taskEngagement;
 
     @Inject
     private SlayerSimplifiedConfig config;
@@ -226,6 +231,7 @@ public class SlayerSimplifiedPlugin extends Plugin
     protected void shutDown()
     {
         pendingTaskNavigation = false;
+        taskEngagement.reset();
         clientToolbar.removeNavigation(navButton);
         overlayManager.remove(targetOverlay);
         overlayManager.remove(coordinatesOverlay);
@@ -253,6 +259,9 @@ public class SlayerSimplifiedPlugin extends Plugin
             if (result == SlayerTaskTracker.ParseResult.NEW_TASK)
             {
                 pendingTaskNavigation = false;
+                // Arm the overlay gate: overlays show for a 2-minute window, then
+                // hide unless combat with the correct monster engages them.
+                taskEngagement.arm();
                 final String newTask = taskTracker.getCurrentTaskName();
                 final int count = taskTracker.getLastAssignedCount();
                 final int taskNumber = taskTracker.getCurrentAssignmentNumber();
@@ -292,6 +301,8 @@ public class SlayerSimplifiedPlugin extends Plugin
                     // is not misinterpreted as a slayer-point skip.
                     previousTaskCompleted = true;
                 }
+                // Task finished or none active — hide the gated overlays.
+                taskEngagement.reset();
                 SwingUtilities.invokeLater(mainPanel::refreshCurrentTask);
             }
 
@@ -321,6 +332,10 @@ public class SlayerSimplifiedPlugin extends Plugin
                 String message = Text.removeTags(rawMsg).trim();
                 if (message.equalsIgnoreCase("!task"))
                 {
+                    // Arm the overlay gate whenever the player checks their task,
+                    // independent of the auto-navigate setting.
+                    taskEngagement.arm();
+
                     if (!config.autoNavigate())
                     {
                         return;
@@ -382,6 +397,8 @@ public class SlayerSimplifiedPlugin extends Plugin
             pendingRequirementsRefresh = false;
             locationRequirementService.refresh();
         }
+        // Expire the overlay arm window if 2 minutes elapse with no combat.
+        taskEngagement.tick();
     }
 
     /**
@@ -419,17 +436,39 @@ public class SlayerSimplifiedPlugin extends Plugin
      * Secondary kill-attribution source: any hitsplat the local player deals to an NPC
      * marks that NPC as a target. This covers auto-retaliate and spells/ranged where
      * InteractingChanged may not have fired before the kill.
+     *
+     * <p>Also drives the overlay engagement gate: any hit exchanged with the
+     * correct task monster (dealt by the player, or taken from a task monster we
+     * are fighting) engages the gated overlays.</p>
      */
     @Subscribe
     public void onHitsplatApplied(HitsplatApplied event)
     {
-        if (!(event.getActor() instanceof NPC))
+        Actor actor = event.getActor();
+        if (actor instanceof NPC)
         {
+            NPC npc = (NPC) actor;
+            if (event.getHitsplat().isMine())
+            {
+                playerTargetIndices.add(npc.getIndex());
+                // Player dealt damage to a task monster — engage the overlays.
+                if (targetOverlay.isTracked(npc))
+                {
+                    taskEngagement.onCombat();
+                }
+            }
             return;
         }
-        if (event.getHitsplat().isMine())
+
+        // Hit landed on the local player. If we're locked in combat with a task
+        // monster, that also counts as engaging the correct monster.
+        if (actor == client.getLocalPlayer())
         {
-            playerTargetIndices.add(((NPC) event.getActor()).getIndex());
+            Actor interacting = actor.getInteracting();
+            if (interacting instanceof NPC && targetOverlay.isTracked((NPC) interacting))
+            {
+                taskEngagement.onCombat();
+            }
         }
     }
 
