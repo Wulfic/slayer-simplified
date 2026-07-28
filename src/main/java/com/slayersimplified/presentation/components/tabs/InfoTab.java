@@ -23,6 +23,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Scrollable tab combining Items Required, Wiki Combat Stats, and Slayer Masters
@@ -37,6 +39,9 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
 
     /** Collapsible body panel for Wiki Combat Stats (populated asynchronously). */
     private JPanel wikiBodyPanel;
+
+    /** Incremented on every new fetch; lets async callbacks discard stale responses. */
+    private int requestId = 0;
 
     private static final Color SECTION_HEADER_BG = ColorScheme.DARKER_GRAY_COLOR.darker();
     private static final Color STAT_VALUE_COLOR = Color.WHITE;
@@ -158,18 +163,28 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
         // Scroll to top
         SwingUtilities.invokeLater(() -> getVerticalScrollBar().setValue(0));
 
-        // Fetch wiki combat stats asynchronously (cached after first lookup)
+        // Fetch wiki combat stats asynchronously (the page is cached after the first lookup)
         if (data.monsterName != null && !data.monsterName.isEmpty())
         {
-            fetchCombatStats(data.monsterName);
+            fetchCombatStats(data.monsterName, data.variantNames);
         }
     }
 
-    private void fetchCombatStats(String monsterName)
+    private void fetchCombatStats(String monsterName, List<String> variantNames)
     {
-        WikiScraper.getCombatStats(okHttpClient, monsterName)
+        final int thisRequest = ++requestId;
+
+        WikiScraper.getCombatStats(okHttpClient, monsterName,
+                        variantNames != null ? variantNames : Collections.emptyList())
                 .whenCompleteAsync((stats, ex) ->
-                        SwingUtilities.invokeLater(() -> populateWikiCombatStats(stats)));
+                        SwingUtilities.invokeLater(() ->
+                        {
+                            // Discard if the user has already moved to a different task
+                            if (thisRequest == requestId)
+                            {
+                                populateWikiCombatStats(stats);
+                            }
+                        }));
     }
 
     private void populateWikiCombatStats(CombatStats stats)
@@ -181,50 +196,66 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
 
         wikiBodyPanel.removeAll();
 
-        if (stats == null || stats.getCombatLevel().isEmpty())
+        if (stats == null || stats.isEmpty())
         {
             addTextRowTo(wikiBodyPanel, "No data found.");
-            wikiBodyPanel.revalidate();
-            wikiBodyPanel.repaint();
-            contentPanel.revalidate();
-            revalidate();
-            return;
         }
-
-        // Core stats
-        addStatRow(wikiBodyPanel, "Combat Level", stats.getCombatLevel());
-        addStatRow(wikiBodyPanel, "Hitpoints", stats.getHitpoints());
-        addStatRow(wikiBodyPanel, "Max Hit", stats.getMaxHit());
-        addStatRow(wikiBodyPanel, "Attack Style", stats.getAttackStyle());
-
-        if (!stats.getAttribute().isEmpty())
+        else
         {
-            addStatRow(wikiBodyPanel, "Attribute", stats.getAttribute());
-        }
-
-        // Weakness
-        if (!stats.getElementalWeakness().isEmpty())
-        {
-            String weakness = stats.getElementalWeakness();
-            if (!stats.getElementalWeaknessPercent().isEmpty())
+            // Blocks are named when the page describes several forms (Black dragon's level
+            // 227 and 247) or when the stats came from the monsters behind a category task;
+            // a monster with one stat block of its own has nothing to label.
+            for (CombatStats.Variant variant : stats.getVariants())
             {
-                weakness += " (" + stats.getElementalWeaknessPercent() + ")";
+                if (!variant.getName().isEmpty())
+                {
+                    addSubHeaderTo(wikiBodyPanel, variant.getName());
+                }
+                addVariantRows(variant);
             }
-            addStatRow(wikiBodyPanel, "Weakness", weakness);
         }
-
-        // Immunities
-        addSubHeaderTo(wikiBodyPanel, "Immunities");
-        addImmunityRow(wikiBodyPanel, "Poison", stats.getImmunePoison());
-        addImmunityRow(wikiBodyPanel, "Venom", stats.getImmuneVenom());
-        addImmunityRow(wikiBodyPanel, "Cannons", stats.getImmuneCannon());
-        addImmunityRow(wikiBodyPanel, "Thralls", stats.getImmuneThrall());
-        addImmunityRow(wikiBodyPanel, "Burn", stats.getImmuneBurn());
 
         wikiBodyPanel.revalidate();
         wikiBodyPanel.repaint();
         contentPanel.revalidate();
         revalidate();
+    }
+
+    private void addVariantRows(CombatStats.Variant variant)
+    {
+        addStatRow(wikiBodyPanel, "Combat Level", variant.getCombatLevel());
+        addStatRow(wikiBodyPanel, "Hitpoints", variant.getHitpoints());
+        addStatRow(wikiBodyPanel, "Max Hit", variant.getMaxHit());
+        addStatRow(wikiBodyPanel, "Attack Style", variant.getAttackStyle());
+        addStatRow(wikiBodyPanel, "Attribute", variant.getAttribute());
+
+        if (!variant.getElementalWeakness().isEmpty())
+        {
+            String weakness = variant.getElementalWeakness();
+            if (!variant.getElementalWeaknessPercent().isEmpty())
+            {
+                weakness += " (" + variant.getElementalWeaknessPercent() + ")";
+            }
+            addStatRow(wikiBodyPanel, "Weakness", weakness);
+        }
+
+        // Immunities
+        if (hasAnyImmunity(variant))
+        {
+            addSubHeaderTo(wikiBodyPanel, "Immunities");
+        }
+        addImmunityRow(wikiBodyPanel, "Poison", variant.getImmunePoison());
+        addImmunityRow(wikiBodyPanel, "Venom", variant.getImmuneVenom());
+        addImmunityRow(wikiBodyPanel, "Cannons", variant.getImmuneCannon());
+        addImmunityRow(wikiBodyPanel, "Thralls", variant.getImmuneThrall());
+        addImmunityRow(wikiBodyPanel, "Burn", variant.getImmuneBurn());
+    }
+
+    private static boolean hasAnyImmunity(CombatStats.Variant variant)
+    {
+        return !variant.getImmunePoison().isEmpty() || !variant.getImmuneVenom().isEmpty()
+                || !variant.getImmuneCannon().isEmpty() || !variant.getImmuneThrall().isEmpty()
+                || !variant.getImmuneBurn().isEmpty();
     }
 
     @Override
@@ -388,14 +419,21 @@ public class InfoTab extends JScrollPane implements Tab<InfoTab.InfoData>
         public final String[] itemsSuggested;
         public final Object[][] combat;
         public final String[] masters;
+        /**
+         * Monsters to read stats from when the task's own wiki page has none — task pages
+         * such as "Kalphite" or "Troll" only list the monsters they cover.
+         */
+        public final List<String> variantNames;
 
-        public InfoData(String monsterName, String[] items, String[] itemsSuggested, Object[][] combat, String[] masters)
+        public InfoData(String monsterName, String[] items, String[] itemsSuggested, Object[][] combat,
+                        String[] masters, List<String> variantNames)
         {
             this.monsterName = monsterName;
             this.items = items;
             this.itemsSuggested = itemsSuggested;
             this.combat = combat;
             this.masters = masters;
+            this.variantNames = variantNames != null ? variantNames : Collections.emptyList();
         }
     }
 }

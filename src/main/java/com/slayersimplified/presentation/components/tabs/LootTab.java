@@ -20,6 +20,8 @@ import okhttp3.OkHttpClient;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Tab that displays the loot/drop table for a monster by scraping the OSRS Wiki.
@@ -27,12 +29,13 @@ import java.awt.*;
  * in a scrollable list.
  */
 @Slf4j
-public class LootTab extends JScrollPane implements Tab<String>
+public class LootTab extends JScrollPane implements Tab<LootTab.LootData>
 {
     private final OkHttpClient okHttpClient;
     private final Gson gson;
     private final JPanel contentPanel = new ScrollablePanel();
     private String currentMonster;
+    private List<String> currentVariants = Collections.emptyList();
     /** Incremented on every new fetch; lets async callbacks discard stale responses. */
     private int requestId = 0;
 
@@ -65,8 +68,9 @@ public class LootTab extends JScrollPane implements Tab<String>
     }
 
     @Override
-    public void update(String monsterName)
+    public void update(LootData data)
     {
+        String monsterName = data != null ? data.monsterName : null;
         if (monsterName == null || monsterName.isEmpty())
         {
             return;
@@ -78,12 +82,13 @@ public class LootTab extends JScrollPane implements Tab<String>
             return;
         }
         currentMonster = monsterName;
+        currentVariants = data.variantNames;
         final int thisRequest = ++requestId;
 
         contentPanel.removeAll();
         showLoadingState();
 
-        WikiScraper.getDropsByMonster(okHttpClient, monsterName)
+        WikiScraper.getDropsByMonster(okHttpClient, monsterName, data.variantNames)
                 .thenCompose(sections -> WikiPriceCache.enrichDropTables(okHttpClient, gson, sections))
                 .whenCompleteAsync((dropTableSections, ex) ->
                 {
@@ -127,6 +132,7 @@ public class LootTab extends JScrollPane implements Tab<String>
     {
         contentPanel.removeAll();
         currentMonster = null;
+        currentVariants = Collections.emptyList();
     }
 
     /**
@@ -135,10 +141,11 @@ public class LootTab extends JScrollPane implements Tab<String>
     public void refresh()
     {
         String name = currentMonster;
+        List<String> variants = currentVariants;
         currentMonster = null;
         if (name != null)
         {
-            update(name);
+            update(new LootData(name, variants));
         }
     }
 
@@ -333,6 +340,23 @@ public class LootTab extends JScrollPane implements Tab<String>
             if (item.getRarity() <= 0.01) return RARITY_RARE;
         }
         return RARITY_COMMON;
+    }
+
+    /**
+     * The monster to look up, plus the monsters to fall back to when its own wiki page has
+     * no drop table (category task pages such as "Kalphite" list their monsters instead of
+     * carrying drops themselves).
+     */
+    public static class LootData
+    {
+        public final String monsterName;
+        public final List<String> variantNames;
+
+        public LootData(String monsterName, List<String> variantNames)
+        {
+            this.monsterName = monsterName;
+            this.variantNames = variantNames != null ? variantNames : Collections.emptyList();
+        }
     }
 
     /**

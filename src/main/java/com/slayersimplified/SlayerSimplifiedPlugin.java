@@ -16,6 +16,7 @@ import com.google.inject.Provides;
 import com.slayersimplified.domain.Icon;
 import com.slayersimplified.domain.SlayerMaster;
 import com.slayersimplified.domain.TaskHistoryEntry;
+import com.slayersimplified.loot.WikiScraper;
 import com.slayersimplified.modules.TaskServiceModule;
 import com.slayersimplified.presentation.CoordinatesOverlay;
 import com.slayersimplified.presentation.TaskReminderOverlay;
@@ -240,6 +241,7 @@ public class SlayerSimplifiedPlugin extends Plugin
         tileNoteService.clear();
         historyService.shutDown();
         mainPanel.shutDown();
+        WikiScraper.clearCache();
         log.info("Slayer Simplified stopped");
     }
 

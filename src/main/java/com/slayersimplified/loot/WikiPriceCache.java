@@ -110,6 +110,7 @@ public class WikiPriceCache
         if (nameToIdFuture == null)
         {
             nameToIdFuture = fetchMappingNameToId(client, gson);
+            retryAfterFailure(nameToIdFuture, () -> nameToIdFuture = null);
         }
         return nameToIdFuture;
     }
@@ -119,6 +120,7 @@ public class WikiPriceCache
         if (idToAlchFuture == null)
         {
             idToAlchFuture = fetchMappingIdToAlch(client, gson);
+            retryAfterFailure(idToAlchFuture, () -> idToAlchFuture = null);
         }
         return idToAlchFuture;
     }
@@ -128,8 +130,29 @@ public class WikiPriceCache
         if (idToPriceFuture == null)
         {
             idToPriceFuture = fetchAllLatestPrices(client, gson);
+            retryAfterFailure(idToPriceFuture, () -> idToPriceFuture = null);
         }
         return idToPriceFuture;
+    }
+
+    /**
+     * Clears a session cache entry whose fetch failed. Without this one dropped request —
+     * the client being offline when the first monster is opened, say — leaves every drop
+     * table price-less for the rest of the session.
+     */
+    private static <T> void retryAfterFailure(CompletableFuture<T> future, Runnable evict)
+    {
+        future.whenComplete((value, ex) ->
+        {
+            if (ex != null)
+            {
+                log.debug("Price lookup failed ({}); it will be retried on the next monster", ex.toString());
+                synchronized (WikiPriceCache.class)
+                {
+                    evict.run();
+                }
+            }
+        });
     }
 
     // -- Fetch helpers -------------------------------------------------------

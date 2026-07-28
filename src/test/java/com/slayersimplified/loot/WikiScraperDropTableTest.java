@@ -141,6 +141,68 @@ public class WikiScraperDropTableTest
         assertNoDuplicateRenderedHeaders(sections);
     }
 
+    /**
+     * Some drop tables sit under a heading the "drops/loot/reward" name test misses —
+     * "Pickpocketing" on thievable NPCs, "Hunter info" on hunter creatures. The
+     * {@code {{DropsTableHead}}} that opens every drop table marks those sections instead.
+     */
+    @Test
+    public void dropTableHeadMarksSectionsTheHeadingNameMisses()
+    {
+        String wikitext = String.join("\n",
+                "==Drops==",
+                "===100%===",
+                "{{DropsTableHead}}",
+                "{{DropsLine|name=Bones|quantity=1|rarity=Always}}",
+                "==Pickpocketing==",
+                "{{DropsTableHead}}",
+                "{{DropsLine|name=Coins|quantity=25|rarity=Always}}",
+                "==Trivia==",
+                "irrelevant");
+
+        DropTableSection[] sections = WikiScraper.parseDropTables(wikitext, "Rogue");
+
+        Assert.assertEquals(2, sections.length);
+        Assert.assertEquals("Drops", sections[0].getHeader());
+        assertItemNames(sections[0], "100%", "Bones");
+        Assert.assertEquals("Pickpocketing", sections[1].getHeader());
+        assertItemNames(sections[1], "Pickpocketing", "Coins");
+        assertNoDuplicateRenderedHeaders(sections);
+    }
+
+    /**
+     * A page whose drops are grouped by location under {@code ==Drops==} — the shape the
+     * Cyclops page now uses, which its stale special cases turned into an empty tab.
+     */
+    @Test
+    public void locationGroupsUnderDropsBecomeSections()
+    {
+        String wikitext = String.join("\n",
+                "==Locations==",
+                "irrelevant",
+                "==Drops==",
+                "===Warriors' Guild Top Floor===",
+                "====100%====",
+                "{{DropsTableHead|dropversion=Warriors' Guild Rooftop}}",
+                "{{DropsLine|name=Big bones|quantity=1|rarity=Always}}",
+                "====Defenders====",
+                "{{DropsTableHead|dropversion=Warriors' Guild Rooftop}}",
+                "{{DropsLine|name=Bronze defender|quantity=1|rarity=1/50}}",
+                "===Warriors' Guild Basement===",
+                "====100%====",
+                "{{DropsTableHead|dropversion=Warriors' Guild Basement}}",
+                "{{DropsLine|name=Big bones|quantity=1|rarity=Always}}");
+
+        DropTableSection[] sections = WikiScraper.parseDropTables(wikitext, "Cyclops");
+
+        Assert.assertEquals(2, sections.length);
+        Assert.assertEquals("Warriors' Guild Top Floor", sections[0].getHeader());
+        assertItemNames(sections[0], "Defenders", "Bronze defender");
+        Assert.assertEquals("Warriors' Guild Basement", sections[1].getHeader());
+        assertItemNames(sections[1], "100%", "Big bones");
+        assertNoDuplicateRenderedHeaders(sections);
+    }
+
     @Test
     public void parseRedirectTargetHandlesCommonForms()
     {

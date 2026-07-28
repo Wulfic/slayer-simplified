@@ -178,16 +178,48 @@ public class TaskTabs extends JTabbedPane
         }
         updateTab(TabKey.LOCATIONS, new LocationsTab.LocationsData(task.name, variantEntries));
 
+        // Wiki fallbacks for tasks whose own page is a category page carrying no stats or
+        // drops of its own (e.g. "Kalphite", "Troll") — the monsters it covers have both.
+        List<String> wikiFallbacks = wikiFallbackNames(task);
+
         updateTab(TabKey.INFO, new InfoTab.InfoData(
                 task.name,
                 task.itemsRequired,
                 task.itemsSuggested,
                 new Object[][]{task.attackStyles, task.attributes},
-                task.masters));
+                task.masters,
+                wikiFallbacks));
         updateTab(TabKey.WIKI, task.wikiLinks);
-        updateTab(TabKey.LOOT, task.name);
+        updateTab(TabKey.LOOT, new LootTab.LootData(task.name, wikiFallbacks));
 
         updateTab(TabKey.NOTES, new NotesTab.NotesData(task.name));
+    }
+
+    /**
+     * The task's variant monsters, {@code --lvl} flags stripped and the base monster itself
+     * left out — the names to look up on the wiki when the task's own page has no data.
+     */
+    private static List<String> wikiFallbackNames(Task task)
+    {
+        List<String> names = new ArrayList<>();
+        if (task.variants == null)
+        {
+            return names;
+        }
+
+        for (String variant : task.variants)
+        {
+            // Cut at the flag marker rather than at "--lvl " exactly: a handful of entries
+            // are written "--84" or "---lvl 105", which would otherwise reach the wiki.
+            int flagIdx = variant.indexOf("--");
+            String name = flagIdx >= 0 ? variant.substring(0, flagIdx) : variant;
+            name = name.trim();
+            if (!name.isEmpty() && !name.equalsIgnoreCase(task.name) && !names.contains(name))
+            {
+                names.add(name);
+            }
+        }
+        return names;
     }
 
     private <T> void updateTab(TabKey key, T data)
