@@ -58,6 +58,11 @@
         "y": 2703,
         "plane": 0
     },
+    "Apsul Hunting Ground": {
+        "x": 2583,
+        "y": 7773,
+        "plane": 0
+    },
     "Arandar": {
         "x": 2334,
         "y": 3314,
@@ -643,10 +648,7 @@
     "Ice Queen's Lair": {
         "x": 2837,
         "y": 3518,
-        "plane": 0,
-        "aliases": [
-            "Ice Queen's lair"
-        ]
+        "plane": 0
     },
     "Ice Troll Caves": {
         "x": 2315,
@@ -734,8 +736,7 @@
         "plane": 0,
         "aliases": [
             "Karamja Volcano",
-            "Above Karamja Volcano",
-            "Mor Ul Rek"
+            "Above Karamja Volcano"
         ]
     },
     "Karuulm Slayer Dungeon": {
@@ -1530,6 +1531,11 @@
             "Vet'ion's Lair"
         ]
     },
+    "Virer Hunting Ground": {
+        "x": 2525,
+        "y": 7762,
+        "plane": 0
+    },
     "Warrior Guild - Floor 3": {
         "x": 2852,
         "y": 3547,
@@ -1619,10 +1625,7 @@
     "Wilderness Volcano": {
         "x": 3349,
         "y": 3914,
-        "plane": 0,
-        "aliases": [
-            "Wilderness volcano"
-        ]
+        "plane": 0
     },
     "Witchaven Dungeon": {
         "x": 2698,
@@ -1650,6 +1653,16 @@
     "Woodcutting Guild Dungeon": {
         "x": 1606,
         "y": 3508,
+        "plane": 0
+    },
+    "Wyrmscraig": {
+        "x": 2571,
+        "y": 2267,
+        "plane": 0
+    },
+    "Wyrmscraig Cavern": {
+        "x": 2590,
+        "y": 8615,
         "plane": 0
     },
     "Wyvern Cave": {

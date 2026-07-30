@@ -1,0 +1,45 @@
+{
+    "name": "Venator",
+    "levelRequired": 74,
+    "itemsRequired": [
+        "Ivandis flail",
+        "Blisterwood flail",
+        "Sunspear"
+    ],
+    "itemsSuggested": [
+        "Earmuffs",
+        "Slayer helmet",
+        "Saradomin godsword",
+        "Ancient godsword"
+    ],
+    "attributes": [
+        "Vampyre"
+    ],
+    "attackStyles": [
+        "Stab",
+        "Ranged"
+    ],
+    "variants": [
+        "Venator --lvl 246",
+        "Blood-starved venator --lvl 246"
+    ],
+    "masters": [
+        "Mazchna",
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel",
+        "Mortimer"
+    ],
+    "variantLocations": {
+        "Venator --lvl 246": [
+            "Apsul Hunting Ground",
+            "Virer Hunting Ground"
+        ],
+        "Blood-starved venator --lvl 246": [
+            "Apsul Hunting Ground",
+            "Virer Hunting Ground"
+        ]
+    }
+}

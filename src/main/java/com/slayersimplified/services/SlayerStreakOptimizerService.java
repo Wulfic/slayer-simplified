@@ -59,6 +59,18 @@ import javax.inject.Singleton;
  * <em>separate</em> completion counter independent of the streak used for
  * milestone bonuses.</p>
  *
+ * <p><strong>Mortimer is intentionally excluded for the same reason</strong> —
+ * his tasks maintain a separate completion counter and therefore cannot advance
+ * the milestone streak. He is additionally unusable here because he awards no
+ * fixed per-task point value: points are one of several randomly rolled
+ * "Mortifier" modifiers (5&ndash;40 depending on the task), which is why
+ * {@link com.slayersimplified.domain.SlayerMaster#MORTIMER} carries
+ * {@code basePoints = 0}. Do <em>not</em> add him to
+ * {@link #getHighestEligibleMilestoneMaster()} — a 0-point master would win no
+ * comparison anyway, and any invented constant would make
+ * {@link #getRecommendationReason()} state a points figure that does not
+ * exist.</p>
+ *
  * <p>{@link #refresh()} <strong>must</strong> be called on the client thread
  * before recommendations are needed. All other methods are thread-safe.</p>
  */

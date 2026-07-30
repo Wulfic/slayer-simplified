@@ -28,7 +28,7 @@ dependencies {
 }
 
 group = 'com.slayersimplified'
-version = '2.4.26'
+version = '2.5.0'
 
 tasks.withType(JavaCompile).configureEach {
 	options.encoding = 'UTF-8'

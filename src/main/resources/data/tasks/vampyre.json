@@ -21,11 +21,17 @@
         "Vampyre Juvinate --lvl 50 --lvl 119",
         "Vampyre Juvenile --lvl 45",
         "Vyrewatch --lvl 87 --lvl 125",
-        "Vyrewatch Sentinel --lvl 151"
+        "Vyrewatch Sentinel --lvl 151",
+        "Venator --lvl 246",
+        "Blood-starved venator --lvl 246"
     ],
     "masters": [
         "Mazchna",
-        "Vannaka"
+        "Vannaka",
+        "Chaeldar",
+        "Konar quo Maten",
+        "Nieve",
+        "Duradel"
     ],
     "variantLocations": {
         "Feral Vampyre --lvl 61 --lvl 130": [
@@ -50,6 +56,14 @@
         ],
         "Vyrewatch Sentinel --lvl 151": [
             "Darkmeyer"
+        ],
+        "Venator --lvl 246": [
+            "Apsul Hunting Ground",
+            "Virer Hunting Ground"
+        ],
+        "Blood-starved venator --lvl 246": [
+            "Apsul Hunting Ground",
+            "Virer Hunting Ground"
         ]
     }
 }

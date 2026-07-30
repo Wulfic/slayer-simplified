@@ -78,11 +78,6 @@
         "MONKEY_MADNESS_I"
       ]
     },
-    "Lithkren Vault": {
-      "quests": [
-        "DRAGON_SLAYER_II"
-      ]
-    },
     "Shade Catacombs": {
       "quests": [
         "PRIEST_IN_PERIL",
@@ -220,7 +215,7 @@
         "MONKEY_MADNESS_I"
       ]
     },
-    "Path to Temple of Light (Mourner tunnels)": {
+    "Mourner Tunnels": {
       "quests": [
         "MOURNINGS_END_PART_II"
       ]
@@ -292,11 +287,6 @@
         "DEATH_TO_THE_DORGESHUUN"
       ]
     },
-    "Temple of Light": {
-      "quests": [
-        "MOURNINGS_END_PART_II"
-      ]
-    },
     "Crash Site Cavern": {
       "quests": [
         "BONE_VOYAGE"
@@ -322,12 +312,6 @@
         "REGICIDE"
       ]
     },
-    "Meiyerditch Laboratories": {
-      "quests": [
-        "PRIEST_IN_PERIL",
-        "IN_AID_OF_THE_MYREQUE"
-      ]
-    },
     "Charred Dungeon": {
       "skills": {
         "SAILING": 60
@@ -347,6 +331,26 @@
       "skills": {
         "SAILING": 76
       }
+    },
+    "Wyrmscraig": {
+      "skills": {
+        "SAILING": 62
+      }
+    },
+    "Wyrmscraig Cavern": {
+      "skills": {
+        "SAILING": 62
+      }
+    },
+    "Apsul Hunting Ground": {
+      "quests": [
+        "THE_BLOOD_MOON_RISES"
+      ]
+    },
+    "Virer Hunting Ground": {
+      "quests": [
+        "THE_BLOOD_MOON_RISES"
+      ]
     }
   },
   "monsters": {
@@ -395,6 +399,14 @@
       "quests": [
         "PERILOUS_MOONS"
       ]
+    },
+    "Venator": {
+      "quests": [
+        "THE_BLOOD_MOON_RISES"
+      ],
+      "skills": {
+        "SLAYER": 74
+      }
     }
   }
 }

@@ -27,20 +27,24 @@
         "Chaeldar",
         "Konar quo Maten",
         "Nieve",
-        "Duradel"
+        "Duradel",
+        "Mortimer"
     ],
     "variantLocations": {
         "Wyrm --lvl 97": [
-            "Karuulm Slayer Dungeon"
+            "Karuulm Slayer Dungeon",
+            "Wyrmscraig Cavern"
         ],
         "Shadow Wyrm --lvl 267": [
             "Karuulm Slayer Dungeon"
         ],
         "Wyrmling --lvl 55": [
-            "Neypotzli"
+            "Neypotzli",
+            "Wyrmscraig"
         ],
         "Lava Strykewyrm --lvl 116": [
-            "Charred Dungeon"
+            "Charred Dungeon",
+            "Wyrmscraig Cavern"
         ],
         "Magma Strykewyrm --lvl 249": [
             "Charred Dungeon"

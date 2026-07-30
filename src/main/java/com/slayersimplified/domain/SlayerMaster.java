@@ -31,6 +31,15 @@ public enum SlayerMaster
     NIEVE("Nieve / Steve",     new WorldPoint(2432, 3424, 0), 12),
     DURADEL("Duradel",         new WorldPoint(2869, 2982, 0), 15),
     KRYSTILIA("Krystilia",     new WorldPoint(3109, 3514, 0), 25),
+    // Mortimer's WorldPoint is inside Wyrmscraig Cavern (underground); VANNAKA is the
+    // existing precedent for an underground master point.
+    //
+    // basePoints = 0 is deliberate: Mortimer does NOT award a fixed number of points per
+    // task.  He rolls a "Mortifier" per assignment and the point award is one possible
+    // modifier (5-40 depending on the task), so there is no single correct constant.  Any
+    // non-zero value here would be a lie fed into
+    // SlayerStreakOptimizerService.getRecommendationReason().
+    MORTIMER("Mortimer",       new WorldPoint(2589, 8614, 0),  0),
     // ── Non-standard "masters" – always rendered at the bottom when the toggle is on ──
     NON_SLAYER_ENEMIES("Non-Slayer Enemies", null, 0),
     ANIMALS("Animals",        null, 0),

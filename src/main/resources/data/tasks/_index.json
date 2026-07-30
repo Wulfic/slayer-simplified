@@ -482,5 +482,9 @@
   {
     "key": "Warped creature",
     "file": "warped_creature.json"
+  },
+  {
+    "key": "Venator",
+    "file": "venator.json"
   }
 ]
