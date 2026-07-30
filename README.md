@@ -45,7 +45,7 @@ Type `!task` to start auto-navigating, it will select your favorited location fo
 -- Reminders to bring both Required Slayer Items, and Suggested items, that may be needed to access a certain area.
 
 **Slayer masters**
--- All 9 masters are supported: Turael, Spria, Mazchna, Vannaka, Chaeldar, Konar, Nieve / Steve, Duradel, and Krystilia.
+-- All 10 masters are supported: Turael, Spria, Mazchna, Vannaka, Chaeldar, Konar, Nieve / Steve, Duradel, Krystilia, and Mortimer.
 
 **Slayer Streak Optimizer!**
 -- Automatically assigns you the best Slayer Master for optimizing your task streak, to get the most points possible!
