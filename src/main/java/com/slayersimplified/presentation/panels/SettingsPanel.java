@@ -125,8 +125,10 @@ public class SettingsPanel extends JPanel
         add(Box.createVerticalStrut(6));
 
         // --- Preferred Master ---
+        // Only real masters — Non-Slayer Enemies / Animals / Bosses are task-list
+        // grouping headers with no NPC to navigate to.
         SlayerMaster[] settingsMasters = Arrays.stream(SlayerMaster.values())
-                .filter(m -> m != SlayerMaster.NON_SLAYER_ENEMIES)
+                .filter(SlayerMaster::isNavigable)
                 .toArray(SlayerMaster[]::new);
         masterCombo = new JComboBox<>(settingsMasters);
         masterCombo.setSelectedItem(config.preferredMaster());

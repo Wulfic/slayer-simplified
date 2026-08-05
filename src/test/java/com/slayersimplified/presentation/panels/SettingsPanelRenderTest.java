@@ -12,12 +12,15 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import javax.swing.AbstractButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Guards that the settings panel builds without throwing and that the
@@ -106,6 +109,67 @@ public class SettingsPanelRenderTest
 
         thanks.doClick();
         Assert.assertTrue("Special Thanks button did not request its pane", navigated[0]);
+    }
+
+    /**
+     * "Non-Slayer Enemies", "Animals" and "Bosses" are task-list grouping headers,
+     * not masters — they have no NPC and no WorldPoint, so picking one made
+     * "navigate to master" a silent no-op. Only Animals and Bosses ever reached the
+     * dropdown (issue #4), but the guard is the same for all three: a master the
+     * player can be sent to must have somewhere to be sent.
+     */
+    @Test
+    public void preferredMasterDropdownOffersOnlyRealMasters()
+    {
+        SettingsPanel panel = new SettingsPanel(new StubConfig(), () -> {}, () -> {});
+
+        JComboBox<?> masterCombo = findMasterCombo(panel);
+        Assert.assertNotNull("preferred master combo missing", masterCombo);
+
+        List<SlayerMaster> offered = new ArrayList<>();
+        for (int i = 0; i < masterCombo.getItemCount(); i++)
+        {
+            offered.add((SlayerMaster) masterCombo.getItemAt(i));
+        }
+
+        Assert.assertEquals(
+                "every offered master must have an in-world location to navigate to",
+                Arrays.stream(SlayerMaster.values())
+                        .filter(SlayerMaster::isNavigable)
+                        .collect(Collectors.toList()),
+                offered);
+
+        for (SlayerMaster pseudo : new SlayerMaster[]{
+                SlayerMaster.NON_SLAYER_ENEMIES, SlayerMaster.ANIMALS, SlayerMaster.BOSSES})
+        {
+            Assert.assertFalse(pseudo.getDisplayName() + " is not a slayer master",
+                    offered.contains(pseudo));
+        }
+    }
+
+    /** The combo holding {@link SlayerMaster}s — the filler combo holds a different enum. */
+    private static JComboBox<?> findMasterCombo(Container root)
+    {
+        for (Component c : root.getComponents())
+        {
+            if (c instanceof JComboBox)
+            {
+                JComboBox<?> combo = (JComboBox<?>) c;
+                if (combo.getItemCount() > 0 && combo.getItemAt(0) instanceof SlayerMaster)
+                {
+                    return combo;
+                }
+            }
+            if (c instanceof Container)
+            {
+                JComboBox<?> found = findMasterCombo((Container) c);
+                if (found != null)
+                {
+                    return found;
+                }
+            }
+        }
+        return null;
     }
 
     private static String text(JLabel label)

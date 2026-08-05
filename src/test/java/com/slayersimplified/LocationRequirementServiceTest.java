@@ -186,6 +186,27 @@ public class LocationRequirementServiceTest
     // Negative cases
     // -------------------------------------------------------------------------
 
+    /**
+     * The Fremennik Slayer Dungeon was gated on The Fremennik Trials, which is
+     * wrong: the entrance is out in the open east of Rellekka
+     * ({@code 2797,3616}) and the wiki's location infobox records no quest
+     * requirement at all. Gating it grayed out the only listed spot for cave
+     * crawlers, rockslugs, cockatrice, pyrefiends, jellies, turoth, basilisks
+     * and kurask on any account without the quest (issue #5).
+     */
+    @Test
+    public void fremennikSlayerDungeonIsNotQuestGated()
+    {
+        for (String location : new String[]{"Fremennik Slayer Dungeon", "Kurask Lair"})
+        {
+            Assert.assertTrue(
+                    location + " has no in-game access requirement and must never be gated",
+                    service.isAvailable(location));
+            Assert.assertEquals("", service.getRequirementDescription(location));
+            Assert.assertEquals("", service.getMissingText(location));
+        }
+    }
+
     /** An unrecorded location is open, not gated — the service must not fail closed. */
     @Test
     public void locationsWithNoRecordedRequirementAreAvailable()

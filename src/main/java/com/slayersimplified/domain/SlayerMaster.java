@@ -50,6 +50,21 @@ public enum SlayerMaster
     /** Slayer reward points awarded per completed task (non-milestone). */
     private final int basePoints;
 
+    /**
+     * True only for the real, in-world Slayer masters — the ones that exist as an
+     * NPC and can therefore be walked to.
+     *
+     * <p>{@link #NON_SLAYER_ENEMIES}, {@link #ANIMALS} and {@link #BOSSES} are
+     * grouping headers for the task list, not masters. They have no
+     * {@code worldPoint}, so offering them anywhere a navigation target is
+     * expected produces a silent no-op in
+     * {@link com.slayersimplified.services.NavigationService#navigateTo}.</p>
+     */
+    public boolean isNavigable()
+    {
+        return worldPoint != null;
+    }
+
     @Override
     public String toString()
     {

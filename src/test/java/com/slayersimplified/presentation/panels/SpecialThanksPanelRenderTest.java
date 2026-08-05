@@ -42,6 +42,8 @@ public class SpecialThanksPanelRenderTest
                 labels.stream().anyMatch(l -> text(l).contains("danielvxsp")));
         Assert.assertTrue("Bruster112 credit missing",
                 labels.stream().anyMatch(l -> text(l).contains("Bruster112")));
+        Assert.assertTrue("EliteEvyn credit missing",
+                labels.stream().anyMatch(l -> text(l).contains("EliteEvyn")));
 
         // Each credited name needs a sentence saying what they actually did.
         Assert.assertTrue("vividflash contribution description missing",
@@ -50,6 +52,8 @@ public class SpecialThanksPanelRenderTest
                 labels.stream().anyMatch(l -> text(l).contains("minimum window size")));
         Assert.assertTrue("Bruster112 contribution description missing",
                 labels.stream().anyMatch(l -> text(l).contains("only show once you're actually fighting")));
+        Assert.assertTrue("EliteEvyn contribution description missing",
+                labels.stream().anyMatch(l -> text(l).contains("Fremennik Slayer Dungeon was grayed out")));
     }
 
     /**

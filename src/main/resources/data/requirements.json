@@ -1,10 +1,5 @@
 {
   "locations": {
-    "Fremennik Slayer Dungeon": {
-      "quests": [
-        "THE_FREMENNIK_TRIALS"
-      ]
-    },
     "Killerwatt plane": {
       "quests": [
         "ERNEST_THE_CHICKEN"

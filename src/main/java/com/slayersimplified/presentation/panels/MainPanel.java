@@ -306,7 +306,7 @@ public class MainPanel extends PluginPanel
         // Current-task banner: monster name as a full-width clickable button
         currentTaskButton.setFont(FontManager.getRunescapeSmallFont());
         currentTaskButton.setForeground(ColorScheme.LIGHT_GRAY_COLOR);
-        currentTaskButton.setText(config.preferredMaster().getDisplayName());
+        currentTaskButton.setText(getEffectiveMaster().getDisplayName());
         currentTaskButton.setHorizontalAlignment(SwingConstants.CENTER);
         currentTaskButton.setVerticalAlignment(SwingConstants.CENTER);
         currentTaskButton.setToolTipText("Click to view task details");
@@ -697,7 +697,18 @@ public class MainPanel extends PluginPanel
         {
             return optimizerService.getRecommendedMaster();
         }
-        return config.preferredMaster();
+        SlayerMaster preferred = config.preferredMaster();
+        if (!preferred.isNavigable())
+        {
+            // Grouping headers (Animals / Bosses / Non-Slayer Enemies) were once
+            // selectable here; navigating to one is a silent no-op. The plugin resets
+            // the stored value on start-up, so this only covers the gap before that runs.
+            log.debug("Preferred master '{}' is not navigable — using {}",
+                    preferred.getDisplayName(),
+                    SlayerSimplifiedConfig.DEFAULT_PREFERRED_MASTER.getDisplayName());
+            return SlayerSimplifiedConfig.DEFAULT_PREFERRED_MASTER;
+        }
+        return preferred;
     }
 
     private static boolean isNonSlayerTask(Task t)

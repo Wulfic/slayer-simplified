@@ -68,6 +68,8 @@ public class SpecialThanksPanel extends JPanel
                 "Reported the bug where opening the plugin tab extended the client's minimum window size.");
         addContributor("Bruster112",
                 "Contributed the fix gating the task overlays behind combat, so they only show once you're actually fighting the assigned monster.");
+        addContributor("EliteEvyn",
+                "Reported the bug where the Fremennik Slayer Dungeon was grayed out behind The Fremennik Trials, a quest the dungeon never required.");
 
         JScrollPane scrollPane = new JScrollPane(listPanel);
         scrollPane.setBorder(null);

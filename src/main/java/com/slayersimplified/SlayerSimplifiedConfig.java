@@ -23,6 +23,9 @@ public interface SlayerSimplifiedConfig extends Config
 {
     String CONFIG_GROUP = "slayersimplified";
 
+    /** Master used when none has been chosen, and when a stored choice is unusable. */
+    SlayerMaster DEFAULT_PREFERRED_MASTER = SlayerMaster.DURADEL;
+
     @ConfigItem(
             keyName = "preferredMaster",
             name = "Preferred Slayer Master",
@@ -32,7 +35,7 @@ public interface SlayerSimplifiedConfig extends Config
     )
     default SlayerMaster preferredMaster()
     {
-        return SlayerMaster.DURADEL;
+        return DEFAULT_PREFERRED_MASTER;
     }
 
     @ConfigItem(keyName = "preferredMaster", name = "", description = "")

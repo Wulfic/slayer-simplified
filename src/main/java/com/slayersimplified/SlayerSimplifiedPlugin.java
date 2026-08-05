@@ -191,6 +191,7 @@ public class SlayerSimplifiedPlugin extends Plugin
                 .build();
 
         clientToolbar.addNavigation(navButton);
+        migrateUnusablePreferredMaster();
         overlayManager.add(targetOverlay);
         overlayManager.add(coordinatesOverlay);
         overlayManager.add(taskReminderOverlay);
@@ -686,6 +687,23 @@ public class SlayerSimplifiedPlugin extends Plugin
         if (event.getKey().startsWith("kc_"))
         {
             SwingUtilities.invokeLater(mainPanel::refreshKc);
+        }
+    }
+
+    /**
+     * "Animals", "Bosses" and "Non-Slayer Enemies" were offered in the preferred-master
+     * dropdown even though they are task-list grouping headers with no NPC behind them.
+     * An account that saved one of them navigates nowhere, so reset it to the default.
+     */
+    private void migrateUnusablePreferredMaster()
+    {
+        SlayerMaster preferred = config.preferredMaster();
+        if (!preferred.isNavigable())
+        {
+            log.info("Preferred master '{}' has no in-world location — resetting to {}",
+                    preferred.getDisplayName(),
+                    SlayerSimplifiedConfig.DEFAULT_PREFERRED_MASTER.getDisplayName());
+            config.setPreferredMaster(SlayerSimplifiedConfig.DEFAULT_PREFERRED_MASTER);
         }
     }
 
