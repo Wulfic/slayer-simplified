@@ -51,16 +51,19 @@ public class NavigationService
     private final EventBus eventBus;
     private final ClientThread clientThread;
     private final Client client;
+    private final TaskEngagementService engagement;
 
     /** The last WorldPoint sent to Shortest Path, or null if no navigation has been requested. */
     private volatile WorldPoint lastTarget;
 
     @Inject
-    public NavigationService(EventBus eventBus, ClientThread clientThread, Client client)
+    public NavigationService(EventBus eventBus, ClientThread clientThread, Client client,
+                             TaskEngagementService engagement)
     {
         this.eventBus = eventBus;
         this.clientThread = clientThread;
         this.client = client;
+        this.engagement = engagement;
     }
 
     /** Returns the last navigation target sent to Shortest Path, or null if none. */
@@ -71,7 +74,8 @@ public class NavigationService
 
     /**
      * Request Shortest Path to calculate and display a path from the player's
-     * current location to the given target WorldPoint.
+     * current location to the given target WorldPoint. Also arms the overlay
+     * gate so the task reminder / target / tile-note overlays appear.
      *
      * @param target the destination coordinate to navigate to
      */
@@ -84,6 +88,10 @@ public class NavigationService
         }
 
         this.lastTarget = target;
+
+        // Heading somewhere for the task counts as engagement — show the task
+        // overlays now rather than waiting for the first hit to land.
+        engagement.arm();
 
         Map<String, Object> data = new HashMap<>();
         // Omitting "start" — Shortest Path defaults to the player's current location
@@ -118,6 +126,9 @@ public class NavigationService
      * Opens the in-game world map (if not already open) and pans it to the given location.
      * Safe to call from any thread — all client interaction is dispatched to the client thread.
      *
+     * <p>Arms the overlay gate as well: without Shortest Path installed this button
+     * is the only way a player starts travelling to a task location.</p>
+     *
      * @param location the WorldPoint to display on the world map
      */
     public void openOnWorldMap(WorldPoint location)
@@ -126,6 +137,9 @@ public class NavigationService
         {
             return;
         }
+
+        engagement.arm();
+
         clientThread.invokeLater(() ->
         {
             // Set the position target before opening so the map starts centred there.

@@ -17,9 +17,10 @@ import java.util.function.LongSupplier;
  *
  * <p>Lifecycle:</p>
  * <ul>
- *   <li>{@link #arm()} — called when the player types {@code !task} or receives a
- *       new assignment. Overlays show immediately for a {@value #ARM_WINDOW_MS} ms
- *       window (the {@code ARMED} state).</li>
+ *   <li>{@link #arm()} — called when the player types {@code !task}, receives a
+ *       new assignment, or starts navigating to a task location. Overlays show
+ *       immediately for a {@value #ARM_WINDOW_MS} ms window (the {@code ARMED}
+ *       state).</li>
  *   <li>{@link #onCombat()} — called when a hit is exchanged with the correct
  *       task monster. Locks the overlays on ({@code ENGAGED}), cancelling the
  *       arm window. Re-engages the overlays even from {@code IDLE}.</li>
@@ -28,8 +29,9 @@ import java.util.function.LongSupplier;
  *   <li>{@link #reset()} — called on task completion / no task. Hides overlays.</li>
  * </ul>
  *
- * <p>All mutation happens on the client thread (event-bus handlers and overlay
- * rendering). The state is {@code volatile} purely as defensive belt-and-braces.</p>
+ * <p>Mutation happens on the client thread (event-bus handlers) and on the Swing
+ * EDT ({@link #arm()} from panel navigation buttons), while the overlays read the
+ * state on the render thread — hence the {@code volatile} fields.</p>
  */
 @Slf4j
 @Singleton
@@ -64,14 +66,25 @@ public class TaskEngagementService
 
     /**
      * Starts (or restarts) the arm window. Called when the player types
-     * {@code !task} or is assigned a new task. Overlays become visible
-     * immediately and stay visible until combat engages them or the window
-     * expires.
+     * {@code !task}, is assigned a new task, or starts navigating to a task
+     * location. Overlays become visible immediately and stay visible until
+     * combat engages them or the window expires.
+     *
+     * <p>Safe to call from any thread: the deadline is published before the
+     * state, so a concurrent {@link #tick()} can never see {@code ARMED} paired
+     * with a stale deadline and expire the window early.</p>
+     *
+     * <p>A no-op while {@code ENGAGED} — arming must never downgrade an active
+     * combat lock into an expiring window. Only {@link #reset()} clears it.</p>
      */
     public void arm()
     {
-        state = State.ARMED;
+        if (state == State.ENGAGED)
+        {
+            return;
+        }
         armedUntilMillis = clock.getAsLong() + ARM_WINDOW_MS;
+        state = State.ARMED;
         log.debug("Overlay gate armed for {} ms", ARM_WINDOW_MS);
     }
 

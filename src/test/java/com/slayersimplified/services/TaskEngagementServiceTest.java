@@ -82,6 +82,38 @@ public class TaskEngagementServiceTest
         Assert.assertTrue(engagement.shouldShowOverlays());
     }
 
+    /** Navigating to a task location re-arms the window instead of letting it lapse. */
+    @Test
+    public void reArmExtendsTheWindow()
+    {
+        engagement.arm();
+
+        // Halfway through the window, the player clicks Navigate — window restarts.
+        now.set(TaskEngagementService.ARM_WINDOW_MS / 2);
+        engagement.arm();
+
+        // Past the original deadline but inside the new one: still visible.
+        now.set(TaskEngagementService.ARM_WINDOW_MS + 1);
+        engagement.tick();
+        Assert.assertTrue(engagement.shouldShowOverlays());
+
+        now.set(TaskEngagementService.ARM_WINDOW_MS / 2 + TaskEngagementService.ARM_WINDOW_MS);
+        engagement.tick();
+        Assert.assertFalse(engagement.shouldShowOverlays());
+    }
+
+    /** Clicking Navigate mid-fight must not demote the combat lock to an expiring window. */
+    @Test
+    public void armDoesNotDowngradeEngaged()
+    {
+        engagement.onCombat();
+        engagement.arm();
+
+        now.set(TaskEngagementService.ARM_WINDOW_MS * 10);
+        engagement.tick();
+        Assert.assertTrue(engagement.shouldShowOverlays());
+    }
+
     @Test
     public void resetHidesOverlays()
     {
