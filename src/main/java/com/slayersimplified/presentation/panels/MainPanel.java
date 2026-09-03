@@ -774,22 +774,8 @@ public class MainPanel extends PluginPanel
             return;
         }
 
-        com.slayersimplified.domain.TaskSearchResult[] results =
-                taskService.searchWithVariants(searchTerm.trim());
-        if (!config.debugCoordinates())
-        {
-            results = Arrays.stream(results)
-                    .filter(r -> !"A DEBUG TASK".equals(r.parentTask.name))
-                    .toArray(com.slayersimplified.domain.TaskSearchResult[]::new);
-        }
-        if (!config.showNonSlayerEnemies())
-        {
-            results = Arrays.stream(results)
-                    .filter(r -> !isNonSlayerTask(r.parentTask))
-                    .toArray(com.slayersimplified.domain.TaskSearchResult[]::new);
-        }
-
-        taskSearchPanel.showSearchResults(results);
+        taskSearchPanel.showSearchResults(
+                visibleResults(taskService.searchWithVariants(searchTerm.trim())));
     }
 
     private void onLocationSearchChanged(String searchTerm)
@@ -800,8 +786,19 @@ public class MainPanel extends PluginPanel
             return;
         }
 
-        com.slayersimplified.domain.TaskSearchResult[] results =
-                taskService.searchByLocation(searchTerm.trim());
+        taskSearchPanel.showSearchResults(
+                visibleResults(taskService.searchByLocation(searchTerm.trim())));
+    }
+
+    /**
+     * Drops rows the user has chosen not to see, then collapses the duplicates
+     * that remain. The order matters: deduping first can pick a boss or animal
+     * entry as the winner and have the visibility filter delete it, hiding a
+     * monster that its family entry would otherwise still have listed.
+     */
+    private com.slayersimplified.domain.TaskSearchResult[] visibleResults(
+            com.slayersimplified.domain.TaskSearchResult[] results)
+    {
         if (!config.debugCoordinates())
         {
             results = Arrays.stream(results)
@@ -815,7 +812,7 @@ public class MainPanel extends PluginPanel
                     .toArray(com.slayersimplified.domain.TaskSearchResult[]::new);
         }
 
-        taskSearchPanel.showSearchResults(results);
+        return com.slayersimplified.domain.TaskSearchResult.dedupeByDisplayName(results);
     }
 
     /** Opens the task detail panel for the given task. Safe to call from the EDT. */
