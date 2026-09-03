@@ -1,0 +1,39 @@
+{
+    "name": "Dagannoth Kings",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Rune thrownaxe",
+        "Pet rock"
+    ],
+    "attributes": [
+        "Dagannoth"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Dagannoth Prime --lvl 303",
+        "Dagannoth Rex --lvl 303",
+        "Dagannoth Supreme --lvl 303"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "aliases": [
+        "Dagannoth King"
+    ],
+    "variantLocations": {
+        "Dagannoth Prime --lvl 303": [
+            "Waterbirth Island Dungeon"
+        ],
+        "Dagannoth Rex --lvl 303": [
+            "Waterbirth Island Dungeon"
+        ],
+        "Dagannoth Supreme --lvl 303": [
+            "Waterbirth Island Dungeon"
+        ]
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "name": "Barrows Brothers",
+    "levelRequired": 0,
+    "itemsRequired": [
+        "Spade"
+    ],
+    "itemsSuggested": [
+        "Prayer potion",
+        "Forgotten brew"
+    ],
+    "attributes": [
+        "Undead"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Ahrim the Blighted --lvl 98",
+        "Karil the Tainted --lvl 98",
+        "Dharok the Wretched --lvl 115",
+        "Guthan the Infested --lvl 115",
+        "Torag the Corrupted --lvl 115",
+        "Verac the Defiled --lvl 115"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "aliases": [
+        "Barrows Brother"
+    ],
+    "variantLocations": {
+        "Ahrim the Blighted --lvl 98": [
+            "Barrows"
+        ],
+        "Karil the Tainted --lvl 98": [
+            "Barrows"
+        ],
+        "Dharok the Wretched --lvl 115": [
+            "Barrows"
+        ],
+        "Guthan the Infested --lvl 115": [
+            "Barrows"
+        ],
+        "Torag the Corrupted --lvl 115": [
+            "Barrows"
+        ],
+        "Verac the Defiled --lvl 115": [
+            "Barrows"
+        ]
+    }
+}

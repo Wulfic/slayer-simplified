@@ -1,0 +1,28 @@
+{
+    "name": "Araxxor",
+    "levelRequired": 92,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Anti-venom+",
+        "Fire spells"
+    ],
+    "attributes": [
+        "Spider"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Araxxor --lvl 890"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Araxxor --lvl 890": [
+            "Morytania Spider Cave"
+        ]
+    }
+}

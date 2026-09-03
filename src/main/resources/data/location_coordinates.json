@@ -904,6 +904,14 @@
         "y": 3915,
         "plane": 0
     },
+    "Maggot King's Lair": {
+        "x": 2678,
+        "y": 7851,
+        "plane": 0,
+        "aliases": [
+            "Vampyrium"
+        ]
+    },
     "Magic Axe Hut": {
         "x": 3190,
         "y": 3960,
@@ -1337,6 +1345,11 @@
     "Tai Bwo Wannai": {
         "x": 2789,
         "y": 3074,
+        "plane": 0
+    },
+    "Tar Swamp": {
+        "x": 3675,
+        "y": 3750,
         "plane": 0
     },
     "Tarn's Lair": {

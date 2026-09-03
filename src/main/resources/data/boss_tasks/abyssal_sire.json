@@ -1,0 +1,27 @@
+{
+    "name": "Abyssal Sire",
+    "levelRequired": 85,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Super antipoison",
+        "Slayer helmet"
+    ],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Magic"
+    ],
+    "variants": [
+        "Abyssal Sire --lvl 350"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Abyssal Sire --lvl 350": [
+            "Abyssal Nexus"
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "TzKal-Zuk",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Saradomin brew",
+        "Twisted bow"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "TzKal-Zuk --lvl 1400"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "aliases": [
+        "Zuk"
+    ],
+    "variantLocations": {
+        "TzKal-Zuk --lvl 1400": [
+            "Mor Ul Rek"
+        ]
+    }
+}

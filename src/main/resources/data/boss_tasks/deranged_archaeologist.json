@@ -1,0 +1,25 @@
+{
+    "name": "Deranged Archaeologist",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Prayer potion",
+        "Rake"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Ranged",
+        "Crush"
+    ],
+    "variants": [
+        "Deranged archaeologist --lvl 276"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Deranged archaeologist --lvl 276": [
+            "Tar Swamp"
+        ]
+    }
+}

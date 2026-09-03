@@ -1,0 +1,24 @@
+{
+    "name": "Kraken",
+    "levelRequired": 87,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Trident of the seas",
+        "Fishing explosive"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Magic"
+    ],
+    "variants": [
+        "Kraken --lvl 291"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Kraken --lvl 291": [
+            "Kraken Cove"
+        ]
+    }
+}

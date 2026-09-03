@@ -1,0 +1,37 @@
+{
+    "name": "Grotesque Guardians",
+    "levelRequired": 75,
+    "itemsRequired": [
+        "Brittle key"
+    ],
+    "itemsSuggested": [
+        "Rock hammer",
+        "Prayer potion"
+    ],
+    "attributes": [
+        "Golem"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Dawn --lvl 228",
+        "Dusk --lvl 248 --lvl 328"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "aliases": [
+        "Grotesque Guardian"
+    ],
+    "variantLocations": {
+        "Dawn --lvl 228": [
+            "Slayer Tower - Floor 2"
+        ],
+        "Dusk --lvl 248 --lvl 328": [
+            "Slayer Tower - Floor 2"
+        ]
+    }
+}

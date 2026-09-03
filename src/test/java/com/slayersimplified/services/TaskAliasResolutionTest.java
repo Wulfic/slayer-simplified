@@ -13,6 +13,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -74,6 +75,97 @@ public class TaskAliasResolutionTest
         TASK_NAME_TO_ENTRY.put("The Phantom Muspah", "Phantom Muspah");
         TASK_NAME_TO_ENTRY.put("The Leviathan", "Leviathan");
         TASK_NAME_TO_ENTRY.put("The Whisperer", "Whisperer");
+    }
+
+    /**
+     * Boss Slayer task names → the entry they must resolve to.
+     *
+     * <p>Unlike {@link #TASK_NAME_TO_ENTRY} these keys include the canonical names
+     * themselves, because the point of this map is the round trip the plugin actually
+     * performs: RuneLite hands us the assigned name, {@code SlayerTaskTracker}
+     * normalises it, and the normalised string has to find the entry. That
+     * normalisation strips a trailing "s" (except after "ss"/"us"), so every plural
+     * boss task arrives singularised — "Dagannoth Kings" reaches us as
+     * "Dagannoth King" — and only an alias can catch it.</p>
+     */
+    private static final Map<String, String> BOSS_TASK_NAME_TO_ENTRY = new HashMap<>();
+    static
+    {
+        BOSS_TASK_NAME_TO_ENTRY.put("Abyssal Sire", "Abyssal Sire");
+        BOSS_TASK_NAME_TO_ENTRY.put("Alchemical Hydra", "Alchemical Hydra");
+        BOSS_TASK_NAME_TO_ENTRY.put("Araxxor", "Araxxor");
+        BOSS_TASK_NAME_TO_ENTRY.put("Cerberus", "Cerberus");
+        BOSS_TASK_NAME_TO_ENTRY.put("Deranged Archaeologist", "Deranged Archaeologist");
+        BOSS_TASK_NAME_TO_ENTRY.put("Kraken", "Kraken");
+        BOSS_TASK_NAME_TO_ENTRY.put("Maggot King", "Maggot King");
+        BOSS_TASK_NAME_TO_ENTRY.put("Shellbane Gryphon", "Shellbane Gryphon");
+        BOSS_TASK_NAME_TO_ENTRY.put("Thermonuclear Smoke Devil", "Thermonuclear Smoke Devil");
+        BOSS_TASK_NAME_TO_ENTRY.put("TzTok-Jad", "TzTok-Jad");
+        BOSS_TASK_NAME_TO_ENTRY.put("TzKal-Zuk", "TzKal-Zuk");
+        // Plural task names, in both the form the game uses and the form the
+        // tracker's singularisation produces.
+        BOSS_TASK_NAME_TO_ENTRY.put("Barrows Brothers", "Barrows Brothers");
+        BOSS_TASK_NAME_TO_ENTRY.put("Barrows Brother", "Barrows Brothers");
+        BOSS_TASK_NAME_TO_ENTRY.put("Dagannoth Kings", "Dagannoth Kings");
+        BOSS_TASK_NAME_TO_ENTRY.put("Dagannoth King", "Dagannoth Kings");
+        BOSS_TASK_NAME_TO_ENTRY.put("Grotesque Guardians", "Grotesque Guardians");
+        BOSS_TASK_NAME_TO_ENTRY.put("Grotesque Guardian", "Grotesque Guardians");
+        BOSS_TASK_NAME_TO_ENTRY.put("Metal dragons", "Metal dragons");
+        BOSS_TASK_NAME_TO_ENTRY.put("Metal dragon", "Metal dragons");
+    }
+
+    /** Every boss task name the game can assign must land on a bundled entry. */
+    @Test
+    public void everyBossTaskNameResolvesToItsEntry()
+    {
+        TaskServiceImpl service = newService();
+
+        List<String> failures = new ArrayList<>();
+        for (Map.Entry<String, String> e : BOSS_TASK_NAME_TO_ENTRY.entrySet())
+        {
+            Task task = service.get(e.getKey());
+            if (task == null)
+            {
+                failures.add(e.getKey() + " -> (not found)");
+            }
+            else if (!task.name.equalsIgnoreCase(e.getValue()))
+            {
+                failures.add(e.getKey() + " -> " + task.name + " (expected " + e.getValue() + ")");
+            }
+        }
+
+        Assert.assertTrue("boss task names that do not resolve: " + failures, failures.isEmpty());
+    }
+
+    /**
+     * A boss entry with no bundled PNG falls back to the shared "?" placeholder, which
+     * is exactly the "no data" symptom these entries were added to remove. Every boss
+     * task must carry its own image and at least one location to route to.
+     */
+    @Test
+    public void everyBossTaskHasItsOwnImageAndALocation()
+    {
+        TaskServiceImpl service = newService();
+        Task placeholderHolder = service.get("A DEBUG TASK");
+        Assert.assertNotNull("the debug fixture task should exist", placeholderHolder);
+
+        List<String> failures = new ArrayList<>();
+        for (String name : new HashSet<>(BOSS_TASK_NAME_TO_ENTRY.values()))
+        {
+            Task task = service.get(name);
+            Assert.assertNotNull(name + " must resolve", task);
+
+            if (task.image == null || task.image == placeholderHolder.image)
+            {
+                failures.add(name + " (no monster image)");
+            }
+            if (task.variantLocations == null || task.variantLocations.isEmpty())
+            {
+                failures.add(name + " (no locations)");
+            }
+        }
+
+        Assert.assertTrue("boss tasks missing data: " + failures, failures.isEmpty());
     }
 
     @Test

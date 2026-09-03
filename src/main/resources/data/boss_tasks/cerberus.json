@@ -1,0 +1,28 @@
+{
+    "name": "Cerberus",
+    "levelRequired": 91,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Super restore",
+        "Spiked boots"
+    ],
+    "attributes": [
+        "Demon"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Cerberus --lvl 318"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Cerberus --lvl 318": [
+            "Taverley Dungeon"
+        ]
+    }
+}

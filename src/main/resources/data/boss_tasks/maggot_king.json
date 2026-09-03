@@ -1,0 +1,26 @@
+{
+    "name": "Maggot King",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Super antipoison",
+        "Fire spells"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "Maggot King --lvl 741"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Maggot King --lvl 741": [
+            "Maggot King's Lair"
+        ]
+    }
+}

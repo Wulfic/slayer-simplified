@@ -296,6 +296,10 @@
     "file": "mammoth.json"
   },
   {
+    "key": "Metal dragons",
+    "file": "metal_dragons.json"
+  },
+  {
     "key": "Mithril dragon",
     "file": "mithril_dragon.json"
   },

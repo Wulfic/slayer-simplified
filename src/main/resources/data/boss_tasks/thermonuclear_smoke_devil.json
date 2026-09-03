@@ -1,0 +1,26 @@
+{
+    "name": "Thermonuclear Smoke Devil",
+    "levelRequired": 93,
+    "itemsRequired": [
+        "Facemask",
+        "Slayer helmet"
+    ],
+    "itemsSuggested": [
+        "Antipoison"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Magical ranged"
+    ],
+    "variants": [
+        "Thermonuclear smoke devil --lvl 301"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Thermonuclear smoke devil --lvl 301": [
+            "Smoke Devil Dungeon"
+        ]
+    }
+}

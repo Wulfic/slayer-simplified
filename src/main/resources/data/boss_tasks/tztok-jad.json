@@ -1,0 +1,29 @@
+{
+    "name": "TzTok-Jad",
+    "levelRequired": 0,
+    "itemsRequired": [],
+    "itemsSuggested": [
+        "Saradomin brew",
+        "Rune crossbow"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic"
+    ],
+    "variants": [
+        "TzTok-Jad --lvl 702"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "aliases": [
+        "Jad"
+    ],
+    "variantLocations": {
+        "TzTok-Jad --lvl 702": [
+            "Mor Ul Rek Fight Caves"
+        ]
+    }
+}

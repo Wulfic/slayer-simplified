@@ -1,0 +1,55 @@
+{
+    "name": "Metal dragons",
+    "levelRequired": 1,
+    "itemsRequired": [
+        "Anti-dragon shield",
+        "Dragonfire shield"
+    ],
+    "itemsSuggested": [
+        "Super antifire potion(4)"
+    ],
+    "attributes": [
+        "Draconic",
+        "Fiery"
+    ],
+    "attackStyles": [
+        "Melee",
+        "Ranged",
+        "Magic",
+        "Dragonfire"
+    ],
+    "variants": [
+        "Bronze dragon --lvl 131 --lvl 143",
+        "Iron dragon --lvl 189 --lvl 215",
+        "Steel dragon --lvl 246 --lvl 274",
+        "Adamant dragon --lvl 338",
+        "Rune dragon --lvl 380"
+    ],
+    "masters": [
+        "Konar quo Maten"
+    ],
+    "aliases": [
+        "Metal dragon"
+    ],
+    "variantLocations": {
+        "Bronze dragon --lvl 131 --lvl 143": [
+            "Brimhaven Dungeon",
+            "Catacombs of Kourend"
+        ],
+        "Iron dragon --lvl 189 --lvl 215": [
+            "Brimhaven Dungeon",
+            "Catacombs of Kourend",
+            "Isle of Souls Dungeon"
+        ],
+        "Steel dragon --lvl 246 --lvl 274": [
+            "Brimhaven Dungeon",
+            "Catacombs of Kourend"
+        ],
+        "Adamant dragon --lvl 338": [
+            "Lithkren Vault"
+        ],
+        "Rune dragon --lvl 380": [
+            "Lithkren Vault"
+        ]
+    }
+}

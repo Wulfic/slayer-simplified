@@ -1,0 +1,26 @@
+{
+    "name": "Shellbane Gryphon",
+    "levelRequired": 51,
+    "itemsRequired": [
+        "Tortugan shield"
+    ],
+    "itemsSuggested": [
+        "Air spells"
+    ],
+    "attributes": [],
+    "attackStyles": [
+        "Melee",
+        "Ranged"
+    ],
+    "variants": [
+        "Shellbane Gryphon --lvl 235"
+    ],
+    "masters": [
+        "Bosses"
+    ],
+    "variantLocations": {
+        "Shellbane Gryphon --lvl 235": [
+            "The Great Conch - Gryphon Boss"
+        ]
+    }
+}
