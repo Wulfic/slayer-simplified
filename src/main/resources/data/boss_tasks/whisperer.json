@@ -13,6 +13,9 @@
     "masters": [
         "Bosses"
     ],
+    "aliases": [
+        "The Whisperer"
+    ],
     "variantLocations": {
         "Whisperer --lvl 895": [
             "Ancient Vault"

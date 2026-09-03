@@ -15,6 +15,9 @@
     "masters": [
         "Bosses"
     ],
+    "aliases": [
+        "The Giant Mole"
+    ],
     "variantLocations": {
         "Giant Mole --lvl 230": [
             "Falador Park"

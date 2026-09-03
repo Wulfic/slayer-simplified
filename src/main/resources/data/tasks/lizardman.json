@@ -25,6 +25,9 @@
         "Nieve",
         "Duradel"
     ],
+    "aliases": [
+        "Lizardmen"
+    ],
     "variantLocations": {
         "Lizardman --lvl 53 --lvl 62": [
             "Lizardman Settlement",

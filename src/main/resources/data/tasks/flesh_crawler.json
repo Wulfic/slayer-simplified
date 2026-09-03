@@ -19,6 +19,10 @@
     "masters": [
         "Mazchna"
     ],
+    "aliases": [
+        "Fleshcrawlers",
+        "Fleshcrawler"
+    ],
     "variantLocations": {
         "Flesh Crawler --lvl 28 --lvl 41": [
             "Stronghold of Security (level 2)"

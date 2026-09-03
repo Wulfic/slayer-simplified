@@ -15,6 +15,9 @@
     "masters": [
         "Bosses"
     ],
+    "aliases": [
+        "The Chaos Elemental"
+    ],
     "variantLocations": {
         "Chaos Elemental --lvl 305": [
             "Wilderness Volcano"

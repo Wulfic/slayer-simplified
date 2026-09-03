@@ -24,6 +24,12 @@ public class Task
     public String[] variants;
     public String[] masters;
     /**
+     * Alternative names that resolve to this task, e.g. the Slayer task category
+     * name when it differs from the monster name ("Mutated zygomites" → "Zygomite").
+     * Optional; may be null. Matched case-insensitively.
+     */
+    public String[] aliases;
+    /**
      * Per-variant location map. Maps variant display name (including the base monster
      * name itself) to an array of location strings. Always present after migration;
      * the base monster entry uses {@code name} as the key.

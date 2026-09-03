@@ -24,6 +24,10 @@
         "Turael",
         "Spria"
     ],
+    "aliases": [
+        "Dwarves",
+        "Dwarve"
+    ],
     "variantLocations": {
         "Dwarf --lvl 10": [
             "Ice Mountain",

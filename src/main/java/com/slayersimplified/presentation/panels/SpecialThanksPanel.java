@@ -70,6 +70,8 @@ public class SpecialThanksPanel extends JPanel
                 "Contributed the fix gating the task overlays behind combat, so they only show once you're actually fighting the assigned monster.");
         addContributor("EliteEvyn",
                 "Reported the bug where the Fremennik Slayer Dungeon was grayed out behind The Fremennik Trials, a quest the dungeon never required.");
+        addContributor("Fodziix",
+                "Reported the bug where a Mutated zygomites task showed no monster image and would not route, because the Slayer task name never matched the Zygomite data entry.");
 
         JScrollPane scrollPane = new JScrollPane(listPanel);
         scrollPane.setBorder(null);

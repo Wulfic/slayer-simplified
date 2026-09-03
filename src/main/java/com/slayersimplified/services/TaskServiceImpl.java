@@ -68,6 +68,13 @@ public class TaskServiceImpl implements TaskService
     }
 
     private final Map<String, Task> tasks = new HashMap<>();
+
+    /**
+     * Lower-cased alias → owning task. Kept separate from {@link #tasks} so aliases
+     * never leak into {@link #getAll()} or the search results as duplicate entries.
+     */
+    private final Map<String, Task> aliasIndex = new HashMap<>();
+
     private final String baseWikiUrl;
     private final String baseImagesPath;
 
@@ -94,6 +101,9 @@ public class TaskServiceImpl implements TaskService
         loadDirectory(gson, nonSlayerDataPath);
         loadDirectory(gson, bossDataPath);
         loadDirectory(gson, animalDataPath);
+        // Aliases are indexed only once every directory is loaded, so the
+        // canonical-key collision check below sees the complete task set.
+        buildAliasIndex();
     }
 
     private void loadDirectory(Gson gson, String dataPath)
@@ -167,10 +177,64 @@ public class TaskServiceImpl implements TaskService
         }
     }
 
+    /**
+     * Indexes every task's optional {@code aliases} so alternative names resolve to it.
+     *
+     * Collisions are logged rather than silently swallowed: a duplicate alias means
+     * one of the two tasks becomes unreachable under that name, which is a data bug
+     * worth surfacing instead of debugging blind later.
+     */
+    private void buildAliasIndex()
+    {
+        for (Task task : tasks.values())
+        {
+            if (task.aliases == null)
+            {
+                continue;
+            }
+
+            for (String alias : task.aliases)
+            {
+                if (alias == null || alias.trim().isEmpty())
+                {
+                    continue;
+                }
+
+                String aliasKey = alias.trim().toLowerCase();
+
+                if (tasks.containsKey(aliasKey))
+                {
+                    log.warn("Alias '{}' on task '{}' collides with a canonical task key; ignoring",
+                            alias, task.name);
+                    continue;
+                }
+
+                Task existing = aliasIndex.put(aliasKey, task);
+                if (existing != null && existing != task)
+                {
+                    log.warn("Alias '{}' is claimed by both '{}' and '{}'; '{}' wins",
+                            alias, existing.name, task.name, task.name);
+                }
+            }
+        }
+    }
+
+    /**
+     * Looks up a task by its canonical key first, then by any registered alias.
+     * Aliases cover Slayer task category names that differ from the monster name
+     * (e.g. the game assigns "Mutated zygomites" for the "Zygomite" entry).
+     */
     @Override
     public Task get(String name)
     {
-        return tasks.get(name.toLowerCase());
+        if (name == null)
+        {
+            return null;
+        }
+
+        String key = name.trim().toLowerCase();
+        Task task = tasks.get(key);
+        return task != null ? task : aliasIndex.get(key);
     }
 
     @Override
@@ -204,7 +268,7 @@ public class TaskServiceImpl implements TaskService
         return tasks
                 .values()
                 .stream()
-                .filter(m -> m.name.toLowerCase().contains(searchTerm))
+                .filter(m -> m.name.toLowerCase().contains(searchTerm) || matchesAlias(m, searchTerm))
                 .toArray(Task[]::new);
     }
 
@@ -333,6 +397,24 @@ public class TaskServiceImpl implements TaskService
                 .comparing((TaskSearchResult r) -> r.parentTask.name)
                 .thenComparing(r -> r.displayName));
         return results.toArray(new TaskSearchResult[0]);
+    }
+
+    /** True when any of the task's aliases contains {@code searchTerm} (already lower-cased). */
+    private static boolean matchesAlias(Task task, String searchTerm)
+    {
+        if (task.aliases == null)
+        {
+            return false;
+        }
+
+        for (String alias : task.aliases)
+        {
+            if (alias != null && alias.toLowerCase().contains(searchTerm))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private WikiLink[] createWikiLinks(Task task)

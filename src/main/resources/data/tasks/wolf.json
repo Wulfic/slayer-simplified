@@ -27,6 +27,10 @@
         "Mazchna",
         "Spria"
     ],
+    "aliases": [
+        "Wolves",
+        "Wolve"
+    ],
     "variantLocations": {
         "Wolf --lvl 11 --lvl 64": [
             "Stronghold of Security",

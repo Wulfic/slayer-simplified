@@ -18,6 +18,9 @@
     "masters": [
         "Bosses"
     ],
+    "aliases": [
+        "Sarachni"
+    ],
     "variantLocations": {
         "Sarachnis --lvl 318": [
             "Forthos Dungeon"

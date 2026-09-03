@@ -16,6 +16,9 @@
     "masters": [
         "Bosses"
     ],
+    "aliases": [
+        "Vardorvi"
+    ],
     "variantLocations": {
         "Vardorvis --lvl 520": [
             "Lassar Undercity"
